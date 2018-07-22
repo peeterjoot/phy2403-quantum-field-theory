@@ -1,0 +1,67 @@
+%
+% Copyright © 2016 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+
+%
+%\chapter{Preface}
+% this suppresses an explicit chapter number for the preface.
+\chapter*{Preface}%\normalsize
+  \addcontentsline{toc}{chapter}{Preface}
+
+This book introduces the fundamentals of geometric algebra and calculus, and applies those tools to the study of electromagnetism.
+Geometric algebra extends vector algebra by
+introducing a vector multiplication operation, the vector product, incorporating aspects of both the dot and cross products.
+Products or sums of products of vectors are called multivectors, and
+are capable of representing oriented point, line, plane, and volume segments.
+
+This book is divided into three parts.
+
+\begin{enumerate}[{Chapter}-1]
+\item An introduction to geometric algebra (GA).
+
+Topics covered include vectors, vector spaces, vector multiplication, bivectors, trivectors, multivectors, multivector spaces, dot and wedge products, mulitvector representation of complex numbers, rotation, reflection, projection and rejection, and linear system solution.
+
+The focus of this book are geometric algebras generated from 2 or 3 dimensional Euclidean vector spaces.
+In some cases higher dimensional spaces will be used in examples and theorems.
+Some, but not all, of the places requiring generalizations for mixed signature (relativistic) spaces will be pointed out.
+\item Geometric calculus, Green's function solutions of differential equations, and multivector Green's functions.
+
+A multivector generalization of vector calculus, the fundamental theorem of geometric calculus,
+is required to apply geometric algebra to electromagnetism.
+Special cases of the fundamental theorem of geometric calculus include
+the fundamental theorem of calculus,
+Green's (area) theorem, the divergence theorem, and Stokes' theorems.
+Multivector calculus also provides the opportunity to define a few unique and powerful (multivector) Green's functions of particular relevance to electromagnetism.
+
+\item Application of Geometric Algebra to electromagnetism.
+
+Instead of working separately with electric and magnetic fields, we will work with a hybrid multivector field, \( F \), that includes both electric and magnetic field contributions, and with a
+multivector current, \( J \), that includes both charge and current densities.
+
+Starting with the conventional form of Maxwell's equation, the multivector Maxwell's equation (singular) is derived.
+This is a single multivector equation that is easier to solve and manipulate then the conventional mess of divergence and curl equations are familiar to the reader.
+The multivector Maxwell's equation is the starting point for the remainder of the analysis of the book, and from it the
+wave equation, plane wave solutions, and static and dynamic solutions are derived.
+The multivector form of energy density, Poynting force, and the Maxwell stress tensor, and all the associated conservation relationships are derived.
+The transverse and propagation relationships for waveguide solutions are derived in their multivector form.
+Polarization is discussed in a multivector context, and multivector potentials and gauge transformations are introduced.
+
+No attempt to motivate Maxwell's equations, nor most of the results derived from them is made in this book.
+\end{enumerate}
+
+\paragraph{Prerequisites:}
+
+The target audience for this book is advanced undergraduate or graduate students of electrical engineering or physics.
+Such an audience is assumed to be intimately familiar with vectors,
+vector algebra, dot and cross products, determinants, coordinate representation, linear system solution, complex numbers, matrix algebra and linear transformations.
+It is also assumed that the reader understands and can apply conventional vector calculus concepts including the divergence and curl operators, the divergence and Stokes' theorems,
+line, area and volume integrals, Greens' functions, and the Dirac delta function.
+Finally, it is assumed that the reader is intimately familiar with conventional electromagnetism, including Maxwell's and the Lorentz force equations, scalar and vector potentials, plane wave solutions, energy density and Poynting vectors, and more.
+
+\paragraph{Thanks:}
+
+I'd like to thank Steven De Keninck, Dr. Wolfgang Lindner, and Prof. Mo Mojahedi for reviewing portions of this book.
+Their suggestions significantly improved the quality of the text.
+
+Peeter Joot \quad peeterjoot@pm.me
