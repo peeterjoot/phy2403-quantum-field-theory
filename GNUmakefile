@@ -40,8 +40,10 @@ SPELLCHECK := $(patsubst %.tex,%.sp,$(wildcard *.tex))
 
 include ../latex/make.rules
 
-#all :: l9
+all :: l1
 #all :: p2
+
+l1: qftLecture1.pdf
 
 qftProblemSet1.pdf : qftProblemSet1Problem1.tex
 qftProblemSet1.pdf : qftProblemSet1Problem2.tex

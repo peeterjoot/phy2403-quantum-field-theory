@@ -16,3 +16,6 @@
 #perl -p -i ./p ../phy2403/qftProblemSet1Problem6.tex
 #~/bin/lgrep ../phy2403/qftProblemSet1Problem4.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftProblemSet1Problem4.tex
+#
+../latex/bin/lgrep qftLecture1.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture1.tex
