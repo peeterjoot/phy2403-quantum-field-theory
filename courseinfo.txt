@@ -1,0 +1,49 @@
+Description
+
+
+Rough list of topics:
+
+Energy and distance scales; units and conventions. The need for multiple particle description. Canonical quantization. Free scalar field theory.
+Symmetries and conservation laws. Interacting fields: Feynman diagrams and the S matrix; decay widths and phase space. Spin 1/2 fields: Spinor representations, Dirac and Weyl spinors, Dirac equation. Quantizing Fermi fields and statistics. Vector fields and Quantum electrodynamics.
+
+Prerequisites:
+
+(1) Lagrangian and Hamiltonian formulations of classical mechanics.
+
+(2) Maxwell equations, energy and momentum of the electromagnetic fields, Lorentz invariance (special relativity and four vectors).
+
+(3) Nonrelativistic quantum mechanics, in particular, angular momentum theory will be relied upon.
+
+There is no required text, but you may find M.E. Peskin and D.V Schroeder,
+"An Introduction to Quantum Field Theory" (Perseus Books, 1995) useful (although we will only cover a small part of the material in the text).
+
+Prof. Luke's lecture notes (link provided in "Resources" section) will also be useful, as well as other notes and books by leading experts freely available online.
+General Information
+	
+There are 3 hrs (not the usual 2 for UofT courses!) of lectures per week:
+
+M 12-1 MP1115
+W 12-2 MP1115
+
+First class on M, Sept. 10.
+
+No lecture on W Nov. 14 (instead a lecture on W Nov. 7; as this falls during the "fall break", if too many of you are unable to attend, we'll just cancel it - the added hours should be sufficient anyway).
+
+I will not post detailed lecture notes; material is quite standard and you can use the available online resources. On a couple of occasions, I will post notes (especially re. symmetries and symmetry breaking).
+
+After each class, a detailed class summary will be posted on piazza - for reference and for those who prefer self-study! In other words, I am fully cognizant of the fact that everyone learns differently and that for some (I hope not for all!) attending lectures may be a waste of time.
+Homework and grading
+	
+There will be four homeworks, worth 17.5 % each (70% of grade).
+
+A fifth homework will be worth 30% and will take the form of a 24 hour 'take home exam' during the last week of classes.
+Office hours
+	
+W 5:30-7 MP1115.
+
+Discussions/questions on Piazza at any time are very encouraged. Notice, however, that I may not answer promptly on weekends and at night.
+
+NOTE that walking into my office at a random time with a question IS NOT ACCEPTABLE (this is a research institution and the prof needs some time for, well, at least trying to think...). It is rather acceptable, however, to make an appointment by email or phone if you can not make the office hours. Contact me at poppitz@physics.utoronto.ca or via a private message on piazza.
+Why piazza (and not quercus)?
+	
+I thought I should comment on that. The new Canvas system the U. has purchased (calling it quercus) is very nice and flashy, but does not support anonymous discussions. I have found that one of the most valuable features of piazza; it allows students to open up and ask questions that otherwise they might be too shy to ask. Hence, I keep working with piazza. Your homework and midterm grades, like they were previously view-able on blackboard, will be available to monitor on quercus. 
