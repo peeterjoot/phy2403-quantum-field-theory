@@ -1,4 +1,4 @@
-~/bin/lgrep noetherCurrentScalarField.tex | tee o ; . ./o
+../latex/bin/lgrep noetherCurrentScalarField.tex | tee o ; . ./o
 #perl -p -i ./p ../blogit/noetherCurrentScalarField.tex
 #~/bin/lgrep scalarFieldCreationOpCommutator.tex | tee o ; . ./o
 #perl -p -i ./p scalarFieldCreationOpCommutator.tex
