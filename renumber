@@ -19,3 +19,5 @@
 #
 ../latex/bin/lgrep qftLecture1.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture1.tex
+../latex/bin/lgrep qftLecture2.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture2.tex
