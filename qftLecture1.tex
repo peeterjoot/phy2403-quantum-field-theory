@@ -24,9 +24,11 @@
 
 \beginArtNoToc
 
-\generatetitle{UofT QFT Fall 2018 Lecture 1, What is a field?.  Taught by Prof. Erich Poppitz}
+\generatetitle{UofT QFT Fall 2018 phy2403 Lecture 1; What is a field?.  Taught by Prof. Erich Poppitz}
 %\chapter{What is a field?}
 %\label{chap:qftLecture1}
+
+\paragraph{DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.}
 
 % Monday Sept 10, 2018.
 \section{What is a field?}
@@ -43,7 +45,7 @@ One example is the familiar spacetime vector, where \( \Bx \in \bbR^{d} \)
 
 Examples of fields:
 \begin{enumerate}
-\item \( 0 + 1 \) dimensional ``QFT'', where the spatial dimension is zero dimensinal and we have one time dimension.  Fields in this case are just functions of time \( x(t) \).  That is, particle mechanics is a 0 + 1 dimensional classical field theory.  We know that classical mechanics is described by the action
+\item \( 0 + 1 \) dimensional ``QFT'', where the spatial dimension is zero dimensional and we have one time dimension.  Fields in this case are just functions of time \( x(t) \).  That is, particle mechanics is a 0 + 1 dimensional classical field theory.  We know that classical mechanics is described by the action
 \begin{dmath}\label{eqn:qftLecture1:40}
 S = \frac{m}{2} \int dt \xdot^2.
 \end{dmath}
@@ -61,7 +63,7 @@ which can be found by evaluating the ``Feynman path integral''
 \begin{dmath}\label{eqn:qftLecture1:100}
 \sum_{\text{all paths x}} e^{i S[x]/\Hbar}
 \end{dmath}
-This will be particularily useful for QFT, despite the fact that such a sum is really hard to evaluate (try it for the Hyrdogen atom for example).
+This will be particularly useful for QFT, despite the fact that such a sum is really hard to evaluate (try it for the Hydrogen atom for example).
 \item \( 3 + 0 \) dimensional field theory, where we have 3 spatial dimensions and 0 time dimensions.  Classical equilibrium static systems.  The field may have a structure like
 \begin{dmath}\label{eqn:qftLecture1:120}
 \Bx \rightarrow \BM(\Bx),
@@ -87,7 +89,7 @@ S = -\inv{16 \pi c} \int d^3 \Bx dt \lr{ \BE^2 - \BB^2 }.
 This is our first example of a relativistic field theory in \( 3 + 1 \) dimensions.  It will take us a while to get there.
 \end{enumerate}
 
-These are examples of classical field theories, such as fluid dynamics and general relativity.  We want to consider electromagnetism because this is the place that we everything starts to fall apart (i.e. blackbody radiation, relating to the equilibrium states of radiating matter).  Part of the resolution of this was the quantization of the energy states, where we studied the normal modes of electromagnetic radiation in a box.  These modes can be considered an infinite number of radiating oscillators (the ultraviolet catastrophy).  This was resolved by Planck by requiring those energy states to be quantized (an excellent discussion of this can be found in \citep{bohm1989qt}.  In that sense you have already seen quantum field theory.
+These are examples of classical field theories, such as fluid dynamics and general relativity.  We want to consider electromagnetism because this is the place that we everything starts to fall apart (i.e. blackbody radiation, relating to the equilibrium states of radiating matter).  Part of the resolution of this was the quantization of the energy states, where we studied the normal modes of electromagnetic radiation in a box.  These modes can be considered an infinite number of radiating oscillators (the ultraviolet catastrophe).  This was resolved by Planck by requiring those energy states to be quantized (an excellent discussion of this can be found in \citep{bohm1989qt}.  In that sense you have already seen quantum field theory.
 
 For electromagnetism the classical description is not always good.  Examples:
 \begin{enumerate}
@@ -103,7 +105,7 @@ r^{\textrm{cl}}_{\txte} \sim \frac{m_\txte c^2}{e^2} \sim 10^{-15} \si{m}
 \end{equation}
 Don't treat this very seriously, but it becomes useful at frequencies \( \omega \sim c/r_\txte \), where \( r_\txte/c \) is approximately the time for light to cross a distance \( r_\txte \).
 At frequencies like this, we should not believe the solutions that are obtained by classical electrodynamics.
-In particular, self-accelerating solutions appear at these frequencies in classical EM.  This is appriximately \( \omega_\conj \sim 10^{23} Hz \), or
+In particular, self-accelerating solutions appear at these frequencies in classical EM.  This is approximately \( \omega_\conj \sim 10^{23} Hz \), or
 \begin{dmath}\label{eqn:qftLecture1:240}
 \begin{aligned}
 \Hbar \omega_\conj
@@ -142,7 +144,7 @@ That method assumes a circular electron trajectory (\(i = \Be_1 \Be_2\))
 \Ba &= -\omega^2 r \Be_1 e^{i \omega t} \\
 \end{aligned}
 \end{dmath}
-The Coloumb force (in cgs units) on the electron is
+The Coulomb force (in cgs units) on the electron is
 \begin{dmath}\label{eqn:qftLecture1:300}
 \BF = m\Ba = -m \omega^2 r \Be_1 e^{i \omega t} = \frac{-e (e)}{r^2} \Be_1 e^{i \omega t},
 \end{dmath}
@@ -178,8 +180,8 @@ When particle momentum starts approaching the speed of light, by the uncertainty
 \lambda_\txtc \sim \frac{\Hbar}{m_\txte c},
 \end{dmath}
 called the Compton wavelength.
-Similarily, when the length scales are reduced to the Compton wavelength, the momentum increases to relativistic levels.
-Because of the relativistic velocities at the Compton wavelength, particle creation and anhination occurs and any theory has to account for multiple particle states.
+Similarly, when the length scales are reduced to the Compton wavelength, the momentum increases to relativistic levels.
+Because of the relativistic velocities at the Compton wavelength, particle creation and annihilation occurs and any theory has to account for multiple particle states.
 
 \subsection{Relations.}
 
