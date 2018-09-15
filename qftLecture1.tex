@@ -16,6 +16,7 @@
 \usepackage{peeters_braket}
 \usepackage{peeters_figures}
 \usepackage{siunitx}
+\usepackage{verbatim}
 %\usepackage{mhchem} % \ce{}
 %\usepackage{macros_bm} % \bcM
 %\usepackage{macros_qed} % \qedmarker
@@ -30,6 +31,8 @@
 % Monday Sept 10, 2018.
 \section{What is a field?}
 
+\begin{comment}
+\end{comment}
 A field is a map from space(time) to some set of numbers.  These set of numbers may be organized some how, possibly scalars, or vectors, ...
 
 One example is the familiar spacetime vector, where \( \Bx \in \bbR^{d} \)
@@ -95,16 +98,16 @@ We can define the classical radius of the electron by
 \frac{e^2}{r^{\textrm{cl}}_{\txte}} \sim m_\txte c^2,
 \end{dmath}
 or
-\begin{dmath}\label{eqn:qftLecture1:220}
+\begin{equation}\label{eqn:qftLecture1:220}
 r^{\textrm{cl}}_{\txte} \sim \frac{m_\txte c^2}{e^2} \sim 10^{-15} \si{m}
-\end{dmath}
+\end{equation}
 Don't treat this very seriously, but it becomes useful at frequencies \( \omega \sim c/r_\txte \), where \( r_\txte/c \) is approximately the time for light to cross a distance \( r_\txte \).
 At frequencies like this, we should not believe the solutions that are obtained by classical electrodynamics.
 In particular, self-accelerating solutions appear at these frequencies in classical EM.  This is appriximately \( \omega_\conj \sim 10^{23} Hz \), or
 \begin{dmath}\label{eqn:qftLecture1:240}
 \begin{aligned}
 \Hbar \omega_\conj
-&\sim 10^{-21} \si{MeV s} 10^{23} \si{1/s} \\
+&\sim \lr{ 10^{-21} \,\si{MeV s}} \lr{ 10^{23} \,\si{1/s} }\\
 &\sim 100 \si{MeV}.
 \end{aligned}
 \end{dmath}
@@ -114,12 +117,18 @@ At such frequencies particle creation becomes possible.
 
 \section{Scales}
 
-A value that is very useful in determining scale is
-\begin{dmath}\label{eqn:qftLecture1:260}
-\alpha = \frac{e^2}{4 \pi \Hbar c}.
-\end{dmath}
-
-See: On paper.
+A (dimensionless) value that is very useful in determining scale is
+\begin{equation}\label{eqn:qftLecture1:260}
+\alpha = \frac{e^2}{4 \pi \Hbar c} \sim \inv{137},
+\end{equation}
+called the fine scale constant, which relates three important scales relevant to quantum mechanics, as sketched in
+\cref{fig:Lecture1scales:Lecture1scalesFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/Lecture1scalesFig1}{Interesting scales in quantum mechanics.}{fig:Lecture1scales:Lecture1scalesFig1}{0.3}
+\begin{itemize}
+\item The Bohr radius (large end of the scale).
+\item The Compton wavelength of the electron.
+\item The classical radius of the electron.
+\end{itemize}
 
 \subsection{Bohr radius}
 
@@ -161,6 +170,37 @@ Eliminating \( v \) using \cref{eqn:qftLecture1:340}, assuming a ground state ra
 a_0 \sim \frac{\Hbar^2}{m e^2}.
 \end{dmath}
 The Bohr radius is of the order \( 10^{-10} \si{m} \).
+
+\subsection{Compton wavelength.}
+
+When particle momentum starts approaching the speed of light, by the uncertainty relation (\(\Delta x \Delta p \sim \Hbar\)) the variation in position must be of the order
+\begin{dmath}\label{eqn:qftLecture1:420}
+\lambda_\txtc \sim \frac{\Hbar}{m_\txte c},
+\end{dmath}
+called the Compton wavelength.
+Similarily, when the length scales are reduced to the Compton wavelength, the momentum increases to relativistic levels.
+Because of the relativistic velocities at the Compton wavelength, particle creation and anhination occurs and any theory has to account for multiple particle states.
+
+\subsection{Relations.}
+
+Scaling the Bohr radius once by the fine structure constant, we obtain the Compton wavelength (after dropping factors of \( 4\pi \))
+\begin{dmath}\label{eqn:qftLecture1:440}
+a_0 \alpha 
+= \frac{\Hbar^2}{m e^2}
+\frac{e^2}{4 \pi \Hbar c}
+= \frac{\Hbar}{4 \pi m c}
+\sim
+\frac{\Hbar}{m c}
+= \lambda_\txtc.
+\end{dmath}
+Scaling once more, we obtain (after dropping another \( 4\pi\)) the classical electron radius
+\begin{dmath}\label{eqn:qftLecture1:n}
+\lambda_\txtc \alpha
+=
+\frac{e^2}{4 \pi m c^2}
+\sim
+\frac{e^2}{m c^2}.
+\end{dmath}
 
 %}
 \EndArticle
