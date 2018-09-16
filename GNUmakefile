@@ -42,17 +42,19 @@ include ../latex/make.rules
 
 #all :: l1
 all :: l2
+all :: l3
 #all :: p2
 
 #l1: qftLecture1.pdf
 l2: qftLecture2.pdf
+l3: qftLecture3.pdf
 
-qftProblemSet1.pdf : qftProblemSet1Problem1.tex
-qftProblemSet1.pdf : qftProblemSet1Problem2.tex
-qftProblemSet1.pdf : qftProblemSet1Problem3.tex
-qftProblemSet1.pdf : qftProblemSet1Problem4.tex
-qftProblemSet1.pdf : qftProblemSet1Problem5.tex
-qftProblemSet1.pdf : qftProblemSet1Problem6.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem1.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem2.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem3.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem4.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem5.tex
+#qftProblemSet1.pdf : qftProblemSet1Problem6.tex
 
 #qftProblemSet2.pdf : qftProblemSet2Problem1.tex
 #qftProblemSet2.pdf : qftProblemSet2Problem2.tex
