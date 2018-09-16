@@ -35,8 +35,12 @@ THISBOOK_DEPS += $(PDFS_FROM_EPS)
 #THISBOOK_DEPS += macros_mathematica.sty
 
 #CLEAN_TARGETS += ps5mathematica.tex ps9mathematica.tex
+CLEAN_TARGETS += *.sp
+#CLEAN_TARGETS += FrontBackmatter/*.sp
 
-SPELLCHECK := $(patsubst %.tex,%.sp,$(wildcard *.tex))
+#SPELLCHECK := $(patsubst %.tex,%.sp,$(wildcard *.tex))
+DO_SPELL_CHECK := $(shell cat spellcheckem.txt)
+SPELLCHECK := $(patsubst %.tex,%.sp,$(DO_SPELL_CHECK))
 
 include ../latex/make.rules
 
@@ -44,6 +48,8 @@ include ../latex/make.rules
 all :: l2
 all :: l3
 #all :: p2
+
+$(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 
 #l1: qftLecture1.pdf
 l2: qftLecture2.pdf

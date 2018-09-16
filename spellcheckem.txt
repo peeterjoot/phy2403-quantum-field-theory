@@ -1,0 +1,14 @@
+noetherCurrentScalarField.tex
+qftLecture1.tex
+qftLecture2.tex
+qftLecture3.tex
+qftLukeProblemSet1.tex
+qftLukeProblemSet1Problem1.tex
+qftLukeProblemSet1Problem2.tex
+qftLukeProblemSet1Problem3.tex
+qftLukeProblemSet1Problem4.tex
+qftLukeProblemSet1Problem5.tex
+qftLukeProblemSet1Problem6.tex
+scalarFieldCreationOpCommutator.tex
+scalarFieldHamiltonian.tex
+usefulFormulas.tex
