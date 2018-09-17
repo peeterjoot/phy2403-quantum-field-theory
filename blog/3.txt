@@ -1,0 +1,283 @@
+PHY2403H Quantum Field Theory.  Lecture 3: Lorentz transformations and a scalar action.  Taught by Prof. Erich Poppitz
+
+<a href="http://peeterjoot.com/archives/math2018/qftLecture3.pdf">[Click here for a PDF of this post with nicer formatting]</a>
+
+<h3>DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.</h3>
+
+These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz.
+
+<h2>Determinant of Lorentz transformations</h2>
+
+We require that Lorentz transformations leave the dot product invariant, that is \( x \cdot y = x' \cdot y' \), or
+\begin{equation}\label{eqn:qftLecture3:20}
+x^\mu g_{\mu\nu} y^\nu = {x'}^\mu g_{\mu\nu} {y'}^\nu.
+\end{equation}
+Explicitly, with coordinate transformations
+\begin{equation}\label{eqn:qftLecture3:40}
+\begin{aligned}
+{x'}^\mu &= {\Lambda^\mu}_\rho x^\rho \\
+{y'}^\mu &= {\Lambda^\mu}_\rho y^\rho
+\end{aligned}
+\end{equation}
+such a requirement is equivalent to demanding that
+\begin{equation}\label{eqn:qftLecture3:500}
+\begin{aligned}
+x^\mu g_{\mu\nu} y^\nu
+&=
+{\Lambda^\mu}_\rho x^\rho
+g_{\mu\nu}
+{\Lambda^\nu}_\kappa y^\kappa \\
+&=
+x^\mu
+{\Lambda^\alpha}_\mu
+g_{\alpha\beta}
+{\Lambda^\beta}_\nu
+y^\nu,
+\end{aligned}
+\end{equation}
+or
+\begin{equation}\label{eqn:qftLecture3:60}
+g_{\mu\nu}
+=
+{\Lambda^\alpha}_\mu
+g_{\alpha\beta}
+{\Lambda^\beta}_\nu
+\end{equation}
+
+multiplying by the inverse we find
+\begin{equation}\label{eqn:qftLecture3:200}
+\begin{aligned}
+g_{\mu\nu}
+{\lr{\Lambda^{-1}}^\nu}_\lambda
+&=
+{\Lambda^\alpha}_\mu
+g_{\alpha\beta}
+{\Lambda^\beta}_\nu
+{\lr{\Lambda^{-1}}^\nu}_\lambda \\
+&=
+{\Lambda^\alpha}_\mu
+g_{\alpha\lambda} \\
+&=
+g_{\lambda\alpha}
+{\Lambda^\alpha}_\mu.
+\end{aligned}
+\end{equation}
+This is now amenable to expressing in matrix form
+\begin{equation}\label{eqn:qftLecture3:220}
+\begin{aligned}
+(G \Lambda^{-1})_{\mu\lambda}
+&=
+(G \Lambda)_{\lambda\mu} \\
+&=
+((G \Lambda)^\T)_{\mu\lambda} \\
+&=
+(\Lambda^\T G)_{\mu\lambda},
+\end{aligned}
+\end{equation}
+or
+\begin{equation}\label{eqn:qftLecture3:80}
+G \Lambda^{-1}
+=
+(G \Lambda)^\T.
+\end{equation}
+
+Taking determinants (using the normal identities for products of determinants, determinants of transposes and inverses), we find
+\begin{equation}\label{eqn:qftLecture3:100}
+det(G)
+det(\Lambda^{-1})
+=
+det(G) det(\Lambda),
+\end{equation}
+or
+\begin{equation}\label{eqn:qftLecture3:120}
+det(\Lambda)^2 = 1,
+\end{equation}
+or
+\( det(\Lambda)^2 = \pm 1 \).  We will generally ignore the case of reflections in spacetime that have a negative determinant.
+
+Smart-alec Peeter pointed out after class last time that we can do the same thing easier in matrix notation
+\begin{equation}\label{eqn:qftLecture3:140}
+\begin{aligned}
+x' &= \Lambda x \\
+y' &= \Lambda y
+\end{aligned}
+\end{equation}
+where
+\begin{equation}\label{eqn:qftLecture3:160}
+\begin{aligned}
+x' \cdot y'
+&=
+(x')^\T G y' \\
+&=
+x^\T \Lambda^\T G \Lambda y,
+\end{aligned}
+\end{equation}
+which we require to be \( x \cdot y = x^\T G y \) for all four vectors \( x, y \), that is
+\begin{equation}\label{eqn:qftLecture3:180}
+\Lambda^\T G \Lambda = G.
+\end{equation}
+We can find the result \ref{eqn:qftLecture3:120} immediately without having to first translate from index notation to matrices.
+
+<h2>Field theory</h2>
+
+The electrostatic potential is an example of a scalar field \( \phi(\Bx) \) unchanged by SO(3) rotations
+\begin{equation}\label{eqn:qftLecture3:240}
+\Bx \rightarrow \Bx' = O \Bx,
+\end{equation}
+that is
+\begin{equation}\label{eqn:qftLecture3:260}
+\phi'(\Bx') = \phi(\Bx).
+\end{equation}
+Here \( \phi'(\Bx') \) is the value of the (electrostatic) scalar potential in a primed frame.
+
+However, the electrostatic field is not invariant under Lorentz transformation.
+We postulate that there is some scalar field
+\begin{equation}\label{eqn:qftLecture3:280}
+\phi'(x') = \phi(x),
+\end{equation}
+where \( x' = \Lambda x \) is an SO(1,3) transformation.  There are actually no stable particles (fields that persist at long distances) described by Lorentz scalar fields, although there are some unstable scalar fields such as the Higgs, Pions, and Kaons.  However, much of our homework and discussion will be focused on scalar fields, since they are the easiest to start with.
+
+We need to first understand how derivatives \( \partial_\mu \phi(x) \) transform.  Using the chain rule
+\begin{equation}\label{eqn:qftLecture3:300}
+\begin{aligned}
+\PD{x^\mu}{\phi(x)} 
+&=
+\PD{x^\mu}{\phi'(x')} \\
+&=
+\PD{{x'}^\nu}{\phi'(x')}
+\PD{{x}^\mu}{{x'}^\nu} \\
+&=
+\PD{{x'}^\nu}{\phi'(x')}
+\partial_\mu \lr{
+{\Lambda^\nu}_\rho x^\rho
+} \\
+&=
+\PD{{x'}^\nu}{\phi'(x')}
+{\Lambda^\nu}_\mu \\
+&=
+\PD{{x'}^\nu}{\phi(x)}
+{\Lambda^\nu}_\mu.
+\end{aligned}
+\end{equation}
+Multiplying by the inverse \( {\lr{\Lambda^{-1}}^\mu}_\kappa \) we get
+\begin{equation}\label{eqn:qftLecture3:320}
+\PD{{x'}^\kappa}{}
+=
+{\lr{\Lambda^{-1}}^\mu}_\kappa \PD{x^\mu}{}
+\end{equation}
+
+This should be familiar to you, and is an analogue of the transformation of the
+\begin{equation}\label{eqn:qftLecture3:340}
+d\Br \cdot \spacegrad_\Br
+=
+d\Br' \cdot \spacegrad_{\Br'}.
+\end{equation}
+
+<h2>Actions</h2>
+We will start with a classical action, and quantize to determine a QFT.  In mechanics we have the particle position \( q(t) \), which is a classical field in 1+0 time and space dimensions.  Our action is
+\begin{equation}\label{eqn:qftLecture3:360}
+S
+= \int dt \LL(t)
+= \int dt \lr{
+\inv{2} \dot{q}^2 - V(q)
+}.
+\end{equation}
+This action depends on the position of the particle that is local in time.  You could imagine that we have a more complex action where the action depends on future or past times
+\begin{equation}\label{eqn:qftLecture3:380}
+S
+= \int dt' q(t') K( t' - t ),
+\end{equation}
+but we don't seem to find such actions in classical mechanics.
+
+<h3>Principles determining the form of the action.</h3>
+<ul>
+<li> relativity (action is invariant under Lorentz transformation)
+<li> locality (action depends on fields and the derivatives at given \((t, \Bx)\).
+<li> Gauge principle (the action should be invariant under gauge transformation).  We won't discuss this in detail right now since we will start with studying scalar fields.
+Recall that for Maxwell's equations a gauge transformation has the form
+\begin{equation}\label{eqn:qftLecture3:520}
+\phi \rightarrow \phi + \dot{\chi}, \BA \rightarrow \BA - \spacegrad \chi.
+\end{equation}
+</ul>
+
+Suppose we have a real scalar field \( \phi(x) \) where \( x \in \mathbb{R}^{1,d-1} \).  We will be integrating over space and time \( \int dt d^{d-1} x \) which we will write as \( \int d^d x \).  Our action is
+\begin{equation}\label{eqn:qftLecture3:400}
+S = \int d^d x \lr{ \text{Some action density to be determined } }
+\end{equation}
+The analogue of \( \dot{q}^2 \) is
+\begin{equation}\label{eqn:qftLecture3:420}
+\begin{aligned}
+\lr{ \PD{x^\mu}{\phi} }
+\lr{ \PD{x^\nu}{\phi} }
+g^{\mu\nu}
+&=
+(\partial_\mu \phi) (\partial_\nu \phi) g^{\mu\nu} \\
+&= \partial^\mu \phi \partial_\mu \phi.
+\end{aligned}
+\end{equation}
+This has both time and spatial components, that is
+\begin{equation}\label{eqn:qftLecture3:440}
+\partial^\mu \phi \partial_\mu \phi =
+\dotphi^2 - (\spacegrad \phi)^2,
+\end{equation}
+so the desired simplest scalar action is
+\begin{equation}\label{eqn:qftLecture3:460}
+S = \int d^d x \lr{ \dotphi^2 - (\spacegrad \phi)^2 }.
+\end{equation}
+The measure transforms using a Jacobian, which we have seen is the Lorentz transform matrix, and has unit determinant
+\begin{equation}\label{eqn:qftLecture3:480}
+d^d x' = d^d x \Abs{ det( \Lambda^{-1} ) } = d^d x.
+\end{equation}
+
+<h2>Problems.</h2>
+
+<h2>Question: Four vector form of the Maxwell gauge transformation.</h2>
+Show that the transformation
+\begin{equation}\label{eqn:qftLecture3:580}
+A^\mu \rightarrow A^\mu + \partial^\mu \chi
+\end{equation}
+is the desired four-vector form of the gauge transformation \ref{eqn:qftLecture3:520}, that is
+\begin{equation}\label{eqn:qftLecture3:540}
+\begin{aligned}
+j^\nu 
+&= \partial_\mu {F'}^{\mu\nu} \\
+&= \partial_\mu F^{\mu\nu}.
+\end{aligned}
+\end{equation}
+Also relate this four-vector gauge transformation to the spacetime split.
+
+<h2>Answer</h2>
+\begin{equation}\label{eqn:qftLecture3:560}
+\begin{aligned}
+\partial_\mu {F'}^{\mu\nu}
+&=
+\partial_\mu \lr{ \partial^\mu {A'}^\nu - \partial_\nu {A'}^\mu } \\
+&=
+\partial_\mu \lr{
+  \partial^\mu \lr{ A^\nu + \partial^\nu \chi }
+- \partial_\nu \lr{ A^\mu + \partial^\mu \chi }
+} \\
+&=
+\partial_\mu {F}^{\mu\nu}
++
+\partial_\mu \partial^\mu \partial^\nu \chi
+-
+\partial_\mu \partial^\nu \partial^\mu \chi \\
+&=
+\partial_\mu {F}^{\mu\nu},
+\end{aligned}
+\end{equation}
+by equality of mixed partials.  Expanding \ref{eqn:qftLecture3:580} explicitly we find
+\begin{equation}\label{eqn:qftLecture3:600}
+{A'}^\mu = A^\mu + \partial^\mu \chi,
+\end{equation}
+which is
+\begin{equation}\label{eqn:qftLecture3:620}
+\begin{aligned}
+\phi' = {A'}^0 &= A^0 + \partial^0 \chi = \phi + \dot{\chi} \\
+\BA' \cdot \Be_k = {A'}^k &= A^k + \partial^k \chi = \lr{ \BA - \spacegrad \chi } \cdot \Be_k.
+\end{aligned}
+\end{equation}
+The last of which can be written in vector notation as \( \BA' = \BA - \spacegrad \chi \).
+
+[mathjax]
