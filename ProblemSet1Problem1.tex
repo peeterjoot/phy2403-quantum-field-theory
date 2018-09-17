@@ -1,0 +1,217 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeproblem{Back to classics: relativistic electrodynamics and variational principle}{qft:problemSet1:1}{
+Given the action
+In terms of the four-vector potential \(A\), the lagrangian density of the electromagnetic field,
+interacting with a charged particle of mass m can be written as follows:
+\begin{dmath}\label{eqn:ProblemSet1Problem1:20}
+S =
+\int_{\text{all spacetime}}
+d^4 x
+\lr{
+-\inv{4}
+F_{\mu\nu}
+F^{\mu\nu}
+- A_\mu j^\mu
+}
+- m
+\int_{\text{worldline}}
+ds.
+\end{dmath}
+Here, \( F_{\mu\nu} \equiv \partial_\mu A_\nu - \partial_\nu A_\mu \) field strength tensor. The current \( j^\mu \) is the current corresponding to the particle which can be written as:
+\begin{dmath}\label{eqn:ProblemSet1Problem1:40}
+j^\mu(x) = e
+\int_{\text{worldline}}
+dX^\mu (\tau) \delta^4 ( x - X(\tau) ),
+\end{dmath}
+where \( \delta^4(x) \) is a four-dimensional delta function.  All indices are raised and lowered by means of the
+metric tensor \( g_{\mu\nu} \) and its inverse \( g^{\mu\nu} \).
+
+\makesubproblem{}{qft:problemSet1:1a}
+Use the identification \( A^0 = \phi \),
+the scalar potential, and \((A^1,A^2,A^3) = \BA\), the vector potential,
+to convince yourself that
+\( F_{01} = E_x, F_{02} = E_y, F_{03} = E_z\), and that \(F_{12} = - B_z, F_{31} = -B_y, F_{23} = - B_x \).
+\makesubproblem{}{qft:problemSet1:1b}
+Prove the Bianchi (Fixme: sp?) identity
+\begin{dmath}\label{eqn:ProblemSet1Problem1:120}
+\epsilon^{\mu\nu\alpha\beta} \partial_\nu F_{\alpha \beta} = 0,
+\end{dmath}
+and use this to show that
+the source free Maxwell's equations can be recovered directly from the
+definition of \( F_{ij} \).
+\makesubproblem{}{qft:problemSet1:1c}
+Write the Euler-Lagrange equations obtained when varying
+\cref{eqn:ProblemSet1Problem1:20}
+with respect to \( A_\mu \).  Show
+that they can be cast in terms of the field strength tensor \( F \) and \( j \). Note that when varying
+with respect to \( A_\mu \), the current is kept fixed. Using the \( \BE \) and \( \BB \) fields as the appropriate
+components of \( F \), show that the Euler-Lagrange equations for \( A_\mu \)
+ from
+\cref{eqn:ProblemSet1Problem1:20}
+reduce to the
+Maxwell equations familiar to you from electrodynamics.
+\makesubproblem{}{qft:problemSet1:1d}
+Finally, write the Euler-Lagrange equation varying with respect to the worldline of the particle.
+Show that they give \( m dU^\mu/ds = e F^{\mu\nu} U_\nu \), where \( U^\mu = dX^\mu/ds \) is the four velocity of the
+particle and \( F \) is, of course, taken at the particle's position. Convince yourself that this is
+the relativistic Lorentz force equation.
+} % makeproblem
+
+\makeanswer{qft:problemSet1:1}{
+\makeSubAnswer{}{qft:problemSet1:1a}
+With \( k = \setlr{1, 2,3} \),
+\begin{dmath}\label{eqn:ProblemSet1Problem1:60}
+\sum_k F_{0k} \Be_k
+= \sum_k \lr{ \partial_0 A_k - \partial_k A_0 } \Be_k
+= - \sum_k \lr{ \PD{t}{A^k} - \PD{x^k}{\phi} } \Be_k
+= - \PD{t}{\BA} - \spacegrad \phi
+= \BE.
+\end{dmath}
+which is the conventional scalar, plus vector potential definition of the electric field in natural units.
+For the magnetic field, it's easier to work backwards
+\begin{dmath}\label{eqn:ProblemSet1Problem1:80}
+\BB
+= \spacegrad \cross \BA
+= \epsilon_{ijk} \partial_i A^j \Be_k,
+\end{dmath}
+or, for each cyclic permutation of \( i j k = \setlr{1,2,3}\)
+\begin{dmath}\label{eqn:ProblemSet1Problem1:100}
+B^i
+= \partial_j A^k - \partial_k A^j
+= -\partial_j A_k + \partial_k A_j
+= F_{kj}
+= -F_{jk},
+\end{dmath}
+
+\makeSubAnswer{}{qft:problemSet1:1b}
+To prove \cref{eqn:ProblemSet1Problem1:120}, we use explicit expansion and an index exchange
+\begin{dmath}\label{eqn:ProblemSet1Problem1:140}
+=
+\epsilon^{\mu\nu\alpha\beta} \partial_\nu \lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
+=
+\epsilon^{\mu\nu\alpha\beta} \partial_\nu \partial_\alpha A_\beta
+-\epsilon^{\mu\nu\beta\alpha} \partial_\nu \partial_\beta A_\alpha
+=
+2 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \partial_\alpha A_\beta,
+\end{dmath}
+but because the partials are symmetric in \( \nu \alpha \) (assuming sufficient continuity of the fields components), and because the sum is antisymmetric in the same indexes, the result is zero as claimed.
+
+Expanding \cref{eqn:ProblemSet1Problem1:120} explicitly for \( \nu = 0 \), we find Gauss's law for the magnetic field
+\begin{dmath}\label{eqn:ProblemSet1Problem1:160}
+0
+=
+\epsilon^{ijk} \partial_i F_{jk}
+=
+-\partial_i B^i
+= -\spacegrad \cdot \BB,
+\end{dmath}
+For \( \nu = 1 \) % 2 3 0
+\begin{dmath}\label{eqn:ProblemSet1Problem1:180}
+0 = \partial_2 F_{30} + \partial_3 F_{02} + \partial_0 F_{23}
+= -\partial_2 E^3 + \partial_3 E^2 - \PD{t}{B^1}
+= - (\spacegrad \cross \BE)_x - \PD{t}{B_x},
+\end{dmath}
+and for \( \nu = 2 \) % 3 0 1
+\begin{dmath}\label{eqn:ProblemSet1Problem1:300}
+0 = \partial_3 F_{01} + \partial_0 F_{13} + \partial_1 F_{30}
+= \partial_3 E^1
++ \PD{t}{B^2}
+- \partial_1 E^3
+= (\spacegrad \cross \BE)_y + \PD{t}{B_y},
+\end{dmath}
+and for \( \nu = 3 \) % 0 1 2
+\begin{dmath}\label{eqn:ProblemSet1Problem1:200}
+0 = \partial_0 F_{12} + \partial_1 F_{20} + \partial_2 F_{01}
+=
+- \PD{t}{B^3}
+- \partial_1 E^2
++ \partial_2 E^1
+= - (\spacegrad \cross \BE)_z - \PD{t}{B_z},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem1:220}
+0 = \spacegrad \cross \BE + \PD{t}{\BB},
+\end{dmath}
+which is Faraday's (Fixme: name?) law.
+
+\makeSubAnswer{}{qft:problemSet1:1b}
+For the source dependent Maxwell's equations we vary the action.
+Recall that for a single field Lagrangian density \( \LL = \LL(\phi, \partial_\mu \phi) \) the variation of the action \( S = \int \LL \) can be found by Taylor expansion
+\begin{dmath}\label{eqn:ProblemSet1Problem1:240}
+\delta S
+= \int d^4 x \delta \LL
+= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \delta (\partial_\nu \phi)
+= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \partial_\nu \delta \phi
+=
+  \int d^4 x \PD{\phi}{\LL} \delta \phi
++ \int d^4 x \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} \delta \phi }
+- \int d^4 x \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} } \delta \phi
+=
+  \int d^4 x \delta \phi \lr{
+\PD{\phi}{\LL}
+- \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} }
+}
+\end{dmath}
+Assuming that \( \delta \phi \) is stationary at the boundaries killed the second integral in the second last step.  Setting \( \delta S = 0 \) gives the Euler-Lagrange equations for a Lagrangian density that is dependent on a single field and its first derivatives
+\begin{dmath}\label{eqn:ProblemSet1Problem1:260}
+0 =
+\PD{\phi}{\LL}
+- \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} }.
+\end{dmath}
+For a multiple particle field we must Taylor expand around each field variable, so we have one equation for each field
+\begin{dmath}\label{eqn:ProblemSet1Problem1:280}
+0 =
+\PD{A_\mu}{\LL}
+- \partial_\nu \lr{ \PD{(\partial_\nu A_\mu)}{\LL} }.
+\end{dmath}
+We wish to apply \cref{eqn:ProblemSet1Problem1:280} to the field Lagrangian density
+\begin{dmath}\label{eqn:ProblemSet1Problem1:320}
+\LL =
+-\inv{4}
+F_{\mu\nu}
+F^{\mu\nu}
+- A_\mu j^\mu,
+\end{dmath}
+and vary with respect to the fields \( A_{\mu} \) (or \( A^{\mu} \)).
+
+The first order partials are trivial
+\begin{dmath}\label{eqn:ProblemSet1Problem1:340}
+\PD{A_\mu}{\LL}
+=
+- j^\mu,
+\end{dmath}
+but we have to do a bit more work for the rest
+\begin{dmath}\label{eqn:ProblemSet1Problem1:360}
+\PD{(\partial_\nu A_\mu)}{\LL}
+=
+-\inv{2}
+F^{\alpha\beta} \PD{(\partial_\nu A_\mu)}{} F_{\alpha\beta}
+=
+-\inv{2}
+F^{\alpha\beta} \PD{(\partial_\nu A_\mu)}{} \lr{
+\partial_\alpha A_\beta -
+\partial_\beta A_\alpha}
+=
+-\inv{2}
+F^{\nu\mu}
++
+\inv{2}
+F^{\mu\nu}
+=
+F^{\mu\nu}.
+\end{dmath}
+Putting the pieces together, we have
+\begin{dmath}\label{eqn:ProblemSet1Problem1:380}
+0 = -j^\mu + \partial_\nu F^{\mu\nu}.
+\end{dmath}
+
+\makeSubAnswer{}{qft:problemSet1:1c}
+TODO.
+
+\makeSubAnswer{}{qft:problemSet1:1d}
+
+TODO.
+}
