@@ -35,7 +35,7 @@ the scalar potential, and \((A^1,A^2,A^3) = \BA\), the vector potential,
 to convince yourself that
 \( F_{01} = E_x, F_{02} = E_y, F_{03} = E_z\), and that \(F_{12} = - B_z, F_{31} = -B_y, F_{23} = - B_x \).
 \makesubproblem{}{qft:problemSet1:1b}
-Prove the Bianchi (Fixme: sp?) identity
+Prove the identity
 \begin{dmath}\label{eqn:ProblemSet1Problem1:120}
 \epsilon^{\mu\nu\alpha\beta} \partial_\nu F_{\alpha \beta} = 0,
 \end{dmath}
@@ -135,7 +135,7 @@ so
 \begin{dmath}\label{eqn:ProblemSet1Problem1:220}
 0 = \spacegrad \cross \BE + \PD{t}{\BB},
 \end{dmath}
-which is Faraday's (Fixme: name?) law.
+which is Faraday's law.
 
 \makeSubAnswer{}{qft:problemSet1:1b}
 For the source dependent Maxwell's equations we vary the action.
@@ -205,8 +205,14 @@ F^{\mu\nu}.
 \end{dmath}
 Putting the pieces together, we have
 \begin{dmath}\label{eqn:ProblemSet1Problem1:380}
-0 = -j^\mu + \partial_\nu F^{\mu\nu}.
+0 = -j^\mu - \partial_\nu F^{\mu\nu},
 \end{dmath}
+or
+%\begin{boxed}\label{eqn:ProblemSet1Problem1:n}
+\boxedEquation{eqn:ProblemSet1Problem1:n}{
+\partial_\mu F^{\mu\nu} = j^\nu.
+}
+%\end{boxed}
 
 \makeSubAnswer{}{qft:problemSet1:1c}
 TODO.
