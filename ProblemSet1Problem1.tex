@@ -137,7 +137,7 @@ so
 \end{dmath}
 which is Faraday's law.
 
-\makeSubAnswer{}{qft:problemSet1:1b}
+\makeSubAnswer{}{qft:problemSet1:1c}
 For the source dependent Maxwell's equations we vary the action.
 Recall that for a single field Lagrangian density \( \LL = \LL(\phi, \partial_\mu \phi) \) the variation of the action \( S = \int \LL \) can be found by Taylor expansion
 \begin{dmath}\label{eqn:ProblemSet1Problem1:240}
@@ -208,16 +208,170 @@ Putting the pieces together, we have
 0 = -j^\mu - \partial_\nu F^{\mu\nu},
 \end{dmath}
 or
-%\begin{boxed}\label{eqn:ProblemSet1Problem1:n}
-\boxedEquation{eqn:ProblemSet1Problem1:n}{
+%\begin{boxed}\label{eqn:ProblemSet1Problem1:400}
+\boxedEquation{eqn:ProblemSet1Problem1:420}{
 \partial_\mu F^{\mu\nu} = j^\nu.
 }
 %\end{boxed}
 
-\makeSubAnswer{}{qft:problemSet1:1c}
-TODO.
+For \( \nu = 0 \) this is
+\begin{dmath}\label{eqn:ProblemSet1Problem1:440}
+\partial_\mu F^{\mu 0} = j^0,
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet1Problem1:460}
+\rho
+=
+\partial_k F^{k 0}
+=
+-\partial_k F_{k 0}
+=
+\partial_k F_{0 k}
+=
+\spacegrad \cdot \BE,
+\end{dmath}
+which is Gauss's law.
+
+% for the other indexes \( \nu \) we have
+\begin{dmath}\label{eqn:ProblemSet1Problem1:480}
+j^1
+=
+\partial_\mu F^{\mu 1}
+=
+\partial_0 F^{0 1}
++
+\partial_2 F^{2 1}
++
+\partial_3 F^{3 1}
+=
+- \PD{t}{E_x}
++ \partial_2 B_z
+- \partial_3 B_y
+= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_1
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem1:500}
+j^2
+=
+\partial_\mu F^{\mu 2}
+=
+\partial_3 F^{3 2}
++
+\partial_0 F^{0 2}
++
+\partial_1 F^{1 2}
+=
+  \partial_3 B_x
+- \PD{t}{E_y}
+- \partial_1 B_z
+= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_2
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem1:520}
+j^3
+=
+\partial_\mu F^{\mu 3}
+=
+\partial_0 F^{0 3}
++
+\partial_1 F^{1 3}
++
+\partial_2 F^{2 3}
+=
+- \PD{t}{E_z}
++ \partial_1 B_y
+- \partial_2 B_x
+= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_3,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem1:540}
+\BJ = -\PD{t}{\BE} + \spacegrad \cross \BB,
+\end{dmath}
+which recovers the Ampere-Maxwell equation.
 
 \makeSubAnswer{}{qft:problemSet1:1d}
+The portion of the action that is dependent on the worldline is
+%in terms of a parameterization \( X(s) \) is
+\begin{dmath}\label{eqn:ProblemSet1Problem1:560}
+S =
+%\int_{\text{worldline}} ds \lr{ - m - e A_\mu \frac{dX^\mu}{ds} }
+\int_{\text{worldline}} \lr{ - m ds - e A_\mu dX^\mu }
+\end{dmath}
 
-TODO.
+Let's consider the variation of each of these terms separately, starting with \( \delta ds \)
+\begin{dmath}\label{eqn:ProblemSet1Problem1:580}
+\delta \int ds
+=
+\delta \int \sqrt{ dX^\mu dX_\mu }
+=
+\int \inv{2 ds} 2 dX^\mu \delta dX_\mu
+=
+\int \frac{dX^\mu}{ds} d \delta X_\mu
+=
+\int d \lr{ \frac{dX^\mu}{ds} \delta X_\mu } - d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu
+=
+\evalbar{ \frac{dX^\mu}{ds} \delta X_\mu }{\Delta s} - \int d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu.
+\end{dmath}
+The endpoints of the worldline are presumed to be stationary, which kills the boundary term, leaving just
+\begin{dmath}\label{eqn:ProblemSet1Problem1:600}
+\delta \int ds = - \int d U^\mu \delta X_\mu.
+\end{dmath}
+Now let's compute the variation of the potential term
+\begin{dmath}\label{eqn:ProblemSet1Problem1:620}
+\delta \int A_\mu dX^\mu
+=
+\int (\delta A_\mu) dX^\mu
++
+\int A_\mu \delta dX^\mu
+=
+\int \partial_\nu A_\mu \delta X^\nu dX^\mu
+-
+\int d A_\mu \delta X^\mu
+=
+\int \partial_\nu A_\mu \delta X^\nu U^\mu ds
+-
+\int \partial_\nu A_\mu dX^\nu \delta X^\mu
+=
+\int \lr{ \partial_\nu A_\mu U^\mu \delta X^\nu
+-
+\partial_\nu A_\mu U^\nu \delta X^\mu
+}
+ds
+=
+\int \lr{ \partial_\nu A_\mu - \partial_\mu A_\nu } U^\mu \delta X^\nu ds
+=
+\int F_{\nu\mu} U^\mu \delta X^\nu ds
+=
+\int F^{\nu\mu} U_\mu \delta X_\nu ds.
+\end{dmath}
+Here the boundary term has been dropped again after integration by parts, and an index switcheroo was done to factor out a common
+\( U^\mu \delta X^\nu ds \) term from the integrand, and we finish off with a set of raising and lowering operations on all the matched indexes.  Putting the pieces back together we have
+\begin{dmath}\label{eqn:ProblemSet1Problem1:640}
+\delta S
+=
+  \int
+\lr{
+-m \dot{U}^\nu
+-
+e
+F^{\nu\mu} U_\mu
+}
+\delta X_\nu ds
+=
+  \int
+\lr{
+m \dot{U}^\mu
+-
+e
+F^{\mu\nu} U_\nu
+}
+\delta X_\mu ds
+.
+\end{dmath}
+Requiring \( \delta S = 0 \) for all worldline path variations \( \delta X_\mu \) means that the equations of motion are
+\begin{dmath}\label{eqn:ProblemSet1Problem1:660}
+m \frac{dU^\mu}{ds}
+=
+e
+F^{\mu\nu} U_\nu,
+\end{dmath}
+as expected.
 }
