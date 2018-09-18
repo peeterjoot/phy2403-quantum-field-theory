@@ -367,11 +367,70 @@ F^{\mu\nu} U_\nu
 .
 \end{dmath}
 Requiring \( \delta S = 0 \) for all worldline path variations \( \delta X_\mu \) means that the equations of motion are
-\begin{dmath}\label{eqn:ProblemSet1Problem1:660}
+%\begin{dmath}\label{eqn:ProblemSet1Problem1:660}
+\boxedEquation{eqn:ProblemSet1Problem1:660}{
 m \frac{dU^\mu}{ds}
 =
 e
 F^{\mu\nu} U_\nu,
-\end{dmath}
+}
+%\end{dmath}
 as expected.
+
+To unpack this and obtain the conventional Lorentz force equation we need to relate the proper time derivatives to the time of a stationary observer
+\begin{dmath}\label{eqn:ProblemSet1Problem1:680}
+\frac{d}{ds} =
+\frac{dt}{ds}
+\frac{d}{dt},
+% = (1, \Bv) \frac{dt}{ds},
+\end{dmath}
+The stationary observer's world line is \( X^\mu = (t, \Bx) \), and the spacetime interval on that worldline is
+\begin{dmath}\label{eqn:ProblemSet1Problem1:700}
+ds^2 = dt^2 - d\Bx^2,
+\end{dmath}
+or
+\begin{equation}\label{eqn:ProblemSet1Problem1:720}
+\lr{\frac{ds}{dt}}^2 = 1 - {\frac{dx}{dt}}^2 = 1 - \Bv^2.
+\end{equation}
+\Cref{eqn:ProblemSet1Problem1:680} can now be written as
+\begin{equation}\label{eqn:ProblemSet1Problem1:740}
+\frac{d}{ds} =
+\inv{\sqrt{ 1 - \Bv^2 }}
+\frac{d}{dt}
+\equiv \gamma
+\frac{d}{dt}.
+\end{equation}
+In particular, the proper velocity is
+\begin{dmath}\label{eqn:ProblemSet1Problem1:760}
+U^\mu = \gamma \lr{ 1, \Bv }.
+\end{dmath}
+
+First inserting \( \mu = 0 \) into \cref{eqn:ProblemSet1Problem1:660} now gives
+\begin{dmath}\label{eqn:ProblemSet1Problem1:780}
+\frac{d}{ds} \frac{m}{\sqrt{1 - \Bv^2}}
+= e F^{0 k} U_k
+= (-1)^2 e F_{0 k} U^k
+= e \BE \cdot \Bv \gamma,
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet1Problem1:800}
+\frac{d}{dt} \frac{m}{\sqrt{1 - \Bv^2}} = e \BE \cdot \Bv.
+\end{dmath}
+This is the timelike portion of the Lorentz force equation in non-covariant form and natural units (cf. \citep{landau1980classical} eq. (17.7).)
+
+For the \( \mu \ne 0 \) case, we find
+\begin{dmath}\label{eqn:ProblemSet1Problem1:820}
+\gamma \frac{d}{dt} \frac{m \Bv}{\sqrt{1 - \Bv^2}}
+= e F^{j \nu} U_\nu \Be_j
+= e F^{j 0} \Be_j
+- e \sum_{1 \le (j \ne k) \le 3} F^{j k} v^k \Be_j \gamma
+= e \BE + e \epsilon_{jki} B^i v^k \Be_j \gamma
+= e \BE + e \Bv \cross \BB \gamma,
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet1Problem1:840}
+\frac{d\Bp}{dt} = e \BE + e \Bv \cross \BB,
+\end{dmath}
+which is the Lorentz force equation in natural units in terms of \( \Bp = d(\gamma m \Bv)/dt \), the relativistically correct momentum from the viewpoint of a stationary observer.
+=
 }
