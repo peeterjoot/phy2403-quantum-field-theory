@@ -2,6 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
+%{
 \input{../latex/blogpost.tex}
 \renewcommand{\basename}{qftLecture4}
 \renewcommand{\dirname}{notes/phy2403/}
@@ -46,13 +47,13 @@ called the ``Kinetic term'', which mimics \( \int dt \dot{q}^2 \) that we'd see 
 \item \( \partial_\mu \phi \partial_\nu \partial^\nu \partial^\mu \phi \)
 \item \( \lr{\partial_\mu \phi \partial^\mu \phi}^2 \)
 \item \( f(\phi) \partial_\mu \phi \partial^\mu \phi \)
-\item \( f(\phi, \partial_\mu \phi \partial^\mu \phi \)
+\item \( f(\phi, \partial_\mu \phi \partial^\mu \phi) \)
 \item \( V(\phi) \)
 \end{itemize}
 
-It turns out that nature is described by a finite number of terms.  We will now consider some scalar actions in \( d = 2, 3, 4, 5 \) dimensions even though the real world is only \( d = 4 \).  Some of the \( d < 4 \) theories are relevant in condensed matter studies, and \( d = 5 \) is just for fun (as it applies to string theories.)  This will be motivated
+It turns out that nature (i.e. three spatial dimensions and one time dimension) is described by a finite number of terms.  We will now utilize dimensional analysis to determine some of the allowed forms of the action for scalar field theories in \( d = 2, 3, 4, 5 \) dimensions.  Even though the real world is only \( d = 4 \), some of the \( d < 4 \) theories are relevant in condensed matter studies, and \( d = 5 \) is just for fun (but also applies to string theories.)
 
-Assigning dimensions \( [x] \sim \inv{M} \) by choice of units.  Define \([\phi]\) such that the kinetic term is dimensionless in d spacetime dimensions
+With \( [x] \sim \inv{M} \) in natural units, we must define \([\phi]\) such that the kinetic term is dimensionless in d spacetime dimensions
 
 \begin{dmath}\label{eqn:qftLecture4:40}
 \begin{aligned}
@@ -66,24 +67,22 @@ so it must be that
 [\phi] = M^{(d-2)/2}
 \end{dmath}
 
-An alternate convention for this dimensional analysis is to use the power of the mass units, that is
+It will be easier to characterize the dimensionality of any given term by the power of the mass units, that is
 
 \begin{dmath}\label{eqn:qftLecture4:80}
 \begin{aligned}
 [\text{mass}] &= 1 \\
 [d^d x] &= -d \\
 [\partial_\mu] &= 1 \\
-[\phi] &= (d-2)/2.
+[\phi] &= (d-2)/2 \\
 [S] &= 0.
 \end{aligned}
 \end{dmath}
-The action had dimensions of \( \hbar \), so in natural units, it must be dimensionless.
-
-The action is
+Since the action is
 \begin{dmath}\label{eqn:qftLecture4:100}
 S = \int d^d x \lr{ \LL(\phi, \partial_\mu \phi) },
 \end{dmath}
-so the Lagrangian density dimensions must be \( [d] \).  We will abuse language in QFT and call the Lagrangian density the Lagrangian.
+and because action had dimensions of \( \Hbar \), so in natural units, it must be dimensionless, the Lagrangian density dimensions must be \( [d] \).  We will abuse language in QFT and call the Lagrangian density the Lagrangian.
 
 \section{\( d = 2 \)}
 
@@ -177,5 +176,215 @@ where \( m, \mu, \mu' \) all have mass dimensions.  In 5D there are no marginal 
 
 From the point of view of partical physics, all the terms in the Lagrangian must be the ones that are relevant at long distances.
 
+\section{Least action principle (classical field theory).}
+
+Now we want to study 4D scalar theories.  We have some action
+\begin{dmath}\label{eqn:qftLecture4:380}
+S[\phi] = \int d^4 x \LL(\phi, \partial_\mu \phi).
+\end{dmath}
+
+Let's keep an example such as the following in mind
+\begin{dmath}\label{eqn:qftLecture4:400}
+\LL = \underbrace{\inv{2} \partial_\mu \phi \partial^\mu \phi}_{\text{Kinetic term}} - \underbrace{m^2 \phi - \lambda \phi^4}_{\text{all relevant and marginal couplings}}.
+\end{dmath}
+The even powers can be justified by assuming there is some symmetry that kills the odd powered terms.
+
+We will be integrating over a space time region such as that depicted in
+F1
+where a cylindrical spatial cross section is depicted that we allow to tend towards infinitity.  We demand that the field is fixed on the infinite spatial boundaries.  The easiest way to demand that the field dies off on the spatial boundaries, that is
+\begin{dmath}\label{eqn:qftLecture4:420}
+\lim_{\Abs{\Bx} \rightarrow \infty} \phi(\Bx) \rightarrow 0.
+\end{dmath}
+The functional \( \phi(\Bx, t) \) that obeys the boundary condition as stated extremizes \( S[\phi] \).
+
+Extremizing the action means that we seek \( \phi(\Bx, t) \)
+\begin{equation}\label{eqn:qftLecture4:440}
+\delta S[\phi] = 0 = S[\phi + \delta \phi] - S[\phi].
+\end{equation}
+
+How do we compute the variation?
+\begin{dmath}\label{eqn:qftLecture4:460}
+\delta S = \int d^d x \lr{ \LL(\phi + \delta \phi, \partial_\mu \phi + \partial_\mu \delta \phi) - \LL(\phi, \partial_\mu \phi) }
+= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_mu \phi)}{\LL} (\partial_\mu \delta \phi) }
+= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi
++ \partial_\mu \lr{ \PD{(\partial_mu \phi)}{\LL} \delta \phi}
+- \lr{ \partial_\mu \PD{(\partial_mu \phi)}{\LL} } \delta \phi
+}
+=
+\int d^d x
+\delta \phi
+\lr{ \PD{\phi}{\LL}
+- \partial_\mu \PD{(\partial_mu \phi)}{\LL} }
++ \int d^3 \sigma_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi }
+\end{dmath}
+
+If we are explicit about the boundary term, we write it as
+\begin{dmath}\label{eqn:qftLecture4:480}
+\int dt d^3 \Bx \partial_t \lr{ \PD{(\partial_t \phi)}{\LL} \delta \phi }
+- \spacegrad \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi }
+=
+\int d^3 \Bx \evalrange{ \PD{(\partial_t \phi)}{\LL} \delta \phi }{t = -T}{t = T}
+- \int dt d^2 \BS \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi }.
+\end{dmath}
+but \( \delta \phi = 0 \) at \( t = \pm T \) and also at the spatial boundries of the integration region.
+
+This leaves
+\begin{dmath}\label{eqn:qftLecture4:500}
+\delta S[\phi] = \int d^d x \delta \phi
+\lr{ \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_mu \phi)}{\LL} } = 0 \forall \delta \phi.
+\end{dmath}
+That is
+%\begin{dmath}\label{eqn:qftLecture4:520}
+\boxedEquation{eqn:qftLecture4:540}{
+\PD{\phi}{\LL} - \partial_\mu \PD{(\partial_mu \phi)}{\LL} = 0
+}
+%\end{dmath}
+This are the Euler-Lagrange equations for a single scalar field.
+
+Returning to our sample scalar Lagrangian
+\begin{dmath}\label{eqn:qftLecture4:560}
+\LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \inv{2} m^2 \phi^2 - \frac{\lambda}{4} \phi^4.
+\end{dmath}
+This example is related to the Ising model which has a \( \phi \rightarrow -\phi \) symmetry.
+Applying the Euler-Lagrange equations, we have
+\begin{dmath}\label{eqn:qftLecture4:580}
+\PD{\phi}{\LL} = -m^2 \phi - \lambda \phi^3,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture4:600}
+\PD{(\partial_\mu \phi)}{\LL} 
+=
+\PD{(\partial_\mu \phi)}{} \lr{
+\inv{2} \partial_\nu \phi \partial^\nu \phi }
+=
+\inv{2} \partial^\nu \phi 
+\PD{(\partial_\mu \phi)}{} 
+\partial_\nu \phi 
++
+\inv{2} \partial_\nu \phi 
+\PD{(\partial_\mu \phi)}{} 
+\partial_\alpha \phi g^{\nu\alpha}
+=
+\inv{2} \partial^\mu \phi 
++
+\inv{2} \partial_\nu \phi g^{\nu\mu}
+=
+\partial^\mu \phi
+\end{dmath}
+so we have
+\begin{dmath}\label{eqn:qftLecture4:620}
+0
+=
+\PD{\phi}{\LL} -\partial_\mu
+\PD{(\partial_\mu \phi)}{\LL}
+=
+-m^2 \phi - \lambda \phi^3 - \partial_\mu \partial^\mu \phi.
+\end{dmath}
+
+For \( \lambda = 0 \), the free field theory limit, this is just
+\begin{dmath}\label{eqn:qftLecture4:640}
+\partial_\mu \partial^\mu \phi + m^2 \phi = 0.
+\end{dmath}
+Written out from the observer frame, this is
+\begin{dmath}\label{eqn:qftLecture4:660}
+(\partial_t)^2 \phi - \spacegrad^2 \phi + m^2 \phi = 0.
+\end{dmath}
+
+With a non-zero mass term
+\begin{dmath}\label{eqn:qftLecture4:680}
+\lr{ \partial_t^2 - \spacegrad^2  + m^2 } \phi = 0,
+\end{dmath}
+is called the Klein-Gordan equation.
+
+If we also had \( m = 0 \) we'd have
+\begin{dmath}\label{eqn:qftLecture4:700}
+\lr{ \partial_t^2 - \spacegrad^2 } \phi = 0,
+\end{dmath}
+which is the wave equation (for a massless free field).  This is also called the D'Alembert equation, which is familiar from electromagnetism where we have
+\begin{dmath}\label{eqn:qftLecture4:720}
+\begin{aligned}
+\lr{ \partial_t^2 - \spacegrad^2 } \BE &= 0 \\
+\lr{ \partial_t^2 - \spacegrad^2 } \BB &= 0,
+\end{aligned}
+\end{dmath}
+in a source free region.
+
+\section{Canonical quantization.}
+
+\begin{dmath}\label{eqn:qftLecture4:740}
+\LL = \inv{2} \dot{q} - \frac{\omega^2}{2} q^2
+\end{dmath}
+This has solution \(\ddot{q} = - \omega^2 q\).
+
+Let
+\begin{dmath}\label{eqn:qftLecture4:760}
+p = \PD{\dot{q}}{\LL} = \dot{q}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture4:780}
+H(p,q) = \evalbar{p \dot{q} - \LL}{\dot{q}(p, q)}
+= p p - \inv{2} p^2 + \frac{\omega^2}{2} q^2 = \frac{p^2}{2} + \frac{\omega^2}{2} q^2
+\end{dmath}
+
+In QM we quantize by mapping Poisson brackets to commutators.
+\begin{dmath}\label{eqn:qftLecture4:800}
+\antisymmetric{\hatp}{\hatq} = -i
+\end{dmath}
+One way to represent is to say that states are \( \Psi(\hatq) \), a wave function, \( \hatq \) acts by \( q \)
+\begin{dmath}\label{eqn:qftLecture4:820}
+\hatq \Psi = q \Psi(q)
+\end{dmath}
+With
+\begin{dmath}\label{eqn:qftLecture4:840}
+\hatp = -i \PD{q}{},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:qftLecture4:860}
+\antisymmetric{ -i \PD{q}{} } { q} = -i
+\end{dmath}
+
+Let's introduce an expicit space time split.  We'll write
+\begin{dmath}\label{eqn:qftLecture4:880}
+L = \int d^3 x \lr{
+\inv{2} (\partial_0 \phi(\Bx, t))^2 - \inv{2} \lr{ \spacegrad \phi(\Bx, t) }^2 - \frac{m^2}{2} \phi
+},
+\end{dmath}
+so that the action is
+\begin{dmath}\label{eqn:qftLecture4:900}
+S = \int dt L.
+\end{dmath}
+The dynamical variables are \( \phi(\Bx) \).  We define
+\begin{dmath}\label{eqn:qftLecture4:920}
+\pi(\Bx, t) = \frac{\delta L}{\delta (\partial_0 \phi(\Bx, t))}
+=
+\partial_0 \phi(\Bx, t),
+=
+\dot{\phi}(\Bx, t),
+\end{dmath}
+called the canonical momentum, or the momentum conjugate to \( \phi(\Bx, t) \).
+Why \( \delta \)?  Has to do with an implicit dirac function to eliminate the integral?
+
+\begin{dmath}\label{eqn:qftLecture4:940}
+H
+= \int d^3 x \evalbar{\lr{ \pi(\bar{\Bx}, t) \dot{\phi}(\bar{\Bx}, t) - L }}{\dot{\phi}(\bar{\Bx}, t) = \pi(x, t) }
+= \int d^3 x \lr{ (\pi(\Bx, t))^2 - \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m}{2} \phi^2 },
+\end{dmath}
+
+or
+\begin{dmath}\label{eqn:qftLecture4:960}
+H
+= \int d^3 x \lr{ \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi(\Bx, t))^2 + \frac{m}{2} (\phi(\Bx, t))^2 }
+\end{dmath}
+
+A consequence (how?) is:
+\begin{dmath}\label{eqn:qftLecture4:980}
+\antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \delta^3(\Bx - \By).
+\end{dmath}
+
+Like:
+\begin{dmath}\label{eqn:qftLecture4:1000}
+\antisymmetric{p_i}{q_j} = -i \delta_{ij}.
+\end{dmath}
+
+%}
 %\EndArticle
 \EndNoBibArticle
