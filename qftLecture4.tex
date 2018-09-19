@@ -1,5 +1,5 @@
 %
-% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 \input{../latex/blogpost.tex}
@@ -14,6 +14,7 @@
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
+\usepackage{macros_cal}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 4: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -25,7 +26,156 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\paragraph{YYY}
+\section{Principles (cont.)}
+
+\begin{itemize}
+\item Lorentz (Poincar\'e : Lorentz and spacetime translations)
+\item locality
+\item dimensional analysis
+\item gauge invariance
+\end{itemize}
+
+These are the requirements for an action.  We postulated an action that had the form
+\begin{dmath}\label{eqn:qftLecture4:20}
+\int d^d x \partial_\mu \phi \partial^\mu \phi,
+\end{dmath}
+called the ``Kinetic term'', which mimics \( \int dt \dot{q}^2 \) that we'd see in quantum or classical mechanics.  In principle there exists an infinite number of local Poincar\'e invariant terms that we can write.  Examples:
+
+\begin{itemize}
+\item \( \partial_\mu \phi \partial^\mu \phi \)
+\item \( \partial_\mu \phi \partial_\nu \partial^\nu \partial^\mu \phi \)
+\item \( \lr{\partial_\mu \phi \partial^\mu \phi}^2 \)
+\item \( f(\phi) \partial_\mu \phi \partial^\mu \phi \)
+\item \( f(\phi, \partial_\mu \phi \partial^\mu \phi \)
+\item \( V(\phi) \)
+\end{itemize}
+
+It turns out that nature is described by a finite number of terms.  We will now consider some scalar actions in \( d = 2, 3, 4, 5 \) dimensions even though the real world is only \( d = 4 \).  Some of the \( d < 4 \) theories are relevant in condensed matter studies, and \( d = 5 \) is just for fun (as it applies to string theories.)  This will be motivated
+
+Assigning dimensions \( [x] \sim \inv{M} \) by choice of units.  Define \([\phi]\) such that the kinetic term is dimensionless in d spacetime dimensions
+
+\begin{dmath}\label{eqn:qftLecture4:40}
+\begin{aligned}
+[d^d x] &\sim \inv{M^d} \\
+[\partial_\mu] &\sim M
+\end{aligned}
+\end{dmath}
+
+so it must be that
+\begin{dmath}\label{eqn:qftLecture4:60}
+[\phi] = M^{(d-2)/2}
+\end{dmath}
+
+An alternate convention for this dimensional analysis is to use the power of the mass units, that is
+
+\begin{dmath}\label{eqn:qftLecture4:80}
+\begin{aligned}
+[\text{mass}] &= 1 \\
+[d^d x] &= -d \\
+[\partial_\mu] &= 1 \\
+[\phi] &= (d-2)/2.
+[S] &= 0.
+\end{aligned}
+\end{dmath}
+The action had dimensions of \( \hbar \), so in natural units, it must be dimensionless.
+
+The action is
+\begin{dmath}\label{eqn:qftLecture4:100}
+S = \int d^d x \lr{ \LL(\phi, \partial_\mu \phi) },
+\end{dmath}
+so the Lagrangian density dimensions must be \( [d] \).  We will abuse language in QFT and call the Lagrangian density the Lagrangian.
+
+\section{\( d = 2 \)}
+
+Because \( [\partial_\mu \phi \partial^\mu \phi ] = 2 \), the scalar field must be dimension zero, or in symbols
+\begin{dmath}\label{eqn:qftLecture4:120}
+[\phi] = 0.
+\end{dmath}
+This means that introducing any function \( f(\phi) = 1 + a \phi + b\phi^2 + c \phi^3 + \cdots \) is also dimensionless, and
+\begin{dmath}\label{eqn:qftLecture4:140}
+[f(\phi) \partial_\mu \phi \partial^\mu \phi ] = 2,
+\end{dmath}
+for any \( f(\phi) \).  Another implication of this is that the a potential term in the Lagrangian \( [V(\phi)] = 0 \) needs a coupling constant of dimension 2.  Letting \( \mu \) have mass dimensions, our Lagrangian must have the form
+\begin{dmath}\label{eqn:qftLecture4:160}
+f(\phi) \partial_\mu \phi \partial^\mu \phi + \mu^2 V(\phi).
+\end{dmath}
+An infinite nubmer of coupling constants of positive mass dimensions for \( V(\phi) \) are also allowed.  If we have higher order derivative terms, then we need to compenstate for the negative mass dimensions.   Example (still for \( d = 2 \)).
+\begin{dmath}\label{eqn:qftLecture4:180}
+\LL =
+f(\phi) \partial_\mu \phi \partial^\mu \phi + \mu^2 V(\phi) + \inv{{\mu'}^2}\partial_\mu \phi \partial_\nu \partial^\nu \partial^\mu \phi + \lr{ \partial_\mu \phi \partial^\mu \phi }^2 \inv{\tilde{\mu}^2}.
+\end{dmath}
+The last two terms, called \underline{couplings} (i.e. any non-kinetic term), are examples of terms with negative mass dimension.  There is an infinite number of those in any theory in any dimension.
+
+\paragraph{Definitions}
+
+\begin{itemize}
+\item Couplings that are dimensionless are called (classically) marginal.
+\item Couplings that have positive mass dimension are called (classically) relevant.
+\item Couplings that have negative mass dimension are called (classically) irrelevant.
+\end{itemize}
+
+In QFT we are generally interested in the couplings that are measurable at long distances for some given energy.  Classically irrelevant theories are generally not interesting in \( d > 2 \), so we are very lucky that we don't live in three dimensional space.  This means that we can get away with a finite number of classically marginal and relevant couplings in 3 or 4 dimensions.  This is the point of the Wilcek's article mentioned in the class forum (TODO: reference).
+
+Long distance physics in any dimension is described by the marginal and relevant couplings.  The irrelevant couplings die off at low energy.  In two dimensions, a priori, an infinite number of marginal and relevant couplings are possible.  2D is a bad place to live!
+
+\section{\( d = 3 \)}
+
+Now we have
+\begin{dmath}\label{eqn:qftLecture4:200}
+[\phi] = \inv{2}
+\end{dmath}
+so that
+\begin{dmath}\label{eqn:qftLecture4:220}
+[\partial_\mu \phi \partial^\mu \phi] = 3.
+\end{dmath}
+
+A 3D Lagrangian could have local terms such as
+\begin{dmath}\label{eqn:qftLecture4:240}
+\LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \mu^{3/2} \phi^3 + \mu' \phi^4
++ \lr{\mu''}{1/2} \phi^5
++ \lambda \phi^6.
+\end{dmath}
+where \( m, \mu, \mu'' \) all have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
+\( m, \mu, \mu'' \) are relevant, and \( \lambda \) marginal.  We stop at the sixth power, since any power after that will be irrelevant.
+
+\section{\( d = 4 \)}
+
+Now we have
+\begin{dmath}\label{eqn:qftLecture4:260}
+[\phi] = 1
+\end{dmath}
+so that
+\begin{dmath}\label{eqn:qftLecture4:280}
+[\partial_\mu \phi \partial^\mu \phi] = 4.
+\end{dmath}
+
+In this number of dimensions \( \phi^k \partial_\mu \phi \partial^\mu \) is an irrelevant coupling.
+
+A 4D Lagrangian could have local terms such as
+\begin{dmath}\label{eqn:qftLecture4:300}
+\LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \mu \phi^3 + \lambda \phi^4.
+\end{dmath}
+where \( m, \mu \) have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
+\( m, \mu \) are relevant, and \( \lambda \) is marginal.
+
+\section{\( d = 5 \)}
+
+Now we have
+\begin{dmath}\label{eqn:qftLecture4:320}
+[\phi] = \frac{3}{2},
+\end{dmath}
+so that
+\begin{dmath}\label{eqn:qftLecture4:340}
+[\partial_\mu \phi \partial^\mu \phi] = 5.
+\end{dmath}
+
+A 5D Lagrangian could have local terms such as
+\begin{dmath}\label{eqn:qftLecture4:360}
+\LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \sqrt{\mu} \phi^3 + \inv{\mu'} \phi^4.
+\end{dmath}
+where \( m, \mu, \mu' \) all have mass dimensions.  In 5D there are no marginal couplings.  Dimension 4 is the last dimension where marginal couplings exist.  In condensed matter physics 4D is called the ``upper critical dimension''.
+
+From the point of view of partical physics, all the terms in the Lagrangian must be the ones that are relevant at long distances.
 
 %\EndArticle
 \EndNoBibArticle
