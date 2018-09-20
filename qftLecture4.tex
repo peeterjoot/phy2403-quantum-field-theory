@@ -18,7 +18,7 @@
 \usepackage{macros_cal}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 4: XXX.  Taught by Prof.\ Erich Poppitz}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 4: Scalar action, least action principle, Euler-Lagrange equations for a field, canonical quantization.  Taught by Prof.\ Erich Poppitz}
 %\chapter{XXX}
 \label{chap:qft4}
 
@@ -113,7 +113,7 @@ The last two terms, called \underline{couplings} (i.e. any non-kinetic term), ar
 \item Couplings that have negative mass dimension are called (classically) irrelevant.
 \end{itemize}
 
-In QFT we are generally interested in the couplings that are measurable at long distances for some given energy.  Classically irrelevant theories are generally not interesting in \( d > 2 \), so we are very lucky that we don't live in three dimensional space.  This means that we can get away with a finite number of classically marginal and relevant couplings in 3 or 4 dimensions.  This is the point of the Wilcek's article mentioned in the class forum (TODO: reference).
+In QFT we are generally interested in the couplings that are measurable at long distances for some given energy.  Classically irrelevant theories are generally not interesting in \( d > 2 \), so we are very lucky that we don't live in three dimensional space.  This means that we can get away with a finite number of classically marginal and relevant couplings in 3 or 4 dimensions.  This is the point of the Wilcek's article mentioned in the class forum \citep{wilczek2007fundamental}.
 
 Long distance physics in any dimension is described by the marginal and relevant couplings.  The irrelevant couplings die off at low energy.  In two dimensions, a priori, an infinite number of marginal and relevant couplings are possible.  2D is a bad place to live!
 
@@ -189,8 +189,8 @@ Let's keep an example such as the following in mind
 \end{dmath}
 The even powers can be justified by assuming there is some symmetry that kills the odd powered terms.
 
-We will be integrating over a space time region such as that depicted in
-F1
+We will be integrating over a space time region such as that depicted in \cref{fig:spacetimeCylinder:spacetimeCylinderFig1},
+\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
 where a cylindrical spatial cross section is depicted that we allow to tend towards infinitity.  We demand that the field is fixed on the infinite spatial boundaries.  The easiest way to demand that the field dies off on the spatial boundaries, that is
 \begin{dmath}\label{eqn:qftLecture4:420}
 \lim_{\Abs{\Bx} \rightarrow \infty} \phi(\Bx) \rightarrow 0.
@@ -386,5 +386,4 @@ Like:
 \end{dmath}
 
 %}
-%\EndArticle
-\EndNoBibArticle
+\EndArticle
