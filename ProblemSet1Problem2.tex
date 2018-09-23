@@ -2,12 +2,68 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet1:2}{
+\makeproblem{Part of Problem 2.2 from Peskin and Schroeder (reproduced below).}{qft:problemSet1:2}{
+Consider a complex scalar field with action \( S = \int d^4x\lr{\partial_\mu \phi^\conj \partial^\mu \phi - m^2 \phi^\conj \phi}\).  When doing the variational principle consider \( \phi \) and \(\phi^\conj \) as independent, rather than their real and imaginary parts (this is equivalent, but more convenient).
+
 \makesubproblem{}{qft:problemSet1:2a}
+Show that \( H = \int d^3x \lr{ \pi^\conj \pi + \spacegrad \phi^\conj \cdot \spacegrad \phi + m^2 \phi^\conj \phi } \) and that the Klein-Gordon equation is obeyed by \( \phi \) and \( \phi^\conj\).
+\makesubproblem{}{qft:problemSet1:2b}
+Introduce complex amplitudes, diagonalize the Hamiltonian, and quantize the theory. Show that the theory has now two sets of particles.
+\makesubproblem{}{qft:problemSet1:2c}
+Write the charge conserved due to the global \( U(1) \) symmetry, \( Q = \int d^3 x \frac{i}{2} \lr{ \phi^\conj \pi^\conj - \pi \phi } \),
+in
+terms of creation and annihilation operators and find the charge of the particles of each type.
 } % makeproblem
 
 \makeanswer{qft:problemSet1:2}{
+Before proceeding to the question as stated, let's compute the Euler-Lagrange equations to verify that we find the Klein-Gordon equation.
+\begin{dmath}\label{eqn:ProblemSet1Problem2:20}
+\begin{aligned}
+\PD{\phi}{\LL} &= -m^2 \phi^\conj \\
+\PD{(\partial_\mu \phi)}{\LL} &= \partial^\mu \phi^\conj \\
+\PD{\phi^\conj}{\LL} &= -m^2 \phi       \\
+\PD{(\partial_\mu \phi^\conj)}{\LL} &= \partial^\mu \phi,
+\end{aligned}
+\end{dmath}
+so the equations of the field are respectively
+\begin{dmath}\label{eqn:ProblemSet1Problem2:40}
+\begin{aligned}
+\partial_\mu \partial^\mu \phi^\conj &=  -m^2 \phi^\conj \\
+\partial_\mu \partial^\mu \phi &=  -m^2 \phi,
+\end{aligned}
+\end{dmath}
+as expected.
 \makeSubAnswer{}{qft:problemSet1:2a}
+The Lagrangian density when written out explicitly is
+\begin{dmath}\label{eqn:ProblemSet1Problem2:60}
+\LL = \partial_0 \phi^\conj \partial_0 \phi - (\spacegrad \phi^\conj) \cdot (\spacegrad \phi) - m^2 \phi^\conj \phi,
+\end{dmath}
+so the conjugate momentum densities are
+\begin{dmath}\label{eqn:ProblemSet1Problem2:80}
+\begin{aligned}
+\pi(\Bx, t) &= \PD{(\partial_0 \phi)}{\LL} = \partial_0 \phi^\conj \\
+\pi^\conj(\Bx, t) &= \PD{(\partial_0 \phi^\conj)}{\LL} = \partial_0 \phi \\
+\end{aligned}
+\end{dmath}
+
+The Hamiltonian is
+\begin{dmath}\label{eqn:ProblemSet1Problem2:100}
+H
+= \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\conj \partial_0 \phi^\conj - \LL }
+=
+\int d^3 x \lr{ \pi \pi^\conj + \pi^\conj \pi - \pi \pi^\conj +
+(\spacegrad \phi^\conj) \cdot (\spacegrad \phi) + m^2 \phi^\conj \phi
+ }
+=
+\int d^3 x \lr{ \pi^\conj \pi +
+(\spacegrad \phi^\conj) \cdot (\spacegrad \phi) + m^2 \phi^\conj \phi
+ }
+\end{dmath}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:2b}
+
+TODO.
+\makeSubAnswer{}{qft:problemSet1:2c}
 
 TODO.
 }
