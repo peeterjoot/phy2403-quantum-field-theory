@@ -40,3 +40,8 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
 ../latex/bin/lgrep qftLecture4.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture4.tex
+../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture5.tex
+
+../latex/bin/lgrep usefulFormulas.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
