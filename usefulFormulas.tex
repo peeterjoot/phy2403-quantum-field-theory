@@ -4,6 +4,70 @@
 %
 %\paragraph{Useful identities.}
 
+\begin{itemize}
+\item Gaussian
 \begin{dmath}\label{eqn:usefulFormulas:20}
 \int_{-\infty}^\infty e^{a x^2} dx = \sqrt{\frac{-\pi}{a}}.
 \end{dmath}
+\item Fourier transform sign and \( \pi \) placement convention
+\begin{dmath}\label{eqn:usefulFormulas:40}
+\begin{aligned}
+f(x) &= \int \frac{d^n k}{(2 \pi)^n} f(k) e^{i k \cdot x} \\
+f(k) &= \int d^n x f(x) e^{-i k \cdot x}.
+\end{aligned}
+\end{dmath}
+\item Delta function representation.
+
+Setting \( f(x) = \delta^n(x) \) implies \( f(k) = 1 \) and so
+\begin{dmath}\label{eqn:usefulFormulas:60}
+\delta(x) = \int \frac{d^n k}{(2 \pi)^n} e^{i k \cdot x}.
+\end{dmath}
+
+\item Correct sign for the commutator
+\begin{dmath}\label{eqn:usefulFormulas:80}
+\antisymmetric{x_r}{p_s} = i \delta_{rs}.
+\end{dmath}
+\item Hamilton's equations
+\begin{dmath}\label{eqn:usefulFormulas:100}
+\begin{aligned}
+-dH &= d(\LL - p \dot{q}) = \PD{q}{\LL} dq + \cancel{\PD{\dot{q}}{\LL} d\dot{q}} + \PD{t}{\LL} dt - dp \dot{q} - \cancel{p d\dot{q}} \\
+dH &=
+\PD{q}{H} dq
++
+\PD{p}{H} dp
++
+\PD{t}{H} dt,
+\end{aligned}
+\end{dmath}
+so
+\begin{equation}\label{eqn:usefulFormulas:120}
+\PD{q}{H} = -\dot{p},\qquad
+\PD{p}{H} = \dot{q},\qquad
+\PD{t}{H} = -\PD{t}{\LL}.
+\end{equation}
+\item Matrix element for the momentum and position operators
+\begin{dmath}\label{eqn:usefulFormulas:140}
+\begin{aligned}
+\bra{x} P \ket{x'} &= -i \delta(x- x') \frac{d}{dx} \\
+\bra{p} X \ket{p'} &= i \delta(p- p') \frac{d}{dp}.
+\end{aligned}
+\end{dmath}
+\item Eigenstates
+\begin{dmath}\label{eqn:usefulFormulas:160}
+\begin{aligned}
+p \braket{x}{p}
+&= \bra{x} P \ket{p} \\
+&= \int dx' \bra{x} P \ket{x'} \braket{x'}{p} \\
+&= \int dx' (-i) \delta(x - x') \frac{d}{dx} \braket{x'}{p} \\
+&= -i \frac{d}{dx} \braket{x}{p},
+\end{aligned}
+\end{dmath}
+so
+\begin{dmath}\label{eqn:usefulFormulas:180}
+\braket{x}{p} \propto e^{i p x}.
+\end{dmath}
+Normalized over all space in \( d \) dimensions
+\begin{dmath}\label{eqn:usefulFormulas:200}
+\braket{x}{p} = \frac{e^{i p \cdot x}}{(2 \pi)^{d/2}}.
+\end{dmath}
+\end{itemize}
