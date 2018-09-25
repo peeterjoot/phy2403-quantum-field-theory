@@ -1,43 +1,20 @@
-%
-% Copyright © 2017 Peeter Joot.  All Rights Reserved.
-% Licenced as described in the file LICENSE under the root directory of this GIT repository.
-%
-%{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qft5}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
+<a href="http://peeterjoot.com/archives/math2018//qft5.pdf">[Click here for a PDF of this post with nicer formatting]</a>
 
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
+<h3>Disclaimer</h3>
 
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 5: Klein-Gordon equation, SHOs, momentum space representation, raising and lowering operators..  Taught by Prof.\ Erich Poppitz}
-%\chapter{Klein-Gordon equation, SHOs, momentum space representation, raising and lowering operators.}
-\label{chap:qft5}
-
-\paragraph{Disclaimer}
-
-\paragraph{DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.}
+<h3>DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.</h3>
 
 These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{Canonical quantization}
+<h2>Canonical quantization</h2>
 
 Last time we introduced a Lagrangian density associated with the Klein-Gordon equation (with a quadratic potential coupling)
-\begin{dmath}\label{eqn:qftLecture5:20}
+\begin{equation}\label{eqn:qftLecture5:20}
 L = \int d^3 x
 \lr{
 \inv{2} \lr{\partial_0 \phi}^2 - \inv{2} \lr{\spacegrad \phi}^2 - \frac{m^2}{2} \phi^2  - \frac{\lambda}{4} \phi^4
 }.
-\end{dmath}
+\end{equation}
 This Lagrangian density was related to the action by
 \begin{equation}\label{eqn:qftLecture5:40}
 S = \int dt L = \int dt d^3 x \LL,
@@ -48,166 +25,172 @@ with momentum canonically conjugate to the field \( \phi \) defined as
 \end{equation}
 
 The Hamiltonian defined as
-\begin{dmath}\label{eqn:qftLecture5:80}
+\begin{equation}\label{eqn:qftLecture5:80}
 H = \int d^3 x \lr{ \Pi(\Bx, t) \phidot(\Bx, t) - \LL },
-\end{dmath}
+\end{equation}
 led to
-\begin{dmath}\label{eqn:qftLecture5:680}
+\begin{equation}\label{eqn:qftLecture5:680}
 H
 = \int d^3 x
 \lr{ \inv{2} \Pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4 }.
-\end{dmath}
-Like the Lagrangian density, we may introduce a Hamiltonian density \( \calH \) as
-\begin{dmath}\label{eqn:qftLecture5:100}
-H = \int d^3 x \calH(\Bx, t).
-\end{dmath}
+\end{equation}
+Like the Lagrangian density, we may introduce a Hamiltonian density \( \mathcal{H} \) as
+\begin{equation}\label{eqn:qftLecture5:100}
+H = \int d^3 x \mathcal{H}(\Bx, t).
+\end{equation}
 For our Klein-Gordon system, this is
-\begin{dmath}\label{eqn:qftLecture5:120}
-\calH(\Bx, t) =
+\begin{equation}\label{eqn:qftLecture5:120}
+\mathcal{H}(\Bx, t) =
 \inv{2} \Pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4.
-\end{dmath}
+\end{equation}
 
-\paragraph{Canonical Commutation Relations (CCR)}:
+<h3>Canonical Commutation Relations (CCR)</h3>:
 
 We quantize the system by promoting our fields to Heisenberg-Picture (HP) operators, and imposing commutation relations
-\begin{dmath}\label{eqn:qftLecture5:140}
+\begin{equation}\label{eqn:qftLecture5:140}
 \antisymmetric{\hat{\Pi}(\Bx, t)}{\hat{\phi}(\By, t)} = -i \delta^3 (\Bx - \By)
-\end{dmath}
+\end{equation}
 
 This is in analogy to
-\begin{dmath}\label{eqn:qftLecture5:160}
+\begin{equation}\label{eqn:qftLecture5:160}
 \antisymmetric{\hat{p}_i}{\hat{q}_j} = -i \delta_{ij},
-\end{dmath}
+\end{equation}
 
 To choose a representation, we may map the \( \Psi \) of QM \( \rightarrow \) to a wave functional \( \Psi[\phi] \)
-\begin{dmath}\label{eqn:qftLecture5:180}
+\begin{equation}\label{eqn:qftLecture5:180}
 \hat{\phi}(\By, t) \Psi[\phi] = \phi(\By, t) \Psi[\phi]
-\end{dmath}
+\end{equation}
 
 This is similar to the QM wave functions
-\begin{dmath}\label{eqn:qftLecture5:200}
+\begin{equation}\label{eqn:qftLecture5:200}
 \begin{aligned}
 \hat{q}_i \Psi(\setlr{q}) &= q_i \Psi(q) \\
 \hat{p}_i \Psi(\setlr{q}) &= -i \PD{q_i}{} \Psi(p)
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Our momentum operator is quantized by expressing it in terms of a variational derivative
-\begin{dmath}\label{eqn:qftLecture5:220}
+\begin{equation}\label{eqn:qftLecture5:220}
 \hat{\Pi}(\Bx, t) = -i \frac{\delta}{\delta \phi(\Bx, t)}.
-\end{dmath}
+\end{equation}
 (Fixme: I'm not really sure exactly what is meant by using the variation derivative \(\delta\) notation here), and to
 quantize the Hamiltonian we just add hats, assuming that our fields are all now HP operators
-\begin{dmath}\label{eqn:qftLecture5:240}
-\hat{\calH}(\Bx, t)
+\begin{equation}\label{eqn:qftLecture5:240}
+\hat{\mathcal{H}}(\Bx, t)
 =
 \inv{2} \hat{\Pi}^2 + (\spacegrad \hat{\phi})^2 + \inv{2} m^2 \hat{\phi}^2 + \frac{\lambda}{4} \hat{\phi}^4.
-\end{dmath}
+\end{equation}
 
-\paragraph{QM SHO review}
+<h3>QM SHO review</h3>
 Recall the QM SHO had a Hamiltonian
-\begin{dmath}\label{eqn:qftLecture5:260}
+\begin{equation}\label{eqn:qftLecture5:260}
 \hat{H} = \inv{2} \hat{p}^2 + \inv{2} \omega^2 \hat{q}^2,
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture5:280}
+\begin{equation}\label{eqn:qftLecture5:280}
 \antisymmetric{\hat{p}}{\hat{q}} = -i,
-\end{dmath}
+\end{equation}
 and that
 HP time evolution operators \( O \) satisfied
-\begin{dmath}\label{eqn:qftLecture5:700}
+\begin{equation}\label{eqn:qftLecture5:700}
 \ddt{\hatO} = i \antisymmetric{\hatH}{\hatO}.
-\end{dmath}
+\end{equation}
 In particular
-\begin{dmath}\label{eqn:qftLecture5:300}
+\begin{equation}\label{eqn:qftLecture5:300}
+\begin{aligned}
 \ddt{\hat{p}}
-= i \antisymmetric{\hat{H}}{\hatp}
-= i \frac{\omega^2}{2} \antisymmetric{\hatq^2}{\hatp}
-= i \frac{\omega^2}{2} (2 i \hatq)
-= -i \omega^2 \hatq,
-\end{dmath}
+&= i \antisymmetric{\hat{H}}{\hatp} \\
+&= i \frac{\omega^2}{2} \antisymmetric{\hat{q}^2}{\hatp} \\
+&= i \frac{\omega^2}{2} (2 i \hat{q}) \\
+&= -i \omega^2 \hat{q},
+\end{aligned}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture5:320}
+\begin{equation}\label{eqn:qftLecture5:320}
+\begin{aligned}
 \ddt{\hat{q}}
-= i \antisymmetric{\hat{H}}{\hatq}
-= i \inv{2} \antisymmetric{\hatp^2}{\hatq}
-= \frac{i}{2}(-2 i \hatp )
-= \hatp.
-\end{dmath}
+&= i \antisymmetric{\hat{H}}{\hat{q}} \\
+&= i \inv{2} \antisymmetric{\hatp^2}{\hat{q}} \\
+&= \frac{i}{2}(-2 i \hatp ) \\
+&= \hatp.
+\end{aligned}
+\end{equation}
 Applying the time evolution operator twice, we find
 \begin{equation}\label{eqn:qftLecture5:340}
 \frac{d^2}{dt^2}{\hat{q}}
 = \ddt{\hat{p}}
-= - \omega^2 \hatq.
+= - \omega^2 \hat{q}.
 \end{equation}
 We see that the Heisenberg operators obey the classical equations of motion.
 
 Now we want to try this with the quantized QFT fields we've promoted to operators
-\begin{dmath}\label{eqn:qftLecture5:360}
+\begin{equation}\label{eqn:qftLecture5:360}
+\begin{aligned}
 \ddt{\hat{\Pi}}(\Bx, t)
-= i \antisymmetric{\hatH}{\hat{\Pi}(\Bx, t)}
-=
-i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\Pihat(\Bx) }
+&= i \antisymmetric{\hatH}{\hat{\Pi}(\Bx, t)} \\
+&=
+i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\hat{\Pi}(\Bx) }
 +
-i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\Pihat(\Bx) }
+i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\hat{\Pi}(\Bx) }
 +
-i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\Pihat(\Bx) }
-\end{dmath}
+i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\hat{\Pi}(\Bx) }
+\end{aligned}
+\end{equation}
 
-Starting with the non-gradient commutators, and
-utilizing the HP field analogues of the relations \( \antisymmetric{\hatq^n}{\hatp} = n i \hatq^{n-1} \), we find
-\begin{dmath}\label{eqn:qftLecture5:780}
-\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\Pihat(\Bx) }
+Starting with the non-gradient commutators, and utilizing the HP field analogues of the relations \( \antisymmetric{\hat{q}^n}{\hatp} = n i \hat{q}^{n-1} \), we find
+\begin{equation}\label{eqn:qftLecture5:780}
+\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\hat{\Pi}(\Bx) }
 =
 \int d^3 y 2 i \phihat(\By) \delta^3(\Bx - \By)
 = 2 i \phihat(\Bx).
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture5:740}
-\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\Pihat(\Bx) }
+\end{equation}
+\begin{equation}\label{eqn:qftLecture5:740}
+\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\hat{\Pi}(\Bx) }
 =
 \int d^3 y 4 i \phihat(\By)^3 \delta^3(\Bx - \By)
 = 4 i \phihat(\Bx)^3.
-\end{dmath}
+\end{equation}
 For the gradient commutators, we have more work.  Prof Poppitz blitzed through that, just calling it integration by parts.  I had trouble seeing what he was doing, so here's a more explicit dumb expansion required to calculate the commutator
-\begin{dmath}\label{eqn:qftLecture5:720}
-\int d^3 y (\spacegrad \phihat(\By))^2 \Pihat(\Bx)
-=
+\begin{equation}\label{eqn:qftLecture5:720}
+\begin{aligned}
+\int d^3 y (\spacegrad \phihat(\By))^2 \hat{\Pi}(\Bx)
+&=
 \int d^3 y
-\lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \Pihat(\Bx)
-=
-\int d^3 y
-\spacegrad \phihat(\By) \cdot
-\lr{ \spacegrad (\phihat(\By) \Pihat(\Bx)) }
-=
+\lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \hat{\Pi}(\Bx) \\
+&=
 \int d^3 y
 \spacegrad \phihat(\By) \cdot
-\lr{ \spacegrad (\Pihat(\Bx) \phihat(\By) + i \delta^3(\Bx - \By)) }
-=
+\lr{ \spacegrad (\phihat(\By) \hat{\Pi}(\Bx)) } \\
+&=
+\int d^3 y
+\spacegrad \phihat(\By) \cdot
+\lr{ \spacegrad (\hat{\Pi}(\Bx) \phihat(\By) + i \delta^3(\Bx - \By)) } \\
+&=
 \int d^3 y
 \Biglr{
-   \spacegrad \lr{ \phihat(\By) \Pihat(\Bx) } \cdot \spacegrad \phihat(\By)
+   \spacegrad \lr{ \phihat(\By) \hat{\Pi}(\Bx) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \delta^3(\Bx - \By)
-}
-=
+} \\
+&=
 \int d^3 y
 \Biglr{
-   \spacegrad \lr{ \Pihat(\Bx) \phihat(\By) + i \delta^3(\Bx - \By) } \cdot \spacegrad \phihat(\By)
+   \spacegrad \lr{ \hat{\Pi}(\Bx) \phihat(\By) + i \delta^3(\Bx - \By) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \delta^3(\Bx - \By)
-}
-=
+} \\
+&=
 \int d^3 y
-   \Pihat(\Bx)
+   \hat{\Pi}(\Bx)
 \lr{
    \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By)
 }
 + 2 i
 \int d^3 y
-   \spacegrad \phihat(\By) \cdot \spacegrad \delta^3(\Bx - \By)
-=
+   \spacegrad \phihat(\By) \cdot \spacegrad \delta^3(\Bx - \By) \\
+&=
 \int d^3 y
-   \Pihat(\Bx) \spacegrad^2 \phihat(\By)
+   \hat{\Pi}(\Bx) \spacegrad^2 \phihat(\By)
 +
 2 i
 \int d^3 y
@@ -215,10 +198,10 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
 -
 2 i
 \int d^3 y
-   \delta^3(\Bx - \By) \spacegrad^2 \phihat(\By)
-=
+   \delta^3(\Bx - \By) \spacegrad^2 \phihat(\By) \\
+&=
 \int d^3 y
-   \Pihat(\Bx) \spacegrad^2 \phihat(\By)
+   \hat{\Pi}(\Bx) \spacegrad^2 \phihat(\By)
 +
 2 i
 \int_\partial d^2 y
@@ -226,25 +209,27 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
    \ncap \cdot \spacegrad \phihat(\By)
 -
 2 i \spacegrad^2 \phihat(\Bx).
-\end{dmath}
-Here we take advantage of the fact that the derivative operators \( \spacegrad = \spacegrad_\By \) commute with \( \Pihat(\Bx) \), and use the identity
+\end{aligned}
+\end{equation}
+Here we take advantage of the fact that the derivative operators \( \spacegrad = \spacegrad_\By \) commute with \( \hat{\Pi}(\Bx) \), and use the identity
 \( \spacegrad \cdot (a \spacegrad b) = (\spacegrad a) \cdot (\spacegrad b) + a \spacegrad^2 b \), so the commutator is
-\begin{dmath}\label{eqn:qftLecture5:800}
-\int d^3 y \antisymmetric{(\spacegrad \phihat(\By))^2}{\Pihat(\Bx)}
-=
+\begin{equation}\label{eqn:qftLecture5:800}
+\begin{aligned}
+\int d^3 y \antisymmetric{(\spacegrad \phihat(\By))^2}{\hat{\Pi}(\Bx)}
+&=
 2 i
 \int_\partial d^2 y
    \delta^3(\Bx - \By)
    \ncap \cdot \spacegrad \phihat(\By)
 -
-2 i \spacegrad^2 \phihat(\Bx)
-=
+2 i \spacegrad^2 \phihat(\Bx) \\
+&=
 -
 2 i \spacegrad^2 \phihat(\Bx),
-\end{dmath}
-where the boundary integral is presumed to be zero (without enough justification.)
-All the pieces can now be put back together
-\begin{dmath}\label{eqn:qftLecture5:820}
+\end{aligned}
+\end{equation}
+where the boundary integral is presumed to be zero (without enough justification.) All the pieces can now be put back together
+\begin{equation}\label{eqn:qftLecture5:820}
 \ddt{} \hat{\Pi}(\Bx, t)
 =
 \spacegrad^2 \phihat(\Bx, t)
@@ -252,43 +237,44 @@ All the pieces can now be put back together
 m^2 \phihat(\Bx, t)
 -
 \lambda \phihat^3(\Bx, t).
-\end{dmath}
+\end{equation}
 
 Now, for the \( \phihat \) time evolution, which is much easier
-\begin{dmath}\label{eqn:qftLecture5:380}
+\begin{equation}\label{eqn:qftLecture5:380}
+\begin{aligned}
 \ddt{\hat{\phi}}(\Bx, t)
-= i \antisymmetric{\hatH}{\hat{\phi}(\Bx, t)}
-= i \inv{2} \int d^3 y \antisymmetric{\Pihat^2(\By)}{\hat{\phi}(\Bx)}
-= i \inv{2} \int d^3 y (-2 i) \Pihat(\By, t) \delta^3(\Bx - \By)
-= \Pihat(\Bx, t)
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture5:400}
+&= i \antisymmetric{\hatH}{\hat{\phi}(\Bx, t)} \\
+&= i \inv{2} \int d^3 y \antisymmetric{\hat{\Pi}^2(\By)}{\hat{\phi}(\Bx)} \\
+&= i \inv{2} \int d^3 y (-2 i) \hat{\Pi}(\By, t) \delta^3(\Bx - \By) \\
+&= \hat{\Pi}(\Bx, t)
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture5:400}
 \frac{d^2}{dt^2}{\hat{\phi}}(\Bx, t)
 =
 \spacegrad^2 \phi
 -m^2 \phi - \lambda \phihat^3.
-\end{dmath}
+\end{equation}
 That is
-\begin{dmath}\label{eqn:qftLecture5:420}
+\begin{equation}\label{eqn:qftLecture5:420}
 \ddot{\phihat} - \spacegrad^2 \phihat + m^2 \phihat + \lambda \phihat^3 = 0,
-\end{dmath}
-which is the classical Euler-Lagrange equation, also obeyed by the
-Heisenberg operator \( \phi(\Bx, t) \).  When \( \lambda = 0 \) this is the Klein-Gordon equation.
+\end{equation}
+which is the classical Euler-Lagrange equation, also obeyed by the Heisenberg operator \( \phi(\Bx, t) \).  When \( \lambda = 0 \) this is the Klein-Gordon equation.
 
-\section{Momentum space representation.}
+<h2>Momentum space representation.</h2>
 Dropping hats, we now consider the momentum space representation of our operators, as determined by Fourier transform pairs
-\begin{dmath}\label{eqn:qftLecture5:440}
+\begin{equation}\label{eqn:qftLecture5:440}
 \begin{aligned}
 \phi(\Bx, t) &= \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx} \tilde{\phi}(\Bp, t) \\
 \tilde{\phi}(\Bp, t) &= \int d^3 x e^{-i \Bp \cdot \Bx} \phi(\Bx, t)
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 We can discover a representation of the delta function by applying these both in turn
-\begin{dmath}\label{eqn:qftLecture5:480}
+\begin{equation}\label{eqn:qftLecture5:480}
 \tilde{\phi}(\Bp, t)
 = \int d^3 x e^{-i \Bp \cdot \Bx} \int \frac{d^3 q}{(2 \pi)^3} e^{i \Bq \cdot \Bx} \tilde{\phi}(\Bq, t)
-\end{dmath}
+\end{equation}
 so
 \boxedEquation{eqn:qftLecture5:500}{
 \int d^3 x e^{i \BA \cdot \Bx} = (2 \pi)^3 \delta^3(\BA)
@@ -297,58 +283,58 @@ so
 Also observe that \( \phi^\conj(\Bx, t) = \phi(\Bx, t) \) iff \( \tilde{\phi}(\Bp, t) = \tilde{\phi}^\conj(-\Bp, t) \).
 
 We want the EOM for \( \tilde{\phi}(\Bp, t) \) where the operator obeys the KG equation
-\begin{dmath}\label{eqn:qftLecture5:520}
+\begin{equation}\label{eqn:qftLecture5:520}
 \lr{ \partial_t^2 - \spacegrad^2 + m^2 } \phi(\Bx, t) = 0
-\end{dmath}
+\end{equation}
 
-Inserting the transform relation \cref{eqn:qftLecture5:440} we get
-\begin{dmath}\label{eqn:qftLecture5:540}
+Inserting the transform relation \ref{eqn:qftLecture5:440} we get
+\begin{equation}\label{eqn:qftLecture5:540}
 \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
 \lr{
 \ddot{\tilde{\phi}}(\Bp, t) + \lr{ \Bp^2 + m^2 }
 \tilde{\phi}(\Bp, t)
 }
 = 0,
-\end{dmath}
+\end{equation}
 or
 \boxedEquation{eqn:qftLecture5:580}{
 \ddot{\tilde{\phi}}(\Bp, t) = - \omega_\Bp^2 \,\tilde{\phi}(\Bp, t),
 }
 where
-\begin{dmath}\label{eqn:qftLecture5:560}
+\begin{equation}\label{eqn:qftLecture5:560}
 \omega_\Bp = \sqrt{ \Bp^2 + m^2 }.
-\end{dmath}
+\end{equation}
 The Fourier components of the HP operators are SHOs!
 
 As we have SHO's and know how to deal with these in QM, we use the same strategy, introducing raising and lowering operators
-\begin{dmath}\label{eqn:qftLecture5:600}
+\begin{equation}\label{eqn:qftLecture5:600}
 \tilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t } a_\Bp + e^{i \omega_\Bp t} a^\dagger_{-\Bp}
 }
-\end{dmath}
+\end{equation}
 
 Observe that
-\begin{dmath}\label{eqn:qftLecture5:840}
+\begin{equation}\label{eqn:qftLecture5:840}
+\begin{aligned}
 \tilde{\phi}^\dagger(-\Bp, t)
-= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t } a^\dagger_{-\Bp} + e^{-i \omega_\Bp t} a_{\Bp} }
-=
+&= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t } a^\dagger_{-\Bp} + e^{-i \omega_\Bp t} a_{\Bp} } \\
+&=
 \tilde{\phi}(\Bp, t),
-\end{dmath}
+\end{aligned}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture5:620}
+\begin{equation}\label{eqn:qftLecture5:620}
 \tilde{\phi}^\dagger(\Bp, t) = \tilde{\phi}(-\Bp, t),
-\end{dmath}
+\end{equation}
 so \( \phi(\Bp, t) \) has a real representation in terms of \( a_\Bp \).
 
 We will find (Wednesday) that
-\begin{dmath}\label{eqn:qftLecture5:640}
+\begin{equation}\label{eqn:qftLecture5:640}
 \antisymmetric{a_\Bq}{a^+_\Bp} = \delta^3(\Bp - \Bq) (2 \pi)^3.
-\end{dmath}
+\end{equation}
 
 These are equivalent to
-\begin{dmath}\label{eqn:qftLecture5:660}
-\antisymmetric{\Pihat(\By, t)}{\tilde{\phi}(\Bx, t)} = -i \delta^3(\Bx - \By)
-\end{dmath}
+\begin{equation}\label{eqn:qftLecture5:660}
+\antisymmetric{\hat{\Pi}(\By, t)}{\tilde{\phi}(\Bx, t)} = -i \delta^3(\Bx - \By)
+\end{equation}
 
-%\EndArticle
-%}
-\EndNoBibArticle
+[mathjax]
