@@ -9,7 +9,8 @@
 \begin{dmath}\label{eqn:usefulFormulas:20}
 \int_{-\infty}^\infty e^{a x^2} dx = \sqrt{\frac{-\pi}{a}}.
 \end{dmath}
-\item Fourier transform sign and \( \pi \) placement convention
+Here \( a \) may be real or imaginary, but must be less than 0 if real.
+\item Our Fourier transform sign and \( \pi \) placement convention
 \begin{dmath}\label{eqn:usefulFormulas:40}
 \begin{aligned}
 f(x) &= \int \frac{d^n k}{(2 \pi)^n} f(k) e^{i k \cdot x} \\
@@ -74,5 +75,18 @@ Normalized over all space in \( d \) dimensions
 \begin{dmath}\label{eqn:usefulFormulas:220}
 \ddt{O} = i \antisymmetric{H}{O}.
 \end{dmath}
-
+\item Commutators of powers of position and momentum operators
+\begin{dmath}\label{eqn:usefulFormulas:240}
+\begin{aligned}
+\antisymmetric{\hatq^n}{\hatp} &= n i \hatq^{n-1} \\
+\antisymmetric{\hatp^n}{\hatq} &= -n i \hatp^{n-1}.
+\end{aligned}
+\end{dmath}
+More generally, for any function with a power series representation \( F(x) = \sum_{k = 0}^\infty a_k x^k \), we have
+\begin{dmath}\label{eqn:usefulFormulas:260}
+\begin{aligned}
+\antisymmetric{F(\hatq)}{\hatp} &= i \frac{dF}{d\hatq} \\
+\antisymmetric{F(\hatp)}{\hatq} &= -i \frac{dF}{d\hatp}.
+\end{aligned}
+\end{dmath}
 \end{itemize}
