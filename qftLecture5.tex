@@ -275,7 +275,7 @@ That is
 which is the classical Euler-Lagrange equation, also obeyed by the
 Heisenburg operator \( \phi(\Bx, t) \).  When \( \lambda = 0 \) this is the Klein-Gordon equation.
 
-\section{Fourier representation of the momentum .}
+\section{Momentum space representation.}
 Dropping hats, we now consider the momentum space representation of our operators, as determined by Fourier transform pairs
 \begin{dmath}\label{eqn:qftLecture5:440}
 \begin{aligned}
@@ -283,8 +283,8 @@ Dropping hats, we now consider the momentum space representation of our operator
 \tilde{\phi}(\Bp, t) &= \int d^3 x e^{-i \Bp \cdot \Bx} \phi(\Bx, t)
 \end{aligned}
 \end{dmath}
-Observe that \( \phi^\conj(\Bx, t) = \phi(\Bx, t) \) iff \( \tilde{\phi}(\Bp, t) = \tilde{\phi}^\conj(-\Bp, t) \).
 
+We can discover a representation of the delta function by applying these both in turn
 \begin{dmath}\label{eqn:qftLecture5:480}
 \tilde{\phi}(\Bp, t)
 = \int d^3 x e^{-i \Bp \cdot \Bx} \int \frac{d^3 q}{(2 \pi)^3} e^{i \Bq \cdot \Bx} \tilde{\phi}(\Bq, t)
@@ -294,47 +294,54 @@ so
 \int d^3 x e^{i \BA \cdot \Bx} = (2 \pi)^3 \delta^3(\BA)
 }
 
-Want the EOM for \( \tilde{\phi}(\Bp, t) \) where the operator obeys the KG equation
+Also observe that \( \phi^\conj(\Bx, t) = \phi(\Bx, t) \) iff \( \tilde{\phi}(\Bp, t) = \tilde{\phi}^\conj(-\Bp, t) \).
 
+We want the EOM for \( \tilde{\phi}(\Bp, t) \) where the operator obeys the KG equation
 \begin{dmath}\label{eqn:qftLecture5:520}
 \lr{ \partial_t^2 - \spacegrad^2 + m^2 } \phi(\Bx, t) = 0
 \end{dmath}
 
 Inserting the transform relation \cref{eqn:qftLecture5:440} we get
-
-Fixme: WORK OUT:
 \begin{dmath}\label{eqn:qftLecture5:540}
 \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
 \lr{
 \ddot{\tilde{\phi}}(\Bp, t) + \lr{ \Bp^2 + m^2 }
-} \tilde{\phi}(\Bp, t)
-= 0
-\end{dmath}
-
-With
-\begin{dmath}\label{eqn:qftLecture5:560}
-\omega_\Bq = \sqrt{ \Bq^2 + m^2 }
-\end{dmath}
-we find
-\boxedEquation{eqn:qftLecture5:580}{
-\ddot{\tilde{\phi}}(\Bq, t) = - \omega_\Bq^2 \tilde{\phi}(\Bq, t).
+\tilde{\phi}(\Bp, t)
 }
+= 0,
+\end{dmath}
+or
+\boxedEquation{eqn:qftLecture5:580}{
+\ddot{\tilde{\phi}}(\Bp, t) = - \omega_\Bp^2 \,\tilde{\phi}(\Bp, t),
+}
+where
+\begin{dmath}\label{eqn:qftLecture5:560}
+\omega_\Bp = \sqrt{ \Bp^2 + m^2 }.
+\end{dmath}
 The Fourier components of the HP operators are SHOs!
 
 As we have SHO's and know how to deal with these in QM, we use the same strategy, introducing raising and lowering operators
 \begin{dmath}\label{eqn:qftLecture5:600}
-\tilde{\phi}(\Bq, t) = \inv{\sqrt{2 \omega_q}} \lr{ e^{-i \omega_\Bq t } a_\Bq + e^{i \omega_\Bq t} a^\dagger{-\Bq}
+\tilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t } a_\Bp + e^{i \omega_\Bp t} a^\dagger_{-\Bp}
 }
 \end{dmath}
 
-CHECK!! :
-\begin{dmath}\label{eqn:qftLecture5:620}
-\tilde{\phi}^\conj(\Bq, t) = \tilde{\phi}(-\Bq, t).
+Observe that
+\begin{dmath}\label{eqn:qftLecture5:840}
+\tilde{\phi}^\dagger(-\Bp, t)
+= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t } a^\dagger_{-\Bp} + e^{-i \omega_\Bp t} a_{\Bp} }
+=
+\tilde{\phi}(\Bp, t),
 \end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture5:620}
+\tilde{\phi}^\dagger(\Bp, t) = \tilde{\phi}(-\Bp, t),
+\end{dmath}
+so \( \phi(\Bp, t) \) has a real representation in terms of \( a_\Bp \).
 
 We will find (Wednesday) that
 \begin{dmath}\label{eqn:qftLecture5:640}
-\antisymmetric{\hata_\Bq}{\hata^+_\Bp} = \delta^3(\Bp - \Bq) (2 \pi)^3.
+\antisymmetric{a_\Bq}{a^+_\Bp} = \delta^3(\Bp - \Bq) (2 \pi)^3.
 \end{dmath}
 
 These are equivalent to
