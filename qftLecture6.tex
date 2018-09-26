@@ -111,7 +111,7 @@ then
 where everything else commutes (i.e. \(
 \antisymmetric{a_\Bp}{a_\Bq} =
 \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger} = 0 \)).
-We will only show one direction, but you can go the other too.
+We will only show one direction, but you can go the other way too.
 
 \begin{dmath}\label{eqn:qftLecture6:240}
 \phi(\Bx, t)
@@ -120,7 +120,7 @@ We will only show one direction, but you can go the other too.
 \lr{
    e^{-i \omega_\Bp t} a_\Bp
    +
-   e^{i \omega_\Bp t} a_{-\Bp}^\conj
+   e^{i \omega_\Bp t} a_{-\Bp}^\dagger
 }
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture6:260}
@@ -130,7 +130,7 @@ i \int \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}} \omega_\Bq e^{i \Bq \cdot \Bx}
 \lr{
    -e^{-i \omega_\Bq t} a_\Bq
    +
-   e^{i \omega_\Bq t} a_{-\Bq}^\conj
+   e^{i \omega_\Bq t} a_{-\Bq}^\dagger
 }
 \end{dmath}
 The commutator is
@@ -141,117 +141,158 @@ i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
 \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
 \omega_\Bq
-e^{i \Bp \cdot \Bx + i \Bq \cdot \Bx}
-\antisymmetric{
-   e^{-i \omega_\Bp t} a_\Bp
-   +
-   e^{i \omega_\Bp t} a_{-\Bp}^\conj
-}
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
+\antisymmetric
 {
    -e^{-i \omega_\Bq t} a_\Bq
    +
-   e^{i \omega_\Bq t} a_{-\Bq}^\conj
+   e^{i \omega_\Bq t} a_{-\Bq}^\dagger
+}
+{
+   e^{-i \omega_\Bp t} a_\Bp
+   +
+   e^{i \omega_\Bp t} a_{-\Bp}^\dagger
 }
 =
 i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
 \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
 \omega_\Bq
-e^{i \Bp \cdot \Bx + i \Bq \cdot \Bx}
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
 \lr{
--i \omega_\Bq (2 \pi)^3 \delta^3(\Bp + \Bq)
-+ ...
+   - e^{i (\omega_\Bp -\omega_\Bq) t}
+   \antisymmetric { a_\Bq } { a_{-\Bp}^\dagger }
+   +
+   e^{i (\omega_\Bq -\omega_\Bp) t} 
+   \antisymmetric{a_{-\Bq}^\dagger}{ a_\Bp }
 }
 =
--i \int \frac{d^3 p}{(2\pi)^3
+i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
-\frac{d^3 q}{(2\pi)^3}
-e^{i \Bq \cdot (\By - \Bx)}
+\frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
+\omega_\Bq (2\pi)^3
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
+\lr{
+   - e^{i (\omega_\Bp -\omega_\Bq) t} \delta^3(\Bq + \Bp)
+   - e^{i (\omega_\Bq -\omega_\Bp) t} \delta^3(-\Bq -\Bp)
+}
+=
+- 2 i \int \frac{d^3 p}{(2\pi)^3
+2 \omega_\Bp}
+\omega_\Bp 
+e^{i \Bp \cdot (\By - \Bx)}
 =
 -i \delta^3(\By - \Bx),
 \end{dmath}
-which is what we wanted to prove.  (FIXME: Fill in the details).
+which is what we wanted to prove.
 
 \section{Free Hamiltonian}
 We call the \( \lambda = 0 \) case the ``free'' Hamiltonian.
 
 \begin{dmath}\label{eqn:qftLecture6:300}
-H = \int d^3 x \lr{ \inv{2} \pi^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} \phi^2 }
+H
+= \int d^3 x \lr{ \inv{2} \pi^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} \phi^2 }
 =
 \inv{2} \int d^3 x
-\frac{d^3 p}{(2\pi)^3 \sqrt{2 \omega_\Bp}} e^{i \Bp \cdot \Bx}
-\frac{d^3 p}{(2\pi)^3 \sqrt{2 \omega_\Bq}} e^{i \Bq \cdot \Bx}
+\frac{d^3 p}{(2\pi)^3}
+\frac{d^3 q}{(2\pi)^3}
+\frac{
+e^{i (\Bp + \Bq)\cdot \Bx}
+}{\sqrt{2 \omega_\Bp}
+\sqrt{2 \omega_\Bq}}
 \lr{
--(\omega_\Bq)^2
-   -e^{-i \omega_\Bq t} a_\Bq
-   +
-   e^{i \omega_\Bq t} a_{-\Bq}^\conj
+   -
+   (\omega_\Bp)
+   (\omega_\Bq)
+   \lr{
+      -e^{-i \omega_\Bp t} a_\Bp
+      +
+      e^{i \omega_\Bp t} a_{-\Bp}^\dagger
+   }
+   \lr{
+      -e^{-i \omega_\Bq t} a_\Bq
+      +
+      e^{i \omega_\Bq t} a_{-\Bq}^\dagger
+   }
 }
+-
+   \Bp \cdot \Bq
+   \lr{
+      e^{-i \omega_\Bp t} a_\Bp
+      +
+      e^{i \omega_\Bp t} a_{-\Bp}^\dagger
+   }
+   \lr{
+      e^{-i \omega_\Bq t} a_\Bq
+      +
+      e^{i \omega_\Bq t} a_{-\Bq}^\dagger
+   }
 +
    m^2
    \lr{
       e^{-i \omega_\Bp t} a_\Bp
       +
-      e^{i \omega_\Bp t} a_{-\Bp}^\conj
+      e^{i \omega_\Bp t} a_{-\Bp}^\dagger
    }
    \lr{
       e^{-i \omega_\Bq t} a_\Bq
       +
-      e^{i \omega_\Bq t} a_{-\Bq}^\conj
-   }
-+
+      e^{i \omega_\Bq t} a_{-\Bq}^\dagger
+   }.
+\end{dmath}
+An immediate simplification is possible by identifying a delta function factor \( \int d^3 x e^{i(\Bp + \Bq) \cdot \Bx}/(2\pi)^3 = \delta^3(\Bp + \Bq) \), so
+\begin{dmath}\label{eqn:qftLecture6:1060}
+H
+=
+\inv{2}
+\int
+\frac{d^3 p}{(2\pi)^3}
+\frac{1
+}{2 \omega_\Bp}
 \lr{
-   \spacegrad
+   -
+   (\omega_\Bp)^2
+   \lr{
+      -e^{-i \omega_\Bp t} a_\Bp
+      +
+      e^{i \omega_\Bp t} a_{-\Bp}^\dagger
+   }
+   \lr{
+      -e^{-i \omega_\Bp t} a_{-\Bp}
+      +
+      e^{i \omega_\Bp t} a_{\Bp}^\dagger
+   }
+}
++
+   (\Bp^2 + m^2)
    \lr{
       e^{-i \omega_\Bp t} a_\Bp
       +
-      e^{i \omega_\Bp t} a_{-\Bp}^\conj
+      e^{i \omega_\Bp t} a_{-\Bp}^\dagger
    }
-   \spacegrad
    \lr{
-      e^{-i \omega_\Bq t} a_\Bq
+      e^{-i \omega_\Bp t} a_{-\Bp}
       +
-      e^{i \omega_\Bq t} a_{-\Bq}^\conj
+      e^{i \omega_\Bp t} a_{\Bp}^\dagger
    }
-}
-=
-\cdots
-=
-\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
-\lr{
-   \lr{
-   -i \omega_\Bp e^{-i\omega_\Bp t} a_{\Bp} + i \omega_\Bp e^{i \omega_\Bp t} a^\dagger_{-\Bp}
-   }
-   \lr{
-   -i \omega_\Bp e^{-i\omega_\Bp t} a_{-\Bp} + i \omega_\Bp e^{i \omega_\Bp t} a^\dagger_{\Bp}
-   }
-   +
-   \lr{ \Bp^2 + m^2 }
-   \lr{
-      e^{-i\omega_\Bp t} a_{\Bp} + e^{i \omega_\Bp t} a^\dagger_{-\Bp}
-   }
-   \lr{
-      e^{-i\omega_\Bp t} a_{-\Bp} + e^{i \omega_\Bp t} a^\dagger_{\Bp}
-   }
-}
 =
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
 \lr{
    a_\Bp a_{-\Bp}
    \lr{
-      \cancel{\omega_p^2 e^{-2 i \omega_\Bp t}}
+      \cancel{-\omega_\Bp^2 e^{-2 i \omega_\Bp t}}
       +
-      \cancel{\omega_p^2 e^{-2 i \omega_\Bp t}}
+      \cancel{\omega_\Bp^2 e^{-2 i \omega_\Bp t}}
    }
 +
    a_{-\Bp}^\dagger a_{\Bp}^\dagger
    \lr{
-      -\cancel{\omega_p^2 e^{-2 i \omega_\Bp t}}
+      -\cancel{\omega_\Bp^2 e^{2 i \omega_\Bp t}}
       +
-      \cancel{\omega_p^2 e^{-2 i \omega_\Bp t}}
+      \cancel{\omega_\Bp^2 e^{2 i \omega_\Bp t}}
    }
 +
-   a_\Bp a^\dagger{\Bp} \omega^2_\Bp(1 + 1)
+   a_\Bp a^\dagger_{\Bp} \omega^2_\Bp(1 + 1)
 +
    a^\dagger_{-\Bp} a_{-\Bp} \omega^2_\Bp(1 + 1)
 }
@@ -267,7 +308,7 @@ H =
    a^\dagger_{\Bp}
 }
 \end{dmath}
-and finally with a \( \Bp \rightarrow -\Bp \) transformation in the first integral our free Hamilitonian \( \lambda = 0 \)
+and finally with a \( \Bp \rightarrow -\Bp \) transformation (\( \iiint_{-R}^R d^3 p \rightarrow (-1)^3 \iiint_R^{-R} d^3 p' = (-1)^6 \iiint_{-R}^R d^3 p' \)) in the first integral our free Hamilitonian (\( \lambda = 0 \)) is
 \boxedEquation{eqn:qftLecture6:340}{
 H_0 =
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp}{2} \lr{
@@ -305,9 +346,9 @@ The delta function term can be interpretted using
 = \int d^3 x e^{i \Bq \cdot \Bx},
 \end{dmath}
 so when \( \Bq = 0 \)
-\begin{dmath}\label{eqn:qftLecture6:420}
+\begin{equation}\label{eqn:qftLecture6:420}
 (2 \pi)^3 \delta^3(0) = \int d^3 x = V.
-\end{dmath}
+\end{equation}
 
 We can write the Hamiltonian now in terms of the volume
 \boxedEquation{eqn:qftLecture6:440}{
@@ -363,11 +404,11 @@ call \( a^\dagger_\Bp \) the ``creation operator''.
 We say that \( a^\dagger_\Bp \ket{0} \) is the creation of a state of a single particle of momentum \( \Bp \) by \( a^\dagger_\Bp \).
 
 We are discarding the volume term, a procedure called ``normal ordering''.  We define
-\begin{dmath}\label{eqn:qftLecture6:640}
+\begin{equation}\label{eqn:qftLecture6:640}
 \frac{a^\dagger a + a a^\dagger}{2}
 :\equiv
 a^\dagger a
-\end{dmath}
+\end{equation}
 We are essentially forgetting the vacuum energy as some sort of unobservable quantity, leaving us with the free Hamiltonian of
 \begin{dmath}\label{eqn:qftLecture6:660}
 H_0 =
@@ -401,9 +442,9 @@ We will see that the momentum operator has the form
 =
 \int \frac{d^3 p}{(2 \pi)^3} \Bp a^\dagger_\Bp a_\Bp.
 \end{dmath}
-We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) a two particle space with energy \( \omega_p + \omega_q\), and \( (a^\dagger_\Bp)^m (a^\dagger_\Bq)^n \ket{0} \) a \( m + n \) particle space.
+We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) a two particle space with energy \( \omega_\Bp + \omega_q\), and \( (a^\dagger_\Bp)^m (a^\dagger_\Bq)^n \ket{0} \) a \( m + n \) particle space.
 
-There is a tie to stat mech of interest
+There is a connection to statistical mechanics that is of interest
 
 \begin{dmath}\label{eqn:qftLecture6:720}
 \expectation{E}
