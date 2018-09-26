@@ -16,7 +16,8 @@ terms of creation and annihilation operators and find the charge of the particle
 } % makeproblem
 
 \makeanswer{qft:problemSet1:2}{
-Before proceeding to the question as stated, let's compute the Euler-Lagrange equations to verify that we find the Klein-Gordon equation.
+\makeSubAnswer{}{qft:problemSet1:2a}
+Classically, evaluating the Euler-Lagrange equations gives us
 \begin{dmath}\label{eqn:ProblemSet1Problem2:20}
 \begin{aligned}
 \PD{\phi}{\LL} &= -m^2 \phi^\conj \\
@@ -32,9 +33,9 @@ so the equations of the field are respectively
 \partial_\mu \partial^\mu \phi &=  -m^2 \phi,
 \end{aligned}
 \end{dmath}
+so we have a Klein-Gordon equation for each field variable \( \phi, \phi^\conj \)
 as expected.
-\makeSubAnswer{}{qft:problemSet1:2a}
-The Lagrangian density when written out explicitly is
+To find the Hamiltonian, note that the Lagrangian density written out explicitly is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:60}
 \LL = \partial_0 \phi^\conj \partial_0 \phi - (\spacegrad \phi^\conj) \cdot (\spacegrad \phi) - m^2 \phi^\conj \phi,
 \end{dmath}
@@ -46,7 +47,7 @@ so the conjugate momentum densities are
 \end{aligned}
 \end{dmath}
 
-The Hamiltonian is
+The Hamiltonian (including a \( p \dot{q} \) term for each of \( \phi, \phi^\conj \)) is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:100}
 H
 = \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\conj \partial_0 \phi^\conj - \LL }
@@ -59,10 +60,142 @@ H
 (\spacegrad \phi^\conj) \cdot (\spacegrad \phi) + m^2 \phi^\conj \phi
  }
 \end{dmath}
-TODO.
 \makeSubAnswer{}{qft:problemSet1:2b}
+If we choose to canonically quantize the fields, we promote the fields to operators, and demand that
+\begin{dmath}\label{eqn:ProblemSet1Problem2:120}
+\begin{aligned}
+\antisymmetric{\phi(\Bx)}{\pi(\By)} &= i \delta^3(\Bx - \By) \\
+\antisymmetric{\phi^\conj(\Bx)}{\pi^\conj(\By)} &= i \delta^3(\Bx - \By),
+\end{aligned}
+\end{dmath}
+also requiring \( \pi \pi^\conj, \phi^\conj \pi, \phi \pi^\conj \) to all commute.
+It's easy enough to verify that the time evolution of such quantized \( \phi, \phi^\conj \) field operators matches the classical equations
+\begin{dmath}\label{eqn:ProblemSet1Problem2:140}
+-i \ddt{\phi(\Bx)}
+= \antisymmetric{H(\By)}{\phi(\Bx)}
+= \int d^3 y \antisymmetric{\pi^\conj(\By) \pi(\By)}{\phi(\Bx)}
+= \int d^3 y \pi^\conj(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
+= -i \int d^3 y \pi^\conj(\By) \delta^3(\Bx - \By)
+= -i \pi^\conj(\Bx),
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:160}
+-i \ddt{\phi^\conj(\Bx)}
+= \antisymmetric{H(\By)}{\phi^\conj(\Bx)}
+= \int d^3 y \antisymmetric{\pi^\conj(\By) \pi(\By)}{\phi^\conj(\Bx)}
+= \int d^3 y \pi(\By) \antisymmetric{\pi^\conj(\By)}{\phi(\Bx)}
+= -i \int d^3 y \pi(\By) \delta^3(\Bx - \By)
+= -i \pi(\Bx),
+\end{dmath}
+which matches \cref{eqn:ProblemSet1Problem2:80} as expected.
+We should also find the Klein-Gordon equations by computing the time evolution of the quantized \( \pi, \pi^\conj \) operators
+\begin{dmath}\label{eqn:ProblemSet1Problem2:180}
+-i \ddt{\pi(\Bx)}
+= \antisymmetric{H(\By)}{\pi(\Bx)}
+=
+\int d^3 y \antisymmetric{
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+}{ \pi(\Bx) }
++
+m^2 \int d^3 y \antisymmetric{ \phi^\conj(\By) \phi(\By) }{ \pi(\Bx) }.
+\end{dmath}
+The second integral is easy
+\begin{dmath}\label{eqn:ProblemSet1Problem2:200}
+\int d^3 y \antisymmetric{ \phi^\conj(\By) \phi(\By) }{ \pi(\Bx) }
+=
+\int d^3 y
+\phi^\conj(\By)
+\antisymmetric{
+\phi(\By) }{ \pi(\Bx) }
+=
+i
+\int d^3 y
+\phi^\conj(\By)
+\delta^3(\Bx - \By)
+=
+i
+\phi^\conj(\Bx).
+\end{dmath}
+The first integral in \cref{eqn:ProblemSet1Problem2:180}
+takes a bit more work.  One of the integrals in that commutator is
+\begin{dmath}\label{eqn:ProblemSet1Problem2:220}
+\int d^3 y
+\lr{ \spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By) }
+ \pi(\Bx)
+=
+\int d^3 y
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \lr{ \phi(\By) \pi(\Bx) }
+=
+\int d^3 y
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \lr{
+\pi(\Bx)
+\phi(\By)
++
+i \delta^3(\Bx - \By)
+}
+=
+\int d^3 y
+\pi(\Bx) \lr{
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+}
++
+i \int d^3 y
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By).
+\end{dmath}
+This means that we have
+\begin{dmath}\label{eqn:ProblemSet1Problem2:240}
+\int d^3 y \antisymmetric{
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+}{ \pi(\Bx) }
+=
+i \int d^3 y
+\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By)
+=
+i \int d^3 y
+\spacegrad_\By \cdot \lr{
+\delta^3(\Bx - \By)
+\spacegrad_\By \phi^\conj(\By)
+}
+=
+i \int d^3 y
+\spacegrad_\By \cdot \lr{
+   \delta^3(\Bx - \By)
+   \spacegrad_\By \phi^\conj(\By)
+}
+-
+i \int d^3 y
+   \delta^3(\Bx - \By)
+   \spacegrad_\By^2 \phi^\conj(\By)
+=
+-i \spacegrad^2 \phi^\conj(\Bx),
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem2:260}
+\ddt{\pi(\Bx)}
+=
+\spacegrad^2 \phi^\conj(\Bx) - m^2 \phi^\conj(\Bx),
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet1Problem2:280}
+\frac{d^2 \phi^\conj}{dt^2}
+=
+\spacegrad^2 \phi^\conj - m^2 \phi^\conj.
+\end{dmath}
+which is a KG equation for \( \phi^\conj \).
+As the Hamiltonian is symmetric in \( \pi, \pi^\conj \) and \( \phi, \phi^\conj \) repeating this calculation for \( \dot{\pi}^\conj \) is
+\begin{dmath}\label{eqn:ProblemSet1Problem2:300}
+\ddt{\pi^\conj(\Bx)}
+=
+\spacegrad^2 \phi(\Bx) - m^2 \phi(\Bx),
+\end{dmath}
+which is also a KG equation for the quantized field \( \phi \)
+\begin{dmath}\label{eqn:ProblemSet1Problem2:320}
+\frac{d^2 \phi}{dt^2}
+=
+\spacegrad^2 \phi - m^2 \phi,
+\end{dmath}
+as expected.
+\paragraph{Question:} what is meant here by ``Diagonalizing the Hamiltonian''?
 
-TODO.
 \makeSubAnswer{}{qft:problemSet1:2c}
 
 TODO.
