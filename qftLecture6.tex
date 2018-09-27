@@ -163,7 +163,7 @@ e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
    - e^{i (\omega_\Bp -\omega_\Bq) t}
    \antisymmetric { a_\Bq } { a_{-\Bp}^\dagger }
    +
-   e^{i (\omega_\Bq -\omega_\Bp) t} 
+   e^{i (\omega_\Bq -\omega_\Bp) t}
    \antisymmetric{a_{-\Bq}^\dagger}{ a_\Bp }
 }
 =
@@ -179,7 +179,7 @@ e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
 =
 - 2 i \int \frac{d^3 p}{(2\pi)^3
 2 \omega_\Bp}
-\omega_\Bp 
+\omega_\Bp
 e^{i \Bp \cdot (\By - \Bx)}
 =
 -i \delta^3(\By - \Bx),
@@ -360,40 +360,111 @@ H_0 =
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp }{2} \times 1
 }
 
+\section{QM SHO review}
+
+In units with \( m = 1 \) the non-relativistic QM SHO has the Hamiltonian
+\begin{dmath}\label{eqn:qftLecture6:460}
+H
+= \inv{2} p^2 + \frac{\omega^2}{2} q^2.
+%=
+%\inv{2} \lr{ (p + i \omega q)(p - i \omega q) - i \omega (q p - p q) }
+%=
+%\omega \lr{ \inv{\sqrt{2 \omega}} (p + i \omega q) \inv{\sqrt{2 \omega}}(p - i \omega q) + 1 }
+\end{dmath}
+%Observe that the we can almost factor the Hamiltonian into two conjugate operators since
+%(p + i \omega q)(p - i \omega q)
+%=
+% = \omega \lr{ a^\dagger a + \inv{2}}.
+If we define a position operator with a time-domain Fourier representation given by
+\begin{dmath}\label{eqn:qftLecture6:480}
+q =  \inv{\sqrt{2\omega}} \lr{ a e^{-i \omega t} + a^\dagger e^{i \omega t} },
+\end{dmath}
+where the Fourier coefficents \( a, a^\dagger \) are operator valued, then the momentum operator is
+\begin{equation}\label{eqn:qftLecture6:500}
+p = \dot{q} =
+\frac{i\omega}{\sqrt{2\omega}} \lr{ -a e^{-i \omega t} + a^\dagger e^{i \omega t} },
+\end{equation}
+or inverting for \( a, a^\dagger \)
+\begin{dmath}\label{eqn:qftLecture6:1080}
+\begin{aligned}
+a &= \sqrt{\frac{\omega}{2}} \lr{ q - \inv{i \omega} p } e^{-i \omega t} \\
+a^\dagger &= \sqrt{\frac{\omega}{2}} \lr{ q + \inv{i \omega} p } e^{i \omega t}.
+\end{aligned}
+\end{dmath}
+By inspection it is apparent that the product \( a^\dagger a \) will be related to the Hamiltonian (i.e. a difference of squares).  That product is
+\begin{dmath}\label{eqn:qftLecture6:1120}
+a^\dagger a
+=
+\frac{\omega}{2}
+\lr{ q + \inv{i \omega} p }
+\lr{ q - \inv{i \omega} p }
+=
+\frac{\omega}{2} \lr{ q^2 + \inv{\omega^2} p^2 - \inv{i \omega} \antisymmetric{q}{p} }
+= \inv{2 \omega} \lr{ p^2 + \omega^2 q^2 - \omega },
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture6:1140}
+H = \omega \lr{ a^\dagger a + \inv{2} }.
+\end{dmath}
+We can glean some of the properties of \( a, a^\dagger \) by computing the commutator of \( p, q \), since that has a well known value
+\begin{dmath}\label{eqn:qftLecture6:520}
+i = \antisymmetric{q}{p}
+=
+\frac{i\omega}{2 \omega} \antisymmetric
+{ a e^{-i \omega t} + a^\dagger e^{i \omega t} }
+{ -a e^{-i \omega t} + a^\dagger e^{i \omega t} }
+=
+\frac{i}{2} \lr{
+\antisymmetric{a}{a^\dagger} -
+\antisymmetric{a^\dagger}{a} }
+=
+i
+\antisymmetric{a}{a^\dagger},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:qftLecture6:1100}
+\antisymmetric{a}{a^\dagger} = 1.
+\end{dmath}
+The operator \( a^\dagger a \) is the workhorse of the Hamiltonian and worth studying independently.  In particular, assume that we have a set of states \( \ket{n} \) that are eigenstates of \( a^\dagger a \) with eigenvalues \( \lambda_n \), that is
+\begin{dmath}\label{eqn:qftLecture6:1160}
+a^\dagger a \ket{n} = \lambda_n \ket{n}.
+\end{dmath}
+The action of \( a^\dagger a \) on \( a^\dagger \ket{n} \) is easy to compute
+\begin{dmath}\label{eqn:qftLecture6:1180}
+a^\dagger a a^\dagger \ket{n}
+=
+a^\dagger \lr{ a^\dagger a + 1 } \ket{n}
+=
+\lr{ \lambda_n + 1 } a^\dagger \ket{n},
+\end{dmath}
+so \( \lambda_n + 1 \) is an eigenvalue of \( a^\dagger \ket{n} \).  The state \( a^\dagger \ket{n} \) has an energy eigenstate that is one unit of energy larger than \( \ket{n} \).  For this reason we called \( a^\dagger \) the raising (or creation) operator.
+Similarily,
+\begin{dmath}\label{eqn:qftLecture6:1200}
+a^\dagger a a \ket{n}
+=
+\lr{ a a^\dagger - 1 } a \ket{n}
+=
+(\lambda_n - 1) a \ket{n},
+\end{dmath}
+so \( \lambda_n - 1 \) is the energy eigenvalue of \( a \ket{n} \), having one less unit of energy than \( \ket{n} \).
+We call \( a \) the annilation (or lowering) operator.
+If we argue that there is a lowest energy state, perhaps designated as \( \ket{0} \) then we must have
+\begin{dmath}\label{eqn:qftLecture6:560}
+a\ket{0} = 0,
+\end{dmath}
+by the assumption that there are no energy eigenstates with less energy than \( \ket{0} \).
+We can think of higher order states being constructed from the ground state from using the raising operator \( a^\dagger \)
+\begin{dmath}\label{eqn:qftLecture6:580}
+\ket{n} = \frac{(a^\dagger)^n}{\sqrt{n!}} \ket{0}
+\end{dmath}
+%The Hamiltonian action
+%\begin{dmath}\label{eqn:qftLecture6:600}
+%\omega a^\dagger a \ket{n} = (n \omega) \ket{n} = E_n \ket{n}.
+%\end{dmath}
+
 \section{Discussion}
 
 We've diagonalized in the Fourier representation for the momentum space fields.  For every value of momentum \( \Bp \) we have a quantum SHO.
-
-Recall that QM SHO is summarized by
-
-\begin{dmath}\label{eqn:qftLecture6:460}
-H = \inv{2} p^2 + \frac{\omega^2}{2} q^2 = \omega a^\dagger a,
-\end{dmath}
-with position operator
-\begin{dmath}\label{eqn:qftLecture6:480}
-x =  \inv{\sqrt{2\omega}} \lr{ a e^{-i \omega t} + a^\dagger e^{i \omega t} }
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture6:500}
-\dot{x} = p = \cdots
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture6:520}
-\antisymmetric{p}{x} = -i
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture6:540}
-\antisymmetric{a}{a^\dagger} = 1,
-\end{dmath}
-and called \( a \) the annilation (or lowering) operator, which takes out the ground state
-\begin{dmath}\label{eqn:qftLecture6:560}
-a\ket{0} = 0
-\end{dmath}
-and higher order states can be constructed from the ground state from using the raising operator \( a^\dagger \)
-\begin{dmath}\label{eqn:qftLecture6:580}
-\ket{n} = \frac{(a^\dagger)^n}{\sqrt{n}} \ket{0}
-\end{dmath}
-The Hamiltonian action
-\begin{dmath}\label{eqn:qftLecture6:600}
-\omega a^\dagger a \ket{n} = (n \omega) \ket{n} = E_n \ket{n}.
-\end{dmath}
 
 For our field space we call our space the Fock vacuum and
 \begin{dmath}\label{eqn:qftLecture6:620}
@@ -434,8 +505,17 @@ a^\dagger_\Bq
 }
 \ket{0}
 =
-\omega_\Bq \ket{0}.
+\int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
+   a^\dagger_{\Bp} \lr{
+   a^\dagger_\Bq \cancel{a_\Bp \ket{0}}
++ (2 \pi)^3 \delta^3(\Bp - \Bq) \ket{0}
+}
+=
+\omega_\Bq a^\dagger_\Bq \ket{0}.
 \end{dmath}
+
+\paragraph{Question:} Is it possible to modify the Lagrangian or Hamiltonian that we start with so that this vacuum ground state is eliminated?  Answer: Only by imposing super-symmetric constraints (that pairs this (bosonic) Hamiltonian to a Fermonic system in a way that there is exact cancellation).
+
 We will see that the momentum operator has the form
 \begin{dmath}\label{eqn:qftLecture6:700}
 \calP
@@ -528,7 +608,11 @@ Internal symmetry example
 \begin{dmath}\label{eqn:qftLecture6:920}
 H = J \sum_{\expectation{n, n'}} \BS_n \cdot \BS_{n'},
 \end{dmath}
-where the sum means the sum over neighbouring indexes \( n, n' \).  Such a Hamiltonian is left invariant by the transformation \( \BS_n \rightarrow -\BS_n \) since the Hamiltonian is quadratic.
+where the sum means the sum over neighbouring indexes \( n, n' \) as sketched in
+
+F1
+
+Such a Hamiltonian is left invariant by the transformation \( \BS_n \rightarrow -\BS_n \) since the Hamiltonian is quadratic.
 
 Suppose that \( \phi \rightarrow -\phi\) is a symmetry (it leaves the Lagrangian unchanged).  Example
 
