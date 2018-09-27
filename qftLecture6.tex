@@ -22,7 +22,7 @@
 %\chapter{XXX}
 \label{chap:qft6}
 
-\paragraph{DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.}
+\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes (esp. the QM SHO review).}
 
 These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
@@ -63,9 +63,9 @@ c_0 \lambda^0
 + \cdots
 \end{aligned}
 \end{dmath}
-We will stop this \underline{pertubation theory} approach at \( O(\lambda^2) \), and will ignore functions such as \( e^{-1/\lambda} \).
+We will stop this \underline{perturbation theory} approach at \( O(\lambda^2) \), and will ignore functions such as \( e^{-1/\lambda} \).
 
-Within pertubato theory, to leaving order, set \( \lambda = 0 \), so that \( \phi \) obeys the Klein-Gordon equation (if \( m = 0 \) we have just a d'Lambertian (wave equation)).
+Within perturbation theory, to leaving order, set \( \lambda = 0 \), so that \( \phi \) obeys the Klein-Gordon equation (if \( m = 0 \) we have just a d'Lambertian (wave equation)).
 
 We can write our field as a Fourier transform
 \begin{dmath}\label{eqn:qftLecture6:60}
@@ -76,7 +76,7 @@ and due to a Hermitian assumption (i.e. real field) this implies
 \tilde{\phi}^\conj(\Bp, t) = \tilde{\phi}(-\Bp, t).
 \end{dmath}
 
-We found that the Klien-Gordon equation implied that the momentum space representation obey Harmonic oscillator equations
+We found that the Klein-Gordon equation implied that the momentum space representation obey Harmonic oscillator equations
 \begin{dmath}\label{eqn:qftLecture6:100}
 \begin{aligned}
 \ddot{\tilde{\phi}}(\Bp, t) &= - \omega_\Bp \tilde{\phi}(\Bp, t) \\
@@ -91,7 +91,7 @@ e^{-i \omega_\Bq t} a_\Bq
 e^{i \omega_\Bq t} b_\Bq^\conj
 }.
 \end{dmath}
-This is a general solution, but imposing \( a_\Bq = b_{-\Bq} \) ensures \cref{eqn:qftLecture6:80} is satified.
+This is a general solution, but imposing \( a_\Bq = b_{-\Bq} \) ensures \cref{eqn:qftLecture6:80} is satisfied.
 This leaves us with
 \begin{dmath}\label{eqn:qftLecture6:140}
 \tilde{\phi}(\Bq, t) = \inv{\sqrt{2 \omega_\Bq}} \lr{
@@ -308,7 +308,7 @@ H =
    a^\dagger_{\Bp}
 }
 \end{dmath}
-and finally with a \( \Bp \rightarrow -\Bp \) transformation (\( \iiint_{-R}^R d^3 p \rightarrow (-1)^3 \iiint_R^{-R} d^3 p' = (-1)^6 \iiint_{-R}^R d^3 p' \)) in the first integral our free Hamilitonian (\( \lambda = 0 \)) is
+and finally with a \( \Bp \rightarrow -\Bp \) transformation (\( \iiint_{-R}^R d^3 p \rightarrow (-1)^3 \iiint_R^{-R} d^3 p' = (-1)^6 \iiint_{-R}^R d^3 p' \)) in the first integral our free Hamiltonian (\( \lambda = 0 \)) is
 \boxedEquation{eqn:qftLecture6:340}{
 H_0 =
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp}{2} \lr{
@@ -340,7 +340,7 @@ H_0 =
 \inv{2} (2 \pi)^3 \delta^3(0)
 }
 \end{dmath}
-The delta function term can be interpretted using
+The delta function term can be interpreted using
 \begin{dmath}\label{eqn:qftLecture6:400}
 (2 \pi)^3 \delta^3(\Bq)
 = \int d^3 x e^{i \Bq \cdot \Bx},
@@ -379,7 +379,7 @@ If we define a position operator with a time-domain Fourier representation given
 \begin{dmath}\label{eqn:qftLecture6:480}
 q =  \inv{\sqrt{2\omega}} \lr{ a e^{-i \omega t} + a^\dagger e^{i \omega t} },
 \end{dmath}
-where the Fourier coefficents \( a, a^\dagger \) are operator valued, then the momentum operator is
+where the Fourier coefficients \( a, a^\dagger \) are operator valued, then the momentum operator is
 \begin{equation}\label{eqn:qftLecture6:500}
 p = \dot{q} =
 \frac{i\omega}{\sqrt{2\omega}} \lr{ -a e^{-i \omega t} + a^\dagger e^{i \omega t} },
@@ -438,7 +438,7 @@ a^\dagger \lr{ a^\dagger a + 1 } \ket{n}
 \lr{ \lambda_n + 1 } a^\dagger \ket{n},
 \end{dmath}
 so \( \lambda_n + 1 \) is an eigenvalue of \( a^\dagger \ket{n} \).  The state \( a^\dagger \ket{n} \) has an energy eigenstate that is one unit of energy larger than \( \ket{n} \).  For this reason we called \( a^\dagger \) the raising (or creation) operator.
-Similarily,
+Similarly,
 \begin{dmath}\label{eqn:qftLecture6:1200}
 a^\dagger a a \ket{n}
 =
@@ -447,7 +447,7 @@ a^\dagger a a \ket{n}
 (\lambda_n - 1) a \ket{n},
 \end{dmath}
 so \( \lambda_n - 1 \) is the energy eigenvalue of \( a \ket{n} \), having one less unit of energy than \( \ket{n} \).
-We call \( a \) the annilation (or lowering) operator.
+We call \( a \) the annihilation (or lowering) operator.
 If we argue that there is a lowest energy state, perhaps designated as \( \ket{0} \) then we must have
 \begin{dmath}\label{eqn:qftLecture6:560}
 a\ket{0} = 0,
@@ -470,7 +470,7 @@ For our field space we call our space the Fock vacuum and
 \begin{dmath}\label{eqn:qftLecture6:620}
 a_\Bp\ket{0} = 0,
 \end{dmath}
-and call \( a_\Bp \) the ``annihation operator'', and
+and call \( a_\Bp \) the ``annihilation operator'', and
 call \( a^\dagger_\Bp \) the ``creation operator''.
 We say that \( a^\dagger_\Bp \ket{0} \) is the creation of a state of a single particle of momentum \( \Bp \) by \( a^\dagger_\Bp \).
 
@@ -514,7 +514,7 @@ a^\dagger_\Bq
 \omega_\Bq a^\dagger_\Bq \ket{0}.
 \end{dmath}
 
-\paragraph{Question:} Is it possible to modify the Lagrangian or Hamiltonian that we start with so that this vacuum ground state is eliminated?  Answer: Only by imposing super-symmetric constraints (that pairs this (bosonic) Hamiltonian to a Fermonic system in a way that there is exact cancellation).
+\paragraph{Question:} Is it possible to modify the Lagrangian or Hamiltonian that we start with so that this vacuum ground state is eliminated?  Answer: Only by imposing super-symmetric constraints (that pairs this (Bosonic) Hamiltonian to a Fermonic system in a way that there is exact cancellation).
 
 We will see that the momentum operator has the form
 \begin{dmath}\label{eqn:qftLecture6:700}
@@ -522,7 +522,9 @@ We will see that the momentum operator has the form
 =
 \int \frac{d^3 p}{(2 \pi)^3} \Bp a^\dagger_\Bp a_\Bp.
 \end{dmath}
-We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) a two particle space with energy \( \omega_\Bp + \omega_q\), and \( (a^\dagger_\Bp)^m (a^\dagger_\Bq)^n \ket{0} \) a \( m + n \) particle space.
+We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) a two particle space with energy \( \omega_\Bp + \omega_q\), and \(
+(a^\dagger_\Bp)^m (a^\dagger_\Bq)^n \ket{0} \equiv
+(a^\dagger_\Bp)^m \ket{0} \otimes (a^\dagger_\Bq)^n \ket{0} \), a \( m + n \) particle space.
 
 There is a connection to statistical mechanics that is of interest
 
@@ -539,7 +541,16 @@ so for a SHO Hamiltonian system
 = \frac{\omega}{e^{\omega/\kB T} - 1 }
 = \expectation{ \omega a^\dagger a }_{\kB T}
 \end{dmath}
-the average energy for a SHO system at a given temperature.
+the \( \kB T \) ensemble average energy for a SHO system.  Note that this sum was evaluated by noting that \( \bra{n} a^\dagger a \ket{n} = n \) which leaves sums of the form
+\begin{dmath}\label{eqn:qftLecture6:1220}
+\frac{\sum_{n = 0}^\infty n a^n }{\sum_{n = 0}^\infty a^n}
+=
+a \frac{\sum_{n = 1}^\infty n a^{n-1} }{\sum_{n = 0}^\infty a^n}
+=
+a (1 - a) \frac{d}{da} \lr{ \inv{1 - a} }
+=
+\frac{a}{1 - a}.
+\end{dmath}
 
 If we consider a real scalar field of mass \( m \) we have \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), but for a Maxwell field \( \BE, \BB \) where \( m = 0 \), our dispersion relation is \( \omega_\Bp = \Abs{\Bp} \).
 
@@ -547,7 +558,7 @@ We will see that for a free Maxwell field (no charges or currents) the Hamiltoni
 \begin{dmath}\label{eqn:qftLecture6:760}
 H_{\text{Maxwell}} =
 \sum_{i = 1}^2
-\int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp {a_i}^\dagger_\Bp {a_i}_\Bp,
+\int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp {a^i}^\dagger_\Bp {a^i}_\Bp,
 \end{dmath}
 where \( i \) is a polarization index.
 
@@ -598,7 +609,7 @@ For scalar field(s) with action
 \begin{dmath}\label{eqn:qftLecture6:880}
 S = \int d^d x \LL(\phi^i, \partial_\mu \phi^i).
 \end{dmath}
-For example, we've been using our massive (boson) real scalar field with Lagrangian density
+For example, we've been using our massive (Boson) real scalar field with Lagrangian density
 \begin{dmath}\label{eqn:qftLecture6:900}
 \LL = \inv{2} \partial_\mu \phi\partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi).
 \end{dmath}
@@ -609,8 +620,8 @@ Internal symmetry example
 H = J \sum_{\expectation{n, n'}} \BS_n \cdot \BS_{n'},
 \end{dmath}
 where the sum means the sum over neighbouring indexes \( n, n' \) as sketched in
-
-F1
+\cref{fig:adacentSpinGrid:adacentSpinGridFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/adacentSpinGridFig1}{Neighbouring spin cells.}{fig:adacentSpinGrid:adacentSpinGridFig1}{0.3}
 
 Such a Hamiltonian is left invariant by the transformation \( \BS_n \rightarrow -\BS_n \) since the Hamiltonian is quadratic.
 
@@ -630,7 +641,7 @@ the Lagrangian
 \begin{dmath}\label{eqn:qftLecture6:960}
 \LL = \inv{2} \partial_\mu \phi^\T \partial^\mu \phi - \frac{m^2}{2} \phi^\T \phi - V(\phi^\T \phi).
 \end{dmath}
-If \( O \) is any \( n \times n \) othogonal matrix, then it is symmetry since
+If \( O \) is any \( n \times n \) orthogonal matrix, then it is symmetry since
 \begin{dmath}\label{eqn:qftLecture6:980}
 \phi^\T \phi \rightarrow \phi^\T O^\T O \phi = \phi^\T \phi.
 \end{dmath}
