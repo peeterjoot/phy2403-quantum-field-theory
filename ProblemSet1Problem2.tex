@@ -3,14 +3,14 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 \makeproblem{Part of Problem 2.2 from Peskin and Schroeder (reproduced below).}{qft:problemSet1:2}{
-Consider a complex scalar field with action \( S = \int d^4x\lr{\partial_\mu \phi^\conj \partial^\mu \phi - m^2 \phi^\conj \phi}\).  When doing the variational principle consider \( \phi \) and \(\phi^\conj \) as independent, rather than their real and imaginary parts (this is equivalent, but more convenient).
+Consider a complex scalar field with action \( S = \int d^4x\lr{\partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi}\).  When doing the variational principle consider \( \phi \) and \(\phi^\dagger \) as independent, rather than their real and imaginary parts (this is equivalent, but more convenient).
 
 \makesubproblem{}{qft:problemSet1:2a}
-Show that \( H = \int d^3x \lr{ \pi^\conj \pi + \spacegrad \phi^\conj \cdot \spacegrad \phi + m^2 \phi^\conj \phi } \) and that the Klein-Gordon equation is obeyed by \( \phi \) and \( \phi^\conj\).
+Show that \( H = \int d^3x \lr{ \pi^\dagger \pi + \spacegrad \phi^\dagger \cdot \spacegrad \phi + m^2 \phi^\dagger \phi } \) and that the Klein-Gordon equation is obeyed by \( \phi \) and \( \phi^\dagger\).
 \makesubproblem{}{qft:problemSet1:2b}
 Introduce complex amplitudes, diagonalize the Hamiltonian, and quantize the theory. Show that the theory has now two sets of particles.
 \makesubproblem{}{qft:problemSet1:2c}
-Write the charge conserved due to the global \( U(1) \) symmetry, \( Q = \int d^3 x \frac{i}{2} \lr{ \phi^\conj \pi^\conj - \pi \phi } \),
+Write the charge conserved due to the global \( U(1) \) symmetry, \( Q = \int d^3 x \frac{i}{2} \lr{ \phi^\dagger \pi^\dagger - \pi \phi } \),
 in
 terms of creation and annihilation operators and find the charge of the particles of each type.
 } % makeproblem
@@ -20,44 +20,44 @@ terms of creation and annihilation operators and find the charge of the particle
 Classically, evaluating the Euler-Lagrange equations gives us
 \begin{dmath}\label{eqn:ProblemSet1Problem2:20}
 \begin{aligned}
-\PD{\phi}{\LL} &= -m^2 \phi^\conj \\
-\PD{(\partial_\mu \phi)}{\LL} &= \partial^\mu \phi^\conj \\
-\PD{\phi^\conj}{\LL} &= -m^2 \phi       \\
-\PD{(\partial_\mu \phi^\conj)}{\LL} &= \partial^\mu \phi,
+\PD{\phi}{\LL} &= -m^2 \phi^\dagger \\
+\PD{(\partial_\mu \phi)}{\LL} &= \partial^\mu \phi^\dagger \\
+\PD{\phi^\dagger}{\LL} &= -m^2 \phi       \\
+\PD{(\partial_\mu \phi^\dagger)}{\LL} &= \partial^\mu \phi,
 \end{aligned}
 \end{dmath}
 so the equations of the field are respectively
 \begin{dmath}\label{eqn:ProblemSet1Problem2:40}
 \begin{aligned}
-\partial_\mu \partial^\mu \phi^\conj &=  -m^2 \phi^\conj \\
+\partial_\mu \partial^\mu \phi^\dagger &=  -m^2 \phi^\dagger \\
 \partial_\mu \partial^\mu \phi &=  -m^2 \phi,
 \end{aligned}
 \end{dmath}
-so we have a Klein-Gordon equation for each field variable \( \phi, \phi^\conj \)
+so we have a Klein-Gordon equation for each field variable \( \phi, \phi^\dagger \)
 as expected.
 To find the Hamiltonian, note that the Lagrangian density written out explicitly is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:60}
-\LL = \partial_0 \phi^\conj \partial_0 \phi - (\spacegrad \phi^\conj) \cdot (\spacegrad \phi) - m^2 \phi^\conj \phi,
+\LL = \partial_0 \phi^\dagger \partial_0 \phi - (\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) - m^2 \phi^\dagger \phi,
 \end{dmath}
 so the conjugate momentum densities are
 \begin{dmath}\label{eqn:ProblemSet1Problem2:80}
 \begin{aligned}
-\pi(\Bx, t) &= \PD{(\partial_0 \phi)}{\LL} = \partial_0 \phi^\conj \\
-\pi^\conj(\Bx, t) &= \PD{(\partial_0 \phi^\conj)}{\LL} = \partial_0 \phi \\
+\pi(\Bx, t) &= \PD{(\partial_0 \phi)}{\LL} = \partial_0 \phi^\dagger \\
+\pi^\dagger(\Bx, t) &= \PD{(\partial_0 \phi^\dagger)}{\LL} = \partial_0 \phi \\
 \end{aligned}
 \end{dmath}
 
-The Hamiltonian (including a \( p \dot{q} \) term for each of \( \phi, \phi^\conj \)) is
+The Hamiltonian (including a \( p \dot{q} \) term for each of \( \phi, \phi^\dagger \)) is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:100}
 H
-= \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\conj \partial_0 \phi^\conj - \LL }
+= \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\dagger \partial_0 \phi^\dagger - \LL }
 =
-\int d^3 x \lr{ \pi \pi^\conj + \pi^\conj \pi - \pi \pi^\conj +
-(\spacegrad \phi^\conj) \cdot (\spacegrad \phi) + m^2 \phi^\conj \phi
+\int d^3 x \lr{ \pi \pi^\dagger + \pi^\dagger \pi - \pi \pi^\dagger +
+(\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) + m^2 \phi^\dagger \phi
  }
 =
-\int d^3 x \lr{ \pi^\conj \pi +
-(\spacegrad \phi^\conj) \cdot (\spacegrad \phi) + m^2 \phi^\conj \phi
+\int d^3 x \lr{ \pi^\dagger \pi +
+(\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) + m^2 \phi^\dagger \phi
  }
 \end{dmath}
 \makeSubAnswer{}{qft:problemSet1:2b}
@@ -65,68 +65,68 @@ If we choose to canonically quantize the fields, we promote the fields to operat
 \begin{dmath}\label{eqn:ProblemSet1Problem2:120}
 \begin{aligned}
 \antisymmetric{\phi(\Bx)}{\pi(\By)} &= i \delta^3(\Bx - \By) \\
-\antisymmetric{\phi^\conj(\Bx)}{\pi^\conj(\By)} &= i \delta^3(\Bx - \By),
+\antisymmetric{\phi^\dagger(\Bx)}{\pi^\dagger(\By)} &= i \delta^3(\Bx - \By),
 \end{aligned}
 \end{dmath}
-also requiring \( \pi \pi^\conj, \phi^\conj \pi, \phi \pi^\conj \) to all commute.
-It's easy enough to verify that the time evolution of such quantized \( \phi, \phi^\conj \) field operators matches the classical equations
+also requiring commutation of all of \( \phi \phi^\dagger, \pi \pi^\dagger, \phi^\dagger \pi, \phi \pi^\dagger \).
+It's easy enough to verify that the time evolution of such quantized \( \phi, \phi^\dagger \) field operators matches the classical equations
 \begin{dmath}\label{eqn:ProblemSet1Problem2:140}
 -i \ddt{\phi(\Bx)}
 = \antisymmetric{H(\By)}{\phi(\Bx)}
-= \int d^3 y \antisymmetric{\pi^\conj(\By) \pi(\By)}{\phi(\Bx)}
-= \int d^3 y \pi^\conj(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
-= -i \int d^3 y \pi^\conj(\By) \delta^3(\Bx - \By)
-= -i \pi^\conj(\Bx),
+= \int d^3 y \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi(\Bx)}
+= \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
+= -i \int d^3 y \pi^\dagger(\By) \delta^3(\Bx - \By)
+= -i \pi^\dagger(\Bx),
 \end{dmath}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:160}
--i \ddt{\phi^\conj(\Bx)}
-= \antisymmetric{H(\By)}{\phi^\conj(\Bx)}
-= \int d^3 y \antisymmetric{\pi^\conj(\By) \pi(\By)}{\phi^\conj(\Bx)}
-= \int d^3 y \pi(\By) \antisymmetric{\pi^\conj(\By)}{\phi(\Bx)}
+-i \ddt{\phi^\dagger(\Bx)}
+= \antisymmetric{H(\By)}{\phi^\dagger(\Bx)}
+= \int d^3 y \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi^\dagger(\Bx)}
+= \int d^3 y \pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi(\Bx)}
 = -i \int d^3 y \pi(\By) \delta^3(\Bx - \By)
 = -i \pi(\Bx),
 \end{dmath}
 which matches \cref{eqn:ProblemSet1Problem2:80} as expected.
-We should also find the Klein-Gordon equations by computing the time evolution of the quantized \( \pi, \pi^\conj \) operators
+We should also find the Klein-Gordon equations by computing the time evolution of the quantized \( \pi, \pi^\dagger \) operators
 \begin{dmath}\label{eqn:ProblemSet1Problem2:180}
 -i \ddt{\pi(\Bx)}
 = \antisymmetric{H(\By)}{\pi(\Bx)}
 =
 \int d^3 y \antisymmetric{
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By)
 }{ \pi(\Bx) }
 +
-m^2 \int d^3 y \antisymmetric{ \phi^\conj(\By) \phi(\By) }{ \pi(\Bx) }.
+m^2 \int d^3 y \antisymmetric{ \phi^\dagger(\By) \phi(\By) }{ \pi(\Bx) }.
 \end{dmath}
 The second integral is easy
 \begin{dmath}\label{eqn:ProblemSet1Problem2:200}
-\int d^3 y \antisymmetric{ \phi^\conj(\By) \phi(\By) }{ \pi(\Bx) }
+\int d^3 y \antisymmetric{ \phi^\dagger(\By) \phi(\By) }{ \pi(\Bx) }
 =
 \int d^3 y
-\phi^\conj(\By)
+\phi^\dagger(\By)
 \antisymmetric{
 \phi(\By) }{ \pi(\Bx) }
 =
 i
 \int d^3 y
-\phi^\conj(\By)
+\phi^\dagger(\By)
 \delta^3(\Bx - \By)
 =
 i
-\phi^\conj(\Bx).
+\phi^\dagger(\Bx).
 \end{dmath}
 The first integral in \cref{eqn:ProblemSet1Problem2:180}
 takes a bit more work.  One of the integrals in that commutator is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:220}
 \int d^3 y
-\lr{ \spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By) }
+\lr{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }
  \pi(\Bx)
 =
 \int d^3 y
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \lr{ \phi(\By) \pi(\Bx) }
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \lr{ \phi(\By) \pi(\Bx) }
 =
 \int d^3 y
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \lr{
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \lr{
 \pi(\Bx)
 \phi(\By)
 +
@@ -135,55 +135,55 @@ i \delta^3(\Bx - \By)
 =
 \int d^3 y
 \pi(\Bx) \lr{
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By)
 }
 +
 i \int d^3 y
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By).
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By).
 \end{dmath}
 This means that we have
 \begin{dmath}\label{eqn:ProblemSet1Problem2:240}
 \int d^3 y \antisymmetric{
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \phi(\By)
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By)
 }{ \pi(\Bx) }
 =
 i \int d^3 y
-\spacegrad_\By \phi^\conj(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By)
+\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \delta^3(\Bx - \By)
 =
 i \int d^3 y
 \spacegrad_\By \cdot \lr{
 \delta^3(\Bx - \By)
-\spacegrad_\By \phi^\conj(\By)
+\spacegrad_\By \phi^\dagger(\By)
 }
 =
 i \int d^3 y
 \spacegrad_\By \cdot \lr{
    \delta^3(\Bx - \By)
-   \spacegrad_\By \phi^\conj(\By)
+   \spacegrad_\By \phi^\dagger(\By)
 }
 -
 i \int d^3 y
    \delta^3(\Bx - \By)
-   \spacegrad_\By^2 \phi^\conj(\By)
+   \spacegrad_\By^2 \phi^\dagger(\By)
 =
--i \spacegrad^2 \phi^\conj(\Bx),
+-i \spacegrad^2 \phi^\dagger(\Bx),
 \end{dmath}
 so
 \begin{dmath}\label{eqn:ProblemSet1Problem2:260}
 \ddt{\pi(\Bx)}
 =
-\spacegrad^2 \phi^\conj(\Bx) - m^2 \phi^\conj(\Bx),
+\spacegrad^2 \phi^\dagger(\Bx) - m^2 \phi^\dagger(\Bx),
 \end{dmath}
 or
 \begin{dmath}\label{eqn:ProblemSet1Problem2:280}
-\frac{d^2 \phi^\conj}{dt^2}
+\frac{d^2 \phi^\dagger}{dt^2}
 =
-\spacegrad^2 \phi^\conj - m^2 \phi^\conj.
+\spacegrad^2 \phi^\dagger - m^2 \phi^\dagger.
 \end{dmath}
-which is a KG equation for \( \phi^\conj \).
-As the Hamiltonian is symmetric in \( \pi, \pi^\conj \) and \( \phi, \phi^\conj \) repeating this calculation for \( \dot{\pi}^\conj \) is
+which is a KG equation for \( \phi^\dagger \).
+As the Hamiltonian is symmetric in \( \pi, \pi^\dagger \) and \( \phi, \phi^\dagger \) repeating this calculation for \( \dot{\pi}^\dagger \) gives
 \begin{dmath}\label{eqn:ProblemSet1Problem2:300}
-\ddt{\pi^\conj(\Bx)}
+\ddt{\pi^\dagger(\Bx)}
 =
 \spacegrad^2 \phi(\Bx) - m^2 \phi(\Bx),
 \end{dmath}
