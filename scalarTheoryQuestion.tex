@@ -1,0 +1,72 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{scalarTheoryQuestion}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{XXX}
+%\chapter{XXX}
+%\label{chap:scalarTheoryQuestion}
+% \citep{sakurai2014modern} pr X.Y
+% \citep{pozar2009microwave}
+% \citep{qftLectureNotes}
+% \citep{doran2003gap}
+% \citep{jackson1975cew}
+% \citep{griffiths1999introduction}
+
+In class (lecture 5) when we calculated the time evolution of \( \pi(x,t) \) for the scalar theory, one of the commutator terms we evaluated was
+
+\begin{equation}\label{eqn:scalarTheoryQuestion:n}
+\begin{aligned}
+\frac{i}{2} \int d^3 y \,\antisymmetric{ \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) }{\pi(\Bx, t)} 
+&=
+\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \phi(\By, t) \pi(\Bx, t) } 
+-
+\frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
+&=
+\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \pi(\Bx, t) \phi(\By, t) + i \delta^3(\Bx - \By)} 
+-
+\frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
+&=
+\cdots
+&=
+- \int d^3 y \,\spacegrad_\By \delta^3(\Bx - \By) \cdot \spacegrad_\By\phi(\By, t) \\
+&=
+- \int d^3 y 
+\lr{
+\spacegrad_\By \cdot \lr{ \delta^3(\Bx - \By) \spacegrad_\By\phi(\By, t) }
+-
+\delta^3(\Bx - \By) \spacegrad_\By^2 \phi(\By, t) 
+} \\
+&=
+\spacegrad^2 \phi(\Bx, t)
+-
+\int dA_y\, \delta^3(\Bx - \By) \PD{n}{\phi(\By, t)}.
+\end{aligned}
+\end{equation}
+
+I can't think of a good justification, other than hand waving, for this boundary integral to vanish, since we aren't integrating the delta function over a volume where it is well behaved?
+
+%}
+\EndArticle
+%\EndNoBibArticle

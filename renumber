@@ -49,3 +49,5 @@ perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture6.tex
 ../latex/bin/lgrep qftLecture7.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture7.tex
+../latex/bin/lgrep scalarTheoryQuestion.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl scalarTheoryQuestion.tex
