@@ -2,12 +2,49 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet1:4}{
+\makeproblem{ Scale invariance and conserved charge }{qft:problemSet1:4}{
+Consider classical electrodynamics with the Lagrangian
+\begin{dmath}\label{eqn:ProblemSet1Problem4:20}
+S = \int d^4 x \lr{ -\inv{4} F_{\mu\nu} F^{\mu\nu} }.
+\end{dmath}
+Consider the following ``dilatation'' (or ``scale'') transformation:
+\begin{dmath}\label{eqn:ProblemSet1Problem4:40}
+\begin{aligned}
+x_\mu &\rightarrow x'_\mu = e^d x_\mu \\
+A_\mu(x) &\rightarrow A'_\mu(x') = e^{-d} A_\mu(x),
+\end{aligned}
+\end{dmath}
+where \( d \) is a constant, called the dilatation parameter.
 \makesubproblem{}{qft:problemSet1:4a}
+Show that the action is invariant under dilatations.
+\makesubproblem{}{qft:problemSet1:4b}
+Find the corresponding Noether current.
+\makesubproblem{}{qft:problemSet1:4c}
+Show that -- perhaps, after a redefinition of \( j_\mu \) ; notice that any conserved current \( j_\mu \) can be
+redefined by adding to it \( \partial^\nu C_{\mu\nu} \), where \( C_{\mu\nu} \) is antisymmetric, without spoiling its conservation
+(in this case \( C \) can depend on \( x^\mu, \partial^\mu \) and \( A^\mu \), of course) the dilatation current is simply related
+to the energy-momentum tensor: \( j^{\text{con f}}_\mu = x_\nu {{T^\nu}_\mu}^{\text{con f}}\), where the symbol con f indicates that
+these are the conformal energy-momentum tensor and dilatation current. Notice that this problem, secretly, requires you to also derive \( T^{\mu\nu} \) for the electromagnetic field.
+\makesubproblem{}{qft:problemSet1:4d}
+Show, then, that conservation of \(  j^{\text{con f}}_\mu  \) implies that the energy-momentum tensor of classical
+electrodynamics is traceless (the trace of the tensor is defined as usual to be \( g_{\mu\nu} T^{\mu\nu}\)).
+\makesubproblem{}{qft:problemSet1:4e}
+Finally, open your classical electrodynamics books and recall the interpretation of the \( T^{00}, T^{xx},T^{yy} \), etc., components of the energy momentum tensor as energy density and pressure. Show that the tracelessness of \( T^{\mu\nu} \) is equivalent to the familiar relation
+\( p = \rho/3 \) between the energy density and pressure of isotropic radiation -- the equation of state of blackbody radiation.
+Dilatation invariance in QED (and QCD) is perhaps the simplest example of a symmetry, where the classical action is invariant, but the quantum theory is not (as you will learn later, in the spring class). Broken scale invariance arises because one has to introduce a short-distance cutoff (a UV ``regulator'') to define the quantum theory. (We already saw an indication of the need for a regulator when we considered the divergent zero point energy of the free quantum scalar field.)
 } % makeproblem
 
 \makeanswer{qft:problemSet1:4}{
 \makeSubAnswer{}{qft:problemSet1:4a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet1:4a}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:4b}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:4c}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:4d}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:4e}
 TODO.
 }

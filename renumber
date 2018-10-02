@@ -32,12 +32,15 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem1.tex
 ../latex/bin/lgrep ProblemSet1Problem2.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
 
-#../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
-#../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
-#../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
+../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
+
+../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
+
+../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
+
 ../latex/bin/lgrep qftLecture4.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture4.tex
 ../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o

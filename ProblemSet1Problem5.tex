@@ -2,12 +2,59 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet1:5}{
+\makeproblem{Observability of the zero point energy: the Casimir force.}{qft:problemSet1:5}{
+In class, when discussing the quantization of the real scalar field, we found the sum of zero
+point energies of the harmonic oscillators (one per each \( \Bk \) ) into which we decomposed the field:
+\begin{dmath}\label{eqn:ProblemSet1Problem5:20}
+E_{\text{zero point}} =
+V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\omega_\Bk}{2}.
+\end{dmath}
 \makesubproblem{}{qft:problemSet1:5a}
+Show that the boundary conditions on the plates impose a quantization condition on the allowed values of field momentum perpendicular to the plates, i.e. \( k_x = n\pi/a, n = 0, \pm 1,  \pm 2, \cdots \) [e.g., recall your waveguide physics].
+\makesubproblem{}{qft:problemSet1:5b}
+Consider now the contribution to the energy of the vacuum fluctuations of the field in the space between the plates and find the zero point energy per unit area of the plates. To do this, replace the integral over \( k_x \) in
+\cref{eqn:ProblemSet1Problem5:20}
+by a sum over \( n \), \( \int dk_x = (\pi/a)\sum_n\) [Hint: to save work, use the fact that the correct expression should have the property that as the plates are removed, \( a \rightarrow \infty \), the energy (per unit volume) should give back
+\cref{eqn:ProblemSet1Problem5:20}
+]. Does the resulting expression for the zero point energy still diverge?
+\makesubproblem{}{qft:problemSet1:5c}
+Show now, starting from
+\cref{eqn:ProblemSet1Problem5:20}
+, with integral replaced by sum, that the difference between the zero point energies per unit area, in the space between the plates in the presence of the plates and without the plates is:
+\begin{dmath}\label{eqn:ProblemSet1Problem5:40}
+\Delta E_{\text{vac}}(a) = \int_0^\infty \frac{dk}{2\pi} k \lr{ \frac{k}{4}
++ \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+- \inv{2} \int_0^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+}.
+\end{dmath}
+where, obviously, \( k \) is radial wave vector in \(y, z\)-directions.
+\makesubproblem{}{qft:problemSet1:5d}
+COPY.
+\makesubproblem{}{qft:problemSet1:5e}
+COPY.
+\makesubproblem{}{qft:problemSet1:5f}
+COPY.
+\makesubproblem{}{qft:problemSet1:5g}
+COPY.
+\makesubproblem{}{qft:problemSet1:5h}
+COPY.
 } % makeproblem
 
 \makeanswer{qft:problemSet1:5}{
 \makeSubAnswer{}{qft:problemSet1:5a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5b}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5c}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5d}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5e}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5f}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5g}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:5h}
 TODO.
 }

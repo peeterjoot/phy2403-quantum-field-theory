@@ -2,12 +2,42 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet1:3}{
+\makeproblem{
+Zero point energy, an exercise in unit conversion, and scales related to the ``cosmological constant problem''
+}{qft:problemSet1:3}{
+In class, we showed that the zero-point energy of the quantized massless scalar field (we are taking this case, because in the physically relevant case of electrodynamics, the number of degrees of freedom and the associated vacuum energy is the same as that of two massless scalar fields) can be written as:
+\begin{dmath}\label{eqn:ProblemSet1Problem3:20}
+E_{\text{vac}} = V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\omega_k}{2}.
+\end{dmath}
+where \( V_3 \) is the (large, i.e., almost infinite) volume of space. This expression diverges, because we assume that electromagnetic fields and photons of arbitrarily large momenta exist. There's no justification to this, as particle physicists have only probed the Standard Model up to energies of order a few \( \si{TeV} \). Assume, then, that the integral above is cut off at some maximum value of the momentum \( \Lambda \) (called the ``UV cutoff''), say of order \( 10 \,\si{TeV} \).
 \makesubproblem{}{qft:problemSet1:3a}
+What is the value of the vacuum energy density \( \rho_{\text{vac}} \), in units of \( \si{g/cm3} \).
+\makesubproblem{}{qft:problemSet1:3b}
+What value should \( \Lambda \) have in order that \( \rho_{\text{vac}} \) matches the observed value of the ``dark energy'', of order
+\( \rho_{\text{dark}} \sim 10^{-29} \, \si{g/cm^3} \).
+Express \( \Lambda \) both as a high-energy scale cutoff and as a short-distance cutoff.
+\makesubproblem{}{qft:problemSet1:3c}
+What is the ratio of \( \rho_{\text{vac}} \) for \( \Lambda \sim M_{\text{Planck}} \) to \( \rho_{\text{dark}} \)?
+\makesubproblem{}{qft:problemSet1:3d}
+Note that the zero-point energies of phonons -- the zero point energies of the quantized collective sound oscillations of nuclei in a crystal -- are given, up to simple numerical factors counting the numbers of polarizations (which we won't worry about here) by an expression similar to the above.
+This is because phonons are massless scalar fields propagating with the speed of sound instead of speed of light.
+Notice that this difference is irrelevant as \( c \) appears in \( E_{\text{vac}} \) simply: \( k \) is a wavevector and \( \omega_k = c k \) -- a frequency (secretly multiplied by \( \Hbar \), of course).
+In the case of phonons, however, we are well aware that a cutoff scale exists and we understand well its nature: it is given by the interatomic separation, as the notion of phonons does not make sense for shorter wavelengths.
+Now take \( k_{\text{max}} = \Lambda \sim 1/a_0 \), with \( a_0 \) of order the Bohr radius and estimate the energy density of the zero point fluctuations in a crystal.
+
+Compare your result to the typical rest energy (i.e. mass) density of crystals.
+The results from the first three items above lead to a puzzle commonly referred to as the ``cosmological constant problem''.
+There are various proposals for its solution, ranging from cancellations between the contributions of high and low momentum oscillators, anthropic principle (multiverse) considerations, modifications of gravity at long distances, to name a few.
+The issue awaits your input!
 } % makeproblem
 
 \makeanswer{qft:problemSet1:3}{
 \makeSubAnswer{}{qft:problemSet1:3a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet1:3b}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:3c}
+TODO.
+\makeSubAnswer{}{qft:problemSet1:3d}
 TODO.
 }
