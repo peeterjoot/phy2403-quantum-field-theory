@@ -36,15 +36,15 @@
 
 In class (lecture 5) when we calculated the time evolution of \( \pi(x,t) \) for the scalar theory, one of the commutator terms we evaluated was
 
-\begin{equation}\label{eqn:scalarTheoryQuestion:n}
+\begin{equation}\label{eqn:scalarTheoryQuestion:20}
 \begin{aligned}
-\frac{i}{2} \int d^3 y \,\antisymmetric{ \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) }{\pi(\Bx, t)} 
+\frac{i}{2} \int d^3 y \,\antisymmetric{ \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) }{\pi(\Bx, t)}
 &=
-\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \phi(\By, t) \pi(\Bx, t) } 
+\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \phi(\By, t) \pi(\Bx, t) }
 -
 \frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
-\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \pi(\Bx, t) \phi(\By, t) + i \delta^3(\Bx - \By)} 
+\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \pi(\Bx, t) \phi(\By, t) + i \delta^3(\Bx - \By)}
 -
 \frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
@@ -52,11 +52,11 @@ In class (lecture 5) when we calculated the time evolution of \( \pi(x,t) \) for
 &=
 - \int d^3 y \,\spacegrad_\By \delta^3(\Bx - \By) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
-- \int d^3 y 
+- \int d^3 y
 \lr{
 \spacegrad_\By \cdot \lr{ \delta^3(\Bx - \By) \spacegrad_\By\phi(\By, t) }
 -
-\delta^3(\Bx - \By) \spacegrad_\By^2 \phi(\By, t) 
+\delta^3(\Bx - \By) \spacegrad_\By^2 \phi(\By, t)
 } \\
 &=
 \spacegrad^2 \phi(\Bx, t)
@@ -66,6 +66,20 @@ In class (lecture 5) when we calculated the time evolution of \( \pi(x,t) \) for
 \end{equation}
 
 I can't think of a good justification, other than hand waving, for this boundary integral to vanish, since we aren't integrating the delta function over a volume where it is well behaved?
+
+
+\paragraph{response}
+
+I'm not really familiar with the lingo you are using (i.e. ``compact support'', and ``no support at infinity''), but it seems like you are getting at something like:
+
+The result of the integral has meaning in the following context, where \( f(\By) \) is a well behaved test function (square integrable over the volume)
+
+\begin{dmath}\label{eqn:scalarTheoryQuestion:40}
+\int dr \int d\Omega \delta^3(\Bx - \By) \PD{r}{\phi(\By)} f(\By)
+=
+\PD{r}{\phi(\Bx)} f(\Bx),
+\end{dmath}
+where I've assumed an infinite spherical volume parameterization.  However, for this to be zero for all \( f(\Bx) \) wouldn't we have to require that the radial derivative of the operator \( \phi(\Bx) \) is always zero?
 
 %}
 \EndArticle
