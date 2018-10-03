@@ -11,7 +11,7 @@ E_{\text{vac}} = V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\omega_k}{2}.
 \end{dmath}
 where \( V_3 \) is the (large, i.e., almost infinite) volume of space. This expression diverges, because we assume that electromagnetic fields and photons of arbitrarily large momenta exist. There's no justification to this, as particle physicists have only probed the Standard Model up to energies of order a few \( \si{TeV} \). Assume, then, that the integral above is cut off at some maximum value of the momentum \( \Lambda \) (called the ``UV cutoff''), say of order \( 10 \,\si{TeV} \).
 \makesubproblem{}{qft:problemSet1:3a}
-What is the value of the vacuum energy density \( \rho_{\text{vac}} \), in units of \( \si{g/cm3} \).
+What is the value of the vacuum energy density \( \rho_{\text{vac}} \), in units of \( \si{g/cm^3} \).
 \makesubproblem{}{qft:problemSet1:3b}
 What value should \( \Lambda \) have in order that \( \rho_{\text{vac}} \) matches the observed value of the ``dark energy'', of order
 \( \rho_{\text{dark}} \sim 10^{-29} \, \si{g/cm^3} \).
@@ -33,11 +33,94 @@ The issue awaits your input!
 
 \makeanswer{qft:problemSet1:3}{
 \makeSubAnswer{}{qft:problemSet1:3a}
-TODO.
+To make a bit more sense of the unit conversions required, let's insert factors of \( \Hbar, c \) back into the mix temporarily
+\begin{dmath}\label{eqn:ProblemSet1Problem3:40}
+E_{\text{vac}}
+= V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\Hbar \omega_k}{2}.
+= V_3 \frac{\Hbar (4 \pi)}{(2\pi)^3 2} \int_0^k k^2 dk \omega_k
+= V_3 \frac{\Hbar }{(2\pi)^2 c^3 } \int_0^\omega \omega^3 d\omega
+= V_3 \frac{\Hbar \omega^4}{4 (2\pi)^2 c^3 },
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem3:60}
+\rho_{\text{vac}}
+=
+\frac{E_{\text{vac}} }{V_3}
+=
+\inv{16 \pi^2} (\Hbar \omega) \lr{\frac{\omega}{c}}^3
+\end{dmath}
+Observe that \( [\omega/c] = 1/L \) so we have \( \text{energy}/\text{L}^3\) as desired.
+With the following conversion factors (\citep{wiki:naturalUnits})
+\begin{dmath}\label{eqn:ProblemSet1Problem3:80}
+\begin{aligned}
+1 \,\si{eV} &= 1.78 \times 10^{-33} \,\si{g} \\
+1 \,\si{(eV)^{-1}} &= 1.97 \times 10^{-5} \,\si{cm} \\
+\end{aligned}
+\end{dmath}
+we have
+\begin{equation}\label{eqn:ProblemSet1Problem3:220}
+(1 eV)^4 = 1.78 \times 10^{-33} \lr{ \inv{1.97 \times 10^{-5}} }^3 \,\si{g/(cm)^3}
+=
+2.3 \times 10^{-19} \,\si{g/(cm)^3},
+\end{equation}
+and
+\begin{equation}\label{eqn:ProblemSet1Problem3:240}
+1 \,\si{g/(cm)^3}
+= \inv{ 2.3 \times 10^{-19} }
+\,\si{(eV)^4}
+= 4.3 \times 10^{18}
+\,\si{(eV)^4}
+\end{equation}
+The vacuum energy density at the \( 10 \,\si{TeV} \) cutoff is therefore
+\begin{dmath}\label{eqn:ProblemSet1Problem3:120}
+\rho_{\text{vac}} = \inv{16 \pi^2} (10^{13} eV)^4 \times
+2.3 \times 10^{-19} \,\si{g/(cm)^3/(eV)^4}
+=
+1.4 \times 10^{31} \,\si{g/(cm)^3}.
+\end{dmath}
+(This seems extraordinarily large to me.)
+
 \makeSubAnswer{}{qft:problemSet1:3b}
-TODO.
+The equivalent cutoff associated with the dark energy density is
+\begin{dmath}\label{eqn:ProblemSet1Problem3:140}
+\Lambda
+= \lr{ 16 \pi^2 \rho }^{1/4}
+= \lr{ 16 \pi^2 \times 10^{-29} \,\si{g/(cm)^3} }^{1/4}
+= \lr{ 16 \pi^2 \times 10^{-29} \,\si{g/(cm)^3} 
+\times 
+4.3 \times 10^{18}
+\,\si{(eV)^4/(g/(cm)^3)}
+}^{1/4}
+= 
+9.1 \times 10^{-3} \,\si{eV}.
+\end{dmath}
+(In contrast with the vacuum energy density, this seems extraordinarily small.)
+
+As a distance scale (wavelength), this is
+\begin{dmath}\label{eqn:ProblemSet1Problem3:160}
+\lambda = \frac{2 \pi}{k} = \frac{2 \pi}{9.1 \times 10^{-3} \,\si{eV}} \times 1.97 \times 10^{-5} (\si{eV})(\si{cm})
+= 1.4 \times 10^{-2} \,\si{cm}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet1:3c}
-TODO.
+
+The Planck mass is
+\begin{dmath}\label{eqn:ProblemSet1Problem3:180}
+M_{\text{Planck}}
+=
+2.2 \times 10^{-5} \,\si{g} \times \frac{1 \,\si{eV}}{1.78 \times 10^{-33} \,\si{g} }
+= 1.2 \times 10^{28} eV,
+\end{dmath}
+so the energy density ratio is
+\begin{dmath}\label{eqn:ProblemSet1Problem3:200}
+\frac{\rho_{\text{vac (Planck)}}}{
+\rho_{\text{dark}}}
+= \frac
+{\lr{ 10^{28} \,\si{eV} }^4}
+{\lr{ 10^{-2} \,\si{eV} }^4}
+= 10^{120}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet1:3d}
 TODO.
 }
