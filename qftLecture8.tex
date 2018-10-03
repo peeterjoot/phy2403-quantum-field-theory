@@ -1,0 +1,470 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{qftLecture8}
+\renewcommand{\dirname}{notes/phy2403/}
+\newcommand{\keywords}{PHY2403H}
+\input{../latex/peeter_prologue_print2.tex}
+
+%\usepackage{phy2403}
+\usepackage{peeters_braket}
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_figures}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{macros_cal} % LL
+
+\beginArtNoToc
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 8: 1st Noether theorem, spacetime translation current, energy momentum tensor, dilatation current.  Taught by Prof.\ Erich Poppitz}
+%\chapter{1st Noether theorem, dilatation current}
+\label{chap:qftLecture8}
+
+\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+
+These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
+%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+
+\section{1st Noether theorem.}
+
+Recall that, given a transformation
+\begin{dmath}\label{eqn:qftLecture8:20}
+\phi(x) \rightarrow \phi(x) + \delta \phi(x),
+\end{dmath}
+such that the transformation of the Lagrangian is only changed by a total derivative
+\begin{dmath}\label{eqn:qftLecture8:40}
+\LL(\phi, \partial_\mu \phi) \rightarrow
+\LL(\phi, \partial_\mu \phi)
++ \partial_\mu J_\epsilon^\mu,
+\end{dmath}
+then there is a conserved current
+\begin{dmath}\label{eqn:qftLecture8:60}
+j^\mu = \PD{(\partial_\mu \phi)}{\LL} \delta_\epsilon \phi - J_\epsilon^\mu.
+\end{dmath}
+Here \( \epsilon \) is an x-independent quantity (i.e. a \underline{global symmetry}).
+This is in contrast to ``gauge symmetries'', which can be more accurately be categorized as a redundancy in the description.
+
+As an example, give
+\begin{dmath}\label{eqn:qftLecture8:80}
+\phi(x) \rightarrow \phi(x) - a^\mu \partial_\mu \phi
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:100}
+\LL(\phi, \partial_\mu \phi) \rightarrow
+\LL(\phi, \partial_\mu \phi)
+- a^\mu \partial_\mu \LL
+\LL(\phi, \partial_\mu \phi)
++ \partial_\mu \lr{ -{\delta^\mu}_\nu a^\nu \partial_\mu \LL }
+\end{dmath}
+Here \( J^\mu_\epsilon = \evalbar{J^\mu_\epsilon}{\epsilon = a^\nu} \), and the current is
+\begin{dmath}\label{eqn:qftLecture8:120}
+J^\mu = (\partial^\mu \phi)(-a^\nu \partial_\nu \phi) + {\delta^{\mu}}_\nu a^\nu \LL.
+\end{dmath}
+In particular, we have one such current for each \( \nu \), and we write
+\begin{dmath}\label{eqn:qftLecture8:140}
+{T^\mu}_\nu = -(\partial^\mu \phi)(\partial_\nu \phi) + {\delta^{\mu}}_\nu \LL.
+\end{dmath}
+By Noether's theorem, we must have
+\begin{dmath}\label{eqn:qftLecture8:160}
+\partial_\mu
+{T^\mu}_\nu = 0, \quad \forall \nu.
+\end{dmath}
+Fixme: check this!
+
+\paragraph{Example: our potential Lagrangian}
+
+\begin{dmath}\label{eqn:qftLecture8:180}
+\LL = \inv{2} \partial^\mu \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \lambda^4
+\end{dmath}
+Written with upper indexes
+\begin{dmath}\label{eqn:qftLecture8:200}
+T^{\mu\nu}
+= -(\partial^\mu \phi)(\partial^\nu \phi) + g^{\mu\nu} \LL
+= -(\partial^\mu \phi)(\partial^\nu \phi) + g^{\mu\nu} \lr{
+\inv{2} \partial^\alpha \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \lambda^4
+}
+\end{dmath}
+
+There are 4 conserved currents \( J^{\mu(\nu)} = T^{\mu\nu} \).  Observe that this is symmetric (\( T^{\mu\nu} = T^{\nu\mu} \)).
+
+We have four associated charges
+\begin{dmath}\label{eqn:qftLecture8:220}
+Q^\nu = \int d^3 x T^{0 \nu}.
+\end{dmath}
+We call
+\begin{dmath}\label{eqn:qftLecture8:240}
+Q^0 = \int d^3 x T^{0 0},
+\end{dmath}
+the energy density, and call
+\begin{dmath}\label{eqn:qftLecture8:260}
+P^i = \int d^3 x T^{0 i},
+\end{dmath}
+(i = 1,2,3) the momentum density.
+
+writing this out explicitly the energy density is
+\begin{dmath}\label{eqn:qftLecture8:280}
+T^{00}
+= - \dot{\phi}^2 + \inv{2} \lr{ \dot{\phi}^2 - (\spacegrad \phi)^2 - \frac{m^2}{2} - \frac{\lambda}{4} \phi^4}
+= -\lr{
+\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} + \frac{\lambda}{4} \phi^4
+},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture8:300}
+T^{0i} = \partial^0 \partial^i \phi,
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:320}
+P^{i} = -\int d^3 x\partial^0 \phi \partial^i \phi
+\end{dmath}
+Since the energy density is negative definite (due to an arbitrary choice of translation sign), let's redefine \( T^{\mu\nu} \) to have a positive sign
+\begin{dmath}\label{eqn:qftLecture8:340}
+T^{00}
+\equiv
+\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} + \frac{\lambda}{4} \phi^4,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture8:360}
+P^{i} = \int d^3 x\partial^0 \phi \partial^i \phi
+\end{dmath}
+
+As an operator we have
+\begin{dmath}\label{eqn:qftLecture8:380}
+\hatQ = \int d^3 x \hatT^{00} =
+\int d^3 x
+\lr{
+\inv{2} \pihat^2 + \inv{2} (\spacegrad \phihat)^2 + \frac{m^2}{2} \phihat^2 + \frac{\lambda}{4} \phihat^4
+}.
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:400}
+\hatP^{i} = \int d^3 x \pihat \partial^i \phi
+\end{dmath}
+
+We showed that
+\begin{dmath}\label{eqn:qftLecture8:420}
+\ddt \hatO = i \antisymmetric{\hatH}{\hatO}
+\end{dmath}
+This implied that \( \phihat, \pihat \) obey the classical EOMs
+\begin{equation}\label{eqn:qftLecture8:440}
+\ddt \phihat = i \antisymmetric{\hatH}{\phihat} = \ddt{\pihat}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture8:460}
+\ddt \pihat = i \antisymmetric{\hatH}{\pihat} = ...
+\end{equation}
+
+In terms of creation and annihilation operators (for the \( \lambda = 0 \) free field), up to a constant
+\begin{dmath}\label{eqn:qftLecture8:480}
+\hatH
+= \int d^3 x \hatT^{00}
+= \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \hata_\Bp^\dagger \hata_\Bp
+\end{dmath}
+Fixme: show that:
+\begin{dmath}\label{eqn:qftLecture8:500}
+\hatP^i
+= \int d^3 x \pihat \partial^i \phihat
+= \cdots
+= \int \frac{d^3 p}{(2 \pi)^3} p^i \hata_\Bp^\dagger \hata_\Bp
+\end{dmath}
+Now we see the energy and momentum as conserved quantities associated with spacetime translation.
+
+\section{Unitary operators}
+
+In QM we say that \( \hat{\Bp} \) ``generates translations''.
+
+With \( \hat{\Bp} \equiv -i \Hbar \spacegrad \) that translation is
+\begin{equation}\label{eqn:qftLecture8:520}
+\hatU = e^{i \Ba \cdot \hat{\Bp}} = e^{\Ba \cdot \spacegrad}
+\end{equation}
+
+In particular
+\begin{dmath}\label{eqn:qftLecture8:540}
+\bra{\Bx} \hatU \ket{\psi} = e^{\Ba \cdot \hat{\Bp} } \psi(\Bx) = \psi(\Bx + \Ba).
+\end{dmath}
+
+In one dimension
+\begin{dmath}\label{eqn:qftLecture8:560}
+\hatU \hat{x} \hatU^\dagger
+=
+e^{\Ba \cdot \hat{p} } \psi(\Bx)
+e^{-\Ba \cdot \hat{p} }
+= \hat{\Bx} + a \hat{\BOne}.
+\end{dmath}
+This uses the Baker-Campbell-Hausdorff formula.
+\maketheorem{ Baker-Campbell-Hausdorff }{thm:qftLecture8:580}{
+\begin{dmath}\label{eqn:qftLecture8:600}
+e^{B} A e^{-B} = \sum_{n = 0}^\infty \inv{n!} \antisymmetric{B \cdots}{\antisymmetric{B}{A}},
+\end{dmath}
+where the n-th commutator is denoted above
+
+\begin{itemize}
+\item \( n = 1 \) : \( \antisymmetric{B}{A} \)
+\item \( n = 2 \) : \( \antisymmetric{B}{\antisymmetric{B}{A}} \)
+\item \( n = 3 \) : \( \antisymmetric{B}{\antisymmetric{B}{\antisymmetric{B}{A}}} \)
+\end{itemize}
+} % theorem
+
+Proof:
+
+\begin{dmath}\label{eqn:qftLecture8:620}
+f(t) = e^{tB} A e^{-tB}
+= f(0) + t f'(0) + \frac{t^2}{2} f''(0) + \cdots \frac{t^n}{n!} f^{(n)}(0)
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:640}
+f(0) = A
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:660}
+f'(t)
+=
+e^{tB} B A e^{-tB}
++
+e^{tB} A (-B) e^{-tB}
+=
+e^{tB} \antisymmetric{B}{A} e^{-tB}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:680}
+f''(t) =
+e^{tB} B \antisymmetric{B}{A} e^{-tB}
++
+e^{tB} \antisymmetric{B}{A} (-B) e^{-tB}
+=
+e^{tB} \antisymmetric{B}{\antisymmetric{B}{A}} e^{-tB}.
+\end{dmath}
+From
+\begin{dmath}\label{eqn:qftLecture8:700}
+f(1)
+= f(0) + f'(0) + \inv{2} f''(0) + \cdots \inv{n!} f^{(n)}(0)
+\end{dmath}
+we have
+\begin{dmath}\label{eqn:qftLecture8:720}
+e^{B} A e^{-B} = A +
+\antisymmetric{B}{A} + \inv{2} \antisymmetric{B}{\antisymmetric{B}{A}} + \cdots
+\end{dmath}
+
+Example:
+\begin{dmath}\label{eqn:qftLecture8:740}
+e^{a \partial_x} x e^{-a \partial_x } = x + a \antisymmetric{\partial_x}{x} + \cdots
+= x + a.
+\end{dmath}
+
+\paragraph{Application:}
+
+\begin{dmath}\label{eqn:qftLecture8:760}
+e^{i \text{Hermitian} } = \text{unitary}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:860}
+e^{i \text{Hermitian} } \times
+e^{-i \text{Hermitian} }
+= 1
+\end{dmath}
+So
+\begin{dmath}\label{eqn:qftLecture8:780}
+\hatU(\Ba) =
+e^{i a^j \hat{p}^j }
+\end{dmath}
+is a unitary operator representing finite translations in a Hilbert space.
+
+\begin{dmath}\label{eqn:qftLecture8:800}
+\hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
+=
+e^{i a^j \hat{p}^j }
+\phihat(\Bx)
+e^{-i a^k \hat{p}^k }
+=
+\phihat(\Bx)
++ i a^j \antisymmetric{\hatP^j}{\phihat(\Bx)} + \frac{-a^{j_1} a^{j_2}}{2} \antisymmetric{\hatP^{j_1}}{\antisymmetric{\hatP^{j_2}}{\phihat(\Bx)}}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:820}
+\antisymmetric{\hatP^j}{\phihat(\Bx)}
+=
+\int d^3 y \antisymmetric{\pihat(\By) \partial^j \phihat(\By)}{\phihat(\Bx)}
+=
+\int d^3 y \antisymmetric{\pihat(\By)}{\phihat(\Bx} \partial^j \phihat(\By)
+=
+\int d^3 y (-i ) \delta^3(\By - \Bx) \partial^j \phihat(\By)
+=
+-i \partial^j \phihat(\Bx).
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:840}
+\hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
+= \phihat(\Bx) + i a^j (-i) \partial^j \phihat(\Bx) + \cdots
+= \phihat(\Bx) + a^j \partial^j \phihat(\Bx) + \cdots
+= \phihat(\Bx + \Ba)
+\end{dmath}
+
+\section{Continuous symmetries}
+
+For all infinitesimal transformations, continuous symmetries lead to conserved charges \( Q \).  In QFT we map these charges to Hermitian operators \( Q \rightarrow \hatQ \).  We say that these charges are ``generators of the corresponding symmetry'' through unitary operators
+\begin{dmath}\label{eqn:qftLecture8:880}
+\hatU = e^{i \text{parameter} \hatQ}.
+\end{dmath}
+These represent the action of the symmetry in the Hilbert space.
+
+\paragraph{Example: spatial translation}
+\begin{dmath}\label{eqn:qftLecture8:900}
+\hatU(\Ba) = e^{i \Ba \cdot \hat{\BP}}
+\end{dmath}
+\paragraph{Example: time translation}
+\begin{dmath}\label{eqn:qftLecture8:920}
+\hatU(t) = e^{i t \hat{H}}.
+\end{dmath}
+
+\section{Classical scalar theory}
+
+For \( d > 2 \) let's look at
+\begin{dmath}\label{eqn:qftLecture8:940}
+S =
+\int d^d x \lr{
+\inv{2} \partial
+\inv{2} \partial^\mu \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \lambda \phi^{d-2}
+}
+\end{dmath}
+Take \( m^2, \lambda \rightarrow 0 \), the free massless scalar field.
+We have a shift symmetry in this case since \( \phi(x) \rightarrow \phi(x) + \text{constant} \).
+The current is just
+\begin{dmath}\label{eqn:qftLecture8:960}
+j^\mu
+= \PD{(\partial_\mu \phi)}{\phi} \delta \phi - \cancel{J^\mu}
+= \text{constant} \times \partial^\mu \phi
+= \partial^\mu \phi,
+\end{dmath}
+where the constant factor has been set to one.
+This current is clearly conserved since \( \partial_\mu J^\mu = \partial_\mu \partial^\mu \phi = 0\) (the equation of motion).
+
+These are called ``Goldstein bosons''.
+
+With \( m \rightarrow 0, \lambda \ne 0 \) we have
+\begin{dmath}\label{eqn:qftLecture8:980}
+S =
+\int d^d x \lr{
+\inv{2} \partial
+\inv{2} \partial^\mu \phi \partial_\nu \phi - \tilde{\lambda} \phi^{d-2}
+}
+\end{dmath}
+Here we have a scale or dilatation invariance
+\begin{dmath}\label{eqn:qftLecture8:1000}
+x \rightarrow e^{\lambda} x
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:1020}
+\phi(x) \rightarrow \phi'(x') = e^{-(d-2) \lambda/2} \phi
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:1040}
+d^3 x = e^{d\lambda} d^3 x
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:1060}
+(\partial_\mu \phi)^2 \rightarrow e^{-(d-2)\lambda} e^{-2 \lambda} \lr{ \partial_\mu \phi(x) }^2
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:1080}
+\phi^{2 d/(d -2)} \rightarrow \lr{\phi'(x')}^{2d/(d-2)}
+=
+e^{-(d-2)/2 \times 2d/(d-2) \lambda} \lr{ \phi }^{2d/(d-2)}
+\end{dmath}
+
+(switching to \(d = 4\))
+to find Noether currrent ...
+
+\begin{dmath}\label{eqn:qftLecture8:1100}
+\delta_\lambda \phi = \phi'(x) - \phi(x)
+= - \lambda(1 + x^\mu \partial_\mu ) \phi
+\end{dmath}
+
+In free field with \( \tilde{\lambda} = 0 \)
+
+\begin{dmath}\label{eqn:qftLecture8:1120}
+\delta_\lambda \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi}
+= \partial^\mu \delta_\lambda (\partial_\mu \phi)
+= \partial^\mu \phi \partial_\mu ( - \lambda( 1 + x^\nu \partial_\nu )\phi )
+= -\lambda \lr{ \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi \partial_\mu \lr{ x^\nu \partial_\nu \phi } }
+= -\lambda \lr{ 2 \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi x^\nu \partial_\nu \phi }
+=
+\end{dmath}
+
+Wrong.  Starting over.
+
+We need the transformation of the derivatives of \( \phi \).
+
+\begin{dmath}\label{eqn:qftLecture8:1140}
+\inv{2} \partial^\mu \phi \partial_\mu \phi
+\rightarrow
+\inv{2} {\partial'}^\mu \phi' {\partial'}_\mu \phi'
+=
+\inv{2} e^{-4\lambda}
+\partial^\mu \phi \partial_\mu \phi
+\end{dmath}
+Let
+\begin{dmath}\label{eqn:qftLecture8:1160}
+\begin{aligned}
+\Phi'(x')
+&=
+{\partial'}^\mu \phi' {\partial'}_\mu \phi' \\
+\Phi(x) &=
+\partial^\mu \phi \partial_\mu \phi,
+\end{aligned}
+\end{dmath}
+
+so
+\begin{dmath}\label{eqn:qftLecture8:1180}
+\begin{aligned}
+\Phi'(x') &= e^{-4 \lambda} \Phi(x) \\
+\Phi'(e^{\lambda} x) &= e^{-4 \lambda} \Phi(x)
+\end{aligned}
+\end{dmath}
+...
+so
+
+\begin{dmath}\label{eqn:qftLecture8:1200}
+\delta \LL = - \lambda \lr{ 4 + x^\mu \partial_\mu } \lr{
+\partial^\mu \phi \partial_\mu \phi
+}
+=
+-\inv{2} \lambda \partial_\mu \lr{ x^\mu \partial_\nu \phi \partial^\nu \phi}
+=
+-\lambda \lr{ \partial_\mu x^\mu
+\inv{2} (\partial_\nu \phi)^2 + x^\mu \partial_\mu \lr{ \inv{2} \partial_\nu \phi \partial^\nu \phi }
+}
+\end{dmath}
+
+so
+\begin{dmath}\label{eqn:qftLecture8:1220}
+\begin{aligned}
+J^\mu_\lambda &= \frac{-x^\mu}{2} \partial_\nu \phi \partial^\nu \phi \\
+\delta \phi &= - \lr{ 1 + x^\mu \partial_\mu } \phi
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:1240}
+j^\mu = \PD{(\partial_\mu \phi)}{\LL} \delta \phi - J^\mu
+\end{dmath}
+
+In the end, find
+\begin{dmath}\label{eqn:qftLecture8:1260}
+j^\mu = -\partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi + \inv{2} x^\mu \partial_nu \phi \partial^\nu \phi
+\end{dmath}
+
+Flipping signs
+\begin{dmath}\label{eqn:qftLecture8:1280}
+j^\mu_{\text{dil}} = \partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi - \inv{2} x^\mu \partial_nu \phi \partial^\nu \phi
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture8:1300}
+j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} - \inv{2} \partial^\mu \phi^2
+\end{dmath}
+
+The current and \( T^{\mu\nu} \) can both be redefined \( j^{\mu'} = j^\mu + \partial_\nu C^{\nu\mu} \) adding an antisymetric \( C^{\mu\nu} = -C^{\nu\mu} \)
+
+\begin{dmath}\label{eqn:qftLecture8:1320}
+j^\mu_{\text{dil conformal}} = - x_\nu T^{\nu\mu}_{\text{conformal}}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture8:1340}
+\partial_\mu
+j^\mu_{\text{dil conformal}} = - {{T_{\text{conformal}}}^\mu}_\mu
+\end{dmath}
+
+%}
+%\EndArticle
+\EndNoBibArticle
