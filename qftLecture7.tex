@@ -87,8 +87,8 @@ or if \( \alpha \sim 0 \)
 +
 \alpha
 \begin{bmatrix}
-\phi^1 \\
-\phi^2
+\phi^2 \\
+-\phi^1
 \end{bmatrix}
 \end{dmath}
 In index notation we write
@@ -121,7 +121,7 @@ Given a Lagrangian density \( \LL(\phi(x), \phi_{,\mu}(x)) \), where \( \phi_{,\
 \begin{dmath}\label{eqn:qftLecture7:160}
 S = \int d^d x \LL.
 \end{dmath}
-EOMs are invariant if under \( \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta_\epsilon(\phi(x)\), we have
+EOMs are invariant if under \( \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta_\epsilon \phi(x)\), we have
 \begin{dmath}\label{eqn:qftLecture7:180}
 \LL(\phi) \rightarrow \LL'(\phi') = \LL(\phi) + \partial_\mu J_\epsilon^\mu(\phi) + O(\epsilon^2).
 \end{dmath}
@@ -169,30 +169,36 @@ j^\mu =
 \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta_\epsilon \phi  - J_\epsilon^\mu.
 }
 
-F1: cylinder time up
+Integrating the divergence of the current over a space time volume, perhaps that of
+F1: cylinder time up,
+is also zero.  That is
 \begin{dmath}\label{eqn:qftLecture7:300}
 0 =
-\int d^3 \Bx dt \partial_\mu j^\mu
+\int d^4 x \, \partial_\mu j^\mu
 =
-\int d^3 \Bx dt \partial_t j^0 -
-\cancel{\int d^3 \Bx dt \spacegrad \cdot \Bj}
+\int d^3 \Bx dt \, \partial_\mu j^\mu
+=
+\int d^3 \Bx dt \, \partial_t j^0 -
+\cancel{\int d^3 \Bx dt \spacegrad \cdot \Bj},
 \end{dmath}
+where the spatial divergence is zero assuming there's no current leaving the volume on the infinite boundary.
 (no \(\Bj\) at spatial infinity.
 
-FIXME: missed some stuff related to Q here.
-%% missed some stuff here.
-%0 = \int d^3 \Bx j^0(\Bx, t)
-%% defined Q.
+We write
+\begin{dmath}\label{eqn:qftLecture7:560}
+Q = \int d^3x \partial_t j^0,
+\end{dmath}
+and call this the on-shell charge associated with the symmetry.
 
 \section{Spacetime translation.}
 
 A spacetime translation has the form
-\begin{dmath}\label{eqn:qftLecture7:320}
+\begin{equation}\label{eqn:qftLecture7:320}
 x^\mu \rightarrow {x'}^\mu = x^\mu + a^\mu,
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture7:340}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture7:340}
 \phi(x) \rightarrow \phi'(x') = \phi(x)
-\end{dmath}
+\end{equation}
 (contrast this to a Lorentz transformation that had the form \( x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu \)).
 
 If \(\phi'(x + a) = \phi(x) \), then
@@ -202,12 +208,15 @@ If \(\phi'(x + a) = \phi(x) \), then
 \phi(x),
 \end{dmath}
 so
-\begin{equation}\label{eqn:qftLecture7:380}
+\begin{dmath}\label{eqn:qftLecture7:380}
 \phi'(x)
 = \phi(x) - a^\mu \partial_\mu \phi'(x)
-= \phi(x) - a^\mu \partial_\mu \phi'(x)
-= \phi(x) + \delta_a \phi(x).
-\end{equation}
+= \phi(x) + \delta_a \phi(x),
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture7:580}
+\delta_a \phi(x) = - a^\mu \partial_\mu \phi(x).
+\end{dmath}
 Under \( \phi \rightarrow \phi - a^\mu \partial_\mu \phi \), we have
 \begin{dmath}\label{eqn:qftLecture7:400}
 \LL(\phi) \rightarrow \LL(\phi) - a^\mu \partial_\mu \LL.
@@ -218,22 +227,35 @@ Let's calculate this with our scalar theory Lagrangian
 \end{dmath}
 The Lagrangian variation is
 \begin{dmath}\label{eqn:qftLecture7:440}
-\evalbar{\delta \LL}{\phi \rightarrow \phi + \delta \[phi, \delta\phi = - a^\mu \partial_\mu \phi}
+\evalbar{\delta \LL}{\phi \rightarrow \phi + \delta \phi, \delta\phi = - a^\mu \partial_\mu \phi}
 =
-(\partial_\mu \phi)(-a^\nu \partial_\nu \partial^\mu \phi) + m^2 \phi a^\nu \partial_\nu \phi + \PD{\phi}{V} a^\nu \partial_\nu \phi
+(\partial_\mu \phi) \delta (\partial^\mu \phi) - m^2 \phi \delta \phi - \PD{\phi}{V} \delta \phi
+=
+(\partial_\mu \phi)(-a^\nu \partial_\nu \phi \partial^\mu \phi) + m^2 \phi a^\nu \partial_\nu \phi + \PD{\phi}{V} a^\nu \partial_\nu \phi
 =
 - a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
+=
+- a^\nu \partial_\nu \LL.
 \end{dmath}
 
-Change of the Lagrangian in the \( \nu \) direction
+So the current is
+\begin{dmath}\label{eqn:qftLecture7:600}
+j^\mu
+=
+(\partial^\mu \phi) (-a^\nu \partial_\nu \phi) + a^\nu \LL
+=
+-a^\nu \lr{ \partial^\mu \phi \partial_\nu \phi - \LL }
+\end{dmath}
+
+We really have a current for each \( \nu \) direction and can make that explicit writing
 \begin{dmath}\label{eqn:qftLecture7:460}
 \delta_\nu \LL = -\partial_\nu \LL
-= - \partial_\mu \lr{ \delta^\mu_\nu \LL )
+= - \partial_\mu \lr{ {\delta^\mu}_\nu \LL }
 = \partial_\mu {J^\mu}_\nu
 \end{dmath}
 we write
 \begin{dmath}\label{eqn:qftLecture7:480}
-j^\mu_\nu = \PD{x_\mu}{\phi} \lr{ - \PD{x^\nu}{\phi} + {\delta^\mu}_\nu \LL
+{j^\mu}_\nu = \PD{x_\mu}{\phi} \lr{ - \PD{x^\nu}{\phi} } + {\delta^\mu}_\nu \LL,
 \end{dmath}
 where \( \nu \) are lables which coordinates are translated:
 \begin{dmath}\label{eqn:qftLecture7:500}
@@ -242,21 +264,41 @@ where \( \nu \) are lables which coordinates are translated:
 \partial_\nu \LL &= - \partial_\nu \LL.
 \end{aligned}
 \end{dmath}
-We write
+We call the conserved quantities elements of the energy-momentum tensor, and write it as
 \boxedEquation{eqn:qftLecture7:520}{
 {T^\mu}_\nu = -\PD{x_\mu}{\phi} \PD{x^\nu}{\phi} + {\delta^\mu}_\nu \LL.
 }
 
-Sign convention check
+Incidentally, we picked a non-standard sign convention for the tensor, as an explicit expansion of \( T^{00} \) shows
 \begin{dmath}\label{eqn:qftLecture7:540}
 {T^0}_0 =
 -\PD{t}{\phi}
 \PD{t}{\phi}
-+ \inv{2}
-...
++\inv{2}
+\PD{t}{\phi}
+\PD{t}{\phi}
+- \inv{2} (\spacegrad \phi) \cdot (\spacegrad \phi)
+- \frac{m^2}{2} \phi^2 - V(\phi)
 =
-- \lr{ \inv{2} ...}
+-\inv{2} \PD{t}{\phi} \PD{t}{\phi}
+- \inv{2} (\spacegrad \phi) \cdot (\spacegrad \phi)
+- \frac{m^2}{2} \phi^2 - V(\phi).
 \end{dmath}
+Had we translated by \( -a^\mu \) we'd have a positive definite tensor instead.
 
+%%\section{Problems.}
+%%
+%%\makeproblem{Adding a total derivative to the Lagrangian}{problem:qftLecture7:560}{
+%%Show that adding a total derivative to the Lagrangian density leaves the equations of motion unchanged.
+%%} % problem
+%%
+%%\makeanswer{problem:qftLecture7:560}{
+%%Given
+%%\begin{dmath}\label{eqn:qftLecture7:620}
+%%\LL' = \LL + \partial_\mu a^\mu
+%%\end{dmath}
+%%} % answer
+
+%}
 %\EndArticle
 \EndNoBibArticle
