@@ -611,9 +611,97 @@ or in normal form
 
 \makeSubAnswer{}{qft:problemSet1:2c}
 
-Inserting \cref{eqn:ProblemSet1Problem2:860} into
-\cref{eqn:ProblemSet1Problem2:580}
+Before diving into computation, it is worth deriving \cref{eqn:ProblemSet1Problem2:580} manually, since the niave calculation using the current as derived in class differs slightly.  We can find the current/charge as stated in the problem if our variation maintains the order of the conjugate pairs.  The symmetry is that imposed by the transformation
 
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1300}
+\begin{aligned}
+\phi(x) &\rightarrow e^{-i\theta/2} \phi(x) \approx (1 - i\theta/2)\phi(x) \\
+\phi^\dagger(x) &\rightarrow e^{i\theta/2} \phi^\dagger(x) \approx (1 + i\theta/2)\phi^\dagger(x),
+\end{aligned}
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1320}
+\begin{aligned}
+\delta \phi(x) &= -\frac{i}{2} \theta \phi(x) \\
+\delta \phi^\dagger(x) &= \frac{i}{2} \theta \phi^\dagger(x).
+\end{aligned}
+\end{dmath}
+
+The Lagrangian is left unchanged by this transformation, so we can determine the current directly by varying the action, but do so leaving the order of the \(\phi^\dagger\) and \( \phi\) terms in the Lagrangian unchanged
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1340}
+\delta S
+= \int d^4 x \delta \lr{ \partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi }
+= \int d^4 x
+\lr{
+   \delta\lr{ \partial_\mu \phi^\dagger } \partial^\mu \phi
+  + \partial^\mu \phi^\dagger \delta \lr{ \partial_\mu \phi }
+   - m^2 \lr{\delta \phi^\dagger} \phi
+  - m^2 \phi^\dagger \lr{\delta \phi}
+}
+= \int d^4 x
+\lr{
+   \partial_\mu \lr{ \lr{ \delta \phi^\dagger} \partial^\mu \phi }
+-
+   \lr{\delta \phi^\dagger} \lr{\partial_\mu \partial^\mu \phi}
+ + \partial_\mu \lr{ \partial^\mu \phi^\dagger \delta \phi }
+ - \lr{ \partial_\mu \partial^\mu \phi^\dagger } \delta \phi
+   - m^2 \lr{ \delta \phi^\dagger} \phi - m^2 \phi^\dagger \lr{ \delta \phi}
+}
+=
+\int d^4 x
+\partial_\mu
+\lr{
+   \delta \phi^\dagger \partial^\mu \phi
+ + \partial^\mu \phi^\dagger \delta \phi
+}
+-
+\int d^4 x
+\delta \phi^\dagger
+\lr{
+   \lr{\partial_\mu \partial^\mu \phi}
++ m^2 \phi
+}
+-
+\int d^4 x
+\lr{
+ \partial_\mu \partial^\mu \phi^\dagger
++ m^2 \phi^\dagger
+}
+\delta \phi
+=
+\int d^4 x
+\partial_\mu
+\lr{
+   \delta \phi^\dagger \partial^\mu \phi
+ + \partial^\mu \phi^\dagger \delta \phi
+},
+\end{dmath}
+where the Euler-Lagrange equations for each of the fields has been imposed to kill off the last two integrals.  We are left with a current
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1360}
+j^\mu =
+   \delta \phi^\dagger \partial^\mu \phi
+ + \partial^\mu \phi^\dagger \delta \phi
+=
+\frac{i\theta}{2} \lr{
+   \phi^\dagger \lr{ \partial^\mu \phi }
+ - \lr{ \partial^\mu \phi^\dagger} \phi
+}.
+\end{dmath}
+In particular
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1380}
+\evalbar{j^0}{\theta = 1}
+=
+\frac{i}{2} \lr{
+   \phi^\dagger \lr{ \partial^0 \phi }
+ - \lr{ \partial^0 \phi^\dagger} \phi
+}
+=
+\frac{i}{2} \lr{
+   \phi^\dagger \pi^\dagger - \pi \phi
+}.
+\end{dmath}
+This recovers \cref{eqn:ProblemSet1Problem2:580}, and we are now set to compute the charge by plugging in
+\cref{eqn:ProblemSet1Problem2:580}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:600}
 Q =
 \frac{i}{2}
@@ -663,9 +751,9 @@ e^{i (\Bp -\Bq)\cdot \Bx}
 \frac{d^3 p}{(2\pi)^3}
 \lr{
    a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
-}
+},
 \end{dmath}
-or
+or, in normal order
 \boxedEquation{eqn:ProblemSet1Problem2:1280}{
 :Q:
 =
@@ -676,14 +764,14 @@ or
    a_\Bp^\dagger a_\Bp - b_\Bp^\dagger b_\Bp
 }
 }
-Let's get a feel for the charge by applying it to the states corresponding to each creation operator
+To understand the action of the charge operator (a set of number operators) we may apply it to the states corresponding to each creation operator.  With
 \begin{dmath}\label{eqn:ProblemSet1Problem2:640}
 \begin{aligned}
 \ket{\Bk}_a &= a^\dagger_\Bk \ket{0} \\
-\ket{\Bk}_b &= b^\dagger_\Bk \ket{0}.
+\ket{\Bk}_b &= b^\dagger_\Bk \ket{0},
 \end{aligned}
 \end{dmath}
-
+we find
 \begin{dmath}\label{eqn:ProblemSet1Problem2:660}
 Q \ket{\Bk}_a =
 \frac{1}{2} \int
@@ -712,7 +800,7 @@ a_\Bp
 a_\Bk^\dagger \ket{0}
 =
 \inv{2}
-\ket{\Bk}_a.
+\ket{\Bk}_a,
 \end{dmath}
 and
 \begin{dmath}\label{eqn:ProblemSet1Problem2:680}
@@ -746,9 +834,10 @@ b_\Bk^\dagger \ket{0}
 \ket{\Bk}_b.
 \end{dmath}
 So, we could say that the particles associated with creation operator \( a_\Bp^\dagger \) have a (1/2) charge and
-particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.  Since the leading factor in the charge of
-\cref{eqn:ProblemSet1Problem2:580} was arbitrary (as it comes from examining the symmetry for the \( \phi \rightarrow e^{\pm i\alpha} \phi \) with \( \alpha = 1/2\)), it is perhaps more accurate to say that the number operator 
-\( a_\Bp^\dagger a_\Bp \) is associated with a unit of charge whereas 
-\( b_\Bp^\dagger b_\Bp \) is associated with a unit of charge with the opposite sign.
+particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.
+However, the \( 1/2 \), as well as the sign itself, was arbitrary, coming from the value of \( \theta \) used in the transformation of the field.   Therefore,
+it is probably more accurate to say that the
+\( a_\Bp^\dagger a_\Bp \) portion of the charge operator is associated with some unit of charge whereas the
+\( b_\Bp^\dagger b_\Bp \) portion of the charge operator is associated with a unit of charge that has an opposite sign.
 }
 %}
