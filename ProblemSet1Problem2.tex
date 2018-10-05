@@ -13,7 +13,7 @@ Introduce complex amplitudes, diagonalize the Hamiltonian, and quantize the theo
 \makesubproblem{}{qft:problemSet1:2c}
 Write the charge conserved due to the global \( U(1) \) symmetry,
 \begin{dmath}\label{eqn:ProblemSet1Problem2:580}
-Q = \int d^3 x \frac{i}{2} \lr{ \phi^\dagger \pi - \pi^\dagger \phi },
+Q = \int d^3 x \frac{i}{2} \lr{ \phi^\dagger \pi^\dagger - \pi \phi },
 \end{dmath}
 in
 terms of creation and annihilation operators and find the charge of the particles of each type.
@@ -58,7 +58,7 @@ so the conjugate momentum densities are
 \end{aligned}
 \end{dmath}
 
-The Hamiltonian (including a \( p \dot{q} \) term for each of \( \phi, \phi^\dagger \)) is
+The Hamiltonian (including a ``\(p \dot{q}\)'' term for each of \( \phi, \phi^\dagger \)) is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:100}
 H
 = \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\dagger \partial_0 \phi^\dagger - \LL }
@@ -74,375 +74,607 @@ H
 \makeSubAnswer{}{qft:problemSet1:2b}
 To canonically quantize the fields, we promote the fields to operators, demand that we have commutators for conjugate pairs of operators
 \begin{equation}\label{eqn:ProblemSet1Problem2:120}
-\antisymmetric{\phi(\Bx)}{\pi^\dagger(\By)} =
-\antisymmetric{\phi^\dagger(\Bx)}{\pi(\By)} = i \delta^3(\Bx - \By),
+\antisymmetric{\phi(\Bx)}{\pi(\By)}
+=
+\antisymmetric{\phi^\dagger(\Bx)}{\pi^\dagger(\By)}
+= i \delta^3(\Bx - \By),
 \end{equation}
-and requiring that all the other operator pairs \( \phi \phi^\dagger, \pi \pi^\dagger, \phi\pi, \phi^\dagger \pi^\dagger \) commute\footnote{As I discovered the hard way doing this assignment is it also possible to find the KG equation by demanding \(
-\antisymmetric{\phi(\Bx)}{\pi(\By)} =
-\antisymmetric{\phi^\dagger(\Bx)}{\pi^\dagger(\By)} = i \delta^3(\Bx - \By) \), however, doing so leads to trouble when attempting to find the pairs of properly behaving creation and annihilation operators.  For a nice discussion that motivates the ``proper choice'', requiring commutators for conjugate pairs of position-momentum operators, see \citep{DavidMayrhofer} where the author starts with separate real and imaginary fields and builds the complex representation systematically.}.
-If we compute the time evolution of such quantized \( \phi, \phi^\dagger \) field operators using Hamiltonian time evolution operators, the result differs from the classical case by a conjugation operation
-\begin{dmath}\label{eqn:ProblemSet1Problem2:140}
-\ddt{\phi(\Bx)}
-= i \antisymmetric{H(\By)}{\phi(\Bx)}
-= i \int d^3 y \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi(\Bx)}
-= i \int d^3 y \,\pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi(\Bx)}
-= \int d^3 y \,\pi(\By) \delta^3(\Bx - \By)
-= \pi(\Bx),
+and require all the other operator pairs \( \phi \phi^\dagger, \pi \pi^\dagger, \phi^\dagger\pi, \phi\pi^\dagger \) commute.
+
+Before diagonalizing the Hamiltonian, let's verify that applying computing Hamilton's equations using such quantized operators recovers the Klein-Gordon equations we expect.
+\begin{subequations}
+\label{eqn:ProblemSet1Problem2:700}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:720}
+\PD{t}{\phi}(\Bx, t)
+= i \antisymmetric{H}{\phi(\Bx)}
+=
+i \int d^3 y \lr{
+   \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi(\Bx)}
+   +
+   \cancel{\antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\phi(\Bx)}}
+   +
+   \cancel{\antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\phi(\Bx)}}
+}
+=
+i \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
+=
+i \int d^3 y \pi^\dagger(\By) (-i) \delta(\By - \Bx)
+=
+\pi^\dagger(\Bx)
 \end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:160}
-\ddt{\phi^\dagger(\Bx)}
-= i \antisymmetric{H(\By)}{\phi^\dagger(\Bx)}
-= i \int d^3 y \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi^\dagger(\Bx)}
-= i \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
-= \int d^3 y \pi^\dagger(\By) \delta^3(\Bx - \By)
-= \pi^\dagger(\Bx),
+\begin{dmath}\label{eqn:ProblemSet1Problem2:740}
+\PD{t}{\phi^\dagger}(\Bx, t)
+= i \antisymmetric{H}{\phi^\dagger(\Bx)}
+=
+i \int d^3 y \lr{
+   \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi^\dagger(\Bx)}
+   +
+   \cancel{\antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\phi^\dagger(\Bx)}}
+   +
+   m^2 \cancel{\antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\phi^\dagger(\Bx)}}
+}
+=
+i \int d^3 y \pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi^\dagger(\Bx)}
+=
+i \int d^3 y \pi(\By) (-i) \delta(\By - \Bx)
+=
+\pi(\Bx)
 \end{dmath}
-which differs from \cref{eqn:ProblemSet1Problem2:80}.  However, should we compute the time evolution of the momentum operators,
-this conjugation difference is ``cancelled'' and we end up with the Klein-Gordon equations in the end.
-\begin{dmath}\label{eqn:ProblemSet1Problem2:180}
-\ddt{\pi(\Bx)}
-= i \antisymmetric{H(\By)}{\pi(\Bx)}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:760}
+\PD{t}{\pi}(\Bx, t)
 =
-i \int d^3 y \antisymmetric{
-\spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By)
-}{ \pi(\Bx) }
-+
-i m^2 \int d^3 y \antisymmetric{ \phi^\dagger(\By) \phi(\By) }{ \pi(\Bx) }.
-\end{dmath}
-The second integral is easy
-\begin{dmath}\label{eqn:ProblemSet1Problem2:200}
-\int d^3 y \antisymmetric{ \phi^\dagger(\By) \phi(\By) }{ \pi(\Bx) }
+i \antisymmetric{H}{\pi(\Bx)}
 =
-\int d^3 y\,
-\phi(\By)
-\antisymmetric{
-\phi(\By) }{ \pi(\Bx) }
+i \int d^3 y \lr{
+   \cancel{\antisymmetric{\pi^\dagger(\By) \pi(\By)}{\pi(\Bx)}}
+   +
+   \antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\pi(\Bx)}
+   +
+   m^2 \antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\pi(\Bx)}
+}
 =
-i
-\int d^3 y\,
-\phi(\By)
-\delta^3(\Bx - \By)
+i \int d^3 y \lr{
+   \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \antisymmetric{ \phi(\By) }{\pi(\Bx)}
+   +
+   m^2 \phi^\dagger(\By) \antisymmetric{ \phi(\By)  }{\pi(\Bx)}
+}
 =
-i
-\phi(\Bx).
-\end{dmath}
-To evaluate the first integral in \cref{eqn:ProblemSet1Problem2:180} we can make use of the linearity to find
-\begin{dmath}\label{eqn:ProblemSet1Problem2:220}
-i \int d^3 y \antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{ \pi(\Bx) }
-=
-i \int d^3 y \, \spacegrad_\By \antisymmetric{\phi^\dagger(\By)}{\pi(\Bx)} \cdot \spacegrad_\By \phi(\By)
-=
-- \int d^3 y \, \spacegrad_\By \delta(\Bx - \By) \cdot \spacegrad_\By \phi(\By)
+i \int d^3 y \lr{
+   \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By (i \delta^3(\By - \Bx))
+   +
+   m^2 \phi^\dagger(\By) i \delta^3(\By - \Bx)
+}
 =
 - \int d^3 y \lr{
-\spacegrad_\By \cdot \lr{ \delta(\Bx - \By) \spacegrad_\By \phi(\By) }
--
-\delta(\Bx - \By) \spacegrad_\By^2 \phi(\By)
+   \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By \phi^\dagger(\By) }
+   -
+   \delta^3(\By - \Bx) \spacegrad_\By^2 \phi^\dagger(\By)
+}
+- m^2 \phi^\dagger(\Bx)
+=
+   \spacegrad^2 \phi^\dagger(\Bx)
+- m^2 \phi^\dagger(\Bx).
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:780}
+\PD{t}{\pi^\dagger}(\Bx, t)
+=
+i \antisymmetric{H}{\pi^\dagger(\Bx)}
+=
+i \int d^3 y \lr{
+   \cancel{\antisymmetric{\pi^\dagger(\By) \pi(\By)}{\pi^\dagger(\Bx)}}
+   +
+   \antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\pi^\dagger(\Bx)}
+   +
+   m^2 \antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\pi^\dagger(\Bx)}
 }
 =
-- \int dA_y
-\delta(\Bx - \By) \PD{n}{\phi(\By)}
-+
-\spacegrad^2 \phi(\Bx).
-\end{dmath}
-Provided we have some justification for declaring the first integral zero (I'm not sure what that was in class, as the delta function isn't really well behaved unless integrated over a volume), we are left with
-\begin{dmath}\label{eqn:ProblemSet1Problem2:260}
-\ddt{\pi(\Bx)}
+i \int d^3 y \lr{
+   \spacegrad_\By \phi(\By) \cdot \spacegrad_\By \antisymmetric{ \phi^\dagger(\By) }{\pi^\dagger(\Bx)}
+   +
+   m^2 \phi(\By) \antisymmetric{ \phi^\dagger(\By)  }{\pi^\dagger(\Bx)}
+}
 =
-\spacegrad^2 \phi(\Bx) - m^2 \phi(\Bx),
-\end{dmath}
-or
-\begin{dmath}\label{eqn:ProblemSet1Problem2:280}
-\frac{d^2 \phi}{dt^2}
+i \int d^3 y \lr{
+   \spacegrad_\By \phi(\By) \cdot \spacegrad_\By (i \delta^3(\By - \Bx))
+   +
+   m^2 \phi(\By) i \delta^3(\By - \Bx)
+}
 =
-\spacegrad^2 \phi - m^2 \phi.
-\end{dmath}
-which is a KG equation for \( \phi\).
-As the Hamiltonian is symmetric in \( \pi, \pi^\dagger \) and \( \phi, \phi^\dagger \) repeating this calculation for \( \dot{\pi}^\dagger \) gives
-\begin{dmath}\label{eqn:ProblemSet1Problem2:300}
-\ddt{\pi^\dagger(\Bx)}
+- \int d^3 y \lr{
+   \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By \phi(\By) }
+   -
+   \delta^3(\By - \Bx) \spacegrad_\By^2 \phi(\By)
+}
+- m^2 \phi(\Bx)
 =
-\spacegrad^2 \phi^\dagger(\Bx) - m^2 \phi^\dagger(\Bx),
+   \spacegrad^2 \phi(\Bx)
+- m^2 \phi(\Bx).
 \end{dmath}
-which is also a KG equation for the quantized field \( \phi \).
-%%%\begin{dmath}\label{eqn:ProblemSet1Problem2:320}
-%%%\frac{d^2 \phi^\dagger}{dt^2}
-%%%=
-%%%\spacegrad^2 \phi^\dagger - m^2 \phi^\dagger,
-%%%\end{dmath}
-%%%as expected.
+\end{subequations}
+This recovers the Klein-Gordon equations
+\begin{dmath}\label{eqn:ProblemSet1Problem2:820}
+\begin{aligned}
+\lr{ \PDSq{t}{} - \spacegrad^2 + m^2 } &\phi(\Bx, t) = 0 \\
+\lr{ \PDSq{t}{} - \spacegrad^2 + m^2 } &\phi^\dagger(\Bx, t) = 0,
+\end{aligned}
+\end{dmath}
+consistent with \cref{eqn:ProblemSet1Problem2:340} found by evaluating the classical Euler-Lagrange equations.
 
-Unlike the single particle scalar theory that we examined in class, we won't make any a-priori assumption that the quantized field operator \( \phi \) is Hermitian, but seek a (momentum-space) representation that is slightly more general
-\begin{dmath}\label{eqn:ProblemSet1Problem2:360}
+Somewhat cavalierly, the divergence integrals of the delta function above were assumed to be zero.
+One possible justification for killing the delta function divergence integrals above first transforms those into surface integrals
+\begin{dmath}\label{eqn:ProblemSet1Problem2:800}
+\int_V d^3 y \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By f(\By) }
+=
+\int_{\partial V} dA_\By \delta^3(\By - \Bx) \ncap_\By \cdot \spacegrad_\By f(\By),
+\end{dmath}
+after which one argue that this is non-zero only when \( \Bx \) is on the boundary, so if we let the boundary go to infinity, it is zero everywhere, regardless of the normal derivative of the function being operated on\footnote{This was Prof. Poppitz's argument.  It's not completely convincing to me, as it requires integrating a delta function that may sit on the boundary.  However, what is the meaning of such a boundary integral, such as \( \int_0^\infty \delta(x) dx \)?  Apparently, such integrals are considered well defined in field theory, and we'll end up encountering these later too, and one of the future problems will help us understand an interpretation.}.
+%\citep{DavidMayrhofer} where the author starts with separate real and imaginary fields and builds the complex representation systematically.
+
+\paragraph{Diagonal basis for the Hamiltonian.}
+In class we saw that a momentum space representation of \( \phi, \pi \) for the scalar single field Lagrangian simplified the Hamiltonian considerably.
+Let's assume a similar momentum space representation of our field operator
+\begin{dmath}\label{eqn:ProblemSet1Problem2:840}
+\widetilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
+\end{dmath}
+but will not make any a-priori assumption that the quantized field operator \( \phi \) is Hermitian.
+We find the following spatial representation of the operator \( \phi \) and it's relations
+\begin{subequations}
+\label{eqn:ProblemSet1Problem2:860}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:880}
+\phi(\Bx, t) =
+\int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
+\inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:900}
+\phi^\dagger(\Bx, t) =
+\int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
+\inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1140}
+\spacegrad \phi(\Bx, t) =
+\int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
+\frac{i \Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1160}
+\spacegrad \phi^\dagger(\Bx, t) =
+\int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
+\frac{-i \Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:920}
+\pi(\Bx, t) = \PD{t}{\phi^\dagger}
+=
+\int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
+\frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:940}
+\pi^\dagger(\Bx, t) = \PD{t}{\phi}
+=
+\int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
+\frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }.
+\end{dmath}
+\end{subequations}
+By inspection, we may read off the Fourier transform of \( \widetilde{\pi^\dagger} \), which is
+\begin{dmath}\label{eqn:ProblemSet1Problem2:960}
+\widetilde{\pi^\dagger}(\Bp, t)
+=
+\frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
+\end{dmath}
+which allows, with \cref{eqn:ProblemSet1Problem2:840}, inversion for operators \( a_\Bp, b^\dagger_\Bp \)
+\begin{dmath}\label{eqn:ProblemSet1Problem2:980}
 \begin{aligned}
-\tilde{\phi}(\Bp, t) &= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
-\tilde{\pi}(\Bp, t) &= \frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
+a_\Bp &= e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \widetilde{\phi} - \inv{i \omega_\Bp} \widetilde{\pi^\dagger} } \\
+b_\Bp^\dagger &= e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \widetilde{\phi} + \inv{i \omega_\Bp} \widetilde{\pi^\dagger} },
 \end{aligned}
 \end{dmath}
-where \( \omega_\Bp^2 = \Bp^2 + m^2 \).  These equations are invertible for \( a_\Bp, b^\dagger_\Bp \)
-\begin{dmath}\label{eqn:ProblemSet1Problem2:380}
+or, in terms of spatial operators
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1000}
 \begin{aligned}
-a_\Bp &= \sqrt{\frac{\omega_\Bp}{2}} e^{i\omega_\Bp t} \lr{ \tilde{\phi}(\Bp, t) - \inv{i\omega_\Bp} \tilde{\pi}(\Bp, t) } \\
-b_\Bp^\dagger &= \sqrt{\frac{\omega_\Bp}{2}} e^{-i\omega_\Bp t} \lr{ \tilde{\phi}(\Bp, t) + \inv{i\omega_\Bp} \tilde{\pi}(\Bp, t) },
+a_\Bp &=
+\int d^3 x e^{-i \Bp \cdot \Bx}
+e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) } \\
+a_\Bp^\dagger &=
+\int d^3 x e^{i \Bp \cdot \Bx}
+e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \phi^\dagger(\Bx, t) + \inv{i \omega_\Bp} \pi(\Bx, t) } \\
+b_\Bp &=
+\int d^3 x e^{i \Bp \cdot \Bx}
+e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \phi^\dagger(\Bx, t) - \inv{i \omega_\Bp} \pi(\Bx, t) } \\
+b_\Bp^\dagger &=
+\int d^3 x e^{-i \Bp \cdot \Bx}
+e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \phi(\Bx, t) + \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }.
 \end{aligned}
 \end{dmath}
-or in terms of a spatial representation
-\begin{dmath}\label{eqn:ProblemSet1Problem2:440}
-\begin{aligned}
-a_\Bp &= \int d^3 x e^{-i \Bp \cdot \Bx} \sqrt{\frac{\omega_\Bp}{2}} e^{i\omega_\Bp t} \lr{ \phi(\Bx, t) - \inv{i\omega_\Bp} \pi(\Bx, t) } \\
-a_\Bq^\dagger &= \int d^3 y e^{i \Bq \cdot \By} \sqrt{\frac{\omega_\Bq}{2}} e^{-i\omega_\Bq t} \lr{ \phi^\dagger(\By, t) + \inv{i\omega_\Bq} \pi^\dagger(\By, t) } \\
-b_\Bp &= \int d^3 x e^{i \Bp \cdot \Bx} \sqrt{\frac{\omega_\Bp}{2}} e^{i\omega_\Bp t} \lr{ \phi^\dagger(\Bx, t) - \inv{i\omega_\Bp} \pi^\dagger(\Bx, t) } \\
-b_\Bq^\dagger &= \int d^3 y e^{-i \Bq \cdot \By} \sqrt{\frac{\omega_\Bq}{2}} e^{-i\omega_\Bq t} \lr{ \phi(\By, t) + \inv{i\omega_\Bq} \pi(\By, t) }.
-\end{aligned}
-\end{dmath}
-We seek the commutators of all the \cref{eqn:ProblemSet1Problem2:440}
-Fourier coefficient operators.  Since conjugate pairs \( \phi, \pi^\dagger \) or \( \phi^\dagger, \pi \) are required for any non-zero commutator, we have by inspection \(
+%a_\Bq^\dagger &=
+%\int d^3 y e^{i \Bq \cdot \By}
+%e^{-i\omega_\Bq t} \sqrt{\frac{\omega_\Bq}{2}} \lr{ \phi^\dagger(\By, t) + \inv{i \omega_\Bq} \pi(\By, t) } \\
+%b_\Bq &=
+%\int d^3 y e^{i \Bq \cdot \By}
+%e^{i\omega_\Bq t} \sqrt{\frac{\omega_\Bq}{2}} \lr{ \phi^\dagger(\By, t) - \inv{i \omega_\Bq} \pi(\By, t) }
+%b_\Bq^\dagger &=
+%\int d^3 y e^{-i \Bq \cdot \By}
+%e^{-i\omega_\Bq t} \sqrt{\frac{\omega_\Bq}{2}} \lr{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) }.
+We seek the commutators of all the \cref{eqn:ProblemSet1Problem2:1000} Fourier coefficient operators, which we expect to behave like creation and annihilation operators.  By inspection
+\( 0 =
 \antisymmetric{a_\Bp}{b_\Bq^\dagger}
 =
-\antisymmetric{a_\Bp^\dagger}{b_\Bq}
-= 0 \).
-For the rest some expansion is required
-\begin{dmath}\label{eqn:ProblemSet1Problem2:460}
+\antisymmetric{a_\Bp}{a_\Bq}
+=
+\antisymmetric{b_\Bp}{a_\Bq^\dagger}
+=
+\antisymmetric{b_\Bp}{b_\Bq}
+\), but the rest require evaluation.  We expect \( 0
+= \antisymmetric{a_\Bp}{b_\Bq}
+= \antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger} \) and explicit expansion confirms this
+\begin{subequations}
+\label{eqn:ProblemSet1Problem2:1020}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1040}
 \antisymmetric{a_\Bp}{b_\Bq}
 =
-\int d^3 x d^3 y e^{-i \Bp \cdot \Bx} e^{i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t + i \omega_\Bq t}
-\antisymmetric{  \phi(\Bx, t) - \inv{i\omega_\Bp}  \pi(\Bx, t) }
-{  \phi^\dagger(\By, t) - \inv{i\omega_\Bq}  \pi^\dagger(\By, t) }
+\int d^3 x
+d^3 y
+e^{-i \Bp \cdot \Bx}
+e^{i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
+\antisymmetric{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }
+{ \phi^\dagger(\By, t) - \inv{i \omega_\Bq} \pi(\By, t) }
 =
-\int d^3 x d^3 y e^{-i \Bp \cdot \Bx} e^{i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t + i \omega_\Bq t}
+\int
+d^3 x
+d^3 y
+e^{-i \Bp \cdot \Bx}
+e^{i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
 \lr{
    -\inv{i \omega_\Bq} i \delta^3(\Bx - \By)
-   -
-   \inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
 }
 =
-\int d^3 x e^{i (\Bq -\Bp) \cdot \Bx}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t + i \omega_\Bq t}
+\inv{2} \int d^3 x e^{i (\Bq - \Bp) \cdot \Bx}
+e^{i\omega_\Bp t}
+e^{i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   -\inv{\omega_\Bq}
-   +
-   \inv{\omega_\Bp}
+   -\inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
 }
 =
-(2\pi)^3 \delta^3(\Bq - \Bp)
-e^{i \omega_\Bp t + i \omega_\Bq t}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
+(2 \pi)^3 \delta(\Bq - \Bp)
+y^{i\omega_\Bp t}
+e^{i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   -\inv{\omega_\Bq}
-   +
-   \inv{\omega_\Bp}
+   -\inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
 }
-=
-\inv{2} (2\pi)^3 \delta^3(\Bq - \Bp)
-e^{2 i \omega_\Bp t }
-\times 0
 = 0,
 \end{dmath}
-so the commutators \( \antisymmetric{a_\Bp}{b_\Bq} = \antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger} = 0 \) as well.  Finally,
-\begin{dmath}\label{eqn:ProblemSet1Problem2:480}
-\antisymmetric{a_\Bp}{a_\Bq^\dagger}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1060}
+\antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger}
 =
-\int d^3 x d^3 y e^{-i \Bp \cdot \Bx} e^{i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
-\antisymmetric
-{  \phi(\Bx, t) - \inv{i\omega_\Bp} \pi(\Bx, t) }
-{  \phi^\dagger(\Bx, t) + \inv{i\omega_\Bq} \pi^\dagger(\Bx, t) }
+\int
+d^3 x
+d^3 y
+e^{i \Bp \cdot \Bx}
+e^{-i \Bq \cdot \By}
+e^{-i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
+\antisymmetric{ \phi^\dagger(\Bx, t) + \inv{i \omega_\Bp} \pi(\Bx, t) }
+{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) }
 =
-\int d^3 x d^3 y e^{-i \Bp \cdot \Bx} e^{i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
+\int
+d^3 x
+d^3 y
+e^{i \Bp \cdot \Bx}
+e^{-i \Bq \cdot \By}
+e^{-i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
 \lr{
-   \inv{i\omega_\Bq} i \delta^3(\Bx - \By)
--
-   \inv{i\omega_\Bp} (-i) \delta^3(\Bx - \By)
+   +\inv{i \omega_\Bq} i \delta^3(\Bx - \By)
+   +\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
 }
 =
-\int d^3 x e^{i (\Bq - \Bp) \cdot \Bx}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
+\inv{2} \int d^3 x e^{i (\Bp - \Bq) \cdot \Bx}
+e^{-i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   \inv{\omega_\Bq} + \inv{\omega_\Bp}
+   \inv{ \omega_\Bq}
+   -\inv{ \omega_\Bp}
 }
 =
-(2\pi)^3 \delta^3(\Bq - \Bp),
+(2 \pi)^3 \delta(\Bp - \Bq)
+e^{i\omega_\Bp t}
+e^{i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
+\lr{
+   \inv{ \omega_\Bq}
+   - \inv{ \omega_\Bp}
+}
+= 0.
 \end{dmath}
-and
-\begin{dmath}\label{eqn:ProblemSet1Problem2:500}
-\antisymmetric{b_\Bp}{b_\Bq^\dagger}
-=
-\int d^3 x d^3 y e^{i \Bp \cdot \Bx} e^{-i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
-\antisymmetric
-{  \phi^\dagger(\Bx, t) - \inv{i\omega_\Bp} \pi^\dagger(\Bx, t) }
-{  \phi(\Bx, t) + \inv{i\omega_\Bq} \pi(\Bx, t) }
-=
-\int d^3 x d^3 y e^{i \Bp \cdot \Bx} e^{-i \Bq \cdot \By}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
-\lr{
-   \inv{i\omega_\Bq} i \delta^3(\Bx - \By)
--
-   \inv{i\omega_\Bp} (-i) \delta^3(\Bx - \By)
-}
-=
-\int d^3 x e^{i (\Bp - \Bq) \cdot \Bx}
-\sqrt{\frac{\omega_\Bp}{2}} \sqrt{\frac{\omega_\Bq}{2}}
-e^{i \omega_\Bp t - i \omega_\Bq t}
-\lr{
-   \inv{\omega_\Bq} + \inv{\omega_\Bp}
-}
-=
-(2\pi)^3 \delta^3(\Bp - \Bq),
-\end{dmath}
-so the only non-zero commutators are \(
-\antisymmetric{a_\Bp}{a_\Bq^\dagger} =
-\antisymmetric{b_\Bp}{b_\Bq^\dagger} =
--\antisymmetric{a_\Bp^\dagger}{a_\Bq} =
--\antisymmetric{b_\Bp^\dagger}{b_\Bq} = (2 \pi)^3 \delta^3(\Bp - \Bq)
-\).
-Except for a scale factor, we have commutators associated with a pair of independent creation and annihilation operators.  Let's compute the Hamiltonian representation next to verify that it diagonalizes nicely with this representation.  We need the spatial representation of our operators
-\begin{dmath}\label{eqn:ProblemSet1Problem2:520}
-\begin{aligned}
-\phi(\Bx, t) &=
-\int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
-\inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
-\spacegrad \phi(\Bx, t) &=
-\int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
-\frac{i \Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
-\pi(\Bx, t) &=
-\int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
-\frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
-\end{aligned}
-\end{dmath}
-so the Hamiltonian is
-\begin{dmath}\label{eqn:ProblemSet1Problem2:540}
-H = \int d^3 x \lr{
-\pi^\dagger(\Bx, t)
-\pi(\Bx, t)
-+
-\spacegrad \phi^\dagger(\Bx, t) \cdot
-\spacegrad \phi(\Bx, t)
-+
-m^2
-\phi^\dagger(\Bx, t)
-\phi(\Bx, t)
-}
+\end{subequations}
+Finally, we expect that there are two pairs of non-zero commutators
+\begin{subequations}
+\label{eqn:ProblemSet1Problem2:1080}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1100}
+\antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}
 =
 \int d^3 x
-\frac{d^3 p}{(2 \pi)^3}
-\frac{d^3 q}{(2 \pi)^3}
-e^{i (\Bq-\Bp) \cdot \Bx}
-\inv{\sqrt{2 \omega_\Bp}}
-\inv{\sqrt{2 \omega_\Bq}}
+d^3 y
+e^{-i \Bp \cdot \Bx}
+e^{i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
+\antisymmetric{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }
+{ \phi^\dagger(\By, t) + \inv{i \omega_\Bq} \pi(\By, t) }
+=
+\inv{2} \int d^3 x
+d^3 y
+e^{-i \Bp \cdot \Bx}
+e^{i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   \omega_\Bp
-   \omega_\Bq
-   \lr{ -e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
-+
-   \lr{ \Bp \cdot \Bq + m^2 }
-   \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+   \inv{i \omega_\Bq} i \delta^3(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+}
+=
+\inv{2} \int d^3 x
+e^{i (\Bq -\Bp)\cdot \Bx}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
+\lr{
+   \inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
+}
+=
+\inv{2} (2 \pi)^3 \delta(\Bq - \Bp)
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
+\lr{
+   \inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
+}
+=
+(2 \pi)^3 \delta(\Bq - \Bp),
+\end{dmath}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1120}
+\antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger}
+=
+\int d^3 x
+d^3 y
+e^{i \Bp \cdot \Bx}
+e^{-i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
+\antisymmetric
+{ \phi^\dagger(\Bx, t) - \inv{i \omega_\Bp} \pi(\Bx, t) }
+{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) }
+=
+\int d^3 x
+d^3 y
+e^{i \Bp \cdot \Bx}
+e^{-i \Bq \cdot \By}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\frac{\omega_\Bp}{2}}
+\sqrt{\frac{\omega_\Bq}{2}}
+\lr{
+   \inv{i \omega_\Bq} i \delta^3(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+}
+=
+\inv{2} \int d^3 x
+e^{i (\Bp -\Bq)\cdot \Bx}
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
+\lr{
+   \inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
 }
 =
 \inv{2}
-\int
-\frac{d^3 p}{(2 \pi)^3}
-\omega_\Bp
+(2 \pi)^3
+\delta^3(\Bp - \Bq)
+e^{i\omega_\Bp t}
+e^{-i\omega_\Bq t}
+\sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   \lr{ -e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-+
-   \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+   \inv{ \omega_\Bq}
+   +\inv{ \omega_\Bp}
 }
 =
-\inv{2}
-\int
-\frac{d^3 p}{(2 \pi)^3}
+(2 \pi)^3
+\delta^3(\Bp - \Bq).
+\end{dmath}
+\end{subequations}
+Other than the \( (2 \pi)^3 \) scale factor we see from the commutators \( \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}, \antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger} \) that the fields may be represented as a pair of independent creation and annihilation operators.
+
+Let's compute the Hamiltonian representation next to verify that it diagonalizes nicely with this representation.
+We use \cref{eqn:ProblemSet1Problem2:860} to find
+\begin{subequations}
+\label{eqn:ProblemSet1Problem2:1180}
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1200}
+\int d^3 x \pi^\dagger \pi
+=
+\int d^3 x
+\frac{d^3 p}{(2\pi)^3}
+\frac{d^3 q}{(2\pi)^3}
+e^{i \Bp \cdot \Bx}
+e^{-i \Bq \cdot \Bx}
+\frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}}
+\frac{i \omega_\Bq}{\sqrt{2 \omega_\Bq}}
+\lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+\lr{ e^{i \omega_\Bq t} a_\Bq^\dagger - e^{-i \omega_\Bq t} b_\Bq }
+=
+\inv{2} \int
+\frac{d^3 p}{(2\pi)^3}
+\omega_\Bp
+\lr{ e^{-i \omega_\Bp t} a_\Bp - e^{i \omega_\Bp t} b^\dagger_\Bp }
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
+=
+\inv{2} \int
+\frac{d^3 p}{(2\pi)^3}
 \omega_\Bp
 \lr{
-   e^{2 i \omega_\Bp t} \lr{ -b_\Bp a_\Bp + b_\Bp a_\Bp }
-+
-   e^{-2 i \omega_\Bp t} \lr{ -a_\Bp^\dagger b_\Bp^\dagger + a_\Bp^\dagger b_\Bp^\dagger }
-+
-   2 a_\Bp^\dagger a_\Bp + 2 b_\Bp b_\Bp^\dagger +
+   a_\Bp a_\Bp^\dagger + b_\Bp^\dagger b_\Bp
+   + e^{ 2 i \omega_\Bp t} (-b_\Bp^\dagger a_\Bp^\dagger) +
+   + e^{ -2 i \omega_\Bp t} (-a_\Bp b_\Bp )
 },
 \end{dmath}
-so our diagonalized Hamiltonian is just
-\boxedEquation{eqn:ProblemSet1Problem2:560}{
-H
-=
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1220}
+\begin{aligned}
+\int d^3 x &\lr{ \spacegrad \phi^\dagger \cdot \spacegrad \phi + m^2 \phi^\dagger \phi } \\
+&=
+\inv{2} \int d^3 x
+\frac{d^3 p}{(2\pi)^3}
+\frac{d^3 q}{(2\pi)^3}
+e^{i (\Bq -\Bp) \cdot \Bx}
+\frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
+&=
+\inv{2} \int
+d^3 p
+\frac{d^3 q}{(2\pi)^3}
+\delta^3(\Bq - \Bp)
+\frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
+&=
+\inv{2} \int
+\frac{d^3 p}{(2\pi)^3}  \omega_\Bp
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
+&=
+\inv{2} \int
+\frac{d^3 p}{(2\pi)^3}  \omega_\Bp
+\lr{
+   a_\Bp^\dagger
+   a_\Bp
+   +
+   b_\Bp
+   b_\Bp^\dagger
+   +
+   e^{2 i \omega_\Bp t} \lr{ a_\Bp^\dagger b_\Bp^\dagger }
+   +
+   e^{-2 i \omega_\Bp t} \lr{ b_\Bp a_\Bp }
+}
+\end{aligned}
+\end{dmath}
+\end{subequations}
+Summing \cref{eqn:ProblemSet1Problem2:1180}, we find the
+Hamiltonian has the expected diagonal representation
+\begin{dmath}\label{eqn:ProblemSet1Problem2:1240}
+H =
+\inv{2}
 \int
-\frac{d^3 p}{(2 \pi)^3}
+\frac{d^3 p}{(2\pi)^3}
 \omega_\Bp
 \lr{
-   a_\Bp^\dagger a_\Bp + b_\Bp b_\Bp^\dagger
+   a_\Bp^\dagger a_\Bp
++
+   a_\Bp a_\Bp^\dagger
++ b_\Bp^\dagger b_\Bp
++
+   b_\Bp b_\Bp^\dagger
+},
+\end{dmath}
+or in normal form
+\boxedEquation{eqn:ProblemSet1Problem2:1260}{
+:H: =
+\int
+\frac{d^3 p}{(2\pi)^3}
+\omega_\Bp
+\lr{
+   a_\Bp^\dagger a_\Bp
++ b_\Bp^\dagger b_\Bp
 }.
 }
 
 \makeSubAnswer{}{qft:problemSet1:2c}
 
-Inserting
-\cref{eqn:ProblemSet1Problem2:520} into
-\cref{eqn:ProblemSet1Problem2:580} (which has been corrected from the original problem statement), we find
+Inserting \cref{eqn:ProblemSet1Problem2:860} into
+\cref{eqn:ProblemSet1Problem2:580}
 
 \begin{dmath}\label{eqn:ProblemSet1Problem2:600}
-Q
-= \frac{i}{2} \int d^3 x \lr{ \phi^\dagger \pi - \pi^\dagger \phi }
-= \frac{i}{4} \int d^3 x
+Q =
+\frac{i}{2}
+\int d^3 x
+\lr{ \phi^\dagger \pi^\dagger - \pi \phi }
+=
+\frac{i}{4}
+\int d^3 x
 \frac{d^3 p}{(2\pi)^3}
 \frac{d^3 q}{(2\pi)^3}
-\frac{ e^{i (\Bq-\Bp) \cdot \Bx} }{\sqrt{\omega_\Bp \omega_\Bq}}
-\lr{
-   i \omega_\Bq
-   \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
-      -
-   (-i) \omega_\Bp
-   \lr{ -e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
-}
-= -\frac{1}{4} \int
+e^{i (\Bq -\Bp) \cdot \Bx}
+\frac{i\omega_\Bq}{\sqrt{\omega_\Bp\omega_\Bq}}
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+-
+\frac{i}{4}
+\int d^3 x
+\frac{d^3 p}{(2\pi)^3}
+\frac{d^3 q}{(2\pi)^3}
+e^{i (\Bp -\Bq)\cdot \Bx}
+\frac{i \omega_\Bp}{\sqrt{\omega_\Bp\omega_\Bq}}
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
+\lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+=
+\frac{1}{4}
+\int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
+   \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
+   \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+   -
    \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
    \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-   +
-   \lr{ -e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
 }
 =
--\frac{1}{4} \int
+\frac{1}{4}
+\int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
-   e^{2 i \omega_\Bp t} \lr{ a_\Bp^\dagger b_\Bp^\dagger - a_\Bp^\dagger b_\Bp^\dagger }
-+
-   e^{-2 i \omega_\Bp t} \lr{ -b_\Bp a_\Bp + b_\Bp a_\Bp }
-- a_\Bp^\dagger a_\Bp + b_\Bp b_\Bp^\dagger - a_\Bp^\dagger a_\Bp + b_\Bp b_\Bp^\dagger
+   a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger + a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
+   + e^{2 i \omega_\Bp t} \lr{ b_\Bp^\dagger a_\Bp^\dagger  -a_\Bp^\dagger b_\Bp^\dagger }
+   + e^{-2 i \omega_\Bp t} \lr{ -b_\Bp a_\Bp + b_\Bp a_\Bp }
 }
 =
-\frac{1}{2} \int
+\frac{1}{2}
+\int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
-a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
-},
+   a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
+}
 \end{dmath}
 or
-\boxedEquation{eqn:ProblemSet1Problem2:620}{
-Q :=:
-\frac{1}{2} \int
+\boxedEquation{eqn:ProblemSet1Problem2:1280}{
+:Q:
+=
+\frac{1}{2}
+\int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
-a_\Bp^\dagger a_\Bp - b_\Bp^\dagger b_\Bp
-}.
+   a_\Bp^\dagger a_\Bp - b_\Bp^\dagger b_\Bp
+}
 }
 Let's get a feel for the charge by applying it to the states corresponding to each creation operator
 \begin{dmath}\label{eqn:ProblemSet1Problem2:640}
@@ -514,7 +746,9 @@ b_\Bk^\dagger \ket{0}
 \ket{\Bk}_b.
 \end{dmath}
 So, we could say that the particles associated with creation operator \( a_\Bp^\dagger \) have a (1/2) charge and
-particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.
-
+particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.  Since the leading factor in the charge of
+\cref{eqn:ProblemSet1Problem2:580} was arbitrary (as it comes from examining the symmetry for the \( \phi \rightarrow e^{\pm i\alpha} \phi \) with \( \alpha = 1/2\)), it is perhaps more accurate to say that the number operator 
+\( a_\Bp^\dagger a_\Bp \) is associated with a unit of charge whereas 
+\( b_\Bp^\dagger b_\Bp \) is associated with a unit of charge with the opposite sign.
 }
 %}
