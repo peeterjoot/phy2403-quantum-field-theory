@@ -45,7 +45,7 @@ j^\mu = \PD{(\partial_\mu \phi)}{\LL} \delta_\epsilon \phi - J_\epsilon^\mu.
 Here \( \epsilon \) is an x-independent quantity (i.e. a \underline{global symmetry}).
 This is in contrast to ``gauge symmetries'', which can be more accurately be categorized as a redundancy in the description.
 
-As an example, give
+As an example, for \( \LL = (\partial_\mu \phi \partial^\mu \phi - m^2 \phi^2)/2 \), let
 \begin{dmath}\label{eqn:qftLecture8:80}
 \phi(x) \rightarrow \phi(x) - a^\mu \partial_\mu \phi
 \end{dmath}
@@ -53,8 +53,9 @@ As an example, give
 \LL(\phi, \partial_\mu \phi) \rightarrow
 \LL(\phi, \partial_\mu \phi)
 - a^\mu \partial_\mu \LL
+=
 \LL(\phi, \partial_\mu \phi)
-+ \partial_\mu \lr{ -{\delta^\mu}_\nu a^\nu \partial_\mu \LL }
++ \partial_\mu \lr{ -{\delta^\mu}_\nu a^\nu \LL }
 \end{dmath}
 Here \( J^\mu_\epsilon = \evalbar{J^\mu_\epsilon}{\epsilon = a^\nu} \), and the current is
 \begin{dmath}\label{eqn:qftLecture8:120}
@@ -62,26 +63,55 @@ J^\mu = (\partial^\mu \phi)(-a^\nu \partial_\nu \phi) + {\delta^{\mu}}_\nu a^\nu
 \end{dmath}
 In particular, we have one such current for each \( \nu \), and we write
 \begin{dmath}\label{eqn:qftLecture8:140}
-{T^\mu}_\nu = -(\partial^\mu \phi)(\partial_\nu \phi) + {\delta^{\mu}}_\nu \LL.
+{T^\mu}_\nu =
+-(\partial^\mu \phi)(\partial_\nu \phi) + {\delta^{\mu}}_\nu \LL.
 \end{dmath}
 By Noether's theorem, we must have
 \begin{dmath}\label{eqn:qftLecture8:160}
 \partial_\mu
 {T^\mu}_\nu = 0, \quad \forall \nu.
 \end{dmath}
-Fixme: check this!
+
+\paragraph{Check:}
+
+\begin{dmath}\label{eqn:qftLecture8:1380}
+\partial_\mu {T^\mu}_\nu
+=
+-(\partial_\mu \partial^\mu \phi)(\partial_\nu \phi)
+-(\partial^\mu \phi)(\partial_\mu \partial_\nu \phi)
++ {\delta^{\mu}}_\nu
+\partial_\mu \lr{
+\inv{2} \partial_\alpha \phi \partial^\alpha \phi - \frac{m^2}{2} \phi^2
+}
+=
+-(\partial_\mu \partial^\mu \phi)(\partial_\nu \phi)
+-(\partial^\mu \phi)(\partial_\mu \partial_\nu \phi)
++
+\inv{2} (\partial_\nu \partial_\mu \phi) (\partial^\mu \phi )
++
+\inv{2} (\partial_\mu \phi) (\partial_\nu \partial^\mu \phi )
+- m^2 (\partial_\nu \phi) \phi
+=
+-\lr{ \partial_\mu \partial^\mu \phi + m^2 \phi }(\partial_\nu \phi)
+-(\partial_\mu \phi)(\partial^\mu \partial_\nu \phi)
++
+\inv{2} (\partial_\nu \partial^\mu \phi) (\partial_\mu \phi )
++
+\inv{2} (\partial_\mu \phi) (\partial_\nu \partial^\mu \phi )
+= 0.
+\end{dmath}
 
 \paragraph{Example: our potential Lagrangian}
 
 \begin{dmath}\label{eqn:qftLecture8:180}
-\LL = \inv{2} \partial^\mu \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \lambda^4
+\LL = \inv{2} \partial^\mu \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \phi^4
 \end{dmath}
 Written with upper indexes
 \begin{dmath}\label{eqn:qftLecture8:200}
 T^{\mu\nu}
 = -(\partial^\mu \phi)(\partial^\nu \phi) + g^{\mu\nu} \LL
 = -(\partial^\mu \phi)(\partial^\nu \phi) + g^{\mu\nu} \lr{
-\inv{2} \partial^\alpha \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \lambda^4
+\inv{2} \partial^\alpha \phi \partial_\alpha \phi - \frac{m^2}{2} \phi^2 - \frac{\lambda}{4} \phi^4
 }
 \end{dmath}
 
@@ -104,14 +134,14 @@ P^i = \int d^3 x T^{0 i},
 writing this out explicitly the energy density is
 \begin{dmath}\label{eqn:qftLecture8:280}
 T^{00}
-= - \dot{\phi}^2 + \inv{2} \lr{ \dot{\phi}^2 - (\spacegrad \phi)^2 - \frac{m^2}{2} - \frac{\lambda}{4} \phi^4}
+= - \dot{\phi}^2 + \inv{2} \lr{ \dot{\phi}^2 - (\spacegrad \phi)^2 - \frac{m^2}{2}\phi^2 - \frac{\lambda}{4} \phi^4}
 = -\lr{
-\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} + \frac{\lambda}{4} \phi^4
+\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2}\phi^2 + \frac{\lambda}{4} \phi^4
 },
 \end{dmath}
 and
 \begin{dmath}\label{eqn:qftLecture8:300}
-T^{0i} = \partial^0 \partial^i \phi,
+T^{0i} = \partial^0 \phi \partial^i \phi,
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture8:320}
 P^{i} = -\int d^3 x\partial^0 \phi \partial^i \phi
@@ -120,7 +150,7 @@ Since the energy density is negative definite (due to an arbitrary choice of tra
 \begin{dmath}\label{eqn:qftLecture8:340}
 T^{00}
 \equiv
-\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} + \frac{\lambda}{4} \phi^4,
+\inv{2} \dot{\phi}^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} \phi^2 + \frac{\lambda}{4} \phi^4,
 \end{dmath}
 and
 \begin{dmath}\label{eqn:qftLecture8:360}

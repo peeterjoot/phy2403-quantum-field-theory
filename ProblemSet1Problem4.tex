@@ -39,9 +39,135 @@ Finally, open your classical electrodynamics books and recall the interpretation
 
 \makeanswer{qft:problemSet1:4}{
 \makeSubAnswer{}{qft:problemSet1:4a}
-TODO.
+With \( {x'}^\mu = e^{d} x^\mu \), the volume element transforms as
+\begin{dmath}\label{eqn:ProblemSet1Problem4:60}
+d^4 x' \rightarrow e^{4d} d^4 x.
+\end{dmath}
+The components of the four-gradient transform as
+\begin{dmath}\label{eqn:ProblemSet1Problem4:80}
+\PD{x'_\mu}{}
+=
+\PD{x'_\mu}{x_\mu}
+\PD{x_\mu}{}
+=
+e^{-d}
+\PD{x_\mu}{},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem4:100}
+F'_{\mu\nu} =
+\partial'_{\mu} A'_\nu
+-
+\partial'_{\nu} A'_\mu
+=
+e^{-2d} F_{\mu\nu}.
+\end{dmath}
+The action is therefore invariant
+\begin{dmath}\label{eqn:ProblemSet1Problem4:120}
+S'
+= -\inv{4} \int d^4 x' F'_{\mu\nu} {F'}^{\mu\nu}
+= -\inv{4} \int e^{4d} d^4 x e^{2d} F_{\mu\nu} e^{2d} F^{\mu\nu}
+= -\inv{4} \int d^4 x F_{\mu\nu} F^{\mu\nu}
+= S.
+\end{dmath}
 \makeSubAnswer{}{qft:problemSet1:4a}
-TODO.
+We need the variation of the potential
+\begin{dmath}\label{eqn:ProblemSet1Problem4:180}
+\delta A_{\nu}
+= A'_{\nu}(x) - A_{\nu}(x)
+= A'_{\nu}(e^{-d} x') - A_{\nu}(x)
+\approx A'_{\nu}((1 -d) x') - A_{\nu}(x)
+= e^{-d} A_{\nu}((1 -d) x') - A_{\nu}(x)
+\approx (1-d) \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}} - A_{\nu}
+=
+- d x^\alpha \partial_\alpha A_{\nu}
+- d \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}}
+\approx
+-d(1+ x^\alpha \partial_\alpha )A_{\nu},
+\end{dmath}
+and the variation of the field
+\begin{dmath}\label{eqn:ProblemSet1Problem4:140}
+\delta F_{\mu\nu}
+= F'_{\mu\nu}(x) - F_{\mu\nu}(x)
+= F'_{\mu\nu}(e^{-d} x') - F_{\mu\nu}(x)
+\approx F'_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
+= e^{-2d} F_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
+\approx (1-2d) \lr{ F_{\mu\nu} - d x^\alpha \partial_\alpha F_{\mu\nu}} - F_{\mu\nu}
+=
+- d x^\alpha \partial_\alpha F_{\mu\nu}
+-2 d \lr{ F_{\mu\nu} - d x^\alpha \partial_\alpha F_{\mu\nu}}
+\approx
+-d(2+ x^\alpha \partial_\alpha )
+F_{\mu\nu},
+\end{dmath}
+so the variation of the Lagrangian is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:160}
+\delta \LL
+=
+-\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
+=
+-\inv{2}
+(-d)
+F^{\mu\nu}
+(2+ x^\alpha \partial_\alpha )F_{\mu\nu}
+=
+(d)
+F^{\mu\nu}
+F_{\mu\nu}
++
+\frac{d}{2}
+F^{\mu\nu} x^\alpha \partial_\alpha F_{\mu\nu}
+=
+(d)
+F^{\mu\nu}
+F_{\mu\nu}
++
+\frac{d}{4}
+x^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
+=
+-4 (d) \LL - (d) x^\alpha \partial_\alpha \LL
+=
+-4 (d) \LL - (d) \lr{ \partial_\alpha (x^\alpha \LL) - \LL \partial_\alpha x^\alpha }
+=
+- (d) \partial_\alpha (x^\alpha \LL),
+\end{dmath}
+so the variational current (what is this called?) is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:200}
+J^\mu_d
+=
+- (d) x^\mu \LL.
+\end{dmath}
+Finally, we need
+\begin{dmath}\label{eqn:ProblemSet1Problem4:220}
+\PD{(\partial_\mu A_\nu)}{\LL}
+=
+-\inv{2}
+F^{\alpha\beta}
+\PD{(\partial_\mu A_\nu)}{}\lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
+=
+-\inv{2}
+\lr{
+   F^{\mu\nu}
+   -
+   F^{\nu\mu}
+}
+=
+-F^{\mu\nu}.
+\end{dmath}
+Combining \cref{eqn:ProblemSet1Problem4:220}, \cref{eqn:ProblemSet1Problem4:200}, and \cref{eqn:ProblemSet1Problem4:180} we can calculate the conserved current, which is (for \( d = 1 \)) is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:240}
+j^\mu
+=
+\PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_d
+=
+F^{\mu\nu}
+\lr{
+   A_\nu + x^\alpha \partial_\alpha A_{\nu}
+}
++
+x^\mu \LL.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet1:4b}
 TODO.
 \makeSubAnswer{}{qft:problemSet1:4c}
