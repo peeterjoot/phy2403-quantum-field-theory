@@ -33,8 +33,10 @@ Show, then, that conservation of \(  j^{\text{con f}}_\mu  \) implies that the e
 electrodynamics is traceless (the trace of the tensor is defined as usual to be \( g_{\mu\nu} T^{\mu\nu}\)).
 \makesubproblem{}{qft:problemSet1:4e}
 Finally, open your classical electrodynamics books and recall the interpretation of the \( T^{00}, T^{xx},T^{yy} \), etc., components of the energy momentum tensor as energy density and pressure. Show that the tracelessness of \( T^{\mu\nu} \) is equivalent to the familiar relation
-\( p = \rho/3 \) between the energy density and pressure of isotropic radiation -- the equation of state of blackbody radiation.
-
+\begin{dmath}\label{eqn:ProblemSet1Problem4:680}
+p = \rho/3
+\end{dmath}
+between the energy density and pressure of isotropic radiation -- the equation of state of blackbody radiation.
 } % makeproblem
 
 \makeanswer{qft:problemSet1:4}{
@@ -392,27 +394,32 @@ effectively dropping the complete derivative terms (also changing signs to match
 Here we've factored out the common (conformal) energy momentum tensor \( {\Theta^\mu}_\nu \), which may also be written with upper indexes
 \begin{dmath}\label{eqn:ProblemSet1Problem4:520}
 \Theta^{\mu\nu} =
-%   F^{\mu\sigma}
-%   {F^{\nu}}_\sigma
-   g^{\nu\alpha}
-   F_{\alpha\sigma}
-   F^{\sigma\mu}
+   F^{\mu\sigma}
+   F_{\sigma\alpha}
+   g^{\alpha\nu}
    -
    g^{\mu\nu} \LL,
 \end{dmath}
 which is symmetric with respect to index interchange
-(FIXME: signs from here)
 \begin{dmath}\label{eqn:ProblemSet1Problem4:540}
 \Theta^{\nu\mu}
 =
    F^{\nu\sigma}
-   {F^{\mu}}_\sigma
-   +
+   F_{\sigma\alpha}
+   g^{\alpha\mu}
+   -
    g^{\nu\mu} \LL
 =
+   g^{\beta\nu}
+   F_{\beta\sigma}
+   F^{\sigma\mu}
+   -
+   g^{\mu\nu} \LL
+=
    F^{\mu\sigma}
-   {F^{\nu}}_\sigma
-   +
+   F_{\sigma\beta}
+   g^{\beta\nu}
+   -
    g^{\mu\nu} \LL
 = \Theta^{\mu\nu}.
 \end{dmath}
@@ -444,8 +451,8 @@ As this is zero for all \( a \) we must have \( \partial_\mu {\Theta^\mu}_\nu = 
 
 \makeSubAnswer{}{qft:problemSet1:4e}
 The trace written out explicitly is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:620}
-0=
+\begin{equation}\label{eqn:ProblemSet1Problem4:620}
+0 =
 {\Theta^\mu}_\mu
 =
 {\Theta^0}_0
@@ -462,17 +469,36 @@ The trace written out explicitly is
 -
 \Theta^{22}
 -
-\Theta^{33}.
+\Theta^{33},
+\end{equation}
+Since \( \Theta^{00} = \inv{2}( \BE^2 + \BB^2 ) = \rho \), and \( -\Theta^{kj} = T^{(M)}_{kj} = E_k E_j + B_k B_j - \inv{2} \delta_{kj}(\BE^2 + \BB^2) \), where \( T^{(M)}_{kj} \) is the electromagnetic stress tensor (borrowing notation from \citep{jackson1975cew} again), we have
+\begin{dmath}\label{eqn:ProblemSet1Problem4:700}
+\rho = -\sum_{k = 1}^3 T^{(M)}_{kk}.
 \end{dmath}
-Our \( \Theta^{00} \) is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:640}
-\Theta^{00}
+In \citep{griffiths1999introduction} \( T^{(M)}_{ij} \) is described as ``the force (per unit area) in the ith direction action on an element of surface oriented in the jth direction -- diagonal elements represent pressures, and off-diagonal elements are shears''.
+Integratation of the stress tensor over a cube, as sketched in \cref{fig:outwards_normal_cube:outwards_normal_cubeFig1}, serves to illustrate this nicely, as only the diagonal elements contribute to such an integral.  If the total cubic face area is \( A = 6 \Delta A \), the total force of on the surface is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:720}
+\BF
 =
-   F^{0\sigma}
-   {F^{0}}_\sigma
-   +
-   g^{00} \LL
+\int \lrT \cdot \Ba
 =
-   -\BE^2 -\inv{4} F_{\mu\nu} F^{\mu\nu}
+\Be_1 \int \delta_{1k} \lr{ \evalbar{T^{(M)}_{k1}}{+} - \evalbar{T^{(M)}_{k1}}{-}}
++
+\Be_2 \int \delta_{2k} \lr{ \evalbar{T^{(M)}_{k2}}{+} - \evalbar{T^{(M)}_{k2}}{-}}
++
+\Be_3 \int \delta_{3k} \lr{ \evalbar{T^{(M)}_{k3}}{+} - \evalbar{T^{(M)}_{k3}}{-}}
+=
+\Delta A \Be_1 \lr{ \evalbar{T^{(M)}_{k1}}{+} - \evalbar{T^{(M)}_{k1}}{-}}
++
+\Delta A \Be_2 \lr{ \evalbar{T^{(M)}_{k2}}{+} - \evalbar{T^{(M)}_{k2}}{-}}
++
+\Delta A \Be_3 \lr{ \evalbar{T^{(M)}_{k3}}{+} - \evalbar{T^{(M)}_{k3}}{-}}
 \end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/outwards_normal_cubeFig1}{Cubic surface and outwards normals}{fig:outwards_normal_cube:outwards_normal_cubeFig1}{0.3}
+Assuming isotropic fields, the total pressure of the fields on the surface is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:740}
+p = \Abs{ \frac{2 \Delta A \sum_{k = 1}^3 T^{(M)}_{kk}}{6 \Delta A} }
+= \inv{3} \rho,
+\end{dmath}
+which recovers \cref{eqn:ProblemSet1Problem4:680}.
 }
