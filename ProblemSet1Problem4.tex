@@ -234,15 +234,15 @@ or
    }
 }
 It was hinted that the complete derivative of an antisymmetric tensor may be dropped from the current, that's because
-\begin{dmath}\label{eqn:ProblemSet1Problem4:n}
+\begin{dmath}\label{eqn:ProblemSet1Problem4:560}
 \partial_\mu \lr{ j^\mu + \partial_\nu C^{\mu\nu} }
 =
 \partial_\mu j^\mu + \partial_\mu \partial_\nu C^{\mu\nu}
 =
 \partial_\mu j^\mu,
 \end{dmath}
-since 
-the deriative operator \( \partial_\mu\partial_\nu \) is symmetric, and the sum of the contraction of symmetric and antisymmetric tensors is zero.  Since the 
+since
+the deriative operator \( \partial_\mu\partial_\nu \) is symmetric, and the sum of the contraction of symmetric and antisymmetric tensors is zero.  Since the
 complete derivative term  \(
    F^{\mu\nu} x^\alpha
    A_{\alpha} \) is antisymmetric in \( \mu\nu \) so we may drop it from the current, leaving only dependence on the electromagnetic field \( F \).
@@ -350,31 +350,60 @@ or
 The factor \(
 F^{\mu\nu}
 a^\alpha
-A_\alpha \) is completely antisymmetric in \( \mu\nu \) so we may drop it from the current.  After dropping the complete derivative terms
-in \cref{eqn:ProblemSet1Problem4:280}, \cref{eqn:ProblemSet1Problem4:480}
-we find the following relationships between the (conformal) dilatation and translation conservation currents
-\begin{dmath}\label{eqn:ProblemSet1Problem4:500}
+A_\alpha \) is completely antisymmetric in \( \mu\nu \) so we may drop it from the current.  From
+\cref{eqn:ProblemSet1Problem4:280}, \cref{eqn:ProblemSet1Problem4:480} we can introduce
+(conformal) dilatation \( \tilde{j_{\text{dil}}} \) and translation conservation
+\( \tilde{j}_a \)
+currents
+\begin{dmath}\label{eqn:ProblemSet1Problem4:660}
 \begin{aligned}
-j^\mu_{\text{dil}} &= x^\nu {T^\mu}_\nu \\
-j^\mu_{a} &= a^\nu {T^\mu}_\nu \\
-{T^\mu}_\nu &=
-   F^{\mu\sigma}
-   F_{\nu\sigma}
+   \tilde{j}^\mu_{\text{dil}}
+   &=
+   -j^\mu_{\text{dil}}
    +
-   {\delta^\mu}_\nu \LL.
+   \partial_\nu \lr{
+      F^{\mu\nu} x^\alpha
+      A_{\alpha}
+   } \\
+   \tilde{j}^\mu_a
+   &=
+   -j^\mu_a
+   +
+   \partial_\nu
+   \lr{
+      F^{\mu\nu}
+      a^\alpha
+      A_\alpha
+   },
 \end{aligned}
 \end{dmath}
-Here we've factored out the common (conformal) energy momentum tensor \( {T^\mu}_\nu \), which may also be written with upper indexes
-\begin{dmath}\label{eqn:ProblemSet1Problem4:520}
-T^{\mu\nu} =
+effectively dropping the complete derivative terms (also changing signs to match the literature \citep{jackson1975cew}).  That is
+\boxedEquation{eqn:ProblemSet1Problem4:500}{
+\begin{aligned}
+\tilde{j}^\mu_{\text{dil}} &= x^\nu {\Theta^\mu}_\nu \\
+\tilde{j}^\mu_{a} &= a^\nu {\Theta^\mu}_\nu \\
+{\Theta^\mu}_\nu &=
    F^{\mu\sigma}
-   {F^{\nu}}_\sigma
-   +
+   F_{\sigma\nu}
+   -
+   {\delta^\mu}_\nu \LL.
+\end{aligned}
+}
+Here we've factored out the common (conformal) energy momentum tensor \( {\Theta^\mu}_\nu \), which may also be written with upper indexes
+\begin{dmath}\label{eqn:ProblemSet1Problem4:520}
+\Theta^{\mu\nu} =
+%   F^{\mu\sigma}
+%   {F^{\nu}}_\sigma
+   g^{\nu\alpha}
+   F_{\alpha\sigma}
+   F^{\sigma\mu}
+   -
    g^{\mu\nu} \LL,
 \end{dmath}
 which is symmetric with respect to index interchange
+(FIXME: signs from here)
 \begin{dmath}\label{eqn:ProblemSet1Problem4:540}
-T^{\nu\mu}
+\Theta^{\nu\mu}
 =
    F^{\nu\sigma}
    {F^{\mu}}_\sigma
@@ -385,10 +414,65 @@ T^{\nu\mu}
    {F^{\nu}}_\sigma
    +
    g^{\mu\nu} \LL
-= T^{\mu\nu}.
+= \Theta^{\mu\nu}.
 \end{dmath}
 \makeSubAnswer{}{qft:problemSet1:4d}
-TODO.
+We require the divergence of a Noether current to be zero, so for the dilatation current
+\begin{dmath}\label{eqn:ProblemSet1Problem4:580}
+0 = \partial_\mu \tilde{j}^\mu_{\text{dil}}
+=
+\lr{ \partial_\mu x^\nu }
+{\Theta^\mu}_\nu
++
+x^\nu
+\partial_\mu {\Theta^\mu}_\nu
+=
+{\Theta^\mu}_\mu
++
+x^\nu
+\partial_\mu {\Theta^\mu}_\nu.
+\end{dmath}
+In particular for \( x = 0 \) we must have \(
+{\Theta^\mu}_\mu  = 0 \).  Incidentally, given \( {\Theta^\mu}_\mu  = 0 \), then
+for non-zero \( x \) we must also have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).  That can be demonstrated directly utilizing the zero divergence of the Noether current for a spacetime translation
+\begin{dmath}\label{eqn:ProblemSet1Problem4:600}
+0
+= \partial_\mu \tilde{j}^\mu_{a}
+= a^\nu \partial_\mu {\Theta^\mu}_\nu.
+\end{dmath}
+As this is zero for all \( a \) we must have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).
+
 \makeSubAnswer{}{qft:problemSet1:4e}
-TODO.
+The trace written out explicitly is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:620}
+0=
+{\Theta^\mu}_\mu
+=
+{\Theta^0}_0
++
+{\Theta^1}_1
++
+{\Theta^2}_2
++
+{\Theta^3}_3
+=
+\Theta^{00}
+-
+\Theta^{11}
+-
+\Theta^{22}
+-
+\Theta^{33}.
+\end{dmath}
+Our \( \Theta^{00} \) is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:640}
+\Theta^{00}
+=
+   F^{0\sigma}
+   {F^{0}}_\sigma
+   +
+   g^{00} \LL
+=
+   -\BE^2 -\inv{4} F_{\mu\nu} F^{\mu\nu}
+\end{dmath}
 }
