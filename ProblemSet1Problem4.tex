@@ -70,7 +70,7 @@ S'
 = -\inv{4} \int d^4 x F_{\mu\nu} F^{\mu\nu}
 = S.
 \end{dmath}
-\makeSubAnswer{}{qft:problemSet1:4a}
+\makeSubAnswer{}{qft:problemSet1:4b}
 We need the variation of the potential
 \begin{dmath}\label{eqn:ProblemSet1Problem4:180}
 \delta A_{\nu}
@@ -156,7 +156,7 @@ F^{\alpha\beta}
 \end{dmath}
 Combining \cref{eqn:ProblemSet1Problem4:220}, \cref{eqn:ProblemSet1Problem4:200}, and \cref{eqn:ProblemSet1Problem4:180} we can calculate the conserved current, which is (for \( d = 1 \)) is
 \begin{dmath}\label{eqn:ProblemSet1Problem4:240}
-j^\mu
+j^\mu_{\text{dil}}
 =
 \PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_d
 =
@@ -167,11 +167,226 @@ F^{\mu\nu}
 +
 x^\mu \LL.
 \end{dmath}
+This can be put into a slightly nicer form
+\begin{dmath}\label{eqn:ProblemSet1Problem4:260}
+j^\mu_{\text{dil}}
+=
+F^{\mu\nu}
+   A_\nu
++
+F^{\mu\nu} x^\alpha
+F_{\alpha\nu}
++
+F^{\mu\nu} x^\alpha
+\partial_\nu A_{\alpha}
++
+x^\mu \LL
+=
+\cancel{
+F^{\mu\nu}
+   A_\nu
+}
++
+F^{\mu\nu} x^\alpha
+F_{\alpha\nu}
++
+\partial_\nu \lr{
+   F^{\mu\nu} x^\alpha
+   A_{\alpha}
+}
+-
+A_{\alpha}
+x^\alpha \cancel{\partial_\nu F^{\mu\nu} }
+-
+\cancel{
+A_{\alpha}
+F^{\mu\nu}
+\partial_\nu x^\alpha
+}
++
+x^\mu \LL
+=
+F^{\mu\nu} x^\alpha
+F_{\alpha\nu}
++
+\partial_\nu \lr{
+   F^{\mu\nu} x^\alpha
+   A_{\alpha}
+}
++
+x^\mu \LL,
+\end{dmath}
+or
+\boxedEquation{eqn:ProblemSet1Problem4:280}{
+   j^\mu_{\text{dil}}
+   =
+   x^\alpha
+   \lr{
+      F^{\mu\nu}
+      F_{\alpha\nu}
+      +
+      {\delta^\mu}_\alpha \LL
+   }
+   +
+   \partial_\nu \lr{
+      F^{\mu\nu} x^\alpha
+      A_{\alpha}
+   }
+}
+It was hinted that the complete derivative of an antisymmetric tensor may be dropped from the current, that's because
+\begin{dmath}\label{eqn:ProblemSet1Problem4:n}
+\partial_\mu \lr{ j^\mu + \partial_\nu C^{\mu\nu} }
+=
+\partial_\mu j^\mu + \partial_\mu \partial_\nu C^{\mu\nu}
+=
+\partial_\mu j^\mu,
+\end{dmath}
+since 
+the deriative operator \( \partial_\mu\partial_\nu \) is symmetric, and the sum of the contraction of symmetric and antisymmetric tensors is zero.  Since the 
+complete derivative term  \(
+   F^{\mu\nu} x^\alpha
+   A_{\alpha} \) is antisymmetric in \( \mu\nu \) so we may drop it from the current, leaving only dependence on the electromagnetic field \( F \).
 
-\makeSubAnswer{}{qft:problemSet1:4b}
-TODO.
 \makeSubAnswer{}{qft:problemSet1:4c}
-TODO.
+Having been given the secret that we have to calculate the energy momentum tensor, let's start with calculation of the conserved current associated with a spacetime translation
+\begin{subequations}
+\label{eqn:ProblemSet1Problem4:320}
+\begin{equation}\label{eqn:ProblemSet1Problem4:300}
+x_\mu \rightarrow x_\mu' = x_\mu + a_\mu.
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem4:340}
+%\phi(x) \rightarrow \phi'(x') = \phi'(x + a) \approx \phi(x) + a^\alpha \partial_\alpha \phi.
+A_\nu(x) \rightarrow A_\nu'(x') = A_\nu(x) + a^\alpha \partial_\alpha A_\nu.
+\end{equation}
+\end{subequations}
+The gradient \( \partial_\mu \) and volume element \( d^4 x\) are unchanged by a tranlation transformation.  The potential transforms as
+\begin{dmath}\label{eqn:ProblemSet1Problem4:360}
+\delta A_\nu
+= A_\nu'(x) - A_\nu(x)
+= A_\nu'(x' - a) - A_\nu(x)
+\approx A_\nu(x) - a^\alpha \partial_\alpha A_\nu - A_\nu(x)
+=
+- a^\alpha \partial_\alpha A_\nu.
+\end{dmath}
+The field transforms as
+\begin{dmath}\label{eqn:ProblemSet1Problem4:380}
+\delta F_{\mu\nu}
+= F_{\mu\nu}'(x) - F_{\mu\nu}(x)
+= F_{\mu\nu}'(x' - a) - F_{\mu\nu}(x)
+\approx F_{\mu\nu}(x) - a^\alpha \partial_\alpha F_{\mu\nu} - F_{\mu\nu}(x)
+=
+- a^\alpha \partial_\alpha F_{\mu\nu}.
+\end{dmath}
+Finally the Lagrangian density transforms as
+\begin{dmath}\label{eqn:ProblemSet1Problem4:400}
+\delta \LL
+=
+-\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
+=
+\inv{2} a^\alpha \lr{ \partial_\alpha F_{\mu\nu} } F^{\mu\nu}
+=
+\inv{4} a^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
+=
+- \partial_\alpha \lr{ a^\alpha \LL }.
+\end{dmath}
+That is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:420}
+J^\mu_a = - a^\mu \LL.
+\end{dmath}
+The conserved current associated with spacetime translation is
+\begin{dmath}\label{eqn:ProblemSet1Problem4:440}
+j^\mu_a
+=
+\PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_a
+=
+- F^{\mu\nu} (-a^\alpha \partial_\alpha A_\nu) + a^\mu \LL.
+\end{dmath}
+As was the case in \cref{eqn:ProblemSet1Problem4:280} we are able to put group all the explicit potential dependence in a discardable package
+\begin{dmath}\label{eqn:ProblemSet1Problem4:460}
+=
+a^\alpha
+F^{\mu\nu}
+F_{\alpha\nu}
++
+a^\alpha
+F^{\mu\nu}
+\partial_\nu A_\alpha
+ + a^\mu \LL
+=
+a^\alpha
+F^{\mu\nu}
+F_{\alpha\nu}
++
+a^\alpha
+\partial_\nu
+\lr{
+F^{\mu\nu}
+A_\alpha
+}
+-
+a^\alpha
+\cancel{ \partial_\nu F^{\mu\nu} }
+A_\alpha
+ + a^\mu \LL
+\end{dmath}
+or
+\boxedEquation{eqn:ProblemSet1Problem4:480}{
+   j^\mu_a
+   =
+   a^\alpha \lr{
+      F^{\mu\nu}
+      F_{\alpha\nu}
+      +
+      {\delta^\mu}_\alpha \LL
+   }
+   +
+   \partial_\nu
+   \lr{
+      F^{\mu\nu}
+      a^\alpha
+      A_\alpha
+   }
+}
+The factor \(
+F^{\mu\nu}
+a^\alpha
+A_\alpha \) is completely antisymmetric in \( \mu\nu \) so we may drop it from the current.  After dropping the complete derivative terms
+in \cref{eqn:ProblemSet1Problem4:280}, \cref{eqn:ProblemSet1Problem4:480}
+we find the following relationships between the (conformal) dilatation and translation conservation currents
+\begin{dmath}\label{eqn:ProblemSet1Problem4:500}
+\begin{aligned}
+j^\mu_{\text{dil}} &= x^\nu {T^\mu}_\nu \\
+j^\mu_{a} &= a^\nu {T^\mu}_\nu \\
+{T^\mu}_\nu &=
+   F^{\mu\sigma}
+   F_{\nu\sigma}
+   +
+   {\delta^\mu}_\nu \LL.
+\end{aligned}
+\end{dmath}
+Here we've factored out the common (conformal) energy momentum tensor \( {T^\mu}_\nu \), which may also be written with upper indexes
+\begin{dmath}\label{eqn:ProblemSet1Problem4:520}
+T^{\mu\nu} =
+   F^{\mu\sigma}
+   {F^{\nu}}_\sigma
+   +
+   g^{\mu\nu} \LL,
+\end{dmath}
+which is symmetric with respect to index interchange
+\begin{dmath}\label{eqn:ProblemSet1Problem4:540}
+T^{\nu\mu}
+=
+   F^{\nu\sigma}
+   {F^{\mu}}_\sigma
+   +
+   g^{\nu\mu} \LL
+=
+   F^{\mu\sigma}
+   {F^{\nu}}_\sigma
+   +
+   g^{\mu\nu} \LL
+= T^{\mu\nu}.
+\end{dmath}
 \makeSubAnswer{}{qft:problemSet1:4d}
 TODO.
 \makeSubAnswer{}{qft:problemSet1:4e}
