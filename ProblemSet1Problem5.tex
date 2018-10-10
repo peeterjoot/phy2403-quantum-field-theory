@@ -115,7 +115,7 @@ so the energy per unit area (\(A\)) between the plates is
 \end{dmath}
 As \( \int k^2 dk = k^3/3 \) is unbounded for large \( k \), this expression still diverges.
 \makeSubAnswer{}{qft:problemSet1:5c}
-The presence of the plates was accounted for by summing over \( k_x = \pi n/a \) for discrete \( n \).  The abscence of the boundaries may be accounted for by performing the integral over all values of \( n \), as in
+The presence of the plates was accounted for by summing over \( k_x = \pi n/a \) for discrete \( n \).  The absence of the boundaries may be accounted for by performing the integral over all values of \( n \), as in
 \begin{dmath}\label{eqn:ProblemSet1Problem5:200}
 \frac{E}{A}
 = \frac{a}{(2\pi)^3} (2 \pi) \frac{\Hbar c}{2} \int_{k= 0}^\infty k dk \int dk_x \sqrt{ k^2 + k_x^2 }
@@ -123,7 +123,7 @@ The presence of the plates was accounted for by summing over \( k_x = \pi n/a \)
 = \frac{a \Hbar c}{8 \pi^2} \frac{\pi}{a} \int_{k= 0}^\infty k dk \int_{n = -\infty}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }
 = \frac{\Hbar c}{4 \pi} \int_{k= 0}^\infty k dk \int_{n = 0}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }.
 \end{dmath}
-The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Problem5:200} yeilds
+The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Problem5:200} yields
 \cref{eqn:ProblemSet1Problem5:40} as desired.
 \makeSubAnswer{}{qft:problemSet1:5d}
 Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:ProblemSet1Problem5:40}, and making a change of variables \( k = \pi x /a \), we have
@@ -215,6 +215,7 @@ so
 \end{dmath}
 Inserting \cref{eqn:ProblemSet1Problem5:440} into
 \cref{eqn:ProblemSet1Problem5:240} gives
+\begin{dmath}\label{eqn:ProblemSet1Problem5:460}
 \Delta E_{\text{vac}}(a)
 =
 -\frac{\Hbar c \pi^2}{8 a^3} \inv{180}
@@ -223,7 +224,44 @@ Inserting \cref{eqn:ProblemSet1Problem5:440} into
 \end{dmath}
 which is the desired result.
 \makeSubAnswer{}{qft:problemSet1:5g}
-TODO.
+Numeric calculations were performed in a Mathematica worksheet (attached).
+
+\paragraph{Summary:}
+The Casimir force between \( 1 \,\si{(cm)^2} \) plates with a 1 micron separation is \( -2 \times 10^{-8}\, \si{N} \).  As a comparison, the force between ``plates'' of a \( 1 \mu \si{F} \) capacitor charged with 1 Volt and plate separation of 1 micron is
+\begin{equation}\label{eqn:ProblemSet1Problem5:480}
+F = C V^2/a = 1 \,\si{N}.
+\end{equation}
+I'm not actually sure if that capacitance is a physically realizable in a capacitor with effective plate area of \( 1 \, \si{(cm)^2} \).  Regardless, this gives an idea of the smallness of the Casimir force, since
+\begin{dmath}\label{eqn:ProblemSet1Problem5:500}
+\frac
+{
+F_{\text{capacitor}}
+}
+{
+F_{\text{Casimir}}
+}
+= O(10^7).
+\end{dmath}
 \makeSubAnswer{}{qft:problemSet1:5h}
-TODO.
+Given a field has a mass, the wave functions for the field obey
+\begin{dmath}\label{eqn:ProblemSet1Problem5:520}
+\lr{ \partial_{00} - \spacegrad^2 + \frac{m^2 c^2}{\Hbar^2} } \phi(\Bx, t) = 0,
+\end{dmath}
+which has plane wave solutions of the form
+\begin{dmath}\label{eqn:ProblemSet1Problem5:540}
+\phi(\Bx, t) = e^{i \omega t - i \Bk \cdot \Bx},
+\end{dmath}
+provided
+\begin{dmath}\label{eqn:ProblemSet1Problem5:560}
+\frac{\omega^2}{c^2} = \Bk^2 + \frac{m^2 c^2}{\Hbar^2}.
+\end{dmath}
+We may proceed as before, provided we set
+\begin{dmath}\label{eqn:ProblemSet1Problem5:580}
+F(n) = \int_{n^2 + (m c a/\pi \Hbar)^2} dv \sqrt{v} f( \frac{\pi}{a}\sqrt{v} ).
+\end{dmath}
+The first derivative of this modified \( F \) is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:600}
+\frac{dF}{dn} = - 2 n \sqrt{ n^2 +  (m c a/\pi \Hbar)^2} f( \frac{\pi}{a}\sqrt{   n^2 +  (m c a/\pi \Hbar)^2} ).
+\end{dmath}
+Quick and rough hand calculation of the rest of the derivatives of \( F \) as defined above seems shows that the odd derivatives are all zero at \( n = 0 \) (they are odd functions of n, whereas the even powered derivatives are all even functions of n).  This was confirmed with Mathematica (worksheet attached), so it seems that, regardless of the value of \( m \) with respect to \( 1/a \) the Casimir effect is obliterated by a massive field.
 }
