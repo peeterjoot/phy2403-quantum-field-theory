@@ -7,52 +7,221 @@ In class, when discussing the quantization of the real scalar field, we found th
 point energies of the harmonic oscillators (one per each \( \Bk \) ) into which we decomposed the field:
 \begin{dmath}\label{eqn:ProblemSet1Problem5:20}
 E_{\text{zero point}} =
-V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\omega_\Bk}{2}.
+V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\Hbar \omega_\Bk}{2}.
 \end{dmath}
+\( \vdots \)
 \makesubproblem{}{qft:problemSet1:5a}
 Show that the boundary conditions on the plates impose a quantization condition on the allowed values of field momentum perpendicular to the plates, i.e. \( k_x = n\pi/a, n = 0, \pm 1,  \pm 2, \cdots \) [e.g., recall your waveguide physics].
 \makesubproblem{}{qft:problemSet1:5b}
-Consider now the contribution to the energy of the vacuum fluctuations of the field in the space between the plates and find the zero point energy per unit area of the plates. To do this, replace the integral over \( k_x \) in
-\cref{eqn:ProblemSet1Problem5:20}
-by a sum over \( n \), \( \int dk_x = (\pi/a)\sum_n\) [Hint: to save work, use the fact that the correct expression should have the property that as the plates are removed, \( a \rightarrow \infty \), the energy (per unit volume) should give back
-\cref{eqn:ProblemSet1Problem5:20}
-]. Does the resulting expression for the zero point energy still diverge?
+Consider now the contribution to the energy of the vacuum fluctuations of the field in the space between the plates and find the zero point energy per unit area of the plates...
+%To do this, replace the integral over \( k_x \) in
+%\cref{eqn:ProblemSet1Problem5:20}
+%by a sum over \( n \), \( \int dk_x = (\pi/a)\sum_n\) [Hint: to save work, use the fact that the correct expression should have the property that as the plates are removed, \( a \rightarrow \infty \), the energy (per unit volume) should give back
+%\cref{eqn:ProblemSet1Problem5:20}
+%]. Does the resulting expression for the zero point energy still diverge?
 \makesubproblem{}{qft:problemSet1:5c}
 Show now, starting from
 \cref{eqn:ProblemSet1Problem5:20}
 , with integral replaced by sum, that the difference between the zero point energies per unit area, in the space between the plates in the presence of the plates and without the plates is:
 \begin{dmath}\label{eqn:ProblemSet1Problem5:40}
-\Delta E_{\text{vac}}(a) = \int_0^\infty \frac{dk}{2\pi} k \lr{ \frac{k}{4}
-+ \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
-- \inv{2} \int_0^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+\Delta E_{\text{vac}}(a) = \Hbar c \int_0^\infty \frac{dk}{2\pi} k \lr{ \frac{k}{4}
+   + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+   - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
 }.
 \end{dmath}
 where, obviously, \( k \) is radial wave vector in \(y, z\)-directions.
 \makesubproblem{}{qft:problemSet1:5d}
-COPY.
+The expression
+\cref{eqn:ProblemSet1Problem5:40}
+is still ill-defined, as every single term is infinite
+...
+Show that \cref{eqn:ProblemSet1Problem5:40} (with the cutoff \( f(k) \) as described in the original problem spec) can be written as:
+\begin{dmath}\label{eqn:ProblemSet1Problem5:260}
+\Delta E_{\text{vac}}(a)
+=
+\frac{\Hbar c \pi^2}{8 a^3} \lr{
+   \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n)
+},
+\end{dmath}
+where
+\begin{dmath}\label{eqn:ProblemSet1Problem5:280}
+F(n) = \int_0^\infty du \sqrt{ u + n^2 } f((\pi/a) \sqrt{u + n^2}).
+\end{dmath}
 \makesubproblem{}{qft:problemSet1:5e}
-COPY.
+To calculate ..., use the Euler-Maclaurin formula:...
 \makesubproblem{}{qft:problemSet1:5f}
-COPY.
+Show, now, that the final result for the Casimir energy per unit area of the plates is:...
 \makesubproblem{}{qft:problemSet1:5g}
-COPY.
+To get some idea of what experimentalists have to go through, estimate the force acting on plates of area \( 1 \si{cm^2}\) a micron apart...
 \makesubproblem{}{qft:problemSet1:5h}
-COPY.
+A final bonus question: what if the scalar field had a mass, \( m \)?  Would you expect an effect if \( m \gg 1/a \)? What if \( m \ll 1/a\)?
 } % makeproblem
 
 \makeanswer{qft:problemSet1:5}{
 \makeSubAnswer{}{qft:problemSet1:5a}
-TODO.
+Our scalar massless field satisfies the KG equation \( \lr{ \partial_{00} - \spacegrad^2 } \phi = 0 \), which has a plane wave superposition solution
+\begin{dmath}\label{eqn:ProblemSet1Problem5:60}
+\phi(\Bx, t) =
+\alpha e^{i\omega t - i \Bk \cdot \Bx} +
+\beta e^{-i\omega t + i \Bk \cdot \Bx},
+\end{dmath}
+where \( \omega^2 = \Bk^2 c^2 \).  At the boundaries
+\begin{dmath}\label{eqn:ProblemSet1Problem5:80}
+\begin{aligned}
+\phi(0, 0)
+&=
+\alpha + \beta
+= 0 \\
+\phi(a, 0)
+&=
+\alpha e^{-i k_x a}
++
+\beta e^{i k_x a}
+= 0,
+\end{aligned}
+\end{dmath}
+so
+\begin{equation}\label{eqn:ProblemSet1Problem5:100}
+e^{-i k_x a} = e^{i k_x a}.
+\end{equation}
+We must have \( e^{ 2 i k_x a } = 1 \), or
+\begin{dmath}\label{eqn:ProblemSet1Problem5:120}
+2 k_x a = 2 \pi n,
+\end{dmath}
+which provides the
+\begin{dmath}\label{eqn:ProblemSet1Problem5:140}
+k_x = \frac{\pi n}{a}
+\end{dmath}
+quantization constraint.
+
 \makeSubAnswer{}{qft:problemSet1:5b}
-TODO.
+Making the discrete substitution for \( k_x \), the vacuum energy per unit area is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:160}
+\frac{E}{A}
+= \inv{A}
+\frac{A a}{(2\pi)^3} \int d^3 k \frac{\Hbar c \Abs{\Bk}}{2}
+=
+\frac{a}{(2\pi)^3} \frac{\Hbar c}{2} \int dk_y dk_z \lr{ \int dk_x} \sqrt{ k_x^2 + k_y^2 + k_z^2 }
+= \frac{a \Hbar c}{16 \pi^3} \int dk_y dk_z \lr{ \frac{\pi}{a} \sum_{n = -\infty}^\infty } \sqrt{ k_x^2 + k_y^2 + k_z^2 }
+= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk \sum_{n = -\infty}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 }
+= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
+\lr{ k + 2 \sum_{n = 1}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 } },
+\end{dmath}
+so the energy per unit area (\(A\)) between the plates is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:180}
+\frac{E}{A}
+= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
+\lr{ k + 2 \sum_{n = 1}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 } }.
+\end{dmath}
+As \( \int k^2 dk = k^3/3 \) is unbounded for large \( k \), this expression still diverges.
 \makeSubAnswer{}{qft:problemSet1:5c}
-TODO.
+The presence of the plates was accounted for by summing over \( k_x = \pi n/a \) for discrete \( n \).  The abscence of the boundaries may be accounted for by performing the integral over all values of \( n \), as in
+\begin{dmath}\label{eqn:ProblemSet1Problem5:200}
+\frac{E}{A}
+= \frac{a}{(2\pi)^3} (2 \pi) \frac{\Hbar c}{2} \int_{k= 0}^\infty k dk \int dk_x \sqrt{ k^2 + k_x^2 }
+= \frac{a \Hbar c}{8 \pi^2} \int_{k= 0}^\infty k dk \int_{k_x = -\infty}^\infty dk_x \sqrt{ k^2 + k_x^2 }
+= \frac{a \Hbar c}{8 \pi^2} \frac{\pi}{a} \int_{k= 0}^\infty k dk \int_{n = -\infty}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }
+= \frac{\Hbar c}{4 \pi} \int_{k= 0}^\infty k dk \int_{n = 0}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }.
+\end{dmath}
+The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Problem5:200} yeilds
+\cref{eqn:ProblemSet1Problem5:40} as desired.
 \makeSubAnswer{}{qft:problemSet1:5d}
-TODO.
+Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:ProblemSet1Problem5:40}, and making a change of variables \( k = \pi x /a \), we have
+\begin{dmath}\label{eqn:ProblemSet1Problem5:220}
+\Delta E_{\text{vac}}(a)
+= \int_0^\infty \frac{dk}{2\pi} k \lr{
+   \frac{k}{4} f(k)
+   + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+   f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
+   - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
+   f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
+}
+=
+\frac{\Hbar c \pi^2}{4 a^3}
+\int_0^\infty dx x \lr{
+   \frac{x}{2} f((\pi/a) x)
+   + \sum_{n = 1}^\infty \sqrt{ x^2 + n^2 }
+   f((\pi/a) \sqrt{x^2 + n^2})
+   - \int_0^\infty dn \sqrt{ x^2 + n^2 }
+   f((\pi/a) \sqrt{x^2 + n^2})
+}.
+\end{dmath}
+Now let \( u = x^2 \)
+\begin{dmath}\label{eqn:ProblemSet1Problem5:240}
+\Delta E_{\text{vac}}(a)
+=
+\frac{\Hbar c \pi^2}{8 a^3}
+\int_0^\infty du \lr{
+   \frac{\sqrt{u}}{2} f((\pi/a) \sqrt{u})
+   + \sum_{n = 1}^\infty \sqrt{ u + n^2 }
+   f((\pi/a) \sqrt{u + n^2})
+   - \int_0^\infty dn \sqrt{ u + n^2 }
+   f((\pi/a) \sqrt{u + n^2})
+}
+=
+\frac{\Hbar c \pi^2}{8 a^3} \lr{
+   \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n)
+},
+\end{dmath}
+which recovers \cref{eqn:ProblemSet1Problem5:260} as desired.
+
 \makeSubAnswer{}{qft:problemSet1:5e}
-TODO.
+To calculate the derivatives of \cref{eqn:ProblemSet1Problem5:280} we make a \( v = u + n^2 \) change of variables
+\begin{dmath}\label{eqn:ProblemSet1Problem5:300}
+F(n) = \int_{n^2}^\infty dv \sqrt{ v } f((\pi/a) \sqrt{v}),
+\end{dmath}
+and utilize
+\begin{dmath}\label{eqn:ProblemSet1Problem5:320}
+\frac{d}{du} \int_u^v f(t) dt = f(v) \frac{dv}{dt} - f(u) \frac{du}{dt},
+\end{dmath}
+so the first derivative is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:340}
+F'(n)
+= -n f((\pi/a) n) \frac{dn^2}{dn}
+= -2 n^2 f((\pi/a) n),
+\end{dmath}
+the second is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:360}
+F''(n)
+= -4 n f((\pi/a) n) - 2 n^2 (\pi/a) f'((\pi/a) n),
+\end{dmath}
+the third is
+\begin{dmath}\label{eqn:ProblemSet1Problem5:380}
+F'''(n)
+=
+-4 f((\pi/a) n)
+-4 n (\pi/a) f'((\pi/a) n)
+- 4 n (\pi/a) f'((\pi/a) n),
+- 2 n^2 (\pi/a)^2 f''((\pi/a) n).
+\end{dmath}
+Any higher order derivatives are dependent on \( f^{(k)}(\pi n/a), k \ge 1 \), so are zero at \(n = 0\) by construction.  Summarizing the values at \( n = 0 \) we have
+\begin{dmath}\label{eqn:ProblemSet1Problem5:400}
+\begin{aligned}
+F'(0) &= 0 \\
+F''(0) &= 0 \\
+F'''(0) &= -4 \\
+F^{(k)}(0) &= 0, \qquad k > 3.
+\end{aligned}
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet1:5f}
-TODO.
+The original problem statement included the following statement of the Euler-Maclaurin formula:
+\begin{dmath}\label{eqn:ProblemSet1Problem5:420}
+   \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n) = -\inv{2!} B_2 F'(0) - \inv{4!} B_4 F'''(0) + \cdots,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet1Problem5:440}
+   \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n) = \inv{4!} \inv{30} (-4) = -\inv{180}.
+\end{dmath}
+Inserting \cref{eqn:ProblemSet1Problem5:440} into
+\cref{eqn:ProblemSet1Problem5:240} gives
+\Delta E_{\text{vac}}(a)
+=
+-\frac{\Hbar c \pi^2}{8 a^3} \inv{180}
+=
+-\frac{\Hbar c \pi^2}{1440 a^3},
+\end{dmath}
+which is the desired result.
 \makeSubAnswer{}{qft:problemSet1:5g}
 TODO.
 \makeSubAnswer{}{qft:problemSet1:5h}
