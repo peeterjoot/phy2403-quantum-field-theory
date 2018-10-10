@@ -2,11 +2,11 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Coherent states}{qft:problemSet1:2}{
+\makeproblem{Coherent states}{qft:LukeProblemSet1:2}{
 
 In a theory of a single harmonic oscillator, define the coherent state \( \ket{ z } \) by
 
-\begin{dmath}\label{eqn:ProblemSet1Problem2:20}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem2:20}
 \ket{z} = N e^{z a^\dagger} \ket{0}
 \end{dmath}
 
@@ -18,24 +18,24 @@ of photons correspond to electromagnetic waves in the limit of large numbers of 
 give you good practice at manipulating creation and annihilation operators.
 As usual, \( H = \omega (p^2 +q^2 )/2 \) and the raising and lowering operators \( a \) and \( a^\dagger \)are defined as \( a = (q + i p)/\sqrt{2} \), \( a^\dagger = (q - i p)/\sqrt{2}\),
 where the usual momentum \( P \) and position \( X \) are \( P = \sqrt{ \mu \omega } p \), \( X = q/\sqrt{\mu \omega} \).
-\makesubproblem{}{qft:problemSet1:2a}
+\makesubproblem{}{qft:LukeProblemSet1:2a}
 Find N.
-\makesubproblem{}{qft:problemSet1:2b}
+\makesubproblem{}{qft:LukeProblemSet1:2b}
 Compute \( \braket{z'}{z} \), and \( \bra{ z } H \ket{z} \).
-\makesubproblem{}{qft:problemSet1:2c}
+\makesubproblem{}{qft:LukeProblemSet1:2c}
 Show that \( \ket{z} \) is an eigenstate of the annihilation operator \( a \) and find its eigenvalue. (Don't be disturbed by finding non-orthogonal eigenstates with complex eigenvalues; \( a \) is not a Hermitian
 operator.)
-\makesubproblem{}{qft:problemSet1:2d}
+\makesubproblem{}{qft:LukeProblemSet1:2d}
 The statement that \( \ket{ z } \) is an eigenstate of a with well-known eigenvalue is, in the \(q\)-representation, a first-order differential equation for \( \braket{q}{z} \), the position-space wave-function of \( \ket{z} \). Solve this equation and find and sketch the wave-function. (Don't bother with normalization factors here).
-\makesubproblem{}{qft:problemSet1:2e}
+\makesubproblem{}{qft:LukeProblemSet1:2e}
 Consider the time evolution of the system (work in the Heisenberg representation). Show that for
 real \( z \) (this just sets the initial conditions) the expectation values of the position and momentum
 of the coherent state satisfy
 
-\begin{dmath}\label{eqn:ProblemSet1Problem2:40}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem2:40}
 \bra{z} X \ket{z} = \sqrt{\frac{2}{\mu\omega}} z \cos\omega t
 \end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:60}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem2:60}
 \bra{z} P \ket{z} = -\sqrt{2 \mu\omega} z \sin\omega t
 \end{dmath}
 
@@ -43,8 +43,8 @@ By contrast, what are the expectation values of \( X \) and \( P \) for an oscil
 time.
 } % makeproblem
 
-\makeanswer{qft:problemSet1:2}{
-\makeSubAnswer{}{qft:problemSet1:2a}
+\makeanswer{qft:LukeProblemSet1:2}{
+\makeSubAnswer{}{qft:LukeProblemSet1:2a}
 
 Expanding this definition of \( \ket{z} \) in power series
 
@@ -86,7 +86,7 @@ This gives
 N = e^{-\Abs{z}^2/2}.
 }
 
-\makeSubAnswer{}{qft:problemSet1:2c}
+\makeSubAnswer{}{qft:LukeProblemSet1:2c}
 
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:260}
 a \ket{z}
@@ -106,7 +106,7 @@ z N
 z \ket{z}
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet1:2b}
+\makeSubAnswer{}{qft:LukeProblemSet1:2b}
 
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:200}
 \braket{z}{z'}
@@ -151,7 +151,7 @@ so
 \lr{ \Abs{z}^2 + \inv{2} }.
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet1:2d}
+\makeSubAnswer{}{qft:LukeProblemSet1:2d}
 
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:300}
 \bra{q} a \ket{z}
@@ -184,7 +184,7 @@ The solution is of the form
 
 SKETCH: This is a Gaussian, and when \( z \) is real is centred at \( \sqrt{2} z \).
 
-\makeSubAnswer{}{qft:problemSet1:2e}
+\makeSubAnswer{}{qft:LukeProblemSet1:2e}
 
 Noting that \( 2 q = \sqrt{2} \lr{ a + a^\dagger } \), and \( 2 i p = \sqrt{2}\lr{ a - a^\dagger } \)
 

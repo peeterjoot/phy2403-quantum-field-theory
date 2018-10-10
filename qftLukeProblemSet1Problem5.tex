@@ -2,23 +2,23 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Field Lagrangian with a divergence}{qft:problemSet1:5}{
-%\makesubproblem{}{qft:problemSet1:5a}
+\makeproblem{Field Lagrangian with a divergence}{qft:LukeProblemSet1:5}{
+%\makesubproblem{}{qft:LukeProblemSet1:5a}
 
 Show that replacing the Lagrange density \( L = L(\phi_a, \partial_\alpha \phi_a ) \) by
 
-\begin{equation}\label{eqn:ProblemSet1Problem5:20}
+\begin{equation}\label{eqn:LukeProblemSet1Problem5:20}
 L' = L + \partial_\mu \wedge^\mu(x),
 \end{equation}
 
 where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the fields \( \phi_a(x) \), does not alter the equations of motion. Thus, when constructing the most general Lagrange density for a field, we do not have to include terms which are total derivatives. This will simplify life.
 } % makeproblem
 
-\makeanswer{qft:problemSet1:5}{
+\makeanswer{qft:LukeProblemSet1:5}{
 
 I had to start with re-deriving the field equations for a Lagrange density since I'd forgotten what they were.  If a field \( \phi \) is varied \( \phi' = \phi + \overbar{\phi} \), with the zero variation on the boundaries of the action volume element, we have to first order
 
-\begin{dmath}\label{eqn:ProblemSet1Problem5:40}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem5:40}
 \LL'
 = \LL( \phi + \overbar{\phi}, \partial_\alpha ( \phi + \overbar{\phi}) )
 =
@@ -31,7 +31,7 @@ I had to start with re-deriving the field equations for a Lagrange density since
 
 The variation of the action is
 
-\begin{dmath}\label{eqn:ProblemSet1Problem5:60}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem5:60}
 \delta S
 =
 \int dV \lr{
@@ -126,5 +126,5 @@ We see that the divergence \( \partial_\mu \wedge^\mu \) also satisfies the fiel
 \PD{\phi_a}{ \partial_\beta \wedge^\beta }.
 \end{dmath}
 
-%\makeSubAnswer{}{qft:problemSet1:5a}
+%\makeSubAnswer{}{qft:LukeProblemSet1:5a}
 }

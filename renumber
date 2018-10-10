@@ -56,3 +56,5 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture7.tex
 perl -p -i ../latex/bin/latexRegex.pl scalarTheoryQuestion.tex
 ../latex/bin/lgrep qftLecture8.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture8.tex
+../latex/bin/lgrep qftLecture9.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture9.tex

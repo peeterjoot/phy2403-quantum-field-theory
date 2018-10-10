@@ -2,31 +2,31 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Lorentz transformation.}{qft:problemSet1:1}{
+\makeproblem{Lorentz transformation.}{qft:LukeProblemSet1:1}{
 
 A Lorentz transformation \( x^\mu \rightarrow {x'}^\mu = {\wedge^\mu}_\nu x^\nu \) is such that it preserves the Minkowski metric \( \eta_{\mu\nu} \) meaning that \( \eta_{\mu\nu} x^\mu x^\nu = \eta_{\mu\nu} {x'}^\mu {x'}^\nu \) for all \( x \).
 
-\makesubproblem{}{qft:problemSet1:1a}
+\makesubproblem{}{qft:LukeProblemSet1:1a}
 Show that this implies that
-\begin{dmath}\label{eqn:ProblemSet1Problem1:20}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem1:20}
 \eta_{\mu\nu}
 =
 \eta_{\sigma\tau} {\wedge^\sigma}_\mu {\wedge^\tau}_\nu.
 \end{dmath}
-\makesubproblem{}{qft:problemSet1:1b}
+\makesubproblem{}{qft:LukeProblemSet1:1b}
 Use this result to show that an infinitesimal transformation of the form
-\begin{dmath}\label{eqn:ProblemSet1Problem1:40}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem1:40}
 {\wedge^\mu}_\nu = {\delta^\mu}_\nu + {\omega^\mu}_\nu
 \end{dmath}
 is a Lorentz transformation when \( \omega^{\mu\nu} \) is antisymmetric i.e. \( \omega^{\mu\nu} = -\omega^{\nu\mu} \). (Note that there an antisymmetric \( 4 \times 4 \) matrix has six parameters, as does a Lorentz transformation - 3 rotations and 3 boosts - so the counting works out).
-\makesubproblem{}{qft:problemSet1:1c}
+\makesubproblem{}{qft:LukeProblemSet1:1c}
 Write down the matrix form for \( {\omega^\mu}_\nu \) that corresponds to a rotation through an infinitesimal angle \( \theta \) about the \( x^3\)-axis.
-\makesubproblem{}{qft:problemSet1:1d}
+\makesubproblem{}{qft:LukeProblemSet1:1d}
 Do the same for a boost along the \( x^1 \)-axis by an infinitesimal velocity \(v\).
 } % makeproblem
 
-\makeanswer{qft:problemSet1:1}{
-\makeSubAnswer{}{qft:problemSet1:1a}
+\makeanswer{qft:LukeProblemSet1:1}{
+\makeSubAnswer{}{qft:LukeProblemSet1:1a}
 
 %{x'}^\mu &= \lr{ {\delta^\mu}_\alpha + {\omega^\mu}_\alpha } x^\alpha \\
 %{x'}_\mu &= \lr{ {\delta_\mu}^\beta + {\omega_\mu}^\beta } x_\beta
@@ -49,9 +49,9 @@ x^\mu
 x^\nu,
 \end{dmath}
 
-where the last step is just a change of indexes \( \mu \rightarrow \sigma, \nu \rightarrow \tau, \alpha \rightarrow \mu, \beta \rightarrow \nu \).  The identity \cref{eqn:ProblemSet1Problem1:20} can be read off directly.
+where the last step is just a change of indexes \( \mu \rightarrow \sigma, \nu \rightarrow \tau, \alpha \rightarrow \mu, \beta \rightarrow \nu \).  The identity \cref{eqn:LukeProblemSet1Problem1:20} can be read off directly.
 
-\makeSubAnswer{}{qft:problemSet1:1b}
+\makeSubAnswer{}{qft:LukeProblemSet1:1b}
 
 \begin{dmath}\label{eqn:qftProblemSet1Problem1:80}
 \eta_{\sigma\tau} {\wedge^\sigma}_\mu {\wedge^\tau}_\nu
@@ -81,7 +81,7 @@ where the last step is just a change of indexes \( \mu \rightarrow \sigma, \nu \
 \eta_{\mu\nu}.
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet1:1c}
+\makeSubAnswer{}{qft:LukeProblemSet1:1c}
 
 With a \( \gamma_0^2 = 1, \gamma_k^2 = -1 \) metric, a rotation in the x-y plane around the z-axis can be written as
 
@@ -129,7 +129,7 @@ so in the small angle approximation, with a \( \gamma_0, \gamma_, \gamma_2, \gam
 \end{bmatrix}.
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet1:1d}
+\makeSubAnswer{}{qft:LukeProblemSet1:1d}
 
 For the boost the rotation is also an exponential
 

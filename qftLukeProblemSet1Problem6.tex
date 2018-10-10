@@ -2,11 +2,11 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Maxwell Lagrangian with mass term.}{qft:problemSet1:6}{
+\makeproblem{Maxwell Lagrangian with mass term.}{qft:LukeProblemSet1:6}{
 (You can probably find this worked out in lots of places, but it's good practice with working with four-vectors, so I strongly encourage you to do it yourself!)
 Consider the Lagrangian for a real vector field \( A^\mu \):
 
-\begin{dmath}\label{eqn:ProblemSet1Problem6:20}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem6:20}
 \LL
 =
 - \inv{2}
@@ -19,41 +19,41 @@ Consider the Lagrangian for a real vector field \( A^\mu \):
 \frac{\mu^2}{2} A_\alpha(x) A^\alpha(x).
 \end{dmath}
 
-\makesubproblem{}{qft:problemSet1:6a}
+\makesubproblem{}{qft:LukeProblemSet1:6a}
 Show that this leads to the field equations
 
-\begin{dmath}\label{eqn:ProblemSet1Problem6:40}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem6:40}
 \lr{ g_{\alpha\beta} \lr{ \delSquaredBox + \mu^2 } - \partial_\alpha \partial_\beta } A^\beta(x) = 0,
 \end{dmath}
 
 and that the field \( A^\alpha(x) \) satisfies the Lorentz condition
 
-\begin{dmath}\label{eqn:ProblemSet1Problem6:60}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem6:60}
 \partial_\alpha A^\alpha(x) = 0.
 \end{dmath}
 
 (NB: If you are not careful with your indices and Einstein summation convention you will get yourself hopelessly messed up here.)
 
-\makesubproblem{}{qft:problemSet1:6b}
+\makesubproblem{}{qft:LukeProblemSet1:6b}
 
 Consider the limiting case of a massless field, \( \mu \rightarrow 0 \), and identify the field \( A^\mu \) with the scalar and vector potentials of electrodynamics: \( A^\mu = (\phi, \BA) \), where
 
-\begin{equation}\label{eqn:ProblemSet1Problem6:80}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:80}
 \BE = - \spacegrad \phi - \PD{t}{\BA}
 \end{equation}
-\begin{equation}\label{eqn:ProblemSet1Problem6:100}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:100}
 \BB = \spacegrad \cross \BA.
 \end{equation}
 
 Show that the field equations reproduce two of Maxwell's equations, and that the other two hold as identities given the definitions of \( \BE \) and \( \BB \) in terms of \( \phi \) and \( \BA \).
 } % makeproblem
 
-\makeanswer{qft:problemSet1:6}{
-\makeSubAnswer{}{qft:problemSet1:6a}
+\makeanswer{qft:LukeProblemSet1:6}{
+\makeSubAnswer{}{qft:LukeProblemSet1:6a}
 
 First rewrite the Lagrangian slightly
 
-\begin{dmath}\label{eqn:ProblemSet1Problem6:120}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem6:120}
 \LL
 =
 - \inv{2}
@@ -109,7 +109,7 @@ After a sign switch and change of indexes, we have the desired result.  Operatin
 
 Unless \( \mu = 0 \) we must have a zero four-divergence \( \partial_\alpha A^\alpha = 0 \).
 
-\makeSubAnswer{}{qft:problemSet1:6b}
+\makeSubAnswer{}{qft:LukeProblemSet1:6b}
 
 In the \( \mu \rightarrow 0 \) case with zero divergence, the field equation is just
 

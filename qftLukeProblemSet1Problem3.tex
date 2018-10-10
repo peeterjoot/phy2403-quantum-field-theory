@@ -2,35 +2,35 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{One dimensional string}{qft:problemSet1:3}{
+\makeproblem{One dimensional string}{qft:LukeProblemSet1:3}{
 
 A string of length \( a \), mass per unit length \( \sigma \) and under tension \(T\) is fixed at each end. The Lagrangian governing the time evolution of the transverse displacement \( y(x,t) \) is
 
-\begin{dmath}\label{eqn:ProblemSet1Problem3:20}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem3:20}
 L = \int_0^a dx \lr{ \frac{\sigma}{2} \lr{ \PD{t}{y} }^2 - \frac{T}{2} \lr{ \PD{x}{y} }^2 }
 \end{dmath}
 
 where \( x \) identifies position along the string from one end point.
-\makesubproblem{}{qft:problemSet1:3a}
+\makesubproblem{}{qft:LukeProblemSet1:3a}
 By expressing the displacement as a sine series Fourier expansion of the form
 
-\begin{dmath}\label{eqn:ProblemSet1Problem3:40}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem3:40}
 y(x,t) = \sqrt{\frac{2}{a}} \sum_{n=1}^\infty \sin\lr{ \frac{ n \pi x }{a} } q_n(t)
 \end{dmath}
 
 show that the Lagrangian becomes
 
-\begin{dmath}\label{eqn:ProblemSet1Problem3:60}
+\begin{dmath}\label{eqn:LukeProblemSet1Problem3:60}
 L = \sum_{n=1}^\infty \lr{ \frac{\sigma}{2} \dot{q}_n^2 - \frac{T}{2} \lr{ \frac{ n \pi }{2} }^2 q_n^2 } .
 \end{dmath}
 
-\makesubproblem{}{qft:problemSet1:3b}
+\makesubproblem{}{qft:LukeProblemSet1:3b}
 Derive the equations of motion. Hence, show that the string is equivalent to an infinite set of decoupled
 harmonic oscillators, and find their frequencies.
 } % makeproblem
 
-\makeanswer{qft:problemSet1:3}{
-\makeSubAnswer{}{qft:problemSet1:3a}
+\makeanswer{qft:LukeProblemSet1:3}{
+\makeSubAnswer{}{qft:LukeProblemSet1:3a}
 
 First observe that the functions \( \braket{x}{n} = \sqrt{\frac{2}{a}} \sin\lr{ n \pi x/a } \) are orthonormal over the \( [0,a] \) domain.
 
@@ -109,7 +109,7 @@ q_n q_m
 }.
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet1:3b}
+\makeSubAnswer{}{qft:LukeProblemSet1:3b}
 
 We have an Euler-Lagrange equation for each \( q_n \).  The conjugate momenta are
 
