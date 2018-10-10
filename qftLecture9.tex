@@ -172,9 +172,9 @@ instead it creates a single particle state.
 
 \section{Examples of symmetries}
 In particle physics, examples of Wigner vs Nambu-Goldstone, ignoring gravity the only exact intenral symmetry in the standard module is
-\( (B(n) - L(n)) \), believed to be a \( U(1) \) symmetry in Wigner mode.
+\( (B\# - L\#) \), believed to be a \( U(1) \) symmetry in Wigner mode.
 
-Here \(B(n)\) is the Baryon number, and \( L(n) \) is the Lepton number.  Examples:
+Here \(B\#\) is the Baryon number, and \( L\# \) is the Lepton number.  Examples:
 
 \begin{itemize}
 \item \( B(p) = 1 \), proton.
@@ -197,6 +197,234 @@ m_u = m_d = 0.
 \( SU(2)_L \times SU(2)_R \rightarrow SU(2)_V \)
 \paragraph{EWSB (Electro-Weak-Symmetry-Breaking) sector}
 When the couplings \( g_2, g_1 = 0 \).  (\( g_2 \in SU(2), g_1 \in U(1) \)).
+
+\section{Scale invariance}
+
+\begin{dmath}\label{eqn:qftLecture9:340}
+\begin{aligned}
+x &\rightarrow e^{\lambda} x \\
+\phi &\rightarrow e^{-\lambda} \phi \\
+A_\mu &\rightarrow e^{-\lambda} A_\mu
+\end{aligned}
+\end{dmath}
+Any unitary theory which is scale invariant is also \underline{conformal} invariant.  Conformal invarance means that angles are preserved.
+The point here is that there is more than scale invariance.
+
+We have classical internal global continuous symmetries.
+These can be either
+\begin{enumerate}
+\item
+``unbroken'' (Wigner mode)
+\begin{dmath}\label{eqn:qftLecture9:360}
+\hatQ\ket{0} = 0.
+\end{dmath}
+\item
+``spontaneously broken''
+\begin{dmath}\label{eqn:qftLecture9:380}
+j^\mu(x) \ket{0} \ne 0
+\end{dmath}
+(creates Goldstone modes).
+\item ``anomalous''.  Classical symmetries are not a symmetry of QFT.
+Examples:
+\begin{itemize}
+\item Scale symmetry (to be studied in QFT II), although this is not truly internal.
+\item In QCD again when \( \omega_\Bq = 0 \), a \( U(1\) symmetry (chiral symmetry) becomes exact, and cannot be preserved in QFT.
+\item In the standard model (E.W sector), the Baryon number and Lepton numbers are not symmetries, but their difference \( B\# - L\# \) is a symmetry.
+\end{itemize}
+\end{enumerate}
+
+\section{Lorentz invariance.}
+We'd like to study the action of Lorentz symmetries on quantum states.  We are going to ``go by the book'', finding symmetries, currents, quantize, find generators, and so forth.
+
+Under a Lorentz transformation
+\begin{dmath}\label{eqn:qftLecture9:400}
+x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu,
+\end{dmath}
+We are going to consider infitesimal Lorentz transformations
+\begin{dmath}\label{eqn:qftLecture9:420}
+{\Lambda^\mu}_\nu \approx
+{\delta^\mu}_\nu
++
+{\omega^\mu}_\nu,
+\end{dmath}
+where \( {\omega^\mu}_\nu \) is small.
+
+{\Lambda^\mu}_\nu
+g^{\nu\lambda}
+{\Lambda^\kappa}_\lambda
+=
+g^{\nu\kappa}
+
+\lr{
+   {\delta^\mu}_\nu
+   +
+   {\omega^\mu}_\nu
+}
+g^{\nu\lambda}
+\lr{
+   {\delta^\kappa}_\lambda
+   +
+   {\omega^\kappa}_\lambda
+}
+
+(paper)
+
+so the infinitesimal transformation of the coordinates is
+\begin{dmath}\label{eqn:qftLecture9:440}
+x^\mu \rightarrow {x'}^\mu \approx x^\mu + \omega^{\mu\nu} x_\nu,
+\end{dmath}
+the field transforms as
+\begin{dmath}\label{eqn:qftLecture9:460}
+\phi(x) \rightarrow \phi'(x') = \phi(x)
+\end{dmath}
+or
+\phi'(x^\mu + \omega^{\mu\nu} x_\nu) =
+\phi'(x) + \omega^{\mu\nu} x_\nu \partial_\mu\phi(x) = \phi(x),
+so
+\begin{dmath}\label{eqn:qftLecture9:480}
+\delta \phi = \phi'(x) - \phi(x) =
+-\omega^{\mu\nu} x_\nu \partial_\nu \phi.
+\end{dmath}
+
+Since \( \LL \) is a scalar
+\begin{dmath}\label{eqn:qftLecture9:500}
+\delta \LL
+=
+-\omega^{\mu\nu} x_\nu \partial_\nu \LL
+=
+-
+\partial_\nu \lr{
+   \omega^{\mu\nu} x_\mu \LL
+}
++
+(\partial_\nu x_\mu) \omega^{\mu\nu} \LL
+=
+\partial_\nu \lr{
+-
+   \omega^{\mu\nu} x_\mu \LL
+},
+\end{dmath}
+since \( \partial_\nu x_\mu = g_{\nu\mu} \) is symmetric, and \( \omega \) is antisymmetric.
+Our current is
+\begin{dmath}\label{eqn:qftLecture9:520}
+J^\mu_\omega =
+-
+   \omega^{\mu\nu} x_\mu \LL.
+\end{dmath}
+Our Noether current is
+\begin{dmath}\label{eqn:qftLecture9:540}
+j^\nu_{\omega_{\mu\rho}}
+= \PD{\phi_{,\nu}}{\delta \phi} - J^\mu_\omega
+=
+\partial^\nu \phi\lr{ - \omega^{\mu\rho} x_\rho \partial_\mu \phi } + \omega^{\nu \rho} x_\rho \LL
+=
+\omega^{\mu\rho}
+\lr{
+   \partial^\nu \phi\lr{ - x_\rho \partial_\mu \phi } + {\delta^{\nu}}_\mu x_\rho \LL
+}
+=
+\omega^{\mu\rho} x_\rho
+\lr{
+   -\partial^\nu \phi \partial_\mu \phi + {\delta^{\nu}}_\mu \LL
+}
+\end{dmath}
+We identify
+\begin{dmath}\label{eqn:qftLecture9:560}
+-
+{T^\nu}_\mu =
+   -\partial^\nu \phi \partial_\mu \phi + {\delta^{\nu}}_\mu \LL,
+\end{dmath}
+so the current is
+\begin{dmath}\label{eqn:qftLecture9:580}
+j^\nu_{\omega_{\mu\rho}}
+=
+-\omega^{\mu\rho} x_\rho
+{T^\nu}_\mu.
+\end{dmath}
+Define
+\begin{dmath}\label{eqn:qftLecture9:600}
+j^{\nu\mu\rho} = \inv{2} \lr{ x^\rho T^{\nu\mu} - x^{\mu} T^{\mu\nu} },
+\end{dmath}
+which retains the antisymmetry in \( \mu \rho \) yet still drops the parameter \( \omega^{\mu\rho} \).
+
+Example.  Rotations \( \mu\rho = ij \)
+\begin{dmath}\label{eqn:qftLecture9:620}
+J^{0 i j} \epsilon_{ijk}
+=
+\inv{2} \lr{ x^i T^{0j} - x^{j} T^{0i} } \epsilon_{ijk}
+x^i T^{0j} \epsilon_{ijk}.
+\end{dmath}
+Observe that this has the structure of \( (\Bx \cross \Bp)_k \), where \( \Bp \) is the momentum density of the field.
+Let
+\begin{dmath}\label{eqn:qftLecture9:640}
+L_k \equiv Q_k =
+\int d^3 x J^{0ij} \epsilon_{ijk}
+\end{dmath}
+We can now build a generator
+\begin{dmath}\label{eqn:qftLecture9:660}
+\hatU(\Balpha)
+= e^{i \Balpha \cdot \hat{\BL}}
+= \exp\lr{i \alpha_k
+\int d^3 x x^i \hat{T}^{0j}
+}
+=
+\exp\lr{i \alpha_k
+\int d^3 x x^i \hatpi \partial^j \hatphi
+}
+=
+\exp\lr{i \Balpha
+\int d^3 x \hatpi \spacegrad \phi \cross \Bx
+}
+\end{dmath}
+(up to a sign in the exponent which doesn't matter)
+\begin{dmath}\label{eqn:qftLecture9:680}
+\phihat(\By) \rightarrow \hatU(\alpha) \hatphi(\By) \hatU^\dagger(\alpha)
+\approx
+\phihat(\By) +
+i \Balpha \cdot \antisymmmetric
+{
+   \int d^3 x \pihat(\Bx) \spacegrad \phihat(\Bx) \cross \Bx
+}
+{
+   \phihat(\By)
+}
+=
+\phihat(\By) +
+\Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By)
+\end{dmath}
+Explicitly, in coordinates, this is
+\begin{dmath}\label{eqn:qftLecture9:700}
+\phihat(\By) \rightarrow
+\phihat(\By) +
+\alpha^i
+\lr{
+   \partial^j \phihat(\By) y^k \epsilon_{jki}
+}
+=
+\phihat(\By) -
+\epsilon_{ikj} \alpha^i y^k \partial^j \phihat
+=
+\phihat( y^j - \epsilon^{jij} a^i y^k ).
+\end{dmath}
+This is a rotation.  Example: pick \( \Balpha = (0, 0, 1) \)
+\begin{dmath}\label{eqn:qftLecture9:720}
+\begin{bmatrix}
+y^1 \\
+y^2 \\
+y^3 \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & \alpha & 0 \\
+-\alpha & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+y^1 \\
+y^2 \\
+y^3 \\
+\end{bmatrix}
+\end{dmath}
 
 %\EndArticle
 \EndNoBibArticle
