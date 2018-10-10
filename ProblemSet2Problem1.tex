@@ -1,0 +1,40 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeproblem{Spacetime behaviour of various Green's functions}{qft:problemSet2:1}{
+Here, you'll study some properties of
+\begin{equation}\label{eqn:ProblemSet2Problem1:20}
+D(x) \equiv \antisymmetric{\phihat_{-}}{\phihat_{+}} = \int \frac{d^3 p}{(2\pi)^3 2 \omega_p} e^{-i \omega_p t + i \Bp \cdot \Bx}.
+\end{equation}
+\makesubproblem{}{qft:problemSet2:1a}
+For m = 0 (``photon''), show that:
+\begin{dmath}\label{eqn:ProblemSet2Problem1:40}
+D(x) = -\inv{2 \pi^2} \calP \inv{t^2 - r^2} - \frac{i}{8 \pi} \lr{
+\frac{\delta(t - r)}{r}
+-\frac{\delta(t + r)}{r}
+},
+\end{dmath}
+where \( r = \Abs{\Bx} \). Notice that \( D(x) \) is singular on the light cone \( t = r\). Does it vanish for spacelike separations?
+Hint: Please recall that (and why!)
+\begin{dmath}\label{eqn:ProblemSet2Problem1:60}
+\inv{a \pm i \epsilon} = \calP \inv{a} \mp i \pi \delta(a)
+\end{dmath}
+(here \( \calP \) denotes ``principal value integration'',
+as this relation is to be understood in terms of generalized functions, i.e. in the back of your mind it always needs to be integrated over a with suitable smooth and integrable ``test functions''). Note
+also that what looks like a ``half-delta-function integral'' \( \int_0^\infty dy e^{i x y} \)
+should really be understood as
+\(
+\lim_{\epsilon\rightarrow 0} \int_0^\infty dy e^{-\epsilon y + i x y}
+\)
+\makesubproblem{}{qft:problemSet2:1b}
+For \( m^2 > 0 \), study the behavior of \( D(x) \) for spacelike \( x \) and find the asymptotic behavior for
+\( -x^2 \gg 1/m^2 \) (i.e., at spacelike separations larger than the particle's Compton wavelength).
+} % makeproblem
+
+\makeanswer{qft:problemSet2:1}{
+\makeSubAnswer{}{qft:problemSet2:1a}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:1b}
+TODO.
+}

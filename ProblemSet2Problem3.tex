@@ -1,0 +1,151 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeproblem{\( SU(2)_L \times SU(2)_R\), realized in the Wigner and Nambu-Goldstone modes.
+}{qft:problemSet2:3}{
+Consider now our Lagrangian
+FIXME
+and imagine that \( m^2 < 0\), for whatever reason (nobody knows, really), while \( \lambda\) is still positive. This now becomes the Higgs Lagrangian of the Standard Model.
+
+\makesubproblem{}{qft:problemSet2:3a}
+Show that the classical potential in
+FIXME
+now becomes:
+\begin{dmath}\label{eqn:ProblemSet2Problem3:20}
+V = -\Abs{m^2}
+\trace{H^\dagger H}
++ \lambda
+\lr{ \trace{H^\dagger H} }^2
+= \lambda \lr{
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+   -
+   \frac{\Abs{m^2}}{2 \lambda}
+}^2
++ \text{const}.
+\end{dmath}
+\makesubproblem{}{qft:problemSet2:3b}
+Clearly, there are extrema of the potential when
+\(
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+= 0 \)
+and when
+\(
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+=
+   \frac{\Abs{m^2}}{2 \lambda}
+ \)
+The second one has, clearly, smaller energy density. To quantize the theory, we now have to choose which classical minimum to expand around. Show that, if we expand around
+\(
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+= 0 \)
+, we will find that the \( \phi _{1,2} \) excitations are tachyons, even classically. This signals an instability, rather than a faster-than-light propagation and shows that we have chosen the wrong value of \( \phi \) to build our quantum theory.
+\makesubproblem{}{qft:problemSet2:3c}
+Thus, consider the
+\(
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+=
+   \frac{\Abs{m^2}}{2 \lambda}
+ \)
+minimum of \( V \). This is really a set of minima. In fact
+the set parameterized by
+\(
+   \Abs{\phi_1}^2
+   +
+   \Abs{\phi_2}^2
+=
+   \text{const}
+ \)
+is also known as a three sphere (\(S^3\), embedded in a four-dimensional space parameterized by
+\(\psi^{1\cdots4}\) - not the spacetime!). To build the quantum theory, we will choose a point on this three sphere (a.k.a. the ``vacuum manifold'' - the set of field values that minimize the potential). We will now study the small fluctuations around the chosen point and the spectrum of the theory in this vacuum. There is an infinite number of parameterizations that can be used to do this, but I will suggest one that makes the symmetries the clearest.
+ Thus, use the \(H\)-representation and take
+\begin{dmath}\label{eqn:ProblemSet2Problem3:40}
+H(x) = \frac{\Abs{m}}{2\sqrt{\lambda}} ( 1 + h(x) ) e^{i \phi^a(x) \sigma^a }
+\end{dmath}
+The logic here is as follows. When \( h(x)\) and \( \phi^a(x) \) vanish (i.e. there are no excitations), the
+parameterization
+\cref{eqn:ProblemSet2Problem3:40}
+is equivalent, by
+FIXME: (4)
+, to taking a specific point on the vacuum manifold,
+i.e. the one where \( \phi_1 = 0 \) and \( \phi_2 = \Abs{m}/\sqrt{2\lambda} \).
+The fields \( h(x) \) and \( \phi^a(x) \) parameterize the
+fluctuations around this ground state (for sure, they can be mapped - the map is nonlinear - to the fluctuations of the fields
+\( \phi_{1,2} \) around the chosen vacuum value for \( \phi_2\).
+What you will do now is take the form
+\cref{eqn:ProblemSet2Problem3:40}
+, plug it into the Lagrangian
+FIXME: (5)
+with
+\( m^2 = -\Abs{m^2}\),
+and expand what you find to second order in the fields \( h(x) \) and \( \phi^a(x)\).
+Show that the field \( h(x) \) has a mass and find an expression for it.
+Show that the fields \( \phi^a(x) \) remain massless and that their Lagrangian (not just to quadratic order) only contains derivatives.
+The latter point can be seen pretty simply by noting that \( H(x) \) from
+\cref{eqn:ProblemSet2Problem3:40}
+can be written as
+\begin{dmath}\label{eqn:ProblemSet2Problem3:60}
+H(x) = \frac{\Abs{m}}{\sqrt{ 2 \lambda } }\Omega(x) ( 1 + h(x) ),
+\end{dmath}
+with \( \Omega^\dagger \Omega = 1 \) and \( \det(\Omega(x)) = 1 \).
+In this parameterization \( \Omega(x) \) fluctuations
+  correspond to going around the vacuum manifold \( S^3 \), while the \( h(x) \) fluctuations are along the ``radial'' directions away from the minimum.
+The latter cost energy, hence \( h \) is massive (the Higgs field!), while the \( \Omega(x) \) only cost energy if the x-dependence is nontrivial.
+The \( \phi^a(x)\) (or \( \Omega(x) \)) are equivalent parameterizations of the Goldstone fields. What you found here is an example of a general story: if a theory has a continuous symmetry, which is not a symmetry of the ground state, there is a number of massless Goldstone (or Nambu-Goldstone) modes. For internal symmetries like the ones we are considering here, their number is equal to the number of broken generators.
+
+In the Standard Model, \(h(x)\) is indeed the Higgs field. The fields \(\phi^a(x)\) actually become the longitudinal components of the W and Z-bosons (one usually says that they are ``eaten'', a manifestation of the Landau-Anderson-Higgs-Brout-Englert-Guralnik-Hagen-... mechanism).
+\makesubproblem{}{qft:problemSet2:3d}
+One question that was not discussed and remained a bit obscure is that of the unbroken part of the symmetry. The original Lagrangian has \( SU(2)_L \times SU(2)_R \) symmetry. The value of
+\( H(x) \) in the vacuum, denoted by \( \expectation{H}\), is given by
+\cref{eqn:ProblemSet2Problem3:40}
+with \( h = \phi^a = 0 \) and is
+ \( \expectation{H} \sim\)
+unit matrix.
+Show that, while  \( \expectation{H} \) is not invariant under \( SU(2)_L \times SU(2)_R \) for arbitrary \( SU(2)_L \) and \( SU(2)_R \) transformations, it is invariant under
+FIXME: (6)
+with
+\( U_L = U_R\). Such \( SU(2)_L \times SU(2)_R \) transformations with \( U_L = U_R \) are called ``diagonal'' or ``vector'' \( SU(2)_V \) transformations.
+These remain unbroken in the vacuum. In the electroweak theory, the third component of \( SU(2)_V \) is identified with electromagnetic \( U(1)\).
+Show that the current associated with \( SU(2)_V \) transformations has the form:
+\begin{dmath}\label{eqn:ProblemSet2Problem3:80}
+j_\mu^{V,a} = \frac{i}{2} \trace{
+\partial_\mu H^\dagger \antisymmetric{}{}
+}
+\end{dmath}
+jV,a = i tr¿¿ H¿[¿a,H]+¿ H[¿a,H¿]¿ . (10) ¿2¿ ¿
+Show also that the other ``linear'' combination of SU(2)_L and SU(2)_R, Eq. (6) with UR = UL¿ corresponds to the current (not conserved!) usually called the ``axial current''
+jA,a = i tr¿¿ H¿{¿a,H}¿¿ H{¿a,H¿}¿ , (11) ¿2¿ ¿
+where {A, B} = AB + BA denotes the anticommutator.
+\makesubproblem{}{qft:problemSet2:3e}
+Show that to linear order in the fields h(x),\phi a(x), the a-th axial current is simply
+jA,a ¿  \( \expectation{H} \)¿ \phi a , (12) ¿¿
+and find the constant in front. Thus, when the quantum operator corresponding to (12) acts on the vacuum, it creates a quantum of the Goldstone boson (times the momentum and the ``Goldstone boson decay constant'' which is really equal to  \( \expectation{H} \)).
+Show also that, to leading nontrivial order in the fields, the conserved vector current jV,a is
+quadratic in the fields \phi a.
+In QCD, the relation (12) and the algebra of the currents jV,A constitute the basis of an approach to
+soft-pion physics (soft means low energy) known as ``current algebra''.
+Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when m2 > 0, there are no massless particles, as is easy to convince yourselves.
+} % makeproblem
+
+\makeanswer{qft:problemSet2:3}{
+\makeSubAnswer{}{qft:problemSet2:3a}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:3b}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:3c}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:3d}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:3e}
+TODO.
+}

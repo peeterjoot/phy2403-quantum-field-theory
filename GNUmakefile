@@ -54,7 +54,7 @@ include ../latex/make.rules
 all :: l8
 all :: l9
 #all :: p1
-#all :: p2
+all :: p2
 
 $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 
@@ -67,7 +67,8 @@ $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 #l7: qftLecture7.pdf
 l8: qftLecture8.pdf
 l9: qftLecture9.pdf
-p1: ProblemSet1.pdf
+#p1: ProblemSet1.pdf
+p2: ProblemSet2.pdf
 
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem1.tex
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem2.tex
@@ -81,6 +82,11 @@ ProblemSet1.pdf : ProblemSet1Problem2.tex
 ProblemSet1.pdf : ProblemSet1Problem3.tex
 ProblemSet1.pdf : ProblemSet1Problem4.tex
 ProblemSet1.pdf : ProblemSet1Problem5.tex
+
+ProblemSet2.pdf : ProblemSet2Problem1.tex
+ProblemSet2.pdf : ProblemSet2Problem2.tex
+ProblemSet2.pdf : ProblemSet2Problem3.tex
+ProblemSet2.pdf : ProblemSet2Problem4.tex
 
 .PHONY: spellcheck
 spellcheck: $(SPELLCHECK)
