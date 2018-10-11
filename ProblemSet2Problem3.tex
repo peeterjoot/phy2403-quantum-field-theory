@@ -104,6 +104,7 @@ The latter cost energy, hence \( h \) is massive (the Higgs field!), while the \
 The \( \phi^a(x)\) (or \( \Omega(x) \)) are equivalent parameterizations of the Goldstone fields. What you found here is an example of a general story: if a theory has a continuous symmetry, which is not a symmetry of the ground state, there is a number of massless Goldstone (or Nambu-Goldstone) modes. For internal symmetries like the ones we are considering here, their number is equal to the number of broken generators.
 
 In the Standard Model, \(h(x)\) is indeed the Higgs field. The fields \(\phi^a(x)\) actually become the longitudinal components of the W and Z-bosons (one usually says that they are ``eaten'', a manifestation of the Landau-Anderson-Higgs-Brout-Englert-Guralnik-Hagen-... mechanism).
+
 \makesubproblem{}{qft:problemSet2:3d}
 One question that was not discussed and remained a bit obscure is that of the unbroken part of the symmetry. The original Lagrangian has \( SU(2)_L \times SU(2)_R \) symmetry. The value of
 \( H(x) \) in the vacuum, denoted by \( \expectation{H}\), is given by
@@ -122,19 +123,32 @@ j_\mu^{V,a} = \frac{i}{2} \trace{
 \partial_\mu H^\dagger \antisymmetric{}{}
 }
 \end{dmath}
-jV,a = i tr¿¿ H¿[¿a,H]+¿ H[¿a,H¿]¿ . (10) ¿2¿ ¿
-Show also that the other ``linear'' combination of SU(2)_L and SU(2)_R, Eq. (6) with UR = UL¿ corresponds to the current (not conserved!) usually called the ``axial current''
-jA,a = i tr¿¿ H¿{¿a,H}¿¿ H{¿a,H¿}¿ , (11) ¿2¿ ¿
-where {A, B} = AB + BA denotes the anticommutator.
+Show also that the other ``linear'' combination of \( SU(2)_L \) and \( SU(2)_R \),
+FIXME: Eq. (6)
+with \( U_R = U_L^\dagger \) corresponds to the current (not conserved!) usually called the ``axial current''
+\begin{dmath}\label{eqn:ProblemSet2Problem3:120}
+j_\mu^{A,a} = \frac{i}{2} \trace{
+\partial_\mu H^\dagger \symmetric{\sigma^a}{H} - \partial_\mu H \symmetric{\sigma^a}{H^\dagger},
+}
+\end{dmath}
+where \( \symmetric{A}{B} = AB + BA \) denotes the anticommutator.
+
 \makesubproblem{}{qft:problemSet2:3e}
-Show that to linear order in the fields h(x),\phi a(x), the a-th axial current is simply
-jA,a ¿  \( \expectation{H} \)¿ \phi a , (12) ¿¿
-and find the constant in front. Thus, when the quantum operator corresponding to (12) acts on the vacuum, it creates a quantum of the Goldstone boson (times the momentum and the ``Goldstone boson decay constant'' which is really equal to  \( \expectation{H} \)).
-Show also that, to leading nontrivial order in the fields, the conserved vector current jV,a is
-quadratic in the fields \phi a.
-In QCD, the relation (12) and the algebra of the currents jV,A constitute the basis of an approach to
+Show that to linear order in the fields \( h(x),\phi^a(x) \), the a-th axial current is simply
+\begin{dmath}\label{eqn:ProblemSet2Problem3:100}
+j^{A,a} \sim \expectation{H} \partial_\mu \phi^a,
+\end{dmath}
+and find the constant in front. Thus, when the quantum operator corresponding to
+\cref{eqn:ProblemSet2Problem3:100} % (12)
+acts on the vacuum, it creates a quantum of the Goldstone boson (times the momentum and the ``Goldstone boson decay constant'' which is really equal to  \( \expectation{H} \)).
+Show also that, to leading nontrivial order in the fields, the conserved vector current \( j^{V,a} \) is
+quadratic in the fields \( \phi^a\).
+In QCD, the relation
+\cref{eqn:ProblemSet2Problem3:100} % (12)
+and the algebra of the currents \( j^{V,A} \) constitute the basis of an approach to
 soft-pion physics (soft means low energy) known as ``current algebra''.
-Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when m2 > 0, there are no massless particles, as is easy to convince yourselves.
+
+Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when \( m^2 > 0\), there are no massless particles, as is easy to convince yourselves.
 } % makeproblem
 
 \makeanswer{qft:problemSet2:3}{
