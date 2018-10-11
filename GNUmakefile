@@ -55,7 +55,7 @@ all :: l8
 #all :: l9
 all :: l10
 #all :: p1
-#all :: p2
+all :: p2
 
 $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 
