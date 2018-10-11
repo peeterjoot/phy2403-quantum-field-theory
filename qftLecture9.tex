@@ -89,14 +89,22 @@ When \( m^2 < 0 \) we write
 \begin{dmath}\label{eqn:qftLecture9:140}
 V(\phi)
 = - m^2 \phi^\conj \phi + \frac{\lambda}{4} \lr{ \phi^\conj \phi}^2
+= \frac{\lambda}{4} \lr{ 
+\lr{ \phi^\conj \phi}^2 - \frac{4}{\lambda} m^2 } 
+= \frac{\lambda}{4} \lr{ 
+\phi^\conj \phi - \frac{2}{\lambda} m^2 }^2 - \frac{4 m^4}{\lambda^2},
+\end{dmath}
+or simply
+\begin{dmath}\label{eqn:qftLecture9:n}
+V(\phi)
 =
 \frac{\lambda}{4} \lr{ \phi^\conj \phi - v^2 }^2 + \text{const}.
 \end{dmath}
-The potential is illustrated in
-F1.
-Try plotting this ``Mexican Hat'' potential in Mathematica, using a Manipulate varying \( m \).
-%Here we mean \( \phi^\conj \sim \phi_1 +
-We choose to expand around some point on the minimum, and it doesn't matter which one (P in the figure).
+The potential (called the Mexican hat potential) is illustrated in \cref{fig:mexicanHatPotential:mexicanHatPotentialFig1} for non-zero \( v \), and in 
+\cref{fig:mexicanHatPotential:mexicanHatPotentialFig2} for \( v = 0 \).
+\imageFigure{../figures/phy2403-quantum-field-theory/mexicanHatPotentialFig1}{Mexican hat potential.}{fig:mexicanHatPotential:mexicanHatPotentialFig1}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/mexicanHatPotentialFig2}{Degenerate Mexican hat potential \( v = 0 \).}{fig:mexicanHatPotential:mexicanHatPotentialFig2}{0.3}
+We choose to expand around some point on the minimum ring, and it doesn't matter which one. % (P in the figure).
 When there is no potential, we call the field massless (i.e. if we are in the minimum ring).
 We expand as
 \begin{dmath}\label{eqn:qftLecture9:160}
@@ -237,9 +245,9 @@ Examples:
 We'd like to study the action of Lorentz symmetries on quantum states.  We are going to ``go by the book'', finding symmetries, currents, quantize, find generators, and so forth.
 
 Under a Lorentz transformation
-\begin{dmath}\label{eqn:qftLecture9:400}
+\begin{equation}\label{eqn:qftLecture9:400}
 x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu,
-\end{dmath}
+\end{equation}
 We are going to consider infitesimal Lorentz transformations
 \begin{dmath}\label{eqn:qftLecture9:420}
 {\Lambda^\mu}_\nu \approx
@@ -249,12 +257,12 @@ We are going to consider infitesimal Lorentz transformations
 \end{dmath}
 where \( {\omega^\mu}_\nu \) is small.
 
+\begin{dmath}\label{eqn:qftLecture9:740}
 {\Lambda^\mu}_\nu
 g^{\nu\lambda}
 {\Lambda^\kappa}_\lambda
 =
 g^{\nu\kappa}
-
 \lr{
    {\delta^\mu}_\nu
    +
@@ -266,8 +274,8 @@ g^{\nu\lambda}
    +
    {\omega^\kappa}_\lambda
 }
-
-(paper)
+\end{dmath}
+FIXME: (paper)
 
 so the infinitesimal transformation of the coordinates is
 \begin{dmath}\label{eqn:qftLecture9:440}
@@ -278,8 +286,10 @@ the field transforms as
 \phi(x) \rightarrow \phi'(x') = \phi(x)
 \end{dmath}
 or
+\begin{dmath}\label{eqn:qftLecture9:760}
 \phi'(x^\mu + \omega^{\mu\nu} x_\nu) =
 \phi'(x) + \omega^{\mu\nu} x_\nu \partial_\mu\phi(x) = \phi(x),
+\end{dmath}
 so
 \begin{dmath}\label{eqn:qftLecture9:480}
 \delta \phi = \phi'(x) - \phi(x) =
@@ -369,20 +379,20 @@ We can now build a generator
 }
 =
 \exp\lr{i \alpha_k
-\int d^3 x x^i \hatpi \partial^j \hatphi
+\int d^3 x x^i \pihat \partial^j \phihat
 }
 =
 \exp\lr{i \Balpha
-\int d^3 x \hatpi \spacegrad \phi \cross \Bx
+\int d^3 x \pihat \spacegrad \phi \cross \Bx
 }
 \end{dmath}
 (up to a sign in the exponent which doesn't matter)
 \begin{dmath}\label{eqn:qftLecture9:680}
-\phihat(\By) \rightarrow \hatU(\alpha) \hatphi(\By) \hatU^\dagger(\alpha)
+\phihat(\By) \rightarrow \hatU(\alpha) \phihat(\By) \hatU^\dagger(\alpha)
 \approx
 \phihat(\By) +
-i \Balpha \cdot \antisymmmetric
-{
+i \Balpha \cdot
+\antisymmetric{
    \int d^3 x \pihat(\Bx) \spacegrad \phihat(\Bx) \cross \Bx
 }
 {
@@ -390,7 +400,7 @@ i \Balpha \cdot \antisymmmetric
 }
 =
 \phihat(\By) +
-\Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By)
+\Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By}
 \end{dmath}
 Explicitly, in coordinates, this is
 \begin{dmath}\label{eqn:qftLecture9:700}
