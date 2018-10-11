@@ -1,6 +1,13 @@
 %-----------------------------------------
+% qftLecture9:
 
 \usepackage{mmacells}
+%\newcommand{\munu}[0]{\mu\nu}
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%s/\\ultensor{\([^}]\+\)}{\([^}]\+\)}{\([^}]\+\)}/{{\1}^\2}_\3/g
+%s/ulLambda/ultensor{\\Lambda}/g
+\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
 
 %-----------------------------------------
 \usepackage{verbatim}
