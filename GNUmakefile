@@ -95,6 +95,16 @@ spellcheck: $(SPELLCHECK)
 	spellcheck $^
 	touch $@
 
+mmacells/mmacells.sty:
+	git clone https://github.com/jkuczm/mmacells
+
+bib:
+	rm -f Bibliography.bib myrefs.bib
+	make Bibliography.bib myrefs.bib
+
+mmacells.sty: mmacells/mmacells.sty
+	cp $^ $@
+
 #julia.tex : ../julia/METADATA
 #mathematica.tex : ../mathematica/METADATA
 #matlab.tex : ../matlab/METADATA

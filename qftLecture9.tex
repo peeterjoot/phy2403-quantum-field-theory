@@ -16,6 +16,7 @@
 \usepackage{siunitx}
 \usepackage{enumerate}
 \usepackage{macros_cal} % LL
+\usepackage{mmacells}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 9: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -102,9 +103,21 @@ V(\phi)
 \end{dmath}
 The potential (called the Mexican hat potential) is illustrated in \cref{fig:mexicanHatPotential:mexicanHatPotentialFig1} for non-zero \( v \), and in 
 \cref{fig:mexicanHatPotential:mexicanHatPotentialFig2} for \( v = 0 \).
+The following is a Mathematica code listing that can be used to play with this shape
+\begin{mmaCell}[moredefined={potential, v},morepattern={x_, y_, \
+v_},morefunctionlocal={x, y}]{Input}
+  ClearAll[potential]
+  potential[x_, y_, v_] := (\mmaPat{x}^2 + \mmaPat{y}^2 - v^2)^2
+  
+  Manipulate[
+  Plot3D[ potential[x, y, v], \{x, -5, 5\}, \{y, -5, 5\}, PlotRange\
+\(\pmb{\to}\)Full],
+  \{\{v,4\}, 0, 10\}
+  ]
+\end{mmaCell}
 \imageFigure{../figures/phy2403-quantum-field-theory/mexicanHatPotentialFig1}{Mexican hat potential.}{fig:mexicanHatPotential:mexicanHatPotentialFig1}{0.3}
 \imageFigure{../figures/phy2403-quantum-field-theory/mexicanHatPotentialFig2}{Degenerate Mexican hat potential \( v = 0 \).}{fig:mexicanHatPotential:mexicanHatPotentialFig2}{0.3}
-We choose to expand around some point on the minimum ring, and it doesn't matter which one. % (P in the figure).
+We choose to expand around some point on the minimum ring (it doesn't matter which one). % (P in the figure).
 When there is no potential, we call the field massless (i.e. if we are in the minimum ring).
 We expand as
 \begin{dmath}\label{eqn:qftLecture9:160}
