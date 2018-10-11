@@ -5,7 +5,7 @@
 \makeproblem{Spacetime behaviour of various Green's functions}{qft:problemSet2:1}{
 Here, you'll study some properties of
 \begin{equation}\label{eqn:ProblemSet2Problem1:20}
-D(x) \equiv \antisymmetric{\phihat_{-}}{\phihat_{+}} = \int \frac{d^3 p}{(2\pi)^3 2 \omega_p} e^{-i \omega_p t + i \Bp \cdot \Bx}.
+D(x) \equiv \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(x)} = \int \frac{d^3 p}{(2\pi)^3 2 \omega_p} e^{-i \omega_p t + i \Bp \cdot \Bx}.
 \end{equation}
 \makesubproblem{}{qft:problemSet2:1a}
 For m = 0 (``photon''), show that:
@@ -16,6 +16,7 @@ D(x) = -\inv{2 \pi^2} \calP \inv{t^2 - r^2} - \frac{i}{8 \pi} \lr{
 },
 \end{dmath}
 where \( r = \Abs{\Bx} \). Notice that \( D(x) \) is singular on the light cone \( t = r\). Does it vanish for spacelike separations?
+
 Hint: Please recall that (and why!)
 \begin{dmath}\label{eqn:ProblemSet2Problem1:60}
 \inv{a \pm i \epsilon} = \calP \inv{a} \mp i \pi \delta(a)

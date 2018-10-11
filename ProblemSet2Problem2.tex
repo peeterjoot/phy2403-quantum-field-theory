@@ -2,12 +2,144 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet2:2}{
+\makeproblem{A model with \(SU(2)_L \times SU(2)_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{
+This problem introduces a model to describe the symmetry realization of the nonabelian chiral symmetry in QCD (quantum chromodynamics).
+The word ``chiral'' should become clear later in this class, but the ``nonabelian'' part will be clear below.
+\(SU(2)_L \times SU(2)_R\) is an exact symmetry of QCD in the limit when the ``current masses'' of the \( u \) and \( d \) quark, \( m_u \) and \( m_d \), are taken to vanish.
+In the real world, it is an approximate symmetry, in the sense that \( m_u \) and \( m_d \) are small compared to the intrinsic scale of QCD, given, say, by the proton mass (\( m_{u,d} \sim \,\si{MeV} \ll 1 \,\si{GeV} \)).
+This is, thus, an example of an ``approximate symmetry''.
+
+Closer to the theory you will study below, the scalar model with \(SU(2)_L \times SU(2)_R\) symmetry, is really the same as the Higgs sector in the Standard Model, in the limit when the electromagnetic and weak interactions are turned off.
+\(SU(2)_L \times SU(2)_R\) becomes a symmetry in this limit.
+It is only an approximate symmetry, as the electromagnetic and weak couplings (which explicitly break it) are dimensionless numbers smaller then unity.
+
+Finally, to end the preaching preamble, the notion of approximate symmetries is not new and you have, for sure, been exposed to its usefulness when studying the hydrogen atom spectrum in quantum mechanics.
+
 \makesubproblem{}{qft:problemSet2:2a}
+The Lagrangian you will study is that of two complex scalar fields, assembled into a column \( \Phi = (\phi_1,\phi_2)^\T \) (the \( \T \) is here so I do not have to go through the trouble to write a column instead of a row).
+It is given by:
+\begin{dmath}\label{eqn:ProblemSet2Problem2:10} %(1)
+L = \partial_\mu \Phi^\dagger \partial_\mu \Phi - m^2 \Phi^\dagger \Phi - \lambda \lr{\Phi^\dagger\Phi}^2.
+\end{dmath}
+Show that
+\cref{eqn:ProblemSet2Problem2:10}
+%(1)
+is invariant under an \(SU(2)_L\) global symmetry transformation \( \Phi \rightarrow  U_L \Phi \), where \( U_L^\dagger U_L = 1 \) is a \( 2 \times 2 \) unitary matrix of unit determinant.
+In addition, the Lagrangian has a \( U(1) \) symmetry, not part of \(SU(2)_L\), acting as \( \Phi \rightarrow  e^{i\alpha}\Phi\).
+Find the currents and conserved charges under these symmetries.
+
+Hint: recall that an infinitesimal \(SU(2)_L\) transformation can be written as \( U_L \approx \sigma^0 + i\omega_a \frac{\sigma^a}{2} \), where \( \sigma^0 \) is the unit \( 2 \times 2 \) matrix, \( \sigma^a, a = 1, 2, 3 \) are the Pauli matrices, and \( \omega_a \) are the three parameters of infinitesimal \(SU(2)_L\) transformations.
+
+\makesubproblem{}{qft:problemSet2:2b}
+Show that the charge operators, \( \hatQ^L_a, a = 1,2,3\), conserved due to \(SU(2)_L\) invariance, obey the angular momentum algebra, i.e., \( \antisymmetric{\hatQ^L_1}{ \hatQ^L_2 } = i \hatQ^L_3 \) (plus cyclic permutations).
+
+\makesubproblem{}{qft:problemSet2:2c}
+The Lagrangian \cref{eqn:ProblemSet2Problem2:10} has, however, a larger symmetry than simply the above \(SU(2)_L\).
+To begin seeing this, instead of using \( \Phi = (\phi^1,\phi^2)^\T \) introduce the real and imaginary parts of \( \phi^{1,2} \).
+Use \( \phi^1 = \psi^1 +i \psi^2, \phi^2 = \psi^3 +i \psi^4 \), and introducing \( \Psi = (\psi^1,\psi^2,\psi^3,\psi^4)^\T\), show that \cref{eqn:ProblemSet2Problem2:10} can be written as:
+\begin{dmath}\label{eqn:ProblemSet2Problem2:20} % , (2)
+L = a \partial_\mu \Psi^\T \partial^\mu \Psi -b m^2 \Psi^\T \Psi - c \lambda(\Psi^\T\Psi)^2
+\end{dmath}
+on the way determining the (pure numbers) \(a, b, c\).
+The Lagrangian \cref{eqn:ProblemSet2Problem2:20} has, clearly, an \( O(4) \) symmetry, i.e., is invariant under \( \Psi \rightarrow  O \Psi\), where \( O \) is a \( 4 \times 4 \) orthogonal matrix, \( O^\T O = 1\).
+Is there a continuous U(1) allowed in this case?
+
+Comment: I will spare you finding the currents for \(SO(4)\) (\(SO(4)\) matrices are the restriction of \(O(4)\) matrices to the ones with unit determinant).
+What you will do next, instead, is to use the equivalence of Lie algebras \(SO(4) \approx SU(2)_L \times SU(2)_R\), which will come about by another change of variables (see below).
+Notice also that, as it comes, \(SO(4)\) happens to be the Euclidean version of \(SO(1,3)\).
+
+\makesubproblem{}{qft:problemSet2:2d}
+To expose the \(SU(2)_L \times SU(2)_R\) symmetry of \cref{eqn:ProblemSet2Problem2:10}, now use the following change of variables.
+Consider, instead of \(\Phi\) in \cref{eqn:ProblemSet2Problem2:10} the \(2 \times 2\) matrix \(H\) made up by components of \(\Phi\) as follows:
+\begin{equation}\label{eqn:ProblemSet2Problem2:30}
+H \equiv \inv{\sqrt{2}} (i\sigma_2\Phi^\conj,\Phi) = \inv{\sqrt{2}}
+\begin{bmatrix}
+\phi_2^\conj & \phi_1 \\
+-\phi_1^\conj & \phi_2
+\end{bmatrix}
+\end{equation}
+Show that under \(SU(2) \) transformations, \( H \rightarrow  \inv{\sqrt{2}} (i\sigma_2 (U_L\Phi)^\conj, U_L \Phi) = \inv{\sqrt{2}} (U_L i \sigma_2 \Phi^\conj, U_L\Phi) = U_L H\).
+
+Hint: the tricky part is to show that \( i\sigma_2(U_L\Phi)^\conj = i\sigma_2 U_L^\conj \Phi^\conj = U_L i \sigma_2 \Phi^\conj\).
+What you need to show, then, is that \( \sigma_2 U_L \sigma_2 = U_L^\conj \) (this fact will be very useful in our future studies of spinors, so make sure you understand it).
+
+\makesubproblem{}{qft:problemSet2:2e}
+Using the change of variables \cref{eqn:ProblemSet2Problem2:30}, show that
+\begin{dmath}\label{eqn:ProblemSet2Problem2:40}
+H^\dagger H = \inv{2}
+\begin{bmatrix}
+\Abs{\phi_1}^2 + \Abs{\phi_2}^2 & 0 \\
+0 & \Abs{\phi_1}^2 + \Abs{\phi_2}^2 
+\end{bmatrix},
+\end{dmath}
+% (4)
+and, hence, that 
+\cref{eqn:ProblemSet2Problem2:10} %(1)
+can be written as
+\begin{dmath}\label{eqn:ProblemSet2Problem2:50}
+L = \trace{
+   \lr{
+      \partial \mu H^\dagger \partial^\mu H
+   }  
+}
+- m^2 \trace{
+   \lr{
+      H^\dagger H
+   }
+}
+- \lambda \lr{
+   \trace{
+      H^\dagger H
+   }
+}^2
+\end{dmath}
+%(5)
+where \( \trace{}\) denotes the matrix trace.
+Show that now \cref{eqn:ProblemSet2Problem2:50} has \(SU(2)_L \times SU(2)_R\) symmetry,
+acting on \( H \) as
+\begin{dmath}\label{eqn:ProblemSet2Problem2:60}
+H \rightarrow U_L H U_R^\dagger,
+\end{dmath}
+% (6)
+where the action of \( U_R^\dagger \) on the right is pure convention (we could have taken \( U_R \) instead).
+\( U_L \) and \( U_R \) are two sets of independent \(SU(2) \) transformations.
+The \( L \) and \( R \) (left and right) names are self-evident in the way \cref{eqn:ProblemSet2Problem2:60} is written.
+Show that under \(SU(2)_L \times SU(2)_R\), we have \( \delta H = i \omega_a^L \frac{\sigma^a}{2} H - i\omega_b^R H \frac{\sigma^b}{2}\).
+
+Hint: clearly, the only thing you need to show is \(SU(2)_R\) invariance, as \(SU(2)_L\) was already shown.
+
+\makesubproblem{}{qft:problemSet2:2f}
+Show that the left and right \(SU(2) \) conserved currents can be written as
+\begin{dmath}\label{eqn:ProblemSet2Problem2:n}
+\begin{aligned}
+j^{\mu,a}_L &= \frac{i}{2} \trace{
+\lr{
+   \partial_\mu H^\dagger \sigma^a H - H^\dagger \sigma^a \partial_\mu H
+}
+}  \\
+j^{\mu,b}_R &= \frac{i}{2} \trace{
+\lr{
+   \partial_\mu H \sigma^b H^\dagger - H \sigma^b \partial_\mu H^\dagger
+}
+} 
+\end{aligned}
+\end{dmath}
+and that the corresponding generators \( \hatQ^{L,R}_a \) obey the commutation relations of two commuting angular momentum algebras.
+
+Hint: notice that both currents are Hermitean and that the left is obtained from the right by interchanging \( H \) with \( H^\dagger\).
 } % makeproblem
 
 \makeanswer{qft:problemSet2:2}{
 \makeSubAnswer{}{qft:problemSet2:2a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet2:2b}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:2c}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:2d}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:2e}
+TODO.
+\makeSubAnswer{}{qft:problemSet2:2f}
 TODO.
 }

@@ -1,4 +1,4 @@
-../latex/bin/lgrep noetherCurrentScalarField.tex | tee o ; . ./o
+#../latex/bin/lgrep noetherCurrentScalarField.tex | tee o ; . ./o
 #perl -p -i ./p ../blogit/noetherCurrentScalarField.tex
 #~/bin/lgrep scalarFieldCreationOpCommutator.tex | tee o ; . ./o
 #perl -p -i ./p scalarFieldCreationOpCommutator.tex
@@ -17,47 +17,47 @@
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem4.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem4.tex
 
-../latex/bin/lgrep qftLecture1.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture1.tex
-../latex/bin/lgrep qftLecture2.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture2.tex
-../latex/bin/lgrep qftLecture3.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture3.tex
-../latex/bin/lgrep ProblemSet1.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1.tex
+#../latex/bin/lgrep qftLecture1.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture1.tex
+#../latex/bin/lgrep qftLecture2.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture2.tex
+#../latex/bin/lgrep qftLecture3.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture3.tex
+#../latex/bin/lgrep ProblemSet1.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1.tex
 
-../latex/bin/lgrep ProblemSet1Problem1.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem1.tex
+#../latex/bin/lgrep ProblemSet1Problem1.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem1.tex
 
-../latex/bin/lgrep ProblemSet1Problem2.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
+#../latex/bin/lgrep ProblemSet1Problem2.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
 
-../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
+#../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
 
-../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
+#../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
 
-../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
+#../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
 
-../latex/bin/lgrep qftLecture4.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture4.tex
-../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture5.tex
+#../latex/bin/lgrep qftLecture4.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture4.tex
+#../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture5.tex
 
-../latex/bin/lgrep usefulFormulas.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
-../latex/bin/lgrep qftLecture6.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture6.tex
-../latex/bin/lgrep qftLecture7.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture7.tex
-../latex/bin/lgrep scalarTheoryQuestion.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl scalarTheoryQuestion.tex
+#../latex/bin/lgrep usefulFormulas.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
+#../latex/bin/lgrep qftLecture6.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture6.tex
+#../latex/bin/lgrep qftLecture7.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture7.tex
+#../latex/bin/lgrep scalarTheoryQuestion.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl scalarTheoryQuestion.tex
 ../latex/bin/lgrep qftLecture8.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture8.tex
-../latex/bin/lgrep qftLecture9.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture9.tex
+#../latex/bin/lgrep qftLecture9.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture9.tex
 
 ../latex/bin/lgrep ProblemSet2.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl ProblemSet2.tex

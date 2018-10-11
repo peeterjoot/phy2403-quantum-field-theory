@@ -5,12 +5,12 @@
 \makeproblem{\( SU(2)_L \times SU(2)_R\), realized in the Wigner and Nambu-Goldstone modes.
 }{qft:problemSet2:3}{
 Consider now our Lagrangian
-FIXME
+\cref{eqn:ProblemSet2Problem2:50}
 and imagine that \( m^2 < 0\), for whatever reason (nobody knows, really), while \( \lambda\) is still positive. This now becomes the Higgs Lagrangian of the Standard Model.
 
 \makesubproblem{}{qft:problemSet2:3a}
 Show that the classical potential in
-FIXME
+\cref{eqn:ProblemSet2Problem2:50}
 now becomes:
 \begin{dmath}\label{eqn:ProblemSet2Problem3:20}
 V = -\Abs{m^2}
@@ -76,7 +76,7 @@ The logic here is as follows. When \( h(x)\) and \( \phi^a(x) \) vanish (i.e. th
 parameterization
 \cref{eqn:ProblemSet2Problem3:40}
 is equivalent, by
-FIXME: (4)
+\cref{eqn:ProblemSet2Problem2:40}
 , to taking a specific point on the vacuum manifold,
 i.e. the one where \( \phi_1 = 0 \) and \( \phi_2 = \Abs{m}/\sqrt{2\lambda} \).
 The fields \( h(x) \) and \( \phi^a(x) \) parameterize the
@@ -85,12 +85,13 @@ fluctuations around this ground state (for sure, they can be mapped - the map is
 What you will do now is take the form
 \cref{eqn:ProblemSet2Problem3:40}
 , plug it into the Lagrangian
-FIXME: (5)
+\cref{eqn:ProblemSet2Problem2:50}
 with
 \( m^2 = -\Abs{m^2}\),
 and expand what you find to second order in the fields \( h(x) \) and \( \phi^a(x)\).
 Show that the field \( h(x) \) has a mass and find an expression for it.
 Show that the fields \( \phi^a(x) \) remain massless and that their Lagrangian (not just to quadratic order) only contains derivatives.
+
 The latter point can be seen pretty simply by noting that \( H(x) \) from
 \cref{eqn:ProblemSet2Problem3:40}
 can be written as
@@ -113,18 +114,20 @@ with \( h = \phi^a = 0 \) and is
  \( \expectation{H} \sim\)
 unit matrix.
 Show that, while  \( \expectation{H} \) is not invariant under \( SU(2)_L \times SU(2)_R \) for arbitrary \( SU(2)_L \) and \( SU(2)_R \) transformations, it is invariant under
-FIXME: (6)
+\cref{eqn:ProblemSet2Problem2:60}
 with
 \( U_L = U_R\). Such \( SU(2)_L \times SU(2)_R \) transformations with \( U_L = U_R \) are called ``diagonal'' or ``vector'' \( SU(2)_V \) transformations.
 These remain unbroken in the vacuum. In the electroweak theory, the third component of \( SU(2)_V \) is identified with electromagnetic \( U(1)\).
 Show that the current associated with \( SU(2)_V \) transformations has the form:
 \begin{dmath}\label{eqn:ProblemSet2Problem3:80}
-j_\mu^{V,a} = \frac{i}{2} \trace{
-\partial_\mu H^\dagger \antisymmetric{}{}
-}
+j_\mu^{V,a} = \frac{i}{2} \trace{\lr{
+\partial_\mu H^\dagger \antisymmetric{\sigma^a}{H}
++
+\partial_\mu H \antisymmetric{\sigma^a}{H^\dagger}
+}}
 \end{dmath}
 Show also that the other ``linear'' combination of \( SU(2)_L \) and \( SU(2)_R \),
-FIXME: Eq. (6)
+\cref{eqn:ProblemSet2Problem2:60}
 with \( U_R = U_L^\dagger \) corresponds to the current (not conserved!) usually called the ``axial current''
 \begin{dmath}\label{eqn:ProblemSet2Problem3:120}
 j_\mu^{A,a} = \frac{i}{2} \trace{
@@ -141,8 +144,10 @@ j^{A,a} \sim \expectation{H} \partial_\mu \phi^a,
 and find the constant in front. Thus, when the quantum operator corresponding to
 \cref{eqn:ProblemSet2Problem3:100} % (12)
 acts on the vacuum, it creates a quantum of the Goldstone boson (times the momentum and the ``Goldstone boson decay constant'' which is really equal to  \( \expectation{H} \)).
+
 Show also that, to leading nontrivial order in the fields, the conserved vector current \( j^{V,a} \) is
 quadratic in the fields \( \phi^a\).
+
 In QCD, the relation
 \cref{eqn:ProblemSet2Problem3:100} % (12)
 and the algebra of the currents \( j^{V,A} \) constitute the basis of an approach to
