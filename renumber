@@ -74,3 +74,5 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem3.tex
 ../latex/bin/lgrep ProblemSet2Problem4.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem4.tex
 
+../latex/bin/lgrep qftLecture10.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture10.tex
