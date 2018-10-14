@@ -346,11 +346,11 @@ For \( d > 2 \) let's look at
 \begin{dmath}\label{eqn:qftLecture8:940}
 S =
 \int d^d x \lr{
-\inv{2} \partial
-\inv{2} \partial^\mu \phi \partial_\nu \phi - \frac{m^2}{2} \phi^2 - \lambda \phi^{d-2}
+\inv{2} \partial^\mu \phi \partial_\mu \phi - \frac{m^2}{2} \phi^2 - \lambda \phi^{d-2}
 }
 \end{dmath}
-Take \( m^2, \lambda \rightarrow 0 \), the free massless scalar field.
+\paragraph{Take \( m^2, \lambda \rightarrow 0 \), the free massless scalar field.}
+
 We have a shift symmetry in this case since \( \phi(x) \rightarrow \phi(x) + \text{constant} \).
 The current is just
 \begin{dmath}\label{eqn:qftLecture8:960}
@@ -364,91 +364,183 @@ This current is clearly conserved since \( \partial_\mu J^\mu = \partial_\mu \pa
 
 These are called ``Goldstein bosons''.
 
-With \( m \rightarrow 0, \lambda \ne 0 \) we have
+\paragraph{With \( m = \lambda = 0, d = 4 \) we have}
+
+NOTE: We did this in class differently with \( d \ne 4, m, \lambda \ne 0\), and then switched to \( m = \lambda = 0, d = 4\), which was confusing.  I've reworked my notes to \( d = 4 \) like the supplemental handout that did the same.
+
+%%%\begin{dmath}\label{eqn:qftLecture8:980}
+%%%S =
+%%%\int d^d x \lr{
+%%%\inv{2} \partial
+%%%\inv{2} \partial^\mu \phi \partial_\nu \phi - \tilde{\lambda} \phi^{d-2}
+%%%}
+%%%\end{dmath}
+%%%Here we have a scale or dilatation invariance
+%%%\begin{dmath}\label{eqn:qftLecture8:1000}
+%%%x \rightarrow e^{\lambda} x
+%%%\end{dmath}
+%%%\begin{dmath}\label{eqn:qftLecture8:1020}
+%%%\phi(x) \rightarrow \phi'(x') = e^{-(d-2) \lambda/2} \phi
+%%%\end{dmath}
+%%%
+%%%\begin{dmath}\label{eqn:qftLecture8:1040}
+%%%d^3 x = e^{d\lambda} d^3 x
+%%%\end{dmath}
+%%%
+%%%\begin{dmath}\label{eqn:qftLecture8:1060}
+%%%(\partial_\mu \phi)^2 \rightarrow e^{-(d-2)\lambda} e^{-2 \lambda} \lr{ \partial_\mu \phi(x) }^2
+%%%\end{dmath}
+%%%
+%%%\begin{dmath}\label{eqn:qftLecture8:1080}
+%%%\phi^{2 d/(d -2)} \rightarrow \lr{\phi'(x')}^{2d/(d-2)}
+%%%=
+%%%e^{-(d-2)/2 \times 2d/(d-2) \lambda} \lr{ \phi }^{2d/(d-2)}
+%%%\end{dmath}
+%%%
+
 \begin{dmath}\label{eqn:qftLecture8:980}
 S =
-\int d^d x \lr{
-\inv{2} \partial
-\inv{2} \partial^\mu \phi \partial_\nu \phi - \tilde{\lambda} \phi^{d-2}
+\int d^4 x \lr{
+\inv{2} \partial^\mu \phi \partial_\mu \phi
 }
 \end{dmath}
 Here we have a scale or dilatation invariance
-\begin{dmath}\label{eqn:qftLecture8:1000}
-x \rightarrow e^{\lambda} x
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture8:1020}
-\phi(x) \rightarrow \phi'(x') = e^{-(d-2) \lambda/2} \phi
-\end{dmath}
+\begin{equation}\label{eqn:qftLecture8:1000}
+x \rightarrow x' = e^{\lambda} x,
+\end{equation}
+\begin{equation}\label{eqn:qftLecture8:1020}
+\phi(x) \rightarrow \phi'(x') = e^{-\lambda} \phi,
+\end{equation}
+\begin{equation}\label{eqn:qftLecture8:1040}
+d^4 x \rightarrow d^4 x' = e^{4\lambda} d^4 x,
+\end{equation}
 
-\begin{dmath}\label{eqn:qftLecture8:1040}
-d^3 x = e^{d\lambda} d^3 x
+The partials transform as
+\begin{dmath}\label{eqn:qftLecture8:1400}
+\partial^\mu \rightarrow
+\PD{x'_\mu}{}
+=
+\PD{x'_\mu}{x_\mu}
+\PD{x_\mu}{}
+=
+e^{-\lambda}
+\PD{x_\mu}{}
 \end{dmath}
-
+% x'_\mu = e^\lambda x_\mu
+% x_\mu = e^-\lambda x'_\mu
+so the partial of the field transforms as
+\begin{equation}\label{eqn:qftLecture8:1420}
+\partial^\mu \phi(x) \rightarrow \PD{x'_\mu}{\phi'(x')} = e^{-2\lambda} \partial^\mu \phi(x),
+\end{equation}
+and finally
 \begin{dmath}\label{eqn:qftLecture8:1060}
-(\partial_\mu \phi)^2 \rightarrow e^{-(d-2)\lambda} e^{-2 \lambda} \lr{ \partial_\mu \phi(x) }^2
+(\partial_\mu \phi)^2 \rightarrow e^{-4\lambda} \lr{ \partial_\mu \phi(x) }^2.
 \end{dmath}
 
-\begin{dmath}\label{eqn:qftLecture8:1080}
-\phi^{2 d/(d -2)} \rightarrow \lr{\phi'(x')}^{2d/(d-2)}
-=
-e^{-(d-2)/2 \times 2d/(d-2) \lambda} \lr{ \phi }^{2d/(d-2)}
-\end{dmath}
-
-(switching to \(d = 4\))
-to find Noether currrent ...
-
+With a \( -4 \lambda \) power in the transformed quadratic term, and \( 4 \lambda \) in the volume element, we see that the action is invariant.
+%%%\begin{dmath}\label{eqn:qftLecture8:1080}
+%%%\phi^{4} \rightarrow \lr{\phi'(x')}^{4}
+%%%=
+%%%e^{-3 \times 4 \lambda} \lr{ \phi }^{4}
+%%%\end{dmath}
+To find Noether currrent, we need to vary the field and it's derivatives
 \begin{dmath}\label{eqn:qftLecture8:1100}
-\delta_\lambda \phi = \phi'(x) - \phi(x)
-= - \lambda(1 + x^\mu \partial_\mu ) \phi
+\delta_\lambda \phi
+= \phi'(x) - \phi(x)
+= \phi'(e^{-\lambda} x') - \phi(x)
+\approx \phi'(x' -\lambda x') - \phi(x)
+\approx \phi'(x') - \lambda {x'}^\alpha \partial_\alpha \phi'(x') - \phi(x)
+\approx (1 - \lambda) \phi(x) - \lambda {x'}^\alpha \partial_\alpha \phi'(x') - \phi(x)
+= - \lambda(1 + x^\alpha \partial_\alpha ) \phi,
 \end{dmath}
+where the last step assumes that \( x' \rightarrow x, \phi' \rightarrow \phi \), effectively weeding out any terms that are quadradic or higher in \( \lambda \).
 
-In free field with \( \tilde{\lambda} = 0 \)
-
-\begin{dmath}\label{eqn:qftLecture8:1120}
-\delta_\lambda \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi}
-= \partial^\mu \delta_\lambda (\partial_\mu \phi)
-= \partial^\mu \phi \partial_\mu ( - \lambda( 1 + x^\nu \partial_\nu )\phi )
-= -\lambda \lr{ \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi \partial_\mu \lr{ x^\nu \partial_\nu \phi } }
-= -\lambda \lr{ 2 \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi x^\nu \partial_\nu \phi }
+%%%%In free field with \( \tilde{\lambda} = 0 \)
+%%%\begin{dmath}\label{eqn:qftLecture8:1120}
+%%%\delta_\lambda \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi}
+%%%= \partial^\mu \delta_\lambda (\partial_\mu \phi)
+%%%= \partial^\mu \phi \partial_\mu ( - \lambda( 1 + x^\nu \partial_\nu )\phi )
+%%%= -\lambda \lr{ \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi \partial_\mu \lr{ x^\nu \partial_\nu \phi } }
+%%%= -\lambda \lr{ 2 \partial^\mu \phi \partial_\mu \phi + \partial^\mu \phi x^\nu \partial_\nu \phi }
+%%%=
+%%%\end{dmath}
+%%%
+%%%Wrong.  Starting over.
+%%%
+Now we need the variation of the derivatives of \( \phi \)
+\begin{dmath}\label{eqn:qftLecture8:1440}
+\delta \partial_\mu \phi(x)
 =
+\partial_\mu' \phi'(x) - \partial_\mu \phi(x),
 \end{dmath}
-
-Wrong.  Starting over.
-
-We need the transformation of the derivatives of \( \phi \).
-
-\begin{dmath}\label{eqn:qftLecture8:1140}
-\inv{2} \partial^\mu \phi \partial_\mu \phi
-\rightarrow
-\inv{2} {\partial'}^\mu \phi' {\partial'}_\mu \phi'
+By \cref{eqn:qftLecture8:1420}
+\begin{dmath}\label{eqn:qftLecture8:1460}
+\partial_\mu' \phi'(x')
 =
-\inv{2} e^{-4\lambda}
-\partial^\mu \phi \partial_\mu \phi
+e^{-2\lambda} \partial_\mu \phi(x)
+=
+e^{-2\lambda} \partial_\mu \phi(e^{-\lambda} x')
+\approx
+e^{-2\lambda} \partial_\mu
+\lr{
+   \phi(x') - \lambda {x'}^\alpha \partial_\alpha \phi(x')
+}
+\approx
+\lr{
+   1 - 2 \lambda
+}
+\partial_\mu
+\lr{
+   \phi(x') - \lambda {x'}^\alpha \partial_\alpha \phi(x')
+},
 \end{dmath}
-Let
-\begin{dmath}\label{eqn:qftLecture8:1160}
-\begin{aligned}
-\Phi'(x')
-&=
-{\partial'}^\mu \phi' {\partial'}_\mu \phi' \\
-\Phi(x) &=
-\partial^\mu \phi \partial_\mu \phi,
-\end{aligned}
+so
+\begin{dmath}\label{eqn:qftLecture8:n}
+\delta \partial_\mu \phi = 
+- \lambda {x}^\alpha \partial_\alpha \partial_\mu \phi(x)
+- 2 \lambda \partial_\mu \phi(x) + O(\lambda^2)
+=
+- \lambda \lr{ 
+   {x}^\alpha \partial_\alpha + 2 
+}
+\partial_\mu \phi(x).
 \end{dmath}
 
-so
-\begin{dmath}\label{eqn:qftLecture8:1180}
-\begin{aligned}
-\Phi'(x') &= e^{-4 \lambda} \Phi(x) \\
-\Phi'(e^{\lambda} x) &= e^{-4 \lambda} \Phi(x)
-\end{aligned}
-\end{dmath}
-...
-so
-
+%%%\begin{dmath}\label{eqn:qftLecture8:1140}
+%%%\inv{2} \partial^\mu \phi \partial_\mu \phi
+%%%\rightarrow
+%%%\inv{2} {\partial'}^\mu \phi' {\partial'}_\mu \phi'
+%%%=
+%%%\inv{2} e^{-4\lambda}
+%%%\partial^\mu \phi \partial_\mu \phi
+%%%\end{dmath}
+%%%Let
+%%%\begin{dmath}\label{eqn:qftLecture8:1160}
+%%%\begin{aligned}
+%%%\Phi'(x')
+%%%&=
+%%%{\partial'}^\mu \phi' {\partial'}_\mu \phi' \\
+%%%\Phi(x) &=
+%%%\partial^\mu \phi \partial_\mu \phi,
+%%%\end{aligned}
+%%%\end{dmath}
+%%%
+%%%so
+%%%\begin{dmath}\label{eqn:qftLecture8:1180}
+%%%\begin{aligned}
+%%%\Phi'(x') &= e^{-4 \lambda} \Phi(x) \\
+%%%\Phi'(e^{\lambda} x) &= e^{-4 \lambda} \Phi(x)
+%%%\end{aligned}
+%%%\end{dmath}
+%%%...
+%%%so
+%%%
 \begin{dmath}\label{eqn:qftLecture8:1200}
-\delta \LL = - \lambda \lr{ 4 + x^\mu \partial_\mu } \lr{
-\partial^\mu \phi \partial_\mu \phi
+\delta \LL 
+=
+(\partial_\mu \phi) \delta (\partial^\mu \phi)
+= - \lambda \lr{ 2 + x^\alpha \partial_\alpha } \phi \lr{
+\partial^\mu \phi 
 }
 =
 -\inv{2} \lambda \partial_\mu \lr{ x^\mu \partial_\nu \phi \partial^\nu \phi}
