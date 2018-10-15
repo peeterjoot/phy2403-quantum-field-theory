@@ -2,6 +2,7 @@
 % Copyright © 2017 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
+%{
 \input{../latex/blogpost.tex}
 \renewcommand{\basename}{qftLecture10}
 \renewcommand{\dirname}{notes/phy2403/}
@@ -14,6 +15,10 @@
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
+
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+%\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 10: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -110,9 +115,9 @@ x^0
 \antisymmetric{\hatT^{0i}}{\phihat(\By)}
 }
 =
-\frac{\epsilon}{2} \lr{ y^i \pihat(\By) - y^0 \partial^i \phihat(\By)
+\frac{\epsilon}{2} \lr{ y^i \pihat(\By) - y^0 \partial^i \phihat(\By) }
 =
-\frac{\epsilon}{2} \lr{ y^i \dot{\phihat}(\By) - y^0 \partial^i \phihat(\By)
+\frac{\epsilon}{2} \lr{ y^i \dot{\phihat}(\By) - y^0 \partial^i \phihat(\By) }
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture10:200}
@@ -150,40 +155,40 @@ identification:
 \frac{\epsilon}{2} = - \omega^{01}.
 \end{dmath}
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatU(\Lambda) = e^{-i \omega^{01} \int d^3 x \lr{ \hatT^{00} x^i - \hatT^{0i} x^0 }
+\begin{dmath}\label{eqn:qftLecture10:260}
+\hatU(\Lambda) = \exp\lr{-i \omega^{01} \int d^3 x \lr{ \hatT^{00} x^i - \hatT^{0i} x^0 }}
 \end{dmath}
 
 where
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\ultensor{\Lambda}{\mu}{\nu} 
+\begin{dmath}\label{eqn:qftLecture10:280}
+\ultensor{\Lambda}{\mu}{\nu}
 \approx
-\ultensor{\delta}{\mu}{\nu} 
+\ultensor{\delta}{\mu}{\nu}
 +
-\ultensor{\omega}{\mu}{\nu} 
+\ultensor{\omega}{\mu}{\nu}
 \end{dmath}
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatU(\Lambda) \phihat(t, \Bx) 
-\hatU^\dagger(\Lambda) 
+\begin{dmath}\label{eqn:qftLecture10:300}
+\hatU(\Lambda) \phihat(t, \Bx)
+\hatU^\dagger(\Lambda)
 =
 \phihat\lr{ \gamma (t - vx), \gamma(x - vt), y, z }.
 \end{dmath}
 
 Or
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) = 
-\hatphi(\Lambda x)
+\begin{dmath}\label{eqn:qftLecture10:320}
+\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) =
+\phihat(\Lambda x)
 \end{dmath}
 where \( (\Lambda x)^\mu = \ultensor{\Lambda}{\mu}{\nu} x^\nu \) and \( x \) is a four vector.
 
 In the momentum space representation
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\phihat(x) 
-= 
+\begin{dmath}\label{eqn:qftLecture10:340}
+\phihat(x)
+=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \lr{
    e^{i (\omega_\Bp t - \Bp \cdot \Bx)} \hata_\Bp
    e^{-i (\omega_\Bp t - \Bp \cdot \Bx)} \hata^\dagger_\Bp
@@ -195,10 +200,10 @@ In the momentum space representation
    e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}
-\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) 
+\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda)
 =
-\hatphi(\Lambda x)
-= 
+\phihat(\Lambda x)
+=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
    e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata_\Bp
@@ -212,13 +217,13 @@ In the momentum space representation
 using \( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \)
 
 this is
-\begin{dmath}\label{eqn:qftLecture10:n}
+\begin{dmath}\label{eqn:qftLecture10:360}
 =
-\int \frac{dp^0 d^3 p}{(2\pi)^3} 
+\int \frac{dp^0 d^3 p}{(2\pi)^3}
 \lr{
-\frac{\delta(p_0 - \omega_\Bp)}{2 \omega_\Bp} 
+\frac{\delta(p_0 - \omega_\Bp)}{2 \omega_\Bp}
 +
-\frac{\delta(p_0 + \omega_\Bp)}{2 \omega_\Bp} 
+\frac{\delta(p_0 + \omega_\Bp)}{2 \omega_\Bp}
 }
 \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
 \end{dmath}
@@ -227,28 +232,28 @@ but the \( \Theta(p^0) \) kills the second delta function.
 
 We now have a more explicit Lorentz invariant structure
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatphi(\Lambda x)
+\begin{dmath}\label{eqn:qftLecture10:380}
+\phihat(\Lambda x)
 =
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
 \end{dmath}
 
-Refering to:
+Refering to
 
 F1
 
-we argue that \( \Theta(p^0) \) is also Lorentz invariant.
+where the space of all possible Lorentz transformations move along the surface of the parabaloid, we argue that \( \Theta(p^0) \) is Lorentz invariant, since the sign of the energy \( p^0 \) does not change under such a transformation.
 
 Let's change variables
 
-\begin{dmath}\label{eqn:qftLecture10:n}
+\begin{dmath}\label{eqn:qftLecture10:400}
 p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho}
 \end{dmath}
 
 so that
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-p_\mu 
+\begin{dmath}\label{eqn:qftLecture10:420}
+p_\mu
 \ultensor{\Lambda}{\mu}{\nu} x^\nu
 =
 \ultensor{\Lambda}{\lambda}{\rho} {p'}^\rho g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} x^{\sigma}
@@ -258,8 +263,8 @@ p_\mu
 
 which gives
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatphi(\Lambda x)
+\begin{dmath}\label{eqn:qftLecture10:440}
+\phihat(\Lambda x)
 =
 \int \frac{d{p'}^0 d^3 p'}{(2\pi)^3} \delta({p'}_0^2 - {\Bp'}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp'}} e^{i \Bp' \cdot \Bx}  \hata_{\Lambda \Bp'} + hc
 =
@@ -268,14 +273,14 @@ which gives
 
 but
 
-\begin{dmath}\label{eqn:qftLecture10:n}
-\hatphi(\Lambda x)
+\begin{dmath}\label{eqn:qftLecture10:460}
+\phihat(\Lambda x)
 =
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Bp}} e^{i \Bp \cdot \Bx}  \hata_{\Bp} + hc
 \end{dmath}
 
 We can now conclude that
-\begin{dmath}\label{eqn:qftLecture10:n}
+\begin{dmath}\label{eqn:qftLecture10:480}
 \sqrt{2 \omega_{\Lambda \Bp}} \hata_{\Lambda \Bp}
 =
 \hatU(\Lambda)
@@ -284,14 +289,15 @@ We can now conclude that
 \end{dmath}
 
 In particular
-\begin{dmath}\label{eqn:qftLecture10:n}
+\begin{dmath}\label{eqn:qftLecture10:500}
 \sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp}
-\sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0} 
-= 
-\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \hatU^\dagger(\Lambda) \hatU(\Lambda) \ket{0} 
+\sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0}
 =
-\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \ket{0} 
+\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \hatU^\dagger(\Lambda) \hatU(\Lambda) \ket{0}
+=
+\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \ket{0}
 \end{dmath}
 
+%}
 %\EndArticle
 \EndNoBibArticle
