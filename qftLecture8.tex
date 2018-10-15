@@ -187,7 +187,8 @@ In terms of creation and annihilation operators (for the \( \lambda = 0 \) free 
 = \int d^3 x \hatT^{00}
 = \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \hata_\Bp^\dagger \hata_\Bp
 \end{dmath}
-Fixme: show that:
+Can show that:
+% FIXME: do this:
 \begin{dmath}\label{eqn:qftLecture8:500}
 \hatP^i
 = \int d^3 x \pihat \partial^i \phihat
@@ -362,7 +363,7 @@ j^\mu
 where the constant factor has been set to one.
 This current is clearly conserved since \( \partial_\mu J^\mu = \partial_\mu \partial^\mu \phi = 0\) (the equation of motion).
 
-These are called ``Goldstein bosons''.
+These are called ``Goldstein Bosons''.
 
 \paragraph{With \( m = \lambda = 0, d = 4 \) we have}
 
@@ -443,7 +444,7 @@ With a \( -4 \lambda \) power in the transformed quadratic term, and \( 4 \lambd
 %%%=
 %%%e^{-3 \times 4 \lambda} \lr{ \phi }^{4}
 %%%\end{dmath}
-To find Noether currrent, we need to vary the field and it's derivatives
+To find Noether current, we need to vary the field and it's derivatives
 \begin{dmath}\label{eqn:qftLecture8:1100}
 \delta_\lambda \phi
 = \phi'(x) - \phi(x)
@@ -453,7 +454,7 @@ To find Noether currrent, we need to vary the field and it's derivatives
 \approx (1 - \lambda) \phi(x) - \lambda {x'}^\alpha \partial_\alpha \phi'(x') - \phi(x)
 = - \lambda(1 + x^\alpha \partial_\alpha ) \phi,
 \end{dmath}
-where the last step assumes that \( x' \rightarrow x, \phi' \rightarrow \phi \), effectively weeding out any terms that are quadradic or higher in \( \lambda \).
+where the last step assumes that \( x' \rightarrow x, \phi' \rightarrow \phi \), effectively weeding out any terms that are quadratic or higher in \( \lambda \).
 
 %%%%In free field with \( \tilde{\lambda} = 0 \)
 %%%\begin{dmath}\label{eqn:qftLecture8:1120}
@@ -495,13 +496,13 @@ e^{-2\lambda} \partial_\mu
 },
 \end{dmath}
 so
-\begin{dmath}\label{eqn:qftLecture8:n}
-\delta \partial_\mu \phi = 
+\begin{dmath}\label{eqn:qftLecture8:1480}
+\delta \partial_\mu \phi =
 - \lambda {x}^\alpha \partial_\alpha \partial_\mu \phi(x)
 - 2 \lambda \partial_\mu \phi(x) + O(\lambda^2)
 =
-- \lambda \lr{ 
-   {x}^\alpha \partial_\alpha + 2 
+- \lambda \lr{
+   {x}^\alpha \partial_\alpha + 2
 }
 \partial_\mu \phi(x).
 \end{dmath}
@@ -536,47 +537,54 @@ so
 %%%so
 %%%
 \begin{dmath}\label{eqn:qftLecture8:1200}
-\delta \LL 
+\delta \LL
 =
-(\partial_\mu \phi) \delta (\partial^\mu \phi)
-= - \lambda \lr{ 2 + x^\alpha \partial_\alpha } \phi \lr{
-\partial^\mu \phi 
+(\partial^\mu \phi) \delta (\partial_\mu \phi)
+= - \lambda \lr{ 2
+\partial_\mu \phi
++ x^\alpha \partial_\alpha
+\partial_\mu \phi
 }
-=
--\inv{2} \lambda \partial_\mu \lr{ x^\mu \partial_\nu \phi \partial^\nu \phi}
-=
--\lambda \lr{ \partial_\mu x^\mu
-\inv{2} (\partial_\nu \phi)^2 + x^\mu \partial_\mu \lr{ \inv{2} \partial_\nu \phi \partial^\nu \phi }
-}
-\end{dmath}
-
-so
-\begin{dmath}\label{eqn:qftLecture8:1220}
-\begin{aligned}
-J^\mu_\lambda &= \frac{-x^\mu}{2} \partial_\nu \phi \partial^\nu \phi \\
-\delta \phi &= - \lr{ 1 + x^\mu \partial_\mu } \phi
-\end{aligned}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture8:1240}
-j^\mu = \PD{(\partial_\mu \phi)}{\LL} \delta \phi - J^\mu
-\end{dmath}
-
-In the end, find
-\begin{dmath}\label{eqn:qftLecture8:1260}
-j^\mu = -\partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi + \inv{2} x^\mu \partial_nu \phi \partial^\nu \phi
-\end{dmath}
-
-Flipping signs
-\begin{dmath}\label{eqn:qftLecture8:1280}
-j^\mu_{\text{dil}} = \partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi - \inv{2} x^\mu \partial_nu \phi \partial^\nu \phi
+\partial^\mu \phi,
 \end{dmath}
 or
-\begin{dmath}\label{eqn:qftLecture8:1300}
-j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} - \inv{2} \partial^\mu \phi^2
+\begin{dmath}\label{eqn:qftLecture8:1500}
+\frac{\delta \LL }{-\lambda}
+=
+4 \LL + x^\alpha \lr{ \partial_\alpha \partial_\mu \phi } \partial^\mu \phi
+=
+4 \LL + x^\alpha \partial_\alpha \lr{ \LL }
+=
+\cancel{4 \LL} + \partial_\alpha \lr{ x^\alpha \LL } - \cancel{\LL \partial_\alpha x^\alpha}.
+\end{dmath}
+The variation in the Lagrangian density is thus
+\begin{equation}\label{eqn:qftLecture8:1520}
+\delta \LL = \partial_\mu J^\mu_\lambda = \partial_\mu \lr{ -\lambda x^\mu \LL },
+\end{equation}
+and the current is
+\begin{equation}\label{eqn:qftLecture8:1540}
+J^\mu_\lambda = -\lambda x^\mu \LL.
+\end{equation}
+
+The Noether current is
+\begin{dmath}\label{eqn:qftLecture8:1240}
+j^\mu = \PD{(\partial_\mu \phi)}{\LL} \delta \phi - J^\mu
+= -\partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi + \inv{2} x^\mu \partial_\nu \phi \partial^\nu \phi,
+\end{dmath}
+or after flipping signs
+\begin{dmath}\label{eqn:qftLecture8:1280}
+j^\mu_{\text{dil}}
+= \partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi - \inv{2} x^\mu
+\partial_\nu \phi \partial^\nu \phi
+= x_\nu \lr{ \partial^\mu \phi \partial^\nu \phi - \inv{2} {\delta^{\nu}}_\mu \partial_\lambda \phi \partial^\lambda \phi }
++ \inv{2} \partial^\mu (\phi^2),
 \end{dmath}
 
-The current and \( T^{\mu\nu} \) can both be redefined \( j^{\mu'} = j^\mu + \partial_\nu C^{\nu\mu} \) adding an antisymetric \( C^{\mu\nu} = -C^{\nu\mu} \)
+\begin{dmath}\label{eqn:qftLecture8:1300}
+j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} + \inv{2} \partial^\mu (\phi^2),
+\end{dmath}
+
+The current and \( T^{\mu\nu} \) can both be redefined \( j^{\mu'} = j^\mu + \partial_\nu C^{\nu\mu} \) adding an antisymmetric \( C^{\mu\nu} = -C^{\nu\mu} \)
 
 \begin{dmath}\label{eqn:qftLecture8:1320}
 j^\mu_{\text{dil conformal}} = - x_\nu T^{\nu\mu}_{\text{conformal}}
