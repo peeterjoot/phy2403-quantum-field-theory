@@ -184,6 +184,7 @@ Or
 \end{dmath}
 where \( (\Lambda x)^\mu = \ultensor{\Lambda}{\mu}{\nu} x^\nu \) and \( x \) is a four vector.
 
+\section{Transformation of momentum states}
 In the momentum space representation
 
 \begin{dmath}\label{eqn:qftLecture10:340}
@@ -191,12 +192,14 @@ In the momentum space representation
 =
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \lr{
    e^{i (\omega_\Bp t - \Bp \cdot \Bx)} \hata_\Bp
++
    e^{-i (\omega_\Bp t - \Bp \cdot \Bx)} \hata^\dagger_\Bp
 }
 =
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
    e^{i p^\mu x^\mu } \hata_\Bp
++
    e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}
@@ -207,11 +210,12 @@ In the momentum space representation
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
    e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata_\Bp
++
    e^{-i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}
 =
-\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp} e^{...} \hata_\Bp + hc
 \end{dmath}
 
 using \( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \)
@@ -291,11 +295,16 @@ We can now conclude that
 In particular
 \begin{dmath}\label{eqn:qftLecture10:500}
 \sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp}
+\end{dmath}
+and noting that \( \hatU(\Lambda) \ket{0}  = \ket{0} \) (i.e. the ground state is Lorentz invariant), we have
+\begin{dmath}\label{eqn:qftLecture10:n}
 \sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0}
 =
 \hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \hatU^\dagger(\Lambda) \hatU(\Lambda) \ket{0}
 =
 \hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \ket{0}
+=
+\hatU(\Lambda) \ket{\Bp}.
 \end{dmath}
 
 %}
