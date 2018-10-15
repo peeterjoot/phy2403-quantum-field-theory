@@ -25,7 +25,273 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Lorentz transform symmetries.}
+
+\begin{dmath}\label{eqn:qftLecture10:20}
+x^\mu \rightarrow x^\mu + \omega^{\mu\nu} x_\nu
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:40}
+\omega^{\mu\nu} = -\omega^{\nu\mu}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:60}
+\begin{aligned}
+\omega^{ij} &= \text{rotations} \\
+\omega^{0i} &= \text{boosts}
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:80}
+J^{\nu (\mu\rho)} = \inv{2} \lr{ x^\rho T^{\nu\mu} - x^\mu T^{\nu\rho} }
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:100}
+\partial_nu J^{\nu (\mu\rho)}
+= \inv{2} \lr{
+\partial_\nu x^\rho T^{\nu\mu}
++
+x^\rho \cancel{\partial_\nu T^{\nu\mu} }
+- \partial_\nu x^\mu T^{\nu\rho}
+- x^\mu \cancel{\partial_\nu T^{\nu\rho} }
+}
+=
+...
+= 0.
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:120}
+Q^{0i} = \int d^3 x J^{0 (oi)} = \inv{2} \int d^3 x \lr{ x^i T^{00} - x^0 T^{0i} }
+\dot{Q}^{0i}
+= \int d^3 x J^{0 (oi)}
+= \inv{2} \int d^3 x \lr{ x^i \dot{T}^{00} - x^0 \dot{T}^{0i} }
+= \inv{2} \int d^3 x \lr{ x^i (-\partial_j T^{j0}) - T^{0i} - x^0 (-\partial_j T^{ji}) }
+= \inv{2} \int d^3 x \lr{ \partial_j (-x^i T^{j0}) + (\partial_j x^i) T^{j0}
+- T^{0i} - x^0 (-\partial_j T^{ji}) }
+= \text{surface terms}
+\end{dmath}
+
+so \( \dot{Q}^{0i} = 0 \).
+
+Quantizing
+
+\begin{dmath}\label{eqn:qftLecture10:140}
+\antisymmetric{\hatT^{00}(\Bx)}{\phihat(\By)}
+=
+\inv{2}
+\antisymmetric{\pihat^2(\Bx)}{\phihat(\By)}
+=
+\inv{2}
+\antisymmetric{\pihat^2(\Bx)}{\phihat(\By)}
+=
+\pihat(\Bx)
+\antisymmetric{\pihat(\Bx)}{\phihat(\By)}
+= -i \delta^3(\Bx - \By) \pihat(\Bx)
+\end{dmath}
+
+Also:
+\begin{dmath}\label{eqn:qftLecture10:160}
+\antisymmetric{\hatT^{0i}(\Bx)}{\phihat(\By)}
+=
+\antisymmetric{\pihat(\Bx)\partial^i \phihat(\Bx)}{\phihat(\By)}
+= -i \delta^3(\Bx - \By) \partial^i \phihat(\Bx)
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:180}
+i \epsilon \antisymmetric{\hatQ^{0i}}{\phihat(\By)}
+=
+i
+\frac{\epsilon}{2} \int d^3 x
+\lr{
+x^i
+\antisymmetric{\hatT^{00}}{\phihat(\By)}
+-
+x^0
+\antisymmetric{\hatT^{0i}}{\phihat(\By)}
+}
+=
+\frac{\epsilon}{2} \lr{ y^i \pihat(\By) - y^0 \partial^i \phihat(\By)
+=
+\frac{\epsilon}{2} \lr{ y^i \dot{\phihat}(\By) - y^0 \partial^i \phihat(\By)
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:200}
+e^{i \epsilon \hatQ^{0k} } \phihat(\By)
+e^{-i \epsilon \hatQ^{0k} }
+=
+\phihat(\By)
++ \frac{\epsilon}{2} y^k \dot{\phihat}(\By)
+- \frac{\epsilon}{2} y^0 \partial^k \phihat(\By)
++ \cdots
+=
+\phihat(\By)
++ \frac{\epsilon}{2} \lr{
+   y^1 \dot{\phihat}(\By)
+   -
+   y^0 \PD{y^1}{\phihat}(\By)
+}
+=
+\phihat(y^0 + \frac{\epsilon}{2} y^1,
+y^1 + \frac{\epsilon}{2} y^2, y^3)
+\end{dmath}
+
+This is a boost.  Compare to
+
+\begin{dmath}\label{eqn:qftLecture10:220}
+\begin{aligned}
+x^0 \rightarrow x^0 + \omega^{01} x_1 &= x^0 - \omega^{01} x^1 \\
+x^1 \rightarrow x^1 + \omega^{10} x_0 &= x^1 - \omega^{01} x_0 = x^1 - \omega^{01} x^0
+\end{aligned}
+\end{dmath}
+
+identification:
+
+\begin{dmath}\label{eqn:qftLecture10:240}
+\frac{\epsilon}{2} = - \omega^{01}.
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatU(\Lambda) = e^{-i \omega^{01} \int d^3 x \lr{ \hatT^{00} x^i - \hatT^{0i} x^0 }
+\end{dmath}
+
+where
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\ultensor{\Lambda}{\mu}{\nu} 
+\approx
+\ultensor{\delta}{\mu}{\nu} 
++
+\ultensor{\omega}{\mu}{\nu} 
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatU(\Lambda) \phihat(t, \Bx) 
+\hatU^\dagger(\Lambda) 
+=
+\phihat\lr{ \gamma (t - vx), \gamma(x - vt), y, z }.
+\end{dmath}
+
+Or
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) = 
+\hatphi(\Lambda x)
+\end{dmath}
+where \( (\Lambda x)^\mu = \ultensor{\Lambda}{\mu}{\nu} x^\nu \) and \( x \) is a four vector.
+
+In the momentum space representation
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\phihat(x) 
+= 
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \lr{
+   e^{i (\omega_\Bp t - \Bp \cdot \Bx)} \hata_\Bp
+   e^{-i (\omega_\Bp t - \Bp \cdot \Bx)} \hata^\dagger_\Bp
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
+\lr{
+   e^{i p^\mu x^\mu } \hata_\Bp
+   e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
+}
+}{p_0 = \omega_\Bp}
+\hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) 
+=
+\hatphi(\Lambda x)
+= 
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
+\lr{
+   e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata_\Bp
+   e^{-i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata^\dagger_\Bp
+}
+}{p_0 = \omega_\Bp}
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\end{dmath}
+
+using \( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \)
+
+this is
+\begin{dmath}\label{eqn:qftLecture10:n}
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} 
+\lr{
+\frac{\delta(p_0 - \omega_\Bp)}{2 \omega_\Bp} 
++
+\frac{\delta(p_0 + \omega_\Bp)}{2 \omega_\Bp} 
+}
+\Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\end{dmath}
+
+but the \( \Theta(p^0) \) kills the second delta function.
+
+We now have a more explicit Lorentz invariant structure
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatphi(\Lambda x)
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\end{dmath}
+
+Refering to:
+
+F1
+
+we argue that \( \Theta(p^0) \) is also Lorentz invariant.
+
+Let's change variables
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho}
+\end{dmath}
+
+so that
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+p_\mu 
+\ultensor{\Lambda}{\mu}{\nu} x^\nu
+=
+\ultensor{\Lambda}{\lambda}{\rho} {p'}^\rho g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} x^{\sigma}
+=
+{p'}^\rho g_{\rho\sigma} x^\sigma
+\end{dmath}
+
+which gives
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatphi(\Lambda x)
+=
+\int \frac{d{p'}^0 d^3 p'}{(2\pi)^3} \delta({p'}_0^2 - {\Bp'}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp'}} e^{i \Bp' \cdot \Bx}  \hata_{\Lambda \Bp'} + hc
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp}} e^{i \Bp \cdot \Bx}  \hata_{\Lambda \Bp} + hc
+\end{dmath}
+
+but
+
+\begin{dmath}\label{eqn:qftLecture10:n}
+\hatphi(\Lambda x)
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Bp}} e^{i \Bp \cdot \Bx}  \hata_{\Bp} + hc
+\end{dmath}
+
+We can now conclude that
+\begin{dmath}\label{eqn:qftLecture10:n}
+\sqrt{2 \omega_{\Lambda \Bp}} \hata_{\Lambda \Bp}
+=
+\hatU(\Lambda)
+\sqrt{2 \omega_{ \Bp}} \hata_{ \Bp}
+\hatU^\dagger(\Lambda)
+\end{dmath}
+
+In particular
+\begin{dmath}\label{eqn:qftLecture10:n}
+\sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp}
+\sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0} 
+= 
+\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \hatU^\dagger(\Lambda) \hatU(\Lambda) \ket{0} 
+=
+\hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \ket{0} 
+\end{dmath}
 
 %\EndArticle
 \EndNoBibArticle
