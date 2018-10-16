@@ -22,7 +22,7 @@
 %\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 10: XXX.  Taught by Prof.\ Erich Poppitz}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 10: Lorentz boosts, generator of spacetime translation, Lorentz invariant field representation.  Taught by Prof.\ Erich Poppitz}
 %\chapter{XXX}
 \label{chap:qftLecture10}
 
@@ -128,107 +128,124 @@ so we may quantize these energy momentum tensor components as
 \end{aligned}
 \end{dmath}
 
-We can now start computing the commutators associated with the charge operator, first
+We can now start computing the commutators associated with the charge operator.  The first of those commutators is
 \begin{dmath}\label{eqn:qftLecture10:140}
 \antisymmetric{\hatT^{00}(\Bx)}{\phihat(\By)}
 =
 \inv{2}
-\antisymmetric{\pihat^2(\Bx)}{\phihat(\By)}
-=
-\pihat(\Bx)
-\antisymmetric{\pihat(\Bx)}{\phihat(\By)}
+\antisymmetric{\pihat^2(\Bx)}{\phihat(\By)},
+\end{dmath}
+which can be evaluated using the field commutator analogue of \( \antisymmetric{F(p)}{q} = i F' \) which is
+\begin{dmath}\label{eqn:qftLecture10:660}
+\antisymmetric{F(\pihat(\Bx))}{\phihat(\By)} = -i \frac{dF}{d \pihat} \delta(\Bx - \By),
+\end{dmath}
+to give
+\begin{dmath}\label{eqn:qftLecture10:680}
+\antisymmetric{\hatT^{00}(\Bx)}{\phihat(\By)}
 = -i \delta^3(\Bx - \By) \pihat(\Bx)
 \end{dmath}
 
-Also:
+The other required commutator is
 \begin{dmath}\label{eqn:qftLecture10:160}
 \antisymmetric{\hatT^{0i}(\Bx)}{\phihat(\By)}
 =
 \antisymmetric{\pihat(\Bx)\partial^i \phihat(\Bx)}{\phihat(\By)}
-= -i \delta^3(\Bx - \By) \partial^i \phihat(\Bx)
+=
+\partial^i \phihat(\Bx)
+\antisymmetric{\pihat(\Bx)
+}{\phihat(\By)}
+= -i \delta^3(\Bx - \By) \partial^i \phihat(\Bx),
 \end{dmath}
 
+The charge commutator with the field can now be computed
 \begin{dmath}\label{eqn:qftLecture10:180}
-i \epsilon \antisymmetric{\hatQ^{0i}}{\phihat(\By)}
+i \epsilon \antisymmetric{\hatQ^{0k}}{\phihat(\By)}
 =
 i
 \frac{\epsilon}{2} \int d^3 x
 \lr{
-x^i
+x^k
 \antisymmetric{\hatT^{00}}{\phihat(\By)}
 -
 x^0
-\antisymmetric{\hatT^{0i}}{\phihat(\By)}
+\antisymmetric{\hatT^{0k}}{\phihat(\By)}
 }
 =
-\frac{\epsilon}{2} \lr{ y^i \pihat(\By) - y^0 \partial^i \phihat(\By) }
+\frac{\epsilon}{2} \lr{ y^k \pihat(\By) - y^0 \partial^k \phihat(\By) }
 =
-\frac{\epsilon}{2} \lr{ y^i \dot{\phihat}(\By) - y^0 \partial^i \phihat(\By) }
+\frac{\epsilon}{2} \lr{ y^k \dot{\phihat}(\By) - y^0 \partial^k \phihat(\By) },
 \end{dmath}
-
+so to first order in \( \epsilon \)
 \begin{dmath}\label{eqn:qftLecture10:200}
 e^{i \epsilon \hatQ^{0k} } \phihat(\By)
 e^{-i \epsilon \hatQ^{0k} }
 =
 \phihat(\By)
 + \frac{\epsilon}{2} y^k \dot{\phihat}(\By)
-- \frac{\epsilon}{2} y^0 \partial^k \phihat(\By)
-+ \cdots
++ \frac{\epsilon}{2} y^0 \partial_k \phihat(\By)
+\end{dmath}
+
+For example, with \( k = 1 \)
+\begin{dmath}\label{eqn:qftLecture10:700}
+e^{i \epsilon \hatQ^{0k} } \phihat(\By)
+e^{-i \epsilon \hatQ^{0k} }
 =
 \phihat(\By)
 + \frac{\epsilon}{2} \lr{
    y^1 \dot{\phihat}(\By)
-   -
+   +
    y^0 \PD{y^1}{\phihat}(\By)
 }
 =
 \phihat(y^0 + \frac{\epsilon}{2} y^1,
-y^1 + \frac{\epsilon}{2} y^2, y^3)
+y^1 + \frac{\epsilon}{2} y^2, y^3).
 \end{dmath}
 
-This is a boost.  Compare to
-
+This is a boost.  If we compare explicitly to an infinitesimal Lorentz transformation of the coordinates
 \begin{dmath}\label{eqn:qftLecture10:220}
 \begin{aligned}
 x^0 \rightarrow x^0 + \omega^{01} x_1 &= x^0 - \omega^{01} x^1 \\
 x^1 \rightarrow x^1 + \omega^{10} x_0 &= x^1 - \omega^{01} x_0 = x^1 - \omega^{01} x^0
 \end{aligned}
 \end{dmath}
-
-identification:
-
+we can make the identification
 \begin{dmath}\label{eqn:qftLecture10:240}
 \frac{\epsilon}{2} = - \omega^{01}.
 \end{dmath}
 
-\begin{dmath}\label{eqn:qftLecture10:260}
-\hatU(\Lambda) = \exp\lr{-i \omega^{01} \int d^3 x \lr{ \hatT^{00} x^i - \hatT^{0i} x^0 }}
-\end{dmath}
+We now have the explicit form of the generator of a spacetime translation
+%\begin{dmath}\label{eqn:qftLecture10:260}
+\boxedEquation{eqn:qftLecture10:260}{
+\hatU(\Lambda) = \exp\lr{-i \omega^{0k} \int d^3 x \lr{ \hatT^{00} x^k - \hatT^{0k} x^0 }}
+}
+%\end{dmath}
 
-where
-
-\begin{dmath}\label{eqn:qftLecture10:280}
-\ultensor{\Lambda}{\mu}{\nu}
-\approx
-\ultensor{\delta}{\mu}{\nu}
-+
-\ultensor{\omega}{\mu}{\nu}
-\end{dmath}
-
+%%where
+%%
+%%\begin{dmath}\label{eqn:qftLecture10:280}
+%%\end{dmath}
+%%
+An explicit boost along the x-axis has the form
 \begin{dmath}\label{eqn:qftLecture10:300}
 \hatU(\Lambda) \phihat(t, \Bx)
 \hatU^\dagger(\Lambda)
 =
-\phihat\lr{ \gamma (t - vx), \gamma(x - vt), y, z }.
+\phihat\lr{ \frac{t - vx}{\sqrt{1 - v^2}}, \frac{x - vt}{\sqrt{1 - v^2}}, y, z },
 \end{dmath}
-
-Or
-
+and more generally
 \begin{dmath}\label{eqn:qftLecture10:320}
 \hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) =
 \phihat(\Lambda x)
 \end{dmath}
-where \( (\Lambda x)^\mu = \ultensor{\Lambda}{\mu}{\nu} x^\nu \) and \( x \) is a four vector.
+where
+\( x \) is a four vector,
+\( (\Lambda x)^\mu = \ultensor{\Lambda}{\mu}{\nu} x^\nu \), and
+\(
+\ultensor{\Lambda}{\mu}{\nu}
+\approx
+\ultensor{\delta}{\mu}{\nu}
++
+\ultensor{\omega}{\mu}{\nu} \).
 
 \section{Transformation of momentum states}
 In the momentum space representation
@@ -249,25 +266,28 @@ In the momentum space representation
    e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture10:720}
 \hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda)
 =
 \phihat(\Lambda x)
 =
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
-   e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata_\Bp
+   e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } 
+\hata_\Bp
 +
    e^{-i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}
-=
-\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp} e^{...} \hata_\Bp + hc
 \end{dmath}
-
-using \( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \)
-
-this is
-\begin{dmath}\label{eqn:qftLecture10:360}
+This can be put into an explicitly Lorentz invariant form
+\begin{dmath}\label{eqn:qftLecture10:n}
+\phihat(\Lambda x)
+=
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp} 
+   e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } 
+\hata_\Bp + \text{h.c.}
 =
 \int \frac{dp^0 d^3 p}{(2\pi)^3}
 \lr{
@@ -275,17 +295,19 @@ this is
 +
 \frac{\delta(p_0 + \omega_\Bp)}{2 \omega_\Bp}
 }
-\Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + \text{h.c.},
 \end{dmath}
-
-but the \( \Theta(p^0) \) kills the second delta function.
+which recovers \cref{eqn:qftLecture10:720} by making use of the delta function identity
+\( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \), since the
+\( \Theta(p^0) \) kills the second delta function.
 
 We now have a more explicit Lorentz invariant structure
-
 \begin{dmath}\label{eqn:qftLecture10:380}
 \phihat(\Lambda x)
 =
-\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + hc
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}  
+   e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } 
+\hata_\Bp + \text{h.c.}
 \end{dmath}
 
 Recall that a boost moves a spacetime point along a parabola, such as that of \cref{fig:constantMomentumSurface:constantMomentumSurfaceFig2}, whereas a rotation moves along a constant ``circular'' trajectory of a hyper-paraboloid.  In general, a Lorentz transformation may move a spacetime point along any path on a hyper-paraboloid such as the one depicted (in two spatial dimensions) in
@@ -307,25 +329,27 @@ p_\mu
 =
 \ultensor{\Lambda}{\lambda}{\rho} {p'}^\rho g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} x^{\sigma}
 =
+{p'}^\rho 
+\lr{ \ultensor{\Lambda}{\lambda}{\rho} 
+g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} } x^{\sigma}
+=
 {p'}^\rho g_{\rho\sigma} x^\sigma
 \end{dmath}
 
 which gives
-
 \begin{dmath}\label{eqn:qftLecture10:440}
 \phihat(\Lambda x)
 =
-\int \frac{d{p'}^0 d^3 p'}{(2\pi)^3} \delta({p'}_0^2 - {\Bp'}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp'}} e^{i \Bp' \cdot \Bx}  \hata_{\Lambda \Bp'} + hc
+\int \frac{d{p'}^0 d^3 p'}{(2\pi)^3} \delta({p'}_0^2 - {\Bp'}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp'}} e^{i p' \cdot x}  \hata_{\Lambda \Bp'} + \text{h.c.}
 =
-\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp}} e^{i \Bp \cdot \Bx}  \hata_{\Lambda \Bp} + hc
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp}} e^{i p \cdot x}  \hata_{\Lambda \Bp} + \text{h.c.}
 \end{dmath}
 
 but
-
 \begin{dmath}\label{eqn:qftLecture10:460}
 \phihat(\Lambda x)
 =
-\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Bp}} e^{i \Bp \cdot \Bx}  \hata_{\Bp} + hc
+\int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Bp}} e^{i p \cdot x}  \hata_{\Bp} + \text{h.c.}
 \end{dmath}
 
 We can now conclude that
