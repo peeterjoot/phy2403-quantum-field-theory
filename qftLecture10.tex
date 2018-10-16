@@ -316,13 +316,10 @@ Recall that a boost moves a spacetime point along a parabola, such as that of \c
 \imageFigure{../figures/phy2403-quantum-field-theory/constantMomentumSurfaceFig1}{Surface of constant squared four-momentum.}{fig:constantMomentumSurface:constantMomentumSurfaceFig1}{0.3}
 
 Let's change variables
-
 \begin{dmath}\label{eqn:qftLecture10:400}
 p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho}
 \end{dmath}
-
 so that
-
 \begin{dmath}\label{eqn:qftLecture10:420}
 p_\mu
 \ultensor{\Lambda}{\mu}{\nu} x^\nu
@@ -335,7 +332,6 @@ g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} } x^{\sigma}
 =
 {p'}^\rho g_{\rho\sigma} x^\sigma
 \end{dmath}
-
 which gives
 \begin{dmath}\label{eqn:qftLecture10:440}
 \phihat(\Lambda x)
@@ -344,22 +340,22 @@ which gives
 =
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp}} e^{i p \cdot x}  \hata_{\Lambda \Bp} + \text{h.c.}
 \end{dmath}
-
-but
+Since
 \begin{dmath}\label{eqn:qftLecture10:460}
-\phihat(\Lambda x)
+\phihat(x)
 =
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Bp}} e^{i p \cdot x}  \hata_{\Bp} + \text{h.c.}
 \end{dmath}
-
-We can now conclude that
-\begin{dmath}\label{eqn:qftLecture10:480}
+we can now conclude that the creation and annihilation operators transform as
+%\begin{dmath}\label{eqn:qftLecture10:480}
+\boxedEquation{eqn:qftLecture10:480}{
 \sqrt{2 \omega_{\Lambda \Bp}} \hata_{\Lambda \Bp}
 =
 \hatU(\Lambda)
 \sqrt{2 \omega_{ \Bp}} \hata_{ \Bp}
 \hatU^\dagger(\Lambda)
-\end{dmath}
+}
+%\end{dmath}
 
 In particular
 \begin{dmath}\label{eqn:qftLecture10:500}
