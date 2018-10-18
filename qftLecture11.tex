@@ -11,7 +11,7 @@
 
 %\usepackage{phy2403}
 \usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
+\usepackage{peeters_layout_exercise}
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
@@ -29,7 +29,393 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Relativistic normalization.}
+
+We will continue looking at the generator of spacetime translation \( \hatU(\Lambda) \), which has the property
+\begin{dmath}\label{eqn:qftLecture11:40}
+\hatU(\Lambda) \ket{0} = \ket{0},
+\end{dmath}
+%\underline{Lorentz invariance unbroken}
+That is
+\begin{dmath}\label{eqn:qftLecture11:760}
+\hatU(\Lambda) = \BOne + \text{operators that anhillate the vacuum state}.
+\end{dmath}
+
+The action on a field was
+\begin{dmath}\label{eqn:qftLecture11:60}
+\hatU(\Lambda)
+\phihat(x) \hatU^\dagger(\Lambda)
+= \phihat(\Lambda x),
+\end{dmath}
+and the action on the anhillation operator was
+\begin{dmath}\label{eqn:qftLecture11:300}
+\hatU(\Lambda)
+\sqrt{ 2 \omega_\Bp } \hata_\Bp
+\hatU^\dagger(\Lambda)
+=
+\sqrt{ 2 \omega_{\Lambda \Bp} } \hata_{\Lambda \Bp}.
+\end{dmath}
+
+If \( \ket{\Bp_1} \) is the one particle state with momentum \( \Bp_1 \), then that momentum state can be generated from the ground state with the following normalized creation operation
+\begin{dmath}\label{eqn:qftLecture11:780}
+\ket{\Bp_1} = \sqrt{ 2 \omega_{\Bp_1} } \hata_{\Bp_1}^\dagger \ket{0}.
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture11:80}
+\braket{\Bp_2}{\Bp_1}
+=
+\sqrt{ 2 \omega_{\Bp_1} }
+\sqrt{ 2 \omega_{\Bp_2} }
+\bra{0}
+\hata_{\Bp_2}
+\hata_{\Bp_1}^\dagger
+\ket{0}
+=
+\sqrt{ 2 \omega_{\Bp_1} }
+\sqrt{ 2 \omega_{\Bp_2} }
+\bra{0}
+\lr{
+   \hata_{\Bp_1}^\dagger
+   \hata_{\Bp_2}
+   +
+   i (2 \pi)^3 \delta^3(\Bp - \Bq)
+}
+=
+\sqrt{ 2 \omega_{\Bp_1} }
+\sqrt{ 2 \omega_{\Bp_2} }
+(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2)
+=
+2 \omega_{\Bp_1}
+(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2).
+\end{dmath}
+
+\section{Spacelike surfaces.}
+
+If \( x^\mu, p^\mu \) are four vectors, then \( p^\mu x_\mu = \text{invariant} = {p'}^\mu x'_\mu \).  The light cone is the surface \( p_0^2 = \Bp^2  \), whereas timelike four-momentum form a parabaloid surface \( p_0^2 - \Bp^2 = m^2 \) (i.e. \( E = \sqrt{ m^2 c^4 + \Bp^2 c^2 } \)).
+The surface for constant spacelike points (i.e. all related by a Lorentz transformation) is illustrated in \cref{fig:spaceLikeAndLightCone:spaceLikeAndLightConeFig1}.  A boost moves a point up or down that surface along the energy axis.  It is therefore possible to use a sequence of boost and rotation to transform a point \( (E, \Bp) \rightarrow (-E, \Bp) \rightarrow (-E, -\Bp) \).  That is, any spacelike four-vector \( x \) may be transformed to \( -x \) using a Lorentz transformation.
+\imageFigure{../figures/phy2403-quantum-field-theory/spaceLikeAndLightConeFig1}{Constant spacelike surface.}{fig:spaceLikeAndLightCone:spaceLikeAndLightConeFig1}{0.3}
+
+\section{Condition on microcausality.}
+
+We defined operators \( \phihat(\Bx) \), which was a Hermitian operator for the real scalar field.  For the complex scalar field we used \( \phihat(\Bx) = (\phihat_1 + \phihat_2)/\sqrt{2} \), where each of \( \phihat_1, \phihat_2 \) were Hermitian operators.  i.e. we can think of these operators as ``observables'', that is \( \phihat(\Bx) = \phihat^\dagger(\Bx) \).
+
+We now want to show that these operators commute at spacelike separations, and see how this relates to the question of causality.  In particular, we want to see that an observation of one operator, will not effect the measurement of the other.
+
+The condition of microcausality is
+\begin{equation*}
+\antisymmetric{\phihat(x)}{\phihat(y)} = 0
+\end{equation*}
+if \( x \sim y \), that is \( (x - y)^2 < 0 \).  That is, \( x, y \) are spacelike separated.
+
+We wrote
+
+\begin{dmath}\label{eqn:qftLecture11:160}
+\phihat(x)
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{
+e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp
++
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{
+e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp
+,
+\end{dmath}
+or \( \phihat(x) = \phihat_{-}(x) + \phihat_{+}(x) \), where
+\begin{dmath}\label{eqn:qftLecture11:180}
+\begin{aligned}
+\phihat_{-}(x) &=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{
+e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp \\
+\phihat_{+}(x) &=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{
+e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp
+\end{aligned}
+\end{dmath}
+
+Compute the commutator
+\begin{dmath}\label{eqn:qftLecture11:200}
+D(x)
+= \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(0)}
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
+\int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
+\evalbar{ e^{i k \cdot 0} }{k^0 = \omega_\Bk}
+\antisymmetric{\hata_\Bp }{\hata_\Bk^\dagger }
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
+\int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
+(2 \pi)^3 \delta^3(\Bp - \Bk),
+\end{dmath}
+\boxedEquation{eqn:qftLecture11:800}{
+D(x)
+=
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
+\evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}.
+}
+
+Now about the commutator at two spacetime points
+\begin{dmath}\label{eqn:qftLecture11:220}
+\antisymmetric{\phihat(x)}{\phihat(y)}
+=
+\antisymmetric{\phihat_{-}(x) + \phihat_{+}(x)}{\phihat_{-}(y) + \phihat_{+}(y)}
+=
+\antisymmetric{\phihat_{-}(x)}{\phihat_{+}(y)}
++
+\antisymmetric{\phihat_{+}(x)}{\phihat_{-}(y)}
+=
+-D(y - x) + D(x - y)
+\end{dmath}
+
+Find
+\begin{dmath}\label{eqn:qftLecture11:240}
+\begin{aligned}
+\antisymmetric{\phihat(x)}{\phihat(y)} &= D(x - y) - D(y - x) \\
+\antisymmetric{\phihat(x)}{\phihat(0)} &= D(x) - D(- x)
+\end{aligned}
+\end{dmath}
+
+Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely
+
+Claim:
+D(x) is Lorentz invariant (has the same value for all \( x^\mu, {x'}^\mu \)
+
+We can see this by writing this out as
+\begin{dmath}\label{eqn:qftLecture11:280}
+D(x)
+=
+\int \frac{d^3 p}{(2 \pi)^3 } dp^0
+\delta( p_0^2 - \Bp^2 - m^2) \Theta(p^0)
+e^{-i p \cdot x}
+\end{dmath}
+
+The exponential is Lorentz invariant, and the delta function has been put into a Lorentz invariant form.
+
+Claim 1:
+D(x) = D(x') where \( x^2 = {x'}^2 \).
+Claim 2:
+\( x^\mu, -x^\mu \) are related by Lorentz transformations if \( x^2 < 0 \).
+
+From the figure, we see that \( D(x) = D(-x) \) for a spacelike point, which implies that
+\(
+\antisymmetric{\phihat(x)}{\phihat(0)} = 0 \) for a spacelike point \( x \).
+
+We've shown this for free fields, but later we will see that this is the case for interacting fields too.
+
+\section{QM.}
+
+\begin{dmath}\label{eqn:qftLecture11:320}
+L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q
+\end{dmath}
+
+The term \( j(t) \) shifts the origin in a time dependent fashion (graphical illustration in class wiggling a hockey stick, as a sample of a harmonic oscillator).
+
+F5,6
+
+\begin{dmath}\label{eqn:qftLecture11:340}
+H = \frac{p^2}{2} + \frac{\omega^2}{t} q^2 + j(t) q
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture11:360}
+\begin{aligned}
+i \qdot_H(t) &= \antisymmetric{q_H}{H} = i p_H \\
+i \pdot_H(t) &= \antisymmetric{p_H}{H} = -i \omega^2 q_H - i j(t)
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture11:380}
+\ddot{q}_H(t) = - \omega^2 q_H(t) - j(t)
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture11:400}
+(\partial_{tt} - \omega^2 ) H(t) = - j(t)
+\end{dmath}
+
+%%q_H(t > t_{\text{after}} = q_H( t, t < t_before) +
+%%\int_{t_before}^{t_after} G_R(t - t') j(t') dt'
+\begin{dmath}\label{eqn:qftLecture11:420}
+q_H(t) = q_H^0( t ) +
+\int G_R(t - t') j(t') dt'
+\end{dmath}
+
+This solves the equation provided \( G_R(t - t') \) has the property that
+\boxedEquation{eqn:qftLecture11:440}{
+(\partial_{tt} + \omega^2)
+G_R(t - t')
+= - \delta(t - t')
+}
+
+That is
+\begin{dmath}\label{eqn:qftLecture11:460}
+(\partial_{tt} + \omega^2)
+q_H(t) =
+(\partial_{tt} + \omega^2)
+q_H^0( t )
++
+(\partial_{tt} + \omega^2)
+\int G_R(t - t') j(t') dt'
+\end{dmath}
+
+This function \( G_R \) is called the retarded Green's function.  We want to find this function, and as usual, we do this by taking the Fourier transform of \cref{eqn:qftLecture11:440}
+
+\begin{dmath}\label{eqn:qftLecture11:480}
+\int dt e^{i p t}
+(\partial_{tt} + \omega^2) G_R(t - t')
+=
+-\int_{-\infty}^\infty dt e^{i p t}
+\delta(t - t')
+= - e^{i p t'}
+\end{dmath}
+
+Let
+\begin{dmath}\label{eqn:qftLecture11:500}
+G(t - t')  = \int \frac{dp }{2 \pi} e^{- i p'(t - t')} \tilde{G}(p'),
+\end{dmath}
+so
+
+\begin{dmath}\label{eqn:qftLecture11:520}
+- e^{i pt'}
+=
+\int dt e^{i p t}
+(\partial_{tt} + \omega^2)
+\int
+\int \frac{dp'}{2 \pi} e^{- i p'(t - t')} \tilde{G}(p')
+=
+\int dt e^{i p t} \int
+\frac{dp'}{2 \pi} \lr{ -{p'}^2 + \omega^2 } e^{- i p'(t - t')} \tilde{G}(p')
+=
+\int dp' \lr{ -{p'}^2 + \omega^2 } e^{i p' t'} \delta(p - p') \tilde{G}(p')
+=
+\lr{ -{p}^2 + \omega^2 } \tilde{G}(p) e^{i p t'}
+\end{dmath}
+
+so
+\begin{dmath}\label{eqn:qftLecture11:540}
+\tilde{G}(p)
+= \inv{p^2 - \omega^2}
+\end{dmath}
+
+Now
+
+\begin{dmath}\label{eqn:qftLecture11:560}
+G(t)
+= \int \frac{dp}{2 \pi} e^{-i p t}
+\tilde{G}(p)
+\end{dmath}
+
+Let's write the momentum space Green's function as
+\begin{dmath}\label{eqn:qftLecture11:580}
+\tilde{G}(p)
+= \inv{(p - \omega)(p + \omega)}
+\end{dmath}
+
+The solution contained
+\begin{dmath}\label{eqn:qftLecture11:600}
+\int G(t - t') j(t') dt'.
+\end{dmath}
+Suppose \( j(t) = 0 \) for all \( t < t_0 \).  We want the effect of \( j(t) \) to be felt in the future, for example, \(j(t) \) is an impulse starting at some time.  We want \( G(t) \) to vanish at negative times.
+
+We want the integral
+\begin{dmath}\label{eqn:qftLecture11:620}
+G(t)
+= \int \frac{dp}{2 \pi} e^{-i p t}
+\inv{(p - \omega)(p + \omega)}
+\end{dmath}
+to vanish when \( t < 0 \).
+
+Start with \( t > 0 \), so that \( e^{-i p t} = e^{-i p \Abs{t}} \) which means that we have to integrate over the contour
+F8a
+because the imaginary part of \( p \) is negative, but for \( t < 0 \)
+F8b
+
+Question: since we are integrating over the real line, how can we get away with deforming the contour?
+Answer: it works.  If we do this we get a Green's function that makes sense (better answer later?)
+
+We add an infinite circle, so that we can integrate over a closed contour, and pick the contour so that it is zero for \( t < 0 \) and non-zero (enclosed poles) for \( t > 0 \).
+
+\begin{dmath}\label{eqn:qftLecture11:640}
+G_R(t > 0) =
+= \int_C \frac{dp}{2 \pi} e^{-i p t}
+\inv{(p - \omega)(p + \omega)}
+=
+\inv{2 \pi} 2 \pi i \lr{
+   \frac{e^{-i \omega t}}{2 \omega}
+   -
+   \frac{e^{i \omega t}}{2 \omega}
+}
+=
+\frac{\sin(\omega t)}{\omega}.
+\end{dmath}
+
+Now we write the Green's function for all time as
+\boxedEquation{eqn:qftLecture11:660}{
+G_R(t) =
+\frac{\sin(\omega t)}{\omega} \Theta(t).
+}
+
+The question of contours can now be justified by the result, since this satisfies \cref{eqn:qftLecture11:440}.
+
+Fixme: Exersize: CHECK.
+
+\section{Field theory (where we are going).}
+
+We will consider a massive real scalar field theory with an external source with action
+
+\begin{dmath}\label{eqn:qftLecture11:680}
+S = \int d^4 x \lr{
+\inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 + j(x) \phi(x)
+}
+\end{dmath}
+
+We don't have examples of currents that create scalar fields, but to study such as system, recall that
+in electromagnetism we added sources to the field by adding a term like
+\begin{dmath}\label{eqn:qftLecture11:700}
+\int d^4 x A^\mu(x) j_\mu(x),
+\end{dmath}
+to our action.
+
+The equation of motion can be found to be
+\begin{dmath}\label{eqn:qftLecture11:720}
+\lr{ \partial_\mu \partial^\mu + m^2 } \phi(x) = j(x).
+\end{dmath}
+
+We want to study the Green's function of this Klien-Gordon equation, defined to obey
+\begin{dmath}\label{eqn:qftLecture11:740}
+\lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \delta^4(x - y),
+\end{dmath}
+where the \( -i \) factor is for convienience.
+This is analogous to the Green's function that we just studied for the QM harmonic oscillator.
+
+\makeproblem{Compute \( D(x-y) \) from the commutator.}{problem:qftLecture11:820}{
+Generalize the derivation \cref{eqn:qftLecture11:800} by computing the commutator at two different space time points \( x, y \).
+} % problem
+
+\makeanswer{problem:qftLecture11:820}{
+Let
+\begin{dmath}\label{eqn:qftLecture11:860}
+D(x - y)
+= \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(y)}
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
+\int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
+\evalbar{ e^{i k \cdot y} }{k^0 = \omega_\Bk}
+\antisymmetric{\hata_\Bp }{\hata_\Bk^\dagger }
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
+\int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
+\evalbar{ e^{i k \cdot y} }{k^0 = \omega_\Bk}
+(2 \pi)^3 \delta^3(\Bp - \Bk),
+=
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
+\evalbar{ e^{-i p \cdot (x - y)} }{p^0 = \omega_\Bp}.
+\end{dmath}
+} % answer
 
 %}
 \EndNoBibArticle

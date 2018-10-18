@@ -9,6 +9,12 @@
 \newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
 \newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
 
+% widetilde in the book context ends up messed up.
+% example: \widetilde{\phi} is formated like \phi \tilde{\phi}.
+%
+% here's a placeholder in case I figure out how to do this in both the book and report context:
+\newcommand{\wtilde}[1]{\tilde{#1}}
+
 %-----------------------------------------
 \usepackage{verbatim}
 

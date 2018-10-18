@@ -214,7 +214,7 @@ after which one argue that this is non-zero only when \( \Bx \) is on the bounda
 In class we saw that a momentum space representation of \( \phi, \pi \) for the scalar single field Lagrangian simplified the Hamiltonian considerably.
 Let's assume a similar momentum space representation of our field operator
 \begin{dmath}\label{eqn:ProblemSet1Problem2:840}
-\widetilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
+\wtilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
 \end{dmath}
 but will not make any a-priori assumption that the quantized field operator \( \phi \) is Hermitian.
 We find the following spatial representation of the operator \( \phi \) and it's relations
@@ -253,17 +253,17 @@ We find the following spatial representation of the operator \( \phi \) and it's
 \frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }.
 \end{dmath}
 \end{subequations}
-By inspection, we may read off the Fourier transform of \( \widetilde{\pi^\dagger} \), which is
+By inspection, we may read off the Fourier transform of \( \wtilde{\pi^\dagger} \), which is
 \begin{dmath}\label{eqn:ProblemSet1Problem2:960}
-\widetilde{\pi^\dagger}(\Bp, t)
+\wtilde{\pi^\dagger}(\Bp, t)
 =
 \frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
 \end{dmath}
 which allows, with \cref{eqn:ProblemSet1Problem2:840}, inversion for operators \( a_\Bp, b^\dagger_\Bp \)
 \begin{dmath}\label{eqn:ProblemSet1Problem2:980}
 \begin{aligned}
-a_\Bp &= e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \widetilde{\phi} - \inv{i \omega_\Bp} \widetilde{\pi^\dagger} } \\
-b_\Bp^\dagger &= e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \widetilde{\phi} + \inv{i \omega_\Bp} \widetilde{\pi^\dagger} },
+a_\Bp &= e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \wtilde{\phi} - \inv{i \omega_\Bp} \wtilde{\pi^\dagger} } \\
+b_\Bp^\dagger &= e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \wtilde{\phi} + \inv{i \omega_\Bp} \wtilde{\pi^\dagger} },
 \end{aligned}
 \end{dmath}
 or, in terms of spatial operators
@@ -406,7 +406,7 @@ Finally, we expect that there are two pairs of non-zero commutators
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1080}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1100}
-\antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}
+\antisymmetric{a_\Bp}{a_\Bq^\dagger}
 =
 \int d^3 x
 d^3 y
@@ -453,7 +453,7 @@ e^{-i\omega_\Bq t}
 (2 \pi)^3 \delta(\Bq - \Bp),
 \end{dmath}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1120}
-\antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger}
+\antisymmetric{b_\Bp}{b_\Bq^\dagger}
 =
 \int d^3 x
 d^3 y
