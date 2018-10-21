@@ -185,7 +185,7 @@ Find
 Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely.
 
 \paragraph{Claim:}
-D(x) is Lorentz invariant (has the same value for all \( x^\mu, {x'}^\mu \)
+\( D(x) \) is Lorentz invariant (has the same value for all \( x^\mu, {x'}^\mu \)
 
 We can see this by writing this out as
 \begin{dmath}\label{eqn:qftLecture11:280}
@@ -199,7 +199,7 @@ e^{-i p \cdot x}
 The exponential is Lorentz invariant, and the delta function has been put into a Lorentz invariant form.
 
 \paragraph{Claim 1:}
-D(x) = D(x') where \( x^2 = {x'}^2 \).
+\( D(x) = D(x') \) where \( x^2 = {x'}^2 \).
 
 \paragraph{Claim 2:}
 \( x^\mu, -x^\mu \) are related by Lorentz transformations if \( x^2 < 0 \).
@@ -361,7 +361,7 @@ G_R(t) =
 }
 
 The question of what contour to pick can now be justified by the result, since this satisfies \cref{eqn:qftLecture11:440}.  If we wanted a Green's function that selected just future contributions we'd have used a ``bumps down'' contour.  There will be circumstances where we will use some of the other contour possibilities (\cref{fig:allTheContours:allTheContoursFig3}).  In particular, the bumps up and down contour will be used to derive the ``Feynman propagator'' that we'll use later.
-\imageFigure{../figures/phy2403-quantum-field-theory/allTheContoursFig3}{All the contours.}{fig:allTheContours:allTheContoursFig3}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/allTheContoursFig3}{All possible deformations around the poles.}{fig:allTheContours:allTheContoursFig3}{0.3}
 
 \section{Field theory (where we are going).}
 
@@ -412,7 +412,7 @@ D(x - y)
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
 \evalbar{ e^{i k \cdot y} }{k^0 = \omega_\Bk}
-(2 \pi)^3 \delta^3(\Bp - \Bk),
+(2 \pi)^3 \delta^3(\Bp - \Bk)
 =
 \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
 \evalbar{ e^{-i p \cdot (x - y)} }{p^0 = \omega_\Bp}.
