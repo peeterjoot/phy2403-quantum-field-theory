@@ -20,8 +20,8 @@
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 11: XXX.  Taught by Prof.\ Erich Poppitz}
-%\chapter{XXX}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 11: Momentum matrix elements, spacelike surfaces, microcausality, Lorentz invariant measure, wave function Green's function, retarded time contour, advanced time contour.  Taught by Prof.\ Erich Poppitz}
+%\chapter{Momentum matrix elements, spacelike surfaces, microcausality, Lorentz invariant measure, wave function Green's function, retarded time contour, advanced time contour.}
 \label{chap:qftLecture11}
 
 \paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
@@ -61,16 +61,18 @@ If \( \ket{\Bp_1} \) is the one particle state with momentum \( \Bp_1 \), then t
 \ket{\Bp_1} = \sqrt{ 2 \omega_{\Bp_1} } \hata_{\Bp_1}^\dagger \ket{0}.
 \end{dmath}
 
+We can compute the matrix element between two matrix states using the creation operator representation
 \begin{dmath}\label{eqn:qftLecture11:80}
+\begin{aligned}
 \braket{\Bp_2}{\Bp_1}
-=
+&=
 \sqrt{ 2 \omega_{\Bp_1} }
 \sqrt{ 2 \omega_{\Bp_2} }
 \bra{0}
 \hata_{\Bp_2}
 \hata_{\Bp_1}^\dagger
-\ket{0}
-=
+\ket{0} \\
+&=
 \sqrt{ 2 \omega_{\Bp_1} }
 \sqrt{ 2 \omega_{\Bp_2} }
 \bra{0}
@@ -79,14 +81,15 @@ If \( \ket{\Bp_1} \) is the one particle state with momentum \( \Bp_1 \), then t
    \hata_{\Bp_2}
    +
    i (2 \pi)^3 \delta^3(\Bp - \Bq)
-}
-=
+} \\
+&=
 \sqrt{ 2 \omega_{\Bp_1} }
 \sqrt{ 2 \omega_{\Bp_2} }
-(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2)
-=
+(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2) \\
+&=
 2 \omega_{\Bp_1}
 (2 \pi)^3 \delta^3(\Bp_1 - \Bp_2).
+\end{aligned}
 \end{dmath}
 
 \section{Spacelike surfaces.}
@@ -179,9 +182,9 @@ Find
 \end{aligned}
 \end{dmath}
 
-Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely
+Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely.
 
-Claim:
+\paragraph{Claim:}
 D(x) is Lorentz invariant (has the same value for all \( x^\mu, {x'}^\mu \)
 
 We can see this by writing this out as
@@ -195,9 +198,10 @@ e^{-i p \cdot x}
 
 The exponential is Lorentz invariant, and the delta function has been put into a Lorentz invariant form.
 
-Claim 1:
+\paragraph{Claim 1:}
 D(x) = D(x') where \( x^2 = {x'}^2 \).
-Claim 2:
+
+\paragraph{Claim 2:}
 \( x^\mu, -x^\mu \) are related by Lorentz transformations if \( x^2 < 0 \).
 
 From the figure, we see that \( D(x) = D(-x) \) for a spacelike point, which implies that
@@ -206,7 +210,7 @@ From the figure, we see that \( D(x) = D(-x) \) for a spacelike point, which imp
 
 We've shown this for free fields, but later we will see that this is the case for interacting fields too.
 
-\section{QM.}
+\section{Harmonic oscillator.}
 
 \begin{dmath}\label{eqn:qftLecture11:320}
 L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q
@@ -214,8 +218,7 @@ L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q
 
 The term \( j(t) \) shifts the origin in a time dependent fashion (graphical illustration in class wiggling a hockey stick, as a sample of a harmonic oscillator).
 
-F5,6
-
+%F5,6
 \begin{dmath}\label{eqn:qftLecture11:340}
 H = \frac{p^2}{2} + \frac{\omega^2}{t} q^2 + j(t) q
 \end{dmath}
@@ -232,7 +235,7 @@ i \pdot_H(t) &= \antisymmetric{p_H}{H} = -i \omega^2 q_H - i j(t)
 \end{dmath}
 or
 \begin{dmath}\label{eqn:qftLecture11:400}
-(\partial_{tt} - \omega^2 ) H(t) = - j(t)
+(\partial_{tt} + \omega^2 ) q_H(t) = - j(t)
 \end{dmath}
 
 %%q_H(t > t_{\text{after}} = q_H( t, t < t_before) +
@@ -282,7 +285,6 @@ so
 =
 \int dt e^{i p t}
 (\partial_{tt} + \omega^2)
-\int
 \int \frac{dp'}{2 \pi} e^{- i p'(t - t')} \tilde{G}(p')
 =
 \int dt e^{i p t} \int
@@ -327,10 +329,11 @@ G(t)
 \end{dmath}
 to vanish when \( t < 0 \).
 
-Start with \( t > 0 \), so that \( e^{-i p t} = e^{-i p \Abs{t}} \) which means that we have to integrate over the contour
-F8a
-because the imaginary part of \( p \) is negative, but for \( t < 0 \)
-F8b
+% t - t' > 0 ; t > t'
+Start with \( t > 0 \) (that is \( t' < t \)), so that \( e^{-i p t} = e^{-i p \Abs{t}} \) which means that we have to integrate over a lower plane contour like \cref{fig:lowerContour:lowerContourFig1}, because the imaginary part of \( p \) is negative, but for \( t < 0 \) (that is \( t' > t \)), we want an upper plane contour like \cref{fig:upperContour:upperContourFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/lowerContourFig1.png}{Lower plane contour.}{fig:lowerContour:lowerContourFig1}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/upperContourFig2.png}{Upper plane contour.}{fig:upperContour:upperContourFig1}{0.3}
+
 
 Question: since we are integrating over the real line, how can we get away with deforming the contour?
 Answer: it works.  If we do this we get a Green's function that makes sense (better answer later?)
@@ -338,28 +341,27 @@ Answer: it works.  If we do this we get a Green's function that makes sense (bet
 We add an infinite circle, so that we can integrate over a closed contour, and pick the contour so that it is zero for \( t < 0 \) and non-zero (enclosed poles) for \( t > 0 \).
 
 \begin{dmath}\label{eqn:qftLecture11:640}
-G_R(t > 0) =
+G_R(t > 0)
 = \int_C \frac{dp}{2 \pi} e^{-i p t}
 \inv{(p - \omega)(p + \omega)}
 =
-\inv{2 \pi} 2 \pi i \lr{
+\inv{2 \pi} (-2 \pi i) \lr{
    \frac{e^{-i \omega t}}{2 \omega}
    -
    \frac{e^{i \omega t}}{2 \omega}
 }
 =
-\frac{\sin(\omega t)}{\omega}.
+-\frac{\sin(\omega t)}{\omega}.
 \end{dmath}
 
 Now we write the Green's function for all time as
 \boxedEquation{eqn:qftLecture11:660}{
 G_R(t) =
-\frac{\sin(\omega t)}{\omega} \Theta(t).
+-\frac{\sin(\omega t)}{\omega} \Theta(t).
 }
 
-The question of contours can now be justified by the result, since this satisfies \cref{eqn:qftLecture11:440}.
-
-Fixme: Exersize: CHECK.
+The question of what contour to pick can now be justified by the result, since this satisfies \cref{eqn:qftLecture11:440}.  If we wanted a Green's function that selected just future contributions we'd have used a ``bumps down'' contour.  There will be circumstances where we will use some of the other contour possibilities (\cref{fig:allTheContours:allTheContoursFig3}).  In particular, the bumps up and down contour will be used to derive the ``Feynman propagator'' that we'll use later.
+\imageFigure{../figures/phy2403-quantum-field-theory/allTheContoursFig3}{All the contours.}{fig:allTheContours:allTheContoursFig3}{0.3}
 
 \section{Field theory (where we are going).}
 
@@ -415,6 +417,55 @@ D(x - y)
 \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
 \evalbar{ e^{-i p \cdot (x - y)} }{p^0 = \omega_\Bp}.
 \end{dmath}
+} % answer
+
+\makeproblem{Verification of harmonic oscillator Green's function.}{problem:qftLecture11:2}{
+Take the derivatives of a convolution of the Green's function \cref{eqn:qftLecture11:660} to show that it satisifies
+\cref{eqn:qftLecture11:440}.
+} % problem
+
+\makeanswer{problem:qftLecture11:2}{
+Let
+\begin{dmath}\label{eqn:qftLecture11:880}
+q(t)
+= \int_{-\infty}^\infty G(t - t') j(t') dt'
+= -\inv{\omega} \int_{-\infty}^\infty \sin(\omega(t - t')) \Theta(t - t') j(t') dt'.
+\end{dmath}
+We are free to add any \( q_0(t) \) that satisfies the homogeneous wave equation \( q_0''(t) + \omega^2 q_0(t) = 0 \) to our assumed convolution solution \cref{eqn:qftLecture11:880}, but that isn't interesting for this exersize.
+Since \( \Theta(t - t') = 0 \) for \( t - t' < 0 \), or \( t' > t \), the convolution can be written as
+\begin{dmath}\label{eqn:qftLecture11:900}
+q(t)
+= -\inv{\omega} \int_{-\infty}^t \sin(\omega(t - t')) j(t') dt',
+\end{dmath}
+which is now in a convient form to take derivatives.  We have contributions from the boundary's time dependence and from the integrand.  In particular
+\begin{dmath}\label{eqn:qftLecture11:920}
+\ddt{} \int_{a(t)}^{b(t)} g(x, t) dx
+=
+g(b(t)) b'(t) - g(a(t)) a'(t) + \int_a^b \frac{\partial}{\partial t} g(x, t) dx.
+\end{dmath}
+Assuming that \( j(-\infty) = 0 \), this gives
+\begin{dmath}\label{eqn:qftLecture11:940}
+\ddt{q(t)}
+=
+-\inv{\omega} \evalbar{\sin(\omega(t - t')) j(t') }{t' = t}
+-\int_{-\infty}^t \cos(\omega(t - t')) j(t') dt'
+=
+-\int_{-\infty}^t \cos(\omega(t - t')) j(t') dt'.
+\end{dmath}
+For the second derivative we have
+\begin{dmath}\label{eqn:qftLecture11:960}
+q''(t) =
+- \evalbar{ \cos(\omega(t - t')) j(t') }{t' = t}
++\omega \int_{-\infty}^t \sin(\omega(t - t')) j(t') dt'
+=
+-j(t) -\omega^2
+\int_{-\infty}^t \frac{-\sin(\omega(t - t'))}{\omega} j(t') dt',
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture11:980}
+q''(t) = -j(t) - \omega^2 q(t),
+\end{dmath}
+which is our forced Harmonic oscillator equation.
 } % answer
 
 %}

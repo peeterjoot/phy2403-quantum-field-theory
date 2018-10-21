@@ -55,6 +55,7 @@ include ../latex/make.rules
 #all :: l9
 #all :: l10
 all :: l11
+all :: l12
 #all :: p1
 all :: p2
 
@@ -71,6 +72,7 @@ $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 #l9: qftLecture9.pdf
 #l10: qftLecture10.pdf
 l11: qftLecture11.pdf
+l12: qftLecture12.pdf
 #p1: ProblemSet1.pdf
 p2: ProblemSet2.pdf
 
