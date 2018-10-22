@@ -82,3 +82,5 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem2.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture11.tex
 ../latex/bin/lgrep qftLecture12.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture12.tex
+../latex/bin/lgrep qftLecture13.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture13.tex
