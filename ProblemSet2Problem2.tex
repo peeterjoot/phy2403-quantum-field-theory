@@ -19,7 +19,7 @@ Finally, to end the preaching preamble, the notion of approximate symmetries is 
 The Lagrangian you will study is that of two complex scalar fields, assembled into a column \( \Phi = (\phi_1,\phi_2)^\T \) (the \( \T \) is here so I do not have to go through the trouble to write a column instead of a row).
 It is given by:
 \begin{dmath}\label{eqn:ProblemSet2Problem2:10} %(1)
-L = \partial_\mu \Phi^\dagger \partial_\mu \Phi - m^2 \Phi^\dagger \Phi - \lambda \lr{\Phi^\dagger\Phi}^2.
+\LL = \partial_\mu \Phi^\dagger \partial_\mu \Phi - m^2 \Phi^\dagger \Phi - \lambda \lr{\Phi^\dagger\Phi}^2.
 \end{dmath}
 Show that
 \cref{eqn:ProblemSet2Problem2:10}
@@ -38,7 +38,7 @@ The Lagrangian \cref{eqn:ProblemSet2Problem2:10} has, however, a larger symmetry
 To begin seeing this, instead of using \( \Phi = (\phi^1,\phi^2)^\T \) introduce the real and imaginary parts of \( \phi^{1,2} \).
 Use \( \phi^1 = \psi^1 +i \psi^2, \phi^2 = \psi^3 +i \psi^4 \), and introducing \( \Psi = (\psi^1,\psi^2,\psi^3,\psi^4)^\T\), show that \cref{eqn:ProblemSet2Problem2:10} can be written as:
 \begin{dmath}\label{eqn:ProblemSet2Problem2:20} % , (2)
-L = a \partial_\mu \Psi^\T \partial^\mu \Psi -b m^2 \Psi^\T \Psi - c \lambda(\Psi^\T\Psi)^2
+\LL = a \partial_\mu \Psi^\T \partial^\mu \Psi -b m^2 \Psi^\T \Psi - c \lambda(\Psi^\T\Psi)^2
 \end{dmath}
 on the way determining the (pure numbers) \(a, b, c\).
 The Lagrangian \cref{eqn:ProblemSet2Problem2:20} has, clearly, an \( O(4) \) symmetry, i.e., is invariant under \( \Psi \rightarrow  O \Psi\), where \( O \) is a \( 4 \times 4 \) orthogonal matrix, \( O^\T O = 1\).
@@ -77,7 +77,7 @@ and, hence, that
 \cref{eqn:ProblemSet2Problem2:10} %(1)
 can be written as
 \begin{dmath}\label{eqn:ProblemSet2Problem2:50}
-L = \trace{
+\LL = \trace{
    \lr{
       \partial \mu H^\dagger \partial^\mu H
    }
@@ -131,9 +131,354 @@ Hint: notice that both currents are Hermitean and that the left is obtained from
 
 \makeanswer{qft:problemSet2:2}{
 \makeSubAnswer{}{qft:problemSet2:2a}
-TODO.
+Let's consider the \( SU(2)_L \) case first.  Noting that \( (\sigma^a)^\dagger = \sigma^a \), the transformed fields are
+\begin{dmath}\label{eqn:ProblemSet2Problem2:100}
+\begin{aligned}
+\Phi' &= e^{i \Bsigma \cdot \Bomega/2} \Phi \\
+{\Phi'}^\dagger &= \Phi^\dagger e^{-i \Bsigma \cdot \Bomega/2},
+\end{aligned}
+\end{dmath}
+so \( {\Phi'}^\dagger \Phi' = \Phi^\dagger \Phi \), and
+so \( \partial_\mu {\Phi'}^\dagger \partial^\mu \Phi' = \partial_\mu \Phi^\dagger \partial^\mu \Phi \).
+This shows that the Lagrangian density is invariant under this transformation.
+
+The variation of the field is
+\begin{dmath}\label{eqn:ProblemSet2Problem2:120}
+\delta \Phi
+= \Phi' - \Phi
+\approx \lr{ 1 + i \Bsigma \cdot \Bomega/2} \Phi - \Phi
+=
+\frac{i}{2} \Bsigma \cdot \Bomega \Phi,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem2:140}
+\delta (\Phi^\dagger \Phi)
+=
+(\delta \Phi^\dagger) \Phi + \Phi^\dagger \delta \Phi
+=
+\frac{i}{2} \lr{
+-\Phi^\dagger \Bsigma \cdot \Bomega \Phi
++ \Phi^\dagger \Bsigma \cdot \Bomega \Phi
+}
+=
+0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet2Problem2:160}
+\delta (\partial_\mu \Phi^\dagger \partial^\mu \Phi)
+=
+\partial_\mu (\delta \Phi^\dagger) \partial^\mu \Phi
++
+\partial_\mu \Phi^\dagger \partial^\mu (\delta \Phi)
+=
+\frac{i}{2}
+\lr{
+   - \partial_\mu \Phi^\dagger \Bsigma \cdot \Bomega \partial^\mu \Phi
+   + \partial_\mu \Phi^\dagger \Bsigma \cdot \Bomega \partial^\mu \Phi
+}
+=
+0,
+\end{dmath}
+so \( \delta \LL = 0 \).  To calculate the conserved current, we have to be slightly careful with the order of operations so that the matrix products are compatible
+\begin{dmath}\label{eqn:ProblemSet2Problem2:180}
+j^\mu_\Bomega
+=
+\PD{(\partial_\mu \Phi)}{\LL} \delta \Phi
++
+\delta \Phi^\dagger
+\PD{(\partial_\mu \Phi^\dagger)}{\LL}
+=
+\frac{i}{2}
+\lr{
+   \partial^\mu \Phi^\dagger (\Bsigma \cdot \Bomega) \Phi
+   -
+   \Phi^\dagger (\Bsigma \cdot \Bomega) \partial^\mu \Phi
+},
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet2Problem2:200}
+j^{\mu a} =
+\frac{i}{2}
+\lr{
+   \partial^\mu \Phi^\dagger \sigma^a \Phi
+   -
+   \Phi^\dagger \sigma^a \partial^\mu \Phi
+},
+\end{dmath}
+where \( j^\mu_\Bomega = \omega_a j^{\mu a} \).
+
+For the \( U(1) \) case we clearly have \( \LL' = \LL \).  The variation is
+\begin{dmath}\label{eqn:ProblemSet2Problem2:220}
+\delta \Phi
+= \Phi' - \Phi
+\approx (1 + i\alpha) \Phi - \Phi
+=
+i\alpha \Phi,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem2:240}
+\delta (\Phi^\dagger \Phi)
+=
+(\delta \Phi^\dagger) \Phi
++
+\Phi^\dagger (\delta \Phi)
+=
+i \alpha
+\lr{
+   -\Phi^\dagger \Phi
+   +
+   \Phi^\dagger \Phi
+}
+=
+0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet2Problem2:260}
+\delta (\partial_\mu \Phi^\dagger \partial^\mu \Phi)
+=
+\partial_\mu (\delta \Phi^\dagger) \partial^\mu \Phi
++
+\partial_\mu \Phi^\dagger \partial^\mu (\delta \Phi)
+=
+i \alpha
+\lr{
+   -\partial_\mu \Phi^\dagger \partial^\mu \Phi
+   +
+   \partial_\mu \Phi^\dagger \partial^\mu \Phi
+}
+=
+0,
+\end{dmath}
+so \( \delta \LL = 0 \).
+The conserved current, again being careful of the order, is
+\begin{dmath}\label{eqn:ProblemSet2Problem2:280}
+j^\mu_\alpha
+=
+\PD{(\partial_\mu \Phi)}{\LL} \delta \Phi
++
+\delta \Phi^\dagger
+\PD{(\partial_\mu \Phi^\dagger)}{\LL}
+=
+i \alpha
+\lr{
+   (\partial^\mu \Phi^\dagger) \Phi
+   -
+   \Phi^\dagger (\partial^\mu \Phi)
+}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet2:2b}
-TODO.
+Let's work with the individual fields so the commutators can be computed more easily.  Expanding out the matrices, we have
+\begin{dmath}\label{eqn:ProblemSet2Problem2:300}
+Q^a
+= \frac{i}{2} \int d^3 x
+\lr{
+   \partial^0 \Phi^\dagger \sigma^a \Phi
+   -
+   \Phi^\dagger \sigma^a \partial^0 \Phi
+}
+=
+\frac{i}{2} \int d^3 x
+\lr{
+   \Pi^\dagger \sigma^a \Phi
+   -
+   \Phi^\dagger \sigma^a \Pi
+}
+=
+\frac{i}{2} \int d^3 x
+\lr{
+   \pi^\dagger_r \sigma^a_{rs} \phi_s
+   -
+   \phi^\dagger_r \sigma^a_{rs} \pi_s
+}.
+\end{dmath}
+To simplify the commutator expansion, assume that
+\( r,s \) indexed functions are functions of \( \Bx \) and
+\( m,n \) indexed functions are functions of \( \By \), for
+\begin{dmath}\label{eqn:ProblemSet2Problem2:320}
+\antisymmetric{Q^a}{Q^b}
+=
+-\frac{1}{4} \int d^3 x d^3 y
+\sigma^a_{rs}
+\sigma^b_{mn}
+\antisymmetric
+{
+   \pi^\dagger_r \phi_s
+   -
+   \phi^\dagger_r \pi_s
+}
+{
+   \pi^\dagger_m \phi_n
+   -
+   \phi^\dagger_m \pi_n
+}
+=
+\frac{1}{4} \int d^3 x d^3 y
+\sigma^a_{rs}
+\sigma^b_{mn}
+\lr{
+   \antisymmetric
+   {
+      \pi^\dagger_r \phi_s
+   }
+   {
+      \phi^\dagger_m \pi_n
+   }
+   +
+   \antisymmetric
+   {
+      \phi^\dagger_r \pi_s
+   }
+   {
+      \pi^\dagger_m \phi_n
+   }
+}
+=
+\frac{1}{4} \int d^3 x d^3 y
+\sigma^a_{rs}
+\sigma^b_{mn}
+\lr{
+      \pi^\dagger_r
+      \phi^\dagger_m
+      \phi_s
+      \pi_n
+   -
+      \phi^\dagger_m
+      \pi^\dagger_r
+      \pi_n
+      \phi_s
+   +
+      \phi^\dagger_r
+      \pi^\dagger_m
+      \pi_s
+      \phi_n
+   -
+      \pi^\dagger_m
+      \phi^\dagger_r
+      \phi_n
+      \pi_s
+}
+=
+\frac{1}{4} \int d^3 x d^3 y
+\sigma^a_{rs}
+\sigma^b_{mn}
+\lr{
+   \lr{
+      \phi^\dagger_m
+      \pi^\dagger_r
++
+      \antisymmetric{ \pi^\dagger_r }{ \phi^\dagger_m}
+   }
+      \phi_s
+      \pi_n
+   -
+      \phi^\dagger_m
+      \pi^\dagger_r
+      \pi_n
+      \phi_s
+   +
+   \lr{
+         \pi^\dagger_m
+         \phi^\dagger_r
+      +  \antisymmetric{ \phi^\dagger_r}{ \pi^\dagger_m}
+   }
+      \pi_s
+      \phi_n
+   -
+      \pi^\dagger_m
+      \phi^\dagger_r
+      \phi_n
+      \pi_s
+}
+=
+\frac{1}{4} \int d^3 x d^3 y
+\sigma^a_{rs}
+\sigma^b_{mn}
+\lr{
+     \phi^\dagger_m \pi^\dagger_r \antisymmetric{ \phi_s}{ \pi_n}
+   + \antisymmetric{ \pi^\dagger_r }{ \phi^\dagger_m} \phi_s \pi_n
+   + \pi^\dagger_m \phi^\dagger_r \antisymmetric{ \pi_s}{ \phi_n}
+   + \antisymmetric{ \phi^\dagger_r}{ \pi^\dagger_m} \pi_s \phi_n
+}.
+\end{dmath}
+Each of these commutators has a \( \delta(\Bx - \By) \) term, leaving
+\begin{dmath}\label{eqn:ProblemSet2Problem2:n}
+\antisymmetric{Q^a}{Q^b}
+=
+\frac{i}{4} \int d^3 x
+\sigma^a_{rs}
+\sigma^b_{mn}
+\lr{
+     \phi^\dagger_m \pi^\dagger_r \delta_{sn}
+   - \delta_{rm} \phi_s \pi_n
+   - \pi^\dagger_m \phi^\dagger_r \delta_{sn}
+   + \delta_{rm} \pi_s \phi_n
+}
+=
+\frac{i}{4} \int d^3 x
+   \sigma^a_{rs}
+\lr{
+   \sigma^b_{ms}
+   \lr{
+        \phi^\dagger_m \pi^\dagger_r
+      - \pi^\dagger_m \phi^\dagger_r
+   }
++
+   \sigma^b_{rn}
+   \lr{
+        \pi_s \phi_n
+      - \phi_s \pi_n
+   }
+}
+=
+\frac{i}{4} \int d^3 x
+\lr{
+   (\phi^\dagger_m \sigma^b_{ms})
+   (\pi^\dagger_r \sigma^a_{rs})
+-
+   (\pi^\dagger_m \sigma^b_{ms})
+   (\phi^\dagger_r \sigma^a_{rs})
++
+   (\sigma^a_{rs} \pi_s )
+   (\sigma^b_{rn} \phi_n)
+-
+   (\sigma^a_{rs} \phi_s )
+   (\sigma^b_{rn} \pi_n)
+}
+=
+\frac{i}{4} \int d^3 x
+\lr{
+   \Phi^\dagger \sigma^b \sigma^a \Pi
+-
+   \Pi^\dagger \sigma^b \sigma^a \Phi
++
+   \Pi^\dagger \sigma^a \sigma^b \Phi
+-
+   \Phi^\dagger \sigma^a \sigma^b \Pi
+}
+=
+\frac{i}{4} \int d^3 x
+\lr{
+   \Pi^\dagger \antisymmetric{\sigma^a}{\sigma^b} \Phi
+   -\Phi^\dagger \antisymmetric{\sigma^a}{\sigma^b} \Pi
+}
+=
+\frac{i}{4} \int d^3 x
+\lr{
+   \Pi^\dagger \antisymmetric{\sigma^a}{\sigma^b} \Phi
+   -\Phi^\dagger \antisymmetric{\sigma^a}{\sigma^b} \Pi
+}
+=
+-\frac{1}{2} \int d^3 x
+\epsilon^{a b c}
+\lr{
+   \Pi^\dagger \sigma^c \Phi
+   -\Phi^\dagger \sigma^c \Pi
+}
+=
+i \epsilon^{a b c} Q^c,
+\end{dmath}
+as desired.
 \makeSubAnswer{}{qft:problemSet2:2c}
 TODO.
 \makeSubAnswer{}{qft:problemSet2:2d}
