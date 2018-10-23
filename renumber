@@ -46,8 +46,9 @@
 #../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture5.tex
 
-#../latex/bin/lgrep usefulFormulas.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
+../latex/bin/lgrep usefulFormulas.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
+
 #../latex/bin/lgrep qftLecture6.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture6.tex
 #../latex/bin/lgrep qftLecture7.tex | tee o ; . ./o
