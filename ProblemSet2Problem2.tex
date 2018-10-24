@@ -58,7 +58,11 @@ H \equiv \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) = \inv{\sqrt{2}}
 -\phi_1^\conj & \phi_2
 \end{bmatrix}
 \end{equation}
-Show that under \(SU(2) \) transformations, \( H \rightarrow  \inv{\sqrt{2}} (i\sigma^2 (U_L\Phi)^\conj, U_L \Phi) = \inv{\sqrt{2}} (U_L i \sigma^2 \Phi^\conj, U_L\Phi) = U_L H\).
+Show that under \(SU(2) \) transformations,
+
+\begin{dmath}\label{eqn:ProblemSet2Problem2:520}
+H \rightarrow  \inv{\sqrt{2}} (i\sigma^2 (U_L\Phi)^\conj, U_L \Phi) = \inv{\sqrt{2}} (U_L i \sigma^2 \Phi^\conj, U_L\Phi) = U_L H.
+\end{dmath}
 
 Hint: the tricky part is to show that \( i\sigma^2(U_L\Phi)^\conj = i\sigma^2 U_L^\conj \Phi^\conj = U_L i \sigma^2 \Phi^\conj\).
 What you need to show, then, is that \( \sigma^2 U_L \sigma^2 = U_L^\conj \) (this fact will be very useful in our future studies of spinors, so make sure you understand it).
@@ -561,7 +565,75 @@ For the question of the \( U(1) \) symmetry, suppose that \( \Psi \rightarrow e^
 \end{dmath}
 which does not have the required four-divergence form required for a conserved current, so there is no \( U(1) \) symmetry.
 \makeSubAnswer{}{qft:problemSet2:2d}
-TODO.
+We want to examine the transformation of \( \sigma^2 (U_L\Phi)^\conj \), which, to first order in \( \Bomega \) is
+\begin{dmath}\label{eqn:ProblemSet2Problem2:460}
+\sigma^2 (U_L\Phi)^\conj
+\rightarrow
+\sigma^2 U_L^\conj \Phi^\conj
+\approx
+\Phi^\conj - \frac{i}{2} \sigma^2 \omega_a (\sigma^a)^\conj \Phi^\conj
+\end{dmath}
+Because \( \sigma^1 = \PauliX, \sigma^3 = \PauliZ \) are real, and \( \sigma^2 \) is purely imaginary, we have \( (\sigma^1)^\conj = \sigma^1, (\sigma^3)^\conj = \sigma^3 \), and
+\begin{equation}\label{eqn:ProblemSet2Problem2:480}
+(\sigma^2)^\conj =
+\lr{\PauliY}^\conj =
+\begin{bmatrix}
+0 & i \\
+-i & 0 \\
+\end{bmatrix} = -\sigma^2.
+\end{equation}
+Utilizing these conjugation relations, and the commutatation identities \( \sigma^i \sigma^j = -\sigma^j \sigma^i \) for \( i \ne j \), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem2:500}
+\sigma^2 (U_L\Phi)^\conj
+\rightarrow
+\Phi^\conj - \frac{i}{2} \lr{
+\omega_1 \sigma^2 (\sigma^1 )^\conj
++ \omega_2 \sigma^2 (\sigma^2 )^\conj
++ \omega_3 \sigma^2 (\sigma^3 )^\conj
+}
+\Phi^\conj
+=
+\Phi^\conj - \frac{i}{2} \lr{
+\omega_1 \sigma^2 \sigma^1
+- \omega_2 \sigma^2 \sigma^2
++ \omega_3 \sigma^2 \sigma^3
+}
+\Phi^\conj
+=
+\Phi^\conj - \frac{i}{2} \lr{
+- \omega_1 \sigma^1 \sigma^2
+- \omega_2 \sigma^2 \sigma^2
+- \omega_3 \sigma^3 \sigma^2
+}
+\Phi^\conj
+=
+\Phi^\conj + \frac{i}{2} \lr{
+  \omega_1 \sigma^1
++ \omega_2 \sigma^2
++ \omega_3 \sigma^3
+}
+\sigma^2
+\Phi^\conj
+=
+U_L \sigma^2 \Phi^\conj.
+\end{dmath}
+Plugging into \( H = \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) \), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem2:560}
+H
+\rightarrow \inv{\sqrt{2}} (i\sigma^2(U_L \Phi)^\conj,U_L \Phi)
+= \inv{\sqrt{2}} (U_L i\sigma^2\Phi^\conj,U_L \Phi)
+= U_L H,
+\end{dmath}
+proving \cref{eqn:ProblemSet2Problem2:520} as desired.
+
+Incidentally, \cref{eqn:ProblemSet2Problem2:500} shows that
+\begin{dmath}\label{eqn:ProblemSet2Problem2:540}
+\sigma^2 U_L^\conj
+=
+U_L \sigma^2,
+\end{dmath}
+the identity that was claimed to be important for future spinor theory work.
+
 \makeSubAnswer{}{qft:problemSet2:2e}
 TODO.
 \makeSubAnswer{}{qft:problemSet2:2f}
