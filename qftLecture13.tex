@@ -69,7 +69,7 @@ For \( x^0 > t_{\text{after}} \)
    p^0 = \omega_\Bp
 }
 \end{dmath}
-where we have used \( \tilde{j}^\conj(p_0, \Bp = \tilde{j}(p_0, -\Bp) \).  This gives
+where we have used \( \tilde{j}^\conj(p_0, \Bp) = \tilde{j}(p_0, -\Bp) \).  This gives
 
 \begin{dmath}\label{eqn:qftLecture13:100}
 \phi(x) =
@@ -296,8 +296,8 @@ So for
 p^0 = \omega_\Bp
 }.
 \end{dmath}
-Let's call \( \phi(\Bx, t_0 \) the free Schr\"{o}dinger operator, where
-\( \phi(\Bx, t_0 \) is evaluated at a fixed value of \( t_0 \).  At such a point, the Schr\"{o}dinger and Heisenberg pictures concide.
+Let's call \( \phi(\Bx, t_0) \) the free Schr\"{o}dinger operator, where
+\( \phi(\Bx, t_0) \) is evaluated at a fixed value of \( t_0 \).  At such a point, the Schr\"{o}dinger and Heisenberg pictures concide.
 \begin{dmath}\label{eqn:qftLecture13:620}
 \antisymmetric{\phi(\Bx, t_0)}{\pi(\By, t_0)} = i \delta^3(\Bx - \By).
 \end{dmath}
@@ -402,7 +402,7 @@ i \PD{t}{} U(t, t_0)
 =
 H_{\text{int}, I}(t) U(t, t_0).
 }
-For the (Schr\"{o}dinger) interaction \( H_int = \
+For the (Schr\"{o}dinger) interaction \( H_{\text{int}} = \
 \lambda \int d^3 x \phi^4(\Bx, t_0)  \), what we really mean by
 \( H_{\text{int}, I}(t) \) is
 \begin{dmath}\label{eqn:qftLecture13:820}
@@ -430,7 +430,8 @@ i \PD{t}{} U(t, t_0)
 and assume that
 \begin{dmath}\label{eqn:qftLecture13:900}
 U(t, t_0)
-= 1
+=
+1
 + \lambda U_1(t, t_0)
 + \lambda^2 U_2(t, t_0)
 + \cdots
@@ -438,7 +439,27 @@ U(t, t_0)
 \end{dmath}
 
 Plugging into \cref{eqn:qftLecture13:880} and equate equal powers of \( \lambda \) on two sides
+\begin{dmath}\label{eqn:qftLecture13:1160}
+i \lambda \PD{t}{}U_1(t, t_0)
++ i \lambda^2 \PD{t}{}U_2(t, t_0)
++ \cdots
++ i \lambda^n \PD{t}{}U_n(t, t_0)
+=
+\lambda H_{\text{int}, I}(t)
+\lr{
+1
++ \lambda U_1(t, t_0)
++ \lambda^2 U_2(t, t_0)
++ \cdots
++ \lambda^n U_n(t, t_0)
+},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:qftLecture13:1180}
+\PD{t}{}U_k(t, t_0) = -i H_{\text{int}, I}(t) U_{k-1}(t, t_0).
+\end{dmath}
 
+Let's consider each power in turn
 \paragraph{\(O(\lambda^1)\):}
 \begin{dmath}\label{eqn:qftLecture13:920}
 \lambda i \PD{t}{U_1(t, t_0)} = \lambda
