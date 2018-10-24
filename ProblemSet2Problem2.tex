@@ -109,7 +109,10 @@ H \rightarrow U_L H U_R^\dagger,
 where the action of \( U_R^\dagger \) on the right is pure convention (we could have taken \( U_R \) instead).
 \( U_L \) and \( U_R \) are two sets of independent \(SU(2) \) transformations.
 The \( L \) and \( R \) (left and right) names are self-evident in the way \cref{eqn:ProblemSet2Problem2:60} is written.
-Show that under \(SU(2)_L \times SU(2)_R\), we have \( \delta H = i \omega_a^L \frac{\sigma^a}{2} H - i\omega_b^R H \frac{\sigma^b}{2}\).
+Show that under \(SU(2)_L \times SU(2)_R\)
+\begin{dmath}\label{eqn:ProblemSet2Problem2:760}
+\delta H = i \omega_a^L \frac{\sigma^a}{2} H - i\omega_b^R H \frac{\sigma^b}{2}.
+\end{dmath}
 
 Hint: clearly, the only thing you need to show is \(SU(2)_R\) invariance, as \(SU(2)_L\) was already shown.
 
@@ -650,12 +653,100 @@ H^\dagger H
 \phi_1^\conj & \phi_2^\conj
 \end{bmatrix}
 =
-%\begin{bmatrix}
-%\phi_2^\conj \phi_2 + \phi_1 \phi_1^\conj
-%\end{bmatrix}
+\begin{bmatrix}
+\phi_2^\conj \phi_2 + \phi_1 \phi_1^\conj & \phi_2 \phi_1 - \phi_1 \phi_2 \\
+\phi_1^\conj \phi_2^\conj - \phi_2^\conj \phi_1^\conj & \phi_1^\conj \phi_1 + \phi_2^\conj \phi_2
+\end{bmatrix}.
+\end{dmath}
+Assuming \( \antisymmetric{\phi_1}{\phi_2} = 0 \), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem2:600}
+H^\dagger H = \inv{2}
+\begin{bmatrix}
+\Abs{\phi_1}^2 + \Abs{\phi_2}^2 & 0 \\
+0 & \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+\end{bmatrix},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet2Problem2:620}
+\trace{
+   H^\dagger H
+}
+=
+\frac{2}{2} \lr{
+   \Abs{\phi_1}^2 +
+   \Abs{\phi_2}^2
+}
+=
+\Phi^\conj \Phi.
+\end{dmath}
+For the derivative terms
+\begin{dmath}\label{eqn:ProblemSet2Problem2:640}
+\partial_\mu H^\dagger \partial^\mu H
+=
+\begin{bmatrix}
+\partial_\mu \phi_2^\conj \partial^\mu \phi_2 + \partial_\mu \phi_1 \partial^\mu \phi_1^\conj & \partial_\mu \phi_2 \partial^\mu \phi_1 - \partial_\mu \phi_1 \partial^\mu \phi_2 \\
+\partial_\mu \phi_1^\conj \partial^\mu \phi_2^\conj - \partial_\mu \phi_2^\conj \partial^\mu \phi_1^\conj & \partial_\mu \phi_1^\conj \partial^\mu \phi_1 + \partial_\mu \phi_2^\conj \partial^\mu \phi_2
+\end{bmatrix}
+\end{dmath}
+Applying matched raising and lowering operations on one half of each of the cross terms kills them, leaving
+\begin{dmath}\label{eqn:ProblemSet2Problem2:720}
+\partial_\mu H^\dagger \partial^\mu H
+=
+\begin{bmatrix}
+\partial_\mu \phi_2^\conj \partial^\mu \phi_2 + \partial_\mu \phi_1 \partial^\mu \phi_1^\conj & 0 \\
+0 & \partial_\mu \phi_1^\conj \partial^\mu \phi_1 + \partial_\mu \phi_2^\conj \partial^\mu \phi_2
+\end{bmatrix}
+\end{dmath},
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem2:660}
+\trace{\partial_\mu H^\dagger \partial^\mu H }
+=
+\partial_\mu \Phi^\dagger
+\partial^\mu \Phi,
+\end{dmath}
+proving \cref{eqn:ProblemSet2Problem2:50}.
+
+We can see that the transformation \cref{eqn:ProblemSet2Problem2:60} leaves the Lagrangian density unchanged by direct substitution.  Let's do this term by term
+\begin{dmath}\label{eqn:ProblemSet2Problem2:680}
+\partial_\mu H^\dagger \partial^\mu H
+\rightarrow
+\partial_\mu (U_R H^\dagger \cancel{U_L^\dagger}) \partial^\mu (\cancel{U_L} H U_R^\dagger)
+=
+U_R (\partial_\mu H^\dagger \partial^\mu H) U_R^\dagger
+=
+(\partial_\mu H^\dagger \partial^\mu H) U_R U_R^\dagger
+=
+\partial_\mu H^\dagger \partial^\mu H,
+\end{dmath}
+since \( \partial_\mu H^\dagger \partial^\mu H \) is a scalar.  Similarily
+\begin{dmath}\label{eqn:ProblemSet2Problem2:700}
+ H^\dagger  H
+\rightarrow
+ (U_R H^\dagger \cancel{U_L^\dagger})  (\cancel{U_L} H U_R^\dagger)
+=
+U_R ( H^\dagger  H) U_R^\dagger
+=
+( H^\dagger  H) U_R U_R^\dagger
+=
+ H^\dagger  H.
 \end{dmath}
 
-TODO.
+Finally, the variation of \( H \) is given by
+
+\begin{dmath}\label{eqn:ProblemSet2Problem2:740}
+\delta H
+= H' - H
+\approx
+\lr{ 1 + \frac{i}{2} \omega_a^L \sigma^a } H
+\lr{ 1 - \frac{i}{2} \omega_b^R \sigma^b }
+-H
+=
+\frac{i}{2} \lr{ \omega_a^L \sigma^a H - H \omega_b^R \sigma^b } + O(\omega^2)
+=
+\frac{i}{2} \lr{ \omega_a^L \sigma^a H - \omega_a^R H \sigma^a },
+\end{dmath}
+which recovers \cref{eqn:ProblemSet2Problem2:760} as desired.
+
 \makeSubAnswer{}{qft:problemSet2:2f}
 TODO.
 }

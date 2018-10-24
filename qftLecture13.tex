@@ -35,8 +35,8 @@ These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Pr
 
 \section{Review: ``particle creation problem''.}
 
-F1: windowed function from last lecture.
-
+We imagined that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}, which is acting as a forcing source for the non-homogeneous Klien-Gordon equation
+\imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
 \begin{dmath}\label{eqn:qftLecture13:20}
 \lr{ \partial_\mu \partial^\mu + m^2 } \phi = j
 \end{dmath}
@@ -202,20 +202,21 @@ D_F(x) = \bra{0} T(\phi(x) \phi(0)) \ket{0}.
 
 Recall that the four dimensional form of the Green's function was
 \begin{dmath}\label{eqn:qftLecture13:400}
-D_F = i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x} \inv{ p^2 - m^2 }
+D_F = i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x} \inv{ p^2 - m^2 }.
 \end{dmath}
+For the Feynman case, the contour that we were taking around the poles can also be accomplished by shifting the poles strategically, as sketched in \cref{fig:feynmanDeformationTwoWays:feynmanDeformationTwoWaysFig1}.
 
-where we were going around the poles like
-F2
+\imageFigure{../figures/phy2403-quantum-field-theory/feynmanDeformationTwoWaysFig1}{Feynman deformation or equivalent shift of the poles.}{fig:feynmanDeformationTwoWays:feynmanDeformationTwoWaysFig1}{0.3}
 
-We can make this explicit by introducing an offset
+This shift can be expressed explicit algebraically by introducing an offset
 \begin{dmath}\label{eqn:qftLecture13:420}
 D_F = i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x} \inv{ p^2 - m^2 + i \epsilon }
 \end{dmath}
 which puts the poles at
 
 \begin{dmath}\label{eqn:qftLecture13:440}
-(p^0)^2 = \pm \sqrt{ \omega_\Bp - i \epsilon }
+p^0 
+= \pm \sqrt{ \omega_\Bp - i \epsilon }
 = \pm \omega_\Bp \lr{ 1 - \frac{i \epsilon}{\omega_\Bp^2} }^{1/2}
 = \pm \omega_\Bp \lr{ 1 - \inv{2} \frac{i \epsilon}{\omega_\Bp^2} }
 =
@@ -497,8 +498,8 @@ dt'
 H_{\text{int}, I}(t'')
 H_{\text{int}, I}(t').
 \end{dmath}
-The integration range is sketched in
-F3 (the upper half of the triangle).
+This integration range is the upper triangular region sketched in \cref{fig:upperTriangleIntegrationRegion:upperTriangleIntegrationRegionFig2}.
+\imageFigure{../figures/phy2403-quantum-field-theory/upperTriangleIntegrationRegionFig2}{Upper triangular integration region.}{fig:upperTriangleIntegrationRegion:upperTriangleIntegrationRegionFig2}{0.3}
 
 Claim: We can integrate over the entire square, and divide by two, provided we keep the time ordering
 \begin{dmath}\label{eqn:qftLecture13:1040}
