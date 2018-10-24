@@ -85,3 +85,5 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture11.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture12.tex
 ../latex/bin/lgrep qftLecture13.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture13.tex
+../latex/bin/lgrep qftLecture14.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture14.tex
