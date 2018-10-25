@@ -1,3 +1,4 @@
+nonhomoKGhamiltonian.tex
 ProblemSet1Problem1.tex
 ProblemSet1Problem2.tex
 ProblemSet1Problem3.tex

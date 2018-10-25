@@ -89,3 +89,5 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture13.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture14.tex
 ../latex/bin/lgrep questionOct24.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl questionOct24.tex
+../latex/bin/lgrep nonhomoKGhamiltonian.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl nonhomoKGhamiltonian.tex

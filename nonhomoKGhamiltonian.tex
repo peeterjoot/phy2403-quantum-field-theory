@@ -1,0 +1,130 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+%%%\input{../latex/blogpost.tex}
+%%%\renewcommand{\basename}{nonhomoKGhamiltonian}
+%%%%\renewcommand{\dirname}{notes/phy1520/}
+%%%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%%%\newcommand{\dateintitle}{}
+%%%%\newcommand{\keywords}{}
+%%%
+%%%\input{../latex/peeter_prologue_print2.tex}
+%%%
+%%%\usepackage{peeters_layout_exercise}
+%%%\usepackage{peeters_braket}
+%%%\usepackage{peeters_figures}
+%%%\usepackage{siunitx}
+%%%\usepackage{verbatim}
+%%%%\usepackage{mhchem} % \ce{}
+%%%%\usepackage{macros_bm} % \bcM
+%%%%\usepackage{macros_qed} % \qedmarker
+%%%%\usepackage{txfonts} % \ointclockwise
+%%%
+%%%\beginArtNoToc
+%%%
+%%%\generatetitle{Hamiltonian for the non-homogeneous Klein-Gordon equation}
+%\chapter{Hamiltonian for the non-homogeneous Klein-Gordon equation}
+%\label{chap:nonhomoKGhamiltonian}
+\section{Problems.}
+
+\makeproblem{Hamiltonian with forcing term.}{problem:qftLecture13:1280}{
+Prove \cref{eqn:qftLecture13:140}.
+} % problem
+
+\makeanswer{problem:qftLecture13:1280}{
+In class we derived the field for the non-homogeneous Klein-Gordon equation
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:20}
+\phi(x)
+= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
+\evalbar{
+\lr{
+   e^{-i p \cdot x} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
+   +
+   e^{i p \cdot x} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
+}
+}
+{
+p^0 = \omega_\Bp
+}
+= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
+\lr{
+   e^{-i \omega_\Bp t + i \Bp \cdot \Bx} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
+   +
+   e^{i \omega_\Bp t - i \Bp \cdot \Bx} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
+}.
+\end{dmath}
+This means that we have
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:40}
+\begin{aligned}
+\pi = \dot{\phi}
+&= \int \frac{d^3 p}{(2\pi)^3} \frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}}
+\lr{
+   - e^{-i \omega_\Bp t + i \Bp \cdot \Bx} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
+   +
+   e^{i \omega_\Bp t - i \Bp \cdot \Bx} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
+} \\
+(\spacegrad \phi)_k =
+&= \int \frac{d^3 p}{(2\pi)^3} \frac{i p_k}{\sqrt{2 \omega_\Bp}}
+\lr{
+     e^{-i \omega_\Bp t + i \Bp \cdot \Bx} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
+   -
+   e^{i \omega_\Bp t - i \Bp \cdot \Bx} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
+},
+\end{aligned}
+\end{equation}
+and could plug these into the Hamiltonian
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:60}
+H = \int d^3 p \lr{ \inv{2} \pi^2 + \inv{2} \lr{ \spacegrad \phi}^2 + \frac{m^2}{2} \phi^2 },
+\end{dmath}
+to find \( H \) in terms of \( \tilde{j} \) and \( a_\Bp^\dagger, a_\Bp \).  The result was mentioned in class, and it was left as an exercise to verify.
+
+There's an easy way and a dumb way to do this exercise.  I did it the dumb way, and then after suffering through two long pages, where the equations were so long that I had to write on the paper sideways, I realized the way I should have done it.
+
+The easy way is to observe that we've already done exactly this for the case \( \tilde{j} = 0 \), which had the answer
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:80}
+H = \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger }.
+\end{dmath}
+To handle this more general case, all we have to do is apply a transformation
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:100}
+a_\Bp \rightarrow
+a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}},
+\end{dmath}
+to \cref{eqn:nonhomoKGhamiltonian:80}, which gives
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:120}
+H
+=
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger }
+=
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
+}.
+\end{dmath}
+
+Like the \( \tilde{j} = 0 \) case, we can use normal ordering.  This is easily seen by direct expansion:
+\begin{dmath}\label{eqn:nonhomoKGhamiltonian:140}
+\begin{aligned}
+\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }
+&=
+a_\Bp^\dagger a_\Bp
+- \frac{i \tilde{j}^\conj(p) a_\Bp}{\sqrt{2 \omega_\Bp}}
++ \frac{ a_\Bp^\dagger i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}}
++ \frac{\Abs{j}^2}{2 \omega_\Bp} \\
+\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
+&=
+a_\Bp^\dagger a_\Bp
++ \frac{i \tilde{j}^\conj(p) a_\Bp^\dagger}{\sqrt{2 \omega_\Bp}}
+- \frac{ a_\Bp i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}}
++ \frac{\Abs{j}^2}{2 \omega_\Bp}.
+\end{aligned}
+\end{dmath}
+Because \( \tilde{j} \) is just a complex valued function, it commutes with \( a_\Bp, a_\Bp^\dagger \), and these are equal up to the normal ordering, allowing us to write
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:160}
+:H: =
+\int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}}} \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} },
+\end{equation}
+which is the result mentioned in class (albeit without the explicit normal ordering syntax.)
+} % answer
+
+%}
+%\EndNoBibArticle
