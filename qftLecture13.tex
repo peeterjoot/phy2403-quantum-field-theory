@@ -3,40 +3,40 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture13}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 13: Forced Klein-Gordon equation, coherent states, number density, time ordered product, pole shifting, perturbation theory, Heisenberg picture, interaction picture, Dyson's formula.  Taught by Prof.\ Erich Poppitz}
-%\chapter{Forced Klein-Gordon equation, coherent states, number density, time ordered product, pole shifting, perturbation theory, Heisenberg picture, interaction picture, Dyson's formula}
+%%%\input{../latex/blogpost.tex}
+%%%\renewcommand{\basename}{qftLecture13}
+%%%\renewcommand{\dirname}{notes/phy2403/}
+%%%\newcommand{\keywords}{PHY2403H}
+%%%\input{../latex/peeter_prologue_print2.tex}
+%%%
+%%%%\usepackage{phy2403}
+%%%\usepackage{peeters_braket}
+%%%\usepackage{peeters_layout_exercise}
+%%%\usepackage{peeters_figures}
+%%%\usepackage{mathtools}
+%%%\usepackage{siunitx}
+%%%\usepackage{macros_cal} % LL
+%%%
+%%%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%%%
+%%%\beginArtNoToc
+%%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 13: Forced Klein-Gordon equation, coherent states, number density, time ordered product, pole shifting, perturbation theory, Heisenberg picture, interaction picture, Dyson's formula.  Taught by Prof.\ Erich Poppitz}
+\chapter{Forced Klein-Gordon equation, coherent states, number density, time ordered product, perturbation theory, Heisenberg picture, interaction picture, Dyson's formula}
 \label{chap:qftLecture13}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
+%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%%
+%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%%
 \section{Review: ``particle creation problem''.}
 
 We imagined that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}, which is acting as a forcing source for the non-homogeneous Klein-Gordon equation
-\imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
+%\imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
 \begin{dmath}\label{eqn:qftLecture13:20}
 \lr{ \partial_\mu \partial^\mu + m^2 } \phi = j
 \end{dmath}
@@ -218,38 +218,6 @@ Using this helpful construct, the Feynman's Green function can now be written in
 \boxedEquation{eqn:qftLecture13:380}{
 D_F(x) = \bra{0} T(\phi(x) \phi(0)) \ket{0}.
 }
-
-\paragraph{Remark:}
-
-Recall that the four dimensional form of the Green's function was
-\begin{dmath}\label{eqn:qftLecture13:400}
-D_F = i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x} \inv{ p^2 - m^2 }.
-\end{dmath}
-For the Feynman case, the contour that we were taking around the poles can also be accomplished by shifting the poles strategically, as sketched in \cref{fig:feynmanDeformationTwoWays:feynmanDeformationTwoWaysFig1}.
-
-\imageFigure{../figures/phy2403-quantum-field-theory/feynmanDeformationTwoWaysFig1}{Feynman deformation or equivalent shift of the poles.}{fig:feynmanDeformationTwoWays:feynmanDeformationTwoWaysFig1}{0.3}
-
-This shift can be expressed explicit algebraically by introducing an offset
-\begin{dmath}\label{eqn:qftLecture13:420}
-D_F = i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x} \inv{ p^2 - m^2 + i \epsilon }
-\end{dmath}
-which puts the poles at
-
-\begin{dmath}\label{eqn:qftLecture13:440}
-p^0
-= \pm \sqrt{ \omega_\Bp - i \epsilon }
-= \pm \omega_\Bp \lr{ 1 - \frac{i \epsilon}{\omega_\Bp^2} }^{1/2}
-= \pm \omega_\Bp \lr{ 1 - \inv{2} \frac{i \epsilon}{\omega_\Bp^2} }
-=
-\left\{
-\begin{array}{l}
-+\omega_\Bp - \inv{2} i \frac{\epsilon}{\omega_\Bp} \\
--\omega_\Bp + \inv{2} i \frac{\epsilon}{\omega_\Bp} \\
-\end{array}
-\right.
-\end{dmath}
-
-FIXME: don't see how this was connected to this lecture.  Move this section into notes for last class.
 
 \section{Interacting field theory: perturbation theory in QFT.}
 
@@ -693,4 +661,4 @@ Our goal is to compute: \( \bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omeg
 %%%
 %}
 %\EndArticle
-\EndNoBibArticle
+%\EndNoBibArticle
