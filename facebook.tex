@@ -28,9 +28,63 @@
 %\chapter{Images for the group chat}
 %\label{chap:facebook}
 
+%\begin{equation*}
+%j^\mu = \trace{\lr{ \delta H^\dagger \partial^\mu H + \partial^\mu H^\dagger \delta H }}
+%\end{equation*}
+%
+i.e.
 \begin{equation*}
-j^\mu = \trace{\lr{ \delta H^\dagger \partial^\mu H + \partial^\mu H^\dagger \delta H }}
+\begin{aligned}
+H &= \inv{\sqrt{2}}
+\begin{bmatrix}
+i \sigma^2 \Phi^\conj & \Phi
+\end{bmatrix} \\
+H^\dagger &= \inv{\sqrt{2}}
+\begin{bmatrix}
+-i \Phi^\T \sigma^2 \\
+\Phi^\dagger
+\end{bmatrix}
+\end{aligned}
 \end{equation*}
+so
+\begin{dmath}\label{eqn:facebook:20}
+j^{\mu, a}_L
+=
+\frac{i}{2}
+   \trace{\lr{
+- H^\dagger \sigma^a
+\partial^\mu H
+   +
+   \partial^\mu H^\dagger
+\sigma^a H
+   }}
+=
+\frac{i}{4}
+   \trace{\lr{
+-
+\begin{bmatrix}
+-i \Phi^\T \sigma^2 \\
+\Phi^\dagger
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+i \sigma^2 \partial^\mu \Phi^\conj & \partial^\mu \Phi
+\end{bmatrix}
+   +
+\begin{bmatrix}
+-i \partial^\mu \Phi^\T \sigma^2 \\
+\partial^\mu \Phi^\dagger
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+i \sigma^2 \Phi^\conj & \Phi
+\end{bmatrix}
+  }}
+=
+\cdots
+=
+\frac{i}{2} \lr{ \partial^\mu \Phi^\dagger \sigma^a \Phi - \Phi^\dagger \sigma^a \partial^\mu \Phi}
+\end{dmath}
 
 %}
 \EndArticle

@@ -276,7 +276,7 @@ i \alpha
 \end{dmath}
 
 \makeSubAnswer{}{qft:problemSet2:2b}
-Let's work with the individual fields so the commutators can be computed more easily.  Expanding out the matrices, we have
+The conserved charge is
 \begin{dmath}\label{eqn:ProblemSet2Problem2:300}
 Q^a
 = \frac{i}{2} \int d^3 x
@@ -291,7 +291,10 @@ Q^a
    \Pi^\dagger \sigma^a \Phi
    -
    \Phi^\dagger \sigma^a \Pi
-}
+},
+\end{dmath}
+which can be expressed in terms of the individual fields so the commutators can be computed more easily.  Expanding out the matrices, we have
+\begin{dmath}\label{eqn:ProblemSet2Problem2:980}
 =
 \frac{i}{2} \int d^3 x
 \lr{
@@ -965,19 +968,242 @@ j_R^\mu
 \frac{i \omega_a^R}{2}
    \trace{\lr{
 \sigma^a H^\dagger \partial^\mu H
-   +
+   -
    \partial^\mu H^\dagger H \sigma^a
    }}
 =
 \frac{i \omega_a^R}{2}
    \trace{\lr{
 \partial^\mu H
-\sigma^a H^\dagger 
-   +
+\sigma^a H^\dagger
+   -
 H \sigma^a
-   \partial^\mu H^\dagger 
+   \partial^\mu H^\dagger
    }},
 \end{dmath}
 where \( \trace{(ABC)} = \trace{(BCA)} = \trace{(CAB)} \) was used coerse this result into the desired form.  An assignment \( j^\mu_R = \omega_a j^{\mu,a}_R \) completes the proof.
+
+\paragraph{Charges.}
+
+To help show that the charges obey the angular momentum relations we can prepare by evaluating the trace operators.  For \( j^{\mu,a}_L \) this reduction submits nicely to block matrix form using \cref{eqn:ProblemSet2Problem2:880}.
+
+\begin{dmath}\label{eqn:ProblemSet2Problem2:960}
+j^{\mu, a}_L
+=
+\frac{i}{2} \trace{\lr{
+\partial^\mu H^\dagger \sigma^a H - H^\dagger \sigma^a \partial^\mu H
+}}
+=
+\frac{i}{4}
+   \trace{\lr{
+\begin{bmatrix}
+-i \Phi^\T \sigma^2 \\
+\Phi^\dagger
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+i \sigma^2 \partial^\mu \Phi^\conj & \partial^\mu \Phi
+\end{bmatrix}
+-
+\begin{bmatrix}
+-i \partial^\mu \Phi^\T \sigma^2 \\
+\partial^\mu \Phi^\dagger
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+i \sigma^2 \Phi^\conj & \Phi
+\end{bmatrix}
+  }}
+=
+\frac{i}{4}
+   \trace{\lr{
+\begin{bmatrix}
+-i \Phi^\T \sigma^2 \sigma^a i \sigma^2 \partial^\mu \Phi^\conj & \cdots \\
+\cdots & \Phi^\dagger \sigma^a \partial^\mu \Phi
+\end{bmatrix}
+-
+\begin{bmatrix}
+-i \partial^\mu \Phi^\T \sigma^2 \sigma^a i \sigma^2 \Phi^\conj & \cdots \\
+\cdots &
+\partial^\mu \Phi^\dagger \sigma^a \Phi
+\end{bmatrix}
+  }}
+=
+\frac{i}{4}
+\lr{
+  \Phi^\T \sigma^2 \sigma^a \sigma^2 \partial^\mu \Phi^\conj
++ \Phi^\dagger \sigma^a \partial^\mu \Phi
+- \partial^\mu \Phi^\T \sigma^2 \sigma^a \sigma^2 \Phi^\conj
+- \partial^\mu \Phi^\dagger \sigma^a \Phi
+}
+=
+\frac{i}{4}
+\times
+\left\{
+\begin{array}{l l}
+  \Phi^\T \sigma^2 \partial^\mu \Phi^\conj
++ \Phi^\dagger \sigma^2 \partial^\mu \Phi
+- \partial^\mu \Phi^\T \sigma^2 \Phi^\conj
+- \partial^\mu \Phi^\dagger \sigma^2 \Phi
+ & \quad \mbox{\( a = 2 \)} \\
+- \Phi^\T \sigma^a \partial^\mu \Phi^\conj
++ \Phi^\dagger \sigma^a \partial^\mu \Phi
++ \partial^\mu \Phi^\T \sigma^a \Phi^\conj
+- \partial^\mu \Phi^\dagger \sigma^a \Phi
+ & \quad \mbox{\( a \ne 2 \)}
+\end{array}
+\right.
+=
+\frac{i}{4}
+\times
+\left\{
+\begin{array}{l l}
+- \partial^\mu \Phi^\dagger \sigma^2 \Phi
++ \Phi^\dagger \sigma^2 \partial^\mu \Phi
++ \Phi^\dagger \sigma^2 \partial^\mu \Phi
+- \partial^\mu \Phi^\dagger \sigma^2 \Phi
+ & \quad \mbox{\( a = 2 \)} \\
+- \partial^\mu \Phi^\dagger \sigma^a \Phi
++ \Phi^\dagger \sigma^a \partial^\mu \Phi
++ \Phi^\dagger \sigma^a \partial^\mu \Phi
+- \partial^\mu \Phi^\dagger \sigma^a \Phi
+ & \quad \mbox{\( a \ne 2 \)}
+\end{array}
+\right.
+=
+\frac{i}{2}
+\lr{
+   \Phi^\dagger \sigma^a \partial^\mu \Phi
+   - \partial^\mu \Phi^\dagger \sigma^a \Phi
+}.
+\end{dmath}
+The conserved charge has the structure
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1000}
+Q^{\mu, a}_L
+=
+\frac{i}{2}
+\int d^3 x
+\lr{
+   \Phi^\dagger \sigma^a \Pi
+   - \Pi^\dagger \sigma^a \Phi
+},
+\end{dmath}
+which differs only by a sign from the conserved charge that we found in \cref{eqn:ProblemSet2Problem2:300}, which we already demonstrated has the commutator properties of angular momentum operators.
+
+A \cref{eqn:ProblemSet2Problem2:960} reduction is possible for \( j^{\mu,a}_R \) too, but needs to be setup differently.  Let
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1020}
+\Psi =
+\begin{bmatrix}
+\phi_2 \\
+\phi_1^\conj
+\end{bmatrix},
+\end{dmath}
+which allows us to put \( H, H^\dagger \) in an appropriate block matrix form
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1040}
+\begin{aligned}
+H &=
+\inv{\sqrt{2}}
+\begin{bmatrix}
+\Psi^\dagger \\
+\Psi^\T i \sigma^2
+\end{bmatrix} \\
+H^\dagger &=
+\inv{\sqrt{2}}
+\begin{bmatrix}
+\Psi & -i \sigma^2 \Psi^\conj
+\end{bmatrix}.
+\end{aligned}
+\end{dmath}
+
+Plugging this in for \( j^{\mu, a}_R \) we find
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1060}
+j^{\mu, a}_R
+=
+\frac{i}{2} \trace{\lr{
+   \partial^\mu H \sigma^a H^\dagger - H \sigma^a \partial^\mu H^\dagger
+}}
+=
+\frac{i}{4} \trace{\lr{
+\begin{bmatrix}
+\partial^\mu \Psi^\dagger \\
+\partial^\mu \Psi^\T i \sigma^2
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+\Psi & -i \sigma^2 \Psi^\conj
+\end{bmatrix}
+-
+\begin{bmatrix}
+\Psi^\dagger \\
+\Psi^\T i \sigma^2
+\end{bmatrix}
+\sigma^a
+\begin{bmatrix}
+\partial^\mu \Psi & -i \sigma^2 \partial^\mu \Psi^\conj
+\end{bmatrix}
+}}
+=
+\frac{i}{4} \lr{
+  \partial^\mu \Psi^\dagger \sigma^a \Psi
++ \partial^\mu \Psi^\T \sigma^2 \sigma^a \sigma^2 \Psi^\conj
+- \Psi^\dagger \sigma^a \partial^\mu \Psi
+- \Psi^\T \sigma^2 \sigma^a \sigma^2 \partial^\mu \Psi^\conj
+}
+=
+\frac{i}{4}
+\left\{
+\begin{array}{l l}
+  \partial^\mu \Psi^\dagger \sigma^2 \Psi
++ \partial^\mu \Psi^\T \sigma^2 \Psi^\conj
+- \Psi^\dagger \sigma^2 \partial^\mu \Psi
+- \Psi^\T \sigma^2 \partial^\mu \Psi^\conj
+ & \quad \mbox{\( a = 2 \)} \\
+  \partial^\mu \Psi^\dagger \sigma^a \Psi
+- \partial^\mu \Psi^\T \sigma^a \Psi^\conj
+- \Psi^\dagger \sigma^a \partial^\mu \Psi
++ \Psi^\T \sigma^a \partial^\mu \Psi^\conj
+ & \quad \mbox{\( a \ne 2 \)}
+\end{array}
+\right.
+=
+\frac{i}{4}
+\left\{
+\begin{array}{l l}
+  \partial^\mu \Psi^\dagger \sigma^2 \Psi
+-
+\Psi^\dagger
+\sigma^2
+\partial^\mu \Psi
+- \Psi^\dagger \sigma^2 \partial^\mu \Psi
++
+\partial^\mu \Psi^\dagger
+\sigma^2
+\Psi
+ & \quad \mbox{\( a = 2 \)} \\
+  \partial^\mu \Psi^\dagger \sigma^a \Psi
+- \Psi^\dagger \sigma^a \partial^\mu \Psi
+- \Psi^\dagger \sigma^a \partial^\mu \Psi
++ \partial^\mu \Psi^\dagger \sigma^a \Psi
+ & \quad \mbox{\( a \ne 2 \)}
+\end{array}
+\right.
+=
+\frac{i}{2}
+\lr{
+  \partial^\mu \Psi^\dagger \sigma^a \Psi
+- \Psi^\dagger \sigma^a \partial^\mu \Psi
+}.
+\end{dmath}
+The conserved charge is therefore
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1080}
+Q^{\mu, a}_R
+=
+\frac{i}{2}
+\int d^3 x
+\lr{
+  \dot{\Psi}^\dagger \sigma^a \Psi
+- \Psi^\dagger \sigma^a \dot{\Psi }
+}.
+\end{dmath}
 
 }
