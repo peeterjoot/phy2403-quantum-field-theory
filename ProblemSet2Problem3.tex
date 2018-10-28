@@ -47,7 +47,7 @@ The second one has, clearly, smaller energy density. To quantize the theory, we 
    +
    \Abs{\phi_2}^2
 = 0 \)
-, we will find that the \( \phi _{1,2} \) excitations are tachyons, even classically. This signals an instability, rather than a faster-than-light propagation and shows that we have chosen the wrong value of \( \phi \) to build our quantum theory.
+, we will find that the \( \phi _{1,2} \) excitations are tachyons, even classically. This signals an instability, rather than a faster-than-light propagation and shows that we have chosen the wrong value of \( \Phi \) to build our quantum theory.
 \makesubproblem{}{qft:problemSet2:3c}
 Thus, consider the
 \(
@@ -158,7 +158,75 @@ Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when \( m^2 > 0\)
 
 \makeanswer{qft:problemSet2:3}{
 \makeSubAnswer{}{qft:problemSet2:3a}
-TODO.
+To expand the potential note that
+\begin{dmath}\label{eqn:ProblemSet2Problem3:140}
+\trace{\lr{
+H^\dagger H
+}}
+=
+\inv{2}
+\trace{\lr{
+\begin{bmatrix}
+-i \Phi^\T \sigma^2 \\
+\Phi^\dagger
+\end{bmatrix}
+\begin{bmatrix}
+i \sigma^2 \Phi^\conj & \Phi
+\end{bmatrix}
+}}
+=
+\inv{2}\lr{ \Phi^\T \Phi^\dagger + \Phi^\dagger \Phi }
+=
+\inv{2}\lr{
+   \phi_1 \phi_1^\conj + \phi_2 \phi_2^\conj + \phi_1^\conj \phi_1 + \phi_2^\conj \phi^2
+}
+=
+\Abs{\phi_1}^2 + \Abs{\phi_2}^2,
+\end{dmath}
+so we have
+\begin{dmath}\label{eqn:ProblemSet2Problem3:160}
+V = -\Abs{m}^2
+\trace{\lr{
+H^\dagger H
+}}
++ \lambda\lr{
+\trace{\lr{
+H^\dagger H
+}}}^2
+=
+-
+\Abs{m}^2
+\lr{
+   \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+}
++ \lambda
+\lr{
+   \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+}^2
+=
+\lambda\lr{
+   \lr{
+      \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+   }^2
+   -
+   \frac{\Abs{m}^2 }{\lambda}
+   \lr{
+      \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+   }
+}
+=
+\lambda\lr{
+      \Abs{\phi_1}^2 + \Abs{\phi_2}^2
+   -
+   \frac{\Abs{m}^2 }{2\lambda}
+}^2
+   -
+\lambda
+\lr{
+   \frac{\Abs{m}^2 }{2\lambda}
+}^2,
+\end{dmath}
+which proves the result and shows that the constant is \( - \frac{\Abs{m}^4 }{4\lambda} \).
 \makeSubAnswer{}{qft:problemSet2:3b}
 TODO.
 \makeSubAnswer{}{qft:problemSet2:3c}
