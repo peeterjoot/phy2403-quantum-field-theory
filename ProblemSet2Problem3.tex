@@ -213,7 +213,11 @@ H^\dagger H
    \lr{
       \Abs{\phi_1}^2 + \Abs{\phi_2}^2
    }
-}
+}.
+\end{dmath}
+Completing the square gives
+\begin{dmath}\label{eqn:ProblemSet2Problem3:180}
+V
 =
 \lambda\lr{
       \Abs{\phi_1}^2 + \Abs{\phi_2}^2
@@ -228,7 +232,69 @@ H^\dagger H
 \end{dmath}
 which proves the result and shows that the constant is \( - \frac{\Abs{m}^4 }{4\lambda} \).
 \makeSubAnswer{}{qft:problemSet2:3b}
-TODO.
+From \cref{eqn:ProblemSet2Problem3:160} the first order expansion, ignoring constant terms, around \( \Abs{\phi_1}^2 + \Abs{\phi_2}^2 = 0 \) is
+\begin{equation}\label{eqn:ProblemSet2Problem3:360}
+V = -\Abs{m^2} \lr{ \Abs{\phi_1}^2 + \Abs{\phi_2}^2 } = -\Abs{m^2} \Phi^\dagger \Phi.
+\end{equation}
+The Langrangian density, to first order, may be written in the compact form
+\begin{dmath}\label{eqn:ProblemSet2Problem3:200}
+\LL = \partial_\mu \Phi^\dagger \partial^\mu \Phi + \Abs{m}^2 \Phi^\dagger \Phi.
+\end{dmath}
+The equations of motion are
+\begin{dmath}\label{eqn:ProblemSet2Problem3:220}
+\begin{aligned}
+\partial_\mu \partial^\mu \Phi &= \Abs{m}^2 \Phi \\
+\partial_\mu \partial^\mu \Phi^\dagger &= \Abs{m}^2 \Phi^\dagger
+\end{aligned},
+\end{dmath}
+or, \( \partial_\mu \partial^\mu \psi = \Abs{m}^2 \psi \) for any \( \psi \in \phi_1, \phi_2, \phi_1^\conj, \phi_2^\conj \).
+
+Suppose that one of these wave functions has a Fourier transform representation
+\begin{dmath}\label{eqn:ProblemSet2Problem3:240}
+\psi(x) = \int \frac{d^4 p}{(2\pi)^4} e^{i p \cdot x} \tilde{\psi}.
+\end{dmath}
+Such a solution must satisfy the equations of motion
+\begin{dmath}\label{eqn:ProblemSet2Problem3:260}
+0
+=
+\lr{
+   \partial_{tt} - \spacegrad^2 - \Abs{m^2}
+}
+\psi
+=
+\lr{
+   \partial_{tt} - \spacegrad^2 - \Abs{m^2}
+}
+\int \frac{d^4 p}{(2\pi)^4} e^{i \omega t - i \Bp \cdot \Bx} \tilde{\psi}.
+=
+\int \frac{d^4 p}{(2\pi)^4}
+\lr{
+   (i\omega)^2 - (-i \Bp)^2 -\Abs{m}^2
+}
+e^{i \omega t - i \Bp \cdot \Bx} \tilde{\psi},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem3:280}
+0 = -\omega^2 + \Bp^2 - \Abs{m}^2,
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet2Problem3:300}
+\omega = \sqrt{\Bp^2 - \Abs{m}^2}.
+\end{dmath}
+Any \( \Abs{\Bp} < \Abs{m} \) results in an imaginary angular frequency.  For example, at \( \Bp = 0 \), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem3:320}
+\omega = \pm i \Abs{m}.
+\end{dmath}
+In particular
+\begin{dmath}\label{eqn:ProblemSet2Problem3:340}
+p_0 x^0
+=
+\omega t
+= \pm i \Abs{m} t
+= \pm \Abs{m} ( i t ).
+\end{dmath}
+We see that the angular momentum constraint on the system \cref{eqn:ProblemSet2Problem3:280} results in the imaginary time that is characteristic of tachonic solutions.
+
 \makeSubAnswer{}{qft:problemSet2:3c}
 TODO.
 \makeSubAnswer{}{qft:problemSet2:3d}
