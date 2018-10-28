@@ -35,7 +35,88 @@ For \( m^2 > 0 \), study the behavior of \( D(x) \) for spacelike \( x \) and fi
 
 \makeanswer{qft:problemSet2:1}{
 \makeSubAnswer{}{qft:problemSet2:1a}
-TODO.
+Let's evaluate the integral in spherical polar coordinates
+\begin{dmath}\label{eqn:ProblemSet2Problem1:80}
+\begin{aligned}
+\Bp &= p (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta) \\
+\Bx &= r(0, 0, 1) \\
+d^3 p &= p^2 dp \sin\theta d\theta d\phi \\
+\omega_\Bp &= \sqrt{\Bp^2 + \cancel{m^2}} = \Abs{\Bp} = p.
+\end{aligned},
+\end{dmath}
+which gives
+\begin{dmath}\label{eqn:ProblemSet2Problem1:100}
+D(x)
+=
+\inv{(2\pi)^2} \int_{p = 0}^\infty dp\, p^2 \int_{\theta = 0}^\pi -d(\cos\theta) \inv{2 p} e^{-i p t + i p r \cos\theta}
+=
+-\inv{8 \pi^2} \int_{p = 0}^\infty dp\, p
+e^{-i p t}
+\evalrange{\frac{e^{i p r u}}{i p r}}{u = \cos\theta = 1}{-1}
+=
+\frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
+e^{-i p t}
+\lr{
+   e^{- i p r}
+   -e^{i p r}
+}
+=
+\frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
+\lr{
+   e^{- i p (r+t)}
+   -e^{i p (r-t)}
+}
+\end{dmath}
+As hinted, this half delta function should be interpreted offset slightly
+\begin{dmath}\label{eqn:ProblemSet2Problem1:120}
+D(x)
+=
+\frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
+\lr{
+   e^{- i p (r+t) + p \epsilon}
+   -e^{i p (r-t) - p \epsilon}
+}
+=
+\frac{i}{8 \pi^2 r}
+\evalrange{
+   \lr{
+      \frac{e^{- i p (r+t) - p \epsilon}}{-i(r+t) - \epsilon}
+      - \frac{e^{i p (r-t) - p \epsilon}}{i(r-t) - \epsilon}
+   }
+}
+{0}{\infty}
+=
+\frac{i}{8 \pi^2 r}
+   \lr{
+        \frac{1}{ i(r+t) + \epsilon }
+      + \frac{1}{ i(r-t) - \epsilon }
+   }
+=
+\frac{1}{8 \pi^2 r}
+   \lr{
+        \frac{1}{ r + t - \epsilon }
+      + \frac{1}{ r - t + \epsilon }
+   }
+\end{dmath}
+Employing the hint
+\cref{eqn:ProblemSet2Problem1:60}, this can be cast into delta function form
+\begin{dmath}\label{eqn:ProblemSet2Problem1:140}
+D(x)
+=
+\frac{1}{8 \pi^2 r}
+   \lr{
+        \calP \frac{1}{ r+t } + i \pi \delta( r + t )
+      +
+        \calP \frac{1}{ r-t } - i \pi \delta( r - t )
+   }
+=
+\frac{1}{8 \pi^2 r}
+   \lr{
+        \calP \frac{2 r }{ r^2 - t^2 } + i \pi \lr{ \delta( r + t ) - \delta( r - t ) }
+   },
+\end{dmath}
+which, after cosmetic rearrangement, is \cref{eqn:ProblemSet2Problem1:40}.
+
 \makeSubAnswer{}{qft:problemSet2:1b}
 TODO.
 }
