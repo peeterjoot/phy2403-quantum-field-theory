@@ -24,6 +24,8 @@
 %\chapter{XXX}
 \label{chap:qftLecture14}
 
+%s/_{\text{I,int}}/_{\\text{I,int}}
+
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
@@ -33,8 +35,174 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review}
+
+Given a field \( \phi(t_0, \Bx) \), satisfying the commutation relations
+\begin{dmath}\label{eqn:qftLecture14:20}
+\antisymmetric{\pi(t_0, \Bx)}{\phi(t_0, \By)} = -i \delta(\Bx - \By)
+\end{dmath}
+we introduced an interaction picture field given by
+\begin{dmath}\label{eqn:qftLecture14:40}
+\phi_I(t, x) = e^{i H_0(t- t_0)} \phi(t_0, \Bx) e^{-iH_0(t - t_0)}
+\end{dmath}
+related to the Heisenburg picture representation by
+\begin{dmath}\label{eqn:qftLecture14:60}
+\phi_H(t, x)
+= e^{i H(t- t_0)} \phi(t_0, \Bx) e^{-iH(t - t_0)}
+= U^\dagger(t, t_0) \phi_I(t, \Bx) U(t, t_0),
+\end{dmath}
+where \( U(t, t_0) \) is the time evolution operator.
+\begin{dmath}\label{eqn:qftLecture14:80}
+U(t, t_0) =
+e^{i H_0(t - t_0)}
+e^{i H(t - t_0)}
+\end{dmath}
+We argued that
+\begin{dmath}\label{eqn:qftLecture14:100}
+i \PD{t}{} U(t, t_0) = H_{\text{I,int}}(t) U(t, t_0)
+\end{dmath}
+We found the glorious expression
+\begin{dmath}\label{eqn:qftLecture14:120}
+U(t, t_0)
+= T \exp{\lr{ -i \int_{t_0}^t H_{\text{I,int}}(t') dt'}}
+=
+\sum_{n = 0}^\infty \frac{(-i)^n}{n!} \int_{t_0}^t dt_1 dt_2 \cdots dt_n T\lr{ H_{\text{I,int}}(t_1) H_{\text{I,int}}(t_2) \cdots H_{\text{I,int}}(t_n) }
+\end{dmath}
+
+However, what we are really after is
+\begin{dmath}\label{eqn:qftLecture14:140}
+\bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega}
+\end{dmath}
+Such a product has many labels and names, and we'll describe it as ``vacuum expectation values of time-ordered products of arbitrary \#s of local Heisenberg operators''.
+
+\section{Pertubation}
+
+\begin{dmath}\label{eqn:qftLecture14:n}
+\begin{aligned}
+H &= \text{exact Hamiltonian} = H_0 + H_int
+H_0 &= \text{free Hamiltonian.  We know all about \( H_0 \) and assume that it has a lowest (groundstate) \( \ket{0} \), the ``vacuum'' state of \( H_0 \).}
+\end{aligned}
+\end{dmath}
+
+H has eigenstates, in particular, assumed to have a unique ground state \( \ket{\Omega} \) satisfying
+\begin{dmath}\label{eqn:qftLecture14:n}
+H \ket{\Omega}  = \ket{\Omega} E_0,
+\end{dmath}
+and has states \( \ket{n} \), representing excited (non-vacuum states with energies > \( E_0 \)).
+These states are assumed to be a complete basis
+\begin{dmath}\label{eqn:qftLecture14:n}
+\BOne = \ket{\Omega}\bra{\Omega} + \sum_n \ket{n}\bra{n} + \int dn \ket{n}\bra{n}.
+\end{dmath}
+The latter is sometimes written with a superimposed sum-integral notation: F1.
+
+For some time \( T \) we have
+\begin{dmath}\label{eqn:qftLecture14:n}
+e^{-i H T} \ket{0} = e^{-i H T} 
+\lr{
+   \ket{\Omega}\braket{\Omega}{0} + \sum_n \ket{n}\braket{n}{0} + \int dn \ket{n}\braket{n}{0}.
+},
+\end{dmath}
+and now pull a fast one, considering a formal transformation \( T \rightarrow T(1 - i \epsilon) \), where \( \epsilon \rightarrow 0^+ \), and consider very large \( T \).  This gives
+\begin{dmath}\label{eqn:qftLecture14:n}
+\lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+} 
+e^{-i H T(1 - i \epsilon)} \ket{0} 
+= 
+\lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+} 
+e^{-i H T(1 - i \epsilon)} 
+\lr{
+   \ket{\Omega}\braket{\Omega}{0} + \sum_n \ket{n}\braket{n}{0} + \int dn \ket{n}\braket{n}{0}.
+}
+= 
+\lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+} 
+e^{-i E_0 T - E_0 T \epsilon} 
+   \ket{\Omega}\braket{\Omega}{0} + \sumint_n e^{-i E_n T - \epsilon E_n T} \ket{n}\braket{n}{0}
+=
+\lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+} 
+e^{-i E_0 T - E_0 T \epsilon} 
+\lr{
+   \ket{\Omega}\braket{\Omega}{0} + \sumint_n e^{-i (E_n -E_0) T - \epsilon T (E_n - E_0)} \ket{n}\braket{n}{0}
+}
+\end{dmath}
+The limits are evaluated by first taking \( T \) to infinity, then only after that take \( \epsilon \rightarrow 0^+ \).  Doing this, the sum is dominated by the ground state contribution, since each excited state also has a \( e^{-\epsilon T(E_n - E_0)} \) suppression factor (in addition to the leading suppression factor).
+
+Less formally, we can write
+\begin{dmath}\label{eqn:qftLecture14:n}
+\sumint \ket{n}\bra{n} \rightarrow 
+\sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k}\bra{\Bp, k}
+\end{dmath}
+where \( k \) is some unknown quantity that we are summing over.
+If we have 
+\begin{dmath}\label{eqn:qftLecture14:n}
+H \ket{\Bp, k} = E_{\Bp, k} \ket{\Bp, k},
+\end{dmath}
+then
+\begin{dmath}\label{eqn:qftLecture14:n}
+e^{-i H T} \sumint \ket{n}\bra{n}
+=
+\sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k} e^{-i E_{\Bp, k} \bra{\Bp, k}.
+\end{dmath}
+If we take matrix elements
+\begin{dmath}\label{eqn:qftLecture14:n}
+\bra{A} 
+e^{-i H T} \sumint \ket{n}\bra{n} \ket{B}
+=
+\sum_k \int \frac{d^3 p}{(2 \pi)^3} \braket{A}{\Bp, k} e^{-i E_{\Bp, k} \braket{\Bp, k}{B}
+=
+\sum_k \int \frac{d^3 p}{(2 \pi)^3} e^{-i E_{\Bp, k} f(\Bp).
+\end{dmath}
+If we assume that \( f(\Bp) \) is a well behaved smooth function, we have ``infinite'' frequency oscillation within a windowed function, as sketched in
+F2
+The Riemann-Lebescue lemma \citep{wiki:RiemannLebesgue} describes such integrals, the result of which is that such an integral goes to zero.  This is a different hand waving argument to argue that we can examine only the ground state contribution above.
+\begin{dmath}\label{eqn:qftLecture14:n}
+e^{-i H T} \ket{0} = e^{-i E_0 T} \ket{\Omega}\braket{\Omega}{0}
+\end{dmath}
+in the \( T \rightarrow \infty(1 - i \epsilon) \) limit.  We can now write the ground state as
+
+\begin{dmath}\label{eqn:qftLecture14:n}
+\ket{\Omega}
+= 
+\evalbar{
+\frac{ e^{i E_0 T - i H T } \ket{0} }{
+\braket{\Omega}{0} 
+}
+}{ T \rightarrow \infty(1 - i \epsilon) }
+=
+\evalbar{
+\frac{ e^{i H (T - t_0) } \ket{0} }{
+e{-i E_0(T + t_0)} \braket{\Omega}{0} 
+}
+}{ T \rightarrow \infty(1 - i \epsilon) }
+=
+\evalbar{
+\frac{ e^{i H (t_0 - (-T)) } e^{ -i H_0 (-T - t_0) } \ket{0} }{
+e{-i E_0(t_0 - (-T)} \braket{\Omega}{0} 
+}
+}{ T \rightarrow \infty(1 - i \epsilon) }
+\end{dmath}
+where we use \( H_0 \ket{0} = 0 \).
+
+With 
+\begin{dmath}\label{eqn:qftLecture14:n}
+U(t, t_0)
+= e^{i H_0(t - t_0)} e^{-i H(t - t_0)}
+= T \exp{\lr{ -i \int_{t_0}^t H_{\text{I,int}}(t') dt'}}
+\end{dmath}
+
+\paragraph{Claim:} Similarly (DIY) 
+\begin{dmath}\label{eqn:qftLecture14:n}
+U(t, t')
+= e^{i H_0(t - t_0)} e^{-i H(t - t')} e^{-i H_ (t' - t_0)}
+= T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}}
+\end{dmath}
+Observe that we recover \cref{eqn:qftLecture14:120} when \( t' = t_0 \).
+
+This gives
+\boxedEquation{eqn:qftLecture14:n}{
+\ket{\Omega}
+= \frac{U(t_0, -T) \ket{0} }{e^{-i E_0(t_0 - (-T))} \braket{\Omega}{0}
+}.
+
+We are close to where we want to be.  Wednesday we will start scattering and Feynman diagrams.
 
 %}
 \EndArticle
-%\EndNoBibArticle
