@@ -296,7 +296,166 @@ p_0 x^0
 We see that the angular momentum constraint on the system \cref{eqn:ProblemSet2Problem3:280} results in the imaginary time that is characteristic of tachonic solutions.
 
 \makeSubAnswer{}{qft:problemSet2:3c}
-TODO.
+It seems reasonable that we can assume that \( h(x) \) and \( \phi^a(x) \) in
+\cref{eqn:ProblemSet2Problem3:40} are all real valued scalar (non-matrix) functions.  That is \( h(x) \) has the role of radial extension or compression of the field magnitude, and the exponential is of the form \( e^{i \Bsigma \cdot \Bphi(x) } \), a matrix valued rotation operator, where \( \Bphi = (\phi^1, \phi^2, \phi^3)\).  Given that assumption, \( H^\dagger H \) can be computed with relative ease, and has only radial dependence
+\begin{dmath}\label{eqn:ProblemSet2Problem3:380}
+\trace{\lr{H^\dagger H}}
+=
+\frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\lr{ e^{-i \Bsigma \cdot \Bphi} e^{i \Bsigma \cdot \Bphi} }}
+=
+\frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\BOne}
+=
+\frac{\Abs{m}^2}{2 \lambda} (1 + h)^2.
+\end{dmath}
+ProblemSet2Problem3.tex
+For the derivative quadratic form, it is expediant to use the form \cref{eqn:ProblemSet2Problem3:60}, which gives
+\begin{dmath}\label{eqn:ProblemSet2Problem3:400}
+\partial_\mu H^\dagger \partial^\mu H
+=
+\frac{\Abs{m}^2}{4 \lambda}
+\lr{
+   \partial_\mu h \Omega^\dagger
+   + (1 + h) \partial_\mu \Omega^\dagger
+}
+\lr{
+   \partial^\mu h \Omega
+   + (1 + h)
+\partial^\mu \Omega
+}
+=
+\frac{\Abs{m}^2}{4 \lambda}
+\lr{
+   \partial_\mu h \Omega^\dagger \partial^\mu h \Omega
+   + (1 + h)
+      \lr{
+         \partial_\mu h
+         \Omega^\dagger (\partial^\mu \Omega)
+       +
+         \partial^\mu h
+         (\partial_\mu \Omega^\dagger) \Omega
+      }
+   + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
+}
+\end{dmath}
+where we have made the usual assumptions that the independent fields \((h, \Omega)\) commute.
+Because \( \Omega^\dagger \Omega = 1 \), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem3:480}
+\partial_\mu h
+\Omega^\dagger (\partial^\mu \Omega)
+ +
+\partial^\mu h
+(\partial_\mu \Omega^\dagger) \Omega
+=
+\partial_\mu h
+\lr{
+   \Omega^\dagger (\partial^\mu \Omega)
+    +
+   (\partial^\mu \Omega^\dagger) \Omega
+}
+=
+\partial_\mu h
+\lr{
+   \partial^\mu (\Omega^\dagger \Omega) - (\partial^\mu \Omega^\dagger) \Omega
+    +
+   (\partial^\mu \Omega^\dagger) \Omega
+}
+=
+   \partial^\mu (1)
+= 0.
+\end{dmath}
+All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to all orders, not just quadratric).
+
+Taking traces (and using cyclic permutation of the matrices in the trace operations),
+the Lagrangian density is now determined to quadratic order
+\begin{dmath}\label{eqn:ProblemSet2Problem3:500}
+\LL =
+\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+\frac{\Abs{m}^2}{4 \lambda}
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
++ \Abs{m}^2
+\frac{\Abs{m}^2}{2 \lambda} \lr{ 1 + h }^2
+- \lambda
+\lr{\frac{\Abs{m}^2}{2 \lambda}}^2
+\lr{ 1 + h }^4.
+\end{dmath}
+Observe that the Lagrangian density can be split into two independent parts, one for the radial field \( h \), and another for the rotation field \( \Omega \).  Rescaling to drop the common constant factor \( \Abs{m}^2/2\lambda \), the radial Lagrangian is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:560}
+\LL_h
+=
+\partial_\mu h \partial^\mu h
++ \Abs{m}^2
+\lr{ 1 + h }^2
+-
+\frac{\Abs{m}^2}{2}
+\lr{ 1 + h }^4
+=
+\partial_\mu h \partial^\mu h
+-\frac{\Abs{m}^2}{2}
+\lr{
+   \lr{ 1 + h }^4
+   -2 \lr{ 1 + h }^2
+}
+=
+\partial_\mu h \partial^\mu h
+-\frac{\Abs{m}^2}{2}
+\lr{
+   \lr{ 1 + h }^2 - 1
+}^2
++ \cancel{\text{const.}}
+=
+\partial_\mu h \partial^\mu h
+-\frac{\Abs{m}^2}{2}
+\lr{ 2 h + h^2
+}^2
+=
+\partial_\mu h \partial^\mu h
+- \frac{\Abs{m}^2}{2} h^2
+\lr{ 2 + h }^2
+=
+\partial_\mu h \partial^\mu h
+- 2 \Abs{m}^2 h^2
++ O(h^3).
+\end{dmath}
+This shows that the mass of the \( h \) field is \( \sqrt{2} \Abs{m} \).
+
+The only remaining task is to express the Lagrangian density for \( \phi^a \) in terms of those field instead of \( \Omega \).  To evaluate those derivatives, we can utilize a first order Taylor expansion
+
+\begin{dmath}\label{eqn:ProblemSet2Problem3:580}
+\partial_\mu \Omega
+=
+\partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
+=
+i \Bsigma \cdot \partial_\mu \Bphi,
+\end{dmath}
+so the rotation Lagrangian density is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:600}
+\LL_\Bphi =
+\inv{2} \trace{\lr{
+(-i \Bsigma \cdot \partial_\mu \Bphi)
+(i \Bsigma \cdot \partial^\mu \Bphi)
+}}
+=
+(\partial_\mu \Bphi) \cdot (\partial^\mu \Bphi)
+=
+(\partial_\mu \phi^a) (\partial^\mu \phi^a),
+\end{dmath}
+where we use the fact that \( \trace{\lr{(\Bsigma \cdot \Bx)(\Bsigma \cdot \By)}} = 2 \Bx \cdot \By \).
+
+The full Lagrangian density, to quadratic order, is
+\boxedEquation{eqn:ProblemSet2Problem3:n}{
+\LL
+= \LL_h + \LL_\Bphi
+=
+\partial_\mu h \partial^\mu h
+- 2 \Abs{m}^2 h^2
++
+\partial_\mu \phi^a \partial^\mu \phi^a.
+}
+
 \makeSubAnswer{}{qft:problemSet2:3d}
 TODO.
 \makeSubAnswer{}{qft:problemSet2:3e}
