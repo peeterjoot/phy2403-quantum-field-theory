@@ -29,7 +29,7 @@ should really be understood as
 \lim_{\epsilon\rightarrow 0} \int_0^\infty dy e^{-\epsilon y + i x y}
 \)
 \makesubproblem{}{qft:problemSet2:1b}
-For \( m^2 > 0 \), study the behavior of \( D(x) \) for spacelike \( x \) and find the asymptotic behavior for
+For \( m^2 > 0 \), study the behaviour of \( D(x) \) for spacelike \( x \) and find the asymptotic behaviour for
 \( -x^2 \gg 1/m^2 \) (i.e., at spacelike separations larger than the particle's Compton wavelength).
 } % makeproblem
 
@@ -99,7 +99,7 @@ D(x)
    }
 \end{dmath}
 Employing the hint
-\cref{eqn:ProblemSet2Problem1:60}\footnote{A nice explaination of this second hint can be found in \citep{wiki:Sokhotski} under ``Proof of the real version''.},
+\cref{eqn:ProblemSet2Problem1:60}\footnote{A nice explanation of this second hint can be found in \citep{wiki:Sokhotski} under ``Proof of the real version''.},
 \cref{eqn:ProblemSet2Problem1:120}
 can be cast into delta function form
 \begin{dmath}\label{eqn:ProblemSet2Problem1:140}
@@ -120,5 +120,88 @@ D(x)
 which, after cosmetic rearrangement, is \cref{eqn:ProblemSet2Problem1:40}.
 
 \makeSubAnswer{}{qft:problemSet2:1b}
-TODO.
+Let's evaluate \( D(x) \) function at spacelike point \( x = (0, r\zcap) \), and switch to polar momentum space coordinates \( \Bp = p (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta) \).
+This gives
+\begin{dmath}\label{eqn:ProblemSet2Problem1:160}
+D(0, r \zcap)
+=
+\inv{(2\pi)^3}
+\int_0^\infty dp \int_0^{2\pi} d\phi \int_0^\pi d\theta p^2 \sin\theta \frac{e^{i p r \cos\theta}}{2 \sqrt{p^2 + m^2}}
+=
+\inv{2 (2\pi)^2}
+\int_0^\infty dp \frac{p^2}{\sqrt{p^2 + m^2}} \int_{-1}^{1} du e^{i p r u}
+=
+\inv{2 (2\pi)^2}
+\int_0^\infty dp \frac{p^2}{\sqrt{p^2 + m^2}} \frac{e^{i p r} - e^{-i p r}}{i p r}
+=
+\frac{-i}{2 (2\pi)^2 r}
+\int_0^\infty dp \frac{p}{\sqrt{p^2 + m^2}} e^{i p r}
+-
+\frac{-i}{2 (2\pi)^2 r}
+\int_0^{-\infty} (-dp') \frac{(-p')}{\sqrt{(-p')^2 + m^2}} e^{i p' r}
+=
+\frac{-i}{2 (2\pi)^2 r}
+\int_{-\infty}^\infty dp \frac{p}{\sqrt{p^2 + m^2}} e^{i p r},
+\end{dmath}
+where a \( u = \cos\theta \) substitution was made, followed by \( p = -p' \) in the second integral.
+
+This integral can be evaluated with the half dogbone contour sketched in \cref{fig:halfDogBoneContour:halfDogBoneContourFig1}.  The exponential \( e^{i p r} \) vanishes on the infinite radial contours \( D, E \) since the real part of \( i p r \) is negative in the upper half plane.  We are left with
+\begin{dmath}\label{eqn:ProblemSet2Problem1:180}
+\int_A = -\int_B - \int_C.
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/halfDogBoneContourFig1}{Contour for branch at \( p = i m \).}{fig:halfDogBoneContour:halfDogBoneContourFig1}{0.3}
+
+That doesn't look like a particularly helpful transformation at first, but because we are integrating around the branch cut running from \( [i m, i\infty] \), the square root differs by an \( 2 \pi i \) argument on each side of the cut.  Along contour \( B \) that square root is
+\begin{dmath}\label{eqn:ProblemSet2Problem1:200}
+(p^2 + m^2)^{1/2}
+=
+\lr{ e^{i \pi} \lr{ -p^2 - m^2} }^{1/2}
+=
+e^{i \pi/2} \sqrt{ -p^2 - m^2 }
+=
+i \sqrt{ -p^2 - m^2 }
+\end{dmath}
+and along contour \( D \)
+\begin{dmath}\label{eqn:ProblemSet2Problem1:220}
+(p^2 + m^2)^{1/2}
+=
+\lr{ e^{3 i \pi} \lr{ -p^2 - m^2} }^{1/2}
+=
+e^{3 i \pi/2} \sqrt{ -p^2 - m^2 }
+=
+-i \sqrt{ -p^2 - m^2 }.
+\end{dmath}
+Specifically
+\begin{dmath}\label{eqn:ProblemSet2Problem1:240}
+\int_A
+= -\int_B - \int_C
+=
+\frac{i}{2 (2\pi)^2 r}
+\int_{i \infty}^{i m} dp \frac{p}{i \sqrt{-p^2 - m^2}} e^{i p r}
++
+\frac{i}{2 (2\pi)^2 r}
+\int_{i m}^{i \infty} dp \frac{p}{-i \sqrt{-p^2 - m^2}} e^{i p r}
+=
+-\frac{1}{(2\pi)^2 r}
+\int_{i m}^{i \infty} dp \frac{p}{\sqrt{-p^2 - m^2}} e^{i p r}.
+\end{dmath}
+Changing the integration variable to \( q \in [m, \infty] \) (i.e. \( p = i q \)), we have
+\begin{dmath}\label{eqn:ProblemSet2Problem1:260}
+D(0, r \zcap)
+=
+\frac{1}{(2\pi)^2 r}
+\int_{m}^{\infty} dq \frac{q}{\sqrt{q^2 - m^2}} e^{-q r}
+=
+\frac{1}{(2\pi)^2 r^2}
+\int_{m}^{\infty} r dq \frac{r q}{r \sqrt{q^2 - m^2}} e^{-q r}
+=
+\frac{1}{(2\pi)^2 r^2}
+\int_{r m}^{\infty} dx \frac{x}{\sqrt{x^2 - (r m)^2}} e^{-x}
+=
+\frac{1}{(2\pi)^2 r} K_1(r m)
+\sim 
+r^{-3/2}
+e^{-r m }.
+\end{dmath}
+where the integral was evaluated with Mathematica, and the asymptotic approximation is from \citep{abramowitz1964handbook} \S 9.7.2 (\( K_\nu(z) \sim \sqrt{\pi/2z} e^{-z} \).)  For \( r \gg 1/m \), this goes to zero quickly.
 }
