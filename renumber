@@ -93,3 +93,5 @@ perl -p -i ../latex/bin/latexRegex.pl questionOct24.tex
 perl -p -i ../latex/bin/latexRegex.pl nonhomoKGhamiltonian.tex
 ../latex/bin/lgrep facebook.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl facebook.tex
+../latex/bin/lgrep qftLecture15.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture15.tex

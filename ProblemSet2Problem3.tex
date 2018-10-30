@@ -457,7 +457,429 @@ The full Lagrangian density, to quadratic order, is
 }
 
 \makeSubAnswer{}{qft:problemSet2:3d}
-TODO.
+\paragraph{Setup.}
+This problem is easiest if we can work directly with in matrix notation, but first need to know how to express the current.  Given matrix elements \( H_{ab}, H^\conj_{ab} \), that current is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:640}
+j^\mu
+=
+\PD{(\partial_\mu H_{ij})}{\LL} \delta H_{ij}
++
+\PD{(\partial_\mu H^\conj_{ij})}{\LL} \delta H^\conj_{ij}.
+\end{dmath}
+The trace of a matrix product in terms of the respective matrix elements is
+\begin{equation}\label{eqn:ProblemSet2Problem3:660}
+\trace{\lr{ A B }}
+=
+A_{ik} B_{kj} \delta_{ij}
+=
+A_{ij} B_{ji},
+\end{equation}
+so the Kinetic portion of the Lagrangian density expands as
+\begin{equation}\label{eqn:ProblemSet2Problem3:680}
+\trace{\lr{
+\partial_\mu H^\dagger \partial^\mu H
+}}
+=
+\partial_\mu (H^\dagger)_{ji} \partial^\mu H_{ij}
+=
+\partial_\mu H^\conj_{ij} \partial^\mu H_{ij}.
+\end{equation}
+We can now put the current \cref{eqn:ProblemSet2Problem3:640} into matrix form
+\begin{dmath}\label{eqn:ProblemSet2Problem3:700}
+j^\mu
+=
+\partial^\mu H^\conj_{ij} \delta H_{ij}
++
+\delta H^\conj_{ij} \partial^\mu H_{ij}
+=
+\partial^\mu (H^\dagger)_{ji} \delta H_{ij}
++
+\delta (H^\dagger)_{ji} \partial^\mu H_{ij}
+=
+\trace{\lr{
+\partial^\mu H^\dagger \delta H
++
+\delta H^\dagger \partial^\mu H
+}}.
+\end{dmath}
+
+\paragraph{Vector current.}
+
+With \( H \rightarrow U_L H U_L^\dagger \), the \( H \) variation is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:720}
+\delta H
+=
+H' - H
+\approx
+\lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega } H
+\lr{ 1 - \frac{i}{2} \Bsigma \cdot \Bomega }
+- H
+=
+\frac{i}{2} (\Bsigma \cdot \Bomega) H
+ - \frac{i}{2} H (\Bsigma \cdot \Bomega)
++ O(\Bomega^2)
+=
+\frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H},
+\end{dmath}
+and its conjugate is
+\begin{equation}\label{eqn:ProblemSet2Problem3:740}
+\delta H^\dagger
+=
+-\frac{i}{2} \antisymmetric{H^\dagger}{\Bsigma \cdot \Bomega}
+=
+\frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
+\end{equation}
+
+Putting the pieces together gives
+\begin{dmath}\label{eqn:ProblemSet2Problem3:860}
+j_\mu^{V, \Bomega}
+= \frac{i}{2}
+\trace{\lr{
+\partial_\mu H^\dagger
+\antisymmetric{\Bsigma \cdot \Bomega}{H}
++
+\antisymmetric{\Bsigma \cdot \Bomega}{H^\dagger}
+\partial_\mu H
+}}
+= \frac{i \omega^a}{2}
+\trace{\lr{
+\partial_\mu H^\dagger
+\antisymmetric{\sigma^a}{H}
++
+\partial_\mu H
+\antisymmetric{\sigma^a}{H^\dagger}
+}},
+\end{dmath}
+so setting \( j_\mu^{V, \Bomega} = \omega^a j_\mu^{V,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
+
+\paragraph{Axial current.}
+This is only cosmetically different from the Vector current.
+
+With \( H \rightarrow U_L H U_L \), the \( H \) variation is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:780}
+\delta H
+=
+H' - H
+\approx
+\lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega } H
+\lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega }
+- H
+=
+\frac{i}{2} (\Bsigma \cdot \Bomega) H
+ + \frac{i}{2} H (\Bsigma \cdot \Bomega)
++ O(\Bomega^2)
+=
+\frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H},
+\end{dmath}
+and its conjugate is
+\begin{equation}\label{eqn:ProblemSet2Problem3:800}
+\delta H^\dagger
+=
+-\frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
+\end{equation}
+
+Putting the pieces together gives
+\begin{dmath}\label{eqn:ProblemSet2Problem3:880}
+j_\mu^{A, \Bomega}
+= \frac{i}{2}
+\trace{\lr{
+\partial_\mu H^\dagger
+\symmetric{\Bsigma \cdot \Bomega}{H}
+-
+\symmetric{\Bsigma \cdot \Bomega}{H^\dagger}
+\partial_\mu H
+}}
+= \frac{i \omega^a}{2}
+\trace{\lr{
+\partial_\mu H^\dagger
+\symmetric{\sigma^a}{H}
+-
+\partial_\mu H
+\symmetric{\sigma^a}{H^\dagger}
+}},
+\end{dmath}
+so setting \( j_\mu^{A, \Bomega} = \omega^a j_\mu^{A,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
+
 \makeSubAnswer{}{qft:problemSet2:3e}
-TODO.
+\paragraph{Axial current to first order.}
+
+To first order the \( H \) partial is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:820}
+\partial_\mu H
+=
+\expectation{H}
+\lr{
+   \partial_\mu h \lr{ 1 + i \Bsigma \cdot \Bphi }
++
+   (1 + h) i \Bsigma \cdot \partial_\mu \Bphi
+}
+=
+\expectation{H}
+\lr{
+   \partial_\mu h
++
+   i \Bsigma \cdot \partial_\mu \Bphi
+}
++ O(2).
+\end{dmath}
+Because this has no zero order terms, we need only the zeroth order parts of the anticommutators
+\begin{dmath}\label{eqn:ProblemSet2Problem3:840}
+\symmetric{\sigma^a}{H}
+=
+\expectation{H}
+(1 + h) \symmetric{\sigma^a}{1 + i \Bsigma \cdot \Bphi}
+=
+\expectation{H} \symmetric{\sigma^a}{1}
++ O(1)
+=
+2 \expectation{H} \sigma^a.
+\end{dmath}
+To first order
+\begin{dmath}\label{eqn:ProblemSet2Problem3:900}
+j^{A,a}_\mu
+=
+i \expectation{H}^2 \trace{\lr{
+   \lr{
+      \partial_\mu h
+   -
+      i \Bsigma \cdot \partial_\mu \Bphi
+   }
+   \sigma^a
+-
+   \lr{
+      \partial_\mu h
+   +
+      i \Bsigma \cdot \partial_\mu \Bphi
+   } \sigma^a
+}}
+=
+2 \expectation{H}^2 \trace{\lr{ \sigma^b \partial_\mu \phi^b \sigma^a }}.
+\end{dmath}
+Since \( \trace{\lr{ \sigma^a \sigma^b }} = 2 \delta_{ab} \), this reduces to
+\begin{dmath}\label{eqn:ProblemSet2Problem3:920}
+j^{A,a}_\mu
+=
+\expectation{H} \lr{ 4 \expectation{H} } \partial_\mu \phi^a,
+\end{dmath}
+so the ``constant in front'' is \( 4 \expectation{H} = 2 \Abs{m}/\sqrt{\lambda} \).
+
+\paragraph{Vector current to second order.}
+%%For this part of the problem, we are to show that, to leading order in the fields, the conserved vector current is quadratic in \( \phi^a \).  Let's assume that we can drop any \( O(3) \) terms in the current, and look at what terms are left over of lesser order.
+%%
+To make life less messy, let's write
+\begin{dmath}\label{eqn:ProblemSet2Problem3:940}
+H = \expectation{H} (1 + h) \Omega,
+\end{dmath}
+so that
+\begin{equation}\label{eqn:ProblemSet2Problem3:960}
+\antisymmetric{\sigma^a}{H}
+=
+\expectation{H}
+\antisymmetric{\sigma^a}{(1 + h)\Omega}
+=
+\expectation{H} h \antisymmetric{\sigma^a}{\Omega}.
+\end{equation}
+We also have, also to all orders,
+\begin{dmath}\label{eqn:ProblemSet2Problem3:980}
+\partial_\mu H
+=
+\expectation{H} \lr{ \partial_\mu h \Omega + (1 + h)\partial_\mu \Omega }
+%=
+%\expectation{H} \lr{
+%   \partial_\mu h \Omega + \partial_\mu \Omega + h \partial_\mu \Omega
+%}
+\end{dmath}
+The current is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1000}
+j^{V,a}_\mu
+=
+\frac{i}{2}
+\trace{\lr{
+   \partial_\mu H^\dagger \antisymmetric{\sigma^a}{H}
+   +
+   \partial_\mu H \antisymmetric{\sigma^a}{H^\dagger}
+}}
+=
+\frac{i}{2}
+\expectation{H}^2
+\trace{\lr{
+   \lr{
+      \partial_\mu h \Omega^\dagger
+         + (1 + h) \partial_\mu \Omega^\dagger
+   }
+   h \antisymmetric{\sigma^a}{\Omega}
++
+   \lr{
+      \partial_\mu h \Omega
+      + (1 + h )\partial_\mu \Omega
+   }
+   h \antisymmetric{\sigma^a}{\Omega^\dagger}
+}}
+=
+\frac{i}{2}
+\expectation{H}^2
+\lr{
+   (\partial_\mu h) h
+   \trace{\lr{
+         \Omega^\dagger \antisymmetric{\sigma^a }{\Omega}
+         +
+         \Omega \antisymmetric{\sigma^a }{\Omega^\dagger}
+   }}
+   +
+   h(1+h)
+   \trace{\lr{
+         \partial_\mu \Omega^\dagger \antisymmetric{\sigma^a}{\Omega}
+      +
+         \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
+   }}
+}
+=
+\frac{i}{2}
+\expectation{H}^2
+\lr{
+   (\partial_\mu h) h A
+   +
+   h(1+h) B
+},
+\end{dmath}
+where
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1100}
+\begin{aligned}
+A &=
+   \trace{\lr{
+         \Omega^\dagger \antisymmetric{\sigma^a }{\Omega}
+         +
+         \Omega \antisymmetric{\sigma^a }{\Omega^\dagger}
+   }} \\
+B &=
+   \trace{\lr{
+         \partial_\mu \Omega^\dagger \antisymmetric{\sigma^a}{\Omega}
+      +
+         \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
+   }}.
+\end{aligned}
+\end{dmath}
+The first trace \( A \) is easily shown to be zero
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1020}
+A
+=
+\trace{\lr{
+      \Omega^\dagger \sigma^a \Omega
+      -\Omega^\dagger \Omega \sigma^a
+      +
+      \Omega \sigma^a \Omega^\dagger
+      -
+      \Omega \Omega^\dagger \sigma^a
+}}
+=
+\trace{\lr{
+   \lr{
+        \Omega \Omega^\dagger
+      - \Omega^\dagger \Omega
+      + \Omega^\dagger \Omega
+      - \Omega \Omega^\dagger
+   }  \sigma^a
+}}
+= 0,
+\end{dmath}
+where cyclic permutation within the trace was used to arrange the terms for easy cancelation \(1 - 1 + 1 - 1 = 0\).
+
+Expanding commutators, and using cyclic permutation in the trace, we have for \( B \)
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1040}
+B
+=
+\trace{\lr{
+      \partial_\mu \Omega^\dagger \antisymmetric{\sigma^a}{\Omega}
+   +
+      \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
+}}
+=
+\trace{\lr{
+     (\partial_\mu \Omega^\dagger) \sigma^a \Omega
+   -
+     (\partial_\mu \Omega^\dagger) \Omega \sigma^a
+   +
+     (\partial_\mu \Omega) \sigma^a \Omega^\dagger
+   -
+     (\partial_\mu \Omega) \Omega^\dagger \sigma^a
+}}
+=
+\trace{\lr{
+   \lr{
+        \Omega (\partial_\mu \Omega^\dagger )
+      - (\partial_\mu \Omega^\dagger) \Omega
+      + \Omega^\dagger (\partial_\mu \Omega )
+      - (\partial_\mu \Omega) \Omega^\dagger
+   } \sigma^a
+}}
+\end{dmath}
+This can be simplified using
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1060}
+\begin{aligned}
+\Omega (\partial_\mu \Omega^\dagger) &= -(\partial_\mu \Omega) \Omega^\dagger \\
+\Omega^\dagger (\partial_\mu \Omega) &= -(\partial_\mu \Omega^\dagger) \Omega
+\end{aligned},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1080}
+B
+=
+2
+\trace{\lr{
+   \lr{
+        \Omega^\dagger (\partial_\mu \Omega )
+      - (\partial_\mu \Omega) \Omega^\dagger
+   } \sigma^a
+}}.
+\end{dmath}
+The derivative \( \partial_\mu \Omega \) has no \( O(0) \) terms, so let's expand the rotation matrix only to \( O(1) \), and then drop any \( O(2) \) terms from \( \partial_\mu \Omega \).  This gives
+\begin{dmath}\label{eqn:ProblemSet2Problem3:1120}
+B
+=
+2
+\trace{\lr{
+   \lr{
+        (1 - i \Bsigma \cdot \Bphi) (\partial_\mu \Omega )
+      - (\partial_\mu \Omega) (1 - i \Bsigma \cdot \Bphi)
+   } \sigma^a
+}}
++ O(3)
+=
+- 2 i
+\trace{\lr{
+   \lr{
+        (\Bsigma \cdot \Bphi) (\partial_\mu \Omega )
+      - (\partial_\mu \Omega) (\Bsigma \cdot \Bphi)
+   } \sigma^a
+}}
+=
+- 2 i^2
+\trace{\lr{
+   \lr{
+      \sigma^c \phi^c \sigma^b \partial_\mu \phi^b
+      -
+      \sigma^b \partial_\mu \phi^b \sigma^c \phi^c
+   } \sigma^a
+}}
++ O(3)
+=
+2 \phi^c (\partial_\mu \phi^b) \trace{\lr{ \sigma^c \sigma^b \sigma^a }}
+-2 (\partial_\mu \phi^b) \phi^c \trace{\lr{ \sigma^b \sigma^c \sigma^a }}
+=
+-2
+\lr{ \phi^c (\partial_\mu \phi^b) + (\partial_\mu \phi^b) \phi^c }
+\trace{\lr{ \sigma^1 \sigma^2 \sigma^3 }} \epsilon^{abc}
+= - 4 i 
+\symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
+\end{dmath}
+to quadratic order in \( \phi^a \).
+The current, to lowest order in \( \phi^a \), and all orders in \( h \), is
+\begin{dmath}\label{eqn:ProblemSet2Problem3:n}
+j^{V,a}_\mu
+=
+2
+\expectation{H}^2 h(1 + h) \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
+\end{dmath}
+which is quadratic in \( \phi^a \) as claimed.
+
 }

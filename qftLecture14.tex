@@ -3,33 +3,33 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture14}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-% https://tex.stackexchange.com/a/68357/15
-\DeclareMathOperator*{\SumInt}{%
-\mathchoice%
-  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
-  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
-  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
-  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
-}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 14: Time evolution, Hamiltonian perturbation, ground state.  Taught by Prof.\ Erich Poppitz}
-%\chapter{Time evolution, Hamiltonian pertubation, ground state}
+%%\input{../latex/blogpost.tex}
+%%\renewcommand{\basename}{qftLecture14}
+%%\renewcommand{\dirname}{notes/phy2403/}
+%%\newcommand{\keywords}{PHY2403H}
+%%\input{../latex/peeter_prologue_print2.tex}
+%%
+%%%\usepackage{phy2403}
+%%\usepackage{peeters_braket}
+%%%\usepackage{peeters_layout_exercise}
+%%\usepackage{peeters_figures}
+%%\usepackage{mathtools}
+%%\usepackage{siunitx}
+%%\usepackage{macros_cal} % LL
+%%
+%%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%%% https://tex.stackexchange.com/a/68357/15
+%%\DeclareMathOperator*{\SumInt}{%
+%%\mathchoice%
+%%  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+%%  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+%%  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+%%  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+%%}
+%%
+%%\beginArtNoToc
+%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 14: Time evolution, Hamiltonian perturbation, ground state.  Taught by Prof.\ Erich Poppitz}
+\chapter{Time evolution, Hamiltonian pertubation, ground state}
 \label{chap:qftLecture14}
 
 %,$ s/_Iint/_{\\text{I,int}}
@@ -240,7 +240,7 @@ A bit of manipulation shows that the operator in the numerator has the structure
 \paragraph{Claim: (DIY):}
 \Cref{eqn:qftLecture14:80}, \cref{eqn:qftLecture14:120} may be generalized to
 \begin{equation}\label{eqn:qftLecture14:400}
-U(t, t') = e^{i H_0(t - t_0)} e^{-i H(t - t')} e^{-i H_0(t' - t_0)} = 
+U(t, t') = e^{i H_0(t - t_0)} e^{-i H(t - t')} e^{-i H_0(t' - t_0)} =
 T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}}.
 \end{equation}
 Observe that we recover \cref{eqn:qftLecture14:120} when \( t' = t_0 \).
@@ -267,4 +267,4 @@ We are left with
 We are close to where we want to be.  Wednesday we finish off, and then start scattering and Feynman diagrams.
 
 %}
-\EndArticle
+%\EndArticle
