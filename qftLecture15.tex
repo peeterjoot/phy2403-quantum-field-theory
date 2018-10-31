@@ -35,7 +35,323 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review}
+
+We developed the interaction picture repreresentation, which is really the Heisenberg picture with respect to \( H_0 \).
+
+Recall that we found
+\begin{equation}\label{eqn:qftLecture15:20}
+U(t, t') = e^{i H_0(t - t_0)} e^{-i H(t - t')} e^{-i H_0(t' - t_0)},
+\end{equation}
+with solution
+\begin{dmath}\label{eqn:qftLecture15:200}
+U(t, t')
+=
+T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}},
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture15:220}
+U(t, t')^\dagger
+=
+T \exp{\lr{ i \int_{t'}^{t} H_{\text{I,int}}(t'') dt''}}
+=
+T \exp{\lr{ -i \int_{t}^{t'} H_{\text{I,int}}(t'') dt''}}
+= U(t', t),
+\end{dmath}
+and can use this to calculate the time evolution of a field
+\begin{dmath}\label{eqn:qftLecture15:40}
+\phi(\Bx, t)
+=
+U^\dagger(t, t_0)
+\phi_I(\Bx, t)
+U(t, t_0)
+\end{dmath}
+and found the ground state ket for \( H \) was
+\begin{dmath}\label{eqn:qftLecture15:60}
+\ket{\Omega}
+=
+\evalbar{
+\frac{ U(t_0, -T) \ket{0} }
+{
+e^{-i E_0(T - t_0)} \braket{\Omega}{0}
+}
+}{T \rightarrow \infty(1 - i \epsilon)}.
+\end{dmath}
+\paragraph{Question:} What's the point of this, since it is self referential?
+\paragraph{Answer:} We will see, and also see that it goes away.  Alternatively, you can write it as
+\begin{equation*}
+\ket{\Omega} \braket{\Omega}{0}
+=
+\evalbar{
+\frac{ U(t_0, -T) \ket{0} }
+{
+e^{-i E_0(T - t_0)}
+}
+}{T \rightarrow \infty(1 - i \epsilon)}.
+\end{equation*}
+
+We can also show that
+\begin{dmath}\label{eqn:qftLecture15:80}
+\bra{\Omega}
+=
+\evalbar{
+\frac{ \bra{0} U(T, t_0) }
+{
+e^{-i E_0(T - t_0)} \braket{0}{\Omega}
+}
+}{T \rightarrow \infty(1 - i \epsilon)}.
+\end{dmath}
+
+Our goal is still toe calculate
+\begin{dmath}\label{eqn:qftLecture15:100}
+\bra{\Omega} T \phi(x) \phi(y) \ket{\Omega}.
+\end{dmath}
+Claim: the ``LSZ'' theorem (a neat way of writing this) relates this to S matrix elements.
+
+Assuming \( x^0 > y^0 \)
+
+\begin{dmath}\label{eqn:qftLecture15:120}
+\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
+=
+\frac{
+\bra{0}
+U(T, t_0)
+U^\dagger(x^0, t^0)
+\phi_I(x)
+U(x^0, t^0)
+%
+U^\dagger(y^0, t^0)
+\phi_I(y)
+U(y^0, t^0)
+U(t_0, -T)
+\ket{0}
+}
+{
+e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
+}
+\end{dmath}
+
+Normalize \( \braket{\Omega}{\Omega} = 1 \), gives
+
+\begin{dmath}\label{eqn:qftLecture15:140}
+1
+=
+\frac{\bra{0} U(T, t_0) U(t_0, -T) \ket{0}}
+{
+e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
+}
+=
+\frac{\bra{0} U(T, -T) \ket{0}}
+{
+e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
+},
+\end{dmath}
+so that
+\begin{dmath}\label{eqn:qftLecture15:240}
+\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
+=
+\frac{
+\bra{0}
+U(T, t_0)
+U^\dagger(x^0, t^0)
+\phi_I(x)
+U(x^0, t^0)
+%
+U^\dagger(y^0, t^0)
+\phi_I(y)
+U(y^0, t^0)
+U(t_0, -T)
+\ket{0}
+}
+{
+   \bra{0} U(T, -T) \ket{0}
+}
+\end{dmath}
+
+For \( t_1 > t_2 > t_3 \)
+\begin{dmath}\label{eqn:qftLecture15:280}
+U(t_1, t_2) U(t_2, t_3)
+=
+T e^{-i \int_{t_2}^{t_1} H_I}
+T e^{-i \int_{t_3}^{t_2} H_I}
+=
+T \lr{
+e^{-i \int_{t_2}^{t_1} H_I}
+e^{-i \int_{t_3}^{t_2} H_I}
+}
+=
+T(
+e^{-i \int_{t_3}^{t_1} H_I}
+),
+\end{dmath}
+with an end result of
+\begin{dmath}\label{eqn:qftLecture15:320}
+U(t_1, t_2) U(t_2, t_3) = U(t_1, t_3).
+\end{dmath}
+(DIY: work through the details -- this is a problem in \citep{peskin1995introduction})
+
+This gives
+\begin{dmath}\label{eqn:qftLecture15:300}
+\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
+=
+\frac{
+\bra{0}
+U(T, x^0)
+\phi_I(x)
+U(x^0, y^0)
+\phi_I(y)
+U(y^0, -T)
+\ket{0}
+}
+{
+   \bra{0} U(T, -T) \ket{0}
+}.
+\end{dmath}
+
+If \( y^0 > x^0 \) we have the same result, but the \( y \)'s will come first.
+
+\paragraph{Claim:}
+\begin{dmath}\label{eqn:qftLecture15:340}
+\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
+=
+\frac{
+   \bra{0}
+   T\lr{
+      \phi_I(x)
+      \phi_I(y)
+      e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'}
+   }
+   \ket{0}
+}
+{
+   \bra{0}
+      T ( e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'} )
+   \ket{0}
+}.
+\end{dmath}
+
+More generally
+\boxedEquation{eqn:qftLecture15:360}{
+\bra{\Omega}
+\phi_I(x_1) \cdots
+\phi_I(x_n)
+\ket{\Omega}
+=
+\frac{
+   \bra{0}
+   T\lr{
+\phi_I(x_1) \cdots
+\phi_I(x_n)
+      e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'}
+   }
+   \ket{0}
+}
+{
+   \bra{0}
+      T ( e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'} )
+   \ket{0}
+}.
+}
+This is the holy grail of pertubation theory.
+
+In QFT II you will see this written in a path integral representation
+\begin{dmath}\label{eqn:qftLecture15:380}
+\bra{\Omega}
+\phi_I(x_1) \cdots
+\phi_I(x_n)
+\ket{\Omega}
+=
+\frac
+{
+   \int [\calD \phi] \phi(x_1) \phi(x_2) \cdots \phi(x_n) e^{-i S[\phi]}
+}
+{
+   \int [\calD \phi] e^{-i S[\phi]}
+}.
+\end{dmath}
+
+\section{Unpacking it.}
+
+\begin{dmath}\label{eqn:qftLecture15:400}
+\int_{-T}^T H_{\text{I,int}}(t)
+=
+\int_{-T}^T
+\int d^3 \Bx \frac{\lambda}{4} \lr{ \phi_I(\Bx, t) }^4
+=
+\int d^4 x
+\frac{\lambda}{4} \lr{ \phi_I }^4
+\end{dmath}
+
+so we have
+\begin{dmath}\label{eqn:qftLecture15:420}
+\frac{
+   \bra{0}
+   T\lr{
+\phi_I(x_1) \cdots
+\phi_I(x_n)
+      e^{-i \frac{\lambda}{4} \int d^4 x \phi_I^4(x) }
+   }
+   \ket{0}
+}
+{
+   \bra{0}
+      T
+      e^{-i \frac{\lambda}{4} \int d^4 x \phi_I^4(x) }
+   \ket{0}
+}.
+\end{dmath}
+
+The numerator expands as
+\begin{dmath}\label{eqn:qftLecture15:440}
+   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) } \ket{0}
+-i \frac{\lambda}{4} \int d^4 x
+   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) \phi_I^4(x) }
++
+\inv{2}
+\lr{-i \frac{\lambda}{4}}^2 \int d^4 x d^4 y
+   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n)
+      \phi_I^4(x)
+      \phi_I^4(y)
+} \ket{0}
++ \cdots
+\end{dmath}
+so we see that the problem ends up being the calculation of time ordered products.
+
+%XX
+\section{Problems}
+\makeproblem{\( U(T, t_0) U(t_0, -T) \) }{problem:qftLecture15:1}{
+Show that
+\begin{equation*}
+U(T, t_0) U(t_0, -T)
+=
+U(T, -T)
+\end{equation*}
+} % problem
+
+\makeanswer{problem:qftLecture15:1}{
+We can see that from
+\begin{dmath}\label{eqn:qftLecture15:160}
+\begin{aligned}
+U(T, t_0) &= e^{i H_0(T - t_0)} e^{-i H(T - t_0)} \cancel{e^{-i H_0(t_0 - t_0)}}  \\
+U(t_0, -T) &= \cancel{e^{i H_0(t_0 - t_0)}} e^{-i H(t_0 - -T)} e^{-i H_0(-T - t_0)},
+\end{aligned}
+\end{dmath}
+so
+
+\begin{dmath}\label{eqn:qftLecture15:180}
+U(T, t_0)
+U(t_0, -T)
+=
+e^{i H_0(T - t_0)} e^{-i H(T - t_0)} e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)}
+=
+e^{i H_0(T - t_0)} e^{-i H 2 T } e^{-i H_0(-T - t_0)},
+\end{dmath}
+whereas
+\begin{dmath}\label{eqn:qftLecture15:260}
+U(T, -T)
+= e^{i H_0(T - t_0)} e^{-i H(T - -T)} e^{-i H_0(-T - t_0)}
+= e^{i H_0(T - t_0)} e^{-i H 2 T} e^{-i H_0(-T - t_0)}
+\end{dmath}
+} % answer
 
 %}
 \EndArticle
