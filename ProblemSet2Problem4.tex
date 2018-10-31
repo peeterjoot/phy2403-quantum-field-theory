@@ -16,13 +16,207 @@ What do you think is the potential, in x-space, that allows the various particle
 
 \makeanswer{qft:problemSet2:4}{
 \makeSubAnswer{}{qft:problemSet2:4a}
-TODO.
-\makeSubAnswer{}{qft:problemSet2:4a}
-TODO.
+The Lagrangian density of a massive scalar field with a \( \lambda \phi^4 \) interaction has the form
+\begin{dmath}\label{eqn:ProblemSet2Problem4:20}
+\LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \inv{2} m^2 \phi^2 - \lambda \phi^4.
+\end{dmath}
+The corresponding Hamiltonian is
+\begin{dmath}\label{eqn:ProblemSet2Problem4:40}
+H = \inv{2} \int d^3x \lr{ \pi^2 + \frac{m^2}{2} (\spacegrad \phi)^2 + m^2 \phi^2 } + \lambda \int d^3 x \phi^4.
+\end{dmath}
+In terms of creation and annihilation operators, we know the form of the non-interaction portion of the Hamiltonian, which in normal order is
+\begin{dmath}\label{eqn:ProblemSet2Problem4:60}
+H_0 = \int d^3 p \omega_\Bp a_\Bp^\dagger a_\Bp,
+\end{dmath}
+but the interaction contribution is much messier
+\begin{dmath}\label{eqn:ProblemSet2Problem4:80}
+H_{\text{int}}
+=
+\lambda \int d^3 x \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{12} \sqrt{
+\omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
+} }
+\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp e^{i p \cdot x} }
+\lr{ a_\Bk e^{-i k \cdot x} + a_\Bk e^{i k \cdot x} }
+\lr{ a_\Bq e^{-i q \cdot x} + a_\Bq e^{i q \cdot x} }
+\lr{ a_\Bs e^{-i s \cdot x} + a_\Bs e^{i s \cdot x} }
+=
+\lambda \int d^3 x \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{12} \sqrt{
+\omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
+} }
+\lr{ a_\Bp e^{-i \omega_\Bp t + i \Bp \cdot \Bx} + a_\Bp e^{i \omega_\Bp t - i \Bp \cdot \Bx} }
+\lr{ a_\Bk e^{-i \omega_\Bk t + i \Bk \cdot \Bx} + a_\Bk e^{i \omega_\Bk t - i \Bk \cdot \Bx} }
+\lr{ a_\Bq e^{-i \omega_\Bq t + i \Bq \cdot \Bx} + a_\Bq e^{i \omega_\Bq t - i \Bq \cdot \Bx} }
+\lr{ a_\Bs e^{-i \omega_\Bs t + i \Bs \cdot \Bx} + a_\Bs e^{i \omega_\Bs t - i \Bs \cdot \Bx} }.
+=
+\lambda \int \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{9} \sqrt{
+\omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
+} }
+\lr{
+   a_\Bp a_\Bk a_\Bq a_\Bs e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_\Bs)t} \delta^3( \Bp + \Bk + \Bq + \Bs )
+   +
+   a_\Bp a_\Bk a_\Bq a_\Bs^\dagger e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq - \omega_\Bs)t} \delta^3( \Bp + \Bk + \Bq - \Bs )
+   +
+   \cdots
+   +
+   a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_\Bs^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_\Bs)t} \delta^3( -\Bp - \Bk - \Bq - \Bs )
+}
+=
+\lambda \int \frac{ d^3 p d^3 k d^3 q }{4 (2 \pi)^{9}
+}
+\lr{
+   \inv{\sqrt{
+      \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
+   }}
+   a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
++
+   \inv{\sqrt{
+      \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk + \Bq}
+   }}
+   a_\Bp a_\Bk a_\Bq a_{\Bp + \Bk + \Bq}^\dagger e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq - \omega_{\Bp + \Bk + \Bq})t}
++
+   \cdots
++
+   \inv{\sqrt{
+      \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
+   }}
+   a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
+}.
+\end{dmath}
+Assuming we can normal order these terms as in \( H_0 \), we can rewrite the interaction as
+\begin{dmath}\label{eqn:ProblemSet2Problem4:100}
+H_{\text{int}}
+=
+\lambda \int \frac{ d^3 p d^3 k d^3 q }{4 (2 \pi)^{9} }
+\lr{
+   \binom{4}{0}
+      \inv{\sqrt{
+         \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
+      }}
+      a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
+   +
+   \binom{4}{1}
+      \inv{\sqrt{
+         \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp - \Bk - \Bq}
+      }}
+      a_\Bp^\dagger a_\Bk a_\Bq a_{\Bp - \Bk - \Bq} e^{-i (-\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{\Bp - \Bk - \Bq})t}
+   +
+   \binom{4}{2}
+      \inv{\sqrt{
+         \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk - \Bq}
+      }}
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq a_{\Bp + \Bk - \Bq} e^{-i (-\omega_\Bp - \omega_\Bk + \omega_\Bq + \omega_{\Bp + \Bk - \Bq})t}
+   +
+   \binom{4}{3}
+      \inv{\sqrt{
+         \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk _ \Bq}
+      }}
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{\Bp + \Bk + \Bq} e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq + \omega_{\Bp + \Bk + \Bq})t}
+   +
+   \binom{4}{4}
+      \inv{\sqrt{
+         \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
+      }}
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
+}
+\end{dmath}
+If we restrict the allowed momenta to the discrete set \( \Bp \in \setlr{ \Bp_1, \Bp_2, \cdots \Bp_N} \), the total Hamiltonian including the interaction term
+takes the form
+\begin{dmath}\label{eqn:ProblemSet2Problem4:120}
+\text{\(:H:\)} =
+\sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i}
++
+\frac{
+\lambda
+}{4 (2 \pi)^{9} }
+\sum_{j,m,n = 1}^N
+\lr{
+   \binom{4}{0}
+      \inv{\sqrt{
+         \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{-{\Bp_j} - {\Bp_m} - {\Bp_n}}
+      }}
+      a_{\Bp_j} a_{\Bp_m} a_{\Bp_n} a_{-\Bp -\Bk - \Bq} e^{-i (\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
+   +
+   \binom{4}{1}
+      \inv{\sqrt{
+         \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} - {\Bp_m} - {\Bp_n}}
+      }}
+      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} - {\Bp_m} - {\Bp_n}})t}
+   +
+   \binom{4}{2}
+      \inv{\sqrt{
+         \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
+      }}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}})t}
+   +
+   \binom{4}{3}
+      \inv{\sqrt{
+         \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
+      }}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{{\Bp_j} + {\Bp_m} + {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} + {\Bp_n}})t}
+   +
+   \binom{4}{4}
+      \inv{\sqrt{
+         \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{-{\Bp_j} - {\Bp_m} - {\Bp_n}}
+      }}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{-{\Bp_j} -{\Bp_m} -{\Bp_n}}^\dagger e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} - \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
+}.
+\end{dmath}
+When we did the same sort of calculation for \( (\spacegrad \phi)^2 + m^2 \phi^2 \) all the time dependent terms cancelled nicely, but that isn't obviously the case here.
+However, we haven't used the non-relativistic (low energy) constraint.  That constraint can be expressed as \( \Bp^2 \ll m^2 \), in which case \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \sim m \), the mass of each of the particles.  Incorporating that into our N-particle Hamiltonian, we have
+\begin{dmath}\label{eqn:ProblemSet2Problem4:140}
+\text{\(:H:\)} =
+\sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i}
++
+\frac{
+\lambda
+}{4 (2 \pi)^{9} m^2 }
+\sum_{j,m,n = 1}^N
+\lr{
+   \binom{4}{0}
+      a_{\Bp_j} a_{\Bp_m} a_{\Bp_n} a_{-\Bp -\Bk - \Bq} e^{- 4 i m t}
+   +
+   \binom{4}{1}
+      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-3 i m t}
+   +
+   \binom{4}{2}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
+   +
+   \binom{4}{3}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{{\Bp_j} + {\Bp_m} + {\Bp_n}} e^{ 3 i m t }
+   +
+   \binom{4}{4}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{-{\Bp_j} -{\Bp_m} -{\Bp_n}}^\dagger e^{4 i m t}
+}.
+\end{dmath}
+Presuming there's a good argument to kill off the time dependent terms, the N-sector Hamiltonian is reduced to just
+\begin{dmath}\label{eqn:ProblemSet2Problem4:160}
+\text{\(:H:\)} =
+\sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i}
++
+\frac{
+3 \lambda
+}{2 (2 \pi)^{9} m^2 }
+\sum_{j,m,n = 1}^N
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet2:4b}
-TODO.
+The hint seems to suggest that particle number is conserved, even though the interaction term does not have the structure of a number operator.  I have to conclude (too late for problem set submission) that I don't really understand what is meant by preservation of particle number in this case, and will need to see the problem set solution or discuss this in office hours to understand what is being asked for.
 \makeSubAnswer{}{qft:problemSet2:4c}
-TODO.
+If we designate an N-particle momentum state by
+\begin{dmath}\label{eqn:ProblemSet2Problem4:180}
+\ket{\Bp_1, \Bp_2, \cdots \Bp_N} =
+a_{\Bp_1}^\dagger
+a_{\Bp_2}^\dagger
+\cdots
+a_{\Bp_N}^\dagger \ket{0, 0, \cdots, 0},
+\end{dmath}
+then the interaction terms action on such a state is
+\begin{dmath}\label{eqn:ProblemSet2Problem4:200}
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
+\ket{\Bp_1, \Bp_2, \cdots \Bp_N}.
+\end{dmath}
+I'm not sure if this is meaningful, or how to interpet it, and think that I'm going to have to get explaination about what this abstraction means.  I'm also not sure what is meant by the question ``What kinds of scattering processes does it describe.''
 \makeSubAnswer{}{qft:problemSet2:4d}
-TODO.
+Not attempted.
 }

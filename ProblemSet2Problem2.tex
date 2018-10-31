@@ -1205,6 +1205,36 @@ Q^{a}_R
 - \Psi^\dagger \sigma^a \dot{\Psi }
 }.
 \end{dmath}
-This clearly also satisfies the angular momentum commutation relations.  The charges \( Q^a_R, Q^b_L \) should commute by
-virtue of originating from two independent symmetries.
+This clearly also satisfies the angular momentum commutation relations.
+\paragraph{Charge commutation: partial:}
+The charges \( Q^a_R, Q^b_L \) should commute by virtue of originating from two independent symmetries, but to show this seems ugly.
+
+Here is a partial attempt.  In terms of the matrix elements
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1100}
+\begin{aligned}
+Q^{L,a} &= \frac{i}{2} \int d^3 x \lr{ \dot{H}^\dagger_{rs} \sigma^a_{st} H_{tr} - H^\dagger_{rs} \sigma^a_{st} \dot{H}_{tr} } \\
+Q^{R,b} &= \frac{i}{2} \int d^3 y \lr{ \dot{H}_{rs} \sigma^a_{st} H^\dagger_{tr} - H_{rs} \sigma^b_{st} \dot{H}^\dagger_{tr} } \\
+\end{aligned},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet2Problem2:1120}
+\antisymmetric{Q^{L,a}}{Q^{R,b}}
+=
+-\inv{4}
+\int d^3 x d^3 y
+\antisymmetric
+{ \dot{H}^\dagger_{rs} H_{tr} - H^\dagger_{rs} \dot{H}_{tr} }
+{ \dot{H}_{mn} H^\dagger_{om} - H_{mn} \dot{H}^\dagger_{om} }
+\sigma^a_{st} \sigma^b_{no}
+=
+-\inv{4}
+\int d^3 x d^3 y
+\antisymmetric
+{ \dot{H}^\conj_{sr} H_{tr} - H^\conj_{sr} \dot{H}_{tr} }
+{ \dot{H}_{mn} H^\conj_{mo} - H_{mn} \dot{H}^\conj_{mo} }
+\sigma^a_{st} \sigma^b_{no}.
+\end{dmath}
+For this to be zero, each of these \( 16 \times 3 \times 3 \) commutators must be zero.  Presumably, we could plug in the \( \phi_{1,2}, \pi_{1,2}, \phi^\conj_{1,2}, \pi^\conj_{1,2} \) values, and find that this is the case (perhaps only when the \( \sigma^a_{st} \sigma^b_{no} \) elements are non-zero.)
+On paper, I did write out \( \dot{H}^\conj_{sr} H_{tr} - H^\conj_{sr} \dot{H}_{tr} \) in terms of \((\phi, \pi)\)'s, and it was interesting that all of the operator factors in each of those sum of pairs commuted.  That expansion was fairly tedious, and probably not completely correct, and I did not attempt to do the same for \( \dot{H}_{mn} H^\conj_{mo} - H_{mn} \dot{H}^\conj_{mo} \) and show that those two sets of four operators (each with four pairs) commuted.
+There has got to be an easier way!  If there is not, such a proof is a job for a computer program, and not a person.
 }
