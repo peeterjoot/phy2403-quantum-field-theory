@@ -58,9 +58,13 @@ include ../latex/make.rules
 #all :: l12
 #all :: l13
 #all :: l14
-all :: l15
+#all :: l15
+all :: l15b
+all :: l16
 #all :: p1
-all :: p2
+#all :: p2
+#all :: p3
+#all :: p4
 
 $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 
@@ -78,9 +82,13 @@ $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 #l12: qftLecture12.pdf
 #l13: qftLecture13.pdf
 #l14: qftLecture14.pdf
-l15: qftLecture15.pdf
+#l15: qftLecture15.pdf
+l15b: qftLecture15b.pdf
+l16: qftLecture16.pdf
 #p1: ProblemSet1.pdf
-p2: ProblemSet2.pdf
+#p2: ProblemSet2.pdf
+p3: ProblemSet3.pdf
+p4: ProblemSet4.pdf
 
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem1.tex
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem2.tex
@@ -95,10 +103,15 @@ ProblemSet1.pdf : ProblemSet1Problem3.tex
 ProblemSet1.pdf : ProblemSet1Problem4.tex
 ProblemSet1.pdf : ProblemSet1Problem5.tex
 
-ProblemSet2.pdf : ProblemSet2Problem1.tex
-ProblemSet2.pdf : ProblemSet2Problem2.tex
-ProblemSet2.pdf : ProblemSet2Problem3.tex
-ProblemSet2.pdf : ProblemSet2Problem4.tex
+ProblemSet3.pdf : ProblemSet3Problem1.tex
+ProblemSet3.pdf : ProblemSet3Problem2.tex
+ProblemSet3.pdf : ProblemSet3Problem3.tex
+ProblemSet3.pdf : ProblemSet3Problem4.tex
+
+ProblemSet4.pdf : ProblemSet4Problem1.tex
+ProblemSet4.pdf : ProblemSet4Problem2.tex
+ProblemSet4.pdf : ProblemSet4Problem3.tex
+ProblemSet4.pdf : ProblemSet4Problem4.tex
 
 .PHONY: spellcheck
 spellcheck: $(SPELLCHECK)

@@ -10,6 +10,9 @@ qftLecture10.tex
 qftLecture11.tex
 qftLecture12.tex
 qftLecture13.tex
+qftLecture14.tex
+qftLecture15.tex
+qftLecture15Problems.tex
 qftLecture13PoleShifting.tex
 qftLecture2.tex
 qftLecture3.tex

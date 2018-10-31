@@ -95,3 +95,11 @@ perl -p -i ../latex/bin/latexRegex.pl nonhomoKGhamiltonian.tex
 perl -p -i ../latex/bin/latexRegex.pl facebook.tex
 ../latex/bin/lgrep qftLecture15.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture15.tex
+../latex/bin/lgrep qftLecture16.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture16.tex
+../latex/bin/lgrep qftLecture15b.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture15b.tex
+../latex/bin/lgrep ProblemSet3.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet3.tex
+../latex/bin/lgrep ProblemSet4.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet4.tex
