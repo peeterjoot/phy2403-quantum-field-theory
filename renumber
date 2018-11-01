@@ -100,35 +100,35 @@ perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
 #../latex/bin/lgrep qftLecture15.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture15.tex
 
-#../latex/bin/lgrep qftLecture16.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl qftLecture16.tex
+../latex/bin/lgrep qftLecture16.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture16.tex
 
-#../latex/bin/lgrep qftLecture15b.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl qftLecture15b.tex
+../latex/bin/lgrep qftLecture15b.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture15b.tex
 
-#../latex/bin/lgrep ProblemSet4Problem1.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem1.tex
+../latex/bin/lgrep ProblemSet4Problem1.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem1.tex
 
-#../latex/bin/lgrep ProblemSet4Problem4.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem4.tex
+../latex/bin/lgrep ProblemSet4Problem4.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem4.tex
 
-#../latex/bin/lgrep ProblemSet4Problem3.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
+../latex/bin/lgrep ProblemSet4Problem3.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
 
-#../latex/bin/lgrep ProblemSet4Problem2.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
+../latex/bin/lgrep ProblemSet4Problem2.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
 
-#../latex/bin/lgrep ProblemSet3Problem1.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem3.tex
+../latex/bin/lgrep ProblemSet3Problem1.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem3.tex
 
-#../latex/bin/lgrep ProblemSet3Problem3.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem3.tex
+../latex/bin/lgrep ProblemSet3Problem3.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem3.tex
 
-#../latex/bin/lgrep ProblemSet3Problem4.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
+../latex/bin/lgrep ProblemSet3Problem4.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
 
-#../latex/bin/lgrep ProblemSet3Problem2.tex | tee o ; . ./o
-#perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
+../latex/bin/lgrep ProblemSet3Problem2.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
 
-../latex/bin/lgrep Nparticle.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl Nparticle.tex
+#../latex/bin/lgrep Nparticle.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl Nparticle.tex
