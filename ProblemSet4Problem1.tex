@@ -2,12 +2,86 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet4:1}{
-\makesubproblem{}{qft:problemSet4:1a}
+\makeproblem{The Wick theorem(s)}{qft:problemSet4:1}{
+ 
+ \begin{enumerate}
+\item  {\bf The mother of all Wick theorem(s): }
+Let $A_1, A_2,... $ and $B$ denote a set of either creation or annihilation operators. In other words, $A_i = a_{k_i}$ or $a_{k_i}^\dagger$ (as well as $B$; $B$ is just like one of the $A$'s, but we'll use the letter $B$ to denote an operator which is singled out, as it is needed in the proof). Next, define a contraction $A_i A_k$ as follows:
+\begin{equation}
+\label{c1}
+\contraction{O_1}{A_i}{O_2}{A_k}
+O_1 A_i O_2 A_k =   O_1 O_2 \contraction{}{A_i}{} {A_k}  A_i A_k ~,
+ \end{equation}
+ where $O_1$, $O_2$ are arbitrary strings of operators. The above equation signifies the fact that the ``contraction" is a $c$-number, i.e. commutes with all operators. It is defined as follows:
+  \begin{equation}
+  \contraction{}{A_i}{} {A_j}  A_i A_j = \left\{ \begin{array}l 0, \; {\rm if } \; \; A_i = a_{k_i}, A_j = a_{k_j} \;\; {\rm or} \;\; A_i = a_{k_i}^\dagger, A_j = a_{k_j}^\dagger\cr 0, \; {\rm if } \; \; A_i = a_{k_i}^\dagger \; \; {\rm and} \; \; A_j = a_{k_j} \cr
+(2 \pi)^3  \delta^{(3)}(k_i - k_j),  \; {\rm if } \; \; A_i = a_{k_i} \; \; {\rm and} \; \; A_j = a_{k_j}^\dagger  
+ \end{array}~ \right.
+\label{c2}
+ \end{equation}
+ Put in words, the contraction vanishes if both $A$'s are creation (or both are annihilation operators), as indicated in the first line in (\ref{c2}). The contraction is also zero if the operator to the right is an annihilation one, as per the second line in (\ref{c2}). Finally, the contraction is equal to the commutator of $a_{k_i}$ with $a_{k_j}^\dagger$ in the case when the creation operator is to the left of the annihilation operator. 
+ 
+ Finally, we use $:A \ldots B:$ to denote the expression where all annihilation operators appear to the right of all creation operators, i.e. the usual normal ordered expression. Then, 
+ Wick's theorem---as used in many body physics---is formulated as follows:
+ \begin{eqnarray}
+ \label{w1}
+ A_1 \ldots A_n &=& \;\;\; :A_1 \ldots A_n:\nonumber \\ 
+ & & + :\contraction{}{A_1}{}{A_2} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A_1}{\ldots}{A_{n-1}} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A_1}{\ldots}{A_{n}} A_1 \ldots A_{n}: \\ 
+ && + :\contraction{}{A_1}{}{A_2} A_1 A_2 \contraction{}{A_3}{}{A_4} A_3 A_4 \ldots A_n: + \ldots \nonumber~.
+ \end{eqnarray}
+ The first line contains the normal-ordered product of all operators without contractions, the second line---all possible terms with one contraction (not involving only $A_1$ of course, but all single-contraction terms, which would be painful to indicate), the third line has all possible two-contraction terms, etc. 
+
+Now, you will prove (\ref{w1}) in steps. 
+\begin{enumerate}
+\item Prove the following Lemma:
+ \begin{equation}
+ \label{lemma}
+  :A_1 A_2 \ldots A_n: B =  :A_1 A_2 \ldots A_n  B: + \sum\limits_{1 \le k \le n}:A_1 \ldots \contraction{}{A_k}{\ldots A_n}{B} A_k \ldots A_n B:
+ \end{equation} Argue that if $B$ is an annihilation operator, the Lemma is trivial. Thus, consider $B$ to be a creation operator.
+ Notice  that if any of the $A_{1,...,n}$ are creation operators, they can be taken to the left of the normal products in (\ref{lemma}) (because all their contractions with $B$ are zero). Thus, if the (\ref{lemma}) is proven for arbitrary $n$ for the case when all $A_i$'s are annihilation operators, the general case is obtained by multiplying on the left with the desired number of creation operators. Thus, it suffices to prove the Lemma for the case when all $A_i$'s are annihilation operators. Also
+notice 
+  Thus, after proving the Lemma for $n=1$, use induction to show that it holds for any $n$. Assuming it holds for some number $n$, go to the case $n+1$ by multiplying (\ref{lemma})  by some annihilation operator $A_0$ on the left and show that the Lemma holds for $n+1$ operators.   
+  
+  By the chain of logic described above, you have proven (\ref{lemma}).
+
+Notice also that the lemma (\ref{lemma}) holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by $$:A_1 \contraction{}{A_2}{\ldots}{A_p} A_2 \ldots  A_p \ldots A_n:,$$
+  i.e. with the product of operators with an arbitrary number of contractions (one, as written above), with a trivial modification of the last term (since, obviously, you can not contract $B$ with contractions).
+  \item Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. Imagine that (\ref{w1}) holds for $n$ operators and prove that it holds for $n+1$, using (\ref{lemma}).
+  \end{enumerate}
+  \item {\bf An intermediate step:} Let now $A_i$ and $B$ be operators expressed as some linear combinations of creation and annihilation operators. In particular the subscripts $i$ may now indicate spatial dependence, rather than momentum eigenvalues. Now, define the contraction as follows:
+   \begin{equation}
+  \contraction{}{A_i}{} {A_j}  A_i A_j = \langle 0 \vert A_i A_j \vert 0 \rangle~,
+    \label{c5}
+ \end{equation}
+ where $\vert 0 \rangle$ is the Fock vacuum.
+Notice that (\ref{c5}) is equivalent to (\ref{c2}) when $A_i$'s are either creation or annihilation operators. Argue that (\ref{w1}) holds verbatim. 
+
+  \item {\bf The time-ordered Wick theorem:} Use the above Wick theorem to prove the time-ordered version. Notice that, despite appearances, there is not much left to do. Now, we have space-time rather than momentum space arguments and the theorem is now formulated as follows:\begin{eqnarray}
+ \label{w2}
+T( A_1 \ldots A_n ) &=& \;\;\; :A_1 \ldots A_n:\nonumber \\ 
+ & & + :\contraction{}{A_1}{}{A_2} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A_1}{\ldots}{A_{n-1}} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A_1}{\ldots}{A_{n}} A_1 \ldots A_{n}: \\ 
+ && + :\contraction{}{A_1}{}{A_2} A_1 A_2 \contraction{}{A_3}{}{A_4} A_3 A_4 \ldots A_n: + \ldots \nonumber~,
+ \end{eqnarray}
+ with the difference that $A_i$ are fields (we are considering real scalar fields),  $1 \ldots n$ denote space-time points, and the contraction is now the Feynman propagator, e.g. $D_F(x_1-x_2)$, etc. 
+ 
+ Notice that  to prove (\ref{w2}) one can consider a particular time ordering. Then the $T$ product becomes the normal product of operators (as they are assumed ordered). The space-time dependence can be taken out by Fourier transform which multiplies every term.  Every operator is a sum of creation and annihilation operators. Their commutators are exactly the ones giving rise to the contraction in (\ref{c2}), on one hand, and to the function $D(x_i -x_j)$ after Fourier transform, on the other (recall that this function appears in the Feynman propagator).
+Convince yourselves, using (\ref{c5}),  that this proves the theorem.
+ 
+ \item For extra bonus, generalize all theorems above to anti commuting fields.
+\end{enumerate}
+%\makesubproblem{}{qft:problemSet4:1a}
+%\makesubproblem{}{qft:problemSet4:1b}
+%\makesubproblem{}{qft:problemSet4:1c}
+%\makesubproblem{}{qft:problemSet4:1d}
 } % makeproblem
 
 \makeanswer{qft:problemSet4:1}{
-\makeSubAnswer{}{qft:problemSet4:1a}
-
-TODO.
+%\makeSubAnswer{}{qft:problemSet4:1a}
+%TODO.
+%\makeSubAnswer{}{qft:problemSet4:1b}
+%TODO.
+%\makeSubAnswer{}{qft:problemSet4:1c}
+%TODO.
+%\makeSubAnswer{}{qft:problemSet4:1d}
+%TODO.
 }

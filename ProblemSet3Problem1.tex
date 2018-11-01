@@ -2,12 +2,47 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet3:1}{
+\makeproblem{Interaction energy between static external charges}{qft:problemSet3:1}{
 \makesubproblem{}{qft:problemSet3:1a}
+ Calculate the vacuum expectation value of the time ordered exponential 
+\begin{equation}
+\label{one}
+\langle 0 \vert T e^{\;i \int d^4 x\;  g \; j(x)\;  \phi(x)} \vert 0 \rangle
+\end{equation}
+for the case of a massive free real scalar field. Here, $g$ is a coupling constant, which we shall call the ``Yukawa coupling". Show, e.g. using Wick's theorem, that the answer is
+ \begin{equation}
+\label{two}
+  e^{\;-{g^2\over 2} \int d^4 x d^4 y\;  j(x)  D_F(x-y) j(y) } ~,
+   \end{equation}
+   which is really the exponential of the second order term and $D_F$ is the Feynman propagator.
+\makesubproblem{}{qft:problemSet3:1b}
+Consider the case where $j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right)$. This source term represents two external opposite ``charges"\footnote{In other words, classical particles linearly coupled to $\phi$ (if $\phi$ was the electrostatic potential $A^0$, this would really be the electromagnetic charge.) For a discussion of whether an interaction like you will study can arise from a realistic QFT, see comment in 2. below.} a distance $R = |\BR|$ apart, created at $t=-T$ and existing for time $2 T$.  Show that, in the limit $T \gg R \gg 1/m$, Eq.~(\ref{two}) {\it is proportional to}:
+   \begin{equation}
+   \label{three}
+   e^{ - i 2T V(R)},
+   \end{equation}
+   where $V(R)$ is the Yukawa potential. 
+   
+    {\flushleft{Hint:}} {\small Recall that $\lim\limits_{T \rightarrow \infty} \int\limits_{-T}^T d x e^{i p x} = 2 \pi \delta(p)$ as well as the usual relation $(2 \pi \delta(p))^2 = 2 \pi \delta(p) 2 T$.}
+    
+      {\small  {\flushleft{T}he} result (\ref{three}) means that ``{\it two static sources of scalar field a distance $R$ apart interact via the Yukawa potential}." This is because (\ref{three}) is  the evolution operator (it is  $ \sim e^{- i H t}$, for  $t=2T$)  of the field theory 
+   in the presence of the static external sources (or, more appropriately, (\ref{three}) is the contribution to the evolution operator that has to do with the interaction between the sources induced by the field). Thus, it is natural to call the quantity multiplying $- i 2 T$  and depending on $R$, the interaction potential $V(R)$ between the sources.}
+
+ Do opposite-sign ``charges" attract or repel? How about same-sign? 
+ 
+ {\small  Notice that when the ``charges" are also considered as part of a QFT and, therefore, $j(x)$  in (\ref{one}) is replaced by an appropriate QFT expression, one finds more interesting results. Namely,  the Yukawa interaction between two fermions is always attractive---whether it is between two particles, two anti-particles, or between a particle and an anti-particle. The way to establish this, as well an alternative derivation of the expression for $V(R)$ you found in (\ref{three}), is to start  from the scattering of (anti)fermions via scalar exchange and then take the nonrelativistic limit. A comparison with quantum-mechanical Born scattering yields then an expression for $V(R)$. 
+ 
+ This result quoted above is of great interest in nuclear physics, where single-pion exchange   operates via $V(R)$, and turns out to be attractive between nucleons and between nucleons and anti-nucleons.  }
+   
+\makesubproblem{}{qft:problemSet3:1c}
+What do you think is the significance of the various limits $T \gg R \gg 1/m$? Also, what is the  meaning of the factors you omitted upon going from (\ref{two}) to (\ref{three})?
 } % makeproblem
 
 \makeanswer{qft:problemSet3:1}{
 \makeSubAnswer{}{qft:problemSet3:1a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet3:1b}
+TODO.
+\makeSubAnswer{}{qft:problemSet3:1c}
 TODO.
 }

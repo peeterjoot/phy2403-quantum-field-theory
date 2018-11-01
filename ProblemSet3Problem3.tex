@@ -2,12 +2,52 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet3:3}{
+\makeproblem{``Radiation" by accelerated source and ``IR catastrophe''}{qft:problemSet3:3}{
+
+{\flushleft{This}} is a baby problem having to do with radiation of scalar particles. (As we will not have too much time to study the radiation of electromagnetic fields this term, it is a good opportunity.) Consider the coupling of a classical particle to a scalar field (remember Homework 1, Problem 1, where a similar coupling to the electromagnetic field was considered):
+\begin{equation}
+\label{scalar1}
+S_{int} = e \int\limits_{worldline} ds \phi(x(s))~,
+\end{equation}
+where $x(s)$ is the worldline of the particle and $e$ is its scalar charge (what is its dimension?). The coupling (\ref{scalar1}) corresponds to a ``current" $j(x)$ coupling to $\phi$ as in Problem {\bf II.} above:
+\begin{equation}
+\label{scalar2}
+S_{int} = e \int\limits_{worldline} ds \phi(x(s) =   \int d^4 x j(x) \phi(x)~, ~~ {\rm where} ~~ j(x) = e \int\limits_{worldline} ds \delta^{(4)}(x - x(s))~,
+\end{equation} 
+is the  current. 
+
 \makesubproblem{}{qft:problemSet3:3a}
+Consider a particle of mass $M$, whose worldline is given by:
+\begin{equation}
+x^\mu(s) = {p^\mu_{i} \over M} s, ~{\rm for} ~~ s<0 ~ {\rm and} ~~ x^\mu(s) = {p^\mu_{f} \over M} s, ~{\rm for} ~~ s>0~,
+\label{scalar3}
+\end{equation}
+where $p^\mu_i$ and $p^\mu_f$ are the initial and final four-momenta of the particle (both obeying $p^\mu p_\mu = M^2$,  with $p^0 > 0$, of course). The physical meaning of this trajectory is that the particle undergoes acceleration at $x^0=0$, suddenly changing its four-momentum from $p_i$ to $p_f$. Show that the Fourier transform of the current, as defined in (\ref{p2}) above, is given by:
+\begin{equation}
+\label{current1}
+\tilde{j}(p) ={ i e M \over p \cdot p_f} - { i e M \over p \cdot p_i} 
+\end{equation}
+To make the TA's life (and yours) easier, in getting (\ref{current1}), consider without loss of generality, trajectories with $p_i = (M,0,0,0)$ and $p_f = (\sqrt{M^2 + q^2},q,0,0)$. \footnote{Recall  the ``half-delta function" integrals from Homework 2, Problem 1 and ignore the $i \epsilon$ factors which should be present in the denominators in (\ref{current1}) as they will not be important for what follows.}
+
+\makesubproblem{}{qft:problemSet3:3b}
+Now study the expression for the average number of particles produced, $\lambda$, or $\langle N \rangle$,  of Eq.~(\ref{p2}), as well as the average energy $\langle E \rangle$, which you can easily come up with, from (\ref{p2}). From now on, consider the case where the mass of the produced particles ($\phi$-quanta) is zero. This has two advantages:  simplifications in the various formulae as well as giving us the feeling that we are actually looking at something close to radiation of photons. 
+
+Show that the integrals over the momenta of the emitted ``photons" in $\langle N\rangle$ and $\langle E\rangle$ diverge at large $p$. 
+
+{\small  {\flushleft{T}}his is because our trajectory has a sudden change of momentum at $s=0$. We expect that the formulae for the radiated ``photons" is still valid for sufficiently small momenta where the nature of the kink is not relevant (presumably for momenta less than the inverse time during which a smooth change of momenta occurs, i.e. momenta smaller than the reciprocal of the scattering time). Thus, we now 
+ suppose there is a high-momentum cutoff. }
+ 
+ Let us then study  the convergence of the small-$p$ integrals over the momenta of the emitted particles in $\langle N\rangle$ and $\langle E\rangle$. This counts the number or energy  of ``soft" photons emitted. 
+ Show what while $\langle E\rangle$ is finite, the expression for $\langle N \rangle$ diverges for small $\Bp$. 
+ 
+{\small \flushleft{T}his divergence in the number of soft photons radiated by a classical source is called the ``infrared catastrophe", in the case of QED. A similar answer is obtained using a tree-level QFT calculation of the radiation of soft photons. Note one interesting fact: the divergence of the integral determining $\langle N \rangle$ is logarithmic: $ \langle N \rangle \sim e^2 \log {k_{max} \over k_{min}}$, where the IR cutoff $k_{min}$ is introduced to make the integral finite. You see now that $e^2$ (really, the fine structure constant $\alpha \sim 1/137$, in QED) is multiplied by a large $\log$, which can be bigger than $137$. This is a first indication that perturbation theory breaks down and some resummation  of diagrams may be  needed. Indeed, in QED, the infrared divergence is cancelled after adding ``loop" effects, see Section 6.5 of Peskin and Schroeder.  }
+ 
+ {\small {\flushleft{T}}he point of this problem was to illustrate two things. First, it shows (within  this classical calculation of the overlap between free and interacting vacua) how the two vacua can be orthogonal (in the case of massless $\phi$, due to infrared (small momenta) problems). Second, it points toward something---the infrared divergencies in QED, and the resulting ``Sudakov double logs"---that you will study later, either in QFT2 or by yourselves.}
 } % makeproblem
 
 \makeanswer{qft:problemSet3:3}{
 \makeSubAnswer{}{qft:problemSet3:3a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet3:3b}
 TODO.
 }

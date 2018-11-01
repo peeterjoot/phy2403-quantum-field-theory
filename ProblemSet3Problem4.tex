@@ -2,12 +2,93 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{description}{qft:problemSet3:4}{
+\makeproblem{Where is the particle?}{qft:problemSet3:4}{
+{\flushleft{In}} class, we did mention that, by analogy with non relativistic quantum mechanics, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ allows us to say something along the lines that {\it ``the operator $\hat\phi(\Bx)_+$ creates a particle at $\Bx$"}. 
+These words are based on noticing  that in QM, we have 
+$$\vert\Bx\rangle \sim \sum_{\Bp} e^{ i \Bp \Bx} \vert \Bp \rangle,$$
+ where $\vert\Bx\rangle$ is an eigenstate of the position operator with eigenvalue $\Bx$ and $\Bp$ is, likewise, an eigenstate of momentum. On the other hand, in free massive scalar theory, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ can be similarly expressed as $$\hat\phi(\Bx,t=0) \vert 0\rangle = \int {d^3 p \over (2 \pi)^3 \sqrt{2 \omega_{\Bp}}} e^{ - i \Bp \Bx} \hat{a}^\dagger_{\Bp} \vert 0 \rangle =  \int {d^3 p \over (2 \pi)^3 2 \omega_{\Bp}} e^{ - i \Bp \Bx}   \vert p \rangle,$$ where $\vert p \rangle$
+  is the relativistically normalized momentum eigenstate. Comparing the above two equations, reading from left to right, we are compelled to utter the words quoted in the beginning.
+  
+  
+ Accepting this interpretation literally, we are next faced with explaining the following. Consider the state $\vert \Bzero,0 \rangle = \hat\phi(\Bzero,t=0) \vert 0\rangle$, interpreted (as per the above dissussion) as a particle created at $\Bx=0$ at $t=0$. Similarly, the state $$\vert \By,t \rangle = \hat\phi(\By,t) \vert 0 \rangle$$ is that of  a particle at $\By$ at $t$. Notice that these are free fields so their time evolution is trivial. Then, by the usual Born rule  of quantum mechanics (which we accept in QFT), the inner product 
+    $$
+    \langle \By,t \vert \Bzero,0 \rangle $$
+    would be ``{\it the amplitude that the particle created at $\Bzero$ at $t=0$ 
+    is found at $\By$ at $t$}". Notice that this is exactly the kind of answer that the quantum-mechanical propagator,  often denoted precisely by  $\langle \By,t \vert \Bzero,0 \rangle$, gives.
+    A problem with this arises when one realizes that 
+     $$
+    \langle \By,t \vert \Bzero,0 \rangle  =\langle 0\vert \hat{\phi}(\By,t) \hat{\phi}(\Bzero,0)\vert0 \rangle = D(\By,t) \ne 0 ~ {\rm for} ~ (\By,t) \sim (\Bzero,0)~.$$
+In other words, this amplitude is nonzero for spacelike separations (as you explicitly showed in Homework 2, Problem 1, Part 2).
+The point of the simple exercise below is to argue that the above interpretation of this amplitude should be taken with a grain of salt, i.e. not too literally, as far as relativity is concerned, of course. 
+
+The question we will ask is: to what extent is this particle at $\Bx=0$ localized? In quantum mechanics, we answer this question by pointing out that for an eigenstate of $\hat{x}$, whose wave function is $\delta(x -x')$,  the probability to find the particle anywhere but at $x=x'$ is zero. Trying to pursue this in QFT, a conundrum that arises is that we do not have wave functions for particles. Recall that we have wave functionals, which determine the probability that {\it the field} has this or that value. The coordinate, on the other hand, is an argument,   not an operator (hence ``observable") in the theory---just like time in QM, which is also not an operator; after all we 
+said ``QM=QFT in $d=1$". 
+The best we can do is to consider the state $\vert \By,0 \rangle$ and ask where its properties identifiable in QFT---energy or momentum---are localized.
+
+ Thus,  consider the expectation value of $\hat{T}_{00}(\Bx,t)$ (assumed normal-ordered) in this state: 
+$$
+\rho(\By, \Bx, t) \equiv \langle \By,0 \vert T_{00}(\Bx,t)\vert \By,0 \rangle~.
+$$
+From the Born rule, the natural interpretation of the above quantity is the value of the energy density of the state $\vert \By,0 \rangle$ observed at $(\Bx,t)$---spacelike or not w.r.t. $(\By,0)$.
+
+
 \makesubproblem{}{qft:problemSet3:4a}
+Show, using the translation operator, that $\rho(\By, \Bx, t) =  \tilde\rho(0, \Bx - \By, t) \equiv \tilde\rho(\Bx-\By,t)$, where the last equality defines the new energy density $\tilde\rho(\Bx,t)$.
+\makesubproblem{}{qft:problemSet3:4b}
+Using Wick's theorem---really, a baby-version thereof---express $\tilde\rho(\Bx,t)$ in terms of $D(\Bx,t)$ and its derivatives.
+\makesubproblem{}{qft:problemSet3:4c}
+Using the knowledge acquired from Homework 2, study how well is the particle's energy localized, already at $t=0$.
+
+
+Are you surprised by the result?  Are you comforted?
+ 
+ {\small {\flushleft W}e didn't have time, apart from Problem 4 of Homework 2, to dwell much on the nonrelativisic limit. 
+This limit can be achieved by forgetting the antiparticles and then defining non-relativistic fields. This is very well described in either Tong's or Luke's notes. For those of you studying cold atoms, it is 
+definitely a must-read! }
+
+\bigskip
+
+My final comment is that the most concise formulation of causality that goes beyond simply stating that the commutators vanish for spacelike separations is the one first due to Stueckelberg (1940's) and then finessed by Bogoljubov (1950's). 
+
+They consider the expectation value of an operator $\hat{O}(x)$   in a state prepared by the action of an operator $U[g]\vert 0\rangle$.
+$U[g]$ is an evolution operator (see below) which is a functional of some classical fields $g(y)$ used to prepare the state of the field (e.g. external e.m. fields using to focus, accelerate, etc., the particles; $g(y)$ could also be used to turn on and off the interactions in different space time regions). Thus the object of study is:
+$$ \langle \hat{O}(x) \rangle =  \langle 0 \vert U^\dagger[g] \hat{O}(x) U[g] \vert 0 \rangle~.$$ 
+The causality condition, then, is that
+$$ {\delta \langle \hat{O}(x) \rangle \over \delta g[y]} = 0 ~ {\rm for } ~ x\sim y~.$$
+Now, recalling the form of the evolution operator,  $U[g] = T e^{  i \int dt d^3 x L_I(t, \Bx, g(\Bx,t))}$, and the Baker-Campbell-Hausdorf formula, it should be clear how the vanishing of the commutators outside the light cone becomes  relevant for the above condition  to hold. 
+For Bogoljubov, the vanishing commutators are a {\it consequence} of the causality condition given in terms of variational derivatives, as expressed above; he derives the $S$-matrix expansion from that requirement along with a few others (locality and Lorentz invariance, basically). 
+
+{\flushleft{T}he reason to include this comment was to close the loop on something that I mentioned in class, now that we've seen what $U[g]$ may look like. 
+ }
+
+%\begin{comment}
+%   {\flushleft {\bf II.}} {\it Is gravity scalar?  }
+%  
+% 
+%  \smallskip
+%{\flushleft{Here,}} you are going to study, using the results from {\bf I.}, the question whether gravity can be described by a relativistic massless scalar field. After all, the Yukawa potential is $\sim 1/r$, in the limit when the mass goes to zero, which is just like the Newtonian potential.
+%
+%We'll take gravity to be described by a massless free scalar $\phi$, the ``scalar graviton", 
+%just like the previous problem but with zero mass. The matter fields will have mass and will be described by another scalar field, $\psi$, this time massive. Now we have to decide how to couple these two. We shall attempt to do it this way: we shall couple the field $\phi$ to the field $\psi$ as follows: $H_{int} = g \int d^3 x T^\mu_{(\psi) \; \mu}(x) \phi(x)$. Here, $T^\mu_{(\psi) \; \mu}(x)$ is the trace of the energy-momentum tensor of the $\psi$ field and $g$ is a coupling constant. 
+%\begin{enumerate}
+%\item
+%We shall not dwell much on the dynamics of the $\psi$ field and will just consider its $T^\mu_{(\psi) \; \mu}$ an external source of $\phi$. Still, we need to find a form for  $T^\mu_{(\psi) \; \mu}$ appropriate for a non relativistic static particle. 
+% Consider...
+% \item Find the constant $g$ such that the Newton law between two static masses is correctly reproduced by (\ref{three}).
+% \end{enumerate}
+% {\small \flushleft{Th}e reason scalar gravity does not work is that the coupling $T^\mu_{(\psi) \; \mu}(x) \phi(x)$ means that the ``scalar graviton" $\phi$ does not couple to the electromagnetic field (remember that $T^\mu_\mu =0$ there). On the other hand, the bending of light in the gravitational field is an experimental fact, so there should be a coupling between the two, not contained in our model. }
+% 
+%\bigskip
+%\end{comment}
+%
+%
 } % makeproblem
 
 \makeanswer{qft:problemSet3:4}{
 \makeSubAnswer{}{qft:problemSet3:4a}
-
+TODO.
+\makeSubAnswer{}{qft:problemSet3:4b}
+TODO.
+\makeSubAnswer{}{qft:problemSet3:4c}
 TODO.
 }

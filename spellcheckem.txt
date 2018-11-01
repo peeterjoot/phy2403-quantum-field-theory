@@ -4,6 +4,10 @@ ProblemSet1Problem2.tex
 ProblemSet1Problem3.tex
 ProblemSet1Problem4.tex
 ProblemSet1Problem5.tex
+ProblemSet2Problem1.tex
+ProblemSet2Problem2.tex
+ProblemSet2Problem3.tex
+ProblemSet2Problem4.tex
 noetherCurrentScalarField.tex
 qftLecture1.tex
 qftLecture10.tex
