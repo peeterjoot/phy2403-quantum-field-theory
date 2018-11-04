@@ -20,6 +20,10 @@
 %%%\beginArtNoToc
 %%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 4: Scalar action, least action principle, Euler-Lagrange equations for a field, canonical quantization.  Taught by Prof.\ Erich Poppitz}
 \chapter{Scalar action, least action principle, Euler-Lagrange equations for a field, canonical quantization.}
+\index{action}
+\index{least action principle}
+\index{Euler-Lagrange equations!field}
+\index{canonical quantization}
 \label{chap:qftLecture4}
 %%%
 %%%\paragraph{DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.}
@@ -177,6 +181,8 @@ where \( m, \mu, \mu' \) all have mass dimensions.  In 5D there are no marginal 
 From the point of view of particle physics, all the terms in the Lagrangian must be the ones that are relevant at long distances.
 
 \section{Least action principle (classical field theory).}
+\index{least action principle}
+\index{classical field theory}
 
 Now we want to study 4D scalar theories.  We have some action
 \begin{dmath}\label{eqn:qftLecture4:380}
@@ -310,19 +316,21 @@ which is the wave equation (for a massless free field).  This is also called the
 in a source free region.
 
 \section{Canonical quantization.}
+\index{canonical quantization}
 
+The harmonic oscillator described by
 \begin{dmath}\label{eqn:qftLecture4:740}
-\LL = \inv{2} \dot{q} - \frac{\omega^2}{2} q^2
+\LL = \inv{2} \dot{q}^2 - \frac{\omega^2}{2} q^2<
 \end{dmath}
-This has solution \(\ddot{q} = - \omega^2 q\).
-
-Let
-\begin{dmath}\label{eqn:qftLecture4:760}
-p = \PD{\dot{q}}{\LL} = \dot{q}
-\end{dmath}
+has solution \(\ddot{q} = - \omega^2 q\).
+With
+\begin{equation}\label{eqn:qftLecture4:760}
+p = \PD{\dot{q}}{\LL} = \dot{q},
+\end{equation}
+the Hamiltonian is given by
 \begin{dmath}\label{eqn:qftLecture4:780}
 H(p,q) = \evalbar{p \dot{q} - \LL}{\dot{q}(p, q)}
-= p p - \inv{2} p^2 + \frac{\omega^2}{2} q^2 = \frac{p^2}{2} + \frac{\omega^2}{2} q^2
+= p p - \inv{2} p^2 + \frac{\omega^2}{2} q^2 = \frac{p^2}{2} + \frac{\omega^2}{2} q^2.
 \end{dmath}
 
 In QM we quantize by mapping Poisson brackets to commutators.
@@ -341,6 +349,8 @@ so
 \begin{dmath}\label{eqn:qftLecture4:860}
 \antisymmetric{ -i \PD{q}{} } { q} = -i
 \end{dmath}
+
+\paragraph{Returning to the field Lagrangian.}
 
 Let's introduce an explicit space time split.  We'll write
 \begin{dmath}\label{eqn:qftLecture4:880}
@@ -382,6 +392,7 @@ we ``quantize'' the scalar field theory by promoting \( \pi, \phi \) to operator
 \begin{dmath}\label{eqn:qftLecture4:980}
 \antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \delta^3(\Bx - \By).
 \end{dmath}
+Note that in this commutator, the fields are evaluated at different spatial points, but at the same time.
 
 %}
 %%%\EndArticle

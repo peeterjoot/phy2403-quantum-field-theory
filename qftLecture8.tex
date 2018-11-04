@@ -20,6 +20,9 @@
 %%%\beginArtNoToc
 %%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 8: 1st Noether theorem, spacetime translation current, energy momentum tensor, dilatation current.  Taught by Prof.\ Erich Poppitz}
 \chapter{1st Noether theorem, spacetime translation current, energy momentum tensor, dilatation current.}
+\index{spacetime translation current}
+\index{energy momentum tensor}
+\index{dilatation current}
 \label{chap:qftLecture8}
 
 %%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
@@ -28,6 +31,7 @@
 %%%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 %%%
 \section{1st Noether theorem.}
+\index{Noether's theorem!1st}
 
 Recall that, given a transformation
 \begin{dmath}\label{eqn:qftLecture8:20}
@@ -174,7 +178,7 @@ We showed that
 \begin{dmath}\label{eqn:qftLecture8:420}
 \ddt \hatO = i \antisymmetric{\hatH}{\hatO}
 \end{dmath}
-This implied that \( \phihat, \pihat \) obey the classical EOMs
+This implied that \( \phihat, \pihat \) obey the classical equations of motion
 \begin{equation}\label{eqn:qftLecture8:440}
 \ddt \phihat = i \antisymmetric{\hatH}{\phihat} = \ddt{\pihat}
 \end{equation}
@@ -199,6 +203,7 @@ Can show that:
 Now we see the energy and momentum as conserved quantities associated with spacetime translation.
 
 \section{Unitary operators.}
+\index{unitary operator}
 
 In QM we say that \( \hat{\Bp} \) ``generates translations''.
 
@@ -326,6 +331,7 @@ e^{-i a^k \hat{p}^k }
 \end{dmath}
 
 \section{Continuous symmetries.}
+\index{continuous symmetries}
 
 For all infinitesimal transformations, continuous symmetries lead to conserved charges \( Q \).  In QFT we map these charges to Hermitian operators \( Q \rightarrow \hatQ \).  We say that these charges are ``generators of the corresponding symmetry'' through unitary operators
 \begin{dmath}\label{eqn:qftLecture8:880}
@@ -334,15 +340,18 @@ For all infinitesimal transformations, continuous symmetries lead to conserved c
 These represent the action of the symmetry in the Hilbert space.
 
 \paragraph{Example: spatial translation}
+\index{spatial translation}
 \begin{dmath}\label{eqn:qftLecture8:900}
 \hatU(\Ba) = e^{i \Ba \cdot \hat{\BP}}
 \end{dmath}
 \paragraph{Example: time translation}
+\index{time translation}
 \begin{dmath}\label{eqn:qftLecture8:920}
 \hatU(t) = e^{i t \hat{H}}.
 \end{dmath}
 
 \section{Classical scalar theory.}
+\index{classical scalar theory}
 
 For \( d > 2 \) let's look at
 \begin{dmath}\label{eqn:qftLecture8:940}
@@ -365,6 +374,8 @@ where the constant factor has been set to one.
 This current is clearly conserved since \( \partial_\mu J^\mu = \partial_\mu \partial^\mu \phi = 0\) (the equation of motion).
 
 These are called ``Goldstone bosons'', or ``Nambu-Goldstone bosons''.
+\index{Goldstone boson}
+\index{Nambu-Goldstone bosons}
 
 \paragraph{With \( m = \lambda = 0, d = 4 \) we have}
 

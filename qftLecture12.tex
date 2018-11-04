@@ -22,8 +22,13 @@
 %%%
 %%%\beginArtNoToc
 %%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 12: Klein-Gordon Green's function, Feynman propagator path deformation, Wightman function, Retarded Green's function.  Taught by Prof.\ Erich Poppitz}
-\chapter{Klien-Gordon Green's function, Feynman propagator path deformation, Wightman function, Retarded Green's function.}
+\chapter{Klein-Gordon Green's function, Feynman propagator path deformation, Wightman function, Retarded Green's function.}
 \label{chap:qftLecture12}
+\index{Green's function!Klein-Gordon}
+\index{Feynman propagator}
+\index{path deformation}
+\index{Wightman function}
+\index{Green's function!retarded time}
 
 %%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
 %%%
@@ -40,6 +45,7 @@ S_{\text{int}} = \int d^4 x j(x) \phi(x).
 \end{dmath}
 
 \paragraph{Modern application:} think of \( \phi \) has some SM field and think of \( j \) as due to inflaton (i.e. cosmological inflation interaction) oscillation.  In the inflationary model, the process of ``reheating'' creates all the matter in the universe.  We won't be talking about inflation, but will be considering a toy model that has some similar characteristics to the inflationary theory.
+\index{inflation}
 
 The equation of motion that we end up with is
 \begin{dmath}\label{eqn:qftLecture12:40}
@@ -74,7 +80,7 @@ Also, as usual, we take out our Fourier transforms, the power tool of physics, a
 \begin{dmath}\label{eqn:qftLecture12:120}
 G(x - y) = \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot (x-y) } \tilde{G}(p).
 \end{dmath}
-Operating with KG gives
+Operating with Klein-Gordon gives
 \begin{dmath}\label{eqn:qftLecture12:520}
 \lr{ \partial_\mu \partial^\mu + m^2}
 G(x)
@@ -198,6 +204,7 @@ For the second integral, we make a change of variables \( \Bp \rightarrow -\Bp \
 \end{dmath}
 so
 %\begin{dmath}\label{eqn:qftLecture12:320}
+\index{Feynman propagator}
 \boxedEquation{eqn:qftLecture12:340}{
 G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x)
 }
@@ -206,6 +213,7 @@ G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x)
 \input{qftLecture13PoleShifting.tex}
 
 \section{Matrix element representation of the Wightman function.}
+\index{Wightman function}
 
 Recall that the Wightman function also had a matrix element representation
 \begin{dmath}\label{eqn:qftLecture12:360}

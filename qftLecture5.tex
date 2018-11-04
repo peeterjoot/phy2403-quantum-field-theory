@@ -20,6 +20,11 @@
 %%\beginArtNoToc
 %%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 5: Klein-Gordon equation, SHOs, momentum space representation, raising and lowering operators..  Taught by Prof.\ Erich Poppitz}
 \chapter{Klein-Gordon equation, SHOs, momentum space representation, raising and lowering operators.}
+\index{Klein-Gordon}
+\index{simple harmonic oscillator}
+\index{momentum space representation}
+\index{raising operator}
+\index{lowering operator}
 \label{chap:qftLecture5}
 
 %\paragraph{DISCLAIMER: Very rough notes from class.  Some additional side notes, but otherwise barely edited.}
@@ -28,6 +33,7 @@
 %%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
 \section{Canonical quantization.}
+\index{canonical quantization}
 
 Last time we introduced a Lagrangian density associated with the Klein-Gordon equation (with a quadratic potential coupling)
 \begin{dmath}\label{eqn:qftLecture5:20}
@@ -66,15 +72,16 @@ For our Klein-Gordon system, this is
 \end{dmath}
 
 \paragraph{Canonical Commutation Relations (CCR)}:
+\index{canonical commutation relations}
+\index{CCR}
 
 We quantize the system by promoting our fields to Heisenberg-Picture (HP) operators, and imposing commutation relations
 \begin{dmath}\label{eqn:qftLecture5:140}
-\antisymmetric{\hat{\Pi}(\Bx, t)}{\hat{\phi}(\By, t)} = -i \delta^3 (\Bx - \By)
+\antisymmetric{\hat{\Pi}(\Bx, t)}{\hat{\phi}(\By, t)} = -i \delta^3 (\Bx - \By),
 \end{dmath}
-
-This is in analogy to
+which is analogous to
 \begin{dmath}\label{eqn:qftLecture5:160}
-\antisymmetric{\hat{p}_i}{\hat{q}_j} = -i \delta_{ij},
+\antisymmetric{\hat{p}_i}{\hat{q}_j} = -i \delta_{ij}.
 \end{dmath}
 
 To choose a representation, we may map the \( \Psi \) of QM \( \rightarrow \) to a wave functional \( \Psi[\phi] \)
@@ -103,6 +110,7 @@ quantize the Hamiltonian we just add hats, assuming that our fields are all now 
 \end{dmath}
 
 \paragraph{QM SHO review}
+\index{simple harmonic oscillator}
 Recall the QM SHO had a Hamiltonian
 \begin{dmath}\label{eqn:qftLecture5:260}
 \hat{H} = \inv{2} \hat{p}^2 + \inv{2} \omega^2 \hat{q}^2,
@@ -154,18 +162,18 @@ i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\Pihat(\Bx) }
 
 Starting with the non-gradient commutators, and
 utilizing the HP field analogues of the relations \( \antisymmetric{\hatq^n}{\hatp} = n i \hatq^{n-1} \), we find
-\begin{dmath}\label{eqn:qftLecture5:780}
+\begin{equation}\label{eqn:qftLecture5:780}
 \int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\Pihat(\Bx) }
 =
 \int d^3 y 2 i \phihat(\By) \delta^3(\Bx - \By)
 = 2 i \phihat(\Bx).
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture5:740}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture5:740}
 \int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\Pihat(\Bx) }
 =
 \int d^3 y 4 i \phihat(\By)^3 \delta^3(\Bx - \By)
 = 4 i \phihat(\Bx)^3.
-\end{dmath}
+\end{equation}
 For the gradient commutators, we have more work.  Prof Poppitz blitzed through that, just calling it integration by parts.  I had trouble seeing what he was doing, so here's a more explicit dumb expansion required to calculate the commutator
 \begin{dmath}\label{eqn:qftLecture5:720}
 \int d^3 y (\spacegrad \phihat(\By))^2 \Pihat(\Bx)
@@ -274,11 +282,12 @@ which is the classical Euler-Lagrange equation, also obeyed by the
 Heisenberg operator \( \phi(\Bx, t) \).  When \( \lambda = 0 \) this is the Klein-Gordon equation.
 
 \section{Momentum space representation.}
+\index{momentum space representation}
 Dropping hats, we now consider the momentum space representation of our operators, as determined by Fourier transform pairs
 \begin{dmath}\label{eqn:qftLecture5:440}
 \begin{aligned}
 \phi(\Bx, t) &= \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx} \tilde{\phi}(\Bp, t) \\
-\tilde{\phi}(\Bp, t) &= \int d^3 x e^{-i \Bp \cdot \Bx} \phi(\Bx, t)
+\tilde{\phi}(\Bp, t) &= \int d^3 x e^{-i \Bp \cdot \Bx} \phi(\Bx, t).
 \end{aligned}
 \end{dmath}
 
@@ -294,7 +303,7 @@ so
 
 Also observe that \( \phi^\conj(\Bx, t) = \phi(\Bx, t) \) iff \( \tilde{\phi}(\Bp, t) = \tilde{\phi}^\conj(-\Bp, t) \).
 
-We want the EOM for \( \tilde{\phi}(\Bp, t) \) where the operator obeys the KG equation
+We want the equations of motion for \( \tilde{\phi}(\Bp, t) \) where the operator obeys the Klein-Gordon equation
 \begin{dmath}\label{eqn:qftLecture5:520}
 \lr{ \partial_t^2 - \spacegrad^2 + m^2 } \phi(\Bx, t) = 0
 \end{dmath}
@@ -320,7 +329,7 @@ The Fourier components of the HP operators are SHOs!
 
 As we have SHO's and know how to deal with these in QM, we use the same strategy, introducing raising and lowering operators
 \begin{dmath}\label{eqn:qftLecture5:600}
-\tilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t } a_\Bp + e^{i \omega_\Bp t} a^\dagger_{-\Bp}
+\tilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t } a_\Bp + e^{i \omega_\Bp t} a^\dagger_{-\Bp}.
 }
 \end{dmath}
 
@@ -339,12 +348,16 @@ so \( \phi(\Bp, t) \) has a real representation in terms of \( a_\Bp \).
 
 We will find (Wednesday) that
 \begin{dmath}\label{eqn:qftLecture5:640}
-\antisymmetric{a_\Bq}{a^+_\Bp} = \delta^3(\Bp - \Bq) (2 \pi)^3.
+\antisymmetric
+{a_\Bq}
+{a^\dagger_\Bp}
+= 
+(2 \pi)^3
+\delta^3(\Bp - \Bq),
 \end{dmath}
-
-These are equivalent to
+which are equivalent to
 \begin{dmath}\label{eqn:qftLecture5:660}
-\antisymmetric{\tilde{\Pi}(\Bp, t)}{\tilde{\phi}(\Bq, t)} = -i \delta^3(\Bp - \Bq)
+\antisymmetric{\tilde{\Pi}(\Bp, t)}{\tilde{\phi}(\Bq, t)} = -i \delta^3(\Bp - \Bq).
 \end{dmath}
 
 %}

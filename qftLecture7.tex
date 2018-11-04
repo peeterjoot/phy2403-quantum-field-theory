@@ -20,14 +20,16 @@
 %%\beginArtNoToc
 %%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 7: Symmetries, translation currents, energy momentum tensor.  Taught by Prof. Erich Poppitz}
 \chapter{Symmetries, translation currents, energy momentum tensor.}
+\index{translation current}
 \label{chap:qftLecture7}
 
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
+%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%
+%These are notes for the UofT course PHY2403H, Quantum Field Theory I, taught by Prof. Erich Poppitz fall 2018.
+%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%
 \section{Symmetries.}
+\index{symmetries}
 
 Given the complexities of the non-linear systems we want to investigate, examination of symmetries gives us simpler problems that we can solve.
 
@@ -122,7 +124,7 @@ Given a Lagrangian density \( \LL(\phi(x), \phi_{,\mu}(x)) \), where \( \phi_{,\
 \begin{dmath}\label{eqn:qftLecture7:160}
 S = \int d^d x \LL.
 \end{dmath}
-EOMs are invariant if under \( \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta_\epsilon \phi(x)\), we have
+The equations of motion are invariant if under \( \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta_\epsilon \phi(x)\), we have
 \begin{dmath}\label{eqn:qftLecture7:180}
 \LL(\phi) \rightarrow \LL'(\phi') = \LL(\phi) + \partial_\mu J_\epsilon^\mu(\phi) + O(\epsilon^2).
 \end{dmath}
@@ -188,8 +190,10 @@ We write
 Q = \int d^3x j^0,
 \end{dmath}
 and call this the on-shell charge associated with the symmetry.
+\index{on-shell}
 
 \section{Spacetime translation.}
+\index{spacetime translation}
 
 A spacetime translation has the form
 \begin{equation}\label{eqn:qftLecture7:320}
@@ -264,6 +268,7 @@ where \( \nu \) are labels which coordinates are translated:
 \end{aligned}
 \end{dmath}
 We call the conserved quantities elements of the energy-momentum tensor, and write it as
+\index{energy momentum tensor}
 \boxedEquation{eqn:qftLecture7:520}{
 {T^\mu}_\nu = -\PD{x_\mu}{\phi} \PD{x^\nu}{\phi} + {\delta^\mu}_\nu \LL.
 }

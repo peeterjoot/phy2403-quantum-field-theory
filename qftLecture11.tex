@@ -23,6 +23,9 @@
 %%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 11: Momentum matrix elements, spacelike surfaces, microcausality, Lorentz invariant measure, wave function Green's function, retarded time contour, advanced time contour.  Taught by Prof.\ Erich Poppitz}
 %\chapter{Momentum matrix elements, spacelike surfaces, microcausality, Lorentz invariant measure, wave function Green's function, retarded time contour, advanced time contour.}
 \chapter{Microcausality, Lorentz invariant measure, retarded time SHO Green's function.}
+\index{microcausality}
+\index{Lorentz invariant measure}
+\index{Green's function!retarded time}
 \label{chap:qftLecture11}
 
 %%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
@@ -94,6 +97,7 @@ We can compute the matrix element between two matrix states using the creation o
 \end{dmath}
 
 \section{Spacelike surfaces.}
+\index{spacelike surface}
 
 If \( x^\mu, p^\mu \) are four vectors, then \( p^\mu x_\mu = \text{invariant} = {p'}^\mu x'_\mu \).  The light cone is the surface \( p_0^2 = \Bp^2  \), whereas timelike four-momentum form a parabaloid surface \( p_0^2 - \Bp^2 = m^2 \) (i.e. \( E = \sqrt{ m^2 c^4 + \Bp^2 c^2 } \)).
 The surface for constant spacelike points (i.e. all related by a Lorentz transformation) is illustrated in \cref{fig:spaceLikeAndLightCone:spaceLikeAndLightConeFig1}.  A boost moves a point up or down that surface along the energy axis.  It is therefore possible to use a sequence of boost and rotation to transform a point \( (E, \Bp) \rightarrow (-E, \Bp) \rightarrow (-E, -\Bp) \).  That is, any spacelike four-vector \( x \) may be transformed to \( -x \) using a Lorentz transformation.
@@ -212,6 +216,7 @@ From the figure, we see that \( D(x) = D(-x) \) for a spacelike point, which imp
 We've shown this for free fields, but later we will see that this is the case for interacting fields too.
 
 \section{Harmonic oscillator.}
+\index{harmonic oscillator}
 
 \begin{dmath}\label{eqn:qftLecture11:320}
 L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q
@@ -386,7 +391,7 @@ The equation of motion can be found to be
 \lr{ \partial_\mu \partial^\mu + m^2 } \phi(x) = j(x).
 \end{dmath}
 
-We want to study the Green's function of this Klien-Gordon equation, defined to obey
+We want to study the Green's function of this Klein-Gordon equation, defined to obey
 \begin{dmath}\label{eqn:qftLecture11:740}
 \lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \delta^4(x - y),
 \end{dmath}
