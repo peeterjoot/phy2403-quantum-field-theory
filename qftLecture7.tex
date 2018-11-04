@@ -151,7 +151,7 @@ In general, the change of action under arbitrary variation of \( \delta \phi\) o
 }
 =
 \int d^d x
-\partial_\mu \lr{ \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi }
+\partial_\mu \lr{ \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi }.
 \end{dmath}
 However from \cref{eqn:qftLecture7:180}
 \begin{dmath}\label{eqn:qftLecture7:220}
@@ -199,10 +199,11 @@ A spacetime translation has the form
 \begin{equation}\label{eqn:qftLecture7:320}
 x^\mu \rightarrow {x'}^\mu = x^\mu + a^\mu,
 \end{equation}
+where the fields transform as
 \begin{equation}\label{eqn:qftLecture7:340}
-\phi(x) \rightarrow \phi'(x') = \phi(x)
+\phi(x) \rightarrow \phi'(x') = \phi(x).
 \end{equation}
-(contrast this to a Lorentz transformation that had the form \( x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu \)).
+Contrast this to a Lorentz transformation that had the form \( x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu \).
 
 If \(\phi'(x + a) = \phi(x) \), then
 \begin{dmath}\label{eqn:qftLecture7:360}
@@ -226,7 +227,7 @@ Under \( \phi \rightarrow \phi - a^\mu \partial_\mu \phi \), we have
 \end{dmath}
 Let's calculate this with our scalar theory Lagrangian
 \begin{dmath}\label{eqn:qftLecture7:420}
-\LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi)
+\LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi).
 \end{dmath}
 The Lagrangian variation is
 \begin{dmath}\label{eqn:qftLecture7:440}
@@ -238,18 +239,16 @@ The Lagrangian variation is
 =
 - a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
 =
-- a^\nu \partial_\nu \LL.
+- a^\nu \partial_\nu \LL,
 \end{dmath}
-
-So the current is
+so the current is
 \begin{dmath}\label{eqn:qftLecture7:600}
 j^\mu
 =
 (\partial^\mu \phi) (-a^\nu \partial_\nu \phi) + a^\nu \LL
 =
--a^\nu \lr{ \partial^\mu \phi \partial_\nu \phi - \LL }
+-a^\nu \lr{ \partial^\mu \phi \partial_\nu \phi - \LL }.
 \end{dmath}
-
 We really have a current for each \( \nu \) direction and can make that explicit writing
 \begin{dmath}\label{eqn:qftLecture7:460}
 \delta_\nu \LL = -\partial_\nu \LL

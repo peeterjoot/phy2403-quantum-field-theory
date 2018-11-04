@@ -51,11 +51,11 @@
 
 Given a field \( \phi(t_0, \Bx) \), satisfying the commutation relations
 \begin{dmath}\label{eqn:qftLecture14:20}
-\antisymmetric{\pi(t_0, \Bx)}{\phi(t_0, \By)} = -i \delta(\Bx - \By)
+\antisymmetric{\pi(t_0, \Bx)}{\phi(t_0, \By)} = -i \delta(\Bx - \By),
 \end{dmath}
 we introduced an interaction picture field given by
 \begin{dmath}\label{eqn:qftLecture14:40}
-\phi_I(t, x) = e^{i H_0(t- t_0)} \phi(t_0, \Bx) e^{-iH_0(t - t_0)}
+\phi_I(t, x) = e^{i H_0(t- t_0)} \phi(t_0, \Bx) e^{-iH_0(t - t_0)},
 \end{dmath}
 related to the Heisenberg picture representation by
 \begin{dmath}\label{eqn:qftLecture14:60}
@@ -71,21 +71,21 @@ e^{-i H(t - t_0)}
 \end{dmath}
 We argued that
 \begin{dmath}\label{eqn:qftLecture14:100}
-i \PD{t}{} U(t, t_0) = H_{\text{I,int}}(t) U(t, t_0)
+i \PD{t}{} U(t, t_0) = H_{\text{I,int}}(t) U(t, t_0),
 \end{dmath}
-We found the glorious expression
+and found the ``glorious expression''
 \boxedEquation{eqn:qftLecture14:120}{
 \begin{aligned}
 U(t, t_0)
 &= T \exp{\lr{ -i \int_{t_0}^t H_{\text{I,int}}(t') dt'}} \\
 &=
-\sum_{n = 0}^\infty \frac{(-i)^n}{n!} \int_{t_0}^t dt_1 dt_2 \cdots dt_n T\lr{ H_{\text{I,int}}(t_1) H_{\text{I,int}}(t_2) \cdots H_{\text{I,int}}(t_n) }
+\sum_{n = 0}^\infty \frac{(-i)^n}{n!} \int_{t_0}^t dt_1 dt_2 \cdots dt_n T\lr{ H_{\text{I,int}}(t_1) H_{\text{I,int}}(t_2) \cdots H_{\text{I,int}}(t_n) }.
 \end{aligned}
 }
 
 However, what we are really after is
 \begin{dmath}\label{eqn:qftLecture14:140}
-\bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega}
+\bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega}.
 \end{dmath}
 Such a product has many labels and names, and we'll describe it as ``vacuum expectation values of time-ordered products of arbitrary \#s of local Heisenberg operators''.
 
@@ -153,7 +153,7 @@ e^{-i E_0 T - E_0 \epsilon T}
 e^{-i E_0 T - E_0 \epsilon T}
 \lr{
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n e^{-i (E_n -E_0) T - \epsilon T (E_n - E_0)} \ket{n}\braket{n}{0}
-}
+}.
 \end{dmath}
 The limits are evaluated by first taking \( T \) to infinity, then only after that take \( \epsilon \rightarrow 0^+ \).  Doing this, the sum is dominated by the ground state contribution, since each excited state also has a \( e^{-\epsilon T(E_n - E_0)} \) suppression factor (in addition to the leading suppression factor).
 
@@ -161,7 +161,7 @@ The limits are evaluated by first taking \( T \) to infinity, then only after th
 With the hand waving required for the argument above, it's worth pointing other (less formal) ways to arrive at the same result.  We can write
 \begin{dmath}\label{eqn:qftLecture14:260}
 \SumInt \ket{n}\bra{n} \rightarrow
-\sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k}\bra{\Bp, k}
+\sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k}\bra{\Bp, k},
 \end{dmath}
 where \( k \) is some unknown quantity that we are summing over.
 If we have
@@ -194,7 +194,7 @@ The Riemann-Lebesgue lemma \citep{wiki:RiemannLebesgue} describes such integrals
 
 With the excited states ignored, we are left with
 \begin{dmath}\label{eqn:qftLecture14:340}
-e^{-i H T} \ket{0} = e^{-i E_0 T} \ket{\Omega}\braket{\Omega}{0}
+e^{-i H T} \ket{0} = e^{-i E_0 T} \ket{\Omega}\braket{\Omega}{0},
 \end{dmath}
 in the \( T \rightarrow \infty(1 - i \epsilon) \) limit.  We can now write the ground state as
 

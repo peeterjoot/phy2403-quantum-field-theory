@@ -42,7 +42,7 @@ x^\mu \rightarrow x^\mu + \omega^{\mu\nu} x_\nu,
 \end{dmath}
 where
 \begin{dmath}\label{eqn:qftLecture10:40}
-\omega^{\mu\nu} = -\omega^{\nu\mu}
+\omega^{\mu\nu} = -\omega^{\nu\mu}.
 \end{dmath}
 
 We showed last time that \( \omega^{ij} \) induces a rotation, and will show today that \( \omega^{0i} \) is a boost.
@@ -77,7 +77,7 @@ Q^{0k} = \int d^3 x J^{0 0 k} = \inv{2} \int d^3 x \lr{ x^k T^{00} - x^0 T^{0k} 
 \begin{dmath}\label{eqn:qftLecture10:540}
 \dot{Q}^{0k}
 = \int d^3 x \dot{J}^{0 0k}
-= \inv{2} \int d^3 x \lr{ x^k \dot{T}^{00} - x^0 \dot{T}^{0k} }
+= \inv{2} \int d^3 x \lr{ x^k \dot{T}^{00} - x^0 \dot{T}^{0k} }.
 \end{dmath}
 
 However, since \( 0 = \partial_\mu T^{\mu \nu} = \dot{T}^{0 \nu} + \partial_j T^{j \nu} \),
@@ -139,7 +139,7 @@ which can be evaluated using the field commutator analogue of \( \antisymmetric{
 to give
 \begin{dmath}\label{eqn:qftLecture10:680}
 \antisymmetric{\hatT^{00}(\Bx)}{\phihat(\By)}
-= -i \delta^3(\Bx - \By) \pihat(\Bx)
+= -i \delta^3(\Bx - \By) \pihat(\Bx).
 \end{dmath}
 
 The other required commutator is
@@ -151,7 +151,7 @@ The other required commutator is
 \partial^i \phihat(\Bx)
 \antisymmetric{\pihat(\Bx)
 }{\phihat(\By)}
-= -i \delta^3(\Bx - \By) \partial^i \phihat(\Bx),
+= -i \delta^3(\Bx - \By) \partial^i \phihat(\Bx).
 \end{dmath}
 
 The charge commutator with the field can now be computed
@@ -179,7 +179,7 @@ e^{-i \epsilon \hatQ^{0k} }
 =
 \phihat(\By)
 + \frac{\epsilon}{2} y^k \dot{\phihat}(\By)
-+ \frac{\epsilon}{2} y^0 \partial_k \phihat(\By)
++ \frac{\epsilon}{2} y^0 \partial_k \phihat(\By).
 \end{dmath}
 
 For example, with \( k = 1 \)
@@ -202,7 +202,7 @@ This is a boost.  If we compare explicitly to an infinitesimal Lorentz transform
 \begin{dmath}\label{eqn:qftLecture10:220}
 \begin{aligned}
 x^0 \rightarrow x^0 + \omega^{01} x_1 &= x^0 - \omega^{01} x^1 \\
-x^1 \rightarrow x^1 + \omega^{10} x_0 &= x^1 - \omega^{01} x_0 = x^1 - \omega^{01} x^0
+x^1 \rightarrow x^1 + \omega^{10} x_0 &= x^1 - \omega^{01} x_0 = x^1 - \omega^{01} x^0,
 \end{aligned}
 \end{dmath}
 we can make the identification
@@ -214,7 +214,7 @@ We now have the explicit form of the generator of a spacetime translation
 \index{generator!spacetime translation}
 %\begin{dmath}\label{eqn:qftLecture10:260}
 \boxedEquation{eqn:qftLecture10:260}{
-\hatU(\Lambda) = \exp\lr{-i \omega^{0k} \int d^3 x \lr{ \hatT^{00} x^k - \hatT^{0k} x^0 }}
+\hatU(\Lambda) = \exp\lr{-i \omega^{0k} \int d^3 x \lr{ \hatT^{00} x^k - \hatT^{0k} x^0 }}.
 }
 %\end{dmath}
 
@@ -233,7 +233,7 @@ An explicit boost along the x-axis has the form
 and more generally
 \begin{dmath}\label{eqn:qftLecture10:320}
 \hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda) =
-\phihat(\Lambda x)
+\phihat(\Lambda x),
 \end{dmath}
 where
 \( x \) is a four vector,
@@ -264,7 +264,7 @@ In the momentum space representation
 +
    e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
 }
-}{p_0 = \omega_\Bp}
+}{p_0 = \omega_\Bp}.
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture10:720}
 \hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda)
@@ -278,7 +278,7 @@ In the momentum space representation
 +
    e^{-i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata^\dagger_\Bp
 }
-}{p_0 = \omega_\Bp}
+}{p_0 = \omega_\Bp}.
 \end{dmath}
 This can be put into an explicitly Lorentz invariant form
 \begin{dmath}\label{eqn:qftLecture10:740}
@@ -316,7 +316,7 @@ Recall that a boost moves a spacetime point along a parabola, such as that of \c
 
 Let's change variables
 \begin{dmath}\label{eqn:qftLecture10:400}
-p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho}
+p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho},
 \end{dmath}
 so that
 \begin{dmath}\label{eqn:qftLecture10:420}
@@ -329,7 +329,7 @@ p_\mu
 \lr{ \ultensor{\Lambda}{\lambda}{\rho}
 g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} } x^{\sigma}
 =
-{p'}^\rho g_{\rho\sigma} x^\sigma
+{p'}^\rho g_{\rho\sigma} x^\sigma,
 \end{dmath}
 which gives
 \begin{dmath}\label{eqn:qftLecture10:440}
@@ -352,15 +352,16 @@ we can now conclude that the creation and annihilation operators transform as
 =
 \hatU(\Lambda)
 \sqrt{2 \omega_{ \Bp}} \hata_{ \Bp}
-\hatU^\dagger(\Lambda)
+\hatU^\dagger(\Lambda).
 }
 %\end{dmath}
 
-In particular
+If the desired normalization for a momentum state is assumed to be
 \begin{dmath}\label{eqn:qftLecture10:500}
-\sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp}
+\sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp},
 \end{dmath}
-and noting that \( \hatU(\Lambda) \ket{0}  = \ket{0} \) (i.e. the ground state is Lorentz invariant), we have
+then by
+noting that \( \hatU(\Lambda) \ket{0}  = \ket{0} \) (i.e. the ground state is Lorentz invariant), we have
 \begin{dmath}\label{eqn:qftLecture10:520}
 \sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0}
 =
@@ -370,5 +371,14 @@ and noting that \( \hatU(\Lambda) \ket{0}  = \ket{0} \) (i.e. the ground state i
 =
 \hatU(\Lambda) \ket{\Bp}.
 \end{dmath}
+The normalization \cref{eqn:qftLecture10:500} means that the Lorentz transformation of a momentum state, takes a particularly simple form.
+\begin{dmath}\label{eqn:qftLecture10:760}
+\hatU(\Lambda) \ket{\Bp} = \ket{\Lambda \Bp}.
+\end{dmath}
+
+%\paragraph{Fixme:}
+%\citep{peskin1995introduction} argues that
+%\eqn{eqn:qftLecture10:500} is the desired normalization.  In this treatment, I'm not sure where this comes from?
+%
 %}
 %%%\EndNoBibArticle

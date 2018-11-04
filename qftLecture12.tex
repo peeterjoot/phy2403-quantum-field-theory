@@ -206,7 +206,7 @@ so
 %\begin{dmath}\label{eqn:qftLecture12:320}
 \index{Feynman propagator}
 \boxedEquation{eqn:qftLecture12:340}{
-G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x)
+G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x).
 }
 %\end{dmath}
 
@@ -226,7 +226,7 @@ This can be shown by expansion.
 \bra{0}
 \int \frac{d^3 p}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bp}} \evalbar{\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x} }}{p_0 = \omega_\Bp}
 \int \frac{d^3 q}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bq}} \lr{ a_\Bq^\dagger + a_\Bq }
-\ket{0}
+\ket{0}.
 \end{dmath}
 Since \( a_\Bq \ket{0} = 0 = \bra{0} a_\Bp^\dagger \), \cref{eqn:qftLecture12:380}
 reduces to
@@ -275,7 +275,7 @@ e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 =
 \int \frac{d^3 p}{(2 \pi)^3} \evalbar{ \frac{e^{-i p \cdot x}}{2 \omega_\Bp} }
-{p_0 = \omega_\Bp}
+{p_0 = \omega_\Bp}.
 \end{dmath}
 
 \section{Retarded Green's function.}
@@ -317,7 +317,7 @@ Assuming that \( \phi_0 \) satisfies the homogeneous equation, we have
 \begin{dmath}\label{eqn:qftLecture12:440}
 \phi(x)
 = \phi_0(x) + i \int d^4 y D_R(x - y) j(y)
-= \phi_0(x) + i \int d^3 y d y_0 \Theta(x_0 - y_0) \lr{ D(x - y) - D(y - x) } j(y)
+= \phi_0(x) + i \int d^3 y d y_0 \Theta(x_0 - y_0) \lr{ D(x - y) - D(y - x) } j(y).
 \end{dmath}
 
 Imagine that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}.
@@ -325,17 +325,18 @@ Imagine that we have a windowed source function \( j(y^0, \By) \), as sketched i
 \imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
 
 \begin{dmath}\label{eqn:qftLecture12:460}
+\begin{aligned}
 \evalbar{\phi(x)}{x^0 > t_{\text{after}}}
-= \phi_0(x)
-+ i \int d^4 y
-\lr{
+&= \phi_0(x) \\
+&+ i \int d^4 y
+\Biglr{
    \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)} j(y)
    -
    \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{i p \cdot (x - y)} j(y)
-}
+}.
+\end{aligned}
 \end{dmath}
-
-define
+Define
 \begin{dmath}\label{eqn:qftLecture12:480}
 \tilde{j}(p) = \int d^4 y e^{i p \cdot y} j(y),
 \end{dmath}

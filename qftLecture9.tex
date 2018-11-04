@@ -155,18 +155,17 @@ v^4 \lr{ \lr{ 1 + \frac{\rho(x)}{v} }^2 - 1 }
 v^4
 \lr{
    \frac{2 \rho}{v} + \frac{\rho^2}{v^2}
-}^2.
+}^2,
 \end{dmath}
-
+and
 \begin{dmath}\label{eqn:qftLecture9:200}
 \partial_\mu \phi =
 \lr{
 v \lr{ 1 + \frac{\rho(x)}{v} } \frac{i}{v} \partial_\mu \alpha
 + \partial_\mu \rho
-} e^{i \alpha}
+} e^{i \alpha}.
 \end{dmath}
-
-so
+The Lagrangian takes the form
 \begin{dmath}\label{eqn:qftLecture9:220}
 \LL
 = \Abs{\partial \phi^\conj}^2 - \frac{\lambda}{4} \lr{ \Abs{\phi^\conj}^2 - v^2 }^2
@@ -217,7 +216,12 @@ In particle physics, examples of Wigner vs Nambu-Goldstone, ignoring gravity the
 \( (B\# - L\#) \), believed to be a \( U(1) \) symmetry in Wigner mode.
 
 Here \(B\#\) is the Baryon number, and \( L\# \) is the Lepton number.  Examples:
-
+\index{Baryon number}
+\index{Lepton number}
+\index{proton}
+\index{quark}
+\index{electron}
+\index{neutron}
 \begin{itemize}
 \item \( B(p) = 1 \), proton.
 \item \( B(q) = 1/3 \), quark
@@ -241,7 +245,6 @@ m_u = m_d = 0.
 \index{EWSB}
 \index{Electro-Weak-Symmetry-Breaking}
 When the couplings \( g_2, g_1 = 0 \).  (\( g_2 \in SU(2), g_1 \in U(1) \)).
-
 \section{Scale invariance.}
 \index{scale invariance}
 
@@ -250,8 +253,10 @@ When the couplings \( g_2, g_1 = 0 \).  (\( g_2 \in SU(2), g_1 \in U(1) \)).
 x &\rightarrow e^{\lambda} x \\
 \phi &\rightarrow e^{-\lambda} \phi \\
 A_\mu &\rightarrow e^{-\lambda} A_\mu
-\end{aligned}
+\end{aligned}.
 \end{dmath}
+\index{unitary}
+\index{conformal invariance}
 Any unitary theory which is scale invariant is also \underline{conformal} invariant.  Conformal invariance means that angles are preserved.
 The point here is that there is more than scale invariance.
 
@@ -270,6 +275,7 @@ j^\mu(x) \ket{0} \ne 0
 \end{dmath}
 (creates Goldstone modes).
 \item ``anomalous''.  Classical symmetries are not a symmetry of QFT.
+\index{anomalous symmetry}
 Examples:
 \begin{itemize}
 \item Scale symmetry (to be studied in QFT II), although this is not truly internal.
@@ -283,6 +289,7 @@ Examples:
 We'd like to study the action of Lorentz symmetries on quantum states.  We are going to ``go by the book'', finding symmetries, currents, quantize, find generators, and so forth.
 
 Under a Lorentz transformation
+\index{Lorentz transformation!infinitesimal}
 \begin{equation}\label{eqn:qftLecture9:400}
 x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu,
 \end{equation}
@@ -397,7 +404,7 @@ j^\nu_{\omega^{\mu\rho}}
 \omega^{\mu\rho} x_\rho
 \lr{
    -\partial^\nu \phi \partial_\mu \phi + {\delta^{\nu}}_\mu \LL
-}
+}.
 \end{dmath}
 We identify
 \begin{dmath}\label{eqn:qftLecture9:560}
@@ -498,7 +505,7 @@ i \Balpha \cdot
 \spacegrad \phihat(\Bx) \cross \Bx
 =
 \phihat(\By) +
-\Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By}
+\Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By}.
 \end{dmath}
 Explicitly, in coordinates, this is
 \begin{dmath}\label{eqn:qftLecture9:700}

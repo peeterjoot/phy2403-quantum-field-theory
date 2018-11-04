@@ -45,9 +45,8 @@
 We imagined that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}, which is acting as a forcing source for the non-homogeneous Klein-Gordon equation
 %\imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
 \begin{dmath}\label{eqn:qftLecture13:20}
-\lr{ \partial_\mu \partial^\mu + m^2 } \phi = j
+\lr{ \partial_\mu \partial^\mu + m^2 } \phi = j.
 \end{dmath}
-
 Our solution was
 \begin{dmath}\label{eqn:qftLecture13:40}
 \phi(x) = \phi(x_0) + i \int d^4 y D_R( x - y) j(y),
@@ -101,7 +100,7 @@ we obtain
 H_{\text{after}} =
 \int d^3 x \omega_\Bp
 \lr{ a_\Bp^\dagger - i \frac{\tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
-\lr{ a_\Bp + i \frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }
+\lr{ a_\Bp + i \frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }.
 \end{dmath}
 
 System in ground state
@@ -168,7 +167,7 @@ D_F(x)
 \Theta(-x^0) D(-x)
 =
 \Theta(x^0) \bra{0} \phi(x) \phi(0) \ket{0}
-+\Theta(x^0) \bra{0} \phi(-x) \phi(0) \ket{0}
++\Theta(x^0) \bra{0} \phi(-x) \phi(0) \ket{0}.
 \end{dmath}
 Utilizing a translation operation \( U(a) = e^{i a_\mu P^\mu } \), where \( U(a) \phi(y) U^\dagger(a) = \phi(y + a) \), this second operation can be written as
 \begin{dmath}\label{eqn:qftLecture13:300}
@@ -233,7 +232,7 @@ D_F(x) = \bra{0} T(\phi(x) \phi(0)) \ket{0}.
 
 We perturb the Hamiltonian
 \begin{dmath}\label{eqn:qftLecture13:500}
-H = H_0 + H_{\text{int}}
+H = H_0 + H_{\text{int}},
 \end{dmath}
 where \( H_0 \) is the free Hamiltonian and \( H_{\text{int}} \) is the interaction term (the perturbation).
 
@@ -242,7 +241,7 @@ where \( H_0 \) is the free Hamiltonian and \( H_{\text{int}} \) is the interact
 \begin{equation}\label{eqn:qftLecture13:460}
 \begin{aligned}
 H_0 &= SHO = \frac{p^2}{2} + \frac{\omega^2 q^2}{2} \\
-H_{\text{int}} &= \lambda q^4,
+H_{\text{int}} &= \lambda q^4.
 \end{aligned}
 \end{equation}
 i.e.  the anharmonic oscillator.
@@ -273,7 +272,7 @@ H = H_0 + H_{\text{int}}
 \end{dmath}
 Example interaction
 \begin{dmath}\label{eqn:qftLecture13:540}
-H_{\text{int}} = \lambda \int d^3 x \phi^4
+H_{\text{int}} = \lambda \int d^3 x \phi^4.
 \end{dmath}
 
 We know all there is to know about \( H_0 \) (decoupled SHOs, ...)
@@ -398,7 +397,7 @@ e^{i H_0(t - t_0) }
 H_{\text{int}}
 e^{-i H_0(t - t_0) }
 e^{i H_0(t - t_0) }
-e^{-i H(t - t_0) }
+e^{-i H(t - t_0) },
 \end{dmath}
 so we have
 \boxedEquation{eqn:qftLecture13:800}{
@@ -432,7 +431,7 @@ U_0(t, t_0)
 + \lambda U_1(t, t_0)
 + \lambda^2 U_2(t, t_0)
 + \cdots
-+ \lambda^n U_n(t, t_0)
++ \lambda^n U_n(t, t_0).
 \end{dmath}
 
 Plugging into \cref{eqn:qftLecture13:880} we have
@@ -516,7 +515,7 @@ H_{\text{int}, I}(t').
 \PD{t}{U_3(t, t_0)}
 =
 -i
-H_{\text{int}, I}(t) U_2(t, t_0)
+H_{\text{int}, I}(t) U_2(t, t_0),
 \end{dmath}
 so
 \begin{dmath}\label{eqn:qftLecture13:1240}
@@ -541,7 +540,7 @@ H_{\text{int}, I}(t')
 \int_{t_0}^{t''} dt'
 H_{\text{int}, I}(t''')
 H_{\text{int}, I}(t'')
-H_{\text{int}, I}(t')
+H_{\text{int}, I}(t').
 \end{dmath}
 
 \paragraph{Simplifying the integration region.}

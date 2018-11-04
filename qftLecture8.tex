@@ -52,15 +52,16 @@ This is in contrast to ``gauge symmetries'', which can be more accurately be cat
 
 As an example, for \( \LL = (\partial_\mu \phi \partial^\mu \phi - m^2 \phi^2)/2 \), let
 \begin{dmath}\label{eqn:qftLecture8:80}
-\phi(x) \rightarrow \phi(x) - a^\mu \partial_\mu \phi
+\phi(x) \rightarrow \phi(x) - a^\mu \partial_\mu \phi.
 \end{dmath}
+The Lagrangian density transforms as
 \begin{dmath}\label{eqn:qftLecture8:100}
 \LL(\phi, \partial_\mu \phi) \rightarrow
 \LL(\phi, \partial_\mu \phi)
 - a^\mu \partial_\mu \LL
 =
 \LL(\phi, \partial_\mu \phi)
-+ \partial_\mu \lr{ -{\delta^\mu}_\nu a^\nu \LL }
++ \partial_\mu \lr{ -{\delta^\mu}_\nu a^\nu \LL }.
 \end{dmath}
 Here \( J^\mu_\epsilon = \evalbar{J^\mu_\epsilon}{\epsilon = a^\nu} \), and the current is
 \begin{dmath}\label{eqn:qftLecture8:120}
@@ -149,7 +150,7 @@ and
 T^{0i} = \partial^0 \phi \partial^i \phi,
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture8:320}
-P^{i} = -\int d^3 x\partial^0 \phi \partial^i \phi
+P^{i} = -\int d^3 x\partial^0 \phi \partial^i \phi.
 \end{dmath}
 Since the energy density is negative definite (due to an arbitrary choice of translation sign), let's redefine \( T^{\mu\nu} \) to have a positive sign
 \begin{dmath}\label{eqn:qftLecture8:340}
@@ -162,21 +163,22 @@ and
 P^{i} = \int d^3 x\partial^0 \phi \partial^i \phi
 \end{dmath}
 
-As an operator we have
+As an operator the charge is
 \begin{dmath}\label{eqn:qftLecture8:380}
 \hatQ = \int d^3 x \hatT^{00} =
 \int d^3 x
 \lr{
 \inv{2} \pihat^2 + \inv{2} (\spacegrad \phihat)^2 + \frac{m^2}{2} \phihat^2 + \frac{\lambda}{4} \phihat^4
-}.
+},
 \end{dmath}
+and the momenta are
 \begin{dmath}\label{eqn:qftLecture8:400}
-\hatP^{i} = \int d^3 x \pihat \partial^i \phi
+\hatP^{i} = \int d^3 x \pihat \partial^i \phi.
 \end{dmath}
 
 We showed that
 \begin{dmath}\label{eqn:qftLecture8:420}
-\ddt \hatO = i \antisymmetric{\hatH}{\hatO}
+\ddt \hatO = i \antisymmetric{\hatH}{\hatO}.
 \end{dmath}
 This implied that \( \phihat, \pihat \) obey the classical equations of motion
 \begin{equation}\label{eqn:qftLecture8:440}
@@ -190,7 +192,7 @@ In terms of creation and annihilation operators (for the \( \lambda = 0 \) free 
 \begin{dmath}\label{eqn:qftLecture8:480}
 \hatH
 = \int d^3 x \hatT^{00}
-= \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \hata_\Bp^\dagger \hata_\Bp
+= \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \hata_\Bp^\dagger \hata_\Bp.
 \end{dmath}
 Can show that:
 % FIXME: do this:
@@ -206,12 +208,10 @@ Now we see the energy and momentum as conserved quantities associated with space
 \index{unitary operator}
 
 In QM we say that \( \hat{\Bp} \) ``generates translations''.
-
 With \( \hat{\Bp} \equiv -i \Hbar \spacegrad \) that translation is
 \begin{equation}\label{eqn:qftLecture8:520}
-\hatU = e^{i \Ba \cdot \hat{\Bp}} = e^{\Ba \cdot \spacegrad}
+\hatU = e^{i \Ba \cdot \hat{\Bp}} = e^{\Ba \cdot \spacegrad}.
 \end{equation}
-
 In particular
 \begin{dmath}\label{eqn:qftLecture8:540}
 \bra{\Bx} \hatU \ket{\psi} = e^{\Ba \cdot \hat{\Bp} } \psi(\Bx) = \psi(\Bx + \Ba).
@@ -372,7 +372,6 @@ j^\mu
 \end{dmath}
 where the constant factor has been set to one.
 This current is clearly conserved since \( \partial_\mu J^\mu = \partial_\mu \partial^\mu \phi = 0\) (the equation of motion).
-
 These are called ``Goldstone bosons'', or ``Nambu-Goldstone bosons''.
 \index{Goldstone boson}
 \index{Nambu-Goldstone bosons}
@@ -425,7 +424,7 @@ x \rightarrow x' = e^{\lambda} x,
 \phi(x) \rightarrow \phi'(x') = e^{-\lambda} \phi,
 \end{equation}
 \begin{equation}\label{eqn:qftLecture8:1040}
-d^4 x \rightarrow d^4 x' = e^{4\lambda} d^4 x,
+d^4 x \rightarrow d^4 x' = e^{4\lambda} d^4 x.
 \end{equation}
 
 The partials transform as
@@ -437,7 +436,7 @@ The partials transform as
 \PD{x_\mu}{}
 =
 e^{-\lambda}
-\PD{x_\mu}{}
+\PD{x_\mu}{},
 \end{dmath}
 % x'_\mu = e^\lambda x_\mu
 % x_\mu = e^-\lambda x'_\mu
@@ -593,7 +592,7 @@ j^\mu_{\text{dil}}
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture8:1300}
-j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} + \inv{2} \partial^\mu (\phi^2),
+j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} + \inv{2} \partial^\mu (\phi^2).
 \end{dmath}
 
 The current and \( T^{\mu\nu} \) can both be redefined \( j^{\mu'} = j^\mu + \partial_\nu C^{\nu\mu} \) adding an antisymmetric \( C^{\mu\nu} = -C^{\nu\mu} \)

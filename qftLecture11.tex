@@ -139,7 +139,7 @@ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp \\
 \phihat_{+}(x) &=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
 \evalbar{
-e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp
+e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp.
 \end{aligned}
 \end{dmath}
 
@@ -176,14 +176,14 @@ Now about the commutator at two spacetime points
 +
 \antisymmetric{\phihat_{+}(x)}{\phihat_{-}(y)}
 =
--D(y - x) + D(x - y)
+-D(y - x) + D(x - y).
 \end{dmath}
 
 Find
 \begin{dmath}\label{eqn:qftLecture11:240}
 \begin{aligned}
 \antisymmetric{\phihat(x)}{\phihat(y)} &= D(x - y) - D(y - x) \\
-\antisymmetric{\phihat(x)}{\phihat(0)} &= D(x) - D(- x)
+\antisymmetric{\phihat(x)}{\phihat(0)} &= D(x) - D(- x).
 \end{aligned}
 \end{dmath}
 
@@ -198,7 +198,7 @@ D(x)
 =
 \int \frac{d^3 p}{(2 \pi)^3 } dp^0
 \delta( p_0^2 - \Bp^2 - m^2) \Theta(p^0)
-e^{-i p \cdot x}
+e^{-i p \cdot x}.
 \end{dmath}
 
 The exponential is Lorentz invariant, and the delta function has been put into a Lorentz invariant form.
@@ -219,7 +219,7 @@ We've shown this for free fields, but later we will see that this is the case fo
 \index{harmonic oscillator}
 
 \begin{dmath}\label{eqn:qftLecture11:320}
-L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q
+L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q.
 \end{dmath}
 
 The term \( j(t) \) shifts the origin in a time dependent fashion (graphical illustration in class wiggling a hockey stick, as a sample of a harmonic oscillator).
@@ -248,14 +248,14 @@ or
 %%\int_{t_before}^{t_after} G_R(t - t') j(t') dt'
 \begin{dmath}\label{eqn:qftLecture11:420}
 q_H(t) = q_H^0( t ) +
-\int G_R(t - t') j(t') dt'
+\int G_R(t - t') j(t') dt'.
 \end{dmath}
 
 This solves the equation provided \( G_R(t - t') \) has the property that
 \boxedEquation{eqn:qftLecture11:440}{
 (\partial_{tt} + \omega^2)
 G_R(t - t')
-= - \delta(t - t')
+= - \delta(t - t').
 }
 
 That is
@@ -266,7 +266,7 @@ q_H(t) =
 q_H^0( t )
 +
 (\partial_{tt} + \omega^2)
-\int G_R(t - t') j(t') dt'
+\int G_R(t - t') j(t') dt'.
 \end{dmath}
 
 This function \( G_R \) is called the retarded Green's function.  We want to find this function, and as usual, we do this by taking the Fourier transform of \cref{eqn:qftLecture11:440}
@@ -277,7 +277,7 @@ This function \( G_R \) is called the retarded Green's function.  We want to fin
 =
 -\int_{-\infty}^\infty dt e^{i p t}
 \delta(t - t')
-= - e^{i p t'}
+= - e^{i p t'}.
 \end{dmath}
 
 Let
@@ -298,29 +298,26 @@ so
 =
 \int dp' \lr{ -{p'}^2 + \omega^2 } e^{i p' t'} \delta(p - p') \tilde{G}(p')
 =
-\lr{ -{p}^2 + \omega^2 } \tilde{G}(p) e^{i p t'}
+\lr{ -{p}^2 + \omega^2 } \tilde{G}(p) e^{i p t'},
 \end{dmath}
-
 so
 \begin{dmath}\label{eqn:qftLecture11:540}
 \tilde{G}(p)
-= \inv{p^2 - \omega^2}
+= \inv{p^2 - \omega^2}.
 \end{dmath}
 
 Now
-
 \begin{dmath}\label{eqn:qftLecture11:560}
 G(t)
 = \int \frac{dp}{2 \pi} e^{-i p t}
-\tilde{G}(p)
+\tilde{G}(p).
 \end{dmath}
 
 Let's write the momentum space Green's function as
 \begin{dmath}\label{eqn:qftLecture11:580}
 \tilde{G}(p)
-= \inv{(p - \omega)(p + \omega)}
+= \inv{(p - \omega)(p + \omega)}.
 \end{dmath}
-
 The solution contained
 \begin{dmath}\label{eqn:qftLecture11:600}
 \int G(t - t') j(t') dt'.
@@ -331,7 +328,7 @@ We want the integral
 \begin{dmath}\label{eqn:qftLecture11:620}
 G(t)
 = \int \frac{dp}{2 \pi} e^{-i p t}
-\inv{(p - \omega)(p + \omega)}
+\inv{(p - \omega)(p + \omega)},
 \end{dmath}
 to vanish when \( t < 0 \).
 
@@ -376,7 +373,7 @@ We will consider a massive real scalar field theory with an external source with
 \begin{dmath}\label{eqn:qftLecture11:680}
 S = \int d^4 x \lr{
 \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 + j(x) \phi(x)
-}
+}.
 \end{dmath}
 
 We don't have examples of currents that create scalar fields, but to study such as system, recall that
@@ -432,11 +429,11 @@ Take the derivatives of a convolution of the Green's function \cref{eqn:qftLectu
 
 \makeanswer{problem:qftLecture11:2}{
 Let
-\begin{dmath}\label{eqn:qftLecture11:880}
+\begin{equation}\label{eqn:qftLecture11:880}
 q(t)
 = \int_{-\infty}^\infty G(t - t') j(t') dt'
 = -\inv{\omega} \int_{-\infty}^\infty \sin(\omega(t - t')) \Theta(t - t') j(t') dt'.
-\end{dmath}
+\end{equation}
 We are free to add any \( q_0(t) \) that satisfies the homogeneous wave equation \( q_0''(t) + \omega^2 q_0(t) = 0 \) to our assumed convolution solution \cref{eqn:qftLecture11:880}, but that isn't interesting for this exersize.
 Since \( \Theta(t - t') = 0 \) for \( t - t' < 0 \), or \( t' > t \), the convolution can be written as
 \begin{dmath}\label{eqn:qftLecture11:900}
