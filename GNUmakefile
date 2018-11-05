@@ -6,6 +6,9 @@ export BOOKMAJVER := 0
 # This isn't a good way to version.  It depends on the local git reflog history count.
 export REVCOUNTSTART := 1
 
+#.revinfo/gitCommitDateAsMyTime.tex:\newcommand{\myTime}{April 2018}\newcommand{\myVersion}{version V0.117\xspace}
+VER := $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
+
 include ../latex/make.bookvars
 
 #ONCEFLAGS := -justonce
@@ -133,3 +136,26 @@ mmacells.sty: mmacells/mmacells.sty
 #julia.tex : ../julia/METADATA
 #mathematica.tex : ../mathematica/METADATA
 #matlab.tex : ../matlab/METADATA
+
+dropbox:
+	cp $(THISBOOK).pdf ~/Dropbox/$(THISDIR)/$(THISBOOK).$(VER).pdf
+	git log --decorate > ~/Dropbox/$(THISDIR)/Changelog.txt
+
+dist:
+	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
+
+# a for annotate (releases).
+tag:
+	git tag -a $(THISBOOK).$(VER).pdf
+
+%.sp : %.tex
+	spellcheck $^
+	touch $@
+
+.PHONY: copy
+copy : $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf
+
+$(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf : $(THISBOOK).pdf
+	cp $^ $@
+
+

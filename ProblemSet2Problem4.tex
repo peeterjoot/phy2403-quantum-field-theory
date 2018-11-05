@@ -14,6 +14,21 @@ Consider now the interaction term in your reduced (to the N-particle sector of H
 What do you think is the potential, in x-space, that allows the various particles to scatter and exchange momentum? How would you describe the resulting nonrelativistic quantum system to friends who never took QFT but are well-versed in quantum mechanics?
 \index{particle number}
 \index{non-relativisitic limit}
+
+{\small {\tt Hint}: For
+\cref{qft:problemSet2:4d},
+% part 4,
+consider $N=2$ first. Start with a two particle nonrelativistic quantum mechanics with Hamiltonian:
+\begin{dmath}\label{eqn:ProblemSet2Problem4:220}
+H = {p_1^2\over 2m} + {p_2^2\over 2m} + V(x_1 - x_2)~,
+\end{dmath}
+where $p_i, x_i$ are the operators of momentum and position of the $i-th$ particle (three vectors, arrows ommitted for brevity).
+Use as a basis the eigenstates of the free Hamiltonian, i.e. plane waves, $| \vec{p}_1, \vec{p}_2 \rangle$, symmetric with respect to interchange of the momenta (even better, use the corresponding wavefunctions $\psi_{p_1,p_2}(x_1, x_2) = \langle x_1 , x_2 | p_1, p_2\rangle$). Compute the matrix elements
+\begin{dmath}\label{eqn:ProblemSet2Problem4:240}
+\langle q_1, q_2 | H | p_1, p_2 \rangle
+\end{dmath}
+in this basis. To compare to the nonrelativistic limit of the scalar field theory, compute the same matrix elements of the Hamiltonian you found in (1.) above, in the basis of states of the restricted  ($N=2$) Hilbert space $|p_1, p_2\rangle$. Are they similar to the matrix elements you found in the quantum mechanics problem for some choice of $V(x_1 - x_2)$? Explain the difference (if any). Then go on to answer (4.) for any $N$.
+}
 } % makeproblem
 
 \makeanswer{qft:problemSet2:4}{
