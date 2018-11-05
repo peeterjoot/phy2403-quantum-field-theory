@@ -9,16 +9,36 @@ point energies of the harmonic oscillators (one per each \( \Bk \) ) into which 
 E_{\text{zero point}} =
 V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\Hbar \omega_\Bk}{2}.
 \end{dmath}
-\( \vdots \)
+
+Expression \cref{eqn:ProblemSet1Problem5:20} gives the
+zero point energy of the field in a spatial volume $V_3$. This energy is, of course, infinite and is usually discarded (as we  learned, by applying a ``normal ordering'' procedure) as unobservable.
+Nevertheless, there are circumstances under which {\it changes} in the zero point energy lead to measurable effects. The most celebrated example is the {\it Casimir effect}
+\footnote{Notice that just like for the Planck derivation of blackbody radiation formula, where some people would   say that it does not imply that  the electromagnetic radiation  is quantized, but only its sources (as radiation is emitted by the atoms of the cavity), there are similar claims for the Casimir force (my take is to ignore these, as we know that the radiation is quantized). See  article by Lamoreaux that I put a link to online.}, predicted by
+Casimir in 1948 \citep{casimir1948attraction}
+%[{ ``On the attraction between two perfectly conducting plates,'' H.B.G. Casimir, Kon. Ned. Akad. Wetensch.Proc. 51:793-795, 1948] 
+and discovered experimentally in 1958 (see Lamoreaux's more recent article linked to in the ``Summary of Sept. 25th class'').
+Another instance where this has been ``observed'' (in numerical simulations) is the L\'' uscher term in the confining string in QCD. Casimir energies generally also appear whenever the topology of space(time) is changed and people have speculated that dark energy may have something to do with that...
+
+ The Casimir effect can be described very simply (!): the
+zero point energy  of the electromagnetic field between two infinite conducting plates is smaller than it would be in the absence of the plates. This is because the boundary conditions on the plates eliminate some of the modes of the field that would be otherwise present. The vacuum energy in the space between the plates    should be proportional to the area $A$ of the plates, as well as to $\hbar$ (as zero point energies are proportional to $\hbar$). It can also depend on  $a$, the distance between the plates,  and the speed of light $c$. By dimensional analysis, the excess  energy (negative) in the volume $a A$ between the plates should be
+\begin{eqnarray}
+\label{zero1}
+\Delta E_{vac}(a) \sim -  a A\; {\hbar c \over a^4} = - A \;{\hbar c \over a^3}~,
+\end{eqnarray}
+where the $a A$ factor is the volume,  $\hbar$ has dimensions of energy $\times$ time, $c/a$ has dimensions of inverse time, and the extra factor of $1/a^3$ is there to make the dimension of energy right. Thus, to minimize $E_{vac}$ the plates ``want to'' get closer. In other words, there should be an attractive  force per unit area of the plates,  called  ``Casimir pressure''
+\begin{eqnarray} \label{zero2}
+p_{{\small \rm Casimir}} \sim {\hbar c \over a^4}~,
+\end{eqnarray}
+ proportional to the inverse fourth power of the distance between the plates. In what follows we shall  calculate this force.
+
+We will use our real scalar {\it massless} field theory as a model for the real thing (the electromagnetic field, that we have not formally learned how to quantize yet). Casimir considered two infinite, conducting plates stretching in the $y,z$ plane and located at $x = 0$ and $x = a$, respectively; furthermore, he used perfect conductor boundary conditions on the plates. These require  that the tangential component of the vector potential, $\BA_{tang.}$,  vanishes at the plates (in  Coulomb gauge $\spacegrad \cdot \BA = 0$, $A^0=0$). Our  two toy ``conducting plates'' will be made of a ``material'' that requires that the scalar field $\phi$ vanish at the plates.
 \makesubproblem{}{qft:problemSet1:5a}
 Show that the boundary conditions on the plates impose a quantization condition on the allowed values of field momentum perpendicular to the plates, i.e. \( k_x = n\pi/a, n = 0, \pm 1,  \pm 2, \cdots \) [e.g., recall your waveguide physics].
 \makesubproblem{}{qft:problemSet1:5b}
 Consider now the contribution to the energy of the vacuum fluctuations of the field in the space between the plates and find the zero point energy per unit area of the plates...
-%To do this, replace the integral over \( k_x \) in
-%\cref{eqn:ProblemSet1Problem5:20}
-%by a sum over \( n \), \( \int dk_x = (\pi/a)\sum_n\) [Hint: to save work, use the fact that the correct expression should have the property that as the plates are removed, \( a \rightarrow \infty \), the energy (per unit volume) should give back
-%\cref{eqn:ProblemSet1Problem5:20}
-%]. Does the resulting expression for the zero point energy still diverge?
+Consider now the contribution to the energy of the vacuum fluctuations of the field in the space
+between the plates and find the zero point  energy per unit area of the plates. To do this,
+replace the integral over $k_x$ in \cref{eqn:ProblemSet1Problem5:20} by a sum over $n$, $\int d k_x = (\pi/a) \sum_{n}$ [Hint: to save work, use the fact that the correct expression should have the property that as the plates are removed, $a \rightarrow \infty$, the energy (per unit volume) should give back \cref{eqn:ProblemSet1Problem5:20}]. Does the resulting expression for the zero point energy  still diverge?
 \makesubproblem{}{qft:problemSet1:5c}
 Show now, starting from
 \cref{eqn:ProblemSet1Problem5:20}
@@ -34,7 +54,14 @@ where, obviously, \( k \) is radial wave vector in \(y, z\)-directions.
 The expression
 \cref{eqn:ProblemSet1Problem5:40}
 is still ill-defined, as every single term is infinite
-...
+
+Now, to make progress, we note  that  the idealization of perfect conducting plates  and the corresponding macroscopic boundary conditions do  not make  sense for wavelengths smaller than the atomic size. In particular, for frequencies above $1/a_0$ ($a_0$ is of the order of the Bohr radius)  the conducting plates are totally invisible for the electromagnetic field.
+To incorporate this in our calculation, introduce a
+function $f(k)$ into the integrand in \cref{eqn:ProblemSet1Problem5:40} such that  $f(k)= 1$  for $k < 1/a_0$
+and $f(k) = 0$ for $k > 1/a_0$, somehow smoothly interpolating between these two values.
+
+The integrals in \cref{eqn:ProblemSet1Problem5:40} thus become absolutely convergent---all momenta larger than the inverse Bohr size are cut off.
+
 Show that \cref{eqn:ProblemSet1Problem5:40} (with the cutoff \( f(k) \) as described in the original problem spec) can be written as:
 \begin{dmath}\label{eqn:ProblemSet1Problem5:260}
 \Delta E_{\text{vac}}(a)
@@ -48,16 +75,45 @@ where
 F(n) = \int_0^\infty du \sqrt{ u + n^2 } f((\pi/a) \sqrt{u + n^2}).
 \end{dmath}
 \makesubproblem{}{qft:problemSet1:5e}
-To calculate ..., use the Euler-Maclaurin formula:...
+To calculate \cref{eqn:ProblemSet1Problem5:260}, use the Euler-Maclaurin formula:\footnote{This  formula is used to approximate sums with integrals. See, e.g., Wikipedia article for a derivation by induction. Other, fun ways to proceed exist, my favorite is \citep{hawking1977zeta}.
+%$\zeta$-function regularization, see S. Hawking, Commun.Math.Phys. 55 (1977) 133. 
+
+Most importantly, the result is independent of the method of regularization. ``By definition'', this is what we call a  physical result in QFT (=cutoff independent). Notice the striking difference with the $E_{vac}$ of \cref{eqn:ProblemSet1Problem3:20}, which inherently depends on the cutoff and can not be made physical  sense within QFT ... as you see, many lessons lurk in this ``simple'' problem!}
+\begin{eqnarray}
+{1\over 2} F(0) + F(1) + F(2) + \ldots - \int\limits_{n=0}^\infty d n F(n) = - {1\over 2!} B_2 F^\prime(0) -
+{1 \over 4!}B_4 F^{\prime \prime \prime } (0) + \ldots ~,
+\end{eqnarray}
+where $B_2 = 1/6$, $B_4 = -1/30$, etc. are Bernoulli numbers, and primes denote  derivatives. Now,
+$f(0) = 1$ as stated above; furthermore, assume that all derivatives of our smearing function $f(k)$ vanish at zero (it is not difficult to construct examples of such functions).
+Show that   $F^\prime(0) = 0$,
+$F^{\prime \prime \prime}(0) = -4$, and that all higher derivatives of $F$ vanish.
+
+Thus the ``cutoff''  function $f$ does not enter the final result---or the fact that we assumed a cutoff at scales of order the inverse Bohr radius; it only mattered that $a_0 \ll L$. 
+
 \index{Euler-Maclaurin formula}
 \makesubproblem{}{qft:problemSet1:5f}
-Show, now, that the final result for the Casimir energy per unit area of the plates is:...
+Show, now, that the final result for the Casimir energy per unit area of the plates is:
+\begin{eqnarray}
+\Delta E_{vac.} (a) = {\pi^2 \over 2 a^3 }~ {B_4\over  4!} = - {\pi^2 \over 2 \times 720}~ {1 \over a^3}~,
+\end{eqnarray}
+giving rise to an attractive force between the plates. This force---for the electromagnetic field, where there is an additional factor of two---was measured in 1958, and not only the sign, but also the $\sim a^{-4}$ distance dependence was observed! In fact, measuring the distance dependence is crucial for verifying the nature of this force---at atomic distances the Casimir force competes with Van-der-Vaals forces, which however have a different, $\sim a^{-7}$, dependence on the distance. 
 \makesubproblem{}{qft:problemSet1:5g}
 To get some idea of what experimentalists have to go through, estimate the force acting on plates of area \( 1 \si{cm^2}\) a micron apart...
+Compare with the magnitude of forces whose measurements you are familiar with. Note that the 1990's Lamoreaux measurements are accurate within $5$\%.
 \makesubproblem{}{qft:problemSet1:5h}
 A final bonus question: what if the scalar field had a mass, \( m \)?  Would you expect an effect if \( m \gg 1/a \)? What if \( m \ll 1/a\)?
 \index{Casimir force}
 \index{zero point energy}
+
+\paragraph{You} just saw the first example of  extracting a 
+finite and physically meaningful result from seemingly infinite expressions. Infinities result from assuming that quantum field theory makes sense at arbitrarily short distances, or large momenta $k$ in \cref{eqn:ProblemSet1Problem5:40}. The  possibility of extracting finite results (e.g., the Casimir force) from  quantum field theory simply 
+means that in many cases (most cases, in fact: the so-called ``renormalizable" ones---and even in ``non-renormalizable" if one is happy with finite precision---see QFT2) the long-distance physics is independent of the details of the short-distance, most often not  understood, physics, when  expressed only through quantities observed at long distances.\footnote{This is already familiar from classical electrodynamics although may not be always stressed. The electrostatic energy of a point charge diverges, as is well known, hence it gives an infinite contribution to the charge's rest energy. However, in the non relativistic limit (to order $v^2/c^2$, in fact) the equations describing the motion of charged particles do not depend at all on whatever structure one might ascribe to the electron (it could be a ball, a hollow sphere, or a tiny string). The relative motion of particles in this limit (and, of course, at relative distances larger than the ``classical radius of the electron") is determined by two ``relevant" parameters: their mass $m$ and charge $e$. These are quantities determined by experiment, not calculated from first principles. These experiments are made at the long distance/time scales, where classical electromagnetic theory applies. There is no way to calculate $m$ and $e$ from first principles. 
+
+The situation in QFT is not that different---its calculational tools are a way to relate measurable quantities to measurable quantities. It usefulness is in that there are more measurable quantities than the number of measurements required to fix the relevant parameters in the Lagrangian (e.g., the same $m$ and $e$ for QED), so it has predictive power. When QFT is used to relate observables to observables, no infinities appear. 
+
+There we go. QFT in a nutshell. }
+
+In this example, this was seen by the independence of the final answer on the cutoff  function $f(k)$. This independence really means that field modes with wave vectors $\gg 1/L$ do not  contribute to the Casimir effect, i.e., it is an IR (infrared) effect.
 } % makeproblem
 
 \makeanswer{qft:problemSet1:5}{

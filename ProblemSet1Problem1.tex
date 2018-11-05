@@ -31,6 +31,14 @@ dX^\mu (\tau) \delta^4 ( x - X(\tau) ),
 where \( \delta^4(x) \) is a four-dimensional delta function.  All indices are raised and lowered by means of the
 metric tensor \( g_{\mu\nu} \) and its inverse \( g^{\mu\nu} \).
 
+The last term in \cref{eqn:ProblemSet1Problem1:20} is the relativistic kinetic energy of the particle and the integral is over the particle's worldline, $X^\mu(\tau)$. Note that $\tau$ is a parameter used to describe the particle's location along the worldline. One can  take this parameter be equal to $x^0$, so that  $X^\mu(\tau)$ means ($X^0 = x^0$, $X^i = X^i(x^0)$), where $\BX(x^0)$ is simply the trajectory of the particle (such a choice of parametrization can be useful, but is not required).
+Notice also that the term involving the current in \cref{eqn:ProblemSet1Problem1:20}, after substitution of \cref{eqn:ProblemSet1Problem1:40} simply becomes
+\begin{dmath}\label{eqn:ProblemSet1Problem1:860}
+- e \int\limits_{worldline} d X^\mu(\tau) A_\mu(X(\tau))~  ,
+\end{dmath}
+which is the usual   coupling of a charged particle to the electromagnetic field (choose the $\tau = x^0$ parameterization of the worldline to see this). Whether you use this form of the one of \cref{eqn:ProblemSet1Problem1:20} depends on the problem you're solving (this is a hint).
+
+The dynamical degrees of freedom in the action \cref{eqn:ProblemSet1Problem1:20} are the four-vector potential $A_\mu$ and the particle position $X^\mu(\tau)$.
 \makesubproblem{}{qft:problemSet1:1a}
 Use the identification \( A^0 = \phi \),
 the scalar potential, and \((A^1,A^2,A^3) = \BA\), the vector potential,
@@ -62,6 +70,8 @@ particle and \( F \) is, of course, taken at the particle's position. Convince y
 the relativistic Lorentz force equation.
 \index{Lorentz force equation}
 \index{Maxwell's equations}
+
+\paragraph{The} point of this problem is to make sure you remember/learn how the action principle works in  electrodynamics. The two coupled equations, obtained by varying w.r.t. $A_\mu$ and $X^\mu$ complete the equations of classical electrodynamics. Feel free to use \citep{landau1980classical}, or \citep{poppitzphy450} while solving this problem.
 } % makeproblem
 
 \makeanswer{qft:problemSet1:1}{
