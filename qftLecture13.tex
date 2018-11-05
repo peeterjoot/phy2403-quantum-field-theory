@@ -51,7 +51,7 @@ Our solution was
 \end{dmath}
 where \( \phi(x_0) \) obeys the homogeneous equation, and
 \begin{dmath}\label{eqn:qftLecture13:60}
-D_r(x - y) = \Theta(x^0 - y^0) \lr{ D(x - y) - D(y - x) },
+D_R(x - y) = \Theta(x^0 - y^0) \lr{ D(x - y) - D(y - x) },
 \end{dmath}
 and \( D(x) = \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \) is the Wightman function.
 
@@ -112,12 +112,12 @@ System in ground state
 \frac{ \tilde{j}^\conj(p) \tilde{j}(p)}{2 \omega_\Bp}
 =
 \inv{2} \int d^3 x
-\Abs{j(p)}^2.
+\Abs{\tilde{j}(p)}^2.
 \end{dmath}
 We can identify
 \begin{dmath}\label{eqn:qftLecture13:200}
 N(\Bp) =
-\frac{\Abs{j(p)}^2}{2 \omega_\Bp},
+\frac{\Abs{\tilde{j}(p)}^2}{2 \omega_\Bp},
 \end{dmath}
 as the number density of particles with momentum \( \Bp \).
 
@@ -136,23 +136,23 @@ For the SHO, if we solve for such a coherent state, we find
 If we assume the existence of a coherent state
 \begin{dmath}\label{eqn:qftLecture13:260}
 a_\Bp \ket{
-\frac{j(p)}{\sqrt{2 \omega_\Bp}}
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
 }
 =
-\frac{j(p)}{\sqrt{2 \omega_\Bp}}
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
 \ket{
-\frac{j(p)}{\sqrt{2 \omega_\Bp}}
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
 },
 \end{dmath}
 then the expectation value of the number operator with respect to this state is the number density identified in \cref{eqn:qftLecture13:200}
 \begin{equation}\label{eqn:qftLecture13:1200}
 \bra{
-\frac{j(p)}{\sqrt{2 \omega_\Bp}}
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
 }
 a_\Bp^\dagger a_\Bp
 \ket{
-\frac{j(p)}{\sqrt{2 \omega_\Bp}}
-} = \frac{\Abs{j(p)}^2}{2 \omega_\Bp} = N(\Bp).
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+} = \frac{\Abs{\tilde{j}(p)}^2}{2 \omega_\Bp} = N(\Bp).
 \end{equation}
 
 \section{Feynman's Green's function}

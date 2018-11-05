@@ -1,0 +1,156 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{braOmega}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+% qftLecture14:
+% https://tex.stackexchange.com/a/68357/15
+\DeclareMathOperator*{\SumInt}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\beginArtNoToc
+
+\generatetitle{PHY2403 (QFT I).  Pondering the ground state bra formula.}
+%\chapter{XXX}
+%\label{chap:braOmega}
+
+In lecture 14 we found
+
+\begin{dmath}\label{eqn:qftLecture15:60}
+\ket{\Omega}
+=
+\evalbar{
+\frac{ U(t_0, -T) \ket{0} }
+{
+e^{-i E_0(T - t_0)} \braket{\Omega}{0}
+}
+}{T \rightarrow \infty(1 - i \epsilon)},
+\end{dmath}
+and it was stated that we can also show that
+\begin{dmath}\label{eqn:qftLecture15:80}
+\bra{\Omega}
+=
+\evalbar{
+\frac{ \bra{0} U(T, t_0) }
+{
+e^{-i E_0(T - t_0)} \braket{0}{\Omega}
+}
+}{T \rightarrow \infty(1 - i \epsilon)}.
+\end{dmath}
+
+This second statement is actually not obvious since
+\begin{dmath}\label{eqn:braOmega:100}
+\lr{
+   \frac{ U(t_0, -T) \ket{0} }
+   {
+   e^{-i E_0(T - t_0)} \braket{\Omega}{0}
+   }
+}^\dagger
+=
+   \frac{ \bra{0} U(-T, t_0) \ket{0} }
+   {
+   e^{+i E_0(T - t_0)} \braket{0}{\Omega}
+   }
+\end{dmath}
+
+My first thought was that I'd written down \cref{eqn:qftLecture15:80} in my notes wrong, but this is actually also consistent with \citep{peskin1995introduction}, which our Prof is following loosely (i.e. he is explicitly filling in many of the holes in that dense little 800 page book).
+
+The resolution of this inconsistency is that the limit point \( \infty(1 - i \epsilon) \) doesn't work if you just conjugate, and you'd also have to conjugate that limit, so while
+\cref{eqn:braOmega:100} is correct, it is only part of the story, and should really be stated as
+\begin{dmath}\label{eqn:braOmega:120}
+\bra{\Omega}
+=
+\evalbar{
+   \frac{ \bra{0} U(-T, t_0) \ket{0} }
+   {
+   e^{+i E_0(T - t_0)} \braket{0}{\Omega}
+   }
+}{T \rightarrow \infty(1 + i \epsilon)}.
+\end{dmath}
+This is awkward because now our expressions for \( \bra{\Omega} \) and \( \ket{\Omega} \) approach \( T \) from different directions, and we want to evaluate both with a single limiting argument.
+
+To resolve this, we really have to start back with the identity expansion we used in lecture 14
+
+\begin{dmath}\label{eqn:braOmega:140}
+\bra{0} e^{-i H T}
+=
+\lr{
+\braket{0}{\Omega}\bra{\Omega}
+ + \SumInt_n \braket{0}{n} \bra{n}
+}
+e^{-i H T}
+=
+\braket{0}{\Omega}\bra{\Omega}
+e^{-i E_0 T}
+ + \SumInt_n \braket{0}{n} \bra{n} e^{-i E_n T}.
+\end{dmath}
+We argued (as does the text) that approaching to as \( T( 1 - i \epsilon) \) kills off the energetic states since
+\begin{dmath}\label{eqn:braOmega:160}
+\bra{n} e^{-i E_n T}
+\rightarrow
+\bra{n} e^{-i E_n T} e^{-E_n T \epsilon}
+\end{dmath}
+and the exponential damping factor is smaller for each \( E_n > E_0 \), so it can be neglected in the large \( T \) limit, leaving
+\begin{dmath}\label{eqn:braOmega:180}
+\bra{0} e^{-i H T}
+=
+\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\braket{0}{\Omega}\bra{\Omega}.
+\end{dmath}
+As we did for \( \ket{\Omega} \) we can shift the large time \( T \) by a small constant (this time \( -t_0 \) instead of \( t_0 \)), to give
+\begin{dmath}\label{eqn:braOmega:200}
+\bra{\Omega}
+=
+\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\frac{ \bra{0} e^{-i H T} }
+{
+\braket{0}{\Omega} e^{-i E_0 T}
+}
+\approx
+\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\frac{ \bra{0} e^{-i H (T - t_0)} }
+{
+\braket{0}{\Omega} e^{-i E_0 (T - t_0)}
+}
+=
+\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\frac{ \bra{0} e^{i H_0( T - t_0)} e^{-i H (T - t_0)} }
+{
+\braket{0}{\Omega} e^{-i E_0 (T - t_0)}
+}
+=
+\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\frac{ \bra{0} U(T, t_0) }
+{
+\braket{0}{\Omega} e^{-i E_0 (T - t_0)}
+},
+\end{dmath}
+where the projective property \( \bra{0} e^{i H_0 \alpha} = \bra{0} \) has been used to insert a no-op (i.e. \( \bra{0} H_0 = 0 \)).  This recovers the result stated in class (also: eq. (4.29) in the text.)
+
+%}
+\EndArticle
+%\EndNoBibArticle

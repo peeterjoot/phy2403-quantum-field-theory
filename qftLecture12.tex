@@ -27,7 +27,6 @@
 \index{Green's function!Klein-Gordon}
 \index{Feynman propagator}
 \index{path deformation}
-\index{Wightman function}
 \index{Green's function!retarded time}
 
 %%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
@@ -187,11 +186,14 @@ e^{i \omega_\Bp x^0 } \Theta(-x_0)
 }.
 \end{dmath}
 The first integral (without the \(\Theta\) factor) is the Wightman function
-\begin{dmath}\label{eqn:qftLecture12:280}
+\index{Wightman function}
+%\begin{dmath}\label{eqn:qftLecture12:280}
+\boxedEquation{eqn:qftLecture12:280}{
 D(x)
 =
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} \evalbar{e^{-i p \cdot x}}{p^0 = \omega_\Bp}.
-\end{dmath}
+}
+%\end{dmath}
 
 For the second integral, we make a change of variables \( \Bp \rightarrow -\Bp \) leaving
 \begin{dmath}\label{eqn:qftLecture12:300}
@@ -215,7 +217,7 @@ G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x).
 \section{Matrix element representation of the Wightman function.}
 \index{Wightman function}
 
-Recall that the Wightman function also had a matrix element representation
+Recall that the Wightman function \cref{eqn:qftLecture12:280} also had a matrix element representation
 \begin{dmath}\label{eqn:qftLecture12:360}
 D(x) = \bra{0} \phi(x) \phi(0) \ket{0}.
 \end{dmath}
@@ -282,8 +284,9 @@ e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 
 Claim: Retarded Green's function (bumps up contour) can be written
 \begin{dmath}\label{eqn:qftLecture12:400}
-D_R(x) = \theta(x_0) (D(x) - D(-x)).
+D_R(x) = \theta(x_0) (D(x) - D(-x)),
 \end{dmath}
+where \( D(x) \) is given by \cref{eqn:qftLecture12:280}.
 Proof: The upper half plane contour (\(x_0 < 0\)) is zero since it encloses no poles.  For the
 lower half plane contour we have
 \begin{dmath}\label{eqn:qftLecture12:420}
