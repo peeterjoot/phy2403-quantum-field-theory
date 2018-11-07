@@ -11,17 +11,19 @@
 
 %\usepackage{phy2403}
 \usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
+\usepackage{peeters_layout_exercise}
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{macros_cal} % LL
+\usepackage{simplewick}
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+\newcommand{\normalorder}[1]{\text{:\({#1}\):}}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 15b: XXX.  Taught by Prof.\ Erich Poppitz}
-%\chapter{XXX}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 15b: Wick's theorem, vacuum expectation, Feynman diagrams, \(\phi^4\) interaction, tree level diagrams, scattering, cross section, differential cross section.  Taught by Prof.\ Erich Poppitz}
+%\chapter{Wick's theorem, vacuum expectation, Feynman diagrams, \(\phi^4\) interaction, tree level diagrams, scattering, cross section, differential cross section}
 \label{chap:qftLecture15b}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
@@ -33,8 +35,213 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Wick contractions}
+
+Here's a double dose of short hand, first an abbreviation for the Feynman propagator
+\begin{dmath}\label{eqn:qftLecture15b:20}
+D_F(1-2) \equiv D_F(x_1, x_2),
+\end{dmath}
+and second
+\begin{dmath}\label{eqn:qftLecture15b:40}
+\contraction{}{\phi_i}{}{\phi_j} \phi_i \phi_j = D_F(i - j),
+\end{dmath}
+which is called a contraction.
+
+Contractions allow time ordered products to be written in a compact form.  In HW4 we are set with the task of demonstrating how this is done (i.e. proving \underline{Wick's theorem}.)
+
+\maketheorem{Wick's theorem.}{thm:qftLecture15b:80}{
+Sounds like stating the theorem is difficult, but the rough idea (from the example below) is that the time ordering of the fields has all the combinations of the pairwise contractions and normal ordered fields.
+} % theorem
+
+Illustrating by example for the time ordering of \( n = 4 \) fields, we have
+\begin{dmath}\label{eqn:qftLecture15b:60}
+T( \phi_1 \phi_2 \phi_3 \phi_4)
+=
+\normalorder{ \phi_1 \phi_2 \phi_3 \phi_4 }
++
+\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2 \normalorder{ \phi_3 \phi_4 }
++
+\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3 \normalorder{ \phi_2 \phi_4 }
++
+\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4 \normalorder{ \phi_2 \phi_3 }
++
+\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3 \normalorder{ \phi_1 \phi_4 }
++
+\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4 \normalorder{ \phi_1 \phi_3 }
++
+\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4 \normalorder{ \phi_1 \phi_2 }
++
+\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
+\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
++
+\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3
+\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4
++
+\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4
+\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3.
+\end{dmath}
+
+\maketheorem{Corrolory: Vacuum expectation of Wick's theorem expansion}{thm:qftLecture15b:100}{
+For \( n \) even
+\begin{equation*}
+\bra{0} T(\phi_1 \phi_2 \cdots \phi_n) \ket{0}
+=
+\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
+\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
+\contraction{}{\phi_5}{}{\phi_6} \phi_5 \phi_6
+\cdots
+\contraction{}{\phi_{n-1}}{}{\phi_n} \phi_{n-1} \phi_n
++ \text{all other terms}.
+\end{equation*}
+For \( n \) odd, this vanishes.
+} % theorem
+
+\section{Simplest Feynman diagrams}
+For \( n = 4 \) we have
+\begin{dmath}\label{eqn:qftLecture15b:120}
+\bra{0} T(\phi_1 \phi_2 \phi_3 \phi_4) \ket{0}
+=
+\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
+\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
++
+\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3
+\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4
++
+\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4
+\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3,
+\end{dmath}
+the set of Wick contractions can be written pictorially \cref{fig:qftLecture15b:qftLecture15bFig1}, and are called Feynman diagrams
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig1}{Simplest Feynman diagrams.}{fig:qftLecture15b:qftLecture15bFig1}{0.15}
+
+These are the very simplest Feynman diagrams.
+
+\section{\( \phi^4 \) interaction}
+Introducing another shorthand, we will use an expectation like notation to designate the matrix element for the vacuum state
+\begin{dmath}\label{eqn:qftLecture15b:140}
+\expectation{\text{blah}} = \bra{0}\text{blah} \ket{0}.
+\end{dmath}
+For the \( \phi^4 \) theory, this allows us to write the numerator of the perturbed ground state interaction as
+\begin{dmath}\label{eqn:qftLecture15:340}
+\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
+\sim
+   \bra{0}
+   T\lr{
+      \phi_I(x)
+      \phi_I(y)
+      e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'}
+   }
+\ket{0}
+=
+\expectation{
+      \phi_I(x)
+      \phi_I(y)
+      e^{-i \int d^4 z \phi^4(z)}
+}.
+\end{dmath}
+To first order, this is
+\begin{dmath}\label{eqn:qftLecture15b:360}
+\expectation{ T \phi_x \phi_y } - i \frac{\lambda}{4} \int d^4 z \expectation{
+T \phi_x \phi_y \phi_z \phi_z \phi_z \phi_z
+},
+\end{dmath}
+The first braket has a pictorial representation
+F2a
+whereas the second has diagrams
+F2b
+F3a
+We can depict the entire second integral in diagrams as
+F3b
+
+Solving for the perturbed ground state can now be thought of as reduced to drawing pictures.  Each line from \( x \rightarrow x' \) represents a propagator \( D_F( x - x' ) \), and each vertex \( -i \lambda \int d^4 z \times \text{symmetry coefficients} \).
+FIXME: not clear what is meant here by symmetry coefficients.
+
+We may also translate back from the diagrams to an algebraic representation.  For the first order \( \phi^4 \) interaction, that is
+\begin{dmath}\label{eqn:qftLecture15b:380}
+\expectation{ T \phi_x \phi_y }
+- \frac{i \lambda }{4} \int d^4 z D_F(x - y) D_F^2( z - z )
++ D_F(x - z) D_F( y - z).
+\end{dmath}
+
+Other diagrams can be similarily translated.  For example
+F5
+represents
+\begin{dmath}\label{eqn:qftLecture15b:400}
+\int d^4 z D^2(z - z)
+=
+V_3 T \lr{ \int \frac{d^4 p}{(2\pi)^4} \inv{\Bp^2 - m^2 + i \epsilon } }^2.
+\end{dmath}
+Clearly, additional interpretation will be required, since this diverges.  The resolution of this unfortunately has to be deferred to QFT II, where renormalization is covered.
+
+\section{Tree level diagrams.}
+We would like to only discuss tree level diagrams (FIXME: why?).
+
+F6
+
+For the braket \footnote{I'd written: \( \expectation{ \int \phi_1 \phi_2 \phi_3 \phi_4 \lambda \int d^4 z \phi_z \phi_z \phi_z \phi_z } \).  Is this two fold integral what was intended, or my correction in \cref{eqn:qftLecture15b:420}?}
+\begin{dmath}\label{eqn:qftLecture15b:420}
+\expectation{ \int d^4 z \phi_1 \phi_2 \phi_3 \phi_4 \phi_z \phi_z \phi_z \phi_z
+}
+\end{dmath}
+we draw
+F7
+the first of which is a tree level diagram.
+
+\section{Scattering.}
+In QM we did lots of scattering problems as sketched in
+F8
+and were able to compute the reflected and transmitted wave functions and quantities such as the reflection and transmission coefficients
+\begin{dmath}\label{eqn:qftLecture15b:440}
+\begin{aligned}
+R &= \frac
+{\Abs{ \Psi_{\text{ref}}}^2}
+{\Abs{ \Psi_{\text{in}}}^2} \\
+T &= \frac
+{\Abs{ \Psi_{\text{trans}}}^2}
+{\Abs{ \Psi_{\text{in}}}^2}.
+\end{aligned}
+\end{dmath}
+We'd like to consider scattering in some region of space with a non-zero potential, such as the scattering of a plane wave with known electron flux rate
+F9
+We can imagine that we have a detector capable of measuring the number of electrons with momentum \( \Bp_{\text{out}} \) per unit time.
+
+\makedefinition{Total cross section (X-section).}{dfn:qftLecture15b:460}{
+\begin{equation*}
+\sigma_{\text{total}}
+=
+\frac{
+\text{number of scattering events with \( \Bp_{\text{out}} \ne \Bk_{\text{in}} \) per unit time}
+}
+{
+\text{Flux of incoming particles}
+},
+\end{equation*}
+where the flux is the number of particles crossing a unit area in unit time.
+} % definition
+
+Units of the x-section are (with \( \hbar = c = 1 \))
+\begin{equation}\label{eqn:qftLecture15b:480}
+[\sigma] = \text{area} = \inv{M^2}.
+\end{equation}
+
+The concept of scattering cross section may not be new, as it can even be encountered in classical mechanics.  One such scenerio is sketched in
+F10
+where the cross section is just the area
+\begin{dmath}\label{eqn:qftLecture15b:500}
+\sigma = \pi R^2.
+\end{dmath}
+Other classical fields where cross section is encountered includes antenna theory (radar reflection profiles, ...).
+
+\makedefinition{Differential cross section.}{dfn:qftLecture15b:520}{
+\begin{equation*}
+\frac{d^3 \sigma}{dp_x dp_y dp_z} = \frac{
+\text{number of scattering events with \( \Bp_{\text{out}} \) between \( (\Bp, \Bp + \Delta \Bp )\)}
+}
+{
+\text{flux}
+}.
+\end{equation*}
+} % definition
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
+\EndNoBibArticle
