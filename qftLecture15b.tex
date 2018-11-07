@@ -43,7 +43,7 @@ D_F(1-2) \equiv D_F(x_1, x_2),
 \end{dmath}
 and second
 \begin{dmath}\label{eqn:qftLecture15b:40}
-\contraction{}{\phi_i}{}{\phi_j} \phi_i \phi_j = D_F(i - j),
+\contraction{}{\phi}{{}_i}{\phi} \phi_i \phi_j = D_F(i - j),
 \end{dmath}
 which is called a contraction.
 
@@ -59,26 +59,26 @@ T( \phi_1 \phi_2 \phi_3 \phi_4)
 =
 \normalorder{ \phi_1 \phi_2 \phi_3 \phi_4 }
 +
-\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2 \normalorder{ \phi_3 \phi_4 }
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2 \normalorder{ \phi_3 \phi_4 }
 +
-\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3 \normalorder{ \phi_2 \phi_4 }
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_3 \normalorder{ \phi_2 \phi_4 }
 +
-\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4 \normalorder{ \phi_2 \phi_3 }
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4 \normalorder{ \phi_2 \phi_3 }
 +
-\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3 \normalorder{ \phi_1 \phi_4 }
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3 \normalorder{ \phi_1 \phi_4 }
 +
-\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4 \normalorder{ \phi_1 \phi_3 }
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_4 \normalorder{ \phi_1 \phi_3 }
 +
-\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4 \normalorder{ \phi_1 \phi_2 }
+\contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4 \normalorder{ \phi_1 \phi_2 }
 +
-\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
-\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2
+\contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4
 +
-\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3
-\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_3
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_4
 +
-\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4
-\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3.
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3.
 \end{dmath}
 
 \maketheorem{Corrolory: Vacuum expectation of Wick's theorem expansion}{thm:qftLecture15b:100}{
@@ -86,11 +86,11 @@ For \( n \) even
 \begin{equation*}
 \bra{0} T(\phi_1 \phi_2 \cdots \phi_n) \ket{0}
 =
-\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
-\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
-\contraction{}{\phi_5}{}{\phi_6} \phi_5 \phi_6
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2
+\contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4
+\contraction{}{\phi}{{}_5}{\phi} \phi_5 \phi_6
 \cdots
-\contraction{}{\phi_{n-1}}{}{\phi_n} \phi_{n-1} \phi_n
+\contraction{}{\phi}{{}_{n-1}}{\phi} \phi_{n-1} \phi_n
 + \text{all other terms}.
 \end{equation*}
 For \( n \) odd, this vanishes.
@@ -101,14 +101,14 @@ For \( n = 4 \) we have
 \begin{dmath}\label{eqn:qftLecture15b:120}
 \bra{0} T(\phi_1 \phi_2 \phi_3 \phi_4) \ket{0}
 =
-\contraction{}{\phi_1}{}{\phi_2} \phi_1 \phi_2
-\contraction{}{\phi_3}{}{\phi_4} \phi_3 \phi_4
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2
+\contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4
 +
-\contraction{}{\phi_1}{}{\phi_3} \phi_1 \phi_3
-\contraction{}{\phi_2}{}{\phi_4} \phi_2 \phi_4
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_3
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_4
 +
-\contraction{}{\phi_1}{}{\phi_4} \phi_1 \phi_4
-\contraction{}{\phi_2}{}{\phi_3} \phi_2 \phi_3,
+\contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4
+\contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3,
 \end{dmath}
 the set of Wick contractions can be written pictorially \cref{fig:qftLecture15b:qftLecture15bFig1}, and are called Feynman diagrams
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig1}{Simplest Feynman diagrams.}{fig:qftLecture15b:qftLecture15bFig1}{0.15}
@@ -144,16 +144,20 @@ To first order, this is
 T \phi_x \phi_y \phi_z \phi_z \phi_z \phi_z
 },
 \end{dmath}
-The first braket has a pictorial representation
-F2a
-whereas the second has diagrams
-F2b
-F3a
-We can depict the entire second integral in diagrams as
-F3b
+The first braket has the pictorial representation sketched in \cref{fig:qftLecture15b:qftLecture15bFigF2a}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFigF2a}{First integral diagram.}{fig:qftLecture15b:qftLecture15bFigF2a}{0.1}
+whereas the second has the diagrams sketched in
+\cref{fig:qftLecture15b:qftLecture15bFigF2b}.
+%\imageTwoFigures{path1}{path2}{fancy plots}{fig:blah}{scale=0.3}
+\imageTwoFigures
+{../figures/phy2403-quantum-field-theory/qftLecture15bFigF2b}
+{../figures/phy2403-quantum-field-theory/qftLecture15bFigF2c}
+{Second integral diagrams.}{fig:qftLecture15b:qftLecture15bFigF2b}{scale=0.3}
 
-Solving for the perturbed ground state can now be thought of as reduced to drawing pictures.  Each line from \( x \rightarrow x' \) represents a propagator \( D_F( x - x' ) \), and each vertex \( -i \lambda \int d^4 z \times \text{symmetry coefficients} \).
-FIXME: not clear what is meant here by symmetry coefficients.
+We can depict the entire second integral in diagrams as sketched in \cref{fig:qftLecture15b:qftLecture15bFig3}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig3}{Integrals as diagrams.}{fig:qftLecture15b:qftLecture15bFig3}{0.3}
+
+Solving for the perturbed ground state can now be thought of as reduced to drawing pictures.  Each line from \( x \rightarrow x' \) represents a propagator \( D_F( x - x' ) \), and each vertex \( -i \lambda \int d^4 z \times \text{symmetry coefficients} \).\footnote{Symmetry coefficients weren't discussed until the next lecture.  This means making combinatorial arguments to count the number of equivalent diagrams.}
 
 We may also translate back from the diagrams to an algebraic representation.  For the first order \( \phi^4 \) interaction, that is
 \begin{dmath}\label{eqn:qftLecture15b:380}
@@ -173,23 +177,24 @@ V_3 T \lr{ \int \frac{d^4 p}{(2\pi)^4} \inv{\Bp^2 - m^2 + i \epsilon } }^2.
 Clearly, additional interpretation will be required, since this diverges.  The resolution of this unfortunately has to be deferred to QFT II, where renormalization is covered.
 
 \section{Tree level diagrams.}
-We would like to only discuss tree level diagrams (FIXME: why?).
-
-F6
+We would like to only discuss tree level diagrams, which exclude diagrams like
+\cref{fig:qftLecture15b:qftLecture15bFig6}
+\footnote{I think this is what is referred to as connected, amputated graphs in the next lecture.  Such diagrams are the ones of interest for scattering and decay problems.}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig6}{Not a tree level diagram.}{fig:qftLecture15b:qftLecture15bFig6}{0.2}
 
 For the braket \footnote{I'd written: \( \expectation{ \int \phi_1 \phi_2 \phi_3 \phi_4 \lambda \int d^4 z \phi_z \phi_z \phi_z \phi_z } \).  Is this two fold integral what was intended, or my correction in \cref{eqn:qftLecture15b:420}?}
 \begin{dmath}\label{eqn:qftLecture15b:420}
 \expectation{ \int d^4 z \phi_1 \phi_2 \phi_3 \phi_4 \phi_z \phi_z \phi_z \phi_z
 }
 \end{dmath}
-we draw
-F7
+we draw diagrams like those of \cref{fig:qftLecture15b:qftLecture15bFig7},
 the first of which is a tree level diagram.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig7}{First order interaction diagrams.}{fig:qftLecture15b:qftLecture15bFig7}{0.2}
 
 \section{Scattering.}
-In QM we did lots of scattering problems as sketched in
-F8
+In QM we did lots of scattering problems as sketched in \cref{fig:qftLecture15b:qftLecture15bFig8},
 and were able to compute the reflected and transmitted wave functions and quantities such as the reflection and transmission coefficients
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig8}{Reflection and transmition of wave packets.}{fig:qftLecture15b:qftLecture15bFig8}{0.3}
 \begin{dmath}\label{eqn:qftLecture15b:440}
 \begin{aligned}
 R &= \frac
@@ -200,9 +205,10 @@ T &= \frac
 {\Abs{ \Psi_{\text{in}}}^2}.
 \end{aligned}
 \end{dmath}
-We'd like to consider scattering in some region of space with a non-zero potential, such as the scattering of a plane wave with known electron flux rate
-F9
+We'd like to consider scattering in some region of space with a non-zero potential, such as the scattering of a plane wave with known electron flux rate as sketched in
+\cref{fig:qftLecture15b:qftLecture15bFig9}.
 We can imagine that we have a detector capable of measuring the number of electrons with momentum \( \Bp_{\text{out}} \) per unit time.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig9}{Plane wave scattering off a potential.}{fig:qftLecture15b:qftLecture15bFig9}{0.4}
 
 \makedefinition{Total cross section (X-section).}{dfn:qftLecture15b:460}{
 \begin{equation*}
@@ -223,13 +229,12 @@ Units of the x-section are (with \( \hbar = c = 1 \))
 [\sigma] = \text{area} = \inv{M^2}.
 \end{equation}
 
-The concept of scattering cross section may not be new, as it can even be encountered in classical mechanics.  One such scenerio is sketched in
-F10
-where the cross section is just the area
+The concept of scattering cross section may not be new, as it can even be encountered in classical mechanics.  One such scenerio is sketched in \cref{fig:qftLecture15b:qftLecture15bFig10} where the cross section is just the area
 \begin{dmath}\label{eqn:qftLecture15b:500}
 \sigma = \pi R^2.
 \end{dmath}
-Other classical fields where cross section is encountered includes antenna theory (radar reflection profiles, ...).
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig10}{Classical scattering.}{fig:qftLecture15b:qftLecture15bFig10}{0.3}
+Other classical fields where cross section is encountered includes antenna theory (radar scattering profiles, ...).
 
 \makedefinition{Differential cross section.}{dfn:qftLecture15b:520}{
 \begin{equation*}

@@ -11,11 +11,13 @@
 
 %\usepackage{phy2403}
 \usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
+\usepackage{peeters_layout_exercise}
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{macros_cal} % LL
+\usepackage{simplewick}
+\usepackage{verbatim}
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
 
@@ -33,8 +35,256 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review}
+
+We finished by defining the differential cross section
+
+\makedefinition{Differential cross section.}{dfn:qftLecture16:20}{
+\begin{equation*}
+\frac{d^3 \sigma}{dp_x dp_y dp_z} = \frac{
+\text{number of scattering events with \( \Bp_{\txtf} \) between \( (\Bp_\txtf, \Bp_\txtf + d \Bp_\txtf )\)}
+}
+{
+\text{flux of incoming particles}
+}.
+\end{equation*}
+} % definition
+
+\section{Scattering}
+
+In QFT we typically study \( 2 \rightarrow n \) inelastic scattering.  Most commonly the nature of the final state particles are different from the nature of the incoming state.
+
+For example, we can collide two electrons, and can get muon and anti-muon particles
+F1
+or pions
+F2, or even both
+F3
+
+In the \( \lambda \phi^4 \) theory we can have scattering events such as
+F4a
+F4b
+
+How to calculate in QFT.  Initial state of 2 particles \( A, B \) with initital state
+\begin{dmath}\label{eqn:qftLecture16:40}
+\ket{\Bk_A, \Bk_B }_{\text{in}, T \rightarrow -\infty}
+\end{dmath}
+and final n-particle state
+\begin{dmath}\label{eqn:qftLecture16:60}
+\ket{\Bp_1, \Bp_2, \cdots, \Bp_n }_{\text{out}, T \rightarrow +\infty}
+\end{dmath}
+The QM transition amplitude from the initial to the final state is
+\begin{dmath}\label{eqn:qftLecture16:80}
+\prescript{}{\text{out}}{\bra{\Bp_1, \Bp_2, \cdots, \Bp_n }}
+\ket{\Bk_A, \Bk_B }_{\text{in}}
+=
+\bra{\Bp_1, \Bp_2, \cdots, \Bp_n } e^{-2 i H T}
+\ket{\Bk_A, \Bk_B }.
+\end{dmath}
+This is the amplitude for \( A B \rightarrow 1 \cdots n \).
+Ultimately, we want the scattering x-section.
+
+We will also be interested in decay rates, as there are unstable particles in QFT that can decay.  This doesn't happen in \( \lambda \phi^4 \) theory.
+In a theory with 2 scalar fields \( \Phi, \varphi \) with \( m_\Phi > 2 m_\varphi \).  A possible interaction for such a theory is
+\begin{dmath}\label{eqn:qftLecture16:100}
+H_{\text{int}} = \mu \Phi \varphi^2,
+\end{dmath}
+which would permit \( \Phi \rightarrow \varphi \varphi \) decays.
+HW4 has a coupling like \( (h/V) \partial_\mu \phi^a \partial^\mu \phi^a \) for which a \( h \rightarrow \phi^a \phi^a \) decay is possible.
+
+\makedefinition{Decay rate.}{dfn:qftLecture16:120}{
+The decay rate is defined as
+\begin{equation*}
+\Gamma =
+\frac{
+\text{
+Number of decays \( \Phi \rightarrow \varphi \varphi \) in unit time
+}
+}
+{
+\text{
+Number of \( \Phi \) particles present
+}
+}
+\end{equation*}
+} % definition
+
+What is the amplitude for such a decay transition?
+\begin{dmath}\label{eqn:qftLecture16:140}
+\bra{\Bk_\phi}_{\text{in}, T \rightarrow -\infty} \rightarrow
+\bra{\Bk_1, \Bk_2}_{\text{out}, T \rightarrow +\infty}.
+\end{dmath}
+The amplitude for \( \Bk_\phi \rightarrow \Bk_1, \Bk_2 \).
+\begin{dmath}\label{eqn:qftLecture16:160}
+\bra{\Bk_1, \Bk_2} e^{-i 2 H T } \ket{\Bk_\phi}
+=
+\prescript{}{\text{out}}{\braket{\Bk_1, \Bk_2}{\Bk_\phi}}
+\end{dmath}
+
+\paragraph{mysterious seeming statement something like}: ``The decays are essentially due to interactions with vacuum fluctuations.''
+
+\section{Calculating interactions}
+
+We write
+\begin{dmath}\label{eqn:qftLecture16:180}
+\begin{aligned}
+\prescript{}{\text{out}}{\braket{ \Bp_1, \cdots \Bp_n }{ \Bk_A, \Bk_B }}_{\text{in}}
+&=
+\lim_{T \rightarrow \infty}
+\bra{ \Bp_1, \cdots \Bp_n } e^{-i 2 H T } \ket{ \Bk_A, \Bk_B } \\
+&=
+\bra{ \Bp_1, \cdots \Bp_n } \hatS \ket{ \Bk_A, \Bk_B } \\
+&=
+\bra{ \Bp_1, \cdots \Bp_n } \BOne + i \hatT \ket{ \Bk_A, \Bk_B },
+\end{aligned}
+\end{dmath}
+where \( \hatS \) is called the S-matrix or scattering matrix, which is decomposed into a unit portion \( \BOne \) which is a convient way to exclude events with no scattering.  \( \BOne \) contributes for \( n = 2 \) only, but is an \( n \) scattering amplitude.
+We are really interested in the \( i \hatT \) portion of this amplitude
+\begin{equation}\label{eqn:qftLecture16:200}
+\bra{ \Bp_1, \cdots \Bp_n } i \hatT \ket{ \Bk_A, \Bk_B }
+=
+(2 \pi)^4 \delta^4( \Bk_A + \Bk_B - \sum_{i = 1}^n \Bp_i )
+\times
+i M( \Bk_A + \Bk_B \rightarrow \Bp_1 \cdots \Bp_n ).
+\end{equation}
+This amounts to a definition of \( M \).
+Recall that we found
+\begin{dmath}\label{eqn:qftLecture16:220}
+U(T, -T)
+= T \lr{ e^{-i \int_{-T}^T H_I(t') dt'} }
+=
+e^{i H_0(T - t_0)}
+e^{-i 2 H T}
+e^{-i H_0(-T - t_0)}.
+\end{dmath}
+We want to replace the \( e^{-i 2 H T} \) in the matrix element above with \( U \).
+
+In perturbation theory, we assume (conjecture) that
+\begin{dmath}\label{eqn:qftLecture16:240}
+\ket{ \Bk_A, \Bk_B }
+\sim
+\ket{ \Bk_A, \Bk_B }_\txto
+\sim
+\text{const}\, a^\dagger_{\Bk_A} a^\dagger_{\Bk_B} \ket{0}
+\end{dmath}
+
+Because we'll be squaring the amplitudes, we can assume that the \( e^{i H_0(T-t_0)} \) will result in just phase factors that won't survive, so in \cref{eqn:qftLecture16:180} we can insert \( U \)
+\begin{dmath}\label{eqn:qftLecture16:280}
+\prescript{}{\text{out}}{\braket{ \Bp_1, \cdots \Bp_n }{ \Bk_A, \Bk_B }}_{\text{in}}
+=
+\lim_{T \rightarrow \infty}
+\bra{ \Bp_1, \cdots \Bp_n } U(T, -T) \ket{ \Bk_A, \Bk_B }
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture16:300}
+\bra{ \Bp_1, \cdots \Bp_n } i\hatT { \Bk_A, \Bk_B }
+=
+\lim_{T \rightarrow \infty(1 - i \epsilon) }
+\prescript{}{0}{
+\bra{ \Bp_1, \cdots \Bp_n }
+T( e^{-i \int_{-T}^T H_i(t') dt' } )
+ \ket{ \Bk_A, \Bk_B }
+}_0
+\end{dmath}
+
+These are connected and amputated graphs.
+
+\paragraph{What is ``connected and amputated''?}
+
+Explaining by example.  \( n = 2, \lambda \phi^4/4! \).
+
+\begin{dmath}\label{eqn:qftLecture16:320}
+\bra{0}
+a_{\Bp_1}
+a_{\Bp_2}
+\lr{
+\cancel{1}
+- \frac{i \lambda}{4!} \int d^4 x \phi_I^4(x)
++ \inv{2} \lr{ \frac{i \lambda}{4!}}^2 \int d^4 x d^4 y \phi_I^4(x) \phi_I^4(y)
++ \cdots
+}
+a_{\Bk_A}^\dagger
+a_{\Bk_B}^\dagger
+\ket{0}
+\end{dmath}
+Here time ordering operations are implied, but not written explicitly.
+Also, the ``amputated'' indicates that we are going to be dropping the \( 1 \) portion of the exponential expansion (as we've also dropped that in \cref{eqn:qftLecture16:300}).
+We will also be using a relativistic normalization so that the \(
+a_{\Bk_A}^\dagger
+a_{\Bk_B}^\dagger \) terms include
+\( \sqrt{
+2 \omega_{\Bk_A}
+2 \omega_{\Bk_B} } \)
+contributions and the \(
+a_{\Bp_1}
+a_{\Bp_2}
+\) include
+\( \sqrt{
+2 \omega_{\Bp_1}
+2 \omega_{\Bp_2} } \) contributions.
+
+\begin{dmath}\label{eqn:qftLecture16:340}
+T
+\contraction{}{\phi}{{}_I(x_1)}{\phi}
+\phi_I(x_1)\phi_I(x_2)
+= D_F(x_1 - x_2)
+\end{dmath}
+
+When we look at
+\begin{dmath}\label{eqn:qftLecture16:360}
+\contraction{}{\phi}{{}_I(x_1)}{a}
+\phi_I(x_1) a^\dagger_{\Bk}
+\sqrt{ 2 \omega_\Bk}
+=
+\int \frac{d^3 p}{(2 \pi)^3} \frac{e^{-i p \cdot x}}{\sqrt{2 \omega_\Bp}}
+\contraction{}{a}{{}_\Bp}{a}
+a_\Bp a^\dagger_\Bk
+\sqrt{ 2 \omega_\Bk}
+=
+\int \frac{d^3 p}{(2 \pi)^3} \frac{e^{-i p \cdot x}}{\sqrt{2 \omega_\Bp}}
+\delta^3(\Bp - \Bk)
+\sqrt{ 2 \omega_\Bk}
+= e^{-i k \cdot x}.
+\end{dmath}
+Similarily
+\begin{dmath}\label{eqn:qftLecture16:n}
+\contraction{}{a}{{}_\Bp}{\phi}
+a_\Bp \phi_I(x_1)
+\sqrt{ 2 \omega_\Bp}
+=
+\int \frac{d^3 k}{(2 \pi)^3} \frac{e^{i k \cdot x}}{\sqrt{2 \omega_\Bk}}
+\contraction{}{a}{{}_\Bp}{a}
+a_\Bp a^\dagger_\Bk
+\sqrt{ 2 \omega_\Bk}
+=
+\int \frac{d^3 k}{(2 \pi)^3} \frac{e^{i k \cdot x}}{\sqrt{2 \omega_\Bk}}
+\delta^3(\Bp - \Bk)
+\sqrt{ 2 \omega_\Bk}
+= e^{+i p \cdot x}.
+\end{dmath}
+
+Summarizing
+\begin{dmath}\label{eqn:qftLecture16:380}
+\begin{aligned}
+\contraction{}{\phi}{{}_I(x_1)}{a}
+\phi_I(x_1) a^\dagger_{\Bp}
+&= e^{-i p \cdot x} \\
+\contraction{}{a}{{}_\Bp}{\phi}
+a_\Bp \phi_I(x_1)
+&= e^{i p \cdot x}.
+\end{aligned}
+\end{dmath}
+
+\begin{comment}
+\section{junk}
+\begin{dmath}\label{eqn:qftLecture15b:260}
+%\sideset{_a^b}{'}{x}
+\prescript{14}{2}{\mathbf{C}}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture16:420}
+\prescript{}{2}{\mathbf{C}}
+\end{dmath}
+\end{comment}
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
+\EndNoBibArticle
