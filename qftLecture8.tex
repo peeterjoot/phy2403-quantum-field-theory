@@ -206,6 +206,7 @@ Now we see the energy and momentum as conserved quantities associated with space
 
 \section{Unitary operators.}
 \index{unitary operator}
+\index{translation operator}
 
 In QM we say that \( \hat{\Bp} \) ``generates translations''.
 With \( \hat{\Bp} \equiv -i \Hbar \spacegrad \) that translation is
@@ -214,15 +215,15 @@ With \( \hat{\Bp} \equiv -i \Hbar \spacegrad \) that translation is
 \end{equation}
 In particular
 \begin{dmath}\label{eqn:qftLecture8:540}
-\bra{\Bx} \hatU \ket{\psi} = e^{\Ba \cdot \hat{\Bp} } \psi(\Bx) = \psi(\Bx + \Ba).
+\bra{\Bx} \hatU \ket{\psi} = e^{i \Ba \cdot \hat{\Bp} } \psi(\Bx) = \psi(\Bx + \Ba).
 \end{dmath}
 
 In one dimension
 \begin{dmath}\label{eqn:qftLecture8:560}
-\hatU \hat{x} \hatU^\dagger
+\hatU(a) \hat{x} \hatU^\dagger(a)
 =
-e^{\Ba \cdot \hat{p} } \psi(\Bx)
-e^{-\Ba \cdot \hat{p} }
+e^{i \Ba \cdot \hat{p} } \psi(\Bx)
+e^{- i \Ba \cdot \hat{p} }
 = \hat{\Bx} + a \hat{\BOne}.
 \end{dmath}
 This uses the Baker-Campbell-Hausdorff formula.
@@ -328,8 +329,9 @@ e^{-i a^k \hat{p}^k }
 \hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
 = \phihat(\Bx) + i a^j (-i) \partial^j \phihat(\Bx) + \cdots
 = \phihat(\Bx) + a^j \partial^j \phihat(\Bx) + \cdots
-= \phihat(\Bx + \Ba)
+= \phihat(\Bx + \Ba).
 \end{dmath}
+\index{translation operator}
 
 \section{Continuous symmetries.}
 \index{continuous symmetries}
