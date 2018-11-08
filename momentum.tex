@@ -17,10 +17,9 @@
 \usepackage{peeters_figures}
 \usepackage{siunitx}
 \usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
+\usepackage{macros_cal} % LL
+
+\newcommand{\normalorder}[1]{\text{:\({#1}\):}}
 
 \beginArtNoToc
 
@@ -33,6 +32,8 @@
 % \citep{doran2003gap}
 % \citep{jackson1975cew}
 % \citep{griffiths1999introduction}
+
+\section{Expansion of the field momentum.}
 
 Way back in lecture 8, it was claimed that
 \begin{equation}\label{eqn:momentum:20}
@@ -118,6 +119,98 @@ p_0 q^k
 
 What is the rationale for ignoring those time dependent terms?  Does normal ordering also implicitly drop any non-paired creation/annihilation operators?  If so, why?
 
+\section{Conservation of the field momentum.}
+
+This follows up on unanswered questions related to the apparent time dependent terms in the previous expansion of \( P^i \) for a scalar field.
+
+It turns out that examining the reasons that we can say that the field momentum is conserved also sheds some light on the question.  \( P^i \) is not an a-priori conserved quantity, but we may use the charge conservation argument to justify this despite it not having a four-vector nature (i.e. with zero four divergence.)
+
+The momentum \( P^i \) that we have defined is related to the conserved quantity \( T^{0\mu} \), the energy-momentum tensor, which satisfies \( 0 = \partial_\mu T^{0\mu} \) by Noether's theorem (this was the conserved quantity associated with a spacetime translation.)
+
+That tensor was
+\begin{dmath}\label{eqn:momentum:120}
+T^{\mu\nu} = \partial^\mu \phi \partial^\nu \phi - g^{\mu\nu} \LL,
+\end{dmath}
+and can be used to define the momenta
+\begin{dmath}\label{eqn:momentum:140}
+\int d^3 x T^{0k}
+= \int d^3 x \partial^0 \phi \partial^k \phi
+= \int d^3 x \pi \partial^k \phi.
+\end{dmath}
+Charge \( Q^i = \int d^3 x j^0 \) was conserved with respect to a limiting surface argument, and we can make a similar ``beer can integral'' argument for \( P^i \), integrating over a large time interval \( t \in [-T, T] \) as sketched in \cref{fig:spacetimeCylinder:spacetimeCylinderFig1}.  That is
+\begin{dmath}\label{eqn:momentum:160}
+0
+=
+\partial_\mu \int d^4 x T^{0\mu}
+=
+\partial_0 \int d^4 x T^{00}
++
+\partial_k \int d^4 x T^{0k}
+=
+\partial_0 \int_{-T}^T dt \int d^3 x T^{00}
++
+\partial_k \int_{-T}^T dt \int d^3 x T^{0k}
+=
+\partial_0 \int_{-T}^T dt \int d^3 x T^{00}
++
+\partial_k \int_{-T}^T dt
+\inv{2} \int \frac{d^3 p }{(2 \pi)^3} p^k
+\lr{
+     a_\Bp^\dagger a_\Bp
+   + a_\Bp a_\Bp^\dagger
+   - a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
+   - a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
+}
+=
+\int d^3 x \evalrange{T^{00}}{-T}{T}
++
+T \partial_k
+\int \frac{d^3 p }{(2 \pi)^3} p^k
+\lr{
+     a_\Bp^\dagger a_\Bp
+   + a_\Bp a_\Bp^\dagger
+}
+-\inv{2}
+\partial_k \int_{-T}^T dt
+\int \frac{d^3 p }{(2 \pi)^3} p^k
+\lr{
+     a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
+   + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
+}.
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
+
+The first integral can be said to vanish if the field energy goes to zero at the time boundaries, and the last integral reduces to
+\begin{dmath}\label{eqn:momentum:180}
+-\inv{2}
+\partial_k \int_{-T}^T dt
+\int \frac{d^3 p }{(2 \pi)^3} p^k
+\lr{
+     a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
+   + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
+}
+=
+-\int \frac{d^3 p }{2 (2 \pi)^3} p^k
+\lr{
+     a_\Bp a_{-\Bp} \frac{\sin( -2 \omega_\Bp T )}{-2 \omega_\Bp}
+   + a_\Bp^\dagger a_{-\Bp}^\dagger \frac{\sin( 2 \omega_\Bp T )}{2 \omega_\Bp}
+}
+=
+-\int \frac{d^3 p }{2 (2 \pi)^3} p^k
+\lr{
+     a_\Bp a_{-\Bp} + a_\Bp^\dagger a_{-\Bp}^\dagger
+}
+\frac{\sin( 2 \omega_\Bp T )}{2 \omega_\Bp}
+.
+\end{dmath}
+The \( \sin \) term can be interpretted as a \( \sinc \) like function of \( \omega_\Bp \) which vanishes for large \( \Bp \).  It's not entirely \( \sinc \) like for a massive field as \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), which never hits zero, as shown in \cref{fig:sortOfSincFunction:sortOfSincFunctionFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/sortOfSincFunctionFig1}{\( \sin(2 \omega_\Bp T)/\omega_\Bp\)}{fig:sortOfSincFunction:sortOfSincFunctionFig1}{0.3}
+Vanishing for large \( \Bp \) doesn't help the whole integral vanish, but we can resort to the Riemann-Lebesque lemma \citep{wiki:RiemannLebesgue} instead and interpret this integral as one with a plain old high frequency oscillation that is presumed to vanish (i.e. the rest is well behaved enough that it can be labelled as \( L_1 \) integrable.)
+
+We see that only the non-time dependent portion of \( \mathbf{P} \) matters from a conserved quantity point of view, and having killed off all the time dependent terms, we are left with a conservation relationship for the momenta \( \spacegrad \cdot \BP = 0 \), where \( \BP \) in normal order is just
+\begin{dmath}\label{eqn:momentum:200}
+\normalorder{\BP} = \int \frac{d^3 p}{(2 \pi)^3} \Bp a_\Bp^\dagger a_\Bp.
+\end{dmath}
+
 %}
-%\EndArticle
-\EndNoBibArticle
+\EndArticle
