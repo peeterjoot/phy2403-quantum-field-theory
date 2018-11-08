@@ -136,3 +136,5 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
 perl -p -i ../latex/bin/latexRegex.pl braOmega.tex
 ../latex/bin/lgrep qftLecture17.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture17.tex
+../latex/bin/lgrep momentum.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl momentum.tex
