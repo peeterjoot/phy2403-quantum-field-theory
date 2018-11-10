@@ -3,28 +3,27 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{momentum}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-\usepackage{macros_cal} % LL
-
-\newcommand{\normalorder}[1]{\text{:\({#1}\):}}
-
-\beginArtNoToc
-
-\generatetitle{Momentum of scalar field}
-%\chapter{Momentum of scalar field}
+%%%\input{../latex/blogpost.tex}
+%%%\renewcommand{\basename}{momentum}
+%%%%\renewcommand{\dirname}{notes/phy1520/}
+%%%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%%%\newcommand{\dateintitle}{}
+%%%%\newcommand{\keywords}{}
+%%%
+%%%\input{../latex/peeter_prologue_print2.tex}
+%%%
+%%%\usepackage{peeters_layout_exercise}
+%%%\usepackage{peeters_braket}
+%%%\usepackage{peeters_figures}
+%%%\usepackage{siunitx}
+%%%\usepackage{verbatim}
+%%%\usepackage{macros_cal} % LL
+%%%
+%%%\newcommand{\normalorder}[1]{\text{:\({#1}\):}}
+%%%
+%%%\beginArtNoToc
+%%%
+%%%\generatetitle{Momentum of scalar field}
 %\label{chap:momentum}
 % \citep{sakurai2014modern} pr X.Y
 % \citep{pozar2009microwave}
@@ -35,7 +34,7 @@
 
 \section{Expansion of the field momentum.}
 
-Way back in lecture 8, it was claimed that
+In \cref{eqn:qftLecture8:500} it was claimed that
 \begin{equation}\label{eqn:momentum:20}
 P^k = \int d^3 x \pihat \partial^k \phihat = \int \frac{d^3 p}{(2\pi)^3} p^k a_\Bp^\dagger a_\Bp.
 \end{equation}
@@ -178,7 +177,7 @@ T \partial_k
    + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
 }.
 \end{dmath}
-\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
+%\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
 
 The first integral can be said to vanish if the field energy goes to zero at the time boundaries, and the last integral reduces to
 \begin{dmath}\label{eqn:momentum:180}
@@ -204,7 +203,8 @@ The first integral can be said to vanish if the field energy goes to zero at the
 .
 \end{dmath}
 The \( \sin \) term can be interpretted as a \( \sinc \) like function of \( \omega_\Bp \) which vanishes for large \( \Bp \).  It's not entirely \( \sinc \) like for a massive field as \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), which never hits zero, as shown in \cref{fig:sortOfSincFunction:sortOfSincFunctionFig1}.
-\imageFigure{../figures/phy2403-quantum-field-theory/sortOfSincFunctionFig1}{\( \sin(2 \omega_\Bp T)/\omega_\Bp\)}{fig:sortOfSincFunction:sortOfSincFunctionFig1}{0.3}
+%\imageFigure{../figures/phy2403-quantum-field-theory/sortOfSincFunctionFig1}{\texorpdfstring{\(\sin(2 \omega_\Bp T)/\omega_\Bp\)}{(sin 2 omega T)/omega}}{fig:sortOfSincFunction:sortOfSincFunctionFig1}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/sortOfSincFunctionFig1}{Angular frequency dependent sinc.}{fig:sortOfSincFunction:sortOfSincFunctionFig1}{0.3}
 Vanishing for large \( \Bp \) doesn't help the whole integral vanish, but we can resort to the Riemann-Lebesque lemma \citep{wiki:RiemannLebesgue} instead and interpret this integral as one with a plain old high frequency oscillation that is presumed to vanish (i.e. the rest is well behaved enough that it can be labelled as \( L_1 \) integrable.)
 
 We see that only the non-time dependent portion of \( \mathbf{P} \) matters from a conserved quantity point of view, and having killed off all the time dependent terms, we are left with a conservation relationship for the momenta \( \spacegrad \cdot \BP = 0 \), where \( \BP \) in normal order is just
@@ -213,4 +213,4 @@ We see that only the non-time dependent portion of \( \mathbf{P} \) matters from
 \end{dmath}
 
 %}
-\EndArticle
+%\EndArticle
