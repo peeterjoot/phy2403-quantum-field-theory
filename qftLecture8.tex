@@ -194,13 +194,11 @@ In terms of creation and annihilation operators (for the \( \lambda = 0 \) free 
 = \int d^3 x \hatT^{00}
 = \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \hata_\Bp^\dagger \hata_\Bp.
 \end{dmath}
-Can show that:
-% FIXME: do this:
+It can be shown (\cref{chap:momentum}) that the operator form of the field momentum is
 \begin{dmath}\label{eqn:qftLecture8:500}
 \hatP^i
 = \int d^3 x \pihat \partial^i \phihat
-= \cdots
-= \int \frac{d^3 p}{(2 \pi)^3} p^i \hata_\Bp^\dagger \hata_\Bp
+= \int \frac{d^3 p}{(2 \pi)^3} p^i \hata_\Bp^\dagger \hata_\Bp.
 \end{dmath}
 Now we see the energy and momentum as conserved quantities associated with spacetime translation.
 
@@ -224,10 +222,10 @@ In particular
 \bra{\Bx} e^{i \Ba \cdot \hat{\BP}} \ket{\Bp}\braket{\Bp}{\psi}
 =
 \int d^3 p
-e^{i \Ba \cdot \hat{\Bp}} \braket{\Bx}{\Bp} \psi(\Bp)
+e^{i \Ba \cdot \hat{\Bp}} \braket{\Bx}{\Bp} \tilde{\psi}(\Bp)
 =
 \int \frac{d^3 p}{(2 \pi)^3}
-e^{i \Ba \cdot \hat{\Bp}} e^{i \Bx \cdot \Bp} \psi(\Bp)
+e^{i \Ba \cdot \hat{\Bp}} e^{i \Bx \cdot \Bp} \tilde{\psi}(\Bp)
 = \psi(\Bx + \Ba).
 %e^{i \Ba \cdot \hat{\BP} } \psi(\Bx) = \psi(\Bx + \Ba),
 \end{dmath}
@@ -249,7 +247,7 @@ This is a different sign convention for the translation operator than is found i
 
 In one dimension, we can compute
 \begin{equation}\label{eqn:qftLecture8:560}
-\hatU(a) \hat{x} \hatU^\dagger(a)
+\hatU(a) \hat{X} \hatU^\dagger(a)
 =
 e^{i a \hat{P} } \hatX
 e^{- i a \hat{P} }
@@ -356,14 +354,26 @@ where the first order commutator is
 =
 \int d^3 y (-i ) \delta^3(\By - \Bx) \partial^j \phihat(\By)
 =
--i \partial^j \phihat(\Bx).
+-i \partial^j \phihat(\Bx),
 \end{dmath}
+and any higher order commutator is zero
+\begin{equation}\label{eqn:qftLecture8:1600}
+\antisymmetric{P^k}{
+\antisymmetric{P^j}{\phi(x)}}
+=
+\int d^3 y
+\antisymmetric{ \pi(y) \partial^k \phi(y) }{-i \partial^j \phi(x)}
+= 0.
+\end{equation}
 
+This gives
 \begin{dmath}\label{eqn:qftLecture8:840}
 \hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
 = \phihat(\Bx) + i a^j (-i) \partial^j \phihat(\Bx) + \cdots
 = \phihat(\Bx) + a^j \partial^j \phihat(\Bx) + \cdots
-= \phihat(\Bx + \Ba).
+= \phihat(\Bx) + a^j \PD{x_j}{} \phihat(\Bx) + \cdots
+= \phihat(\Bx) - a^j \PD{x^j}{} \phihat(\Bx) + \cdots
+= \phihat(\Bx - \Ba).
 \end{dmath}
 \index{translation operator}
 

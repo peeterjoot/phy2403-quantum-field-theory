@@ -129,7 +129,7 @@ Not attempted.
 %   e^{-i p \cdot x} \tilde{j}(p)
 %}{p_0 = \omega_\Bp},
 %\end{equation}
-%where 
+%where
 %\begin{equation}\label{eqn:qftLecture12:480}
 %\tilde{j}(p) = \int d^4 y e^{i p \cdot y} j(y).
 %\end{equation}
@@ -137,5 +137,31 @@ Not attempted.
 %Peskin and Schroeder also does this at the end of section 2.4 but they make a point of saying.
 %
 %}
+
+\section{Q: l8}
+
+I'm having sign troubles with problem IV.1, and think that's it's due to a sign error in the following derivation from lecture 8:
+\begin{equation}\label{eqn:facebook:500}
+\begin{aligned}
+\hat{U}(\Ba) \hat{\phi}(\Bx) \hat{U}^\dagger(\Ba)
+&= \hat{\phi}(\Bx) + i a^j (-i) \partial^j \hat{\phi}(\Bx) + \cdots \\
+&= \hat{\phi}(\Bx) + a^j \partial^j \hat{\phi}(\Bx) + \cdots \\
+&= \hat{\phi}(\Bx + \Ba).
+\end{aligned}
+\end{equation}
+I think that this should be (adding a couple extra steps for clarity) :
+\begin{equation}\label{eqn:facebook:520}
+\begin{aligned}
+\hat{U}(\Ba) \hat{\phi}(\Bx) \hat{U}^\dagger(\Ba)
+&= \hat{\phi}(\Bx) + i a^j (-i) \partial^j \hat{\phi}(\Bx) + \cdots \\
+&= \hat{\phi}(\Bx) + a^j \PD{x_j}{} \hat{\phi}(\Bx) + \cdots \\
+&= \hat{\phi}(\Bx) - a^j \PD{x^j}{} \hat{\phi}(\Bx) + \cdots \\
+&= \hat{\phi}(\Bx - \Ba).
+\end{aligned}
+\end{equation}
+I'm not sure if I wrote this down wrong in during the lecture, but I think this correction is right.
+
+Further confounding me was the fact that my old QM book used a different sign convention for the translation operator (\citep{desai2009quantum} uses \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \), instead of \( \bra{\Bx + \Ba} = \bra{\Bx} U(\Ba) \) as we found.)
+
 \EndArticle
 %\EndNoBibArticle
