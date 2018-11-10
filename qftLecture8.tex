@@ -208,26 +208,56 @@ Now we see the energy and momentum as conserved quantities associated with space
 \index{unitary operator}
 \index{translation operator}
 
-In QM we say that \( \hat{\Bp} \) ``generates translations''.
-With \( \hat{\Bp} \equiv -i \Hbar \spacegrad \) that translation is
+In QM we say that \( \hat{\BP} \) ``generates translations''.
+With \( \hat{\BP} \equiv -i \Hbar \spacegrad \) that translation is
 \begin{equation}\label{eqn:qftLecture8:520}
-\hatU = e^{i \Ba \cdot \hat{\Bp}} = e^{\Ba \cdot \spacegrad}.
+\hatU(\Ba) = e^{i \Ba \cdot \hat{\BP}} = e^{-\Ba \cdot \spacegrad}.
 \end{equation}
 In particular
 \begin{dmath}\label{eqn:qftLecture8:540}
-\bra{\Bx} \hatU \ket{\psi} = e^{i \Ba \cdot \hat{\Bp} } \psi(\Bx) = \psi(\Bx + \Ba).
+\bra{\Bx} \hatU(\Ba) \ket{\psi}
+=
+\int d^3 p
+\bra{\Bx} \hatU(\Ba) \ket{\Bp}\braket{\Bp}{\psi}
+=
+\int d^3 p
+\bra{\Bx} e^{i \Ba \cdot \hat{\BP}} \ket{\Bp}\braket{\Bp}{\psi}
+=
+\int d^3 p
+e^{i \Ba \cdot \hat{\Bp}} \braket{\Bx}{\Bp} \psi(\Bp)
+=
+\int \frac{d^3 p}{(2 \pi)^3}
+e^{i \Ba \cdot \hat{\Bp}} e^{i \Bx \cdot \Bp} \psi(\Bp)
+= \psi(\Bx + \Ba).
+%e^{i \Ba \cdot \hat{\BP} } \psi(\Bx) = \psi(\Bx + \Ba),
 \end{dmath}
+Implicitly, this shows that the action of the translation operator on just a bra is
+\begin{dmath}\label{eqn:qftLecture8:1560}
+\bra{\Bx} \hatU(\Ba)
+=
+\bra{\Bx + \Ba},
+\end{dmath}
+or
+\begin{dmath}\label{eqn:qftLecture8:1580}
+\hatU(-\Ba) \ket{\Bx}
+=
+\hatU^\dagger(\Ba) \ket{\Bx}
+=
+\ket{\Bx + \Ba}.
+\end{dmath}
+This is a different sign convention for the translation operator than is found in some other texts\footnote{In particular \citep{desai2009quantum} uses \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \).}.
 
-In one dimension
-\begin{dmath}\label{eqn:qftLecture8:560}
+In one dimension, we can compute
+\begin{equation}\label{eqn:qftLecture8:560}
 \hatU(a) \hat{x} \hatU^\dagger(a)
 =
-e^{i \Ba \cdot \hat{p} } \psi(\Bx)
-e^{- i \Ba \cdot \hat{p} }
-= \hat{\Bx} + a \hat{\BOne}.
-\end{dmath}
-This uses the Baker-Campbell-Hausdorff formula.
-\index{Baker-Campbell-Hausdorff formula}
+e^{i a \hat{P} } \hatX
+e^{- i a \hat{P} }
+= \hat{X} + a \hat{1},
+\end{equation}
+which is a consequence of the Baker-Campbell-Hausdorff theorem.
+\index{Baker-Campbell-Hausdorff theorem}
+\index{BCH theorem}
 \maketheorem{ Baker-Campbell-Hausdorff }{thm:qftLecture8:580}{
 \begin{dmath}\label{eqn:qftLecture8:600}
 e^{B} A e^{-B} = \sum_{n = 0}^\infty \inv{n!} \antisymmetric{B \cdots}{\antisymmetric{B}{A}},
@@ -279,10 +309,13 @@ e^{B} A e^{-B} = A +
 \antisymmetric{B}{A} + \inv{2} \antisymmetric{B}{\antisymmetric{B}{A}} + \cdots
 \end{dmath}
 
-Example:
+Example (as claimed above) :
 \begin{dmath}\label{eqn:qftLecture8:740}
-e^{a \partial_x} x e^{-a \partial_x } = x + a \antisymmetric{\partial_x}{x} + \cdots
-= x + a.
+%e^{a \partial_x} x e^{-a \partial_x } = x + a \antisymmetric{\partial_x}{x} + \cdots = x + a.
+e^{i a \hatP} \hatX e^{-i a \hatP}
+= \hatX + \antisymmetric{i a \hatP}{\hatX} + \cdots
+= \hatX + i a (-i) \hat{1}
+= \hatX + a \hat{1}.
 \end{dmath}
 
 \paragraph{Application:}
@@ -302,6 +335,7 @@ e^{i a^j \hat{p}^j }
 \end{dmath}
 is a unitary operator representing finite translations in a Hilbert space.
 
+In particular, we can apply the BCH theorem to a field operator
 \begin{dmath}\label{eqn:qftLecture8:800}
 \hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
 =
