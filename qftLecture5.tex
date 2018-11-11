@@ -48,18 +48,18 @@ S = \int dt L = \int dt d^3 x \LL,
 \end{equation}
 with momentum canonically conjugate to the field \( \phi \) defined as
 \begin{equation}\label{eqn:qftLecture5:60}
-\Pi(\Bx, t) = \frac{\delta \LL}{\delta \phidot(\Bx, t) } = \PD{\phidot(\Bx, t)}{\LL}
+\pi(\Bx, t) = \frac{\delta \LL}{\delta \phidot(\Bx, t) } = \PD{\phidot(\Bx, t)}{\LL}
 \end{equation}
 
 The Hamiltonian defined as
 \begin{dmath}\label{eqn:qftLecture5:80}
-H = \int d^3 x \lr{ \Pi(\Bx, t) \phidot(\Bx, t) - \LL },
+H = \int d^3 x \lr{ \pi(\Bx, t) \phidot(\Bx, t) - \LL },
 \end{dmath}
 led to
 \begin{dmath}\label{eqn:qftLecture5:680}
 H
 = \int d^3 x
-\lr{ \inv{2} \Pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4 }.
+\lr{ \inv{2} \pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4 }.
 \end{dmath}
 Like the Lagrangian density, we may introduce a Hamiltonian density \( \calH \) as
 \begin{dmath}\label{eqn:qftLecture5:100}
@@ -68,7 +68,7 @@ H = \int d^3 x \calH(\Bx, t).
 For our Klein-Gordon system, this is
 \begin{dmath}\label{eqn:qftLecture5:120}
 \calH(\Bx, t) =
-\inv{2} \Pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4.
+\inv{2} \pi^2 + (\spacegrad \phi)^2 + \inv{2} m^2 \phi^2 + \frac{\lambda}{4} \phi^4.
 \end{dmath}
 
 \paragraph{Canonical Commutation Relations (CCR)}:
@@ -77,7 +77,7 @@ For our Klein-Gordon system, this is
 
 We quantize the system by promoting our fields to Heisenberg-Picture (HP) operators, and imposing commutation relations
 \begin{dmath}\label{eqn:qftLecture5:140}
-\antisymmetric{\hat{\Pi}(\Bx, t)}{\hat{\phi}(\By, t)} = -i \deltathree (\Bx - \By),
+\antisymmetric{\hat{\pi}(\Bx, t)}{\hat{\phi}(\By, t)} = -i \deltathree (\Bx - \By),
 \end{dmath}
 which is analogous to
 \begin{dmath}\label{eqn:qftLecture5:160}
@@ -99,14 +99,14 @@ This is similar to the QM wave functions
 
 Our momentum operator is quantized by expressing it in terms of a variational derivative
 \begin{dmath}\label{eqn:qftLecture5:220}
-\hat{\Pi}(\Bx, t) = -i \frac{\delta}{\delta \phi(\Bx, t)}.
+\hat{\pi}(\Bx, t) = -i \frac{\delta}{\delta \phi(\Bx, t)}.
 \end{dmath}
 (Fixme: I'm not really sure exactly what is meant by using the variation derivative \(\delta\) notation here), and to
 quantize the Hamiltonian we just add hats, assuming that our fields are all now HP operators
 \begin{dmath}\label{eqn:qftLecture5:240}
 \hat{\calH}(\Bx, t)
 =
-\inv{2} \hat{\Pi}^2 + (\spacegrad \hat{\phi})^2 + \inv{2} m^2 \hat{\phi}^2 + \frac{\lambda}{4} \hat{\phi}^4.
+\inv{2} \hat{\pi}^2 + (\spacegrad \hat{\phi})^2 + \inv{2} m^2 \hat{\phi}^2 + \frac{\lambda}{4} \hat{\phi}^4.
 \end{dmath}
 
 \paragraph{QM SHO review}
@@ -150,61 +150,61 @@ We see that the Heisenberg operators obey the classical equations of motion.
 
 Now we want to try this with the quantized QFT fields we've promoted to operators
 \begin{dmath}\label{eqn:qftLecture5:360}
-\ddt{\hat{\Pi}}(\Bx, t)
-= i \antisymmetric{\hatH}{\hat{\Pi}(\Bx, t)}
+\ddt{\hat{\pi}}(\Bx, t)
+= i \antisymmetric{\hatH}{\hat{\pi}(\Bx, t)}
 =
-i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\Pihat(\Bx) }
+i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\pihat(\Bx) }
 +
-i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\Pihat(\Bx) }
+i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\pihat(\Bx) }
 +
-i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\Pihat(\Bx) }.
+i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\pihat(\Bx) }.
 \end{dmath}
 
 Starting with the non-gradient commutators, and
 utilizing the HP field analogues of the relations \( \antisymmetric{\hatq^n}{\hatp} = n i \hatq^{n-1} \), we find
 \begin{equation}\label{eqn:qftLecture5:780}
-\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\Pihat(\Bx) }
+\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\pihat(\Bx) }
 =
 \int d^3 y 2 i \phihat(\By) \deltathree(\Bx - \By)
 = 2 i \phihat(\Bx).
 \end{equation}
 \begin{equation}\label{eqn:qftLecture5:740}
-\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\Pihat(\Bx) }
+\int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\pihat(\Bx) }
 =
 \int d^3 y 4 i \phihat(\By)^3 \deltathree(\Bx - \By)
 = 4 i \phihat(\Bx)^3.
 \end{equation}
 For the gradient commutators, we have more work.  Prof Poppitz blitzed through that, just calling it integration by parts.  I had trouble seeing what he was doing, so here's a more explicit dumb expansion required to calculate the commutator
 \begin{dmath}\label{eqn:qftLecture5:720}
-\int d^3 y (\spacegrad \phihat(\By))^2 \Pihat(\Bx)
+\int d^3 y (\spacegrad \phihat(\By))^2 \pihat(\Bx)
 =
 \int d^3 y
-\lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \Pihat(\Bx)
-=
-\int d^3 y
-\spacegrad \phihat(\By) \cdot
-\lr{ \spacegrad (\phihat(\By) \Pihat(\Bx)) }
+\lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \pihat(\Bx)
 =
 \int d^3 y
 \spacegrad \phihat(\By) \cdot
-\lr{ \spacegrad (\Pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By)) }
+\lr{ \spacegrad (\phihat(\By) \pihat(\Bx)) }
+=
+\int d^3 y
+\spacegrad \phihat(\By) \cdot
+\lr{ \spacegrad (\pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By)) }
 =
 \int d^3 y
 \Biglr{
-   \spacegrad \lr{ \phihat(\By) \Pihat(\Bx) } \cdot \spacegrad \phihat(\By)
+   \spacegrad \lr{ \phihat(\By) \pihat(\Bx) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
 }
 =
 \int d^3 y
 \Biglr{
-   \spacegrad \lr{ \Pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By) } \cdot \spacegrad \phihat(\By)
+   \spacegrad \lr{ \pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
 }
 =
 \int d^3 y
-   \Pihat(\Bx)
+   \pihat(\Bx)
 \lr{
    \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By)
 }
@@ -213,7 +213,7 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
 =
 \int d^3 y
-   \Pihat(\Bx) \spacegrad^2 \phihat(\By)
+   \pihat(\Bx) \spacegrad^2 \phihat(\By)
 +
 2 i
 \int d^3 y
@@ -224,7 +224,7 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
    \deltathree(\Bx - \By) \spacegrad^2 \phihat(\By)
 =
 \int d^3 y
-   \Pihat(\Bx) \spacegrad^2 \phihat(\By)
+   \pihat(\Bx) \spacegrad^2 \phihat(\By)
 +
 2 i
 \int_\partial d^2 y
@@ -233,10 +233,10 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
 -
 2 i \spacegrad^2 \phihat(\Bx).
 \end{dmath}
-Here we take advantage of the fact that the derivative operators \( \spacegrad = \spacegrad_\By \) commute with \( \Pihat(\Bx) \), and use the identity
+Here we take advantage of the fact that the derivative operators \( \spacegrad = \spacegrad_\By \) commute with \( \pihat(\Bx) \), and use the identity
 \( \spacegrad \cdot (a \spacegrad b) = (\spacegrad a) \cdot (\spacegrad b) + a \spacegrad^2 b \), so the commutator is
 \begin{dmath}\label{eqn:qftLecture5:800}
-\int d^3 y \antisymmetric{(\spacegrad \phihat(\By))^2}{\Pihat(\Bx)}
+\int d^3 y \antisymmetric{(\spacegrad \phihat(\By))^2}{\pihat(\Bx)}
 =
 2 i
 \int_\partial d^2 y
@@ -251,7 +251,7 @@ Here we take advantage of the fact that the derivative operators \( \spacegrad =
 where the boundary integral is presumed to be zero (without enough justification.)
 All the pieces can now be put back together
 \begin{dmath}\label{eqn:qftLecture5:820}
-\ddt{} \hat{\Pi}(\Bx, t)
+\ddt{} \hat{\pi}(\Bx, t)
 =
 \spacegrad^2 \phihat(\Bx, t)
 -
@@ -264,9 +264,9 @@ Now, for the \( \phihat \) time evolution, which is much easier
 \begin{dmath}\label{eqn:qftLecture5:380}
 \ddt{\hat{\phi}}(\Bx, t)
 = i \antisymmetric{\hatH}{\hat{\phi}(\Bx, t)}
-= i \inv{2} \int d^3 y \antisymmetric{\Pihat^2(\By)}{\hat{\phi}(\Bx)}
-= i \inv{2} \int d^3 y (-2 i) \Pihat(\By, t) \deltathree(\Bx - \By)
-= \Pihat(\Bx, t)
+= i \inv{2} \int d^3 y \antisymmetric{\pihat^2(\By)}{\hat{\phi}(\Bx)}
+= i \inv{2} \int d^3 y (-2 i) \pihat(\By, t) \deltathree(\Bx - \By)
+= \pihat(\Bx, t)
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture5:400}
 \frac{d^2}{dt^2}{\hat{\phi}}(\Bx, t)
@@ -357,7 +357,7 @@ We will find (Wednesday) that
 \end{dmath}
 which are equivalent to
 \begin{dmath}\label{eqn:qftLecture5:660}
-\antisymmetric{\tilde{\Pi}(\Bp, t)}{\tilde{\phi}(\Bq, t)} = -i \deltathree(\Bp - \Bq).
+\antisymmetric{\tilde{\pi}(\Bp, t)}{\tilde{\phi}(\Bq, t)} = -i \deltathree(\Bp - \Bq).
 \end{dmath}
 
 %}

@@ -211,16 +211,16 @@ Extremizing the action means that we seek \( \phi(\Bx, t) \)
 How do we compute the variation?
 \begin{dmath}\label{eqn:qftLecture4:460}
 \delta S = \int d^d x \lr{ \LL(\phi + \delta \phi, \partial_\mu \phi + \partial_\mu \delta \phi) - \LL(\phi, \partial_\mu \phi) }
-= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_mu \phi)}{\LL} (\partial_\mu \delta \phi) }
+= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_\mu \phi)}{\LL} (\partial_\mu \delta \phi) }
 = \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi
-+ \partial_\mu \lr{ \PD{(\partial_mu \phi)}{\LL} \delta \phi}
-- \lr{ \partial_\mu \PD{(\partial_mu \phi)}{\LL} } \delta \phi
++ \partial_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi}
+- \lr{ \partial_\mu \PD{(\partial_\mu \phi)}{\LL} } \delta \phi
 }
 =
 \int d^d x
 \delta \phi
 \lr{ \PD{\phi}{\LL}
-- \partial_\mu \PD{(\partial_mu \phi)}{\LL} }
+- \partial_\mu \PD{(\partial_\mu \phi)}{\LL} }
 + \int d^3 \sigma_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi }
 \end{dmath}
 
@@ -237,12 +237,12 @@ but \( \delta \phi = 0 \) at \( t = \pm T \) and also at the spatial boundaries 
 This leaves
 \begin{dmath}\label{eqn:qftLecture4:500}
 \delta S[\phi] = \int d^d x \delta \phi
-\lr{ \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_mu \phi)}{\LL} } = 0 \forall \delta \phi.
+\lr{ \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} } = 0 \forall \delta \phi.
 \end{dmath}
 That is
 %\begin{dmath}\label{eqn:qftLecture4:520}
 \boxedEquation{eqn:qftLecture4:540}{
-\PD{\phi}{\LL} - \partial_\mu \PD{(\partial_mu \phi)}{\LL} = 0.
+\PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} = 0.
 }
 %\end{dmath}
 This is the Euler-Lagrange equations for a single scalar field.
@@ -252,6 +252,7 @@ Returning to our sample scalar Lagrangian
 \LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \inv{2} m^2 \phi^2 - \frac{\lambda}{4} \phi^4.
 \end{dmath}
 This example is related to the Ising model which has a \( \phi \rightarrow -\phi \) symmetry.
+\index{Ising model}
 Applying the Euler-Lagrange equations, we have
 \begin{dmath}\label{eqn:qftLecture4:580}
 \PD{\phi}{\LL} = -m^2 \phi - \lambda \phi^3,
@@ -293,24 +294,24 @@ For \( \lambda = 0 \), the free field theory limit, this is just
 \end{dmath}
 Written out from the observer frame, this is
 \begin{dmath}\label{eqn:qftLecture4:660}
-(\partial_t)^2 \phi - \spacegrad^2 \phi + m^2 \phi = 0.
+\partial_{tt} \phi - \spacegrad^2 \phi + m^2 \phi = 0.
 \end{dmath}
 
 With a non-zero mass term
 \begin{dmath}\label{eqn:qftLecture4:680}
-\lr{ \partial_t^2 - \spacegrad^2  + m^2 } \phi = 0,
+\lr{ \partial_{tt} - \spacegrad^2  + m^2 } \phi = 0,
 \end{dmath}
 is called the Klein-Gordan equation.
 
 If we also had \( m = 0 \) we'd have
 \begin{dmath}\label{eqn:qftLecture4:700}
-\lr{ \partial_t^2 - \spacegrad^2 } \phi = 0,
+\lr{ \partial_{tt} - \spacegrad^2 } \phi = 0,
 \end{dmath}
 which is the wave equation (for a massless free field).  This is also called the D'Alembert equation, which is familiar from electromagnetism where we have
 \begin{dmath}\label{eqn:qftLecture4:720}
 \begin{aligned}
-\lr{ \partial_t^2 - \spacegrad^2 } \BE &= 0 \\
-\lr{ \partial_t^2 - \spacegrad^2 } \BB &= 0,
+\lr{ \partial_{tt} - \spacegrad^2 } \BE &= 0 \\
+\lr{ \partial_{tt} - \spacegrad^2 } \BB &= 0,
 \end{aligned}
 \end{dmath}
 in a source free region.
@@ -320,9 +321,9 @@ in a source free region.
 
 The harmonic oscillator described by
 \begin{dmath}\label{eqn:qftLecture4:740}
-\LL = \inv{2} \dot{q}^2 - \frac{\omega^2}{2} q^2<
+\LL = \inv{2} \dot{q}^2 - \frac{\omega^2}{2} q^2,
 \end{dmath}
-has solution \(\ddot{q} = - \omega^2 q\).
+which has solution \(\ddot{q} = - \omega^2 q\).
 With
 \begin{equation}\label{eqn:qftLecture4:760}
 p = \PD{\dot{q}}{\LL} = \dot{q},

@@ -1,48 +1,60 @@
 #../latex/bin/lgrep noetherCurrentScalarField.tex | tee o ; . ./o
 #perl -p -i ./p ../blogit/noetherCurrentScalarField.tex
+
 #~/bin/lgrep scalarFieldCreationOpCommutator.tex | tee o ; . ./o
 #perl -p -i ./p scalarFieldCreationOpCommutator.tex
+
 #~/bin/lgrep scalarFieldHamiltonian.tex | tee o ; . ./o
 #perl -p -i ./p scalarFieldHamiltonian.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem1.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem1.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem2.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem2.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem3.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem3.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem5.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem5.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem6.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem6.tex
+
 #~/bin/lgrep ../phy2403/qftLukeProblemSet1Problem4.tex | tee o ; . ./o
 #perl -p -i ./p ../phy2403/qftLukeProblemSet1Problem4.tex
 
 #../latex/bin/lgrep qftLecture1.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture1.tex
+
 #../latex/bin/lgrep qftLecture2.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture2.tex
+
 #../latex/bin/lgrep qftLecture3.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture3.tex
+
 #../latex/bin/lgrep ProblemSet1.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet1.tex
 
-../latex/bin/lgrep ProblemSet1Problem1.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem1.tex
+#../latex/bin/lgrep ProblemSet1Problem1.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem1.tex
 
-../latex/bin/lgrep ProblemSet1Problem2.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
+#../latex/bin/lgrep ProblemSet1Problem2.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem2.tex
 
-../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
+#../latex/bin/lgrep ProblemSet1Problem3.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem3.tex
 
-../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
+#../latex/bin/lgrep ProblemSet1Problem4.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem4.tex
 
-../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
+#../latex/bin/lgrep ProblemSet1Problem5.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet1Problem5.tex
 
 #../latex/bin/lgrep qftLecture4.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture4.tex
+
 #../latex/bin/lgrep qftLecture5.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture5.tex
 
@@ -51,15 +63,18 @@ perl -p -i ../latex/bin/latexRegex.pl usefulFormulas.tex
 
 #../latex/bin/lgrep qftLecture6.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture6.tex
+
 #../latex/bin/lgrep qftLecture7.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture7.tex
+
 #../latex/bin/lgrep scalarTheoryQuestion.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl scalarTheoryQuestion.tex
+
 #../latex/bin/lgrep qftLecture9.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl qftLecture9.tex
 
-../latex/bin/lgrep qftLecture8.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture8.tex
+#../latex/bin/lgrep qftLecture8.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture8.tex
 
 #../latex/bin/lgrep ProblemSet2Problem1.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem1.tex
@@ -67,11 +82,11 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture8.tex
 #../latex/bin/lgrep ProblemSet2Problem3.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem3.tex
 
-../latex/bin/lgrep ProblemSet2Problem4.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem4.tex
+#../latex/bin/lgrep ProblemSet2Problem4.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem4.tex
 
-../latex/bin/lgrep qftLecture10.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture10.tex
+#../latex/bin/lgrep qftLecture10.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture10.tex
 
 #../latex/bin/lgrep ProblemSet2Problem2.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet2Problem2.tex
@@ -94,29 +109,29 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture10.tex
 #../latex/bin/lgrep nonhomoKGhamiltonian.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl nonhomoKGhamiltonian.tex
 
-../latex/bin/lgrep facebook.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl facebook.tex
+#../latex/bin/lgrep facebook.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl facebook.tex
 
-../latex/bin/lgrep qftLecture15.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture15.tex
+#../latex/bin/lgrep qftLecture15.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture15.tex
 
 ../latex/bin/lgrep qftLecture16.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture16.tex
 
-../latex/bin/lgrep qftLecture15b.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl qftLecture15b.tex
+#../latex/bin/lgrep qftLecture15b.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl qftLecture15b.tex
 
-../latex/bin/lgrep ProblemSet4Problem1.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem1.tex
+#../latex/bin/lgrep ProblemSet4Problem1.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem1.tex
 
-../latex/bin/lgrep ProblemSet4Problem4.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem4.tex
+#../latex/bin/lgrep ProblemSet4Problem4.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem4.tex
 
-../latex/bin/lgrep ProblemSet4Problem3.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
+#../latex/bin/lgrep ProblemSet4Problem3.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
 
-../latex/bin/lgrep ProblemSet4Problem2.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
+#../latex/bin/lgrep ProblemSet4Problem2.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl ProblemSet4Problem2.tex
 
 ../latex/bin/lgrep ProblemSet3Problem1.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem3.tex
@@ -132,9 +147,12 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet3Problem2.tex
 
 #../latex/bin/lgrep Nparticle.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl Nparticle.tex
-../latex/bin/lgrep braOmega.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl braOmega.tex
+
+#../latex/bin/lgrep braOmega.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl braOmega.tex
+
 ../latex/bin/lgrep qftLecture17.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture17.tex
-../latex/bin/lgrep momentum.tex | tee o ; . ./o
-perl -p -i ../latex/bin/latexRegex.pl momentum.tex
+
+#../latex/bin/lgrep momentum.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl momentum.tex
