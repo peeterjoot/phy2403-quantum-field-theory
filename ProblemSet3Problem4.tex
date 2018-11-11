@@ -3,29 +3,29 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 \makeproblem{Where is the particle?}{qft:problemSet3:4}{
-{\flushleft{In}} class, we did mention that, by analogy with non relativistic quantum mechanics, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ allows us to say something along the lines that {\it ``the operator $\hat\phi(\Bx)_+$ creates a particle at $\Bx$"}. 
-These words are based on noticing  that in QM, we have 
+{\flushleft{In}} class, we did mention that, by analogy with non relativistic quantum mechanics, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ allows us to say something along the lines that {\it ``the operator $\hat\phi(\Bx)_+$ creates a particle at $\Bx$"}.
+These words are based on noticing  that in QM, we have
 $$\vert\Bx\rangle \sim \sum_{\Bp} e^{ i \Bp \cdot \Bx} \vert \Bp \rangle,$$
- where $\vert\Bx\rangle$ is an eigenstate of the position operator with eigenvalue $\Bx$ and $\Bp$ is, likewise, an eigenstate of momentum. On the other hand, in free massive scalar theory, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ can be similarly expressed as $$\hat\phi(\Bx,t=0) \vert 0\rangle = \int {d^3 p \over (2 \pi)^3 \sqrt{2 \omega_{\Bp}}} e^{ - i \Bp \cdot \Bx} \hat{a}^\dagger_{\Bp} \vert 0 \rangle =  \int {d^3 p \over (2 \pi)^3 2 \omega_{\Bp}} e^{ - i \Bp \cdot \Bx}   \vert p \rangle,$$ where $\vert p \rangle$
+ where $\vert\Bx\rangle$ is an eigenstate of the position operator with eigenvalue $\Bx$ and $\Bp$ is, likewise, an eigenstate of momentum. On the other hand, in free massive scalar theory, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ can be similarly expressed as $$\hat\phi(\Bx,t=0) \vert 0\rangle = \int {d^3 p \over (2 \pi)^3 \sqrt{2 \omega_{\Bp}}} e^{ - i \Bp \cdot \Bx} \hat{a}^\dagger_{\Bp} \vert 0 \rangle =  \int {d^3 p \over (2 \pi)^3 2 \omega_{\Bp}} e^{ - i \Bp \cdot \Bx}   \vert \Bp \rangle,$$ where $\vert \Bp \rangle$
   is the relativistically normalized momentum eigenstate. Comparing the above two equations, reading from left to right, we are compelled to utter the words quoted in the beginning.
-  
-  
- Accepting this interpretation literally, we are next faced with explaining the following. Consider the state $\vert \Bzero,0 \rangle = \hat\phi(\Bzero,t=0) \vert 0\rangle$, interpreted (as per the above dissussion) as a particle created at $\Bx=0$ at $t=0$. Similarly, the state $$\vert \By,t \rangle = \hat\phi(\By,t) \vert 0 \rangle$$ is that of  a particle at $\By$ at $t$. Notice that these are free fields so their time evolution is trivial. Then, by the usual Born rule  of quantum mechanics (which we accept in QFT), the inner product 
+
+
+ Accepting this interpretation literally, we are next faced with explaining the following. Consider the state $\vert \Bzero,0 \rangle = \hat\phi(\Bzero,t=0) \vert 0\rangle$, interpreted (as per the above discussion) as a particle created at $\Bx=0$ at $t=0$. Similarly, the state $$\vert \By,t \rangle = \hat\phi(\By,t) \vert 0 \rangle$$ is that of  a particle at $\By$ at $t$. Notice that these are free fields so their time evolution is trivial. Then, by the usual Born rule  of quantum mechanics (which we accept in QFT), the inner product
     $$
     \langle \By,t \vert \Bzero,0 \rangle $$
-    would be ``{\it the amplitude that the particle created at $\Bzero$ at $t=0$ 
+    would be ``{\it the amplitude that the particle created at $\Bzero$ at $t=0$
     is found at $\By$ at $t$}". Notice that this is exactly the kind of answer that the quantum-mechanical propagator,  often denoted precisely by  $\langle \By,t \vert \Bzero,0 \rangle$, gives.
-    A problem with this arises when one realizes that 
+    A problem with this arises when one realizes that
      $$
     \langle \By,t \vert \Bzero,0 \rangle  =\langle 0\vert \hat{\phi}(\By,t) \hat{\phi}(\Bzero,0)\vert0 \rangle = D(\By,t) \ne 0 ~ {\rm for} ~ (\By,t) \sim (\Bzero,0)~.$$
 In other words, this amplitude is nonzero for spacelike separations (as you explicitly showed in Homework 2, Problem 1, Part 2).
-The point of the simple exercise below is to argue that the above interpretation of this amplitude should be taken with a grain of salt, i.e. not too literally, as far as relativity is concerned, of course. 
+The point of the simple exercise below is to argue that the above interpretation of this amplitude should be taken with a grain of salt, i.e. not too literally, as far as relativity is concerned, of course.
 
-The question we will ask is: to what extent is this particle at $\Bx=0$ localized? In quantum mechanics, we answer this question by pointing out that for an eigenstate of $\hat{x}$, whose wave function is $\delta(x -x')$,  the probability to find the particle anywhere but at $x=x'$ is zero. Trying to pursue this in QFT, a conundrum that arises is that we do not have wave functions for particles. Recall that we have wave functionals, which determine the probability that {\it the field} has this or that value. The coordinate, on the other hand, is an argument,   not an operator (hence ``observable") in the theory---just like time in QM, which is also not an operator; after all we 
-said ``QM=QFT in $d=1$". 
+The question we will ask is: to what extent is this particle at $\Bx=0$ localized? In quantum mechanics, we answer this question by pointing out that for an eigenstate of $\hat{x}$, whose wave function is $\delta(x -x')$,  the probability to find the particle anywhere but at $x=x'$ is zero. Trying to pursue this in QFT, a conundrum that arises is that we do not have wave functions for particles. Recall that we have wave functionals, which determine the probability that {\it the field} has this or that value. The coordinate, on the other hand, is an argument,   not an operator (hence ``observable") in the theory---just like time in QM, which is also not an operator; after all we
+said ``QM=QFT in $d=1$".
 The best we can do is to consider the state $\vert \By,0 \rangle$ and ask where its properties identifiable in QFT---energy or momentum---are localized.
 
- Thus,  consider the expectation value of $\hat{T}_{00}(\Bx,t)$ (assumed normal-ordered) in this state: 
+ Thus,  consider the expectation value of $\hat{T}_{00}(\Bx,t)$ (assumed normal-ordered) in this state:
 $$
 \rho(\By, \Bx, t) \equiv \langle \By,0 \vert T_{00}(\Bx,t)\vert \By,0 \rangle~.
 $$
@@ -33,51 +33,50 @@ From the Born rule, the natural interpretation of the above quantity is the valu
 
 
 \makesubproblem{}{qft:problemSet3:4a}
-Show, using the translation operator, that $\rho(\By, \Bx, t) =  \tilde\rho(0, \Bx - \By, t) \equiv \tilde\rho(\Bx-\By,t)$, where the last equality defines the new energy density $\tilde\rho(\Bx,t)$.
+Show, using the translation operator, that $\rho(\By, \Bx, t) =  \rho(0, \Bx - \By, t) \equiv \tilde\rho(\Bx-\By,t)$, where the last equality defines the new energy density $\tilde\rho(\Bx,t)$.
 \makesubproblem{}{qft:problemSet3:4b}
 Using Wick's theorem---really, a baby-version thereof---express $\tilde\rho(\Bx,t)$ in terms of $D(\Bx,t)$ and its derivatives.
 \makesubproblem{}{qft:problemSet3:4c}
 Using the knowledge acquired from Homework 2, study how well is the particle's energy localized, already at $t=0$.
 
-
 Are you surprised by the result?  Are you comforted?
- 
- {\small {\flushleft W}e didn't have time, apart from Problem 4 of Homework 2, to dwell much on the nonrelativisic limit. 
-This limit can be achieved by forgetting the antiparticles and then defining non-relativistic fields. This is very well described in either Tong's or Luke's notes. For those of you studying cold atoms, it is 
+
+ {\small {\flushleft W}e didn't have time, apart from Problem 4 of Homework 2, to dwell much on the nonrelativisic limit.
+This limit can be achieved by forgetting the antiparticles and then defining non-relativistic fields. This is very well described in either Tong's or Luke's notes. For those of you studying cold atoms, it is
 definitely a must-read! }
 
 \bigskip
 
-My final comment is that the most concise formulation of causality that goes beyond simply stating that the commutators vanish for spacelike separations is the one first due to Stueckelberg (1940's) and then finessed by Bogoljubov (1950's). 
+My final comment is that the most concise formulation of causality that goes beyond simply stating that the commutators vanish for spacelike separations is the one first due to Stueckelberg (1940's) and then finessed by Bogoljubov (1950's).
 
 They consider the expectation value of an operator $\hat{O}(x)$   in a state prepared by the action of an operator $U[g]\vert 0\rangle$.
 $U[g]$ is an evolution operator (see below) which is a functional of some classical fields $g(y)$ used to prepare the state of the field (e.g. external e.m. fields using to focus, accelerate, etc., the particles; $g(y)$ could also be used to turn on and off the interactions in different space time regions). Thus the object of study is:
-$$ \langle \hat{O}(x) \rangle =  \langle 0 \vert U^\dagger[g] \hat{O}(x) U[g] \vert 0 \rangle~.$$ 
+$$ \langle \hat{O}(x) \rangle =  \langle 0 \vert U^\dagger[g] \hat{O}(x) U[g] \vert 0 \rangle~.$$
 The causality condition, then, is that
 $$ {\delta \langle \hat{O}(x) \rangle \over \delta g[y]} = 0 ~ {\rm for } ~ x\sim y~.$$
-Now, recalling the form of the evolution operator,  $U[g] = T e^{  i \int dt d^3 x L_I(t, \Bx, g(\Bx,t))}$, and the Baker-Campbell-Hausdorf formula, it should be clear how the vanishing of the commutators outside the light cone becomes  relevant for the above condition  to hold. 
-For Bogoljubov, the vanishing commutators are a {\it consequence} of the causality condition given in terms of variational derivatives, as expressed above; he derives the $S$-matrix expansion from that requirement along with a few others (locality and Lorentz invariance, basically). 
+Now, recalling the form of the evolution operator,  $U[g] = T e^{  i \int dt d^3 x L_I(t, \Bx, g(\Bx,t))}$, and the Baker-Campbell-Hausdorf formula, it should be clear how the vanishing of the commutators outside the light cone becomes  relevant for the above condition  to hold.
+For Bogoljubov, the vanishing commutators are a {\it consequence} of the causality condition given in terms of variational derivatives, as expressed above; he derives the $S$-matrix expansion from that requirement along with a few others (locality and Lorentz invariance, basically).
 
-{\flushleft{T}he reason to include this comment was to close the loop on something that I mentioned in class, now that we've seen what $U[g]$ may look like. 
+{\flushleft{T}he reason to include this comment was to close the loop on something that I mentioned in class, now that we've seen what $U[g]$ may look like.
  }
 
 %\begin{comment}
 %   {\flushleft {\bf II.}} {\it Is gravity scalar?  }
-%  
-% 
+%
+%
 %  \smallskip
 %{\flushleft{Here,}} you are going to study, using the results from {\bf I.}, the question whether gravity can be described by a relativistic massless scalar field. After all, the Yukawa potential is $\sim 1/r$, in the limit when the mass goes to zero, which is just like the Newtonian potential.
 %
-%We'll take gravity to be described by a massless free scalar $\phi$, the ``scalar graviton", 
-%just like the previous problem but with zero mass. The matter fields will have mass and will be described by another scalar field, $\psi$, this time massive. Now we have to decide how to couple these two. We shall attempt to do it this way: we shall couple the field $\phi$ to the field $\psi$ as follows: $H_{int} = g \int d^3 x T^\mu_{(\psi) \; \mu}(x) \phi(x)$. Here, $T^\mu_{(\psi) \; \mu}(x)$ is the trace of the energy-momentum tensor of the $\psi$ field and $g$ is a coupling constant. 
+%We'll take gravity to be described by a massless free scalar $\phi$, the ``scalar graviton",
+%just like the previous problem but with zero mass. The matter fields will have mass and will be described by another scalar field, $\psi$, this time massive. Now we have to decide how to couple these two. We shall attempt to do it this way: we shall couple the field $\phi$ to the field $\psi$ as follows: $H_{int} = g \int d^3 x T^\mu_{(\psi) \; \mu}(x) \phi(x)$. Here, $T^\mu_{(\psi) \; \mu}(x)$ is the trace of the energy-momentum tensor of the $\psi$ field and $g$ is a coupling constant.
 %\begin{enumerate}
 %\item
-%We shall not dwell much on the dynamics of the $\psi$ field and will just consider its $T^\mu_{(\psi) \; \mu}$ an external source of $\phi$. Still, we need to find a form for  $T^\mu_{(\psi) \; \mu}$ appropriate for a non relativistic static particle. 
+%We shall not dwell much on the dynamics of the $\psi$ field and will just consider its $T^\mu_{(\psi) \; \mu}$ an external source of $\phi$. Still, we need to find a form for  $T^\mu_{(\psi) \; \mu}$ appropriate for a non relativistic static particle.
 % Consider...
 % \item Find the constant $g$ such that the Newton law between two static masses is correctly reproduced by (\ref{three}).
 % \end{enumerate}
 % {\small \flushleft{Th}e reason scalar gravity does not work is that the coupling $T^\mu_{(\psi) \; \mu}(x) \phi(x)$ means that the ``scalar graviton" $\phi$ does not couple to the electromagnetic field (remember that $T^\mu_\mu =0$ there). On the other hand, the bending of light in the gravitational field is an experimental fact, so there should be a coupling between the two, not contained in our model. }
-% 
+%
 %\bigskip
 %\end{comment}
 %
@@ -86,9 +85,292 @@ For Bogoljubov, the vanishing commutators are a {\it consequence} of the causali
 
 \makeanswer{qft:problemSet3:4}{
 \makeSubAnswer{}{qft:problemSet3:4a}
-TODO.
+In class we defined the time translation operator as \( U(\Ba) = e^{i \Ba \cdot \hat{\BP} } \), which satisfies the relations\footnote{There is some variation in at least some of the literature.  In particular
+\citep{desai2009quantum} defines the translation operator as \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \).}
+\begin{dmath}\label{eqn:ProblemSet3Problem4:20}
+\begin{aligned}
+U(\Ba) \phi(\Bx) U^\dagger(\Ba) &= \phi(\Bx - \Ba) \\
+U^\dagger(\Ba) \ket{\Bx} &= \ket{\Bx + \Ba}.
+\end{aligned}
+\end{dmath}
+In particular \( \bra{\Bzero} U(\By) = \bra{\By} \) and \( U^\dagger(\By) \ket{\Bzero} = \ket{\By} \).  As \( T^{00} \) is composed entirely of products of \( \phi(\Bx) \) or its derivatives, clearly
+\begin{dmath}\label{eqn:ProblemSet3Problem4:40}
+U(\By) T^{00}(\Bx, t) U^\dagger(\By)
+=
+T^{00}(\Bx - \By, t),
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem4:60}
+\rho(0, \Bx - \By, t)
+=
+\bra{\Bzero, 0} T^{00}(\Bx - \By, t) \ket{\Bzero, 0}
+=
+\bra{\Bzero, 0} U(\By) T^{00}(\Bx, t) U^\dagger(\By) \ket{\Bzero, 0}
+=
+\bra{\By, 0} T^{00}(\Bx, t) \ket{\By, 0}
+=
+\rho(\By, \Bx, t).
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet3:4b}
-TODO.
+Let's start by computing the energy-momentum tensor
+\begin{dmath}\label{eqn:ProblemSet3Problem4:80}
+T^{00}
+= \partial^0 \phi \partial^0 \phi - g^{00}\LL
+= \partial^0 \phi \partial^0 \phi - \inv{2} \lr{
+\partial_0 \phi \partial^0 \phi - (\spacegrad \phi)^2 - m^2 \phi^2
+}
+=
+\inv{2}
+\lr{
+   \partial_0 \phi \partial_0 \phi + (\spacegrad \phi)^2 + m^2 \phi^2
+}
+=
+\inv{2}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 2 \sqrt{\omega_\Bp \omega_\Bq}}
+\lr{
+   \partial_0
+   \lr{
+      a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
+   }
+   \partial_0
+   \lr{
+      a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
+   }
++
+   \partial_k
+   \lr{
+      a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
+   }
+   \partial_k
+   \lr{
+      a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
+   }
++ m^2
+   \lr{
+      a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
+   }
+   \lr{
+      a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
+   }
+}.
+\end{dmath}
+For the derivatives, we have
+\begin{dmath}\label{eqn:ProblemSet3Problem4:100}
+\partial_\nu e^{\pm i p \cdot x}
+=
+\partial_\nu e^{\pm i p_\mu x^\mu}
+=
+\pm i p_\nu e^{\pm i p \cdot x},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem4:120}
+T^{00}
+=
+\inv{4}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
+\lr{
+-
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq
+   }
+   \lr{
+      -a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
+   }
+   \lr{
+      -a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
+   }
++ m^2
+   \lr{
+      a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
+   }
+   \lr{
+      a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
+   }
+}
+=
+\inv{4}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
+\lr{
+   \lr{
+      -\omega_\Bp \omega_\Bq - \Bp \cdot \Bq + m^2
+   }
+   \lr{
+      a_\Bp a_\Bq e^{-i (p + q) \cdot x}
+   +
+      a_\Bp^\dagger a_\Bq^\dagger e^{i (p + q) \cdot x}
+   }
++
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+   \lr{
+      a_\Bp a_\Bq^\dagger e^{i (q - p) \cdot x}
+   +
+      a_\Bp^\dagger a_\Bq e^{i (p - q) \cdot x}
+   }
+}
+\end{dmath}
+We can justify dropping the \( a_\Bp a_\Bq \) and \( a_\Bp^\dagger a_\Bq^\dagger \) terms in this integral since we are computing \( \tilde{\rho}(\Bx, t) = \bra{\Bzero, 0} T^{00}(\Bx, t) \ket{\Bzero, 0} \), where
+\begin{dmath}\label{eqn:ProblemSet3Problem4:140}
+\begin{aligned}
+\bra{\Bzero, 0} &= \bra{0} \int \frac{d^3 r}{(2 \pi)^3 \sqrt{ 2 \omega_\Br }} a_\Br \\
+\ket{\Bzero, 0} &= \int \frac{d^3 s}{(2 \pi)^3 \sqrt{ 2 \omega_\Bs }} a_\Bs^\dagger \ket{0},
+\end{aligned}
+\end{dmath}
+so those terms only contribute zeros
+\begin{dmath}\label{eqn:ProblemSet3Problem4:300}
+\begin{aligned}
+0 &= \bra{0} a_\Br a_\Bp a_\Bq a_\Bs^\dagger \ket{0} \\
+0 &= \bra{0} a_\Br a_\Bp^\dagger a_\Bq^\dagger a_\Bs^\dagger \ket{0}.
+\end{aligned}
+\end{dmath}
+These zeros are easily computed by commutation, but also by the Wick's corollary mentioned in class (expectations of odd numbers of creation or anhillation operators are zero).
+With those same sign \((p,q)\) expoential terms eliminated and a \( p, q \) swap in the \( a_\Bp a_\Bq^\dagger \) term, we are left with
+\begin{dmath}\label{eqn:ProblemSet3Problem4:320}
+T^{00} =
+\inv{4}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+   \lr{
+      a_\Bq a_\Bp^\dagger
+   +
+      a_\Bp^\dagger a_\Bq
+   }
+   e^{i (p - q) \cdot x}.
+\end{dmath}
+Normal ordered, we have
+\begin{dmath}\label{eqn:ProblemSet3Problem4:340}
+\normalorder{ T^{00} }
+=
+\inv{2}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+      a_\Bp^\dagger a_\Bq
+   e^{i (p - q) \cdot x}.
+\end{dmath}
+We expect this to equal the Hamiltonian density, and can check that as a quick sanity check
+\begin{dmath}\label{eqn:ProblemSet3Problem4:360}
+\int d^3 x \normalorder{ T^{00} }
+=
+\inv{2}
+\int \frac{d^3 x\, d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+      a_\Bp^\dagger a_\Bq
+   e^{i (\omega_\Bp - \omega_\Bq) t} e^{-i (\Bp - \Bq) \cdot \Bx}
+=
+\inv{2}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^3 \sqrt{\omega_\Bp \omega_\Bq}}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+      a_\Bp^\dagger a_\Bq
+   e^{i (\omega_\Bp - \omega_\Bq) t} \delta(\Bq - \Bp)
+=
+\inv{2}
+\int \frac{d^3 p}{(2 \pi)^3 \omega_\Bp }
+   \lr{
+      \omega_\Bp^2 + \Bp^2 + m^2
+   }
+   a_\Bp^\dagger a_\Bp
+=
+\inv{2}
+\int \frac{d^3 p}{(2 \pi)^3 \omega_\Bp }
+   2 \omega_\Bp^2
+   a_\Bp^\dagger a_\Bp
+=
+H.
+\end{dmath}
+
+We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
+\begin{dmath}\label{eqn:ProblemSet3Problem4:180}
+\tilde{\rho}(x)
+=
+\inv{4}
+\int \frac{d^3 r\, d^3 p\, d^3 q\, d^3 s}{(2 \pi)^{12} \sqrt{\omega_\Br \omega_\Bp \omega_\Bq \omega_\Bs}}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+   \bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
+   e^{i (p - q) \cdot x}.
+\end{dmath}
+%%%\begin{equation}\label{eqn:ProblemSet3Problem4:200}
+%%%\bra{0} a_\Br a_\Bp a_\Bq a_\Bs^\dagger \ket{0}
+%%%=
+%%%\bra{0} a_\Br a_\Bp \lr{ a_\Bs^\dagger + (2 \pi)^3 \delta(\Bq - \Bs)} \ket{0}
+%%%= 0,
+%%%\end{equation}
+%%%and
+%%%\begin{equation}\label{eqn:ProblemSet3Problem4:220}
+%%%\bra{0} a_\Br a_\Bp^\dagger a_\Bq^\dagger a_\Bs^\dagger \ket{0}
+%%%=
+%%%\bra{0} \lr{ a_\Bp^\dagger a_\Br + (2 \pi)^3 \delta( \Br - \Bp ) } a_\Bq^\dagger a_\Bs^\dagger \ket{0}
+%%%= 0,
+%%%\end{equation}
+Evaluating this matrix element with Wick's theorem, we have
+%%%\begin{dmath}\label{eqn:ProblemSet3Problem4:240}
+%%%\bra{0} a_\Br a_\Bp a_\Bq^\dagger a_\Bs^\dagger \ket{0}
+%%%=
+%%%\contraction{}{a}{{}_\Br a_\Bp}{a}{}
+%%%\contraction[2ex]{}{a}{{}_\Br a_\Bp a_\Bq^\dagger}{a}
+%%%\bcontraction{a_\Br}{a}{{}_\Bp}{a}{}
+%%%\bcontraction[2ex]{a_\Br}{a}{{}_\Bp a_\Bq^\dagger}{a}
+%%%a_\Br a_\Bp a_\Bq^\dagger a_\Bs^\dagger
+%%%=
+%%%(2\pi)^6 \delta(\Br - \Bq) \delta(\Bp - \Bs)
+%%%+
+%%%(2\pi)^6 \delta(\Br - \Bs) \delta(\Bp - \Bq),
+%%%\end{dmath}
+%%%and
+\begin{dmath}\label{eqn:ProblemSet3Problem4:260}
+\bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
+=
+\contraction{}{a}{{}_\Br}{a}
+\contraction{ a_\Br a_\Bp^\dagger}{a}{{}_\Bq}{a}
+a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger
+=
+(2 \pi)^6 \delta(\Br - \Bp) \delta(\Bq - \Bs),
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem4:380}
+\tilde{\rho}(x)
+=
+\inv{4}
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^{6} \omega_\Bp \omega_\Bq}
+   \lr{
+      \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
+   }
+   e^{i (p - q) \cdot x}
+=
+\int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} \omega_\Bp e^{i p \cdot x}
+\int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} \omega_\Bq e^{i q \cdot (-x)}
++
+\int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} \Bp e^{i p \cdot x}
+\cdot
+\int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} \Bq e^{i q \cdot (-x)}
++
+m^2
+\int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} e^{i p \cdot x}
+\int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} e^{i q \cdot (-x)},
+\end{dmath}
+which is just
+\boxedEquation{eqn:ProblemSet3Problem4:400}{
+\tilde{\rho}(x)
+=
+\partial_t D(x) \partial_t D(-x)
++
+\lr{ \spacegrad D(x) } \cdot \lr{ \spacegrad D(-x) }
++
+m^2
+D(x) D(-x).
+}
+
 \makeSubAnswer{}{qft:problemSet3:4c}
 TODO.
 }
