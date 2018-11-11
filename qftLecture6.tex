@@ -34,7 +34,7 @@
 
 We are engaging in the ``canonical'' or Hamiltonian method of quantization.  It is also possible to quantize using path integrals, but it is hard to prove that operators are unitary doing so.  In fact, the mechanism used to show unitarity from path integrals is often to find the Lagrangian and show that there is a Hilbert space (i.e. using canonical quantization).  Canonical quantization essentially demands that the fields obey a commutator relation of the following form
 \begin{dmath}\label{eqn:qftLecture6:20}
-\antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \delta^3(\Bx - \By).
+\antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \deltathree(\Bx - \By).
 \end{dmath}
 We assumed that the quantized fields obey the Hamiltonian relations
 \begin{dmath}\label{eqn:qftLecture6:160}
@@ -103,11 +103,11 @@ e^{i \omega_\Bq t} a_{-\Bq}^\dagger
 \end{dmath}
 We want to show that iff
 \begin{dmath}\label{eqn:qftLecture6:200}
-\antisymmetric{a_\Bq}{a^\dagger_\Bp} = \lr{ 2 \pi }^3 \delta^3(\Bp - \Bq),
+\antisymmetric{a_\Bq}{a^\dagger_\Bp} = \lr{ 2 \pi }^3 \deltathree(\Bp - \Bq),
 \end{dmath}
 then
 \begin{dmath}\label{eqn:qftLecture6:220}
-\antisymmetric{\pi(\By, t)}{\phi(\Bx, t)} = -i \delta^3(\Bx - \By),
+\antisymmetric{\pi(\By, t)}{\phi(\Bx, t)} = -i \deltathree(\Bx - \By),
 \end{dmath}
 where everything else commutes (i.e. \(
 \antisymmetric{a_\Bp}{a_\Bq} =
@@ -174,8 +174,8 @@ i \int \frac{d^3 p}{(2\pi)^3
 \omega_\Bq (2\pi)^3
 e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
 \lr{
-   - e^{i (\omega_\Bp -\omega_\Bq) t} \delta^3(\Bq + \Bp)
-   - e^{i (\omega_\Bq -\omega_\Bp) t} \delta^3(-\Bq -\Bp)
+   - e^{i (\omega_\Bp -\omega_\Bq) t} \deltathree(\Bq + \Bp)
+   - e^{i (\omega_\Bq -\omega_\Bp) t} \deltathree(-\Bq -\Bp)
 }
 =
 - 2 i \int \frac{d^3 p}{(2\pi)^3
@@ -183,7 +183,7 @@ e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
 \omega_\Bp
 e^{i \Bp \cdot (\By - \Bx)}
 =
--i \delta^3(\By - \Bx),
+-i \deltathree(\By - \Bx),
 \end{dmath}
 which is what we wanted to prove.
 
@@ -243,7 +243,7 @@ e^{i (\Bp + \Bq)\cdot \Bx}
 }.
 \end{aligned}
 \end{dmath}
-An immediate simplification is possible by identifying a delta function factor \( \int d^3 x e^{i(\Bp + \Bq) \cdot \Bx}/(2\pi)^3 = \delta^3(\Bp + \Bq) \), so
+An immediate simplification is possible by identifying a delta function factor \( \int d^3 x e^{i(\Bp + \Bq) \cdot \Bx}/(2\pi)^3 = \deltathree(\Bp + \Bq) \), so
 \begin{dmath}\label{eqn:qftLecture6:1060}
 H
 =
@@ -331,7 +331,7 @@ a_\Bp a^\dagger_\Bq
 =
 a^\dagger_\Bq
 a_\Bp
-+ (2 \pi)^3 \delta^3(\Bp - \Bq),
++ (2 \pi)^3 \deltathree(\Bp - \Bq),
 \end{dmath}
 so
 
@@ -342,17 +342,17 @@ H_0 =
    a^\dagger_{\Bp}
    a_{\Bp}
 +
-\inv{2} (2 \pi)^3 \delta^3(0)
+\inv{2} (2 \pi)^3 \deltathree(0)
 }.
 \end{dmath}
 The delta function term can be interpreted using
 \begin{dmath}\label{eqn:qftLecture6:400}
-(2 \pi)^3 \delta^3(\Bq)
+(2 \pi)^3 \deltathree(\Bq)
 = \int d^3 x e^{i \Bq \cdot \Bx},
 \end{dmath}
 so when \( \Bq = 0 \)
 \begin{equation}\label{eqn:qftLecture6:420}
-(2 \pi)^3 \delta^3(0) = \int d^3 x = V.
+(2 \pi)^3 \deltathree(0) = \int d^3 x = V.
 \end{equation}
 
 We can write the Hamiltonian now in terms of the volume
@@ -506,14 +506,14 @@ a^\dagger_\Bq
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp}
 \lr{
-   a^\dagger_\Bq a_\Bp + (2 \pi)^3 \delta^3(\Bp - \Bq)
+   a^\dagger_\Bq a_\Bp + (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 \ket{0}
 =
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp} \lr{
    a^\dagger_\Bq \cancel{a_\Bp \ket{0}}
-+ (2 \pi)^3 \delta^3(\Bp - \Bq) \ket{0}
++ (2 \pi)^3 \deltathree(\Bp - \Bq) \ket{0}
 }
 =
 \omega_\Bq a^\dagger_\Bq \ket{0}.

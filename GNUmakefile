@@ -94,6 +94,7 @@ l17: qftLecture17.pdf
 #p2: ProblemSet2.pdf
 p3: ProblemSet3.pdf
 p4: ProblemSet4.pdf
+q: QandA.pdf
 
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem1.tex
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem2.tex

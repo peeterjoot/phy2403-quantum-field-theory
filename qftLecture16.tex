@@ -20,6 +20,8 @@
 \usepackage{verbatim}
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+\newcommand{\deltathree}[0]{\delta^{(3)}}
+\newcommand{\deltafour}[0]{\delta^{(4)}}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 16: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -142,7 +144,7 @@ We are really interested in the \( i \hatT \) portion of this amplitude
 \begin{equation}\label{eqn:qftLecture16:200}
 \bra{ \Bp_1, \cdots \Bp_n } i \hatT \ket{ \Bk_A, \Bk_B }
 =
-(2 \pi)^4 \delta^4( \Bk_A + \Bk_B - \sum_{i = 1}^n \Bp_i )
+(2 \pi)^4 \deltafour( \Bk_A + \Bk_B - \sum_{i = 1}^n \Bp_i )
 \times
 i M( \Bk_A + \Bk_B \rightarrow \Bp_1 \cdots \Bp_n ).
 \end{equation}
@@ -241,7 +243,7 @@ a_\Bp a^\dagger_\Bk
 \sqrt{ 2 \omega_\Bk}
 =
 \int \frac{d^3 p}{(2 \pi)^3} \frac{e^{-i p \cdot x}}{\sqrt{2 \omega_\Bp}}
-\delta^3(\Bp - \Bk)
+\deltathree(\Bp - \Bk)
 \sqrt{ 2 \omega_\Bk}
 = e^{-i k \cdot x}.
 \end{dmath}
@@ -257,7 +259,7 @@ a_\Bp a^\dagger_\Bk
 \sqrt{ 2 \omega_\Bk}
 =
 \int \frac{d^3 k}{(2 \pi)^3} \frac{e^{i k \cdot x}}{\sqrt{2 \omega_\Bk}}
-\delta^3(\Bp - \Bk)
+\deltathree(\Bp - \Bk)
 \sqrt{ 2 \omega_\Bk}
 = e^{+i p \cdot x}.
 \end{dmath}

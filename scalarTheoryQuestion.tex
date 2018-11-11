@@ -44,24 +44,24 @@ In class (lecture 5) when we calculated the time evolution of \( \pi(x,t) \) for
 -
 \frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
-\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \pi(\Bx, t) \phi(\By, t) + i \delta^3(\Bx - \By)}
+\frac{i}{2} \int d^3 y \,\spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\lr{ \pi(\Bx, t) \phi(\By, t) + i \deltathree(\Bx - \By)}
 -
 \frac{i}{2} \int d^3 y \,\pi(\Bx, t) \spacegrad_\By \phi(\By, t) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
 \cdots
 &=
-- \int d^3 y \,\spacegrad_\By \delta^3(\Bx - \By) \cdot \spacegrad_\By\phi(\By, t) \\
+- \int d^3 y \,\spacegrad_\By \deltathree(\Bx - \By) \cdot \spacegrad_\By\phi(\By, t) \\
 &=
 - \int d^3 y
 \lr{
-\spacegrad_\By \cdot \lr{ \delta^3(\Bx - \By) \spacegrad_\By\phi(\By, t) }
+\spacegrad_\By \cdot \lr{ \deltathree(\Bx - \By) \spacegrad_\By\phi(\By, t) }
 -
-\delta^3(\Bx - \By) \spacegrad_\By^2 \phi(\By, t)
+\deltathree(\Bx - \By) \spacegrad_\By^2 \phi(\By, t)
 } \\
 &=
 \spacegrad^2 \phi(\Bx, t)
 -
-\int dA_y\, \delta^3(\Bx - \By) \PD{n}{\phi(\By, t)}.
+\int dA_y\, \deltathree(\Bx - \By) \PD{n}{\phi(\By, t)}.
 \end{aligned}
 \end{equation}
 
@@ -74,7 +74,7 @@ I'm not really familiar with the lingo you are using (i.e. ``compact support'', 
 The result of the integral has meaning in the following context, where \( f(\By) \) is a well behaved test function (square integrable over the volume)
 
 \begin{dmath}\label{eqn:scalarTheoryQuestion:40}
-\int dr \int d\Omega \delta^3(\Bx - \By) \PD{r}{\phi(\By)} f(\By)
+\int dr \int d\Omega \deltathree(\Bx - \By) \PD{r}{\phi(\By)} f(\By)
 =
 \PD{r}{\phi(\Bx)} f(\Bx),
 \end{dmath}

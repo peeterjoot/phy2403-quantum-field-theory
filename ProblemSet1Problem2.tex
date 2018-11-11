@@ -78,7 +78,7 @@ To canonically quantize the fields, we promote the fields to operators, demand t
 \antisymmetric{\phi(\Bx)}{\pi(\By)}
 =
 \antisymmetric{\phi^\dagger(\Bx)}{\pi^\dagger(\By)}
-= i \delta^3(\Bx - \By),
+= i \deltathree(\Bx - \By),
 \end{equation}
 and require all the other operator pairs \( \phi \phi^\dagger, \pi \pi^\dagger, \phi^\dagger\pi, \phi\pi^\dagger \) commute.
 
@@ -99,7 +99,7 @@ i \int d^3 y \lr{
 =
 i \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
 =
-i \int d^3 y \pi^\dagger(\By) (-i) \delta(\By - \Bx)
+i \int d^3 y \pi^\dagger(\By) (-i) \deltathree(\By - \Bx)
 =
 \pi^\dagger(\Bx)
 \end{dmath}
@@ -117,7 +117,7 @@ i \int d^3 y \lr{
 =
 i \int d^3 y \pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi^\dagger(\Bx)}
 =
-i \int d^3 y \pi(\By) (-i) \delta(\By - \Bx)
+i \int d^3 y \pi(\By) (-i) \deltathree(\By - \Bx)
 =
 \pi(\Bx)
 \end{dmath}
@@ -141,15 +141,15 @@ i \int d^3 y \lr{
 }
 =
 i \int d^3 y \lr{
-   \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By (i \delta^3(\By - \Bx))
+   \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By (i \deltathree(\By - \Bx))
    +
-   m^2 \phi^\dagger(\By) i \delta^3(\By - \Bx)
+   m^2 \phi^\dagger(\By) i \deltathree(\By - \Bx)
 }
 =
 - \int d^3 y \lr{
-   \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By \phi^\dagger(\By) }
+   \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By \phi^\dagger(\By) }
    -
-   \delta^3(\By - \Bx) \spacegrad_\By^2 \phi^\dagger(\By)
+   \deltathree(\By - \Bx) \spacegrad_\By^2 \phi^\dagger(\By)
 }
 - m^2 \phi^\dagger(\Bx)
 =
@@ -176,15 +176,15 @@ i \int d^3 y \lr{
 }
 =
 i \int d^3 y \lr{
-   \spacegrad_\By \phi(\By) \cdot \spacegrad_\By (i \delta^3(\By - \Bx))
+   \spacegrad_\By \phi(\By) \cdot \spacegrad_\By (i \deltathree(\By - \Bx))
    +
-   m^2 \phi(\By) i \delta^3(\By - \Bx)
+   m^2 \phi(\By) i \deltathree(\By - \Bx)
 }
 =
 - \int d^3 y \lr{
-   \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By \phi(\By) }
+   \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By \phi(\By) }
    -
-   \delta^3(\By - \Bx) \spacegrad_\By^2 \phi(\By)
+   \deltathree(\By - \Bx) \spacegrad_\By^2 \phi(\By)
 }
 - m^2 \phi(\Bx)
 =
@@ -204,9 +204,9 @@ consistent with \cref{eqn:ProblemSet1Problem2:340} found by evaluating the class
 Somewhat cavalierly, the divergence integrals of the delta function above were assumed to be zero.
 One possible justification for killing the delta function divergence integrals above first transforms those into surface integrals
 \begin{dmath}\label{eqn:ProblemSet1Problem2:800}
-\int_V d^3 y \spacegrad_\By \cdot \lr{ \delta^3(\By - \Bx) \spacegrad_\By f(\By) }
+\int_V d^3 y \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By f(\By) }
 =
-\int_{\partial V} dA_\By \delta^3(\By - \Bx) \ncap_\By \cdot \spacegrad_\By f(\By),
+\int_{\partial V} dA_\By \deltathree(\By - \Bx) \ncap_\By \cdot \spacegrad_\By f(\By),
 \end{dmath}
 after which one argue that this is non-zero only when \( \Bx \) is on the boundary, so if we let the boundary go to infinity, it is zero everywhere, regardless of the normal derivative of the function being operated on\footnote{This was Prof. Poppitz's argument.  It's not completely convincing to me, as it requires integrating a delta function that may sit on the boundary.  However, what is the meaning of such a boundary integral, such as \( \int_0^\infty \delta(x) dx \)?  Apparently, such integrals are considered well defined in field theory, and we'll end up encountering these later too, and one of the future problems will help us understand an interpretation.}.
 %\citep{DavidMayrhofer} where the author starts with separate real and imaginary fields and builds the complex representation systematically.
@@ -331,8 +331,8 @@ e^{i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
 \sqrt{\frac{\omega_\Bq}{2}}
 \lr{
-   -\inv{i \omega_\Bq} i \delta^3(\Bx - \By)
-   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+   -\inv{i \omega_\Bq} i \deltathree(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
 }
 =
 \inv{2} \int d^3 x e^{i (\Bq - \Bp) \cdot \Bx}
@@ -379,8 +379,8 @@ e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
 \sqrt{\frac{\omega_\Bq}{2}}
 \lr{
-   +\inv{i \omega_\Bq} i \delta^3(\Bx - \By)
-   +\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+   +\inv{i \omega_\Bq} i \deltathree(\Bx - \By)
+   +\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
 }
 =
 \inv{2} \int d^3 x e^{i (\Bp - \Bq) \cdot \Bx}
@@ -428,8 +428,8 @@ e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\omega_\Bp \omega_\Bq}
 \lr{
-   \inv{i \omega_\Bq} i \delta^3(\Bx - \By)
-   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+   \inv{i \omega_\Bq} i \deltathree(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
 }
 =
 \inv{2} \int d^3 x
@@ -477,8 +477,8 @@ e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
 \sqrt{\frac{\omega_\Bq}{2}}
 \lr{
-   \inv{i \omega_\Bq} i \delta^3(\Bx - \By)
-   -\inv{i \omega_\Bp} (-i) \delta^3(\Bx - \By)
+   \inv{i \omega_\Bq} i \deltathree(\Bx - \By)
+   -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
 }
 =
 \inv{2} \int d^3 x
@@ -493,7 +493,7 @@ e^{-i\omega_\Bq t}
 =
 \inv{2}
 (2 \pi)^3
-\delta^3(\Bp - \Bq)
+\deltathree(\Bp - \Bq)
 e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\omega_\Bp \omega_\Bq}
@@ -503,7 +503,7 @@ e^{-i\omega_\Bq t}
 }
 =
 (2 \pi)^3
-\delta^3(\Bp - \Bq).
+\deltathree(\Bp - \Bq).
 \end{dmath}
 \end{subequations}
 Other than the \( (2 \pi)^3 \) scale factor we see from the commutators \( \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}, \antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger} \) that the fields may be represented as a pair of independent creation and annihilation operators.
@@ -555,7 +555,7 @@ e^{i (\Bq -\Bp) \cdot \Bx}
 \inv{2} \int
 d^3 p
 \frac{d^3 q}{(2\pi)^3}
-\delta^3(\Bq - \Bp)
+\deltathree(\Bq - \Bp)
 \frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
 \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
 \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
@@ -793,7 +793,7 @@ a_\Bp^\dagger
 \lr{
 a^\dagger_\Bk
 a_\Bp
-+ (2\pi)^3 \delta^3(\Bk - \Bp)
++ (2\pi)^3 \deltathree(\Bk - \Bp)
 }
 \ket{0}
 =
@@ -824,7 +824,7 @@ b_\Bp^\dagger
 \lr{
 b^\dagger_\Bk
 b_\Bp
-+ (2\pi)^3 \delta^3(\Bk - \Bp)
++ (2\pi)^3 \deltathree(\Bk - \Bp)
 }
 \ket{0}
 =

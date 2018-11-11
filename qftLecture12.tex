@@ -55,7 +55,7 @@ and we wish to solve this using Green's function techniques.
 \makedefinition{Klein-Gordon Green's function.}{dfn:qftLecture12:60}{
 The QFT conventions for the Klein-Gordon Green's function is
 \begin{equation*}
-\lr{ \partial_\mu \partial^\mu + m^2} G(x - y) = -i \delta^4(x - y).
+\lr{ \partial_\mu \partial^\mu + m^2} G(x - y) = -i \deltafour(x - y).
 \end{equation*}
 } % definition
 
@@ -71,7 +71,7 @@ i
 \lr{ \partial_\mu \partial^\mu + m^2}
 \int d^4 y G(x - y) j(y)
 =
-i \int d^4 y (-i) \delta^4(x - y) j(y)
+i \int d^4 y (-i) \deltafour(x - y) j(y)
 = j(x).
 \end{dmath}
 
@@ -90,7 +90,7 @@ e^{-i p \cdot (x-y) } \tilde{G}(p).
 \end{dmath}
 This must equal
 \begin{dmath}\label{eqn:qftLecture12:140}
--i \delta^4(x - y) =
+-i \deltafour(x - y) =
 -i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot (x -y)},
 \end{dmath}
 or
@@ -272,7 +272,7 @@ e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 \inv{\sqrt{2 \omega_\Bq}}
 \evalbar{\lr{
 \lr{
-   (2 \pi)^3 \delta^3(\Bp - \Bq)
+   (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 =

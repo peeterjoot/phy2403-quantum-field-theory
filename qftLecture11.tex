@@ -84,15 +84,15 @@ We can compute the matrix element between two matrix states using the creation o
    \hata_{\Bp_1}^\dagger
    \hata_{\Bp_2}
    +
-   i (2 \pi)^3 \delta^3(\Bp - \Bq)
+   i (2 \pi)^3 \deltathree(\Bp - \Bq)
 } \\
 &=
 \sqrt{ 2 \omega_{\Bp_1} }
 \sqrt{ 2 \omega_{\Bp_2} }
-(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2) \\
+(2 \pi)^3 \deltathree(\Bp_1 - \Bp_2) \\
 &=
 2 \omega_{\Bp_1}
-(2 \pi)^3 \delta^3(\Bp_1 - \Bp_2).
+(2 \pi)^3 \deltathree(\Bp_1 - \Bp_2).
 \end{aligned}
 \end{dmath}
 
@@ -157,7 +157,7 @@ D(x)
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
-(2 \pi)^3 \delta^3(\Bp - \Bk),
+(2 \pi)^3 \deltathree(\Bp - \Bk),
 \end{dmath}
 \boxedEquation{eqn:qftLecture11:800}{
 D(x)
@@ -390,7 +390,7 @@ The equation of motion can be found to be
 
 We want to study the Green's function of this Klein-Gordon equation, defined to obey
 \begin{dmath}\label{eqn:qftLecture11:740}
-\lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \delta^4(x - y),
+\lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \deltafour(x - y),
 \end{dmath}
 where the \( -i \) factor is for convienience.
 This is analogous to the Green's function that we just studied for the QM harmonic oscillator.
@@ -415,7 +415,7 @@ D(x - y)
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
 \evalbar{ e^{i k \cdot y} }{k^0 = \omega_\Bk}
-(2 \pi)^3 \delta^3(\Bp - \Bk)
+(2 \pi)^3 \deltathree(\Bp - \Bk)
 =
 \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
 \evalbar{ e^{-i p \cdot (x - y)} }{p^0 = \omega_\Bp}.
