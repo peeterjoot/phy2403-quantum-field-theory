@@ -40,7 +40,31 @@ What do you think is the significance of the various limits $T \gg R \gg 1/m$? A
 
 \makeanswer{qft:problemSet3:1}{
 \makeSubAnswer{}{qft:problemSet3:1a}
-TODO.
+\begin{dmath}\label{eqn:ProblemSet3Problem1:20}
+\bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
+=
+\bra{0} T (1) \ket{0}
++
+i g
+\bra{0} T \int d^4 x j(x) \phi(x) \ket{0}
++
+- \frac{g^2}{2}
+\int d^4 x d^4 y 
+\bra{0} T 
+\contraction{ j(x) }{\phi}{(x) j(y) }{\phi}
+j(x) \phi(x) j(y) \phi(y) 
+\ket{0}
++ \cdots
+\end{dmath}
+Using Wick's theorem, the first order term is zero (odd number of creation and anhillation operators), so to first order, we have
+\begin{dmath}\label{eqn:ProblemSet3Problem1:40}
+\bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
+=
+1 - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) + \cdots
+\approx
+\exp\lr{ - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) }
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet3:1b}
 TODO.
 \makeSubAnswer{}{qft:problemSet3:1c}
