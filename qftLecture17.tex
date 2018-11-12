@@ -3,55 +3,53 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture17}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-\newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 17: XXX.  Taught by Prof.\ Erich Poppitz}
-%\chapter{XXX}
-\label{chap:qftLecture17}
-
-\paragraph{Disclaimer}
-
-%%Peeter's lecture notes from class.  These may be incoherent and rough.
+%%\input{../latex/blogpost.tex}
+%%\renewcommand{\basename}{qftLecture17}
+%%\renewcommand{\dirname}{notes/phy2403/}
+%%\newcommand{\keywords}{PHY2403H}
+%%\input{../latex/peeter_prologue_print2.tex}
 %%
-%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%%%\usepackage{phy2403}
+%%\usepackage{peeters_braket}
+%%%\usepackage{peeters_layout_exercise}
+%%\usepackage{peeters_figures}
+%%\usepackage{mathtools}
+%%\usepackage{siunitx}
+%%\usepackage{macros_cal} % LL
+%%
+%%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%%\newcommand{\deltathree}[0]{\delta^{(3)}}
+%%\newcommand{\deltafour}[0]{\delta^{(4)}}
+%%
+%%\beginArtNoToc
+%%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 17: Scattering, decay, cross sections in a scalar theory.  Taught by Prof.\ Erich Poppitz}
+\chapter{Scattering, decay, cross sections in a scalar theory.}
+\label{chap:qftLecture17}
+%%
+%%%%Peeter's lecture notes from class.  These may be incoherent and rough.
+%%%%
+%%%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%%
+%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%%
+%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
 \section{Review: S-matrix}
 
 We defined an \( S-\)matrix
-\begin{dmath}\label{eqn:qftLecture17:20}
-\bra{f} S \ket{i} = S_{fi} = \lr{ 2 \pi }^4 \deltafour \lr{ \sum_{p_i - \sum_{p_f} } } i M_{fi},
-\end{dmath}
+\begin{equation}\label{eqn:qftLecture17:20}
+\bra{f} S \ket{i} = S_{fi} = \lr{ 2 \pi }^4 \deltafour \lr{ \sum \lr{p_i - \sum_{p_f} } } i M_{fi},
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture17:40}
+\begin{equation}\label{eqn:qftLecture17:40}
 i M_{fi} = \sum \text{ all connected amputated Feynman diagrams }.
-\end{dmath}
+\end{equation}
 The matrix element \( \bra{f} S \ket{i} \) is the amplitude of the transition from the initial to the final state.
 In general this can get very complicated, as the number of terms grows factorially with the order.
 
 We also talked about decays.
-
+\section{Scattering in a scalar theory}
 Suppose that we have a scalar theory with a light field \( \Phi, M \) and a heavy field \( \varphi, m \), where \( m > 2 M \).  Perhaps we have an interaction with a \( z^2 \) symmetry so that the interaction potential is quadratic in \( \Phi \)
 \begin{dmath}\label{eqn:qftLecture17:60}
 V_{\text{int}} = \mu \varphi \Phi \Phi.
@@ -59,10 +57,17 @@ V_{\text{int}} = \mu \varphi \Phi \Phi.
 We may have \( \Phi \Phi \rightarrow \Phi \Phi \) scattering.
 
 We will denote diagrams using a double line for \( \phi \) and a single line for \( \Phi \), as sketched in
-F1.
+\cref{fig:qftLecture17:qftLecture17Fig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig1}{Particle line convention.}{fig:qftLecture17:qftLecture17Fig1}{0.2}
 
 There are three possible diagrams:
-F2
+\imageThreeFiguresOneLine{../figures/phy2403-quantum-field-theory/qftLecture17Fig2a}{../figures/phy2403-quantum-field-theory/qftLecture17Fig2b}{../figures/phy2403-quantum-field-theory/qftLecture17Fig2c}{Possible diagrams.}{fig:qftLecture17:qftLecture17Fig2}{scale=0.3}
+%\cref{fig:qftLecture17:qftLecture17Fig2a}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig2a}{CAPTION: qftLecture17Fig2a}{fig:qftLecture17:qftLecture17Fig2a}{0.3}
+%\cref{fig:qftLecture17:qftLecture17Fig2b}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig2b}{CAPTION: qftLecture17Fig2b}{fig:qftLecture17:qftLecture17Fig2b}{0.3}
+%\cref{fig:qftLecture17:qftLecture17Fig2c}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig2c}{CAPTION: qftLecture17Fig2c}{fig:qftLecture17:qftLecture17Fig2c}{0.3}
 
 The first we will call the s-channel, which has amplitude
 
@@ -74,7 +79,7 @@ A(\text{s-channel}) \sim \frac{i}{p^2 - m^2 + i \epsilon} =
 \begin{dmath}\label{eqn:qftLecture17:100}
 (p_1 + p_2)^2 = s
 \end{dmath}
-In the center of mass frame
+In the centre of mass frame
 \begin{dmath}\label{eqn:qftLecture17:120}
 \Bp_1 = - \Bp_2,
 \end{dmath}
@@ -83,18 +88,26 @@ so
 s = \lr{ p_1^0 + p_2^0 }^2 = E_{\text{cm}}^2.
 \end{dmath}
 
-To the next order we have
-F3
-and can have additional virtual particles created, with diagrams like
-F4
+To the next order we have a diagram like
+\cref{fig:qftLecture17:qftLecture17Fig3}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig3}{Higher order.}{fig:qftLecture17:qftLecture17Fig3}{0.2}
+and can have additional virtual particles created, with diagrams like \cref{fig:qftLecture17:qftLecture17Fig4}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig4}{More virtual particles.}{fig:qftLecture17:qftLecture17Fig4}{0.1}
 
-We will see (QFT II) that this leads to an addition term in the propagator
+We will see (QFT II) that this leads to an addition imaginary \( i \Gamma \) term in the propagator
 \begin{dmath}\label{eqn:qftLecture17:160}
 \frac{i}{s - m^2 + i \epsilon}
 \rightarrow
-\frac{i}{s - m^2 - i m \Gamma + i \epsilon}
+\frac{i}{s - m^2 - i m \Gamma + i \epsilon}.
 \end{dmath}
-The squared amplitude becomes
+If we choose to zoom into the such a figure, as sketched in
+\cref{fig:qftLecture17:qftLecture17Fig5},
+we find that it contains the interaction of interest for our diagram, so we can 
+(looking forward to currently unknown material) know that our diagram also has such an imaginary \( i \Gamma \) term in its
+propagator.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig5}{Zooming into the diagram for a higher order virtual particle creation event.}{fig:qftLecture17:qftLecture17Fig5}{0.3}
+
+Assuming such a term, the squared amplitude becomes
 \begin{dmath}\label{eqn:qftLecture17:180}
 \evalbar{\sigma}{s \text{near} m^2}
 \sim
@@ -102,7 +115,8 @@ The squared amplitude becomes
 \end{dmath}
 
 This is called a resonance (name?), and is sketched in
-F6
+\cref{fig:qftLecture17:qftLecture17Fig6}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig6}{Resonance.}{fig:qftLecture17:qftLecture17Fig6}{0.3}
 
 Where are the poles of the modified propagator?
 
@@ -140,7 +154,7 @@ The probability is
 \times \Abs{ M_{fi} }^2
 \end{dmath}
 
-Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set
+Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set the argument of one of the delta functions to zero, which gives us a vacuum volume element factor
 \begin{dmath}\label{eqn:qftLecture17:300}
 (2 \pi)^4
 \deltafour( p_{\text{in}} - \sum p_f )  =
@@ -150,7 +164,7 @@ Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set
 \end{dmath}
 so
 \begin{dmath}\label{eqn:qftLecture17:320}
-\frac{\text{probability for} i \rightarrow f}{\text{unit time}}
+\frac{\text{probability for \( i \rightarrow f\)}}{\text{unit time}}
 \sim
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
 V_3
@@ -172,7 +186,7 @@ so
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture17:400}
-\frac{\text{probability for} i \rightarrow f}{\text{unit time}}
+\frac{\text{probability for \(i \rightarrow f\)}}{\text{unit time}}
 \sim
 \frac{
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
@@ -248,11 +262,9 @@ For \( 2 \rightarrow \text{many} \) transitions
 
 We need to divide by the flux
 
-In the CM frame
-
-F7
-
-The current is
+In the CM frame, as sketched in
+\cref{fig:qftLecture17:qftLecture17Fig7},
+the current is
 \begin{dmath}\label{eqn:qftLecture17:540}
 \Bj = n \Bv_1 - n \Bv_2,
 \end{dmath}
@@ -262,11 +274,11 @@ n = \inv{V_3},
 \end{dmath}
 (one particle in \(V_3\)), then
 \begin{dmath}\label{eqn:qftLecture17:580}
-\Bj = \frac{\Bv_1 - \Bv_2}{V_3}
+\Bj = \frac{\Bv_1 - \Bv_2}{V_3}.
 \end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig7}{Centre of mass frame.}{fig:qftLecture17:qftLecture17Fig7}{0.1}
 
 This is where \citep{peskin1995introduction} stop,
-
 \begin{dmath}\label{eqn:qftLecture17:640}
 \sigma
 =
@@ -284,6 +296,7 @@ There is, however, a nice Lorentz invariant generalization
 j = \inv{ V_3 \omega_{k_A} \omega_{k_B}} \sqrt{ (k_A - k_B)^2 - m_A^2 m_B^2 }
 \end{dmath}
 
+(Claim: DIY)
 \begin{dmath}\label{eqn:qftLecture17:620}
 \evalbar{j}{CM} =
 \inv{V_3}
@@ -308,8 +321,5 @@ j = \inv{ V_3 \omega_{k_A} \omega_{k_B}} \sqrt{ (k_A - k_B)^2 - m_A^2 m_B^2 }
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }.
 \end{dmath}
 
-
-
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle

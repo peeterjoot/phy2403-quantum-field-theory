@@ -156,3 +156,6 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture17.tex
 
 #../latex/bin/lgrep momentum.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl momentum.tex
+
+../latex/bin/lgrep qftLecture18.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture18.tex
