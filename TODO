@@ -1,16 +1,20 @@
-- Indexing after (up to l15 is also rough.)
-- Audit for basic grammar, proper "latex" sentences.
-- Spell check all.
-- Consolidate review material into more streamlined story.
-- Better chapter/section layout (more topical, less narrative timeline)
-- Merge problems into logical location.
-- Redaction logic.
-- handle various DIY/Fixme/todo's
-- versioning fix (apply same logic to GAelectrodynamics/ too when done)
-- make sure spellcheckem is complete.
-- went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
-- L16: paper -> latex.
-- L17: very rough.  go through M. Luke's notes and try to make sense of things: pg 98-103.
-- switched ps1-2 to use makeoproblem.  Do the same for the rest when submitted.
-- ps1-2 marked up with \withproblemsetsParagraph{} -- do the same for ps3-4 when submitted and then remove special redaction in chapters.tex
-- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
+- maintainance:
+   - Indexing after (up to l15 is also rough.)
+   - handle various DIY/Fixme/todo's
+   - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
+   - L17: very rough.  go through M. Luke's notes and try to make sense of things: pg 98-103.
+- spelling grammar:
+   - Audit for basic grammar, proper "latex" sentences.
+   - Spell check all.
+   - make sure spellcheckem is complete.
+- organization:
+   - Consolidate review material into more streamlined story.
+   - Better chapter/section layout (more topical, less narrative timeline)
+- problems:
+   - Merge problems into logical location.
+   - switched ps1-2 to use makeoproblem.  Do the same for the rest when submitted.
+   - ps1-2 marked up with \withproblemsetsParagraph{} -- do the same for ps3-4 when submitted and then remove special redaction in chapters.tex
+   - go back and do ps2 p4 completely (and not as I did)
+- versioning:
+   -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
+   -- also: versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
