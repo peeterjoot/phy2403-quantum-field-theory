@@ -3,7 +3,7 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\makeproblem{Part of Problem 2.2 from Peskin and Schroeder (reproduced below).}{qft:problemSet1:2}{
+\makeoproblem{Part of Problem 2.2 from Peskin and Schroeder (reproduced below).}{qft:problemSet1:2}{2018 HW1.II}{
 Consider a complex scalar field with action \( S = \int d^4x\lr{\partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi}\).  When doing the variational principle consider \( \phi \) and \(\phi^\dagger \) as independent, rather than their real and imaginary parts (this is equivalent, but more convenient).
 
 \makesubproblem{}{qft:problemSet1:2a}
@@ -21,6 +21,7 @@ terms of creation and annihilation operators and find the charge of the particle
 } % makeproblem
 
 \makeanswer{qft:problemSet1:2}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:2a}
 Classically, evaluating the Euler-Lagrange equations gives us
 \begin{dmath}\label{eqn:ProblemSet1Problem2:20}
@@ -840,5 +841,5 @@ However, the \( 1/2 \), as well as the sign itself, was arbitrary, coming from t
 it is probably more accurate to say that the
 \( a_\Bp^\dagger a_\Bp \) portion of the charge operator is associated with some unit of charge whereas the
 \( b_\Bp^\dagger b_\Bp \) portion of the charge operator is associated with a unit of charge that has an opposite sign.
-}
+}}
 %}

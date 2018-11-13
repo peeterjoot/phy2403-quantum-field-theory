@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Spacetime behaviour of various Green's functions}{qft:problemSet2:1}{
+\makeoproblem{Spacetime behaviour of various Green's functions.}{qft:problemSet2:1}{2018 HW2.I}{
 \index{Green's function!spacelike separation}
 \index{principle value integration}
 \index{half delta function}
@@ -39,6 +39,7 @@ For \( m^2 > 0 \), study the behaviour of \( D(x) \) for spacelike \( x \) and f
 } % makeproblem
 
 \makeanswer{qft:problemSet2:1}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:1a}
 Let's evaluate the integral in spherical polar coordinates
 \begin{dmath}\label{eqn:ProblemSet2Problem1:80}
@@ -209,4 +210,4 @@ r^{-3/2}
 e^{-r m }.
 \end{dmath}
 where the integral was evaluated with Mathematica, and the asymptotic approximation is from \citep{abramowitz1964handbook} \S 9.7.2 (\( K_\nu(z) \sim \sqrt{\pi/2z} e^{-z} \).)  For \( r \gg 1/m \), this goes to zero quickly.
-}
+}}

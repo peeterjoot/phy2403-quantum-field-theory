@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{A model with \(SU(2)_L \times SU(2)_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{
+\makeoproblem{A model with \(SU(2)_L \times SU(2)_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{2018 HW2.II}{
 This problem introduces a model to describe the symmetry realization of the nonabelian chiral symmetry in QCD (quantum chromodynamics).
 The word ``chiral'' should become clear later in this class, but the ``nonabelian'' part will be clear below.
 \(SU(2)_L \times SU(2)_R\) is an exact symmetry of QCD in the limit when the ``current masses'' of the \( u \) and \( d \) quark, \( m_u \) and \( m_d \), are taken to vanish.
@@ -142,6 +142,7 @@ Hint: notice that both currents are Hermitian and that the left is obtained from
 } % makeproblem
 
 \makeanswer{qft:problemSet2:2}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:2a}
 Let's consider the \( SU(2)_L \) case first.  Noting that \( (\sigma^a)^\dagger = \sigma^a \), the transformed fields are
 \begin{dmath}\label{eqn:ProblemSet2Problem2:100}
@@ -1241,4 +1242,4 @@ so
 For this to be zero, each of these \( 16 \times 3 \times 3 \) commutators must be zero.  Presumably, we could plug in the \( \phi_{1,2}, \pi_{1,2}, \phi^\conj_{1,2}, \pi^\conj_{1,2} \) values, and find that this is the case (perhaps only when the \( \sigma^a_{st} \sigma^b_{no} \) elements are non-zero.)
 On paper, I did write out \( \dot{H}^\conj_{sr} H_{tr} - H^\conj_{sr} \dot{H}_{tr} \) in terms of \((\phi, \pi)\)'s, and it was interesting that all of the operator factors in each of those sum of pairs commuted.  That expansion was fairly tedious, and probably not completely correct, and I did not attempt to do the same for \( \dot{H}_{mn} H^\conj_{mo} - H_{mn} \dot{H}^\conj_{mo} \) and show that those two sets of four operators (each with four pairs) commuted.
 There has got to be an easier way!  If there is not, such a proof is a job for a computer program, and not a person.
-}
+}}

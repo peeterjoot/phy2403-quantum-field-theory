@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Observability of the zero point energy: the Casimir force.}{qft:problemSet1:5}{
+\makeoproblem{Observability of the zero point energy: the Casimir force.}{qft:problemSet1:5}{2018 HW1.V}{
 In class, when discussing the quantization of the real scalar field, we found the sum of zero
 point energies of the harmonic oscillators (one per each \( \Bk \) ) into which we decomposed the field:
 \begin{dmath}\label{eqn:ProblemSet1Problem5:20}
@@ -117,6 +117,7 @@ In this example, this was seen by the independence of the final answer on the cu
 } % makeproblem
 
 \makeanswer{qft:problemSet1:5}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:5a}
 Our scalar massless field satisfies the Klein-Gordon equation \( \lr{ \partial_{00} - \spacegrad^2 } \phi = 0 \), which has a plane wave superposition solution
 \begin{dmath}\label{eqn:ProblemSet1Problem5:60}
@@ -323,4 +324,4 @@ The first derivative of this modified \( F \) is
 \frac{dF}{dn} = - 2 n \sqrt{ n^2 +  (m c a/\pi \Hbar)^2} f( \frac{\pi}{a}\sqrt{   n^2 +  (m c a/\pi \Hbar)^2} ).
 \end{dmath}
 Quick and rough hand calculation of the rest of the derivatives of \( F \) as defined above seems shows that the odd derivatives are all zero at \( n = 0 \) (they are odd functions of n, whereas the even powered derivatives are all even functions of n).  This was confirmed with Mathematica (worksheet attached), so it seems that, regardless of the value of \( m \) with respect to \( 1/a \) the Casimir effect is obliterated by a massive field.
-}
+}}

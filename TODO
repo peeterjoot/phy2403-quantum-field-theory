@@ -11,3 +11,6 @@
 - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
 - L16: paper -> latex.
 - L17: very rough.  go through M. Luke's notes and try to make sense of things: pg 98-103.
+- switched ps1-2 to use makeoproblem.  Do the same for the rest when submitted.
+- ps1-2 marked up with \withproblemsetsParagraph{} -- do the same for ps3-4 when submitted and then remove special redaction in chapters.tex
+- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
