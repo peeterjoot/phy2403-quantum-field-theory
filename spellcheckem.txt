@@ -1,6 +1,4 @@
 ProblemSet1Problem1.tex
-momentum.tex
-ProblemSet3Problem4.tex
 ProblemSet1Problem2.tex
 ProblemSet1Problem3.tex
 ProblemSet1Problem4.tex
@@ -9,7 +7,9 @@ ProblemSet2Problem1.tex
 ProblemSet2Problem2.tex
 ProblemSet2Problem3.tex
 ProblemSet2Problem4.tex
+ProblemSet3Problem4.tex
 braOmega.tex
+momentum.tex
 noetherCurrentScalarField.tex
 nonhomoKGhamiltonian.tex
 qftLecture1.tex

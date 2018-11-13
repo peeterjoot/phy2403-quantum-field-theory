@@ -56,15 +56,22 @@ We finished by defining the differential cross section
 
 In QFT we typically study \( 2 \rightarrow n \) inelastic scattering.  Most commonly the nature of the final state particles are different from the nature of the incoming state.
 
-For example, we can collide two electrons, and can get muon and anti-muon particles
-F1
-or pions
-F2, or even both
-F3
+For example, we can collide an electron and anti-electron, and can get muon and anti-muon particles as sketched in
+\cref{fig:qftLecture16:qftLecture16Fig1},
+or pions as sketched in
+\cref{fig:qftLecture16:qftLecture16Fig2},
+or even both as sketched in
+\cref{fig:qftLecture16:qftLecture16Fig3}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig1}{Muon pair production.}{fig:qftLecture16:qftLecture16Fig1}{0.15}
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig2}{Pion pair production.}{fig:qftLecture16:qftLecture16Fig2}{0.15}
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig3}{Muon and pion pair production.}{fig:qftLecture16:qftLecture16Fig3}{0.15}
 
-In the \( \lambda \phi^4 \) theory we can have scattering events such as
-F4a
-F4b
+In the \( \lambda \phi^4 \) theory we can have scattering events such as \( 2 \rightarrow 2 \) and \( 2 \rightarrow 2 n \) production as sketched in \cref{fig:qftLecture16:qftLecture16Fig4}.
+\imageTwoFigures{../figures/phy2403-quantum-field-theory/qftLecture16Fig4a}{../figures/phy2403-quantum-field-theory/qftLecture16Fig4b}{lambda fourth scattering events.}{fig:qftLecture16:qftLecture16Fig4}{scale=0.2}
+%\cref{fig:qftLecture16:qftLecture16Fig4a}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig4a}{CAPTION: qftLecture16Fig4a}{fig:qftLecture16:qftLecture16Fig4a}{0.3}
+%\cref{fig:qftLecture16:qftLecture16Fig4b}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig4b}{CAPTION: qftLecture16Fig4b}{fig:qftLecture16:qftLecture16Fig4b}{0.3}
 
 How to calculate in QFT.  Initial state of 2 particles \( A, B \) with initital state
 \begin{dmath}\label{eqn:qftLecture16:40}
@@ -276,16 +283,112 @@ a_\Bp \phi_I(x_1)
 \end{aligned}
 \end{dmath}
 
-\begin{comment}
-\section{junk}
-\begin{dmath}\label{eqn:qftLecture15b:260}
-%\sideset{_a^b}{'}{x}
-\prescript{14}{2}{\mathbf{C}}
+\section{Example diagrams.}
+
+We want to examine the relevant diagrams corresponding to a transition amplitudes for the \( \phi^4 \) theory.  Contractions such as
+\begin{dmath}\label{eqn:qftLecture16:460}
+\contraction{\langle }{a}{{}_{\Bp_1} a_{\Bp_2} \vert }{a}
+\contraction[2ex]{\langle a_{\Bp_1} }{a}{{}_{\Bp_2} \vert a_{\Bk_A}^\dagger }{a}
+\bcontraction[2ex]{\langle}{a}{{}_{\Bp_1} a_{\Bp_2} \vert a_{\Bk_A}^\dagger }{a}
+\bcontraction{\langle a_{\Bp_1} }{a}{{}_{\Bp_2} \vert }{a}
+{\langle a_{\Bp_1} a_{\Bp_2} \vert a_{\Bk_A}^\dagger a_{\Bk_B}^\dagger \rangle}_0.
+%{\left\langle a_{\Bp_1} a_{\Bp_2} \middle \vert a_{\Bk_A}^\dagger a_{\Bk_B}^\dagger \right\rangle}_0
 \end{dmath}
-\begin{dmath}\label{eqn:qftLecture16:420}
-\prescript{}{2}{\mathbf{C}}
+result in diagrams that are \underline{not connected} as sketched in
+\cref{fig:qftLecture16:qftLecture16Fig6}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig6}{Not connected diagrams.}{fig:qftLecture16:qftLecture16Fig6}{0.2}
+
+There are no other possibilities for the first order (and these ones are not interesting).  For the second order transistion amplitudes we want to sum of all the contractions for the expectation
+\begin{dmath}\label{eqn:qftLecture16:480}
+\expectation{ a_{\Bp_1} a_{\Bp_2} \phi_I^4(x) a_{\Bk_A}^\dagger a_{\Bk_B}^\dagger }
+=
+ - i \frac{\lambda}{4!} \sum \text{all contractions}.
 \end{dmath}
-\end{comment}
+Our diagrams include \cref{fig:qftLecture16:qftLecture16Fig7}, which are not connected.  The figure eight is a vacuum fluctuation that represents virtual processes.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig7}{Not connected second order interactions, including vacuum fluctuations.}{fig:qftLecture16:qftLecture16Fig7}{0.2}
+Another diagram is
+\cref{fig:qftLecture16:qftLecture16Fig8}, also not connected.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig8}{Another second order diagram.}{fig:qftLecture16:qftLecture16Fig8}{0.2}
+
+We want diagrams that we will describe as ``connected and amputated''.  We are clearly discarding non-connected diagrams like those above, but will need to demonstrate what is meant by amputated, and will continue to consider examples to make that clear.
+
+Here's another diagram \cref{fig:qftLecture16:qftLecture16Fig9} that is also not connected.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig9}{Another not-connected diagram.}{fig:qftLecture16:qftLecture16Fig9}{0.2}
+From the diagrams we can construct the functionals that they represent.  The single line in this one is a \( \deltathree( \Bp_1 - \Bk_A ) \) whereas the balloon with two strings is
+\begin{dmath}\label{eqn:qftLecture16:500}
+\int d^4 x e^{-i k_B \cdot x } D_F( x - x ) e^{ i p_2 \cdot x }.
+\end{dmath}
+There are similar not-connected variations of the possible diagrams that we will also discard.  The connected diagrams all come from contractions such as
+\begin{dmath}\label{eqn:qftLecture16:520}
+\contraction[2ex]{\bra{0} }{a}{{}_{\Bp_1} a_{\Bp_2} }{\phi}
+\contraction{\bra{0} a_{\Bp_1} }{a}{{}_{\Bp_2} }{\phi}
+\bcontraction{\bra{0} a_{\Bp_1} a_{\Bp_2} }{\phi}{{}_I^4(x) }{a}
+\bcontraction[2ex]{\bra{0} a_{\Bp_1} a_{\Bp_2} }{\phi}{{}_I^4(x) a_{\Bk_A}^\dagger }{a}
+\bra{0} a_{\Bp_1} a_{\Bp_2} \phi_I^4(x) a_{\Bk_A}^\dagger a_{\Bk_B}^\dagger \ket{0}
+\end{dmath}
+The diagram for this interaction now has a vertex representing the contractions with \( \phi_I^4(x) \) with four edges from that vertex as sketched in
+\cref{fig:qftLecture16:qftLecture16Fig10}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig10}{Not non-connected diagram.}{fig:qftLecture16:qftLecture16Fig10}{0.2}
+The algebraic expression for this diagram is
+\begin{dmath}\label{eqn:qftLecture16:540}
+4! \lr{ \frac{-i \lambda}{4!} } \int d^4 x e^{-i(k_A + k_B) \cdot x} e^{i (p_1 + p_2) \cdot x}
+=
+-i \lambda (2 \pi)^4 \deltafour(p_1 + p_2 - k_A - k_B).
+\end{dmath}
+Such a diagram has the general form
+\begin{equation}\label{eqn:qftLecture16:560}
+(2 \pi)^4 \deltafour\lr{ \sum \text{in} - \sum \text{final} } \times i M( A,B \rightarrow 1,2 ),
+\end{equation}
+so
+\begin{equation}\label{eqn:qftLecture16:580}
+M( A,B \rightarrow 1,2 )
+=
+-\lambda.
+\end{equation}
+Here the ``symmetry factor'' \( 4! \) was added in to count all possible ways of constructing such a diagram.
+
+\paragraph{Next order}
+
+How about an amplitude like
+\begin{dmath}\label{eqn:qftLecture16:600}
+\bcontraction{\bra{0} a_{\Bp_1} a_{\Bp_2} \inv{2} \lr{ \frac{-i \lambda}{4!} }^2 \int d^4 x \int d^4 y }{\phi}{{}_I}{}
+\bcontraction[2ex]{\bra{0} a_{\Bp_1} a_{\Bp_2} \inv{2} \lr{ \frac{-i \lambda}{4!} }^2 \int d^4 x \int d^4 y }{\phi}{{}_I^4(x) }{\phi}
+\contraction[2ex]{\bra{0} }{a}{{}_{\Bp_1} a_{\Bp_2} \inv{2} \lr{ \frac{-i \lambda}{4!} }^2 \int d^4 x \int d^4 y }{\phi}
+\bra{0} a_{\Bp_1} a_{\Bp_2} \inv{2} \lr{ \frac{-i \lambda}{4!} }^2 \int d^4 x \int d^4 y \phi_I^4(x) \phi_I^4(y) a_{\Bk_A}^\dagger a_{\Bk_B}^\dagger \ket{0}
+\end{dmath}
+Disconnected diagrams include \cref{fig:qftLecture16:qftLecture16Fig11}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig11}{Disconnected third order interaction.}{fig:qftLecture16:qftLecture16Fig11}{0.2}
+However, we have connected diagrams like \cref{fig:qftLecture16:qftLecture16Fig12}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig12}{Connected diagram.}{fig:qftLecture16:qftLecture16Fig12}{0.2}
+The loop in this diagram represents an interaction with ``vacuum fluctuation''.  Such an interaction is not relevant to scattering, and we may consider just the portion of the diagram that leaves off this vacuum fluctuation.  This is what is meant by amputated.  Amputated diagrams do not include such factors.  Other example interactions that may also be amputated include \cref{fig:qftLecture16:qftLecture16Fig13}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig13}{Other amputatable diagrams.}{fig:qftLecture16:qftLecture16Fig13}{0.2}
+
+At the next order we can have fun interactions like that of \cref{fig:qftLecture16:qftLecture16Fig14}, which is not amputable (it connects branches), and must be considered.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig14}{Fun interaction.}{fig:qftLecture16:qftLecture16Fig14}{0.2}
+
+At the \( \lambda^2 \) order, the relevant diagrams are sketched in \cref{fig:qftLecture16:qftLecture16Fig15}
+\imageThreeFiguresOneLine{../figures/phy2403-quantum-field-theory/qftLecture16Fig15a}{../figures/phy2403-quantum-field-theory/qftLecture16Fig15b}{../figures/phy2403-quantum-field-theory/qftLecture16Fig15c}{Second order connected amputated diagrams.}{fig:qftLecture16:qftLecture16Fig15}{scale=0.2}
+%%\cref{fig:qftLecture16:qftLecture16Fig15a}.
+%%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig15a}{CAPTION: qftLecture16Fig15a}{fig:qftLecture16:qftLecture16Fig15a}{0.2}
+%%\cref{fig:qftLecture16:qftLecture16Fig15b}.
+%%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig15b}{CAPTION: qftLecture16Fig15b}{fig:qftLecture16:qftLecture16Fig15b}{0.2}
+%%\cref{fig:qftLecture16:qftLecture16Fig15c}.
+%%\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig15c}{CAPTION: qftLecture16Fig15c}{fig:qftLecture16:qftLecture16Fig15c}{0.2}
+%%
+At this order \( \phi^4(x), \phi^4(y) \) each contribute a vertex with 4 edges.
+\makedefinition{Amputated}{dfn:qftLecture16:620}{
+Omit anything that only effects input or output lines.
+} % definition
+
+\section{figures. unsorted}
+\cref{fig:qftLecture16:qftLecture16Fig16}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig16}{CAPTION: qftLecture16Fig16}{fig:qftLecture16:qftLecture16Fig16}{0.2}
+\cref{fig:qftLecture16:qftLecture16Fig17a}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig17a}{CAPTION: qftLecture16Fig17a}{fig:qftLecture16:qftLecture16Fig17a}{0.2}
+\cref{fig:qftLecture16:qftLecture16Fig17b}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig17b}{CAPTION: qftLecture16Fig17b}{fig:qftLecture16:qftLecture16Fig17b}{0.2}
+\cref{fig:qftLecture16:qftLecture16Fig17c}.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig17c}{CAPTION: qftLecture16Fig17c}{fig:qftLecture16:qftLecture16Fig17c}{0.2}
 
 %}
 %\EndArticle
