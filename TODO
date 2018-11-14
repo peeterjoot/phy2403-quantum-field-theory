@@ -18,3 +18,4 @@
 - versioning:
    -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
    -- also: versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
+   -- revinfo for redacted version is probably from projects repo, not this one.

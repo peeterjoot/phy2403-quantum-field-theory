@@ -176,5 +176,42 @@ Further confounding me was the fact that my old QM book used a different sign co
 \deltathree(x - y)
 \end{dmath}
 
+\section{GA q.}
+
+\begin{dmath}\label{eqn:QandA:n}
+(\Ba\cross \Bb)\cdot(\Ba\cross \Bb)
+=[-I(\Ba\wedge \Bb)]\cdot[-I(\Ba\wedge \Bb)]
+=[I(\Ba\wedge \Bb)]\cdot[I(\Ba\wedge \Bb)],
+\end{dmath}
+\begin{dmath}\label{eqn:QandA:n}
+(Ia)\cdot \Bb=I(\Ba\wedge \Bb)
+=I[(\Ba\wedge \Bb)\wedge(I(\Ba\wedge \Bb))]
+\Ba\wedge(Ib)=I(\Ba\cdot \Bb)
+=I^2(\Ba\wedge \Bb)\cdot(\Ba\wedge \Bb)
+=I^2(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
+=-(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
+\end{dmath}
+
+I find it hard to follow what you have done.  This is how I'd show it.
+\begin{dmath*}
+\lr{ \Ba \cross \Bb } \cdot \lr{ \Ba \cross \Bb }
+=
+\gpgradezero{
+\lr{ \Ba \cross \Bb } \lr{ \Ba \cross \Bb }
+}
+=
+\gpgradezero{ -I(\Ba \wedge \Bb) (-I) (\Ba \wedge \Bb) }
+=
+-\gpgradezero{
+(\Ba \wedge \Bb) (\Ba \wedge \Bb) 
+}
+=
+- \Ba \cdot \lr{ \Bb \cdot \lr{ \Ba \wedge \Bb } }
+=
+- \Ba \cdot \lr{ (\Bb \cdot \Ba) \Bb - \Bb^2 \Ba }
+=
+\Ba^2 \Bb^2 - (\Bb \cdot \Ba)^2.
+\end{dmath*}
+
 \EndArticle
 %\EndNoBibArticle

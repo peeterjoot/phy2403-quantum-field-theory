@@ -4,7 +4,7 @@
 %
 \makeproblem{Interaction energy between static external charges}{qft:problemSet3:1}{
 \makesubproblem{}{qft:problemSet3:1a}
- Calculate the vacuum expectation value of the time ordered exponential 
+ Calculate the vacuum expectation value of the time ordered exponential
 \begin{equation}
 \label{one}
 \langle 0 \vert T e^{\;i \int d^4 x\;  g \; j(x)\;  \phi(x)} \vert 0 \rangle
@@ -21,19 +21,19 @@ Consider the case where $j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)
    \label{three}
    e^{ - i 2T V(R)},
    \end{equation}
-   where $V(R)$ is the Yukawa potential (\citep{wiki:yukawaPotential}). 
-   
+   where $V(R)$ is the Yukawa potential.
+
     {\flushleft{Hint:}} {\small Recall that $\lim\limits_{T \rightarrow \infty} \int\limits_{-T}^T d x e^{i p x} = 2 \pi \delta(p)$ as well as the usual relation $(2 \pi \delta(p))^2 = 2 \pi \delta(p) 2 T$.}
-    
-      {\small  {\flushleft{T}he} result (\ref{three}) means that ``{\it two static sources of scalar field a distance $R$ apart interact via the Yukawa potential}." This is because (\ref{three}) is  the evolution operator (it is  $ \sim e^{- i H t}$, for  $t=2T$)  of the field theory 
+
+      {\small  {\flushleft{T}he} result (\ref{three}) means that ``{\it two static sources of scalar field a distance $R$ apart interact via the Yukawa potential}." This is because (\ref{three}) is  the evolution operator (it is  $ \sim e^{- i H t}$, for  $t=2T$)  of the field theory
    in the presence of the static external sources (or, more appropriately, (\ref{three}) is the contribution to the evolution operator that has to do with the interaction between the sources induced by the field). Thus, it is natural to call the quantity multiplying $- i 2 T$  and depending on $R$, the interaction potential $V(R)$ between the sources.}
 
- Do opposite-sign ``charges" attract or repel? How about same-sign? 
- 
- {\small  Notice that when the ``charges" are also considered as part of a QFT and, therefore, $j(x)$  in (\ref{one}) is replaced by an appropriate QFT expression, one finds more interesting results. Namely,  the Yukawa interaction between two fermions is always attractive---whether it is between two particles, two anti-particles, or between a particle and an anti-particle. The way to establish this, as well an alternative derivation of the expression for $V(R)$ you found in (\ref{three}), is to start  from the scattering of (anti)fermions via scalar exchange and then take the nonrelativistic limit. A comparison with quantum-mechanical Born scattering yields then an expression for $V(R)$. 
- 
+ Do opposite-sign ``charges" attract or repel? How about same-sign?
+
+ {\small  Notice that when the ``charges" are also considered as part of a QFT and, therefore, $j(x)$  in (\ref{one}) is replaced by an appropriate QFT expression, one finds more interesting results. Namely,  the Yukawa interaction between two fermions is always attractive---whether it is between two particles, two anti-particles, or between a particle and an anti-particle. The way to establish this, as well an alternative derivation of the expression for $V(R)$ you found in (\ref{three}), is to start  from the scattering of (anti)fermions via scalar exchange and then take the nonrelativistic limit. A comparison with quantum-mechanical Born scattering yields then an expression for $V(R)$.
+
  This result quoted above is of great interest in nuclear physics, where single-pion exchange   operates via $V(R)$, and turns out to be attractive between nucleons and between nucleons and anti-nucleons.  }
-   
+
 \makesubproblem{}{qft:problemSet3:1c}
 What do you think is the significance of the various limits $T \gg R \gg 1/m$? Also, what is the  meaning of the factors you omitted upon going from (\ref{two}) to (\ref{three})?
 } % makeproblem
@@ -49,10 +49,10 @@ i g
 \bra{0} T \int d^4 x j(x) \phi(x) \ket{0}
 +
 - \frac{g^2}{2}
-\int d^4 x d^4 y 
-\bra{0} T 
+\int d^4 x d^4 y
+\bra{0} T
 \contraction{ j(x) }{\phi}{(x) j(y) }{\phi}
-j(x) \phi(x) j(y) \phi(y) 
+j(x) \phi(x) j(y) \phi(y)
 \ket{0}
 + \cdots
 \end{dmath}
@@ -66,7 +66,233 @@ Using Wick's theorem, the first order term is zero (odd number of creation and a
 \end{dmath}
 
 \makeSubAnswer{}{qft:problemSet3:1b}
-TODO.
+We wish to evaluate the integral in the exponential argument
+\begin{dmath}\label{eqn:ProblemSet3Problem1:60}
+\begin{aligned}
+\int &d^4 x d^4 y j(x) D_F(x - y) j(y)  \\
+&=
+\int dt d^3 x dt' d^3 y  \\
+%j(x)
+&\quad \theta(T - t) \theta(T+t) \left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right)
+D_F(\Bx - \By, t - t')
+%j(y)
+\theta(T - t') \theta(T+t') \left( \delta^{(3)}(\By) - \delta^{(3)}(\By - \BR)\right) \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\int
+d^3 x d^3 y
+\left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right)
+D_F(\Bx - \By, t - t')
+\left( \delta^{(3)}(\By) - \delta^{(3)}(\By - \BR)\right) \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\int
+d^3 y
+\lr{
+   D_F(- \By, t - t')
+   -
+   D_F(\BR - \By, t - t')
+}
+\left( \delta^{(3)}(\By) - \delta^{(3)}(\By - \BR)\right) \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\lr{
+   D_F(\Bzero, t - t')
+   -
+   D_F(\BR, t - t')
+-
+   D_F(- \BR, t - t')
+   +
+   D_F(\Bzero, t - t')
+}.
+\end{aligned}
+\end{dmath}
+The propagator, written in space and time coordinates is
+\begin{dmath}\label{eqn:ProblemSet3Problem1:80}
+D_F(\Bx, t)
+=
+i \int \frac{dp_0 d^3 p}{(2 \pi)^4} \frac{e^{-i p_0 t} e^{i \Bp \cdot \Bx} }{p_0^2 - \Bp^2 - m^2 + i \epsilon },
+\end{dmath}
+so we have
+\begin{dmath}\label{eqn:ProblemSet3Problem1:100}
+\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+=
+i
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\frac{dp_0 d^3 p}{(2 \pi)^4} \frac{e^{-i p_0 (t-t')} }{p_0^2 - \Bp^2 - m^2 + i \epsilon }
+\lr{
+2
+-
+e^{-i \Bp \cdot \BR}
+-
+e^{i \Bp \cdot \BR}
+}
+\end{dmath}
+The time integrals can be done first
+\begin{dmath}\label{eqn:ProblemSet3Problem1:120}
+\int_{-T}^T dt
+e^{-i p_0 t}
+\int_{-T}^T dt'
+e^{ i p_0 t}
+=
+(2 \pi)^2
+\delta(-p_0)
+\delta(p_0).
+\end{dmath}
+Following the supplied hint we write
+\begin{dmath}\label{eqn:ProblemSet3Problem1:140}
+(2 \pi)^2
+\delta(p_0)
+\delta(-p_0)
+=
+(2 \pi)^2
+\delta(p_0)
+\delta(0)
+=
+2 \pi
+\delta(p_0)
+\int_{-T}^T dt'
+=
+(2 \pi)(2 T)
+\delta(p_0),
+\end{dmath}
+which gives
+\begin{dmath}\label{eqn:ProblemSet3Problem1:160}
+\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+=
+2 T i
+\int
+\frac{dp_0 d^3 p}{(2 \pi)^3} \frac{ \delta(p_0) }{p_0^2 - \Bp^2 - m^2 + i \epsilon }
+\lr{
+2
+-
+e^{-i \Bp \cdot \BR}
+-
+e^{i \Bp \cdot \BR}
+}
+=
+-2 T i
+\int
+\frac{d^3 p}{(2 \pi)^2} \frac{ 1 }{ \Bp^2 + m^2 - i \epsilon }
+\lr{
+2
+-
+e^{-i \Bp \cdot \BR}
+-
+e^{i \Bp \cdot \BR}
+}.
+\end{dmath}
+We can now make the usual spherical coordinate change of variables
+\begin{dmath}\label{eqn:ProblemSet3Problem1:180}
+\begin{aligned}
+d^3 p &= \calp^2 d\calp \sin\theta d\theta d\phi \\
+\Bp &= \calp \lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta } \\
+\BR &= R\lr{ 0, 0, 1},
+\end{aligned}
+\end{dmath}
+which gives
+\begin{dmath}\label{eqn:ProblemSet3Problem1:200}
+\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+=
+-2 T i
+\int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \int_0^\pi d\theta \sin\theta \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
+\lr{
+   2
+   -
+   e^{-i \calp R \cos\theta}
+   -
+   e^{i \calp R \cos\theta}
+}
+=
+2 T i
+\int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \int_1^{-1} du \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
+\lr{
+   2
+   -
+   e^{-i \calp R u}
+   -
+   e^{i \calp R u}
+}
+=
+2 T i
+\int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
+\lr{
+   2 (-2)
+   -
+   \frac{
+      e^{i \calp R }
+      -
+      e^{-i \calp R }
+   }
+   {
+      -i \calp R
+   }
+   -
+   \frac{
+      e^{-i \calp R }
+      -
+      e^{i \calp R }
+   }
+   {
+      i \calp R
+   }
+}
+=
+\frac{2 T i}{\pi^2}
+\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 - i \epsilon }
+\lr{
+   \sinc( \calp R ) - 1
+}.
+\end{dmath}
+With \( p_0 \) integrated out, we don't need the \( i \epsilon \) factor for pole avoidance, and find (using Mathematica) that
+\begin{dmath}\label{eqn:ProblemSet3Problem1:220}
+\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 }
+\lr{
+   \sinc( \calp R ) - 1
+}
+=
+\frac{1}{2} \pi  \left(\frac{e^{-m R}}{R}+m\right).
+\end{dmath}
+The \( m \pi/2 \) term contributes only a phase adjustment, and can be ignored.  This leaves
+\begin{dmath}\label{eqn:ProblemSet3Problem1:240}
+  e^{\;-{g^2\over 2} \int d^4 x d^4 y\;  j(x)  D_F(x-y) j(y) }
+=
+\exp\lr{
+\frac{-g^2}{2}
+\frac{2 T i}{\pi^2}
+\frac{1}{2} \pi \frac{e^{-m R}}{R}
+}
+=
+\exp\lr{
+   -2 T i V(R)
+},
+\end{dmath}
+where
+\begin{dmath}\label{eqn:ProblemSet3Problem1:260}
+V(R)
+=
+-\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
+\end{dmath}
+Comparing to \citep{wiki:yukawaPotential}, this is off by a factor of \( 4 \pi \).  There are a few possible explainations for that
+\begin{enumerate}
+\item Typo in the problem statement.
+\item The constant \( 4 \pi \) scaling factor wasn't considered interesting, and was ignored in the problem statement.
+\item Mistake in my work above.
+\item There are different conventions for \( V(R) \), and the desired form includes a factor of \( 4 \pi \) downstairs.
+\end{enumerate}
+%\begin{mmaCell}[morefunctionlocal={p}]{Input}
+%  ClearAll[r, m, e]
+%  e = Integrate[(Sinc[p r] - 1)p^2/(p^2 + m^2), {p, 0, Infinity}];
+%  Assuming[ r > 0 && m > 0, Simplify[e]]
+%\end{mmaCell}
+%\begin{mmaCell}{Output}
+%  \mmaFrac{1}{2} $\pi$ (m+\mmaFrac{\mmaSup{e}{-m r}}{r})
+%\end{mmaCell}
+
 \makeSubAnswer{}{qft:problemSet3:1c}
 TODO.
 }
