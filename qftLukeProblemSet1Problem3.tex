@@ -2,7 +2,10 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{One dimensional string}{qft:LukeProblemSet1:3}{
+\makeoproblem{One dimensional string}
+{qft:LukeProblemSet1:3}
+{2015 ps1.3}
+{
 
 A string of length \( a \), mass per unit length \( \sigma \) and under tension \(T\) is fixed at each end. The Lagrangian governing the time evolution of the transverse displacement \( y(x,t) \) is
 
@@ -30,6 +33,7 @@ harmonic oscillators, and find their frequencies.
 } % makeproblem
 
 \makeanswer{qft:LukeProblemSet1:3}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:LukeProblemSet1:3a}
 
 First observe that the functions \( \braket{x}{n} = \sqrt{\frac{2}{a}} \sin\lr{ n \pi x/a } \) are orthonormal over the \( [0,a] \) domain.
@@ -146,4 +150,5 @@ so the frequencies are
 \nu_n = \sqrt{ \frac{T}{\sigma} } \frac{n }{2 a}.
 \end{equation}
 
+}
 }

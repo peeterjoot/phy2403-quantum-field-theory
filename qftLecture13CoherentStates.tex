@@ -1,0 +1,37 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\section{Digression: coherent states.}
+\index{coherent state}
+\makedefinition{Coherent state.}{dfn:qftLecture13:220}{
+A coherent state is an eigenstate of the destruction operator
+\begin{equation*}
+a \ket{\alpha} = \alpha \ket{\alpha}.
+\end{equation*}
+} % definition
+For the SHO, if we solve for such a coherent state, we find
+\begin{dmath}\label{eqn:qftLecture13:240}
+\ket{\alpha} = \text{constant} \times \sum_{n = 0}^\infty \frac{\alpha^n}{n!} \lr{ a^\dagger }^n \ket{0}.
+\end{dmath}
+If we assume the existence of a coherent state
+\begin{dmath}\label{eqn:qftLecture13:260}
+a_\Bp \ket{
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+}
+=
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+\ket{
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+},
+\end{dmath}
+then the expectation value of the number operator with respect to this state is the number density identified in \cref{eqn:qftLecture13:200}
+\begin{equation}\label{eqn:qftLecture13:1200}
+\bra{
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+}
+a_\Bp^\dagger a_\Bp
+\ket{
+\frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}}
+} = \frac{\Abs{\tilde{j}(p)}^2}{2 \omega_\Bp} = N(\Bp).
+\end{equation}

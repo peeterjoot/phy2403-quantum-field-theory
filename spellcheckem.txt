@@ -41,3 +41,7 @@ qftLukeProblemSet1Problem6.tex
 scalarFieldCreationOpCommutator.tex
 scalarFieldHamiltonian.tex
 usefulFormulas.tex
+qftLecture2LorentzTransformation.tex
+qftLecture3ClassicalFieldTheory.tex
+qftLecture13CoherentStates.tex
+qftLecture3ClassicalFieldTheoryProblems.tex

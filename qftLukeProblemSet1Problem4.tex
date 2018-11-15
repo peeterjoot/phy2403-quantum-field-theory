@@ -2,7 +2,10 @@
 % Copyright © 2015 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Dimensional analysis.}{qft:LukeProblemSet1:4}{
+\makeoproblem{Dimensional analysis.}
+{qft:LukeProblemSet1:4}
+{2015 ps1.4}
+{
 
 Even though we have set \( \Hbar = c = 1 \), we can still do dimensional analysis because we still have one unit left, mass (or 1/length). In \( d \) space-time dimensions (1 time and \( d-1 \) space), what is the dimension in mass units of a canonical free scalar field, \( \phi \)? (Work it out from the equal-time commutation relations.) Still in \( d \) dimensions, the Lagrange density for a scalar field with self-interactions might be of the form
 
@@ -19,6 +22,7 @@ The coefficients \( a_n \)? (as a check, whatever the value of \( d \), \(a_2\) 
 } % makeproblem
 
 \makeanswer{qft:LukeProblemSet1:4}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:LukeProblemSet1:4a}
 
 With \( \antisymmetric{\phi(\Bx)}{\Pi(\By)} = i \deltathree(\Bx - \By) \), which is dimensionless, we have
@@ -81,4 +85,5 @@ For \( n = 2 \) that is \( [a_n] = L^{-1 - 2/2} = L^{-2} \).  Provided \( [L] = 
 \end{dmath}
 
 If both \( \Hbar \) and \( c \) are dimensionless then the dimensions of length must be inverse mass.
+}
 }

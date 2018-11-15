@@ -15,6 +15,7 @@
    - switched ps1-2 to use makeoproblem.  Do the same for the rest when submitted.
    - ps1-2 marked up with \withproblemsetsParagraph{} -- do the same for ps3-4 when submitted and then remove special redaction in chapters.tex
    - go back and do ps2 p4 completely (and not as I did)
+   - two problems left in 'Independent study problems' not moved to appropriate context.
 - versioning:
    -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
    -- also: versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
