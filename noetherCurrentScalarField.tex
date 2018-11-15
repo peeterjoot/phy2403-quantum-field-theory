@@ -210,45 +210,40 @@ First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
 \end{dmath}
 
 For \( \mu \ne 0 \) this can be written as a vector operator
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:440}
+\begin{aligned}
 \Be_n \int d^3 x T^{0 n}
-=
+&=
 -\inv{2}
 \int d^3 k \Bk
 \lr{
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
-}
-+
+} \\
+&\quad +
 \inv{2}
 \int d^3 k \Bk
 \lr{
   a_{\Bk} a_{\Bk}^\dagger
 + a_{\Bk}^\dagger a_{\Bk}
 }
+\end{aligned}
 \end{dmath}
 
 To get the desired result the time dependent terms have to be made to go away somehow.  Consider a spherical parameterization of the momentum space
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:460}
 \Bk = k \lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta },
 \end{dmath}
 
 Note that the volume element is
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:480}
 d^3 k = k^2 \sin\theta dk \wedge d\theta \wedge d\phi,
 \end{dmath}
-
 where \( k \in [0, \infty]\), \(\theta \in [0, \pi]\), and \( \phi \in [0, 2\pi] \).  If we map \( \Bk \rightarrow -\Bk \), the volume element becomes
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:500}
 d^3 k = (-k)^2 \sin\theta d(-k) \wedge d\theta \wedge d\phi,
 \end{dmath}
-
 over the same angular intervals, but \( k \in [-\infty, 0]\).  Flipping the sign of the time dependent operator products gives
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:520}
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
@@ -259,17 +254,13 @@ over the same angular intervals, but \( k \in [-\infty, 0]\).  Flipping the sign
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t },
 \end{dmath}
-
 which shows that this is an even function in \( \Bk \).  The even characteristics of the volume element and time dependent terms and the odd character of the momentum vector \( \Bk \) can be used to show that these terms integrate out to zero.  Let's compute the integral by averaging the momentum operator using both parameterization sign options.  First write
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:540}
 f(\Bk) =
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t },
 \end{dmath}
-
 so
-
 \begin{dmath}\label{eqn:noetherCurrentScalarField:560}
 \int d^3 k \Bk f(\Bk)
 =
@@ -300,7 +291,6 @@ f(-\Bk)
 }
 = 0,
 \end{dmath}
-
 so the momentum is reduced to
 \begin{dmath}\label{eqn:noetherCurrentScalarField:580}
 \Be_n \int d^3 x T^{0 n}
@@ -327,7 +317,6 @@ so the momentum is reduced to
 \end{dmath}
 
 An argument like that of \citep{peskin1995introduction} can be used to dismiss the unphysical infinity associated with the ground state energy level, leaving just
-
 \boxedEquation{eqn:noetherCurrentScalarField:600}{
 \Be_n \int d^3 x T^{0 n}
 =
