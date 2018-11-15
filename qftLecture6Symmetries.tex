@@ -1,0 +1,78 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\section{Switching gears: Symmetries.}
+\index{symmetries}
+
+The question is how to apply the CCR results to moving frames, which is done using Lorentz transformations.  Just like we know that the exponential of the Hamiltonian (times time) represents time translations, we will examine symmetries that relate results in different frames.
+
+\paragraph{Examples.}
+
+For scalar field(s) with action
+\begin{dmath}\label{eqn:qftLecture6:880}
+S = \int d^d x \LL(\phi^i, \partial_\mu \phi^i).
+\end{dmath}
+For example, we've been using our massive (Boson) real scalar field with Lagrangian density
+\begin{dmath}\label{eqn:qftLecture6:900}
+\LL = \inv{2} \partial_\mu \phi\partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi).
+\end{dmath}
+
+Internal symmetry example
+
+\begin{dmath}\label{eqn:qftLecture6:920}
+H = J \sum_{\expectation{n, n'}} \BS_n \cdot \BS_{n'},
+\end{dmath}
+where the sum means the sum over neighbouring indexes \( n, n' \) as sketched in
+\cref{fig:adacentSpinGrid:adacentSpinGridFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/adacentSpinGridFig1}{Neighbouring spin cells.}{fig:adacentSpinGrid:adacentSpinGridFig1}{0.3}
+
+Such a Hamiltonian is left invariant by the transformation \( \BS_n \rightarrow -\BS_n \) since the Hamiltonian is quadratic.
+
+Suppose that \( \phi \rightarrow -\phi\) is a symmetry (it leaves the Lagrangian unchanged).  Example
+
+\begin{dmath}\label{eqn:qftLecture6:940}
+\phi =
+\begin{bmatrix}
+\phi^1 \\
+\phi^2 \\
+\vdots \\
+\phi^n \\
+\end{bmatrix}
+\end{dmath}
+
+the Lagrangian
+\begin{dmath}\label{eqn:qftLecture6:960}
+\LL = \inv{2} \partial_\mu \phi^\T \partial^\mu \phi - \frac{m^2}{2} \phi^\T \phi - V(\phi^\T \phi).
+\end{dmath}
+If \( O \) is any \( n \times n \) orthogonal matrix, then it is symmetry since
+\begin{dmath}\label{eqn:qftLecture6:980}
+\phi^\T \phi \rightarrow \phi^\T O^\T O \phi = \phi^\T \phi.
+\end{dmath}
+
+O(2) model, HW, problem 2.  Example for complex \( \phi \)
+\begin{dmath}\label{eqn:qftLecture6:1000}
+\phi \rightarrow e^{i \phi} \phi,
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture6:1020}
+\phi = \frac{\psi_1 + i \psi_2}{\sqrt{2}}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture6:1040}
+\begin{bmatrix}
+\psi_1 \\
+\psi_2
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\cos\alpha & \sin\alpha \\
+-\sin\alpha & \cos\alpha
+\end{bmatrix}
+\begin{bmatrix}
+\psi_1 \\
+\psi_2
+\end{bmatrix}
+\end{dmath}
+
+%}
