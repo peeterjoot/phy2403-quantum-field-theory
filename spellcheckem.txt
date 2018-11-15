@@ -47,3 +47,4 @@ qftLukeProblemSet1Problem6.tex
 scalarFieldCreationOpCommutator.tex
 scalarFieldHamiltonian.tex
 usefulFormulas.tex
+qftLecture4CanonicalQuantization.tex

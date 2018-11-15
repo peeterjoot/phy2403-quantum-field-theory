@@ -88,7 +88,7 @@ S = \int d^d x \lr{ \LL(\phi, \partial_\mu \phi) },
 \end{dmath}
 and because action had dimensions of \( \Hbar \), so in natural units, it must be dimensionless, the Lagrangian density dimensions must be \( [d] \).  We will abuse language in QFT and call the Lagrangian density the Lagrangian.
 
-\section{\( d = 2 \).}
+\subsection{\( d = 2 \).}
 
 Because \( [\partial_\mu \phi \partial^\mu \phi ] = 2 \), the scalar field must be dimension zero, or in symbols
 \begin{dmath}\label{eqn:qftLecture4:120}
@@ -121,7 +121,7 @@ In QFT we are generally interested in the couplings that are measurable at long 
 
 Long distance physics in any dimension is described by the marginal and relevant couplings.  The irrelevant couplings die off at low energy.  In two dimensions, a priori, an infinite number of marginal and relevant couplings are possible.  2D is a bad place to live!
 
-\section{\( d = 3 \).}
+\subsection{\( d = 3 \).}
 
 Now we have
 \begin{dmath}\label{eqn:qftLecture4:200}
@@ -141,7 +141,7 @@ A 3D Lagrangian could have local terms such as
 where \( m, \mu, \mu'' \) all have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
 \( m, \mu, \mu'' \) are relevant, and \( \lambda \) marginal.  We stop at the sixth power, since any power after that will be irrelevant.
 
-\section{\( d = 4 \).}
+\subsection{\( d = 4 \).}
 
 Now we have
 \begin{dmath}\label{eqn:qftLecture4:260}
@@ -161,7 +161,7 @@ A 4D Lagrangian could have local terms such as
 where \( m, \mu \) have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
 \( m, \mu \) are relevant, and \( \lambda \) is marginal.
 
-\section{\( d = 5 \).}
+\subsection{\( d = 5 \).}
 
 Now we have
 \begin{dmath}\label{eqn:qftLecture4:320}
@@ -316,84 +316,3 @@ which is the wave equation (for a massless free field).  This is also called the
 \end{dmath}
 in a source free region.
 
-\section{Canonical quantization.}
-\index{canonical quantization}
-
-The harmonic oscillator described by
-\begin{dmath}\label{eqn:qftLecture4:740}
-\LL = \inv{2} \dot{q}^2 - \frac{\omega^2}{2} q^2,
-\end{dmath}
-which has solution \(\ddot{q} = - \omega^2 q\).
-With
-\begin{equation}\label{eqn:qftLecture4:760}
-p = \PD{\dot{q}}{\LL} = \dot{q},
-\end{equation}
-the Hamiltonian is given by
-\begin{dmath}\label{eqn:qftLecture4:780}
-H(p,q) = \evalbar{p \dot{q} - \LL}{\dot{q}(p, q)}
-= p p - \inv{2} p^2 + \frac{\omega^2}{2} q^2 = \frac{p^2}{2} + \frac{\omega^2}{2} q^2.
-\end{dmath}
-
-In QM we quantize by mapping Poisson brackets to commutators.
-\begin{dmath}\label{eqn:qftLecture4:800}
-\antisymmetric{\hatp}{\hatq} = -i
-\end{dmath}
-One way to represent is to say that states are \( \Psi(\hatq) \), a wave function, \( \hatq \) acts by \( q \)
-\begin{dmath}\label{eqn:qftLecture4:820}
-\hatq \Psi = q \Psi(q)
-\end{dmath}
-With
-\begin{dmath}\label{eqn:qftLecture4:840}
-\hatp = -i \PD{q}{},
-\end{dmath}
-so
-\begin{dmath}\label{eqn:qftLecture4:860}
-\antisymmetric{ -i \PD{q}{} } { q} = -i
-\end{dmath}
-
-\paragraph{Returning to the field Lagrangian.}
-
-Let's introduce an explicit space time split.  We'll write
-\begin{dmath}\label{eqn:qftLecture4:880}
-L = \int d^3 x \lr{
-\inv{2} (\partial_0 \phi(\Bx, t))^2 - \inv{2} \lr{ \spacegrad \phi(\Bx, t) }^2 - \frac{m^2}{2} \phi
-},
-\end{dmath}
-so that the action is
-\begin{dmath}\label{eqn:qftLecture4:900}
-S = \int dt L.
-\end{dmath}
-The dynamical variables are \( \phi(\Bx) \).  We define
-\begin{dmath}\label{eqn:qftLecture4:920}
-\pi(\Bx, t) = \frac{\delta L}{\delta (\partial_0 \phi(\Bx, t))}
-=
-\partial_0 \phi(\Bx, t)
-=
-\dot{\phi}(\Bx, t),
-\end{dmath}
-called the canonical momentum, or the momentum conjugate to \( \phi(\Bx, t) \).
-Why \( \delta \)?  Has to do with an implicit Dirac function to eliminate the integral?
-
-\begin{dmath}\label{eqn:qftLecture4:940}
-H
-= \int d^3 x \evalbar{\lr{ \pi(\bar{\Bx}, t) \dot{\phi}(\bar{\Bx}, t) - L }}{\dot{\phi}(\bar{\Bx}, t) = \pi(x, t) }
-= \int d^3 x \lr{ (\pi(\Bx, t))^2 - \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m}{2} \phi^2 },
-\end{dmath}
-or
-\begin{dmath}\label{eqn:qftLecture4:960}
-H
-= \int d^3 x \lr{ \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi(\Bx, t))^2 + \frac{m}{2} (\phi(\Bx, t))^2 }
-\end{dmath}
-
-In analogy to the momentum, position commutator in QM
-\begin{dmath}\label{eqn:qftLecture4:1000}
-\antisymmetric{\hat{p}_i}{\hat{q}_j} = -i \delta_{ij},
-\end{dmath}
-we ``quantize'' the scalar field theory by promoting \( \pi, \phi \) to operators and insisting that they also obey a commutator relationship
-\begin{dmath}\label{eqn:qftLecture4:980}
-\antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \deltathree(\Bx - \By).
-\end{dmath}
-Note that in this commutator, the fields are evaluated at different spatial points, but at the same time.
-
-%}
-%%%\EndArticle
