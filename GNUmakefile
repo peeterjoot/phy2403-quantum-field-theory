@@ -97,6 +97,7 @@ l18: qftLecture18.pdf
 p3: ProblemSet3.pdf
 p4: ProblemSet4.pdf
 q: QandA.pdf
+l: lukenotetypos.pdf
 
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem1.tex
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem2.tex
