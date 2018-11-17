@@ -37,31 +37,37 @@
 % \citep{jackson1975cew}
 % \citep{griffiths1999introduction}
 
-\begin{itemize}
-\item Page 8.  brace missing in last entry of the table: \( (Z boson \rightarrow (Z boson) \).
-\item Page 62. Third paragraph ``is and arbitrary'' \( \rightarrow \) ``is an arbitrary''.
-\item Page 62. Notation clarification: it looks like you are using \( \lambda_\mu \) as the four vector basis, and I don't see any reference to a four-vector basis notation prior to this (but may have missed it).  Isn't \( \gamma_\mu \) typically used for that when the basis is made explicit?
-\item Page 66. (V.8) looks like it has a sign error relative to (V.5) and should be:
-\begin{dmath*}
-\phi(x) = \phi_0(x) - i \int d^4 y\, D_R(x - y) \rho(y).
-\end{dmath*}
-Rationale:
-\begin{dmath*}
-\lr{ \partial_\mu \partial^\mu + \mu^2 }
-\phi(x) = 
-\lr{ \partial_\mu \partial^\mu + \mu^2 }
-\phi_0(x)
- - i \int d^4 y\, 
-\lr{ \partial_\mu \partial^\mu + \mu^2 }
-D_R(x - y) \rho(y)
-=
-0 
- - i \int d^4 y\, 
-(-i) \deltafour(x - y) \rho(y)
-=
-- \rho(y).
-\end{dmath*}
-\end{itemize}
+% Fixed in 2017 version:
+%%%\begin{itemize}
+%%%\item Page 8.  brace missing in last entry of the table: ``(Z boson'' \( \rightarrow \) ``(Z boson)''.
+%%%\item Page 62. Third paragraph ``is and arbitrary'' \( \rightarrow \) ``is an arbitrary''.
+%%%\item Page 62. Notation clarification: it looks like you are using \( \lambda_\mu \) as the four vector basis, and I don't see any reference to a four-vector basis notation prior to this (but may have missed it).  Isn't \( \gamma_\mu \) typically used for that when the basis is made explicit?
+%%%\item Page 63.  Second set of equations, a prime is missing on \( B_k \) in the commutator:
+%%%\begin{equation*}
+%%%\antisymmetric{A_k}{B_k} \rightarrow 
+%%%\antisymmetric{A_k}{B_k'}
+%%%\end{equation*}
+%%%\item Page 66. (V.8) looks like it has a sign error relative to (V.5) and should be:
+%%%\begin{dmath*}
+%%%\phi(x) = \phi_0(x) - i \int d^4 y\, D_R(x - y) \rho(y).
+%%%\end{dmath*}
+%%%Rationale:
+%%%\begin{dmath*}
+%%%\lr{ \partial_\mu \partial^\mu + \mu^2 }
+%%%\phi(x) = 
+%%%\lr{ \partial_\mu \partial^\mu + \mu^2 }
+%%%\phi_0(x)
+%%% - i \int d^4 y\, 
+%%%\lr{ \partial_\mu \partial^\mu + \mu^2 }
+%%%D_R(x - y) \rho(y)
+%%%=
+%%%0 
+%%% - i \int d^4 y\, 
+%%%(-i) \deltafour(x - y) \rho(y)
+%%%=
+%%%- \rho(y).
+%%%\end{dmath*}
+%%%\end{itemize}
 
 %}
 \EndArticle
