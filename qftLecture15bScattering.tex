@@ -1,0 +1,62 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\section{Scattering.}
+In QM we did lots of scattering problems as sketched in \cref{fig:qftLecture15b:qftLecture15bFig8},
+and were able to compute the reflected and transmitted wave functions and quantities such as the reflection and transmission coefficients
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig8}{Reflection and transmission of wave packets.}{fig:qftLecture15b:qftLecture15bFig8}{0.3}
+\begin{dmath}\label{eqn:qftLecture15b:440}
+\begin{aligned}
+R &= \frac
+{\Abs{ \Psi_{\text{ref}}}^2}
+{\Abs{ \Psi_{\text{in}}}^2} \\
+T &= \frac
+{\Abs{ \Psi_{\text{trans}}}^2}
+{\Abs{ \Psi_{\text{in}}}^2}.
+\end{aligned}
+\end{dmath}
+We'd like to consider scattering in some region of space with a non-zero potential, such as the scattering of a plane wave with known electron flux rate as sketched in
+\cref{fig:qftLecture15b:qftLecture15bFig9}.
+We can imagine that we have a detector capable of measuring the number of electrons with momentum \( \Bp_{\text{out}} \) per unit time.
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig9}{Plane wave scattering off a potential.}{fig:qftLecture15b:qftLecture15bFig9}{0.4}
+
+\makedefinition{Total cross section (X-section).}{dfn:qftLecture15b:460}{
+\begin{equation*}
+\sigma_{\text{total}}
+=
+\frac{
+\text{number of scattering events with \( \Bp_{\text{out}} \ne \Bk_{\text{in}} \) per unit time}
+}
+{
+\text{Flux of incoming particles}
+},
+\end{equation*}
+where the flux is the number of particles crossing a unit area in unit time.
+} % definition
+
+Units of the x-section are (with \( \hbar = c = 1 \))
+\begin{equation}\label{eqn:qftLecture15b:480}
+[\sigma] = \text{area} = \inv{M^2}.
+\end{equation}
+
+The concept of scattering cross section may not be new, as it can even be encountered in classical mechanics.  One such scenario is sketched in \cref{fig:qftLecture15b:qftLecture15bFig10} where the cross section is just the area
+\begin{dmath}\label{eqn:qftLecture15b:500}
+\sigma = \pi R^2.
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig10}{Classical scattering.}{fig:qftLecture15b:qftLecture15bFig10}{0.3}
+Other classical fields where cross section is encountered includes antenna theory (radar scattering profiles, ...).
+
+\makedefinition{Differential cross section.}{dfn:qftLecture15b:520}{
+\begin{equation*}
+\frac{d^3 \sigma}{dp_x dp_y dp_z} = \frac{
+\text{number of scattering events with \( \Bp_{\text{out}} \) between \( (\Bp, \Bp + \Delta \Bp )\)}
+}
+{
+\text{flux}
+}.
+\end{equation*}
+} % definition
+
+%}
