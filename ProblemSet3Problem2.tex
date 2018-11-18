@@ -45,5 +45,58 @@ TODO.
 \makeSubAnswer{}{qft:problemSet3:2e}
 TODO.
 \makeSubAnswer{}{qft:problemSet3:2f}
-TODO.
+The sum of the probabilities is easy to compute
+\begin{dmath}\label{eqn:ProblemSet3Problem2:20}
+\sum_{n = 0}^\infty P(n)
+=
+e^{-\lambda} \sum_{n = 0}^\infty \inv{n!} \lambda^n
+=
+e^{-\lambda} e^{\lambda}
+= 1.
+\end{dmath}
+The mean is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:40}
+\expectation{N}
+=
+\sum_{n = 0}^\infty n P(n)
+=
+e^{-\lambda} \sum_{n = 1}^\infty \frac{n }{n!} \lambda^n
+=
+e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{1 }{(n-1)!} \lambda^{n-1}
+=
+e^{-\lambda} \lambda e^{\lambda}
+=
+\lambda.
+\end{dmath}
+For the mean square we first compute
+\begin{dmath}\label{eqn:ProblemSet3Problem2:60}
+\expectation{N^2}
+\sum_{n = 0}^\infty n^2 P(n)
+=
+e^{-\lambda} \sum_{n = 1}^\infty \frac{n^2 }{n!} \lambda^n
+=
+e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{n }{(n-1)!} \lambda^{n-1}
+=
+e^{-\lambda} \lambda \sum_{n = 0}^\infty \frac{n+1 }{n!} \lambda^{n}
+=
+e^{-\lambda} \lambda \lr{ e^\lambda + \sum_{n = 0}^\infty \frac{n}{n!} \lambda^{n} }
+=
+\lambda +
+e^{-\lambda} \lambda^2 e^{\lambda}
+=
+\lambda + \lambda^2,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem2:80}
+\expectation{(N - \expectation{N})^2}
+=
+\expectation{N^2 - 2 N \expectation{N} + \expectation{N}^2}
+=
+\expectation{N^2} - 2 \expectation{N}^2 + \expectation{N}^2
+=
+\expectation{N^2} - \expectation{N}^2
+=
+\lambda + \lambda^2 - \lambda^2
+= \lambda.
+\end{dmath}
 }

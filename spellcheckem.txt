@@ -48,3 +48,4 @@ scalarFieldCreationOpCommutator.tex
 scalarFieldHamiltonian.tex
 usefulFormulas.tex
 qftLecture4CanonicalQuantization.tex
+qftLecture11ExternalSources.tex
