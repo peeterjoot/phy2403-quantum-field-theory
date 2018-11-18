@@ -47,7 +47,40 @@ Show that the integrals over the momenta of the emitted ``photons" in $\langle N
 
 \makeanswer{qft:problemSet3:3}{
 \makeSubAnswer{}{qft:problemSet3:3a}
-TODO.
+Our Fourier transform is
+\begin{dmath}\label{eqn:ProblemSet3Problem3:20}
+\tilde{j}(p)
+=
+\int d^4 y e^{i p \cdot y} j(y)
+=
+e \int d^4 y e^{i p \cdot y} \int ds \deltafour(y - y(x))
+=
+e \int_0^\infty ds \int d^4 y e^{i p \cdot y} \deltafour(y - \ifrac{p_\txtf s}{M})
++
+e \int_{-\infty}^0 ds \int d^4 y e^{i p \cdot y} \deltafour(y - \ifrac{p_i s}{M}).
+\end{dmath}
+Writing \( p \cdot p_f = p_\mu p_f^\mu \) and \( p \cdot p_i = p_\mu p_i^\mu \), and
+using the half delta function representation from Hw2, this reduces to
+\begin{dmath}\label{eqn:ProblemSet3Problem3:40}
+\tilde{j}(p)
+=
+e \int_0^\infty ds e^{i p \cdot \ifrac{p_f s}{M} - \epsilon s}
++
+e \int_{-\infty}^0 ds e^{i p \cdot \ifrac{p_i s}{M} + \epsilon s}
+=
+e
+\evalrange{
+\frac{e^{i p \cdot p_f s/M - \epsilon s}}{ i p \cdot p_f/M - \epsilon }
+}{0}{\infty}
++
+e
+\evalrange{
+\frac{e^{i p \cdot p_i s / M + \epsilon s}}{ i p \cdot p_i/M + \epsilon }
+}{-\infty}{0}
+\rightarrow
+i e M \lr{ \inv{p \cdot p_f} - \inv{p \cdot p_i} },
+\end{dmath}
+as desired.
 \makeSubAnswer{}{qft:problemSet3:3b}
 TODO.
 }
