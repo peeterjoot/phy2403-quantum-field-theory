@@ -227,11 +227,16 @@ How do we compute the variation?
 
 If we are explicit about the boundary term, we write it as
 \begin{dmath}\label{eqn:qftLecture4:480}
-\int dt d^3 \Bx \partial_t \lr{ \PD{(\partial_t \phi)}{\LL} \delta \phi }
-- \spacegrad \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi }
-=
+\begin{aligned}
+\int &dt d^3 \Bx \lr{
+\partial_t 
+\lr{ \PD{(\partial_t \phi)}{\LL} \delta \phi }
+- \spacegrad \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi } }
+\\
+&=
 \int d^3 \Bx \evalrange{ \PD{(\partial_t \phi)}{\LL} \delta \phi }{t = -T}{t = T}
 - \int dt d^2 \BS \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi }.
+\end{aligned}
 \end{dmath}
 but \( \delta \phi = 0 \) at \( t = \pm T \) and also at the spatial boundaries of the integration region.
 
