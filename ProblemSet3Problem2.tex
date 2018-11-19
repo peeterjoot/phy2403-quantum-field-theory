@@ -114,7 +114,7 @@ as desired.
 
 \makeSubAnswer{}{qft:problemSet3:2c}
 The diagram for the integral just computed is a single line segment as sketched in \cref{fig:ps3OneEdgeDiagram:ps3OneEdgeDiagramFig3}.
-\imageFigure{../figures/phy2403-quantum-field-theory/ps3OneEdgeDiagramFig3}{\( j^2 \) diagram.}{fig:ps3OneEdgeDiagram:ps3OneEdgeDiagramFig3}{0.15}
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3OneEdgeDiagramFig3}{\( j^2 \) diagram.}{fig:ps3OneEdgeDiagram:ps3OneEdgeDiagramFig3}{0.1}
 The diagram for the \( j^4 \) integrals are sketched in
 \cref{fig:ps3jfourthDiagram:ps3jfourthDiagramFig4}.
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3jfourthDiagramFig4}{\( j^4 \) diagrams.}{fig:ps3jfourthDiagram:ps3jfourthDiagramFig4}{0.2}
@@ -122,14 +122,17 @@ After that the diagrams get messier to enumerate.  We can see the pattern by con
 \begin{dmath}\label{eqn:ProblemSet3Problem2:220}
 \frac{i^6}{3!} \inv{6!} \binom{6}{2} \binom{4}{2}
 =
-\frac{(-1)^3}{3!} \inv{6!} \frac{6!}{4!2!} \frac{4!}{2!2!}
+\frac{(-1)^3}{3!} \inv{\cancel{6!}} \frac{\cancel{6!}}{\cancel{4!}2!} \frac{\cancel{4!}}{2!2!}
 =
 \frac{(-1)^3}{3! 2^3}.
 \end{dmath}
-Here the \( 3! \) downstairs is to compensate for the fact that there are \( 3 \times 2 \) possible orderings of each distinct pair of endpoints.  Example: \( \setlr{ ab, cd, ef }, \setlr{ ab, ef, cd}, \setlr{ cd, ab, ef }, \setlr{ cd, ef, ab }, \setlr{ ef, ab, cd }, \setlr{ ef, cd, ab } \).
+Here the \( 3! \) downstairs is to compensate for the fact that there are \( 3 \times 2 \) possible orderings of each distinct pair of endpoints.  Example:
+\begin{dmath}\label{eqn:ProblemSet3Problem2:280}
+ \setlr{ ab, cd, ef }, \setlr{ ab, ef, cd}, \setlr{ cd, ab, ef }, \setlr{ cd, ef, ab }, \setlr{ ef, ab, cd }, \setlr{ ef, cd, ab }.
+\end{dmath}
 The pattern of perfect cancellation is clear.  The \( j^{2n} \) order integral is
 \begin{dmath}\label{eqn:ProblemSet3Problem2:240}
-\frac{(-1)^n}{n!} \inv{(2n)!} \frac{2n!}{2n -2!2!} \cdots \frac{4!}{2!2!} \lambda^n
+\frac{(-1)^n}{n!} \inv{(2n)!} \frac{(2n)!}{(2n -2)!2!} \cdots \frac{4!}{2!2!} \lambda^n
 =
 \frac{(-\lambda/2)^n}{n!},
 \end{dmath}
@@ -141,7 +144,7 @@ P(0) =
 \frac{(-\lambda/2)^n}{n!}
 }^2
 =
-(e^{-\lambda/2})^2
+\lr{ e^{-\lambda/2} }^2
 =
 e^{-\lambda},
 \end{dmath}
