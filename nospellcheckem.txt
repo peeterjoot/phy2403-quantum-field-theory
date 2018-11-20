@@ -1,0 +1,21 @@
+ProblemSet1.tex
+ProblemSet2.tex
+ProblemSet3.tex
+ProblemSet4.tex
+QandA.tex
+appendixchapters.tex
+backmatter.tex
+chapters.tex
+classicthesis-config.tex
+currentBookCopyright.tex
+phy2403.tex
+lukenotetypos.tex
+# not ready:
+ProblemSet3Problem2.tex
+ProblemSet3Problem3.tex
+ProblemSet4Problem1.tex
+ProblemSet4Problem2.tex
+ProblemSet4Problem3.tex
+ProblemSet4Problem4.tex
+qftLecture18.tex
+

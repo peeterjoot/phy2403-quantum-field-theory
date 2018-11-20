@@ -16,14 +16,18 @@ nonhomoKGhamiltonian.tex
 qftLecture1.tex
 qftLecture10.tex
 qftLecture11.tex
+qftLecture11ExternalSources.tex
 qftLecture12.tex
 qftLecture13.tex
 qftLecture13CoherentStates.tex
+qftLecture13FeynmansGreenFunction.tex
 qftLecture13PoleShifting.tex
 qftLecture14.tex
 qftLecture15.tex
 qftLecture15Problems.tex
 qftLecture15b.tex
+qftLecture15bScattering.tex
+qftLecture16.tex
 qftLecture17.tex
 qftLecture2.tex
 qftLecture2LorentzTransformation.tex
@@ -31,6 +35,7 @@ qftLecture3.tex
 qftLecture3ClassicalFieldTheory.tex
 qftLecture3ClassicalFieldTheoryProblems.tex
 qftLecture4.tex
+qftLecture4CanonicalQuantization.tex
 qftLecture5.tex
 qftLecture6.tex
 qftLecture6Symmetries.tex
@@ -47,6 +52,3 @@ qftLukeProblemSet1Problem6.tex
 scalarFieldCreationOpCommutator.tex
 scalarFieldHamiltonian.tex
 usefulFormulas.tex
-qftLecture4CanonicalQuantization.tex
-qftLecture11ExternalSources.tex
-qftLecture15bScattering.tex
