@@ -1,0 +1,35 @@
+
+
+
+
+
+<a href="http://peeterjoot.com/archives/math2016/scalarTheoryQuestion.pdf">[Click here for a PDF of this post with nicer formatting and figures if the post had any (especially if my latex to wordpress script has left FORMULA DOES NOT PARSE errors.)]</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In class (lecture 5) when we calculated the time evolution of $ \pi(x,t) $ for the scalar theory, one of the commutator terms we evaluated was
+
+$$\begin{aligned}\frac{i}{2} \int d^3 y \,\left[{ \boldsymbol{\nabla}_y \phi(\mathbf{y}, t) \cdot \boldsymbol{\nabla}_\mathbf{y}\phi(\mathbf{y}, t) },{\pi(\mathbf{x}, t)}\right] &=\frac{i}{2} \int d^3 y \,\boldsymbol{\nabla}_y \phi(\mathbf{y}, t) \cdot \boldsymbol{\nabla}_\mathbf{y}\left( { \phi(\mathbf{y}, t) \pi(\mathbf{x}, t) } \right) -\frac{i}{2} \int d^3 y \,\pi(\mathbf{x}, t) \boldsymbol{\nabla}_y \phi(\mathbf{y}, t) \cdot \boldsymbol{\nabla}_\mathbf{y}\phi(\mathbf{y}, t) \\ &=\frac{i}{2} \int d^3 y \,\boldsymbol{\nabla}_y \phi(\mathbf{y}, t) \cdot \boldsymbol{\nabla}_\mathbf{y}\left( { \pi(\mathbf{x}, t) \phi(\mathbf{y}, t) + i \delta^3(\mathbf{x} - \mathbf{y})} \right) -\frac{i}{2} \int d^3 y \,\pi(\mathbf{x}, t) \boldsymbol{\nabla}_y \phi(\mathbf{y}, t) \cdot \boldsymbol{\nabla}_\mathbf{y}\phi(\mathbf{y}, t) \\ &=\cdots&=- \int d^3 y \,\boldsymbol{\nabla}_y \delta^3(\mathbf{x} - \mathbf{y}) \cdot \boldsymbol{\nabla}_\mathbf{y}\phi(\mathbf{y}, t) \\ &=- \int d^3 y \left( {\boldsymbol{\nabla}_y \cdot \left( { \delta^3(\mathbf{x} - \mathbf{y}) \boldsymbol{\nabla}_\mathbf{y}\phi(\mathbf{y}, t) } \right)-\delta^3(\mathbf{x} - \mathbf{y}) \boldsymbol{\nabla}_\mathbf{y}^2 \phi(\mathbf{y}, t) } \right) \\ &=\boldsymbol{\nabla}^2 \phi(\mathbf{x}, t)-\int dA_y\, \delta^3(\mathbf{x} - \mathbf{y}) \frac{\partial {\phi(\mathbf{y}, t)}}{\partial {n}}.\end{aligned}$$
+
+I can't think of a good justification, other than hand waving, for this boundary integral to vanish, since we aren't integrating the delta function over a volume where it is well behaved?
+
+
+<h1>References</h1>

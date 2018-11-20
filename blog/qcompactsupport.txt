@@ -1,0 +1,8 @@
+I'm not really familiar with the lingo you are using (i.e. ``compact support'', and ``no support at infinity''), but it seems like you are getting at something like:
+
+The result of the integral has meaning in the following context, where $$f(\mathbf{y})$$ is a well behaved test function (square integrable over the volume)
+
+$$\int dr \int d\Omega \delta^3(\mathbf{x} - \mathbf{y}) \frac{\partial {\phi(\mathbf{y})}}{\partial {r}} f(\mathbf{y})=\frac{\partial {\phi(\mathbf{x})}}{\partial {r}} f(\mathbf{x}),$$
+where I've assumed an infinite spherical volume parameterization.
+
+However, for this to be zero for all $$f(\mathbf{x})$$ wouldn't we have to require that the radial derivative of the operator $$\phi(\mathbf{x})$$ is always zero?

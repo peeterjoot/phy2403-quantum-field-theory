@@ -1,0 +1,8 @@
+I was reviewing the translation operator material for ps3 p4.1, and noticed that way back in lecture 8, it was claimed that
+$$P^k = \int d^3 x \hat{\pi} \partial^k \hat{\phi} = \int \frac{d^3 p}{(2\pi)^3} p^k a_\mathbf{p}^\dagger a_\mathbf{p}.$$
+This is clearly normal ordered, and 
+which is clearly normal ordered.
+if I compute this explicitly I confirm this.  However, unlike the similar expansion for the Hamiltonian, where all the time dependent terms cancel, I don't see that in my expansion in this case (unless I made an error).  My end result was:
+$$P^k =\frac{1}{{2}} \int \frac{d^3 p }{(2 \pi)^3} p^k\left( {     a_\mathbf{p}^\dagger a_\mathbf{p}   + a_\mathbf{p} a_\mathbf{p}^\dagger   - a_\mathbf{p} a_{-\mathbf{p}} e^{- 2 i \omega_\mathbf{p} t}   - a_\mathbf{p}^\dagger a_{-\mathbf{p}}^\dagger e^{2 i \omega_\mathbf{p} t}} \right).$$
+
+What is the rationale for ignoring those time dependent terms?

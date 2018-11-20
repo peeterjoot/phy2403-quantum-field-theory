@@ -1,0 +1,4 @@
+PHY2403H Quantum Field Theory.  Lecture 15b: Wick's theorem, vacuum expectation, Feynman diagrams, \(\phi^4\) interaction, tree level diagrams, scattering, cross section, differential cross section.  Taught by Prof.\ Erich Poppitz
+
+<a href="http://peeterjoot.com/archives/math2018//qftLecture15b.pdf">[Here are my notes for the second half of last wednesday's lecture]</a>.  Because the simplewick latex package is required to format these meaningfully, and that's not available in wordpress latex, I'm not going to attempt to make a web viewable version.
+

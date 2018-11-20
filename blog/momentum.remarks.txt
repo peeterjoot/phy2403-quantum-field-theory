@@ -1,0 +1,17 @@
+A: Nope.... All I can say is weren't careful enough when obtaining those terms. A conserved quantity shouldn't depend on time.
+
+Q: I don't see any errors: http://peeterjoot.com/archives/math2018/momentum.pdf
+
+however, why do you say this is a conserved quantity?  It's not a four vector like a Noether current jμ which satisfies ∂μjμ=0.
+
+A: Sorry at the moment I have no time to check, but indeed this calculation requires extra care. Anybody?
+
+(It is a conserved charge, Pi=∫d3xT0i, so you must have made a mistake or Noether was wrong!)
+
+Q: But doesn't Noether says that ∂μT0μ=0 is zero, not that ∂kT0k=0?
+
+A: Please stop pestering me and review the argument for charge conservation (integrate over beer can etc.). Really no time (preparing some stuff for next week) will ignore piazza for the time being. j
+
+R: Okay, that's actually helpful.
+
+Assuming $$T^{00}$$ vanishes at $$\pm T, T \rightarrow \infty$$, then the beer can argument shows that $$ \mathbf{P} = \int d^3 x T^{0k} $$ is conserved.  In addition to that the time dependent terms are killed by virtue of the Riemann–Lebesgue lemma, so only the non-time dependent portion of $$ \mathbf{P} $$ matters from a conserved quantity point of view.
