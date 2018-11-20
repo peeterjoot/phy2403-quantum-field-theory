@@ -35,7 +35,26 @@ Show that $\sum\limits_{n=0}^\infty P(n) = 1$ and that $\langle N \rangle = \sum
 
 \makeanswer{qft:problemSet3:2}{
 \makeSubAnswer{}{qft:problemSet3:2a}
-TODO.
+The amplitude for a transition for the evolution of an initial state \( \ket{i} \) to a final state \( \ket{f} \) is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:720}
+\bra{f} U \ket{i}
+=
+\bra{f} T e^{-i \int dt H_I(t) } \ket{i}
+\end{dmath}
+Given the ground state \( \ket{0} \) for the system before the interaction takes effect, the amplitude for production of particles with momenta \( \Bk_1, \cdots \Bk_n \) is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:740}
+\bra{\Bk, \cdots \Bk_n}
+T e^{-i \int dt \int d^3 x (-j(x) \phi(x) } \ket{0}
+=
+\bra{\Bk, \cdots \Bk_n}
+T e^{i \int d^4 x j(x) \phi(x) } \ket{0}.
+\end{dmath}
+Similarly, the amplitude for a final state that contains no particles is just
+\begin{dmath}\label{eqn:ProblemSet3Problem2:760}
+\bra{0} T e^{i \int d^4 x j(x) \phi(x) } \ket{0}.
+\end{dmath}
+The absolute square of this amplitude is \cref{p1}, the probability that no particles are created.
+
 \makeSubAnswer{}{qft:problemSet3:2b}
 Expanding matrix element in powers of \( j \) we have
 \begin{dmath}\label{eqn:ProblemSet3Problem2:100}
@@ -118,7 +137,7 @@ The diagram for the integral just computed is a single line segment as sketched 
 The diagram for the \( j^4 \) integrals are sketched in
 \cref{fig:ps3jfourthDiagram:ps3jfourthDiagramFig4}.
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3jfourthDiagramFig4}{\( j^4 \) diagrams.}{fig:ps3jfourthDiagram:ps3jfourthDiagramFig4}{0.2}
-After that the diagrams get messier to enumerate.  We can see the pattern by considering a non-trivial example such as the \( j^6 \) integral.  For that each diagram has three edges, where all possible combinations \( ab, ac, ad, ae, af, bc, bd, be, bf, cd, ce, cf, de, df, ef \) are found for the ``first'' edge in each diagram.  This is a total of \( \binom{6}{2} = 15 \) edges.  For each such diagram, there are \( \binom{4}{2} \) choices for the next edge in the diagram (example: \( ab, cd, ef \) would be one diagram). The coefficent of this integral is therefore
+After that the diagrams get messier to enumerate.  We can see the pattern by considering a non-trivial example such as the \( j^6 \) integral.  For that each diagram has three edges, where all possible combinations \( ab, ac, ad, ae, af, bc, bd, be, bf, cd, ce, cf, de, df, ef \) are found for the ``first'' edge in each diagram.  This is a total of \( \binom{6}{2} = 15 \) edges.  For each such diagram, there are \( \binom{4}{2} \) choices for the next edge in the diagram (example: \( ab, cd, ef \) would be one diagram). The coefficient of this integral is therefore
 \begin{dmath}\label{eqn:ProblemSet3Problem2:220}
 \frac{i^6}{3!} \inv{6!} \binom{6}{2} \binom{4}{2}
 =
@@ -151,51 +170,267 @@ e^{-\lambda},
 as desired.
 
 \makeSubAnswer{}{qft:problemSet3:2d}
-TODO.
+The probability for a single particle of momentum \( \Bk \) is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:300}
+P_\Bk
+=
+\Abs{ \bra{0} T a_\Bk e^{i \int d^4 x j(x) \phi(x)} \ket{0} }^2
+=
+\sum_{n,m = 1}^\infty \frac{ i^n (-i)^m }{ n! m! }
+\bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^n \ket{0}
+\lr{ \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^m \ket{0} }^\dagger
+=
+\sum_{r,s = 1}^\infty \frac{ i^{2 r + 1} (-i)^{2 s + 1} }{ (2r + 1)! (2 s + 1)! }
+\bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^{2 r + 1} \ket{0}
+\lr{ \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^{2 s + 1} \ket{0} }^\dagger
+,
+\end{dmath}
+where we've accounted for the fact that these matrix elements are zero for any even powers \( m, n \).
+
+For \( n = 1 \) we want to evaluate
+\begin{dmath}\label{eqn:ProblemSet3Problem2:320}
+\bra{0}
+T a_\Bk \int d^4 x j(x) \phi(x)
+\ket{0},
+\end{dmath}
+which has the diagram \cref{fig:ps3Problem3d:ps3Problem3dFig1}, which is
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3Problem3dFig1}{\( n = 1 \) diagram.}{fig:ps3Problem3d:ps3Problem3dFig1}{0.1}
+\begin{dmath}\label{eqn:ProblemSet3Problem2:340}
+\bra{0}
+T a_\Bk \int d^4 x j(x) \phi(x)
+\ket{0}
+=
+\contraction{\int d^4 x j(x) }{a}{{}_\Bk }{\phi}
+\int d^4 x j(x) a_\Bk \phi(x)
+=
+\int d^4 x j(x) e^{i k \cdot x}
+=
+j^\conj(k).
+\end{dmath}
+The next diagram is sketched in \cref{fig:ps3Problem3d:ps3Problem3dFig2}, which, temporarily ignoring symmetry factors, gives
+\begin{dmath}\label{eqn:ProblemSet3Problem2:360}
+\bra{0}
+T a_\Bk \int d^4 a d^4 b d^4 c j(a) \phi(a) j(b) \phi(b) j(c) \phi(c)
+\ket{0}
+=
+\int d^4 a d^4 b d^4 c j(a) e^{i k \cdot a} D_F(b - c) j(b) j(c)
+=
+j^\conj(k) \lambda
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3Problem3dFig2}{\( n = 3 \) diagrams.}{fig:ps3Problem3d:ps3Problem3dFig2}{0.15}
+To compute the symmetry factors consider the \( n = 5 \) diagram sketched in
+\cref{fig:ps3Problem3d:ps3Problem3dFig3},
+which is instructive.
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3Problem3dFig3}{\( n = 5 \) diagrams.}{fig:ps3Problem3d:ps3Problem3dFig3}{0.4}
+We have 5 ways to contract with the first \( \phi \), and \( \binom{4}{2} \) diagrams for each such selection, which has a \( 2! \) redundancy factor since each pair of nodes (say \( bc, de \)) can be ordered in either order.  The symmetry factor for \( n = 5 = 2 (2) + 1 \) is therefore
+\begin{dmath}\label{eqn:ProblemSet3Problem2:380}
+\inv{3!} 5 \times \binom{4}{2}
+=
+\inv{3!} 5 \times \frac{4!}{2^2}
+\end{dmath}
+For \( n = 7 \) that factor is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:400}
+\inv{3!} 7 \times \binom{6}{2} \binom{4}{2}
+=
+\inv{3!} 7 \times \frac{6!}{2^3},
+\end{dmath}
+and in general for \( n = 2 r + 1 \)
+\begin{dmath}\label{eqn:ProblemSet3Problem2:420}
+\inv{r!} (2 r + 1 ) \times \frac{(2r)!}{2^r}.
+\end{dmath}
+This gives
+\begin{dmath}\label{eqn:ProblemSet3Problem2:440}
+\inv{(2 r + 1)!}
+\bra{0}
+T a_\Bk \lr{ \int d^4 s j(x) \phi(x) }^{2 r + 1}
+\ket{0}
+=
+\inv{r!} \frac{2 r + 1 }{(2 r + 1)!} \times \frac{(2r)!}{2^r} j^\conj(k) \lambda^r
+=
+\inv{r!} j^\conj(k) \lr{\frac{\lambda}{2}}^r.
+\end{dmath}
+Plugging this into \cref{eqn:ProblemSet3Problem2:300} we find
+\begin{dmath}\label{eqn:ProblemSet3Problem2:460}
+P_\Bk
+=
+\Abs{j(k)}^2
+\sum_{r,s = 1}^\infty \frac{ i^{2 r + 1} (-i)^{2 s + 1} }{ r!s! }
+\lr{\frac{\lambda}{2}}^{r + s}
+=
+\Abs{j(k)}^2
+\sum_{r,s = 1}^\infty \frac{ i^{2 (r + s + 1)} (-1)^{2 s + 1} }{ r!s! }
+\lr{\frac{\lambda}{2}}^{r + s}
+=
+\Abs{j(k)}^2
+\sum_{r,s = 1}^\infty \frac{ (-1)^{r + s} }{ r!s! }
+\lr{\frac{\lambda}{2}}^{r + s}
+=
+\Abs{j(k)}^2
+\lr{ e^{-\lambda/2} }^2
+=
+\Abs{j(k)}^2 e^{-\lambda}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet3:2e}
-TODO.
+Summing \cref{eqn:ProblemSet3Problem2:460} over all momentum states, we find the probability to create one particle is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:480}
+P(1)
+= \int \frac{d^3 k}{(2 \pi)^3} \inv{2 \omega_\Bk}
+\Abs{j(k)}^2 e^{-\lambda}
+=
+\lambda e^{-\lambda}.
+\end{dmath}
+
+For \( P(2) \) we want
+\begin{dmath}\label{eqn:ProblemSet3Problem2:500}
+P(2) = \inv{2!} \int \frac{d^3 k d^3 p}{(2 \pi)^6 2 \omega_\Bk 2 \omega_\Bp}
+\Abs{
+\bra{0} a_\Bk a_\Bp T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
+}^2,
+\end{dmath}
+where an inverse \( 2! \) factor has been added for all the possible orderings of the annihilation operators.
+The zero and first order terms in the matrix element \( \bra{0} a_\Bk a_\Bp T e^{i \int d^4 x j(x) \phi(x)} \ket{0} \) are zero.  After this we want to compute all the contractions of
+\begin{dmath}\label{eqn:ProblemSet3Problem2:520}
+\frac{i^2}{2!} a_\Bk a_\Bp \int d^4 x d^4 y j_x \phi_x j_y \phi_y,
+\end{dmath}
+which have diagrams sketched in \cref{fig:ps3p2e:ps3p2eFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3p2eFig1}{\( n = 2 \) diagrams.}{fig:ps3p2e:ps3p2eFig1}{0.1}
+The symmetry factor (times the leading inverse factorial) is \( 2! \), so the leading term is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:540}
+2! \times \frac{i^2}{2!} \int d^4 x d^4 y e^{i k \cdot x + i p \cdot y } j(x) j(y)
+=
+-j^\conj(k) j^\conj(p).
+\end{dmath}
+For \( n = 4 \) the diagrams are sketched in \cref{fig:ps3p2e:ps3p2eFig2}.  The coefficient symmetry factor is \( 2 \times \binom{4}{2} \), so the next order term in the matrix element is
+\begin{dmath}\label{eqn:ProblemSet3Problem2:560}
+\binom{4}{2} \times (2!) \times
+\frac{i^4}{4!} \int d^4 a d^4 b d^4 c d^4 d e^{i k \cdot a + i p \cdot b } j(a) j(b) D_F(c - d)
+=
+j^\conj(k) j^\conj(p) \frac{\lambda}{2}.
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3p2eFig2}{\( n = 4 \) diagrams.}{fig:ps3p2e:ps3p2eFig2}{0.2}
+For \( n = 2 r \) we have
+\begin{dmath}\label{eqn:ProblemSet3Problem2:580}
+(-1)^r 2 \inv{(2r)!} \binom{2 r}{2} \cdots \binom{4}{2} j^\conj(k) j^\conj(p) \lambda^r
+=
+\inv{(r-1)!} \lr{ \frac{-\lambda}{2}}^r
+j^\conj(k) j^\conj(p)
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem2:600}
+\bra{0} a_\Bk a_\Bp T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
+=
+-j^\conj(k) j^\conj(p) e^{-\lambda/2}.
+\end{dmath}
+Plugging back into \cref{eqn:ProblemSet3Problem2:500} we have
+\begin{dmath}\label{eqn:ProblemSet3Problem2:620}
+P(2) = \inv{2!} \int \frac{d^3 k d^3 p}{(2 \pi)^6 2 \omega_\Bk 2 \omega_\Bp}
+\lr{ -j^\conj(k) j^\conj(p) e^{-\lambda/2} }
+\lr{ j(k) j(p) e^{-\lambda/2} }
+=
+\inv{2!} \lambda^2 e^{-\lambda}.
+\end{dmath}
+We are left to generalize this to \( n > 2 \).  Considering the first couple diagrams for \( n = 3 \) as sketched in
+\cref{fig:ps3p2e:ps3p2eFig3},
+exposes the pattern, namely
+\begin{dmath}\label{eqn:ProblemSet3Problem2:640}
+\bra{0} a_\Bk a_\Bp a_\Bq T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
+=
+3! \frac{i^3}{3!} j^\conj(k) j^\conj(p) j^\conj(q)
++
+3! \binom{5}{3} \frac{i^5}{5!} j^\conj(k) j^\conj(p) j^\conj(q) \lambda
++
+\cdots
+=
+i^3 j^\conj(k) j^\conj(p) j^\conj(q) e^{-\lambda/2}.
+\end{dmath}
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3p2eFig3}{\( n = 3, 5 \) diagrams for three particle creation.}{fig:ps3p2e:ps3p2eFig3}{0.3}
+The total probability is therefore
+\begin{dmath}\label{eqn:ProblemSet3Problem2:660}
+P(3)
+=
+\inv{3!} \int \frac{d^3 k d^3 p d^3 q}{(2 \pi)^9} \inv{8 \omega_\Bk \omega_\Bp \omega_\Bq}
+\Abs{ i^3 j^\conj(k) j^\conj(p) j^\conj(q) e^{-\lambda/2} }^2
+=
+\inv{3!} \lambda^3 e^{-\lambda}.
+\end{dmath}
+For \( m \) particles the matrix element expands as
+\begin{dmath}\label{eqn:ProblemSet3Problem2:680}
+\bra{0} a_{\Bk_1} \cdots a_{\Bk_m} T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
+=
+m! \times \frac{i^m}{m!} j^\conj(k_1) \cdots j^\conj(k_m)
++
+m! \times \frac{i^{m+2}}{(m+2)!} \binom{m+2}{m} j^\conj(k_1) \cdots j^\conj(k_m) \lambda
++
+m! \times \frac{i^{m+4}}{(m+4)!} \binom{m+4}{m} \binom{m+2}{m} j^\conj(k_1) \cdots j^\conj(k_m) \lambda^2
++ \cdots
+=
+i^m
+j^\conj(k_1) \cdots j^\conj(k_m) e^{-\lambda/2},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem2:700}
+P(m) = \inv{m!}
+\int
+\frac{d^3 k_1}{(2\pi)^3 2 \omega_{\Bk_1} }
+\cdots
+\frac{d^3 k_m}{(2\pi)^3 2 \omega_{\Bk_m} }
+\Abs{
+i^m
+j^\conj(k_1) \cdots j^\conj(k_m) e^{-\lambda/2}
+}^2
+=
+\inv{m!} \lambda^m e^{-\lambda}.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet3:2f}
 The sum of the probabilities is easy to compute
-\begin{dmath}\label{eqn:ProblemSet3Problem2:20}
+\begin{equation}\label{eqn:ProblemSet3Problem2:20}
+\begin{aligned}
 \sum_{n = 0}^\infty P(n)
-=
-e^{-\lambda} \sum_{n = 0}^\infty \inv{n!} \lambda^n
-=
-e^{-\lambda} e^{\lambda}
-= 1.
-\end{dmath}
+&=
+e^{-\lambda} \sum_{n = 0}^\infty \inv{n!} \lambda^n \\
+&=
+e^{-\lambda} e^{\lambda} \\
+&= 1.
+\end{aligned}
+\end{equation}
 The mean is
-\begin{dmath}\label{eqn:ProblemSet3Problem2:40}
+\begin{equation}\label{eqn:ProblemSet3Problem2:40}
+\begin{aligned}
 \expectation{N}
-=
-\sum_{n = 0}^\infty n P(n)
-=
-e^{-\lambda} \sum_{n = 1}^\infty \frac{n }{n!} \lambda^n
-=
-e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{1 }{(n-1)!} \lambda^{n-1}
-=
-e^{-\lambda} \lambda e^{\lambda}
-=
+&=
+\sum_{n = 0}^\infty n P(n) \\
+&=
+e^{-\lambda} \sum_{n = 1}^\infty \frac{n }{n!} \lambda^n \\
+&=
+e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{1 }{(n-1)!} \lambda^{n-1} \\
+&=
+e^{-\lambda} \lambda e^{\lambda} \\
+&=
 \lambda.
-\end{dmath}
+\end{aligned}
+\end{equation}
 For the mean square we first compute
-\begin{dmath}\label{eqn:ProblemSet3Problem2:60}
+\begin{equation}\label{eqn:ProblemSet3Problem2:60}
+\begin{aligned}
 \expectation{N^2}
 \sum_{n = 0}^\infty n^2 P(n)
-=
-e^{-\lambda} \sum_{n = 1}^\infty \frac{n^2 }{n!} \lambda^n
-=
-e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{n }{(n-1)!} \lambda^{n-1}
-=
-e^{-\lambda} \lambda \sum_{n = 0}^\infty \frac{n+1 }{n!} \lambda^{n}
-=
-e^{-\lambda} \lambda \lr{ e^\lambda + \sum_{n = 0}^\infty \frac{n}{n!} \lambda^{n} }
-=
+&=
+e^{-\lambda} \sum_{n = 1}^\infty \frac{n^2 }{n!} \lambda^n \\
+&=
+e^{-\lambda} \lambda \sum_{n = 1}^\infty \frac{n }{(n-1)!} \lambda^{n-1} \\
+&=
+e^{-\lambda} \lambda \sum_{n = 0}^\infty \frac{n+1 }{n!} \lambda^{n} \\
+&=
+e^{-\lambda} \lambda \lr{ e^\lambda + \sum_{n = 0}^\infty \frac{n}{n!} \lambda^{n} } \\
+&=
 \lambda +
-e^{-\lambda} \lambda^2 e^{\lambda}
-=
+e^{-\lambda} \lambda^2 e^{\lambda} \\
+&=
 \lambda + \lambda^2,
-\end{dmath}
+\end{aligned}
+\end{equation}
 so
 \begin{dmath}\label{eqn:ProblemSet3Problem2:80}
 \expectation{(N - \expectation{N})^2}
