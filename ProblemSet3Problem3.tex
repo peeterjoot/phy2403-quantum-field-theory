@@ -83,5 +83,58 @@ i e M \lr{ \inv{p \cdot p_f} - \inv{p \cdot p_i} },
 as desired.  While it was suggested that we use specific values of \( p_i, p_f \) to make life easier,
 it isn't clear how that would have helped.
 \makeSubAnswer{}{qft:problemSet3:3b}
-TODO.
+Observing that \( \Abs{\tilde{j}(p)}^2/(2 \omega_p) \) is the number density, our energy is given by
+\begin{dmath}\label{eqn:ProblemSet3Problem3:60}
+\expectation{E} = \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \Abs{\tilde{j}(p)}^2.
+\end{dmath}
+Utilizing the ``make the TA's life easier'' representation of \( p_f, p_i \), the
+absolute squared momentum space current is
+\begin{dmath}\label{eqn:ProblemSet3Problem3:80}
+\Abs{\tilde{j}(p)}^2
+=
+e^2 M^2 \lr{ \inv{ p_0 \sqrt{ M^2 + q^2 } - p_1 q } - \inv{ p_0 M } }^2.
+\end{dmath}
+This gives
+\begin{dmath}\label{eqn:ProblemSet3Problem3:100}
+\begin{aligned}
+\expectation{N} &= \frac{e^2 M^2}{2 (2 \pi)^3} \int dp_2 dp_3 \int \frac{dp_1}{\omega_\Bp} \lr{ \inv{ \omega_\Bp \sqrt{ M^2 + q^2 } - p_1 q } - \inv{ \omega_\Bp M } }^2 \\
+\expectation{E} &= \frac{e^2 M^2}{2 (2 \pi)^3} \int dp_2 dp_3 \int dp_1 \lr{ \inv{ \omega_\Bp \sqrt{ M^2 + q^2 } - p_1 q } - \inv{ \omega_\Bp M } }^2,
+\end{aligned}
+\end{dmath}
+where \( \omega_\Bp = \sqrt{ \Bp^2 + M^2 } \).  The \( p_1 \) integrals can both be evaluated (using Mathematica), and we find
+\begin{dmath}\label{eqn:ProblemSet3Problem3:120}
+\begin{aligned}
+%\expectation{N} &= \frac{e^2 M^2}{(2 \pi)^3 M^2 q} \lr{ 2 q - 2 M \tanh^{-1} \lr{ \frac{ q }{\sqrt{M^2 + q^2}}} }
+%\int dp_2 dp_3
+%\inv{p_2^2 + p_3^2 + M^2} \\
+\expectation{N} &= \frac{e^2}{4 \pi^3 q} \lr{ q - M \tanh^{-1} \lr{ \frac{ q }{\sqrt{M^2 + q^2}}} }
+\int dp_2 dp_3
+\inv{p_2^2 + p_3^2 + M^2} \\
+%\expectation{E} &= \frac{e^2 M^2}{(2 \pi)^3}
+%\frac{\pi  \left(\sqrt{M^2+q^2}-M\right)}{2 M^3}
+%\int dp_2 dp_3
+%\inv{ \sqrt{p_2^2 + p_3^2 + M^2}}
+\expectation{E} &= \frac{e^2 \lr{\sqrt{M^2+q^2}-M } }{16 \pi^2 M}
+\int dp_2 dp_3
+\inv{ \sqrt{p_2^2 + p_3^2 + M^2}}
+\end{aligned}
+\end{dmath}
+Neither of the \( dp_2 dp_3 \) integrals converge for \( p_2, p_3 \in [-\infty, \infty] \), so both the average number of particles and energy diverge in the large \( \Bp \) limit.
+
+We can evaluate these in the small \( \Bp \) limit by imposing a limit on the range of the \( dp_2 dp_3 \) integrands, and find
+\begin{dmath}\label{eqn:ProblemSet3Problem3:140}
+\iint_{-\epsilon}^\epsilon dp_2 dp_3
+\inv{ \sqrt{p_2^2 + p_3^2 + M^2}}
+= 8 \epsilon \sinh^{-1}(1),
+\end{dmath}
+so the average energy in the small \( \Bp \) limit is
+\begin{dmath}\label{eqn:ProblemSet3Problem3:160}
+\expectation{E} = \frac{e^2 \lr{\sqrt{M^2+q^2}-M } \epsilon \sinh^{-1}(1)}{8 \pi^2 M}.
+\end{dmath}
+However, for the average number of particles in the small \( \Bp \) limit, the integral
+\begin{dmath}\label{eqn:ProblemSet3Problem3:180}
+\iint_{-\epsilon}^\epsilon dp_2 dp_3
+\inv{p_2^2 + p_3^2 + M^2},
+\end{dmath}
+does not converge, so we find that the average number of particles associated with this current diverges in both the small and large \( \Bp \) limit.
 }
