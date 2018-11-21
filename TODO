@@ -11,11 +11,12 @@
    - Consolidate review material into more streamlined story.
    - Better chapter/section layout (more topical, less narrative timeline)
 - Problems:
-   - switched ps1-2 to use makeoproblem.  Do the same for the rest when submitted.
-   - ps1-2 marked up with \withproblemsetsParagraph{} -- do the same for ps3-4 when submitted and then remove special redaction in chapters.tex
+   - switched ps1-3 to use makeoproblem.  Do the same for ps4 when submitted.
+   - ps1-3 marked up with \withproblemsetsParagraph{} -- do the same for ps4 when submitted.
    - go back and do ps2 p4 completely (and not as I did)
    - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
 - Versioning:
    -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
-   -- also: versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
-   -- revinfo for redacted version is probably from projects repo, not this one.
+   -- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
+      -- ie: revinfo for redacted version is probably from projects repo, not this one.  How about copy the .revinfo dir from this one.
+      -- tried a makefile hack, but it didn't work.  left commented out.

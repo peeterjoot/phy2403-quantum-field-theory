@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Interaction energy between static external charges}{qft:problemSet3:1}{
+\makeoproblem{Interaction energy between static external charges}{qft:problemSet3:1}{2018 HW3.I}{
 \makesubproblem{}{qft:problemSet3:1a}
  Calculate the vacuum expectation value of the time ordered exponential
 \begin{equation}
@@ -39,6 +39,7 @@ What do you think is the significance of the various limits $T \gg R \gg 1/m$? A
 } % makeproblem
 
 \makeanswer{qft:problemSet3:1}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet3:1a}
 \begin{dmath}\label{eqn:ProblemSet3Problem1:20}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
@@ -401,4 +402,5 @@ e^{-2 i T \frac{g^2}{4 \pi} \frac{\pi m}{2} }
 e^{- g^2 i T m / 4 }.
 \end{dmath}
 We can use the time ordered exponential to compute the probability that there is no scattering (as in \cref{qft:problemSet3:2}), but the amplitude squared operation required for that probability kills such a phase factor, so it does not seem physically meaningful.
+}
 }

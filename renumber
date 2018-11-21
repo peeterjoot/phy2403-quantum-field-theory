@@ -161,3 +161,5 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture17.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture18.tex
 ../latex/bin/lgrep lukenotetypos.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl lukenotetypos.tex
+../latex/bin/lgrep qftLecture19.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture19.tex

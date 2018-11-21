@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Where is the particle?}{qft:problemSet3:4}{
+\makeoproblem{Where is the particle?}{qft:problemSet3:4}{2018 HW3.IV}{
 {\flushleft{In}} class, we did mention that, by analogy with non relativistic quantum mechanics, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ allows us to say something along the lines that {\it ``the operator $\hat\phi(\Bx)_+$ creates a particle at $\Bx$"}.
 These words are based on noticing  that in QM, we have
 $$\vert\Bx\rangle \sim \sum_{\Bp} e^{ i \Bp \cdot \Bx} \vert \Bp \rangle,$$
@@ -84,6 +84,7 @@ For Bogoljubov, the vanishing commutators are a {\it consequence} of the causali
 } % makeproblem
 
 \makeanswer{qft:problemSet3:4}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet3:4a}
 In class we defined the time translation operator as \( U(\Ba) = e^{i \Ba \cdot \hat{\BP} } \), which satisfies the relations\footnote{There is some variation in at least some of the literature.  In particular
 \citep{desai2009quantum} defines the translation operator as \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \).}
@@ -406,4 +407,5 @@ so
 We have perfect cancellation at spacelike separations.
 
 I am comforted and not surprised that we don't find observable effects at spacelike separations where we don't expect to find them.
+}
 }
