@@ -30,7 +30,7 @@ Consider the case where $j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)
 
  Do opposite-sign ``charges" attract or repel? How about same-sign?
 
- {\small  Notice that when the ``charges" are also considered as part of a QFT and, therefore, $j(x)$  in (\ref{one}) is replaced by an appropriate QFT expression, one finds more interesting results. Namely,  the Yukawa interaction between two fermions is always attractive---whether it is between two particles, two anti-particles, or between a particle and an anti-particle. The way to establish this, as well an alternative derivation of the expression for $V(R)$ you found in (\ref{three}), is to start  from the scattering of (anti)fermions via scalar exchange and then take the nonrelativistic limit. A comparison with quantum-mechanical Born scattering yields then an expression for $V(R)$.
+ {\small  Notice that when the ``charges" are also considered as part of a QFT and, therefore, $j(x)$  in (\ref{one}) is replaced by an appropriate QFT expression, one finds more interesting results. Namely,  the Yukawa interaction between two Fermions is always attractive---whether it is between two particles, two anti-particles, or between a particle and an anti-particle. The way to establish this, as well an alternative derivation of the expression for $V(R)$ you found in (\ref{three}), is to start  from the scattering of (anti)Fermions via scalar exchange and then take the nonrelativistic limit. A comparison with quantum-mechanical Born scattering yields then an expression for $V(R)$.
 
  This result quoted above is of great interest in nuclear physics, where single-pion exchange   operates via $V(R)$, and turns out to be attractive between nucleons and between nucleons and anti-nucleons.  }
 
@@ -56,7 +56,7 @@ j(x) \phi(x) j(y) \phi(y)
 \ket{0}
 + \cdots
 \end{dmath}
-Using Wick's theorem, the first order term is zero (odd number of creation and anhillation operators), so to first order, we have
+Using Wick's theorem, the first order term is zero (odd number of creation and annihilation operators), so to first order, we have
 \begin{dmath}\label{eqn:ProblemSet3Problem1:40}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
 =
@@ -107,6 +107,16 @@ d^3 y
    D_F(- \BR, t - t')
    +
    D_F(\Bzero, t - t')
+} \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\lr{
+2  D_F(\Bzero, t - t')
+   -
+   D_F(\BR, t - t')
+-
+   D_F(- \BR, t - t')
 }.
 \end{aligned}
 \end{dmath}
@@ -194,7 +204,9 @@ d^3 p &= \calp^2 d\calp \sin\theta d\theta d\phi \\
 \BR &= R\lr{ 0, 0, 1},
 \end{aligned}
 \end{dmath}
-which gives
+so the integral factor of the coupling exponential
+\cref{two}
+is reduced to
 \begin{dmath}\label{eqn:ProblemSet3Problem1:200}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
 =
@@ -250,12 +262,12 @@ which gives
 \end{dmath}
 With \( p_0 \) integrated out, we don't need the \( i \epsilon \) factor for pole avoidance, and find (using Mathematica) that
 \begin{dmath}\label{eqn:ProblemSet3Problem1:220}
-\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 }
+-\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 }
 \lr{
-   \sinc( \calp R ) - 1
+   1 \mp \sinc( \calp R )
 }
 =
-\frac{1}{2} \pi  \left(\frac{e^{-m R}}{R}+m\right).
+\frac{\pi}{2} \lr{ m \pm \frac{e^{-m R}}{R} }.
 \end{dmath}
 The \( m \pi/2 \) term contributes only a phase adjustment, and can be ignored.  This leaves
 \begin{dmath}\label{eqn:ProblemSet3Problem1:240}
@@ -275,9 +287,10 @@ where
 \begin{dmath}\label{eqn:ProblemSet3Problem1:260}
 V(R)
 =
--\frac{g^2}{4 \pi} \frac{e^{-m R}}{R},
+%-
+\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
 \end{dmath}
-which is the Yukawa potential as defined in \citep{peskin1995introduction} (eq. 4.127).
+which is a positive (repulsive) variation of the Yukawa potential as defined in \citep{peskin1995introduction} (eq. 4.127).
 %Comparing to \citep{wiki:yukawaPotential}, this is off by a factor of \( 4 \pi \).  There are a few possible explainations for that
 %\begin{enumerate}
 %\item Typo in the problem statement.
@@ -293,7 +306,97 @@ which is the Yukawa potential as defined in \citep{peskin1995introduction} (eq. 
 %\begin{mmaCell}{Output}
 %  \mmaFrac{1}{2} $\pi$ (m+\mmaFrac{\mmaSup{e}{-m r}}{r})
 %\end{mmaCell}
+%The negative potential indicates that opposite charges attract.
+
+\paragraph{Like charges.}
+
+For like charges the modification of \cref{eqn:ProblemSet3Problem1:60} is
+\begin{dmath}\label{eqn:ProblemSet3Problem1:280}
+\begin{aligned}
+\int &d^4 x d^4 y j(x) D_F(x - y) j(y)  \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\int
+d^3 x d^3 y
+\left( \delta^{(3)}(\Bx) + \delta^{(3)}(\Bx - \BR)\right)
+D_F(\Bx - \By, t - t')
+\left( \delta^{(3)}(\By) + \delta^{(3)}(\By - \BR)\right) \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\int
+d^3 y
+\lr{
+   D_F(- \By, t - t')
+   +
+   D_F(\BR - \By, t - t')
+}
+\left( \delta^{(3)}(\By) + \delta^{(3)}(\By - \BR)\right) \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\lr{
+   D_F(\Bzero, t - t')
+   +
+   D_F(\BR, t - t')
++
+   D_F(- \BR, t - t')
+   +
+   D_F(\Bzero, t - t')
+} \\
+&=
+\int_{-T}^T dt
+\int_{-T}^T dt'
+\lr{
+   2 D_F(\Bzero, t - t')
+   +
+   D_F(\BR, t - t')
++
+   D_F(- \BR, t - t')
+}.
+\end{aligned}
+\end{dmath}
+Applying this sign adjustment to the calculation of \cref{eqn:ProblemSet3Problem1:200} we find
+\begin{dmath}\label{eqn:ProblemSet3Problem1:300}
+\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+=
+-\frac{2 T i}{\pi^2}
+\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 - i \epsilon }
+\lr{
+   \sinc( \calp R ) + 1
+}.
+\end{dmath}
+Using \cref{eqn:ProblemSet3Problem1:220} again, we find for equal charges an opposite sign potential
+\begin{dmath}\label{eqn:ProblemSet3Problem1:320}
+V(R)
+=
+-\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
+\end{dmath}
+As this is a negative potential, it appears to indicate that like charges attract in the scalar theory.
 
 \makeSubAnswer{}{qft:problemSet3:1c}
-TODO.
+In the \( T \gg R \) limit the exponential dies off more slowly, as illustrated in \cref{fig:ps3p1TR:ps3p1TRFig1}.  This means that the potential acts more strongly away from the origin than for \( T \sim R \).
+\imageFigure{../figures/phy2403-quantum-field-theory/ps3p1TRFig1}{Plots of \( T e^{-mR}/R \).}{fig:ps3p1TR:ps3p1TRFig1}{0.3}
+
+For \( R \gg 1/m \), or \( m R \gg 1 \) we have \( e^{-m R} \sim 0 \).  In this limit we have no interaction, as the potential is effectively zero for all \( R \).
+%Given both \( T \gg 1/m \) we have
+%\begin{dmath}\label{eqn:ProblemSet3Problem1:340}
+%-2 i T V(R)
+%=
+%+2 i T \frac{g^2}{4 \pi} e^{-m R}/R
+%\approx
+%i T \frac{g^2}{2 \pi} \lr{ \inv{R} - m }
+%\approx
+%- i T m \frac{g^2}{2 \pi},
+%\end{dmath}
+%In this case, we also have no interaction to speak of, as the radial dependence is eliminated.
+
+We omitted a factor of $\pi m/2$, which adds a pure phase factor
+\begin{dmath}\label{eqn:ProblemSet3Problem1:360}
+e^{-2 i T \frac{g^2}{4 \pi} \frac{\pi m}{2} }
+=
+e^{- g^2 i T m / 4 }.
+\end{dmath}
+We can use the time ordered exponential to compute the probability that there is no scattering (as in \cref{qft:problemSet3:2}), but the amplitude squared operation required for that probability kills such a phase factor, so it does not seem physically meaningful.
 }

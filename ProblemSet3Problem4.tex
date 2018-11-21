@@ -225,8 +225,8 @@ so those terms only contribute zeros
 0 &= \bra{0} a_\Br a_\Bp^\dagger a_\Bq^\dagger a_\Bs^\dagger \ket{0}.
 \end{aligned}
 \end{dmath}
-These zeros are easily computed by commutation, but also by the Wick's corollary mentioned in class (expectations of odd numbers of creation or anhillation operators are zero).
-With those same sign \((p,q)\) expoential terms eliminated and a \( p, q \) swap in the \( a_\Bp a_\Bq^\dagger \) term, we are left with
+These zeros are easily computed by commutation, but also by the Wick's corollary mentioned in class (expectations of odd numbers of creation or annihilation operators are zero).
+With those same sign \((p,q)\) exponential terms eliminated and a \( p, q \) swap in the \( a_\Bp a_\Bq^\dagger \) term, we are left with
 \begin{dmath}\label{eqn:ProblemSet3Problem4:320}
 T^{00} =
 \inv{4}
@@ -372,5 +372,38 @@ D(x) D(-x).
 }
 
 \makeSubAnswer{}{qft:problemSet3:4c}
-TODO.
+In homework 2 we found that at a spacelike distance \( x = (0, r \rcap) \) the Wightman function had the form
+\begin{dmath}\label{eqn:ProblemSet3Problem4:420}
+D(r, 0) \sim e^{-m r},
+\end{dmath}
+where \( \rcap \) is the unit vector directed along the line from the origin to \( \Bx \).
+We wish to evaluate the gradients of \( D(\Bx, 0) \) and \( D(-\Bx, 0) \), and may do so by evaluating each with respect to oppositely oriented coordinate systems.
+\begin{dmath}\label{eqn:ProblemSet3Problem4:440}
+\spacegrad D(\Bx, 0)
+=
+\rcap \PD{r}{} e^{-m r}
+=
+-m \rcap e^{-m r},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet3Problem4:460}
+\spacegrad D(-\Bx, 0)
+=
+(-\rcap) \PD{r}{} e^{-m r}
+=
+m \rcap e^{-m r},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet3Problem4:480}
+\tilde{\rho}(\Bx, 0)
+=
+\lr{ -m \rcap e^{-m r} } \cdot
+\lr{ m \rcap e^{-m r} }
++ m^2 e^{-2 mr}
+=
+0.
+\end{dmath}
+We have perfect cancellation at spacelike separations.
+
+I am comforted and not surprised that we don't find observable effects at spacelike separations where we don't expect to find them.
 }
