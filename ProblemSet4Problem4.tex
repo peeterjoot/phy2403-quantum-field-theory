@@ -17,7 +17,109 @@ Consider the fermion bilinear $\bar\psi \gamma^\mu \gamma^\nu \psi ={1\over 2} \
 
 \makeanswer{qft:problemSet4:4}{
 \makeSubAnswer{}{qft:problemSet4:4a}
-TODO.
+For infinesimal transformations we can show this using the BCH theorem.  First let
+\begin{dmath}\label{eqn:ProblemSet4Problem4:20}
+B
+= -\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
+= -\frac{i}{2} \omega_{\mu\nu} \frac{i}{4} \antisymmetric{\gamma^\mu}{\gamma^\nu}
+= \frac{1}{8} \omega_{\mu\nu} \lr{ \gamma^\mu \gamma^\nu - \gamma^\nu \gamma^\mu}.
+= \frac{1}{4} \omega_{\mu\nu} \gamma^\mu \gamma^\nu,
+\end{dmath}
+where we've made use
+\( \omega_{\mu\nu} = - \omega_{\nu\mu} \) to eliminate any \( \mu = \nu \) terms in the sum,
+and \( \gamma^\mu \gamma^\nu = -\gamma^\nu \gamma^\mu \) for \( \mu \ne \nu \).
+With this substitution, we have
+\begin{dmath}\label{eqn:ProblemSet4Problem4:40}
+\Lambda^{-1}_{1/2}
+\gamma^\mu
+\Lambda_{1/2}
+=
+e^{-B}
+\gamma^\mu
+e^{B}
+=
+\gamma^\mu
++
+\antisymmetric{-B}{\gamma^\mu}
++
+O(\omega^2),
+\end{dmath}
+and can now compute the commutator
+\begin{dmath}\label{eqn:ProblemSet4Problem4:60}
+\antisymmetric{-B}{\gamma^\mu}
+=
+-\frac{1}{4} \omega_{\alpha\beta}
+\antisymmetric{
+\gamma^\alpha \gamma^\beta
+}{\gamma^\mu}
+=
+-\frac{1}{4} \omega^{\alpha\beta}
+\antisymmetric{
+\gamma_\alpha \gamma_\beta
+}{\gamma^\mu}
+=
+\frac{1}{4} \omega_{\alpha\beta}
+\lr{
+   \gamma^\mu \gamma_\alpha \gamma^\beta
+   -
+   \gamma_\alpha \gamma_\beta \gamma^\mu
+}.
+\end{dmath}
+When \( \mu \ne \alpha, \beta \), \( \gamma^\mu \) commutes with both \( \gamma_\alpha,  \gamma_\beta \),
+so the matrices cancel, leaving just the \( \mu = \alpha, \mu = \beta \) contributions to the sum
+\begin{dmath}\label{eqn:ProblemSet4Problem4:80}
+\antisymmetric{-B}{\gamma^\mu}
+=
+\frac{1}{4} \omega_{\alpha\beta}
+\lr{
+   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   -\ultensor{\delta}{\mu}{\beta} \gamma^\alpha
+   - \gamma^\alpha \ultensor{\delta}{\mu}{\beta}
+   + \gamma^\beta \ultensor{\delta}{\mu}{\alpha}
+}
+=
+\frac{1}{2} \omega_{\alpha\beta}
+\lr{
+   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   -\ultensor{\delta}{\mu}{\beta} \gamma^\alpha
+}
+=
+\frac{1}{2}
+\lr{
+   \omega_{\alpha\beta}
+   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   -
+   \omega_{\beta\alpha}
+   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+}
+=
+   \omega_{\alpha\beta}
+   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+=
+   \omega^{\mu\beta}
+\gamma_\beta.
+\end{dmath}
+The transformation to first order is therefore
+\begin{dmath}\label{eqn:ProblemSet4Problem4:100}
+\Lambda^{-1}_{1/2}
+\gamma^\mu
+\Lambda_{1/2}
+=
+\gamma^\mu
++
+   \omega^{\mu\beta}
+\gamma_\beta
+=
+\lr{
+   \ultensor{\delta}{\mu}{\beta}
++
+   \ultensor{\omega}{\mu}{\beta}
+}
+\gamma^\beta
+=
+\ultensor{\Lambda}{\mu}{\beta} \gamma^\beta.
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet4:4b}
 TODO.
 \makeSubAnswer{}{qft:problemSet4:4c}
