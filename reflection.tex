@@ -1,0 +1,102 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{reflection}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Reflection using Pauli matrices.}
+%\chapter{Reflection using Pauli matrices.}
+%\label{chap:reflection}
+
+In class yesterday (lecture 19, notes not yet posted) we used \( \Bsigma^\T = -\sigma_2 \Bsigma \sigma_2 \), which implicitly shows that \( (\Bsigma \cdot \Bx)^\T \) is a reflection about the y-axis.
+This form of reflection will be familiar to a student of geometric algebra (see \citep{doran2003gap}).  I can't recall any mention of the geometrical reflection identity from when I took QM.  It's a fun exercise to demonstrate the reflection identity when constrained to the Pauli matrix notation.
+
+\maketheorem{Reflection about a normal.}{thm:reflection:1}{
+Given a unit vector \( \ncap \in \bbR^3 \) and a vector \( \Bx \in \bbR^3 \) the reflection of \( \Bx \) about a plane with normal \( \ncap \) can be represented in Pauli notation as
+\begin{equation*}
+-\Bsigma \cdot \ncap \Bsigma \cdot \Bx \Bsigma \cdot \ncap.
+\end{equation*}
+} % theorem
+
+In standard vector notation, we can decompose a vector into its projective and rejective components
+\begin{dmath}\label{eqn:reflection:20}
+\Bx = (\Bx \cdot \ncap) \ncap + \lr{ \Bx - (\Bx \cdot \ncap) \ncap }.
+\end{dmath}
+A reflection about the plane normal to \( \ncap \) just flips the component in the direction of \( \ncap \), leaving the rest unchanged.  That is
+\begin{dmath}\label{eqn:reflection:40}
+-(\Bx \cdot \ncap) \ncap + \lr{ \Bx - (\Bx \cdot \ncap) \ncap }
+=
+\Bx - 2 (\Bx \cdot \ncap) \ncap.
+\end{dmath}
+We may write this in \( \Bsigma \) notation as
+\begin{dmath}\label{eqn:reflection:60}
+\Bsigma \cdot \Bx - 2 \Bx \cdot \ncap \Bsigma \cdot \ncap.
+\end{dmath}
+We also know that
+\begin{dmath}\label{eqn:reflection:80}
+\begin{aligned}
+\Bsigma \cdot \Ba \Bsigma \cdot \Bb &= a \cdot b + i \Bsigma \cdot (\Ba \cross \Bb) \\
+\Bsigma \cdot \Bb \Bsigma \cdot \Ba &= a \cdot b - i \Bsigma \cdot (\Ba \cross \Bb),
+\end{aligned}
+\end{dmath}
+or
+\begin{dmath}\label{eqn:reflection:100}
+a \cdot b = \inv{2} \symmetric{\Bsigma \cdot \Ba}{\Bsigma \cdot \Bb},
+\end{dmath}
+where \( \symmetric{\Ba}{\Bb} \) is the anticommutator of \( \Ba, \Bb \).
+Inserting \cref{eqn:reflection:100} into \cref{eqn:reflection:60} we find that the reflection is
+\begin{dmath}\label{eqn:reflection:120}
+\Bsigma \cdot \Bx -
+\symmetric{\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
+\Bsigma \cdot \ncap
+=
+\Bsigma \cdot \Bx -
+{\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
+\Bsigma \cdot \ncap
+-
+{\Bsigma \cdot \Bx}{\Bsigma \cdot \ncap}
+\Bsigma \cdot \ncap
+=
+\Bsigma \cdot \Bx -
+{\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
+\Bsigma \cdot \ncap
+-
+{\Bsigma \cdot \Bx}
+=
+-
+{\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
+\Bsigma \cdot \ncap,
+\end{dmath}
+which completes the proof.
+
+When we expand \( (\Bsigma \cdot \Bx)^\T \) and find
+\begin{dmath}\label{eqn:reflection:140}
+(\Bsigma \cdot \Bx)^\T
+=
+\sigma^1 x^1 - \sigma^2 x^2 + \sigma^3 x^3,
+\end{dmath}
+it is clear that this coordinate expansion is a reflection about the y-axis.  Knowing the reflection formula above provides a rationale for why we might want to write this in the compact form \( -\sigma^2 (\Bsigma \cdot \Bx) \sigma^2 \), which might not be obvious otherwise.
+
+%}
+\EndArticle
+%\EndNoBibArticle

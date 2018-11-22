@@ -250,15 +250,66 @@ S_{\text{Weyl}} = \int d^4 x i U^\dagger(x) \sigma^\mu \partial_\mu U(x),
 where \( U(x) \) is a Weyl spinor.
 } % definition
 
+The \( i \) factor here is so that the action is real.  This can be seen by noting that \( (i\sigma^\mu)^\dagger = -i \sigma^\mu \) and integrating the Hermitian conjugate by parts
+
+\begin{subequations}
+\label{eqn:qftLecture19:1314}
+\begin{equation}\label{eqn:qftLecture19:1334}
+\lr{ i \sigma^0 }^\dagger = \lr{\begin{bmatrix}
+0 & i \\
+i & 0
+\end{bmatrix}}^\dagger = -i \sigma^0
+\end{equation}
+\begin{equation}\label{eqn:qftLecture19:1354}
+\lr{ i \sigma^1 }^\dagger = {\begin{bmatrix}
+0 & i \\
+i & 0
+\end{bmatrix}}^\dagger = -i \sigma^1
+\end{equation}
+\begin{equation}\label{eqn:qftLecture19:1374}
+\lr{ i \sigma^2 }^\dagger =
+{\begin{bmatrix}
+0 & 1 \\
+-1 & 0
+\end{bmatrix}}^\dagger = -i \sigma^2
+\end{equation}
+\begin{equation}\label{eqn:qftLecture19:1394}
+\lr{ i \sigma^3 }^\dagger =
+{\begin{bmatrix}
+i & 0 \\
+0 & -i
+\end{bmatrix}}^\dagger = -i \sigma^3
+\end{equation}
+\end{subequations}
+
+\begin{dmath}\label{eqn:qftLecture19:1414}
+S_{\text{Weyl}}^\dagger
+= \int d^4 x
+\partial_\mu U^\dagger(x) (i\sigma^\mu)^\dagger U(x)
+=
+-\int d^4 x
+\partial_\mu U^\dagger(x) i \sigma^\mu U(x)
+=
+-
+\int d^4 x
+\partial_\mu \lr{ U^\dagger(x) i \sigma^\mu U(x) }
++\int d^4 x
+U^\dagger(x) i \sigma^\mu \partial_\mu U(x)
+=
+\int d^4 x
+U^\dagger(x) i \sigma^\mu \partial_\mu U(x)
+=
+S_{\text{Weyl}},
+\end{dmath}
+where it was assumed that any boundary terms vanish.
+
 \maketheorem{Weyl equation.}{dfn:qftLecture19:1254}{
 Variation of the action \cref{dfn:qftLecture19:1234} gives rise to the equations of motion
 \begin{equation*}
-\begin{aligned}
-\sigma^\mu \PD{x^\mu}{} U &= 0 \\
-\PD{x^\mu}{} U^\dagger \sigma^\mu &= 0
-\end{aligned},
+\sigma^\mu \PD{x^\mu}{} U = 0
+%\PD{x^\mu}{} U^\dagger \sigma^\mu &= 0
 \end{equation*}
-which are called the Weyl equation.
+which is called the Weyl equation.
 } % theorem
 Proof:
 \begin{dmath}\label{eqn:qftLecture19:1294}
@@ -284,10 +335,16 @@ i \int d^4 x
    \delta U^\dagger \lr{ \sigma^\mu \partial_\mu U }
    -
    \lr{ (\partial_\mu U^\dagger) \sigma^\mu } \delta U
+}
+=
+\int d^4 x
+\lr{
+   \delta U^\dagger \lr{ i \sigma^\mu \partial_\mu U }
++
+   \lr{ \delta U^\dagger \lr{ i \sigma^\mu \partial_\mu U } }^\dagger
 }.
 \end{dmath}
-Requiring this to vanish for all variations \( \delta U, \delta U^\dagger \) proves the result.
-\paragraph{Q:} why the \( i \) in this action?
+Requiring this to vanish for all variations \( \delta U^\dagger \) proves the result.
 
 Written out explicitly in matrix form, the Weyl equation is
 \begin{dmath}\label{eqn:qftLecture19:440}
@@ -314,6 +371,10 @@ or
 
 \maketheorem{Weyl equation relation to the massless KG equation.}{thm:qftLecture19:1274}{
 The Weyl equation is equivalent to a set of massless KG equations.
+\begin{equation*}
+\partial_\mu \partial^\mu U_k = 0,
+\end{equation*}
+for \( k = 1, 2\).
 } % theorem
 Proof:
 
@@ -378,13 +439,13 @@ U_2
 - \partial_\mu \partial^\mu U_1.
 \end{dmath}
 
-We find that \( S_{\text{Weyl}} \) results in a massless KG equation, which is no good for electrons.
+Because \( S_{\text{Weyl}} \) results in a massless KG equation, this is no good for electrons, and we have to look for a different action.
 
-\paragraph{Q:} Can we write bilinear inut w/ no derivatives.
-
-\paragraph{A:} Yes but, ...
-
-Claim: \( U^\T \sigma_2 U \) is the only bilinear Lorentz invariant that we can add to the action.
+%\paragraph{Q:} Can we write bilinear inut w/ no derivatives.
+%
+%\paragraph{A:} Yes but, ...
+%
+\paragraph{Claim:} \( U^\T \sigma_2 U \) is the only bilinear Lorentz invariant that we can add to the action.
 
 An action like:
 \begin{dmath}\label{eqn:qftLecture19:560}
@@ -406,8 +467,52 @@ What we are really doing is assemblying a four component spinor out of the two U
 
 \section{Lorentz symmetry.}
 
-Let's examine the Lorentz invariance claim first.
+We want to examine the Lorentz invariance of \(U^\T \sigma_2 U\), but need an intermediate result first.
+\makelemma{Transpose of Pauli vector representation}{lemma:qftLecture19:21}{
+For any \( \Bx \in \bbR^3 \)
+\begin{equation*}
+(\Bsigma \cdot \Bx)^\T = -\sigma^2 (\Bsigma \cdot \Bx) \sigma^2,
+\end{equation*}
+or more compactly
+\begin{equation*}
+\Bsigma^\T = -\sigma^2 \Bsigma \sigma^2.
+\end{equation*}
+Geometrically, this transposition operation reflects \( \Bx \) about the y-axis.
+} % lemma
 
+To prove \cref{lemma:qftLecture19:21} first note that
+\begin{dmath}\label{eqn:qftLecture19:740}
+\begin{aligned}
+\sigma_1^\T &= \sigma_1 \\
+\sigma_2^\T &= -\sigma_2 \\
+\sigma_3^\T &= \sigma_3
+\end{aligned}
+\end{dmath}
+which means that
+\begin{dmath}\label{eqn:qftLecture19:1454}
+(\Bsigma \cdot \Bx)^\T
+=
+\sigma^1 x^1 - \sigma^2 x^2 + \sigma^3 x^3
+=
+\sigma^2 \sigma^2
+\lr{
+\sigma^1 x^1 - \sigma^2 x^2 + \sigma^3 x^3
+}
+=
+\sigma^2
+\lr{
+-\sigma^1 x^1 - \sigma^2 x^2 - \sigma^3 x^3
+} \sigma^2
+=
+- \sigma^2 (\Bsigma \cdot \Bx)^\T \sigma^2.
+\end{dmath}
+
+Now we are ready to proceed.
+\maketheorem{\(U^\T \sigma_2 U\) invariance}{thm:qftLecture19:10}{
+\(U^\T \sigma_2 U\) is Lorentz invariant.
+} % theorem
+
+Proof:
 \begin{dmath}\label{eqn:qftLecture19:620}
 U^\T \sigma_2 U
 \rightarrow
@@ -417,21 +522,24 @@ U^\T {M^\dagger}^\T \sigma_2 M^\dagger U,
 \end{dmath}
 where \( U' = M^\dagger U \) and \( {U'}^\T = U^\T {M^\dagger}^T \).
 
-If \( {M^\dagger}^\T \sigma_2 M^\dagger = \sigma_2 \) then we are done.
+Note that if we can show that \( {M^\dagger}^\T \sigma_2 M^\dagger = \sigma_2 \), then we are done.
 
-We can write (proof?) that any \( U \) can be written as
+It is simple to show that any
 \begin{dmath}\label{eqn:qftLecture19:640}
-U = e^{i \Ba \cdots \Bsigma },
+U = e^{i \Ba \cdot \Bsigma },
 \end{dmath}
-for some \( \Ba \in \bbR^{3} \), which satisfies \( U^\dagger U = 1 \) and \( \det U = 1 \).
+for \( \Ba \in \bbR^{3} \), has eigenvalues \( \pm i \Abs{\Ba} \).  The determinant of such a matrix is
+\begin{equation}\label{eqn:qftLecture19:1434}
+\det U = \begin{vmatrix}
+e^{i \Abs{\Ba}} & 0 \\
+0 & e^{-i \Abs{\Ba}}
+\end{vmatrix}
+= 1,
+\end{equation}
+so we see that such a matrix has the \( U^\dagger U = 1 \) and \( \det U = 1 \) properties that we desire for elements of \( SU(2) \)\footnote{In class the suitablity of \( e^{i \Bsigma \cdot \Ba} \) as an element of \( SU(2) \) was demonstrated with an argument that diagonalizable matrices satisfy \( \det e^A = e^{\trace{A}} \)}.
+We haven't shown that all matrices \( U \in SU(2) \) can be written in this form, but let's assume that's the case.
 
-We also have
-\begin{dmath}\label{eqn:qftLecture19:660}
-\det e^A = e^{\trace{A}},
-\end{dmath}
-which follows from diagonalization.
-
-Claim.  Any \( SL(2,\bbC) \) matrix \( M \) can be written as
+\paragraph{Claim:}  Generalizing from the exponential form of \( SU(2) \) elements seen above, we assume that any \( SL(2,\bbC) \) matrix \( M \) can be written as
 \begin{dmath}\label{eqn:qftLecture19:680}
 M^\dagger =
 e^{i (\Ba + i \Bb) \cdot \Bsigma},
@@ -444,19 +552,6 @@ for \( \Ba, \Bb \in \bbR^3 \).
 \lr{ e^{i (\Ba + i \Bb) \cdot \Bsigma} }^\T
 \sigma_2
 \lr{ e^{i (\Ba + i \Bb) \cdot \Bsigma} }
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture19:720}
-\Bsigma^\T = - \sigma_2 \Bsigma \sigma_2
-\end{dmath}
-
-since
-\begin{dmath}\label{eqn:qftLecture19:740}
-\begin{aligned}
-\sigma_1^\T &= \sigma_1 \\
-\sigma_2^\T &= -\sigma_2 \\
-\sigma_3^\T &= \sigma_3
-\end{aligned}
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture19:760}
@@ -548,8 +643,8 @@ S^{0i} = \frac{i}{4} \antisymmetric{\gamma^0}{\gamma^i}
 =
 \frac{i}{2}
 \begin{bmatrix}
-\sigma^i & 0 \\
-0 & -\sigma^i
+-\sigma^i & 0 \\
+0 & \sigma^i
 \end{bmatrix}
 \end{dmath}
 are boosts, whereas
