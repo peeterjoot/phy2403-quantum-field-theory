@@ -3,32 +3,33 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{reflection}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{reflection}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Reflection using Pauli matrices.}
+%%\chapter{Reflection using Pauli matrices.}
+\label{chap:reflection}
 
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Reflection using Pauli matrices.}
-%\chapter{Reflection using Pauli matrices.}
-%\label{chap:reflection}
-
-In class yesterday (lecture 19, notes not yet posted) we used \( \Bsigma^\T = -\sigma_2 \Bsigma \sigma_2 \), which implicitly shows that \( (\Bsigma \cdot \Bx)^\T \) is a reflection about the y-axis.
+In lecture 19 (FIXME: link when incorporated)
+we used \( \Bsigma^\T = -\sigma_2 \Bsigma \sigma_2 \), which implicitly shows that \( (\Bsigma \cdot \Bx)^\T \) is a reflection about the y-axis.
 This form of reflection will be familiar to a student of geometric algebra (see \citep{doran2003gap}).  I can't recall any mention of the geometrical reflection identity from when I took QM.  It's a fun exercise to demonstrate the reflection identity when constrained to the Pauli matrix notation.
 
 \maketheorem{Reflection about a normal.}{thm:reflection:1}{
@@ -98,5 +99,4 @@ When we expand \( (\Bsigma \cdot \Bx)^\T \) and find
 it is clear that this coordinate expansion is a reflection about the y-axis.  Knowing the reflection formula above provides a rationale for why we might want to write this in the compact form \( -\sigma^2 (\Bsigma \cdot \Bx) \sigma^2 \), which might not be obvious otherwise.
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle

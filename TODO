@@ -20,3 +20,4 @@
    -- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
       -- ie: revinfo for redacted version is probably from projects repo, not this one.  How about copy the .revinfo dir from this one.
       -- tried a makefile hack, but it didn't work.  left commented out.
+- reflection: FIXME: (when l19 included).
