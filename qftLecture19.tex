@@ -77,8 +77,8 @@ U
 \end{bmatrix}.
 \end{equation}
 
-Note that the matrix \( U \) can be built explicitly.  For example, it may be built up using Euler angles as sketched in
-F1
+Note that the matrix \( U \) can be built explicitly.  For example, it may be built up using Euler angles as sketched in \cref{fig:l19:l19Fig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/l19Fig1}{Euler angle rotations.}{fig:l19:l19Fig1}{0.3}
 or algebraically
 \begin{dmath}\label{eqn:qftLecture19:100}
 U = e^{i \psi \sigma_3/2 } e^{i \theta \sigma_1/2} e^{i \phi \sigma_3/2}.
@@ -546,46 +546,75 @@ e^{i (\Ba + i \Bb) \cdot \Bsigma},
 \end{dmath}
 for \( \Ba, \Bb \in \bbR^3 \).
 
+The transpose of an exponential of a sigma matrix goes like
+\begin{dmath}\label{eqn:qftLecture19:1474}
+(e^{\Bu \cdot \Bsigma})^\T
+=
+\sum_{k = 0}^\infty \inv{k!}\lr{(\Bu \cdot \Bsigma)^k}^\T
+=
+\sum_{k = 0}^\infty \inv{k!}\lr{- \sigma_2 \Bu \cdot \Bsigma \sigma_2}^k
+=
+\sigma_2 \lr{
+   \sum_{k = 0}^\infty \inv{k!}\lr{- \Bu \cdot \Bsigma }^k
+}
+\sigma_2
+=
+\sigma_2
+e^{-\Bu \cdot \Bsigma}
+\sigma_2,
+\end{dmath}
+so
 \begin{dmath}\label{eqn:qftLecture19:700}
 {M^\dagger}^\T \sigma_2 M^\dagger
 =
 \lr{ e^{i (\Ba + i \Bb) \cdot \Bsigma} }^\T
 \sigma_2
-\lr{ e^{i (\Ba + i \Bb) \cdot \Bsigma} }
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture19:760}
-{M^\dagger}^\T \sigma_2 M^\dagger
+e^{i (\Ba + i \Bb) \cdot \Bsigma}
 =
-\sigma_2
 \lr{
-   \sigma_2 e^{-i (\Ba + i \Bb) \cdot (\sigma_2 \Bsigma \sigma_2) } \sigma_2
+   \sigma_2
+   e^{-i (\Ba + i \Bb) \cdot \Bsigma}
+   \sigma_2
 }
-e^{i (\Ba + i \Bb) \cdot \Bsigma }
-=
 \sigma_2
-\lr{
-   \sigma_2 e^{-i (\Ba + i \Bb) \cdot (\sigma_2 \sigma_2 \Bsigma \sigma_2 \sigma_2) }
-}
-e^{i (\Ba + i \Bb) \cdot \Bsigma }
+e^{i (\Ba + i \Bb) \cdot \Bsigma}
 =
-\sigma_2
-\lr{
-   \sigma_2 e^{-i (\Ba + i \Bb) \cdot \Bsigma }
-}
-e^{i (\Ba + i \Bb) \cdot \Bsigma }
-=
-\sigma_2
+\sigma_2,
 \end{dmath}
+which is the result required to finish the proof of \cref{thm:qftLecture19:10}\footnote{A slightly different derivation was done in class, but this one makes more sense to me}.
 
-where we used an argument like
-\begin{dmath}\label{eqn:qftLecture19:780}
-e^{A} \sigma_2
-= \sigma_2( 1 + A + \inv{2} A^2 ...)
-= ?
-\end{dmath}
-to move the \( \sigma_2 \) into the exponential argument.
-
+%%%\begin{dmath}\label{eqn:qftLecture19:760}
+%%%{M^\dagger}^\T \sigma_2 M^\dagger
+%%%=
+%%%\sigma_2
+%%%\lr{
+%%%   \sigma_2 e^{-i (\Ba + i \Bb) \cdot (\sigma_2 \Bsigma \sigma_2) } \sigma_2
+%%%}
+%%%e^{i (\Ba + i \Bb) \cdot \Bsigma }
+%%%=
+%%%\sigma_2
+%%%\lr{
+%%%   \sigma_2 e^{-i (\Ba + i \Bb) \cdot (\sigma_2 \sigma_2 \Bsigma \sigma_2 \sigma_2) }
+%%%}
+%%%e^{i (\Ba + i \Bb) \cdot \Bsigma }
+%%%=
+%%%\sigma_2
+%%%\lr{
+%%%   \sigma_2 e^{-i (\Ba + i \Bb) \cdot \Bsigma }
+%%%}
+%%%e^{i (\Ba + i \Bb) \cdot \Bsigma }
+%%%=
+%%%\sigma_2
+%%%\end{dmath}
+%%%
+%%%where we used an argument like
+%%%\begin{dmath}\label{eqn:qftLecture19:780}
+%%%e^{A} \sigma_2
+%%%= \sigma_2( 1 + A + \inv{2} A^2 ...)
+%%%= ?
+%%%\end{dmath}
+%%%to move the \( \sigma_2 \) into the exponential argument.
+%%%
 \section{Dirac Lagrangian.}
 
 We postulate that there is a four-component object
@@ -764,11 +793,10 @@ m \Psi^\dagger
 We find that \( \overbar{\Psi} \Psi = \Psi^\dagger \gamma^0 \Psi \) is a Lorentz scalar, whereas
 \( \overbar{\Psi} \gamma^\mu \Psi \) is a 4 vector.
 
-Can create couplings like \( \overbar{\Psi}_1 \Psi_2 \overbar{\Psi}_3 \Psi_4 \)
-
-F2
-
-or \( \overbar{\Psi} \gamma_\mu \partial^\mu \Psi \).
+%Can create couplings like \( \overbar{\Psi}_1 \Psi_2 \overbar{\Psi}_3 \Psi_4 \)
+%or \( \overbar{\Psi} \gamma_\mu \partial^\mu \Psi \).
+%%\cref{fig:l19:l19Fig2}.
+%\imageFigure{../figures/phy2403-quantum-field-theory/l19Fig2}{Muon decay.}{fig:l19:l19Fig2}{0.3}
 
 %}
 %\EndArticle
