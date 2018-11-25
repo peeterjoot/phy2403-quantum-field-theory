@@ -1,3 +1,6 @@
+- FIXME: link: diracWeylMatrixRepresentationAndIdentities.nb
+   Link to this and various other notebooks at the appropriate points and generate a mathematica.tex for this book.
+
 - Maintainance:
    - Indexing after (up to l15 is also rough.)
    - handle various DIY/Fixme/todo's

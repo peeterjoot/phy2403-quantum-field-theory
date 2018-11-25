@@ -1,0 +1,121 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\section{Problems:}
+
+\makeproblem{Show that \( \overbar{\Psi} \Psi \) is a Lorentz scalar.}{problem:qftLecture19Problems:1}{
+} % problem
+
+\makeanswer{problem:qftLecture19Problems:1}{
+The Lorentz property follows from \cref{eqn:qftLecture19:1614}
+\begin{dmath}\label{eqn:qftLecture19Problems:1654}
+\overbar{\Psi} \Psi
+\rightarrow
+\lr{ \overbar{\Psi} \Lambda^{-1}_{1/2}} \lr{ \Lambda_{1/2} \Psi }
+=
+\overbar{\Psi} \Psi.
+\end{dmath}
+The scalar nature of this product can be seen easily by expansion.
+\begin{dmath}\label{eqn:qftLecture19Problems:1674}
+\overbar{\Psi} \Psi
+=
+\Psi^\dagger
+\gamma^0
+\Psi
+=
+\begin{bmatrix}
+\Psi_1^\conj &
+\Psi_2^\conj &
+\Psi_3^\conj &
+\Psi_4^\conj
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\Psi_1 \\
+\Psi_2 \\
+\Psi_3 \\
+\Psi_4 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\Psi_1^\conj &
+\Psi_2^\conj &
+\Psi_3^\conj &
+\Psi_4^\conj
+\end{bmatrix}
+\begin{bmatrix}
+\Psi_3 \\
+\Psi_4 \\
+\Psi_1 \\
+\Psi_2 \\
+\end{bmatrix}
+=
+\Psi_1^\conj
+\Psi_3
++
+\Psi_2^\conj
+\Psi_4
++
+\Psi_3^\conj
+\Psi_1
++
+\Psi_4^\conj
+\Psi_2
+=
+2 \Real \lr{
+\Psi_1^\conj
+\Psi_3
++
+\Psi_2^\conj
+\Psi_4
+}.
+\end{dmath}
+Clearly any individual \( \Psi^\dagger \gamma^\mu \Psi \) product will also be a scalar.
+} % answer
+
+\makeproblem{Show that \( \overbar{\Psi} \gamma^\mu \Psi \) transforms as a four vector.}{problem:qftLecture19Problems:2}{
+} % problem
+
+\makeanswer{problem:qftLecture19Problems:2}{
+\begin{dmath}\label{eqn:qftLecture19Problems:1754}
+\overbar{\Psi} \gamma^\mu \Psi
+\rightarrow
+\lr{
+   \overbar{\Psi} \Lambda^{-1}_{1/2}
+}
+\gamma^\mu
+\lr{
+   \Lambda_{1/2}
+   \Psi
+}
+=
+\overbar{\Psi}
+\lr{
+   \Lambda^{-1}_{1/2}
+   \gamma^\mu
+   \Lambda_{1/2}
+}
+   \Psi
+=
+\overbar{\Psi}
+\lr{
+\ultensor{\Lambda}{\mu}{\nu}
+   \gamma^\nu
+}
+   \Psi
+=
+\ultensor{\Lambda}{\mu}{\nu}
+\overbar{\Psi}
+   \gamma^\nu
+   \Psi.
+\end{dmath}
+} % answer
+
+%}
