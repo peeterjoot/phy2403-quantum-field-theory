@@ -58,9 +58,9 @@ and can now compute the commutator
 \gamma_\alpha \gamma_\beta
 }{\gamma^\mu}
 =
-\frac{1}{4} \omega_{\alpha\beta}
+\frac{1}{4} \omega^{\alpha\beta}
 \lr{
-   \gamma^\mu \gamma_\alpha \gamma^\beta
+   \gamma^\mu \gamma_\alpha \gamma_\beta
    -
    \gamma_\alpha \gamma_\beta \gamma^\mu
 }.
@@ -70,31 +70,31 @@ so the matrices cancel, leaving just the \( \mu = \alpha, \mu = \beta \) contrib
 \begin{dmath}\label{eqn:ProblemSet4Problem4:80}
 \antisymmetric{-B}{\gamma^\mu}
 =
-\frac{1}{4} \omega_{\alpha\beta}
+\frac{1}{4} \omega^{\alpha\beta}
 \lr{
-   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
-   -\ultensor{\delta}{\mu}{\beta} \gamma^\alpha
-   - \gamma^\alpha \ultensor{\delta}{\mu}{\beta}
-   + \gamma^\beta \ultensor{\delta}{\mu}{\alpha}
+   \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
+   -\ultensor{\delta}{\mu}{\beta} \gamma_\alpha
+   - \gamma_\alpha \ultensor{\delta}{\mu}{\beta}
+   + \gamma_\beta \ultensor{\delta}{\mu}{\alpha}
 }
 =
-\frac{1}{2} \omega_{\alpha\beta}
+\frac{1}{2} \omega^{\alpha\beta}
 \lr{
-   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
-   -\ultensor{\delta}{\mu}{\beta} \gamma^\alpha
+   \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
+   -\ultensor{\delta}{\mu}{\beta} \gamma_\alpha
 }
 =
 \frac{1}{2}
 \lr{
-   \omega_{\alpha\beta}
-   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   \omega^{\alpha\beta}
+   \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
    -
-   \omega_{\beta\alpha}
-   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   \omega^{\beta\alpha}
+   \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
 }
 =
-   \omega_{\alpha\beta}
-   \ultensor{\delta}{\mu}{\alpha} \gamma^\beta
+   \omega^{\alpha\beta}
+   \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
 =
    \omega^{\mu\beta}
 \gamma_\beta.
@@ -121,7 +121,190 @@ The transformation to first order is therefore
 \end{dmath}
 
 \makeSubAnswer{}{qft:problemSet4:4b}
-TODO.
+In class we found the block matrix representation of \( \Lambda_{1/2} \)
+\begin{dmath}\label{eqn:ProblemSet4Problem4:120}
+\Lambda_{1/2}
+=
+\begin{bmatrix}
+e^{-\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^l } & 0 \\
+0 & e^{\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl} \sigma^l }  \\
+\end{bmatrix}.
+\end{dmath}
+
+For a diagonal matrix such as this one, we can compute \( \gamma^0 A^\dagger \gamma^0 \) in the block matrix representation
+\begin{dmath}\label{eqn:ProblemSet4Problem4:140}
+\gamma^0
+\begin{bmatrix}
+a & 0 \\
+0 & b
+\end{bmatrix}
+\gamma^0
+=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+a^\dagger & 0 \\
+0         & b^\dagger
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+0         & a^\dagger \\
+b^\dagger & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+b^\dagger & 0 \\
+0         & a^\dagger
+\end{bmatrix}.
+\end{dmath}
+
+Using this (and \( (\sigma^k)^\dagger = \sigma^k \)), we have
+\begin{dmath}\label{eqn:ProblemSet4Problem4:160}
+\begin{aligned}
+\gamma^0 \Lambda_{1/2}^\dagger \gamma^0
+&=
+\begin{bmatrix}
+\lr{ e^{-\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^l } }^\dagger & 0 \\
+0 & \lr{ e^{\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl} \sigma^l } }^\dagger \\
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+e^{-\inv{2} \omega_{0k} \sigma^k + \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^l } & 0 \\
+0 & e^{\inv{2} \omega_{0k} \sigma^k + \frac{i}{4} \omega_{jk} e^{jkl} \sigma^l } \\
+\end{bmatrix}.
+\end{aligned}
+\end{dmath}
+Comparing to \cref{eqn:ProblemSet4Problem4:120}, we see that
+\begin{dmath}\label{eqn:ProblemSet4Problem4:180}
+\gamma^0 \Lambda_{1/2}^\dagger \gamma^0
+=
+\Lambda^{-1}_{1/2},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet4Problem4:200}
+\gamma^0 \Lambda_{1/2}^\dagger \gamma^0 \Lambda_{1/2} = 1.
+\end{dmath}
+Multiplying by \( \gamma^0 \) on the left using \( (\gamma^0)^2 = 1 \), completes the proof.
+
 \makeSubAnswer{}{qft:problemSet4:4c}
-TODO.
+First recall that a second rank tensor transforms as
+\begin{dmath}\label{eqn:ProblemSet4Problem4:220}
+A^{\mu\nu} \rightarrow
+\ulLambda{\mu}{\alpha}
+\ulLambda{\nu}{\beta}
+A^{\mu\nu}.
+\end{dmath}
+
+The transformation of the anticommutator term is just
+\begin{dmath}\label{eqn:ProblemSet4Problem4:240}
+\inv{2} \overbar{\Psi} \symmetric{\gamma^\mu}{\gamma^\nu} \Psi
+=
+\overbar{\Psi} g^{\mu\nu} \Psi
+\rightarrow
+\lr{ \overbar{\Psi}
+\Lambda^{-1}_{1/2}
+}
+\lr{
+\ulLambda{\mu}{\alpha}
+\ulLambda{\nu}{\beta}
+g^{\alpha\beta}
+}
+\lr{
+\Lambda_{1/2}
+\Psi
+}
+=
+\overbar{\Psi}
+g^{\mu\nu}
+\Psi
+=
+\inv{2} \overbar{\Psi} \symmetric{\gamma^\mu}{\gamma^\nu} \Psi,
+\end{dmath}
+showing that the anticommutator transforms as a Lorentz scalar.
+%where we've used the identity \( \ulLambda{\mu}{\alpha} \ulLambda{\nu}{\beta} g^{\alpha\beta} = g^{\mu\nu} \).
+
+For the commutator term we have
+\begin{dmath}\label{eqn:ProblemSet4Problem4:260}
+\inv{2} \overbar{\Psi}
+\antisymmetric{\gamma^\mu}{\gamma^\nu}
+\Psi
+\rightarrow
+\inv{2} \lr{ \overbar{\Psi}
+\Lambda^{-1}_{1/2}
+}
+\antisymmetric{\gamma^\mu}{\gamma^\nu}
+\lr{
+\Lambda_{1/2}
+\Psi
+}
+=
+\inv{2}
+\overbar{\Psi}
+\Lambda^{-1}_{1/2}
+\lr{
+   \gamma^\mu \gamma^\nu
+   -
+   \gamma^\nu \gamma^\mu
+}
+\Lambda_{1/2}
+\Psi
+=
+\inv{2}
+\overbar{\Psi}
+\lr{
+   \lr{
+   \Lambda^{-1}_{1/2}
+      \gamma^\mu
+   \Lambda_{1/2}
+   }
+   \lr{
+   \Lambda^{-1}_{1/2}
+   \gamma^\nu
+   \Lambda_{1/2}
+   }
+      -
+   \lr{
+   \Lambda^{-1}_{1/2}
+      \gamma^\nu
+   \Lambda_{1/2}
+   }
+   \lr{
+   \Lambda^{-1}_{1/2}
+   \gamma^\mu
+   \Lambda_{1/2}
+   }
+}
+\Psi
+=
+\inv{2}
+\overbar{\Psi}
+\lr{
+   \lr{\ulLambda{\mu}{\alpha} \gamma^\alpha}
+   \lr{\ulLambda{\nu}{\beta} \gamma^\beta}
+      -
+   \lr{\ulLambda{\nu}{\beta} \gamma^\beta}
+   \lr{\ulLambda{\mu}{\alpha} \gamma^\alpha}
+}
+\Psi
+=
+\ulLambda{\mu}{\alpha}
+\ulLambda{\nu}{\beta}
+\lr{
+   \inv{2}
+   \overbar{\Psi}
+   \antisymmetric{\gamma^\alpha}{\gamma^\beta}
+   \Psi
+},
+\end{dmath}
+which is the transformation property \cref{eqn:ProblemSet4Problem4:220} for second rank tensors noted above.
 }
