@@ -3,39 +3,39 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture19}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-\usepackage{simplewick}
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-\newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 19: Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian.  Taught by Prof.\ Erich Poppitz}
-%\chapter{Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{qftLecture19}
+%\renewcommand{\dirname}{notes/phy2403/}
+%\newcommand{\keywords}{PHY2403H}
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%%\usepackage{phy2403}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_figures}
+%\usepackage{mathtools}
+%\usepackage{siunitx}
+%\usepackage{macros_cal} % LL
+%\usepackage{simplewick}
+%
+%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%\newcommand{\deltathree}[0]{\delta^{(3)}}
+%\newcommand{\deltafour}[0]{\delta^{(4)}}
+%
+%\beginArtNoToc
+%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 19: Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian.  Taught by Prof.\ Erich Poppitz}
+%%\chapter{Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian}
 \label{chap:qftLecture19}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
+%%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%%
+%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%%
 \section{Fermions: \R{3} rotations.}
 %(Tail end of Lecture 18)
 
@@ -393,7 +393,7 @@ The \( i \) factor here is so that the action is real.  This can be seen by noti
 \begin{subequations}
 \label{eqn:qftLecture19:1314}
 \begin{equation}\label{eqn:qftLecture19:1334}
-\lr{ i \sigma^0 }^\dagger = \lr{\begin{bmatrix}
+\lr{ i \sigma^0 }^\dagger = {\begin{bmatrix}
 0 & i \\
 i & 0
 \end{bmatrix}}^\dagger = -i \sigma^0
@@ -1150,12 +1150,9 @@ The Lagrangian transforms as
 We find that \( \overbar{\Psi} \Psi = \Psi^\dagger \gamma^0 \Psi \) is a Lorentz scalar, whereas
 \( \overbar{\Psi} \gamma^\mu \Psi \) is a 4 vector.
 
-\input{qftLecture19Problems.tex}
-
 %Can create couplings like \( \overbar{\Psi}_1 \Psi_2 \overbar{\Psi}_3 \Psi_4 \)
 %or \( \overbar{\Psi} \gamma_\mu \partial^\mu \Psi \).
 %%\cref{fig:l19:l19Fig2}.
 %\imageFigure{../figures/phy2403-quantum-field-theory/l19Fig2}{Muon decay.}{fig:l19:l19Fig2}{0.3}
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle

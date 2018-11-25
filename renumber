@@ -171,3 +171,5 @@ perl -p -i ../latex/bin/latexRegex.pl diracMatrixProperties.tex
 
 #../latex/bin/lgrep reflection.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl reflection.tex
+../latex/bin/lgrep qftLecture20.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture20.tex

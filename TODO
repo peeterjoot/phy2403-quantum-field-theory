@@ -1,5 +1,21 @@
 - FIXME: link: diracWeylMatrixRepresentationAndIdentities.nb
    Link to this and various other notebooks at the appropriate points and generate a mathematica.tex for this book.
+   -- need to go through those .nb's and add metadata info for each.
+
+- make these problem links:
+
+grep -ni HW[1234] *tex 
+
+   ProblemSet3Problem3.tex:64:using the half delta function representation from Hw2, this reduces to
+   qftLecture15b.tex:57:Contractions allow time ordered products to be written in a compact form.  In HW4 we are set with the task of demonstrating how this is done (i.e. proving \underline{Wick's theorem}.)
+   qftLecture16.tex:101:HW4 has a coupling like \( (h/V) \partial_\mu \phi^a \partial^\mu \phi^a \) for which a \( h \rightarrow \phi^a \phi^a \) decay is possible.
+   qftLecture19.tex:829:We will see (HW4) that Lorentz transformations take the form
+   qftLecture19.tex:1075:and (from HW4)
+   qftLecture9.tex:237:\paragraph{Example from HW2:}
+
+(when fixing, search for any remaining).
+
+- SL, SU, SO looks weird in the book (example Lecture19: I think they looked okay in the standalone article based lecture notes).  Use a macro for those instead to handle nicer formatting.
 
 - Maintainance:
    - Indexing after (up to l15 is also rough.)

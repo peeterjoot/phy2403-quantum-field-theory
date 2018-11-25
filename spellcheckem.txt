@@ -29,6 +29,8 @@ qftLecture15b.tex
 qftLecture15bScattering.tex
 qftLecture16.tex
 qftLecture17.tex
+qftLecture19.tex
+qftLecture19Problems.tex
 qftLecture2.tex
 qftLecture2LorentzTransformation.tex
 qftLecture3.tex
