@@ -48,25 +48,29 @@ d\sigma( AB \rightarrow 1 \cdots n)
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }.
 \end{equation}
 
-digression
+\paragraph{Digression: One to three muon decay}
+I can't recall what prompted this, but an example of muon (a negative charged ``heavy electron'') decay was given, sketched in 
+\cref{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}.
+In such decay lepton number and charge both have to be conserved.  This is why such a decay must have a mu-neutrino (\(\nu_\mu\)), as well as an antineutrino (\(\overbar{\nu}_e\)) along with the electron (\(e^-\)).
+\imageFigure{../figures/phy2403-quantum-field-theory/L18TwoToTwoScatteringFig2}{Muon decay: One to three scattering.}{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}{0.3}
 
-F1
-
-Lepton number has to be conserved, so the muon (a negative charged ``heavy electron''
-
+\paragraph{Back to the scattering:}
 Example:
 \begin{dmath}\label{eqn:qftLecture18:40}
 \phi \phi \rightarrow \phi \phi
 \end{dmath}
 
-1) Do flux factor in CM frame
+%\cref{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/L18OnetoThreeDecayFig1}{Two to two scattering.}{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}{0.3}
 
-F2
+1) Do flux factor in CM frame as sketched in \cref{fig:L18TwoToTwoScatteringCMFrame:L18TwoToTwoScatteringCMFrameFig3}.
+
+\imageFigure{../figures/phy2403-quantum-field-theory/L18TwoToTwoScatteringCMFrameFig3}{Two to two scattering in CM frame.}{fig:L18TwoToTwoScatteringCMFrame:L18TwoToTwoScatteringCMFrameFig3}{0.3}
 
 \begin{dmath}\label{eqn:qftLecture18:60}
 \begin{aligned}
-k_A^2 = \frac{s}{4} - \Bk^2 = m^2
-k_B^2 = \frac{s}{4} - \Bk^2 = m^2
+k_A^2 &= \frac{s}{4} - \Bk^2 = m^2 \\
+k_B^2 &= \frac{s}{4} - \Bk^2 = m^2
 \end{aligned}
 \end{dmath}
 
@@ -74,8 +78,8 @@ k_B^2 = \frac{s}{4} - \Bk^2 = m^2
 
 \begin{dmath}\label{eqn:qftLecture18:80}
 \begin{aligned}
-k_A &= \lr{ \sqrt{s}{2}, -\Bk } \\
-k_B &= \lr{ \sqrt{s}{2}, +\Bk }
+k_A &= \lr{ \frac{\sqrt{s}}{2}, -\Bk } \\
+k_B &= \lr{ \frac{\sqrt{s}}{2}, +\Bk }
 \end{aligned}
 \end{dmath}
 
@@ -109,7 +113,7 @@ but
 4 \Abs{\Bk} \sqrt{s}
 \end{dmath}
 
-\paragraph{Note:} \( s \) is known as a Mandelstam variable.
+\paragraph{Note:} \( s \) is known as a Mandelstam variable (see for example: \citep{wiki:Mandelstam}).
 \index{Mandelstam variable}
 
 We have two particles
