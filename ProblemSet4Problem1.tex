@@ -13,12 +13,12 @@ O_1 A_i O_2 A_k =   O_1 O_2 \contraction{}{A}{{}_i} {A}  A_i A_k ~,
  \end{equation}
  where $O_1$, $O_2$ are arbitrary strings of operators. The above equation signifies the fact that the ``contraction" is a $c$-number, i.e. commutes with all operators. It is defined as follows:
   \begin{equation}
+\label{c2}
   \contraction{}{A}{{}_i} {A}  A_i A_j = \left\{ \begin{array}l 0, \; {\rm if } \; \; A_i = a_{k_i}, A_j = a_{k_j} \;\; {\rm or} \;\; A_i = a_{k_i}^\dagger, A_j = a_{k_j}^\dagger\cr 0, \; {\rm if } \; \; A_i = a_{k_i}^\dagger \; \; {\rm and} \; \; A_j = a_{k_j} \cr
 (2 \pi)^3  \delta^{(3)}(k_i - k_j),  \; {\rm if } \; \; A_i = a_{k_i} \; \; {\rm and} \; \; A_j = a_{k_j}^\dagger
  \end{array}~ \right.
-\label{c2}
  \end{equation}
- Put in words, the contraction vanishes if both $A$'s are creation (or both are annihilation operators), as indicated in the first line in (\ref{c2}). The contraction is also zero if the operator to the right is an annihilation one, as per the second line in (\ref{c2}). Finally, the contraction is equal to the commutator of $a_{k_i}$ with $a_{k_j}^\dagger$ in the case when the creation operator is to the left of the annihilation operator.
+ Put in words, the contraction vanishes if both $A$'s are creation (or both are annihilation operators), as indicated in the first line in \cref{c2}. The contraction is also zero if the operator to the right is an annihilation one, as per the second line in \cref{c2}. Finally, the contraction is equal to the commutator of $a_{k_i}$ with $a_{k_j}^\dagger$ in the case when the creation operator is to the left of the annihilation operator.
 
  Finally, we use $:A \ldots B:$ to denote the expression where all annihilation operators appear to the right of all creation operators, i.e. the usual normal ordered expression. Then,
  Wick's theorem---as used in many body physics---is formulated as follows:
@@ -37,24 +37,24 @@ Prove the following Lemma:
  \label{lemma}
   :A_1 A_2 \ldots A_n: B =  :A_1 A_2 \ldots A_n  B: + \sum\limits_{1 \le k \le n}:A_1 \ldots \contraction{}{A}{{}_k \ldots A_n}{B} A_k \ldots A_n B:
  \end{equation} Argue that if $B$ is an annihilation operator, the Lemma is trivial. Thus, consider $B$ to be a creation operator.
- Notice  that if any of the $A_{1,...,n}$ are creation operators, they can be taken to the left of the normal products in (\ref{lemma}) (because all their contractions with $B$ are zero). Thus, if the (\ref{lemma}) is proven for arbitrary $n$ for the case when all $A_i$'s are annihilation operators, the general case is obtained by multiplying on the left with the desired number of creation operators. Thus, it suffices to prove the Lemma for the case when all $A_i$'s are annihilation operators. Also
+ Notice  that if any of the $A_{1,...,n}$ are creation operators, they can be taken to the left of the normal products in \cref{lemma} (because all their contractions with $B$ are zero). Thus, if the \cref{lemma} is proven for arbitrary $n$ for the case when all $A_i$'s are annihilation operators, the general case is obtained by multiplying on the left with the desired number of creation operators. Thus, it suffices to prove the Lemma for the case when all $A_i$'s are annihilation operators. Also
 notice
-  Thus, after proving the Lemma for $n=1$, use induction to show that it holds for any $n$. Assuming it holds for some number $n$, go to the case $n+1$ by multiplying (\ref{lemma})  by some annihilation operator $A_0$ on the left and show that the Lemma holds for $n+1$ operators.
+  Thus, after proving the Lemma for $n=1$, use induction to show that it holds for any $n$. Assuming it holds for some number $n$, go to the case $n+1$ by multiplying \cref{lemma}  by some annihilation operator $A_0$ on the left and show that the Lemma holds for $n+1$ operators.
 
-  By the chain of logic described above, you have proven (\ref{lemma}).
+  By the chain of logic described above, you have proven \cref{lemma}.
 
-Notice also that the lemma (\ref{lemma}) holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by $$:A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n:,$$
+Notice also that the lemma \cref{lemma} holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by $$:A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n:,$$
   i.e. with the product of operators with an arbitrary number of contractions (one, as written above), with a trivial modification of the last term (since, obviously, you can not contract $B$ with contractions).
 \makesubproblem{}{qft:problemSet4:1b}
-Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. Imagine that (\ref{w1}) holds for $n$ operators and prove that it holds for $n+1$, using (\ref{lemma}).
+Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. Imagine that (\ref{w1}) holds for $n$ operators and prove that it holds for $n+1$, using \cref{lemma}.
 \makesubproblem{}{qft:problemSet4:1c}
 {\bf An intermediate step:} Let now $A_i$ and $B$ be operators expressed as some linear combinations of creation and annihilation operators. In particular the subscripts $i$ may now indicate spatial dependence, rather than momentum eigenvalues. Now, define the contraction as follows:
    \begin{equation}
-  \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert A_i A_j \vert 0 \rangle~,
     \label{c5}
+  \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert A_i A_j \vert 0 \rangle~,
  \end{equation}
  where $\vert 0 \rangle$ is the Fock vacuum.
-Notice that (\ref{c5}) is equivalent to (\ref{c2}) when $A_i$'s are either creation or annihilation operators. Argue that (\ref{w1}) holds verbatim.
+Notice that \cref{c5} is equivalent to \cref{c2} when $A_i$'s are either creation or annihilation operators. Argue that (\ref{w1}) holds verbatim.
 
 \makesubproblem{}{qft:problemSet4:1d}
 {\bf The time-ordered Wick theorem:} Use the above Wick theorem to prove the time-ordered version. Notice that, despite appearances, there is not much left to do. Now, we have space-time rather than momentum space arguments and the theorem is now formulated as follows:\begin{eqnarray}
@@ -65,8 +65,8 @@ T( A_1 \ldots A_n ) &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
  \end{eqnarray}
  with the difference that $A_i$ are fields (we are considering real scalar fields),  $1 \ldots n$ denote space-time points, and the contraction is now the Feynman propagator, e.g. $D_F(x_1-x_2)$, etc.
 
- Notice that  to prove (\ref{w2}) one can consider a particular time ordering. Then the $T$ product becomes the normal product of operators (as they are assumed ordered). The space-time dependence can be taken out by Fourier transform which multiplies every term.  Every operator is a sum of creation and annihilation operators. Their commutators are exactly the ones giving rise to the contraction in (\ref{c2}), on one hand, and to the function $D(x_i -x_j)$ after Fourier transform, on the other (recall that this function appears in the Feynman propagator).
-Convince yourselves, using (\ref{c5}),  that this proves the theorem.
+ Notice that  to prove (\ref{w2}) one can consider a particular time ordering. Then the $T$ product becomes the normal product of operators (as they are assumed ordered). The space-time dependence can be taken out by Fourier transform which multiplies every term.  Every operator is a sum of creation and annihilation operators. Their commutators are exactly the ones giving rise to the contraction in \cref{c2}, on one hand, and to the function $D(x_i -x_j)$ after Fourier transform, on the other (recall that this function appears in the Feynman propagator).
+Convince yourselves, using \cref{c5},  that this proves the theorem.
 
 \makesubproblem{}{qft:problemSet4:1e}
 For extra bonus, generalize all theorems above to anti commuting fields.
@@ -74,7 +74,101 @@ For extra bonus, generalize all theorems above to anti commuting fields.
 
 \makeanswer{qft:problemSet4:1}{
 \makeSubAnswer{}{qft:problemSet4:1a}
-TODO.
+The normal ordered sequence \( \normalorder{ A_1 A_2 \ldots A_n} B \) has the form
+\begin{dmath}\label{eqn:ProblemSet4Problem1:20}
+a_{k_1}^\dagger
+\cdots
+a_{k_r}^\dagger
+a_{k_{r+1}}
+\cdots
+a_{k_n}
+B
+\end{dmath}
+so if \( B = a_{k_{n+1}} \) is an anhillation operator the result is already normal ordered.  Since the Wick contraction with such a \( B \) is zero for all \( A_i \), that is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:40}
+\begin{aligned}
+\contraction{}{a}{{}_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} }{a}
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+&= 0 \\
+\contraction{a_{k_1}^\dagger }{a}{{}_{k_2}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n}}{a}
+a_{k_1}^\dagger a_{k_2}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+&= 0 \\
+\vdots & \\
+\contraction{a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots }{a}{{}_{k_n}}{a}
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+&= 0,
+\end{aligned}.
+\end{dmath}
+Summarizing, we see that for anhillation operators \( B \) we have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:100}
+\begin{aligned}
+:A_1 A_2 \ldots A_n: B &=  :A_1 A_2 \ldots A_n  B: \\
+\sum\limits_{1 \le k \le n}:A_1 \ldots \contraction{}{A}{{}_k \ldots A_n}{B} A_k \ldots A_n B: &= 0,
+\end{aligned}
+\end{dmath}
+so \cref{lemma} is valid for any anhillation operator \( B \).
+
+For creation operators \( B \), we can cast the commutatation relations into Wick form
+\begin{dmath}\label{eqn:ProblemSet4Problem1:60}
+a_m a_k^\dagger
+=
+a_k^\dagger a_m + (2\pi)^3 \deltathree(k - m)
+=
+a_k^\dagger a_m +
+\contraction{}{a}{{}_m}{a}
+a_m a_k^\dagger,
+\end{dmath}
+and use this iteratively to percolate \( B = a_{n+1}^\dagger \) through \( \normalorder{A_1 A_2 \ldots A_n} \).  That is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:80}
+\normalorder{A_1 A_2 \ldots A_n} B
+=
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}^\dagger
+=
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_{r+1}}
+\cdots
+a_{k_{n-1}}
+\lr{
+   a_{k_{n+1}}^\dagger
+   a_{k_n}
+   +
+   \contraction{}{a}{{}_{k_n} }{a}
+   a_{k_n} a_{k_{n+1}}^\dagger
+}
+=
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_{r+1}}
+\cdots
+a_{k_{n-1}}
+a_{k_{n+1}}^\dagger
+a_{k_n}
++
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_{r+1}}
+\contraction{}{a}{{}_{k_n} }{a}
+a_{k_n} a_{k_{n+1}}^\dagger
+=
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_{r+1}}
+\cdots
+a_{k_{n-2}}
+\lr{
+a_{k_{n+1}}^\dagger
+a_{k_{n-1}}
++
+\contraction{}{a}{{}_{k_{n+1}} }{a}
+a_{k_{n-1}} a_{k_{n+1}}^\dagger
+}
+a_{k_n}
++
+a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_{r+1}}
+\contraction{}{a}{{}_{k_n} }{a}
+a_{k_n} a_{k_{n+1}}^\dagger
+=
+\end{dmath}
+%Now let \( B = a_{n+1}^\dagger \)
+
 \makeSubAnswer{}{qft:problemSet4:1b}
 TODO.
 \makeSubAnswer{}{qft:problemSet4:1c}

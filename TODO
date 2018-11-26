@@ -1,3 +1,7 @@
+- translate 
+
+   s/KG/Klein-Gordon/g
+
 - FIXME: link: diracWeylMatrixRepresentationAndIdentities.nb
    Link to this and various other notebooks at the appropriate points and generate a mathematica.tex for this book.
    -- need to go through those .nb's and add metadata info for each.

@@ -39,8 +39,425 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review.}
+
+Last time we left off showing that the Dirac Lagrangian
+\begin{dmath}\label{eqn:qftLecture20:20}
+\LL = \overbar{\Psi}\lr{ i \gamma^\mu \partial_\mu - m } \Psi,
+\end{dmath}
+is Lorentz invariant.  We argued that a single spinor can only describe a massless field, and that a two spinor construction can be used for a massive field.  We skipped from there to the Dirac Lagrangian above.
+
+We also introduced the Clifford algebra Dirac matrix (gamma matrices) elements satisfying
+\begin{dmath}\label{eqn:qftLecture20:40}
+\symmetric{\gamma^\mu}{\gamma^\nu} = 2 g^{\mu\nu},
+\end{dmath}
+where we use the Weyl representation
+\begin{dmath}\label{eqn:qftLecture20:60}
+\begin{aligned}
+\gamma^0 &=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\gamma^k &=
+\begin{bmatrix}
+0 & \sigma^k \\
+-\sigma^k & 0
+\end{bmatrix}.
+\end{aligned}
+\end{dmath}
+In particular \( (\gamma^0)^2 = 1, (\gamma^0)^\dagger = \gamma^0 \).
+
+Varying the Dirac action (where \( \overbar{\Psi} = \Psi^\dagger \gamma^0 \)), we find the Dirac equation
+\boxedEquation{eqn:qftLecture20:80}{
+\lr{ i \gamma^\mu \partial_\mu - m } \Psi = 0
+}
+
+Claim: If \( \Psi \) obeys the Dirac equation, then \( \Psi \) obeys the KG equation.  We see this by pre-multiplying by a ``conjugate'' operator \( i \gamma^\mu + m \) to find
+
+\begin{dmath}\label{eqn:qftLecture20:100}
+0 =
+\lr{ i \gamma^\mu \partial_\mu + m }
+\lr{ i \gamma^\mu \partial_\mu - m } \Psi
+=
+\lr{ - \gamma^\mu \gamma_\nu \partial_{\mu} \partial_\nu -m^2 } \Psi
+=
+\lr{
+   - \inv{2} \lr{
+      \gamma^\mu \gamma_\nu +
+      \gamma^\nu \gamma_\mu
+   }
+   \partial_{\mu} \partial_\nu -m^2
+} \Psi
+=
+\lr{
+   - g^{\mu\nu} \partial_{\mu} \partial_\nu -m^2
+} \Psi
+=
+\lr{
+   - \inv{2} \partial_{\mu} \partial^\mu -m^2
+} \Psi
+=
+-\lr{ \partial_{00} - \spacegrad^2 + m^2 } \Psi,
+\end{dmath}
+which is a KG equation.
+
+\paragraph{Goal:}
+
+Expand \( \Psi(\Bx, t) \) in a basis of solutions of the Dirac equation.  Call the coefficents \( a, b, \cdots \).  This will be like
+\begin{dmath}\label{eqn:qftLecture20:120}
+\phi \sim \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp} \lr{ e^{i k \cdot x} a_\Bp^\dagger + h.c. }
+\end{dmath}
+FIXME: sign?
+
+Expand all in \underline{plane waves}, let
+\begin{dmath}\label{eqn:qftLecture20:140}
+\Psi(x) = u(p) e^{-i p \cdot x},
+\end{dmath}
+where \( p^2 = m^2 \), \( p^0 > 0 \forall p \).  Plugging into REF we find
+\begin{dmath}\label{eqn:qftLecture20:160}
+\lr{ \gamma^\mu p_\mu - m } u(p) = 0.
+\end{dmath}
+The question is what \( u's \) obey such an equation.  How about in the rest frame with \( \Bp = 0 \).  This gives
+\begin{dmath}\label{eqn:qftLecture20:180}
+\lr{ \gamma^0 p_0 - m } u = 0,
+\end{dmath}
+but since \( p_0 = m \) we have
+\begin{dmath}\label{eqn:qftLecture20:200}
+\lr{ \gamma^0 - 1 } u = 0,
+\end{dmath}
+or
+\begin{equation}\label{eqn:qftLecture20:220}
+\begin{bmatrix}
+-1 & 1 \\
+1 & -1
+\end{bmatrix}
+u(\Bp = 0) = 0.
+\end{equation}
+The solution space is given by
+\begin{dmath}\label{eqn:qftLecture20:240}
+\begin{bmatrix}
+-1 & 1 \\
+1 & -1
+\end{bmatrix}
+\begin{bmatrix}
+\zeta \\
+\zeta \\
+\end{bmatrix}
+=0,
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture20:380}
+\zeta =
+\begin{bmatrix}
+\zeta_1 \\
+\zeta_2
+\end{bmatrix}
+\end{dmath}
+so
+\begin{equation}\label{eqn:qftLecture20:260}
+ u(\Bp = 0) =
+\zeta
+\sqrt{m}
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}.
+\end{equation}
+This is the solution in the rest frame where \( \Bp = 0 \).  A solution in a frame where \( \Bp \ne 0 \) can be found using a boost.  That boost is worked out in \citep{peskin1995introduction}.  We won't work that out explicitly here, but instead show the answer and argue that it must be valid.
+
+Claim: in a boosted frame where \( \Bp \ne 0 \) solution is
+
+\begin{dmath}\label{eqn:qftLecture20:280}
+u(p) =
+\begin{bmatrix}
+p \cdot \sigma \\
+p \cdot \overbar{\sigma}
+\end{bmatrix}
+\begin{bmatrix}
+\eta \\
+\zeta
+\end{bmatrix},
+\end{dmath}
+where
+\begin{dmath}\label{eqn:qftLecture20:300}
+\begin{aligned}
+p \cdot \sigma &= p^0 \BOne - \Bp \cdot \Bsigma \\
+p \cdot \overbar{\sigma} &= p^0 \BOne + \Bp \cdot \Bsigma.
+\end{aligned}
+\end{dmath}
+What do we mean by these square roots?  Since \(
+p \cdot \sigma,
+p \cdot \overbar{\sigma} \) are both Hermitian \( 2 \times 2 \) matrices, we can define the square root as the matrix of the square roots of the eigenvalues.  That is, given
+\begin{dmath}\label{eqn:qftLecture20:320}
+p \cdot \sigma =
+\begin{bmatrix}
+p^0 + p^3 & -p_1 + i p_2 \\
+-p_1 -i p_2 & p^0 + p^3
+\end{bmatrix}
+\end{dmath}
+%Assume that this has ...
+
+\paragraph{Check:}
+In the rest frame
+\begin{dmath}\label{eqn:qftLecture20:340}
+\evalbar{
+\sqrt{ p \cdot \sigma }
+}{ \Bp = 0 }
+=
+\begin{bmatrix}
+\sqrt{p_0} & 0 \\
+0 & \sqrt{p_0}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sqrt{m} & 0 \\
+0 & \sqrt{m}
+\end{bmatrix}
+\end{dmath}
+
+We claim that the structure of the boost is
+\begin{dmath}\label{eqn:qftLecture20:360}
+u(\Bp) =
+\begin{bmatrix}
+\frac{\sqrt{p \cdot \sigma}}{m} & 0 \\
+0 & \frac{\sqrt{p \cdot \overbar{\sigma}}}{m}
+\end{bmatrix}
+\underbrace{
+\sqrt{m}
+\begin{bmatrix}
+\zeta \\
+\zeta
+\end{bmatrix}}
+{u(\Bp = 0)}
+\end{dmath}
+We'd like to check that this is an element of \( SL(2,\bbC) \).
+We'll also see in the end that we don't have to calculate these square roots, since we always end up with two spinors and when all is said we end up with products of these roots.
+
+Let's show that
+\begin{dmath}\label{eqn:qftLecture20:400}
+\det \frac{\sqrt{p \cdot \sigma}}{\sqrt{m}}
+=1
+\end{dmath}
+
+First
+\begin{dmath}\label{eqn:qftLecture20:420}
+\det \frac{\sqrt{p \cdot \sigma}}{\sqrt{m}}
+=
+\sqrt{
+\det \frac{(p \cdot \sigma)}{m}
+},
+=
+\sqrt{
+   \det
+   \inv{m}
+   \begin{bmatrix}
+   p^0 + p^3 & -p_1 + i p_2 \\
+   -p_1 -i p_2 & p^0 + p^3
+   \end{bmatrix}
+}
+=
+\sqrt{ \inv{m^2} \lr{ (p^0)^2 - \Bp^2 } }
+=
+\sqrt{ \frac{m^2}{m^2} }
+=
+1.
+\end{dmath}
+(we use an eigenvalue argument to move the determant into the square root
+
+Check:
+\begin{dmath}\label{eqn:qftLecture20:440}
+\lr{ \gamma^\mu p_\mu -m } u(p) = 0
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture20:460}
+\lr{ \gamma^\mu p_\mu -m } u(p)
+=
+\begin{bmatrix}
+-m & p \cdot \sigma \\
+p \cdot \overbar{\sigma}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \\
+\sqrt{ p \cdot \overbar{\sigma} }
+\end{bmatrix}
+\begin{bmatrix}
+\zeta \\
+\zeta
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lr{ -m \sqrt{p \cdot \sigma} + p cdot \sigma \sqrt{p \cdot \overbar{\sigma}} } \zeta \\
+\lr{ \sqrt{p \cdot \overbar{\sigma}} - m \sqrt{p \cdot \overbar{\sigma}} } \zeta \\
+\end{bmatrix}
+\end{dmath}
+but
+\begin{dmath}\label{eqn:qftLecture20:480}
+(p \cdot \sigma)(p \cdot \overbar{\sigma}) = \lr{ p^0 - \Bp \cdot \Bsigma }\lr{ p^0 + \Bp \cdot \Bsigma }
+=
+(p^0)^2 - \lr{ \Bp \cdot \Bsigma }^2
+=
+(p^0)^2 - \Bp^2
+=
+m^2.
+\end{dmath}
+% NB: top line: -m \sqrt{p \cdot \sigma} + \sqrt{p \cdot \sigma} \sqrt{ (p \cdot \sigma)(p \cdot \overbar{\sigma}) }
+
+\paragraph{Summary:}
+For \( p^0 > 0, p^2  = m^2 \)
+\begin{dmath}\label{eqn:qftLecture20:500}
+\Psi(x) = e^{-i p \cdot x } u(p)
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture20:520}
+u(p) =
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \\
+\sqrt{p \cdot \overbar{\sigma}} \\
+\end{bmatrix}
+\begin{bmatrix}
+\zeta \\
+\zeta \\
+\end{bmatrix}
+\end{dmath}
+
+\paragraph{Example:}
+\begin{dmath}\label{eqn:qftLecture20:540}
+\Bp = \lr{ E, 0, 0, p_3 }
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture20:560}
+u(p) =
+\begin{bmatrix}
+\sqrt{
+   E - p_3 \sigma_3
+} \\
+\sqrt{
+   E + p_3 \sigma_3
+}
+\end{bmatrix}
+\begin{bmatrix}
+\zeta \\
+\zeta \\
+\end{bmatrix}
+\end{dmath}
+Let
+\begin{dmath}\label{eqn:qftLecture20:740}
+\zeta =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\end{dmath}
+so
+\begin{dmath}\label{eqn:qftLecture20:580}
+u(p) =
+\begin{bmatrix}
+\sqrt{ E - p_3}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\\
+\sqrt{ E + p_3}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\end{bmatrix}
+\end{dmath}
+If we pick \( p_3 = E  \) we can boost a assive particle to be arbitrarily close to \( p_3 = E \).
+
+Alternatively for \( \zeta =
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix} \)
+\begin{dmath}\label{eqn:qftLecture20:600}
+u(p) =
+\begin{bmatrix}
+\sqrt{ E + p_3}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\\
+\sqrt{ E - p_3}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\end{bmatrix}
+\end{dmath}
+
+Find two solutions
+\begin{dmath}\label{eqn:qftLecture20:620}
+\evalbar{
+u(p)
+}{\zeta =
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+, p_3 = E}
+=
+\begin{bmatrix}
+0
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \\
+\sqrt{2 E}
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+\end{bmatrix}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture20:640}
+\evalbar{
+u(p)
+}{\zeta =
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+p_3 = E}
+=
+\begin{bmatrix}
+\sqrt{2 E}
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+0
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix} \\
+\end{bmatrix}
+\end{dmath}
+
+Let \( h \) (the helicity) be
+\begin{dmath}\label{eqn:qftLecture20:660}
+h = \inv{2}
+\begin{bmatrix}
+\hat{\Bp} \cdot \Bsigma & 0 \\
+0 & \hat{\Bp} \cdot \Bsigma
+\end{bmatrix}
+=
+\hat{\Bp} \cdot \BS,
+\end{dmath}
+where
+\begin{dmath}\label{eqn:qftLecture20:680}
+\BS =
+\begin{bmatrix}
+\frac{\Bsigma}{2} & 0 \\
+0 & \frac{\Bsigma}{2}
+\end{bmatrix}.
+\end{dmath}
+\( h \) has eigenvalues \( \pm 1/2 \).
+
+\begin{dmath}\label{eqn:qftLecture20:700}
+h u^{(1)} = \inv{2} u^{(1)}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture20:720}
+h u^{(2)} = -\inv{2} u^{(2)}
+\end{dmath}
+
+We found \( \Psi = u e^{-i p \cdot x} \).  Next time we will seek another solution \( \Psi = v e^{+ i p \cdot x} \), and we will also figure out how to normalize things.
 
 %}
-%\EndArticle
-\EndNoBibArticle
+\EndArticle
