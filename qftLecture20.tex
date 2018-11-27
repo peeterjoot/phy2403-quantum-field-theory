@@ -3,40 +3,40 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture20}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-\newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
-\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
-\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 20: Dirac Lagrangian, spinor solutions to the KG equation, Dirac matrices, plane wave solution, helicity.  Taught by Prof.\ Erich Poppitz}
-%\chapter{Dirac Lagrangian, spinor solutions to the KG equation, Dirac matrices, plane wave solution, helicity}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{qftLecture20}
+%\renewcommand{\dirname}{notes/phy2403/}
+%\newcommand{\keywords}{PHY2403H}
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%%\usepackage{phy2403}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_figures}
+%\usepackage{mathtools}
+%\usepackage{siunitx}
+%\usepackage{macros_cal} % LL
+%
+%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%\newcommand{\deltathree}[0]{\delta^{(3)}}
+%\newcommand{\deltafour}[0]{\delta^{(4)}}
+%\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+%\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
+%
+%\beginArtNoToc
+%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 20: Dirac Lagrangian, spinor solutions to the KG equation, Dirac matrices, plane wave solution, helicity.  Taught by Prof.\ Erich Poppitz}
+%%\chapter{Dirac Lagrangian, spinor solutions to the KG equation, Dirac matrices, plane wave solution, helicity}
 \label{chap:qftLecture20}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
+%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%
+%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%
 \section{Review.}
 
 Last time we
@@ -611,84 +611,6 @@ corresponding to momentum aligned with and opposing the spin directions as sketc
 
 We found \( \Psi = u e^{-i p \cdot x} \).  Next time we will seek another solution \( \Psi = v e^{+ i p \cdot x} \), and we will also figure out how to normalize things.
 
-\section{Problems:}
-
-\makeproblem{Vary the Dirac action.}{problem:qftLecture20:10}{
-} % problem
-
-\makeanswer{problem:qftLecture20:10}{
-From the action
-% FIXME: \cref{dfn:qftLecture19:31}
-\begin{dmath}\label{eqn:qftLecture20:760}
-S = \int d^4 x \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi,
-\end{dmath}
-we find
-\begin{dmath}\label{eqn:qftLecture20:780}
-\delta S =
-\int d^4 x \delta \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi
-+
-\int d^4 x \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \delta \Psi.
-\end{dmath}
-There are two ways to deal with this.  One (somewhat unsatisfactory seeming to me) is to treat both \( \delta \overbar{\Psi} \) and \( \delta \Psi \) as independent variations, requiring that \( \delta S = 0 \) for any such variations.  In that case we find that \( \lr{ i \gamma^\mu \partial_\mu - m } \Psi = 0 \) if the total variation of the action is zero.  That leaves the somewhat awkward question of what to do with the \( 0 = \int d^4 x \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \delta \Psi \) constraint.  However, that question can  be resolved by observing that these two contributions to the variation are not independent.  In particular
-\begin{dmath}\label{eqn:qftLecture20:800}
-\lr{ \int d^4 x \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \delta \Psi }^\dagger
-=
-\int d^4 x
-\delta \Psi^\dagger
-\lr{ -i (\gamma^\mu)^\dagger \partial_\mu - m }
-\gamma^0
-\Psi
-=
-\int d^4 x
-\delta \Psi^\dagger \gamma^0
-\lr{ -i \gamma^0 (\gamma^\mu)^\dagger \gamma^0 \lpartial_\mu - m }
-\Psi
-=
-\int d^4 x
-\delta \overbar{\Psi}
-\lr{ -i \gamma^\mu \lpartial_\mu - m }
-\Psi
-=
-\int d^4 x
-\lr{
-   \partial_\mu \lr{
-      -i \delta \overbar{\Psi}
-      \gamma^\mu
-      \Psi
-   }
-   -
-   \lr{
-      -i \delta \overbar{\Psi}
-      \gamma^\mu
-      \partial_\mu \Psi
-   }
-   -m \delta \overbar{\Psi} \Psi
-}
-=
-\int d^4 x \delta \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi,
-\end{dmath}
-where the boundary integral has been assumed to be zero.  This shows that the total variation is
-\begin{dmath}\label{eqn:qftLecture20:820}
-\delta S
-=
-\int d^4 x
-\lr{
-\delta
-   \overbar{\Psi} D \Psi
-+
-   \lr{
-\delta
-\overbar{\Psi} D \Psi }^\dagger
-},
-\end{dmath}
-where
-\begin{dmath}\label{eqn:qftLecture20:840}
-D = i \gamma^\mu \partial_\mu - m,
-\end{dmath}
-represents the Dirac operator.  Requiring that the action variation \( \delta S = 0 \) is zero for all \( \delta \overbar{\Psi} \), means that \( D \Psi = 0 \), which proves \cref{eqn:qftLecture20:80}.
-
-Given that the action itself is real, it makes sense for it's variation to be real, as demonstrated above.  A nice side effect of demonstrating this is the removal of the redundant variation variable.
-} % answer
 
 %}
-\EndArticle
+%\EndArticle
