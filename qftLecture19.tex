@@ -51,8 +51,8 @@ We may form a Pauli matrix representation of a vector
 \Bsigma \cdot \Bx
 =
 \begin{bmatrix}
-x_3 & x_1 - i x_2 \\
-x_1 + i x_2 & -x_3
+x^3 & x^1 - i x^2 \\
+x^1 + i x^2 & -x^3
 \end{bmatrix},
 \end{dmath}
 where \( \Bsigma = \lr{ \sigma^1, \sigma^2, \sigma^3 } \).
@@ -61,7 +61,7 @@ We find that the determinant is
 \begin{dmath}\label{eqn:qftLecture18:480}
 \det (\Bsigma \cdot \Bx)
 =
--x_3^2 - x_1^2 - x_2^2
+-(x^3)^2 - (x^1)^2 - (x^2)^2
 =
 -\Bx^2.
 \end{dmath}
@@ -137,11 +137,11 @@ Having seen such representations and their \( SU(2) \) transformations in NRQM, 
 Let
 \begin{dmath}\label{eqn:qftLecture18:600}
 (x^0, \Bx) =
-x^0 \sigma^0 + \Bsigma \cdot \Bx
+x^0 \sigma^0 - \Bsigma \cdot \Bx
 =
 \begin{bmatrix}
-x^0 + x_3 & x_1 - i x_2 \\
-x_1 + i x_2 & x^0 -x_3
+x^0 - x^3 & -x^1 + i x^2 \\
+-x^1 - i x^2 & x^0 + x^3
 \end{bmatrix}.
 \end{dmath}
 This has determinant
@@ -159,7 +159,7 @@ This has determinant
 \end{dmath}
 We therefore identify \( (x^0, \Bx) \) as a four vector
 \begin{dmath}\label{eqn:qftLecture18:640}
-(x^0, \Bx) = x^\mu \sigma_\mu
+(x^0, \Bx) = x_\mu \sigma^\mu = x^\mu \sigma^\nu g_{\mu\nu}.
 \end{dmath}
 We say that \( SL(2, \bbC)\) is a double cover of \( SO(1,3)\).
 
@@ -216,12 +216,13 @@ and can now form four vectors in a matrix representation
 \begin{dmath}\label{eqn:qftLecture19:140}
 x \cdot \sigma
 \equiv
-x^\mu \sigma_\mu \equiv
-x^0 \sigma^0 + \Bsigma \cdot \Bx
+x^\mu \sigma_\mu
+=
+x^0 \sigma^0 - \Bsigma \cdot \Bx
 =
 \begin{bmatrix}
-x^0 + x^3 & x^1 - i x^2 \\
-x^1 + i x^2 & x^0 - x^3
+x^0 - x^3    & -x^1 + i x^2 \\
+-x^1 - i x^2 & x^0 + x^3
 \end{bmatrix}.
 \end{dmath}
 Such \( 2 \times 2 \) matrices are Hermitian.  Notice that the space of \( 2 \times 2 \) Hermitian matrices is 4 dimensional.
@@ -507,8 +508,8 @@ or
 \end{dmath}
 \end{subequations}
 
-\maketheorem{Weyl equation relation to the massless KG equation.}{thm:qftLecture19:1274}{
-The Weyl equation is equivalent to a set of massless KG equations.
+\maketheorem{Weyl equation relation to the massless Klein-Gordon equation.}{thm:qftLecture19:1274}{
+The Weyl equation is equivalent to a set of massless Klein-Gordon equations.
 \begin{equation*}
 \partial_\mu \partial^\mu U_k = 0,
 \end{equation*}
@@ -577,7 +578,7 @@ U_2
 - \partial_\mu \partial^\mu U_1.
 \end{dmath}
 
-Because \( S_{\text{Weyl}} \) results in a massless KG equation, this is no good for electrons, and we have to look for a different action.
+Because \( S_{\text{Weyl}} \) results in a massless Klein-Gordon equation, this is no good for electrons, and we have to look for a different action.
 
 %\paragraph{Q:} Can we write bilinear inut w/ no derivatives.
 %

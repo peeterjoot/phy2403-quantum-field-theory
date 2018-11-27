@@ -213,5 +213,38 @@ I find it hard to follow what you have done.  This is how I'd show it.
 \Ba^2 \Bb^2 - (\Bb \cdot \Ba)^2.
 \end{dmath*}
 
+\section{l20}
+
+\begin{equation*}
+\begin{aligned}
+p \cdot \sigma &= p^0 \sigma^0 - \Bp \cdot \Bsigma \\
+p \cdot \overbar{\sigma} &= p^0 \sigma^0 + \Bp \cdot \Bsigma.
+\end{aligned}
+\end{equation*}
+
+This makes sense to me, as it follows the usual pattern \( x \cdot p = x^\mu p_\mu = x^0 p^0 - \Bx \cdot \Bp \).  
+
+I ask because I got confused looking at Peskin and Schroeder, where they seemingly use an opposite sign convention where \( \sigma \cdot x \) was first defined, namely eq. 3.41 and its neighbours where they write
+\begin{equation*}
+\sigma \cdot \partial = \partial_0 + \Bsigma \cdot \spacegrad,
+\end{equation*}
+not
+\begin{equation*}
+\sigma \cdot \partial = \partial_0 - \Bsigma \cdot \spacegrad.
+\end{equation*}
+
+It took a bit of thought, but I think the explaination for this difference is because the coordinates of the four-gradient (\(\partial_\mu\)) are a lower index quantity, so in the hybrid scalar+vector tuple form, we should write \( \partial^\mu = (\partial^0, -\spacegrad) \), or \( \partial_\mu = (\partial_0, \spacegrad) \).
+
+So, when Peskin and Schroeder apply this to \( \sigma \cdot \partial \), it really means
+\begin{equation*}
+\begin{aligned}
+\sigma \cdot \partial 
+&= \sigma^0 \partial^0 - \Bsigma \cdot (-\spacegrad) \\
+&= \partial_0 + \Bsigma \cdot \spacegrad
+\end{aligned}
+\end{equation*}
+
+(Having a tuple notation that can be used to represent either lower or upper index quantities is very confusing.)
+
 \EndArticle
 %\EndNoBibArticle
