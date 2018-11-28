@@ -1,5 +1,5 @@
 %
-% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
@@ -70,23 +70,22 @@ There are three possible diagrams:
 %\imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig2c}{CAPTION: qftLecture17Fig2c}{fig:qftLecture17:qftLecture17Fig2c}{0.3}
 
 The first we will call the s-channel, which has amplitude
-
 \begin{dmath}\label{eqn:qftLecture17:80}
 A(\text{s-channel}) \sim \frac{i}{p^2 - m^2 + i \epsilon} =
-\frac{i}{s - m^2 + i \epsilon}
+\frac{i}{s - m^2 + i \epsilon},
 \end{dmath}
-
+where we designate the total squared four-momentum as
 \begin{dmath}\label{eqn:qftLecture17:100}
-(p_1 + p_2)^2 = s
+(p_1 + p_2)^2 = s.
 \end{dmath}
 In the centre of mass frame
 \begin{dmath}\label{eqn:qftLecture17:120}
 \Bp_1 = - \Bp_2,
 \end{dmath}
 so
-\begin{dmath}\label{eqn:qftLecture17:140}
+\begin{equation}\label{eqn:qftLecture17:140}
 s = \lr{ p_1^0 + p_2^0 }^2 = E_{\text{cm}}^2.
-\end{dmath}
+\end{equation}
 
 To the next order we have a diagram like
 \cref{fig:qftLecture17:qftLecture17Fig3}.
@@ -109,12 +108,12 @@ propagator.
 
 Assuming such a term, the squared amplitude becomes
 \begin{dmath}\label{eqn:qftLecture17:180}
-\evalbar{\sigma}{s \text{near} m^2}
+\evalbar{\sigma}{\mbox{\(s\) near \(m^2\)}}
 \sim
-\Abs{A_s}^2 \sim \inv{(s - m)^2 + m^2 \Gamma^2}
+\Abs{A_s}^2 \sim \inv{(s - m^2)^2 + m^2 \Gamma^2}
 \end{dmath}
 
-This is called a resonance (name?), and is sketched in
+This is called a resonance, and is sketched in
 \cref{fig:qftLecture17:qftLecture17Fig6}.
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig6}{Resonance.}{fig:qftLecture17:qftLecture17Fig6}{0.3}
 
@@ -155,13 +154,13 @@ The probability is
 \end{dmath}
 
 Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set the argument of one of the delta functions to zero, which gives us a vacuum volume element factor
-\begin{dmath}\label{eqn:qftLecture17:300}
+\begin{equation}\label{eqn:qftLecture17:300}
 (2 \pi)^4
 \deltafour( p_{\text{in}} - \sum p_f )  =
 (2 \pi)^4
 \deltafour( 0 )
 = V_3 T,
-\end{dmath}
+\end{equation}
 so
 \begin{dmath}\label{eqn:qftLecture17:320}
 \frac{\text{probability for \( i \rightarrow f\)}}{\text{unit time}}
@@ -199,6 +198,7 @@ so
 2 \omega_{\Bp_n} V_3^n
 }
 \end{dmath}
+\paragraph{FIXME: Where did all these terms downstairs come from?  They weren't in \cref{eqn:qftLecture17:320}.  Is this a new quantity mislabeled?}
 
 If we multiply the number of final states with \( p_i^f \in (p_i^f, p_i^f + dp_i^f) \) for a particle in a box
 \begin{dmath}\label{eqn:qftLecture17:420}
@@ -278,7 +278,6 @@ n = \inv{V_3},
 \end{dmath}
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture17Fig7}{Centre of mass frame.}{fig:qftLecture17:qftLecture17Fig7}{0.1}
 
-This is where \citep{peskin1995introduction} stop,
 \begin{dmath}\label{eqn:qftLecture17:640}
 \sigma
 =
@@ -294,9 +293,11 @@ This is where \citep{peskin1995introduction} stop,
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }
 \end{dmath}
 
+This is where \citep{peskin1995introduction} stops.
+
 There is, however, a nice Lorentz invariant generalization
 \begin{dmath}\label{eqn:qftLecture17:600}
-j = \inv{ V_3 \omega_{k_A} \omega_{k_B}} \sqrt{ (k_A - k_B)^2 - m_A^2 m_B^2 }
+j = \inv{ V_3 \omega_{k_A} \omega_{k_B}} \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
 \end{dmath}
 
 (Claim: DIY)
@@ -322,7 +323,7 @@ j = \inv{ V_3 \omega_{k_A} \omega_{k_B}} \sqrt{ (k_A - k_B)^2 - m_A^2 m_B^2 }
    (2 \pi)^4 \deltafour( \sum p_i - \sum_f p^f ) \Abs{M_{fi}}^2
 }
 {
-   4 \sqrt{ (k_A - k_B)^2 - m_A^2 m_B^2 }
+   4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
 }
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }.
 \end{dmath}

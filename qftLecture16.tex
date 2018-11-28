@@ -1,5 +1,5 @@
 %
-% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
@@ -37,21 +37,21 @@
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 %%
-\section{Review}
-
-We finished by defining the differential cross section
-
-\makedefinition{Differential cross section.}{dfn:qftLecture16:20}{
-\begin{equation*}
-\frac{d^3 \sigma}{dp_x dp_y dp_z} = \frac{
-\text{number of scattering events with \( \Bp_{\txtf} \) between \( (\Bp_\txtf, \Bp_\txtf + d \Bp_\txtf )\)}
-}
-{
-\text{flux of incoming particles}
-}.
-\end{equation*}
-} % definition
-
+%%\section{Review}
+%%
+%%We finished by defining the differential cross section \cref{dfn:qftLecture15b:520}
+%%
+%%\makedefinition{Differential cross section.}{dfn:qftLecture16:20}{
+%%\begin{equation*}
+%%\frac{d^3 \sigma}{dp_x dp_y dp_z} = \frac{
+%%\text{number of scattering events with \( \Bp_{\txtf} \) between \( (\Bp_\txtf, \Bp_\txtf + d \Bp_\txtf )\)}
+%%}
+%%{
+%%\text{flux of incoming particles}
+%%}.
+%%\end{equation*}
+%%} % definition
+%%
 \section{Scattering}
 
 In QFT we typically study \( 2 \rightarrow n \) inelastic scattering.  Most commonly the nature of the final state particles are different from the nature of the incoming state.
@@ -385,7 +385,7 @@ The general transition amplitude for a \( 2 \rightarrow n \) event has the form
 \begin{equation}\label{eqn:qftLecture16:640}
 \braket{ p_1 \cdots p_n }{ k_A k_B }
 =
-(2 \pi)^4 \deltafour( \sum k_{\text{in}} - \sum p_{\text{out}} ) i M( A,B \rightarrow 1, \cdots n ).
+(2 \pi)^4 \deltafour \lr{ \sum k_{\text{in}} - \sum p_{\text{out}} } i M( A,B \rightarrow 1, \cdots n ).
 \end{equation}
 Our recipe is
 \begin{enumerate}
