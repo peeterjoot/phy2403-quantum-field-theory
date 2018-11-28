@@ -11,7 +11,7 @@
 
 %\usepackage{phy2403}
 \usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
+\usepackage{peeters_layout_exercise}
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
@@ -22,6 +22,8 @@
 \newcommand{\osigma}[0]{\overbar{\sigma}}
 \newcommand{\ubar}[0]{\overbar{u}}
 \newcommand{\vbar}[0]{\overbar{v}}
+\newcommand{\deltathree}[0]{\delta^{(3)}}
+\newcommand{\deltafour}[0]{\delta^{(4)}}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 21: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -63,77 +65,131 @@ u^s(p) =
 \end{dmath}
 where \( \zeta^1 = (1,0)^\T, \zeta^2 = (0,1)^\T \).
 
-\section{Continuing.}
+\section{Normalization.}
 
-\begin{dmath}\label{eqn:qftLecture21:100}
-u^\dagger =
-\begin{bmatrix}
-\zeta^\dagger \sqrt{ p \cdot \sigma }
-&
-\zeta^\dagger \sqrt{ p \cdot \osigma }
-\end{bmatrix}
-\end{dmath}
+\maketheorem{\( u^\dagger u \)}{thm:qftLecture21:1}{
+\begin{equation*}
+u^{s \dagger} u^{s'}
+= 2 p_0 \delta^{s s'}
+\end{equation*}
+} % theorem
 
+Proof:
 \begin{dmath}\label{eqn:qftLecture21:120}
-u^\dagger u
+u^{s \dagger} u^r
 =
-\zeta^\dagger \lr{
+\begin{bmatrix}
+\zeta^{s \dagger} \sqrt{ p \cdot \sigma }
+&
+\zeta^{s \dagger} \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta \\
+\sqrt{ p \cdot \osigma } \zeta \\
+\end{bmatrix}
+=
+\zeta^{s \dagger} \lr{
 \sqrt{ p \cdot \sigma }
 \sqrt{ p \cdot \sigma }
 +
 \sqrt{ p \cdot \osigma }
 \sqrt{ p \cdot \osigma }
 }
-\zeta
+\zeta^r
 =
-\zeta^\dagger \lr{
+\zeta^{s \dagger} \lr{
  p \cdot \sigma
 +
  p \cdot \osigma
 }
-\zeta
+\zeta^r
 =
-\zeta^\dagger
+\zeta^{s \dagger}
 \lr{
 p_0 - \Bp \cdot \Bsigma
 +
 p_0 + \Bp \cdot \Bsigma
 }
-\zeta
+\zeta^r
 =
 2 p_0
-\zeta^\dagger \zeta
+\zeta^{s \dagger} \zeta^r.
 \end{dmath}
-
-In particular
-
-\begin{dmath}\label{eqn:qftLecture21:140}
-(u^s)^\dagger u^{s'}
-= 2 p_0 (\zeta^s)^\dagger \zeta^{s'}
-= 2 p_0 \delta^{s s'}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture21:160}
-\ubar u
-=
-u^\dagger \gamma^0 u
-=
+%Putting back in the suffixes, we have
+%\begin{dmath}\label{eqn:qftLecture21:1000}
+%u^{s \dagger} u^{r}
+%=
+%2 p_0
+%\zeta^{s\dagger} \zeta^r.
+%\end{dmath}
+We can easily see that \( \zeta^{s\dagger} \zeta^r = \delta^{rs} \) by writing out those products
+\begin{dmath}\label{eqn:qftLecture21:1020}
+\begin{aligned}
+\zeta^{1\dagger} \zeta^1
+&=
 \begin{bmatrix}
-\zeta^\dagger \sqrt{ p \cdot \sigma }
-&
-\zeta^\dagger \sqrt{ p \cdot \osigma }
-\end{bmatrix}
-\begin{bmatrix}
-0 & 1 \\
 1 & 0
 \end{bmatrix}
 \begin{bmatrix}
-\sqrt{p \cdot \sigma} \zeta \\
-\sqrt{p \cdot \osigma} \zeta
+1 \\
+0
 \end{bmatrix}
+&=
+1 \\
+\zeta^{1\dagger} \zeta^2
+&=
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+&=
+0 \\
+\zeta^{2\dagger} \zeta^1
+&=
+\begin{bmatrix}
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+&=
+0 \\
+\zeta^{2\dagger} \zeta^2
+&=
+\begin{bmatrix}
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+&=
+1,
+\end{aligned}
 \end{dmath}
+which completes the proof.
 
-Note that
+%\begin{dmath}\label{eqn:qftLecture21:140}
+%u^{s \dagger} u^{s'}
+%= 2 p_0 \zeta^{s \dagger} \zeta^{s'}
+%= 2 p_0 \delta^{s s'}
+%\end{dmath}
+
+We also want to compute \( \ubar u \), but need a couple intermediate results.
+\makelemma{Products of \( p \cdot \sigma, p \cdot \osigma \).}{lemma:qftLecture21:2}{
+\begin{equation*}
+(p \cdot \sigma) (p \cdot \osigma)
+=
+(p \cdot \osigma) (p \cdot \sigma)
+= m^2.
+\end{equation*}
+} % lemma
+
+Proof:
 \begin{dmath}\label{eqn:qftLecture21:180}
 (p \cdot \sigma) (p \cdot \osigma)
 =
@@ -163,29 +219,49 @@ and
 (p^0)^2
 -
 \Bp^2
-= m^2
+= m^2.
 \end{dmath}
 
-so
-\begin{dmath}\label{eqn:qftLecture21:220}
-\ubar u
+\maketheorem{\( \ubar u \).}{thm:qftLecture21:3}{
+\begin{equation*}
+\ubar^s(\Bp) u^{s'}(\Bp) = 2 m \delta^{s s'}.
+\end{equation*}
+} % theorem
+
+Proof:
+\begin{dmath}\label{eqn:qftLecture21:160}
+\ubar^r u^s
 =
-\zeta^\dagger \lr{
+u^{r\dagger} \gamma^0 u^s
+=
+\begin{bmatrix}
+\zeta^{r \dagger} \sqrt{ p \cdot \sigma }
+&
+\zeta^{r \dagger} \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \zeta^s \\
+\sqrt{p \cdot \osigma} \zeta^s
+\end{bmatrix}
+=
+\zeta^{r\dagger} \lr{
 \sqrt{ p \cdot \sigma }
 \sqrt{ p \cdot \osigma }
 +
 \sqrt{ p \cdot \osigma }
 \sqrt{ p \cdot \sigma }
 }
-\zeta
+\zeta^s
 =
-2 m \zeta^\dagger \zeta
+2 m \zeta^{r\dagger} \zeta^s
+=
+2 m \delta^{rs},
 \end{dmath}
-
-We find
-\begin{dmath}\label{eqn:qftLecture21:240}
-\ubar^s(\Bp) u^{s'}(\Bp) = 2 m \delta^{s s'}.
-\end{dmath}
+which completes the proof.
 
 \section{Other solution.}
 
@@ -207,7 +283,7 @@ In this case the normalization is
 \begin{dmath}\label{eqn:qftLecture21:300}
 \begin{aligned}
 \vbar^r(p) v^s(p) &= - 2 m \delta^{rs} \\
-(\vbar^r)^\dagger(p) v^s(p) &= 2 p^0 \delta^{rs}.
+\vbar^{r \dagger}(p) v^s(p) &= 2 p^0 \delta^{rs}.
 \end{aligned}
 \end{dmath}
 It can be shown that
@@ -222,10 +298,10 @@ v^\dagger(-\Bp) u(\Bp) &= 0 \\
 It can also be shown that
 \begin{dmath}\label{eqn:qftLecture21:340}
 \begin{aligned}
-(u^s)^\dagger(\Bp) u^r(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
-(v^r)^\dagger(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
-(u^r)^\dagger(\Bp) v^s(\Bp) &= 0 \\
-(v^r)^\dagger(-\Bp) u^s(\Bp) &= 0.
+u^{r\dagger}(\Bp) u^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
+v^{r\dagger}(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
+u^{r\dagger}(\Bp) v^s(\Bp) &= 0 \\
+v^{r\dagger}(-\Bp) u^s(\Bp) &= 0.
 \end{aligned}
 \end{dmath}
 
@@ -256,7 +332,7 @@ We define
 x \otimes y^\T =
 \begin{bmatrix}
 x_1 \\
-\vdots
+\vdots \\
 x_n \\
 \end{bmatrix}
 \otimes
@@ -265,20 +341,19 @@ y_1 \cdots y_n
 \end{bmatrix}
 =
 \begin{bmatrix}
-x_1 y_1 & x_1 y_2 ...
-x_2 y_1 &
-x_3 y_1
-\vdots
-x_n y_1 ... x_n y_n
+x_1 y_1 & x_1 y_2 & \cdots & x_1 y_n \\
+x_2 y_1 & x_2 y_2 & \cdots & x_2 y_n \\
+x_3 y_1 & \ddots  &        &         \\
+\vdots  &         &        &         \\
+x_n y_1 & \cdots  &        & x_n y_n
 \end{bmatrix}
 =
 \Norm{ x_i y_j }
 \end{dmath}
 
-Like
-
+Such a tensor product can be likened to the completeness relation that we express in QM as
 \begin{dmath}\label{eqn:qftLecture21:460}
-\sum_n \ket{n} \bra{n} \equiv 1
+\sum_n \ket{n} \bra{n} \equiv 1.
 \end{dmath}
 
 Can also show that
@@ -294,10 +369,9 @@ Can also show that
 = v^\dagger \gamma_0
 \end{dmath}
 
-Let's show this for the \( v \)'s.
-
+Let's show this for the \( v \)'s
 \begin{dmath}\label{eqn:qftLecture21:420}
-\sum_s
+\sum_{s = 1,2}
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
 -\sqrt{p \cdot \osigma} \eta^s \\
@@ -312,6 +386,7 @@ Let's show this for the \( v \)'s.
 1 & 0
 \end{bmatrix}
 =
+\sum_{s = 1,2}
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
 \sqrt{p \cdot \osigma} \eta^s \\
@@ -322,6 +397,7 @@ Let's show this for the \( v \)'s.
 (\eta^s)^\T \sqrt{ p \cdot \sigma }
 \end{bmatrix}
 =
+\sum_{s = 1,2}
 \begin{bmatrix}
 -\sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & \sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }  \\
 \sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & -\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }
@@ -522,9 +598,9 @@ Adding time back in the mix the most general wave function is
 \begin{dmath}\label{eqn:qftLecture21:840}
 \Psi^\dagger(\Bx,0)
 = \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i \Bq \cdot x} \sum_{r = 1,2} \lr{
-   (u^r)^\dagger(\Bq) (a^r)^\dagger_\Bq
+   u^{r \dagger}(\Bq) a^{r \dagger}_\Bq
    +
-   (v^r)^\dagger(-\Bq) (b^r)^\dagger_{-\Bq}
+   v^{r \dagger}(-\Bq) b^{r \dagger}_{-\Bq}
 }
 \end{dmath}
 
@@ -550,20 +626,20 @@ H_{\text{Dirac}} =
 \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp }
 \omega_\Bp
 \sum_{r,s = 1,2} \lr{
-(a^r)^\dagger_\Bp a^s_\Bp \underbrace{(u^r)^\dagger(\Bp) u^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+a^{r \dagger}_\Bp a^s_\Bp \underbrace{u^{r \dagger}(\Bp) u^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
 -
-\cancel{(a^r)^\dagger_\Bp b^s_{-\Bp} (u^r)^\dagger(\Bp) v^s(\Bp) }
+\cancel{a^{r \dagger}_\Bp b^s_{-\Bp} u^{r \dagger}(\Bp) v^s(\Bp) }
 +
-\cancel{(b^r)^\dagger_{-\Bp} a^s_\Bp (v^r)^\dagger(-\Bp) u^s(\Bp) }
+\cancel{b^{r \dagger}_{-\Bp} a^s_\Bp v^{r \dagger}(-\Bp) u^s(\Bp) }
 -
-(b^r)^\dagger_{-\Bp} b^s_{-\Bp} \underbrace{(v^r)^\dagger(\Bp) v^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+b^{r \dagger}_{-\Bp} b^s_{-\Bp} \underbrace{v^{r \dagger}(\Bp) v^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
 }
 =
 \int \frac{d^3 p}{(2 \pi)^3 }
 \omega_\Bp
 \sum_{r = 1}
 \lr{
-(a_\Bp^r)^\dagger a_\Bp^s - (b_\Bp^r)^\dagger b_\Bp^s
+(a_\Bp^{r \dagger} a_\Bp^s - b_\Bp^{r \dagger} b_\Bp^s
 }.
 \end{dmath}
 Note that we have a minus sign in the Hamiltonian, so there is no bound to the energy from below!  This makes interpretation of the \( a_p \)'s and \( b_p \)'s as the familiar raising and lowering operators that we know, we end up in trouble.
@@ -574,8 +650,8 @@ It will turn out that our operators are Fermions.
 Let
 \begin{dmath}\label{eqn:qftLecture21:900}
 \begin{aligned}
-b^\sdagger_p &= tb_p \\
-b^\s &= tb_p^sdagger
+b^{s \dagger}_p &= tb_p \\
+b^s &= \tilde{b^{s \dagger}}_p
 \end{aligned}
 \end{dmath}
 
@@ -583,25 +659,25 @@ some properties are
 \begin{dmath}\label{eqn:qftLecture21:920}
 \begin{aligned}
 (a^s_p)^2 &= 0 \\
-(a^sdagger_p)^2 &= 0 \\
+(a^{s \dagger}_p)^2 &= 0 \\
 (b^s_p)^2 &= 0 \\
-(b^sdagger_p)^2 &= 0
+(b^{s \dagger}_p)^2 &= 0
 \end{aligned}
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture21:940}
 \begin{aligned}
-\symmetric{a_p^s_\Bp}{a^rdagger_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq) \\
-\symmetric{b_p^s_\Bp}{b^rdagger_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq)
+\symmetric{a^s_\Bp}{a^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq) \\
+\symmetric{b^s_\Bp}{b^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq)
 \end{aligned}
 \end{dmath}
 
 and all other anticommutators are zero
 \begin{dmath}\label{eqn:qftLecture21:960}
-\symmetric{a}{b} =
-\symmetric{a}{b^\dagger} =
-\symmetric{a^\dagger}{b} =
-\symmetric{a^\dagger}{b^\dagger} = 0.
+\symmetric{a^r}{b^s} =
+\symmetric{a^r}{b^{s\dagger}} =
+\symmetric{a^{r\dagger}}{b^s} =
+\symmetric{a^{r\dagger}}{b^{s\dagger}} = 0.
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture21:980}
@@ -611,15 +687,15 @@ H_{\text{Dirac}}
 \omega_\Bp
 \sum_{r = 1}
 \lr{
-\ta_\Bp^r a_\Bp^s - \tb_\Bp^r b_\Bp^s
+\tilde{a}_\Bp^r a_\Bp^s - \tilde{b}_\Bp^r b_\Bp^s
 }
 =
 \int \frac{d^3 p}{(2 \pi)^3 }
 \omega_\Bp
 \sum_{s = 1}
 \lr{
-(a_\Bp^r)^\dagger a_\Bp^s
-+ \tb_\Bp^s \tb^\dagger_\Bp^s + \delta^{ss} \deltathree( \Bp - \Bp )
+a_\Bp^{r \dagger} a_\Bp^s
++ \tilde{b}_\Bp^s \tilde{b}^{s\dagger}_\Bp + \delta^{ss} \deltathree( \Bp - \Bp )
 }
 =
 \int \frac{d^3 p}{(2 \pi)^3 }
@@ -627,8 +703,8 @@ H_{\text{Dirac}}
 \omega_\Bp
 \sum_{s = 1}
 \lr{
-(a_\Bp^r)^\dagger a_\Bp^s
-+ \tb_\Bp^s \tb^\dagger_\Bp^s
+a_\Bp^{ r \dagger} a_\Bp^s
++ \tilde{b}_\Bp^s \tilde{b}^{s\dagger}_\Bp
 }
 - 4 V_3 \frac{\omega_\Bp}{2}
 }
