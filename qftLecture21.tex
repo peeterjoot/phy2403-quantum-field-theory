@@ -18,6 +18,10 @@
 \usepackage{macros_cal} % LL
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+\newcommand{\oPsi}[0]{\overbar{\Psi}}
+\newcommand{\osigma}[0]{\overbar{\sigma}}
+\newcommand{\ubar}[0]{\overbar{u}}
+\newcommand{\vbar}[0]{\overbar{v}}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 21: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -35,8 +39,603 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review.}
+
+We were studying the Dirac Lagrangian
+\begin{dmath}\label{eqn:qftLecture21:20}
+\LL_{\text{Dirac}} = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
+\end{dmath}
+from which we find
+\begin{dmath}\label{eqn:qftLecture21:40}
+\lr{ i \gamma^\mu \partial_\mu -m } \Psi = 0,
+\end{dmath}
+the Dirac equation, and saw that solutions to this equation satisfies the KG equation.  We found solution
+\begin{dmath}\label{eqn:qftLecture21:60}
+\Psi(x) = u(p) e^{-i p \cdot x},
+\end{dmath}
+which is automatically a solution to the KG equation.  There are actually two linearly independent solutions
+\begin{dmath}\label{eqn:qftLecture21:80}
+u^s(p) =
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s \\
+\sqrt{ p \cdot \osigma } \zeta^s \\
+\end{bmatrix},
+\end{dmath}
+where \( \zeta^1 = (1,0)^\T, \zeta^2 = (0,1)^\T \).
+
+\section{Continuing.}
+
+\begin{dmath}\label{eqn:qftLecture21:100}
+u^\dagger =
+\begin{bmatrix}
+\zeta^\dagger \sqrt{ p \cdot \sigma }
+&
+\zeta^\dagger \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:120}
+u^\dagger u
+=
+\zeta^\dagger \lr{
+\sqrt{ p \cdot \sigma }
+\sqrt{ p \cdot \sigma }
++
+\sqrt{ p \cdot \osigma }
+\sqrt{ p \cdot \osigma }
+}
+\zeta
+=
+\zeta^\dagger \lr{
+ p \cdot \sigma
++
+ p \cdot \osigma
+}
+\zeta
+=
+\zeta^\dagger
+\lr{
+p_0 - \Bp \cdot \Bsigma
++
+p_0 + \Bp \cdot \Bsigma
+}
+\zeta
+=
+2 p_0
+\zeta^\dagger \zeta
+\end{dmath}
+
+In particular
+
+\begin{dmath}\label{eqn:qftLecture21:140}
+(u^s)^\dagger u^{s'}
+= 2 p_0 (\zeta^s)^\dagger \zeta^{s'}
+= 2 p_0 \delta^{s s'}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:160}
+\ubar u
+=
+u^\dagger \gamma^0 u
+=
+\begin{bmatrix}
+\zeta^\dagger \sqrt{ p \cdot \sigma }
+&
+\zeta^\dagger \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \zeta \\
+\sqrt{p \cdot \osigma} \zeta
+\end{bmatrix}
+\end{dmath}
+
+Note that
+\begin{dmath}\label{eqn:qftLecture21:180}
+(p \cdot \sigma) (p \cdot \osigma)
+=
+\lr{ p^0 - \Bp \cdot \Bsigma}
+\lr{ p^0 + \Bp \cdot \Bsigma}
+=
+(p^0)^2
+-
+(\Bp \cdot \Bsigma)^2
+=
+(p^0)^2
+-
+\Bp^2
+= m^2
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:200}
+(p \cdot \osigma) (p \cdot \sigma)
+=
+\lr{ p^0 + \Bp \cdot \Bsigma}
+\lr{ p^0 - \Bp \cdot \Bsigma}
+=
+(p^0)^2
+-
+(\Bp \cdot \Bsigma)^2
+=
+(p^0)^2
+-
+\Bp^2
+= m^2
+\end{dmath}
+
+so
+\begin{dmath}\label{eqn:qftLecture21:220}
+\ubar u
+=
+\zeta^\dagger \lr{
+\sqrt{ p \cdot \sigma }
+\sqrt{ p \cdot \osigma }
++
+\sqrt{ p \cdot \osigma }
+\sqrt{ p \cdot \sigma }
+}
+\zeta
+=
+2 m \zeta^\dagger \zeta
+\end{dmath}
+
+We find
+\begin{dmath}\label{eqn:qftLecture21:240}
+\ubar^s(\Bp) u^{s'}(\Bp) = 2 m \delta^{s s'}.
+\end{dmath}
+
+\section{Other solution.}
+
+Now we seek the other plane wave solution
+\begin{dmath}\label{eqn:qftLecture21:260}
+\Psi(x) = v(p) e^{i p \cdot x}.
+\end{dmath}
+The answer is
+\begin{dmath}\label{eqn:qftLecture21:280}
+v^s(p)
+=
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta^s \\
+-\sqrt{p \cdot \osigma} \eta^s \\
+\end{bmatrix},
+\end{dmath}
+where \( \eta^1 = (1,0)^\T, \eta^2 = (0,1)^\T \).
+In this case the normalization is
+\begin{dmath}\label{eqn:qftLecture21:300}
+\begin{aligned}
+\vbar^r(p) v^s(p) &= - 2 m \delta^{rs} \\
+(\vbar^r)^\dagger(p) v^s(p) &= 2 p^0 \delta^{rs}.
+\end{aligned}
+\end{dmath}
+It can be shown that
+\begin{dmath}\label{eqn:qftLecture21:320}
+\begin{aligned}
+\ubar^r(p) v^s(p) &= 0 \\
+\vbar^r(p) u^s(p) &= 0 \\
+v^\dagger(-\Bp) u(\Bp) &= 0 \\
+\end{aligned}
+\end{dmath}
+
+It can also be shown that
+\begin{dmath}\label{eqn:qftLecture21:340}
+\begin{aligned}
+(u^s)^\dagger(\Bp) u^r(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
+(v^r)^\dagger(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
+(u^r)^\dagger(\Bp) v^s(\Bp) &= 0 \\
+(v^r)^\dagger(-\Bp) u^s(\Bp) &= 0.
+\end{aligned}
+\end{dmath}
+
+Given
+
+\begin{equation}\label{eqn:qftLecture21:360}
+x =
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n \\
+\end{bmatrix},
+\qquad
+y =
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n \\
+\end{bmatrix}.
+\end{equation}
+
+\begin{dmath}\label{eqn:qftLecture21:380}
+y^\T x = \text{scalar} = \sum_{i = 1}^n x^i y^i
+\end{dmath}
+
+We define
+\begin{dmath}\label{eqn:qftLecture21:440}
+x \otimes y^\T =
+\begin{bmatrix}
+x_1 \\
+\vdots
+x_n \\
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+y_1 \cdots y_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_1 y_1 & x_1 y_2 ...
+x_2 y_1 &
+x_3 y_1
+\vdots
+x_n y_1 ... x_n y_n
+\end{bmatrix}
+=
+\Norm{ x_i y_j }
+\end{dmath}
+
+Like
+
+\begin{dmath}\label{eqn:qftLecture21:460}
+\sum_n \ket{n} \bra{n} \equiv 1
+\end{dmath}
+
+Can also show that
+\begin{dmath}\label{eqn:qftLecture21:400}
+\begin{aligned}
+\sum_{s = 1}^2 u^s(p) \otimes \ubar^s(p) &= \gamma \cdot p + m \\
+\sum_{s = 1}^2 v^s(p) \otimes \vbar^s(p) &= \gamma \cdot p - m \\
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:480}
+\vbar^s
+= v^\dagger \gamma_0
+\end{dmath}
+
+Let's show this for the \( v \)'s.
+
+\begin{dmath}\label{eqn:qftLecture21:420}
+\sum_s
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta^s \\
+-\sqrt{p \cdot \osigma} \eta^s \\
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+(\eta^s)^\T \sqrt{ p \cdot \sigma } &
+-(\eta^s)^\T \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta^s \\
+\sqrt{p \cdot \osigma} \eta^s \\
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+-(\eta^s)^\T \sqrt{ p \cdot \sigma } &
+(\eta^s)^\T \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & \sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }  \\
+\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & -\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\sqrt{ p \cdot \sigma } \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \sqrt{ p \cdot \sigma } \\
+\sqrt{ p \cdot \osigma } \sqrt{ p \cdot \osigma } & -\sqrt{ p \cdot \osigma } \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\sqrt{ p \cdot \sigma p \cdot \osigma } & \sqrt{ p \cdot \sigma p \cdot \sigma } \\
+\sqrt{ p \cdot \osigma p \cdot \osigma } & -\sqrt{ p \cdot \osigma p \cdot \osigma }
+\end{bmatrix}
+=
+\begin{bmatrix}
+-m & p \cdot \sigma \\
+p \cdot \osigma & - m
+\end{bmatrix}
+=
+-m \BOne
++ p^0
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
++ \Bp
+\cdot
+\begin{bmatrix}
+0 & -\Bsigma \\
+\Bsigma & 0
+\end{bmatrix}
+=
+-m + p^\mu \gamma_\mu
+\end{dmath}
+
+\section{Lagrangian.}
+
+\begin{dmath}\label{eqn:qftLecture21:500}
+\LL_{\text{Dirac}}
+= \oPsi i \gamma^0 \partial_0 \Psi + i \oPsi \gamma^j \partial_j \Psi - m \oPsi \Psi
+= \Psi^\dagger \gamma^0 i \gamma^0 \partial_0 \Psi + i \Psi \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+= \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:520}
+\pi_\psi = \PD{\dot{\Psi}}{\LL} = i \Psi^\dagger
+\end{dmath}
+
+Our Hamiltonian density is
+\begin{dmath}\label{eqn:qftLecture21:540}
+H_{\text{Dirac}}
+= \pi_\Psi \dot{\Psi} - \LL
+= i \Psi^\dagger \dot{\Psi} - \lr{
+\Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+}
+\end{dmath}
+
+so the Dirac Hamiltonian is
+\begin{dmath}\label{eqn:qftLecture21:560}
+H
+=
+\int d^3 x
+\lr{
+- i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi + m \Psi^\dagger \gamma^0 \Psi
+}
+=
+\int d^3 x
+\Psi^\dagger
+\lr{
+- i \gamma^0 \gamma^j \partial_j \Psi + m \gamma^0
+}
+\Psi.
+\end{dmath}
+
+Now we use linear combinations of the solutions we have found
+\begin{dmath}\label{eqn:qftLecture21:580}
+\Psi(\Bx,0) = \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp} } e^{i \Bp \cdot \Bx} \sum_{s = 1,2} \lr{
+   u^s(\Bp) a^s_\Bp
+   +
+   v^s(-\Bp) b^s_{-\Bp}
+},
+\end{dmath}
+where \( t = 0 \) for convience.
+
+Given the Dirac equation
+\begin{dmath}\label{eqn:qftLecture21:600}
+\lr{ i \gamma^\mu \partial_\mu - m } \Psi = 0.
+\end{dmath}
+When we plug in \( \Psi_u = u(p) e^{-i p \cdot x} \) we get \( (\gamma^\mu p_\mu - m) u = 0 \), so
+\begin{dmath}\label{eqn:qftLecture21:640}
+\gamma^i p_i u = (-\gamma^0 p^0 + m)u
+\end{dmath}
+whereas when we plug in
+\( \Psi_v = v(p) e^{i p \cdot x} \) we get \( (-\gamma^\mu p_\mu - m) u = 0 \), so
+\begin{dmath}\label{eqn:qftLecture21:660}
+\gamma^j p_j v = -(m + \gamma^0 p_0) v
+\end{dmath}
+
+What is the action of \( -i \gamma^0 \gamma^j \partial_j + m \gamma^0 \) on \(\Psi_u \)?  We get
+
+\begin{dmath}\label{eqn:qftLecture21:620}
+(-i \gamma^0 \gamma^j \partial_j + m \gamma^0 ) \Psi_u
+=
+- \gamma^0 \lr{ - \gamma^0 p^0 + m }
+u e^{-i p \cdot x}
++ m \gamma^0
+u e^{-i p \cdot x}
+=
+(\gamma^0)^2 p_0 u^{-i p \cdot x}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:630}
+(-i \gamma^0 \gamma^j \partial_j + m \gamma^0 ) \Psi_u
+=
+ \gamma^0 \lr{ m + \gamma^0 p_0 }
+v e^{i p \cdot x}
++ m \gamma^0
+v e^{i p \cdot x}
+=
+(\gamma^0)^2 p_0 u^{-i p \cdot x}
+\end{dmath}
+
+restart
+\begin{dmath}\label{eqn:qftLecture21:680}
+\lr{ -i \gamma^0 \gamma^j \partial_j + m \gamma^0 } \Psi = - \gamma^0
+\lr{ i \gamma^j \partial_j - m } \Psi
+\end{dmath}
+
+acting on
+\begin{dmath}\label{eqn:qftLecture21:700}
+\Psi_u = u(p)
+e^{-i p_\mu x^\mu }
+\end{dmath}
+
+we get
+
+\begin{dmath}\label{eqn:qftLecture21:720}
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_\mu x^\mu }
+=
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_\mu x^\mu }
+=
+\lr{ \gamma^j p_j - m } e^{-i p\cdot x}
+\end{dmath}
+
+used EOM for u
+
+\begin{dmath}\label{eqn:qftLecture21:740}
+\Psi_v = v(p)
+e^{i p_\mu x^\mu }
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:880}
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_k x^k }
+=
+\lr{ -i \gamma^j p_j - m } e^{i p \cdot x}
+\end{dmath}
+
+We find
+
+\begin{dmath}\label{eqn:qftLecture21:760}
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_v = -\gamma^0 \gamma^0 p_0 \Psi_v = -p_0 \Psi_v
+\end{dmath}
+
+
+\boxedEquation{eqn:qftLecture21:780}{
+\begin{aligned}
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_u &= p_0 \Psi_u \\
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_v &= -p_0 \Psi_v
+\end{aligned}
+}
+
+Adding time back in the mix the most general wave function is
+\begin{dmath}\label{eqn:qftLecture21:800}
+\Psi(\Bx, t)
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp } }
+\lr{
+   \sum_s e^{-i p \cdot x} u^s_\Bp a_\Bp^s
++
+   \sum_s e^{i p \cdot x} v^s_\Bp b_\Bp^s
+},
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:820}
+\Psi(\Bx,0)
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp} } e^{i \Bp \cdot x} \sum_{s = 1,2} \lr{
+   u^s(\Bp) a^s_\Bp
+   +
+   v^s(-\Bp) b^s_{-\Bp}
+}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:840}
+\Psi^\dagger(\Bx,0)
+= \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i \Bq \cdot x} \sum_{r = 1,2} \lr{
+   (u^r)^\dagger(\Bq) (a^r)^\dagger_\Bq
+   +
+   (v^r)^\dagger(-\Bq) (b^r)^\dagger_{-\Bq}
+}
+\end{dmath}
+
+We'll get the following
+
+\begin{dmath}\label{eqn:qftLecture21:860}
+H_{\text{Dirac}} =
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp }
+\sum_{r = 1,2} \lr{
+   u^r(\Bp) a^r_\Bp
+   +
+   v^r(-\Bp) b^r_{-\Bp}
+}
+\times
+\sum_{s = 1,2} \lr{
+   \omega_\Bp
+   u^s(\Bp) a^s_\Bp
+   +
+   \omega_\Bp
+   v^s(-\Bp) b^s_{-\Bp}
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp }
+\omega_\Bp
+\sum_{r,s = 1,2} \lr{
+(a^r)^\dagger_\Bp a^s_\Bp \underbrace{(u^r)^\dagger(\Bp) u^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+-
+\cancel{(a^r)^\dagger_\Bp b^s_{-\Bp} (u^r)^\dagger(\Bp) v^s(\Bp) }
++
+\cancel{(b^r)^\dagger_{-\Bp} a^s_\Bp (v^r)^\dagger(-\Bp) u^s(\Bp) }
+-
+(b^r)^\dagger_{-\Bp} b^s_{-\Bp} \underbrace{(v^r)^\dagger(\Bp) v^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{r = 1}
+\lr{
+(a_\Bp^r)^\dagger a_\Bp^s - (b_\Bp^r)^\dagger b_\Bp^s
+}.
+\end{dmath}
+Note that we have a minus sign in the Hamiltonian, so there is no bound to the energy from below!  This makes interpretation of the \( a_p \)'s and \( b_p \)'s as the familiar raising and lowering operators that we know, we end up in trouble.
+
+We can save the day, making the ``Dirac sea'' argument\footnote{There was a long discussion of this topic that I was not able to capture in my notes.}.
+
+It will turn out that our operators are Fermions.
+Let
+\begin{dmath}\label{eqn:qftLecture21:900}
+\begin{aligned}
+b^\sdagger_p &= tb_p \\
+b^\s &= tb_p^sdagger
+\end{aligned}
+\end{dmath}
+
+some properties are
+\begin{dmath}\label{eqn:qftLecture21:920}
+\begin{aligned}
+(a^s_p)^2 &= 0 \\
+(a^sdagger_p)^2 &= 0 \\
+(b^s_p)^2 &= 0 \\
+(b^sdagger_p)^2 &= 0
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:940}
+\begin{aligned}
+\symmetric{a_p^s_\Bp}{a^rdagger_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq) \\
+\symmetric{b_p^s_\Bp}{b^rdagger_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq)
+\end{aligned}
+\end{dmath}
+
+and all other anticommutators are zero
+\begin{dmath}\label{eqn:qftLecture21:960}
+\symmetric{a}{b} =
+\symmetric{a}{b^\dagger} =
+\symmetric{a^\dagger}{b} =
+\symmetric{a^\dagger}{b^\dagger} = 0.
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21:980}
+H_{\text{Dirac}}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{r = 1}
+\lr{
+\ta_\Bp^r a_\Bp^s - \tb_\Bp^r b_\Bp^s
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{s = 1}
+\lr{
+(a_\Bp^r)^\dagger a_\Bp^s
++ \tb_\Bp^s \tb^\dagger_\Bp^s + \delta^{ss} \deltathree( \Bp - \Bp )
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\lr{
+\omega_\Bp
+\sum_{s = 1}
+\lr{
+(a_\Bp^r)^\dagger a_\Bp^s
++ \tb_\Bp^s \tb^\dagger_\Bp^s
+}
+- 4 V_3 \frac{\omega_\Bp}{2}
+}
+\end{dmath}
+
+We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with antielectrons.
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
+\EndNoBibArticle
