@@ -306,20 +306,26 @@ v^{r\dagger}(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr}.
 \end{aligned}
 \end{dmath}
 
-Various orthogonality conditions exist between the \( u \)'s and \( v\)'s, such as
-\begin{dmath}\label{eqn:qftLecture21:320}
+Various orthogonality conditions exist between the \( u \)'s and \( v\)'s
+\maketheorem{Dirac adjoint orthogonality conditions.}{thm:qftLecture21:1260}{
+\begin{equation*}
 \begin{aligned}
 \ubar^r(p) v^s(p) &= 0 \\
-\vbar^r(p) u^s(p) &= 0 \\
+\vbar^r(p) u^s(p) &= 0.
 \end{aligned}
-\end{dmath}
-and
-\begin{dmath}\label{eqn:qftLecture21:340}
+\end{equation*}
+} % theorem
+Proof left to \cref{problem:qftLecture21:4}.
+
+\maketheorem{Dagger orthogonality conditions.}{thm:qftLecture21:1261}{
+\begin{equation*}
 \begin{aligned}
 v^{r \dagger}(-\Bp) u^s(\Bp) &= 0 \\
-u^{r\dagger}(\Bp) v^s(\Bp) &= 0.
+u^{r\dagger}(\Bp) v^s(-\Bp) &= 0.
 \end{aligned}
-\end{dmath}
+\end{equation*}
+} % theorem
+Proof left to \cref{problem:qftLecture21:5}.
 
 Finally, there are a couple tensor products of interest.
 \makedefinition{Tensor product.}{dfn:qftLecture21:7}{
@@ -895,6 +901,84 @@ v^{r\dagger} v^s
 \end{dmath}
 } % answer
 
+\makeproblem{\( \ubar v, \vbar u \) relations.}{problem:qftLecture21:4}{
+Prove \cref{thm:qftLecture21:1260}.
+} % problem
+
+\makeanswer{problem:qftLecture21:4}{
+We need only expand the matrix products
+\begin{dmath}\label{eqn:qftLecture21:1220}
+\ubar^r v^s
+=
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ p \cdot \osigma } & \zeta^{r\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s  \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+m \zeta^{r\T} \eta^s
+- m \zeta^{r\T} \eta^s
+=0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1240}
+\vbar^r u^s
+=
+\begin{bmatrix}
+-\eta^{r\T} \sqrt{ p \cdot \osigma } & \eta^{r\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s  \\
+\sqrt{ p \cdot \osigma } \zeta^s
+\end{bmatrix}
+=
+- m \eta^{r\T} \zeta^s
++ m \eta^{r\T} \zeta^s
+=0,
+\end{dmath}
+} % answer
+
+\makeproblem{Dagger orthonormality conditions.}{problem:qftLecture21:5}{
+Prove \cref{thm:qftLecture21:1261}.
+} % problem
+
+\makeanswer{problem:qftLecture21:5}{
+\begin{dmath}\label{eqn:qftLecture21:1260}
+u^{r\dagger}(\Bp)
+v^{s}(-\Bp)
+=
+\evalbar{
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ p \cdot \sigma } &\zeta^{r\T} \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ q \cdot \sigma } \eta^s \\
+-\sqrt{ q \cdot \osigma } \eta^s
+\end{bmatrix}
+}{p = (0, \Bp), q = (0, -\Bp)}
+=
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } &\zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ \Bp \cdot \Bsigma } \eta^s \\
+-\sqrt{ -\Bp \cdot \Bsigma } \eta^s
+\end{bmatrix}
+=
+\zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } \sqrt{ \Bp \cdot \Bsigma } \eta^s
+-
+\zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma } \sqrt{ -\Bp \cdot \Bsigma } \eta^s
+%=
+%\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
+%-
+%\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
+=
+0.
+\end{dmath}
+} % answer
+
 \makeproblem{Direct product relation for the \(u\)'s.}{problem:qftLecture21:3}{
 Prove the \( u \) direct product relations of \cref{thm:qftLecture21:17}.
 } % problem
@@ -927,6 +1011,7 @@ p \cdot \osigma & m
 m + p \cdot \gamma.
 \end{dmath}
 } % answer
+
 
 %}
 %\EndArticle
