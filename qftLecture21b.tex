@@ -1,0 +1,327 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{qftLecture21b}
+\renewcommand{\dirname}{notes/phy2403/}
+\newcommand{\keywords}{PHY2403H}
+\input{../latex/peeter_prologue_print2.tex}
+
+%\usepackage{phy2403}
+\usepackage{peeters_braket}
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_figures}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{macros_cal} % LL
+
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+\newcommand{\oPsi}[0]{\overbar{\Psi}}
+\newcommand{\osigma}[0]{\overbar{\sigma}}
+\newcommand{\ubar}[0]{\overbar{u}}
+\newcommand{\vbar}[0]{\overbar{v}}
+\newcommand{\deltathree}[0]{\delta^{(3)}}
+\newcommand{\deltafour}[0]{\delta^{(4)}}
+\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+
+\beginArtNoToc
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 21, Part II: XXX.  Taught by Prof.\ Erich Poppitz}
+%\chapter{XXX}
+\label{chap:qftLecture21b}
+
+\paragraph{Disclaimer}
+
+%%Peeter's lecture notes from class.  These may be incoherent and rough.
+%%
+%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+
+\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+
+These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+
+\section{Lagrangian.}
+
+\begin{dmath}\label{eqn:qftLecture21b:500}
+\LL_{\text{Dirac}}
+= \oPsi i \gamma^0 \partial_0 \Psi + i \oPsi \gamma^j \partial_j \Psi - m \oPsi \Psi
+= \Psi^\dagger \gamma^0 i \gamma^0 \partial_0 \Psi + i \Psi \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+= \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:520}
+\pi_\psi = \PD{\dot{\Psi}}{\LL} = i \Psi^\dagger
+\end{dmath}
+
+Our Hamiltonian density is
+\begin{dmath}\label{eqn:qftLecture21b:540}
+H_{\text{Dirac}}
+= \pi_\Psi \dot{\Psi} - \LL
+= i \Psi^\dagger \dot{\Psi} - \lr{
+\Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
+}
+\end{dmath}
+
+so the Dirac Hamiltonian is
+\begin{dmath}\label{eqn:qftLecture21b:560}
+H
+=
+\int d^3 x
+\lr{
+- i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi + m \Psi^\dagger \gamma^0 \Psi
+}
+=
+\int d^3 x
+\Psi^\dagger
+\lr{
+- i \gamma^0 \gamma^j \partial_j \Psi + m \gamma^0
+}
+\Psi.
+\end{dmath}
+
+Now we use linear combinations of the solutions we have found
+\begin{dmath}\label{eqn:qftLecture21b:580}
+\Psi(\Bx,0) = \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp} } e^{i \Bp \cdot \Bx} \sum_{s = 1,2} \lr{
+   u^s(\Bp) a^s_\Bp
+   +
+   v^s(-\Bp) b^s_{-\Bp}
+},
+\end{dmath}
+where \( t = 0 \) for convience.
+
+Given the Dirac equation
+\begin{dmath}\label{eqn:qftLecture21b:600}
+\lr{ i \gamma^\mu \partial_\mu - m } \Psi = 0.
+\end{dmath}
+When we plug in \( \Psi_u = u(p) e^{-i p \cdot x} \) we get \( (\gamma^\mu p_\mu - m) u = 0 \), so
+\begin{dmath}\label{eqn:qftLecture21b:640}
+\gamma^i p_i u = (-\gamma^0 p^0 + m)u
+\end{dmath}
+whereas when we plug in
+\( \Psi_v = v(p) e^{i p \cdot x} \) we get \( (-\gamma^\mu p_\mu - m) u = 0 \), so
+\begin{dmath}\label{eqn:qftLecture21b:660}
+\gamma^j p_j v = -(m + \gamma^0 p_0) v
+\end{dmath}
+
+What is the action of \( -i \gamma^0 \gamma^j \partial_j + m \gamma^0 \) on \(\Psi_u \)?  We get
+
+\begin{dmath}\label{eqn:qftLecture21b:620}
+(-i \gamma^0 \gamma^j \partial_j + m \gamma^0 ) \Psi_u
+=
+- \gamma^0 \lr{ - \gamma^0 p^0 + m }
+u e^{-i p \cdot x}
++ m \gamma^0
+u e^{-i p \cdot x}
+=
+(\gamma^0)^2 p_0 u^{-i p \cdot x}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:630}
+(-i \gamma^0 \gamma^j \partial_j + m \gamma^0 ) \Psi_u
+=
+ \gamma^0 \lr{ m + \gamma^0 p_0 }
+v e^{i p \cdot x}
++ m \gamma^0
+v e^{i p \cdot x}
+=
+(\gamma^0)^2 p_0 u^{-i p \cdot x}
+\end{dmath}
+
+restart
+\begin{dmath}\label{eqn:qftLecture21b:680}
+\lr{ -i \gamma^0 \gamma^j \partial_j + m \gamma^0 } \Psi = - \gamma^0
+\lr{ i \gamma^j \partial_j - m } \Psi
+\end{dmath}
+
+acting on
+\begin{dmath}\label{eqn:qftLecture21b:700}
+\Psi_u = u(p)
+e^{-i p_\mu x^\mu }
+\end{dmath}
+
+we get
+
+\begin{dmath}\label{eqn:qftLecture21b:720}
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_\mu x^\mu }
+=
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_\mu x^\mu }
+=
+\lr{ \gamma^j p_j - m } e^{-i p\cdot x}
+\end{dmath}
+
+used EOM for u
+
+\begin{dmath}\label{eqn:qftLecture21b:740}
+\Psi_v = v(p)
+e^{i p_\mu x^\mu }
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:880}
+\lr{ i \gamma^j \partial_j - m }
+e^{-i p_k x^k }
+=
+\lr{ -i \gamma^j p_j - m } e^{i p \cdot x}
+\end{dmath}
+
+We find
+
+\begin{dmath}\label{eqn:qftLecture21b:760}
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_v = -\gamma^0 \gamma^0 p_0 \Psi_v = -p_0 \Psi_v
+\end{dmath}
+
+
+\boxedEquation{eqn:qftLecture21b:780}{
+\begin{aligned}
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_u &= p_0 \Psi_u \\
+-\gamma^0 \lr{ i \gamma^j \partial_j - m } \Psi_v &= -p_0 \Psi_v
+\end{aligned}
+}
+
+Adding time back in the mix the most general wave function is
+\begin{dmath}\label{eqn:qftLecture21b:800}
+\Psi(\Bx, t)
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp } }
+\lr{
+   \sum_s e^{-i p \cdot x} u^s_\Bp a_\Bp^s
++
+   \sum_s e^{i p \cdot x} v^s_\Bp b_\Bp^s
+},
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:820}
+\Psi(\Bx,0)
+=
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp} } e^{i \Bp \cdot x} \sum_{s = 1,2} \lr{
+   u^s(\Bp) a^s_\Bp
+   +
+   v^s(-\Bp) b^s_{-\Bp}
+}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:840}
+\Psi^\dagger(\Bx,0)
+= \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i \Bq \cdot x} \sum_{r = 1,2} \lr{
+   u^{r \dagger}(\Bq) a^{r \dagger}_\Bq
+   +
+   v^{r \dagger}(-\Bq) b^{r \dagger}_{-\Bq}
+}
+\end{dmath}
+
+We'll get the following
+
+\begin{dmath}\label{eqn:qftLecture21b:860}
+H_{\text{Dirac}} =
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp }
+\sum_{r = 1,2} \lr{
+   u^r(\Bp) a^r_\Bp
+   +
+   v^r(-\Bp) b^r_{-\Bp}
+}
+\times
+\sum_{s = 1,2} \lr{
+   \omega_\Bp
+   u^s(\Bp) a^s_\Bp
+   +
+   \omega_\Bp
+   v^s(-\Bp) b^s_{-\Bp}
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp }
+\omega_\Bp
+\sum_{r,s = 1,2} \lr{
+a^{r \dagger}_\Bp a^s_\Bp \underbrace{u^{r \dagger}(\Bp) u^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+-
+\cancel{a^{r \dagger}_\Bp b^s_{-\Bp} u^{r \dagger}(\Bp) v^s(\Bp) }
++
+\cancel{b^{r \dagger}_{-\Bp} a^s_\Bp v^{r \dagger}(-\Bp) u^s(\Bp) }
+-
+b^{r \dagger}_{-\Bp} b^s_{-\Bp} \underbrace{v^{r \dagger}(\Bp) v^s(\Bp) }_{\delta^{rs} 2 \omega_\Bp}
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{r = 1}
+\lr{
+(a_\Bp^{r \dagger} a_\Bp^s - b_\Bp^{r \dagger} b_\Bp^s
+}.
+\end{dmath}
+Note that we have a minus sign in the Hamiltonian, so there is no bound to the energy from below!  This makes interpretation of the \( a_p \)'s and \( b_p \)'s as the familiar raising and lowering operators that we know, we end up in trouble.
+
+We can save the day, making the ``Dirac sea'' argument\footnote{There was a long discussion of this topic that I was not able to capture in my notes.}.
+
+It will turn out that our operators are Fermions.
+Let
+\begin{dmath}\label{eqn:qftLecture21b:900}
+\begin{aligned}
+b^{s \dagger}_p &= tb_p \\
+b^s &= \tilde{b^{s \dagger}}_p
+\end{aligned}
+\end{dmath}
+
+some properties are
+\begin{dmath}\label{eqn:qftLecture21b:920}
+\begin{aligned}
+(a^s_p)^2 &= 0 \\
+(a^{s \dagger}_p)^2 &= 0 \\
+(b^s_p)^2 &= 0 \\
+(b^{s \dagger}_p)^2 &= 0
+\end{aligned}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:940}
+\begin{aligned}
+\symmetric{a^s_\Bp}{a^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq) \\
+\symmetric{b^s_\Bp}{b^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq)
+\end{aligned}
+\end{dmath}
+
+and all other anticommutators are zero
+\begin{dmath}\label{eqn:qftLecture21b:960}
+\symmetric{a^r}{b^s} =
+\symmetric{a^r}{b^{s\dagger}} =
+\symmetric{a^{r\dagger}}{b^s} =
+\symmetric{a^{r\dagger}}{b^{s\dagger}} = 0.
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture21b:980}
+H_{\text{Dirac}}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{r = 1}
+\lr{
+\tilde{a}_\Bp^r a_\Bp^s - \tilde{b}_\Bp^r b_\Bp^s
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\omega_\Bp
+\sum_{s = 1}
+\lr{
+a_\Bp^{r \dagger} a_\Bp^s
++ \tilde{b}_\Bp^s \tilde{b}^{s\dagger}_\Bp + \delta^{ss} \deltathree( \Bp - \Bp )
+}
+=
+\int \frac{d^3 p}{(2 \pi)^3 }
+\lr{
+\omega_\Bp
+\sum_{s = 1}
+\lr{
+a_\Bp^{ r \dagger} a_\Bp^s
++ \tilde{b}_\Bp^s \tilde{b}^{s\dagger}_\Bp
+}
+- 4 V_3 \frac{\omega_\Bp}{2}
+}
+\end{dmath}
+
+We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with antielectrons.
+
+%}
+%\EndArticle
+\EndNoBibArticle
