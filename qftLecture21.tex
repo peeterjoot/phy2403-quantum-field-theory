@@ -24,6 +24,9 @@
 \newcommand{\vbar}[0]{\overbar{v}}
 \newcommand{\deltathree}[0]{\delta^{(3)}}
 \newcommand{\deltafour}[0]{\delta^{(4)}}
+\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 21: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -69,8 +72,8 @@ where \( \zeta^1 = (1,0)^\T, \zeta^2 = (0,1)^\T \).
 
 \maketheorem{\( u^\dagger u \)}{thm:qftLecture21:1}{
 \begin{equation*}
-u^{s \dagger} u^{s'}
-= 2 p_0 \delta^{s s'}
+u^{r \dagger} u^{s}
+= 2 p_0 \delta^{r s}.
 \end{equation*}
 } % theorem
 
@@ -224,7 +227,7 @@ and
 
 \maketheorem{\( \ubar u \).}{thm:qftLecture21:3}{
 \begin{equation*}
-\ubar^s(\Bp) u^{s'}(\Bp) = 2 m \delta^{s s'}.
+\ubar^r(\Bp) u^{s}(\Bp) = 2 m \delta^{r s}.
 \end{equation*}
 } % theorem
 
@@ -269,45 +272,59 @@ Now we seek the other plane wave solution
 \begin{dmath}\label{eqn:qftLecture21:260}
 \Psi(x) = v(p) e^{i p \cdot x}.
 \end{dmath}
-The answer is
-\begin{dmath}\label{eqn:qftLecture21:280}
+It can be demonstrated (\cref{problem:qftLecture21:1}) that the solution has the form
+\boxedEquation{eqn:qftLecture21:280}{
 v^s(p)
 =
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
 -\sqrt{p \cdot \osigma} \eta^s \\
 \end{bmatrix},
-\end{dmath}
+}
 where \( \eta^1 = (1,0)^\T, \eta^2 = (0,1)^\T \).
-In this case the normalization is
-\begin{dmath}\label{eqn:qftLecture21:300}
+\maketheorem{\(v\) normalization.}{thm:qftLecture21:13}{
+%\label{eqn:qftLecture21:300}
+\begin{equation*}
 \begin{aligned}
 \vbar^r(p) v^s(p) &= - 2 m \delta^{rs} \\
-\vbar^{r \dagger}(p) v^s(p) &= 2 p^0 \delta^{rs}.
+v^{r \dagger}(p) v^s(p) &= 2 p^0 \delta^{rs}.
+\end{aligned}
+\end{equation*}
+} % theorem
+\Cref{thm:qftLecture21:13} is proven in \cref{problem:qftLecture21:2}.
+%and
+%\begin{dmath}\label{eqn:qftLecture21:480}
+%\vbar^s
+%= v^{s\dagger} \gamma_0.
+%\end{dmath}
+
+It will also be useful to restate the \( 2 \delta^{rs} p_0 \) normalization conditions as
+\begin{dmath}\label{eqn:qftLecture21:1200}
+\begin{aligned}
+u^{r\dagger}(\Bp) u^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
+v^{r\dagger}(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr}.
 \end{aligned}
 \end{dmath}
-It can be shown that
+
+Various orthogonality conditions exist between the \( u \)'s and \( v\)'s, such as
 \begin{dmath}\label{eqn:qftLecture21:320}
 \begin{aligned}
 \ubar^r(p) v^s(p) &= 0 \\
 \vbar^r(p) u^s(p) &= 0 \\
-v^\dagger(-\Bp) u(\Bp) &= 0 \\
 \end{aligned}
 \end{dmath}
-
-It can also be shown that
+and
 \begin{dmath}\label{eqn:qftLecture21:340}
 \begin{aligned}
-u^{r\dagger}(\Bp) u^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
-v^{r\dagger}(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
-u^{r\dagger}(\Bp) v^s(\Bp) &= 0 \\
-v^{r\dagger}(-\Bp) u^s(\Bp) &= 0.
+v^{r \dagger}(-\Bp) u^s(\Bp) &= 0 \\
+u^{r\dagger}(\Bp) v^s(\Bp) &= 0.
 \end{aligned}
 \end{dmath}
 
-Given
-
-\begin{equation}\label{eqn:qftLecture21:360}
+Finally, there are a couple tensor products of interest.
+\makedefinition{Tensor product.}{dfn:qftLecture21:7}{
+Given a pair of vectors
+\begin{equation*}
 x =
 \begin{bmatrix}
 x_1 \\
@@ -320,15 +337,15 @@ y =
 y_1 \\
 \vdots \\
 y_n \\
-\end{bmatrix}.
-\end{equation}
-
-\begin{dmath}\label{eqn:qftLecture21:380}
-y^\T x = \text{scalar} = \sum_{i = 1}^n x^i y^i
-\end{dmath}
-
-We define
-\begin{dmath}\label{eqn:qftLecture21:440}
+\end{bmatrix},
+\end{equation*}
+the tensor product is the matrix of all elements \( x_i y_j \)
+%There are two possible ways that we can assemble a matrix product of two vectors, the first of which is just the dot product
+%\begin{equation}\label{eqn:qftLecture21:380}
+%y^\T x = \text{scalar} = \sum_{i = 1}^n x^i y^i,
+%\end{equation}
+%and the second is a tensor (or direct) product
+\begin{equation*}
 x \otimes y^\T =
 \begin{bmatrix}
 x_1 \\
@@ -346,30 +363,28 @@ x_2 y_1 & x_2 y_2 & \cdots & x_2 y_n \\
 x_3 y_1 & \ddots  &        &         \\
 \vdots  &         &        &         \\
 x_n y_1 & \cdots  &        & x_n y_n
-\end{bmatrix}
-=
-\Norm{ x_i y_j }
-\end{dmath}
+\end{bmatrix}.
+%=
+%\Norm{ x_i y_j }
+\end{equation*}
+} % definition
 
-Such a tensor product can be likened to the completeness relation that we express in QM as
-\begin{dmath}\label{eqn:qftLecture21:460}
-\sum_n \ket{n} \bra{n} \equiv 1.
-\end{dmath}
-
-Can also show that
-\begin{dmath}\label{eqn:qftLecture21:400}
+% I don't see how this would be:
+%It was claimed that such a tensor product can be likened to the completeness relation that we express in QM as
+%\begin{dmath}\label{eqn:qftLecture21:460}
+%\sum_n \ket{n} \bra{n} \equiv 1.
+%\end{dmath}
+%
+\maketheorem{Direct product relations.}{thm:qftLecture21:17}{
+\begin{equation*}
 \begin{aligned}
 \sum_{s = 1}^2 u^s(p) \otimes \ubar^s(p) &= \gamma \cdot p + m \\
 \sum_{s = 1}^2 v^s(p) \otimes \vbar^s(p) &= \gamma \cdot p - m \\
 \end{aligned}
-\end{dmath}
+\end{equation*}
+} % theorem
 
-\begin{dmath}\label{eqn:qftLecture21:480}
-\vbar^s
-= v^\dagger \gamma_0
-\end{dmath}
-
-Let's show this for the \( v \)'s
+For the \( v \)'s
 \begin{dmath}\label{eqn:qftLecture21:420}
 \sum_{s = 1,2}
 \begin{bmatrix}
@@ -401,7 +416,47 @@ Let's show this for the \( v \)'s
 \begin{bmatrix}
 -\sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & \sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }  \\
 \sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & -\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }
+\end{bmatrix},
+\end{dmath}
+but
+\begin{dmath}\label{eqn:qftLecture21:1120}
+\eta^1 \otimes \eta^{1T}
+=
+\begin{bmatrix}
+1 \\
+0
 \end{bmatrix}
+\begin{bmatrix}
+1 &
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 0
+\end{bmatrix},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1140}
+\eta^2 \otimes \eta^{2T}
+=
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\begin{bmatrix}
+0 &
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 \\
+0 & 1
+\end{bmatrix},
+\end{dmath}
+so \( \sum_{s = 1,2} \eta^s \otimes \eta^{s\T} = 1 \), leaving
+\begin{dmath}\label{eqn:qftLecture21:1160}
+\sum_{s = 1}^2 v^s(p) \otimes \vbar^s(p)
 =
 \begin{bmatrix}
 -\sqrt{ p \cdot \sigma } \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \sqrt{ p \cdot \sigma } \\
@@ -431,8 +486,10 @@ p \cdot \osigma & - m
 \Bsigma & 0
 \end{bmatrix}
 =
--m + p^\mu \gamma_\mu
+-m + p^\mu \gamma_\mu,
 \end{dmath}
+as stated.
+Proof for the \( u\)'s is left to \cref{problem:qftLecture21:3}.
 
 \section{Lagrangian.}
 
@@ -711,6 +768,165 @@ a_\Bp^{ r \dagger} a_\Bp^s
 \end{dmath}
 
 We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with antielectrons.
+
+\section{Problems:}
+
+\makeproblem{Verify \( v(p) \) solution.}{problem:qftLecture21:1}{
+Show that \cref{eqn:qftLecture21:280} is a solution of the Dirac equation.
+} % problem
+
+\makeanswer{problem:qftLecture21:1}{
+Let \( D = \lr{ i \gamma^\mu \partial_\mu - m } \) represent the Dirac operator.  Applying to \( e^{i p \cdot x} \) we have
+\begin{dmath}\label{eqn:qftLecture21:1040}
+D e^{i p \cdot x}
+=
+\lr{ i \gamma^\mu \partial_\mu - m } e^{i p_\mu x^\mu}
+=
+-\lr{ \gamma^\mu p_\mu + m } e^{i p \cdot x}
+=
+-\lr{
+   m \ITwo
+   + p_0
+   \DiracGammaZero
+   + p_k
+   \DiracGammaK{k}
+}
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+m & p_0 \sigma^0 + p_k \sigma^k \\
+p_0 \sigma^0 - p_k \sigma^k & m
+\end{bmatrix}
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+e^{i p \cdot x}.
+\end{dmath}
+We are now set to apply the Dirac operator to \cref{eqn:qftLecture21:280}
+\begin{dmath}\label{eqn:qftLecture21:1060}
+D v(p)
+=
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta^s \\
+-\sqrt{p \cdot \osigma} \eta^s \\
+\end{bmatrix},
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+\lr{ m \sqrt{ p \cdot \sigma} - p \cdot \sigma \sqrt{ p \cdot \osigma } } \eta \\
+\lr{ p \cdot \osigma \sqrt{ p \cdot \sigma } -m \sqrt{ p \cdot \osigma } } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ p \cdot \sigma  p \cdot \osigma } } \eta \\
+\sqrt{ p \cdot \osigma} \lr{ \sqrt{ p \cdot \osigma p \cdot \sigma } -m } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ m^2 } } \eta \\
+\sqrt{ p \cdot \osigma} \lr{ \sqrt{ m^2 } -m } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+0.
+\end{dmath}
+} % answer
+
+\makeproblem{\(v(p)\) normalization.}{problem:qftLecture21:2}{
+Prove \cref{thm:qftLecture21:13}.
+} % problem
+
+\makeanswer{problem:qftLecture21:2}{
+Expanding the matrices gives
+\begin{dmath}\label{eqn:qftLecture21:1080}
+\vbar^r v^s
+= v^{r\dagger} \gamma^0 v^s
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\DiracGammaZero
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\begin{bmatrix}
+-\sqrt{ p \cdot \osigma } \eta^s \\
+\sqrt{ p \cdot \sigma } \eta^s \\
+\end{bmatrix}
+=
+-\eta^{r \T} \sqrt{ p \cdot \sigma} \sqrt{ p \cdot \osigma } \eta^s
+- \eta^{r \T} \sqrt{ p \cdot \osigma} \sqrt{ p \cdot \sigma } \eta^s
+= \delta^{rs} 2 \sqrt{ m^2 }
+= 2 m \delta^{rs},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1100}
+v^{r\dagger} v^s
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+\eta^{r \T} (p \cdot \sigma) \eta^s
++ \eta^{r \T} (p \cdot \osigma) \eta^s
+= \delta^{rs} \lr{ p_0 - \Bp \cdot \Bsigma + p_0 + \Bp \cdot \Bsigma }
+= 2 p_0 \delta^{rs}.
+\end{dmath}
+} % answer
+
+\makeproblem{Direct product relation for the \(u\)'s.}{problem:qftLecture21:3}{
+Prove the \( u \) direct product relations of \cref{thm:qftLecture21:17}.
+} % problem
+
+\makeanswer{problem:qftLecture21:3}{
+\begin{dmath}\label{eqn:qftLecture21:1180}
+\sum u^s \otimes \ubar^s
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s \\
+\sqrt{ p \cdot \osigma } \zeta^s
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+\zeta^{s\T} \sqrt{ p \cdot \osigma } &
+\zeta^{s\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+=
+\sum
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
+\sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+=
+m + p \cdot \gamma.
+\end{dmath}
+} % answer
 
 %}
 %\EndArticle
