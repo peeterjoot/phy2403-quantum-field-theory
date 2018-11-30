@@ -47,6 +47,8 @@ qftLecture19.tex
 qftLecture19Problems.tex
 qftLecture20.tex
 qftLecture20Problems.tex
+qftLecture21.tex
+qftLecture21aProblems.tex
 qftLukeProblemSet1.tex
 qftLukeProblemSet1Problem1.tex
 qftLukeProblemSet1Problem2.tex

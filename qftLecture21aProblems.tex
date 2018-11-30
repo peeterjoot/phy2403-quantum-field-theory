@@ -1,0 +1,277 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+
+\makeproblem{Verify \( v(p) \) solution.}{problem:qftLecture21:1}{
+Prove \cref{thm:qftLecture21:101}.
+%Show that \cref{eqn:qftLecture21:280} is a solution of the Dirac equation.
+} % problem
+
+\makeanswer{problem:qftLecture21:1}{
+Let \( D = \lr{ i \gamma^\mu \partial_\mu - m } \) represent the Dirac operator.  Applying to \( e^{i p \cdot x} \) we have
+\begin{dmath}\label{eqn:qftLecture21:1040}
+D e^{i p \cdot x}
+=
+\lr{ i \gamma^\mu \partial_\mu - m } e^{i p_\mu x^\mu}
+=
+-\lr{ \gamma^\mu p_\mu + m } e^{i p \cdot x}
+=
+-\lr{
+   m \ITwo
+   + p_0
+   \DiracGammaZero
+   + p_k
+   \DiracGammaK{k}
+}
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+m & p_0 \sigma^0 + p_k \sigma^k \\
+p_0 \sigma^0 - p_k \sigma^k & m
+\end{bmatrix}
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+e^{i p \cdot x}.
+\end{dmath}
+We are now set to apply the Dirac operator to the claimed solution from \cref{thm:qftLecture21:101}.
+%\cref{eqn:qftLecture21:280}
+\begin{dmath}\label{eqn:qftLecture21:1060}
+D v(p)
+=
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta^s \\
+-\sqrt{p \cdot \osigma} \eta^s \\
+\end{bmatrix},
+e^{i p \cdot x}
+=
+-
+\begin{bmatrix}
+\lr{ m \sqrt{ p \cdot \sigma} - p \cdot \sigma \sqrt{ p \cdot \osigma } } \eta \\
+\lr{ p \cdot \osigma \sqrt{ p \cdot \sigma } -m \sqrt{ p \cdot \osigma } } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ p \cdot \sigma  p \cdot \osigma } } \eta \\
+\sqrt{ p \cdot \osigma} \lr{ \sqrt{ p \cdot \osigma p \cdot \sigma } -m } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ m^2 } } \eta \\
+\sqrt{ p \cdot \osigma} \lr{ \sqrt{ m^2 } -m } \eta \\
+\end{bmatrix}
+e^{i p \cdot x}
+=
+0.
+\end{dmath}
+} % answer
+
+\makeproblem{\(v(p)\) normalization.}{problem:qftLecture21:2}{
+Prove \cref{thm:qftLecture21:13}.
+} % problem
+
+\makeanswer{problem:qftLecture21:2}{
+Expanding the matrices gives
+\begin{dmath}\label{eqn:qftLecture21:1080}
+\vbar^r v^s
+= v^{r\dagger} \gamma^0 v^s
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\DiracGammaZero
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\begin{bmatrix}
+-\sqrt{ p \cdot \osigma } \eta^s \\
+\sqrt{ p \cdot \sigma } \eta^s \\
+\end{bmatrix}
+=
+-\eta^{r \T} \sqrt{ p \cdot \sigma} \sqrt{ p \cdot \osigma } \eta^s
+- \eta^{r \T} \sqrt{ p \cdot \osigma} \sqrt{ p \cdot \sigma } \eta^s
+= \delta^{rs} 2 \sqrt{ m^2 }
+= 2 m \delta^{rs},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1100}
+v^{r\dagger} v^s
+=
+\begin{bmatrix}
+\eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+\eta^{r \T} (p \cdot \sigma) \eta^s
++ \eta^{r \T} (p \cdot \osigma) \eta^s
+= \delta^{rs} \lr{ p_0 - \Bp \cdot \Bsigma + p_0 + \Bp \cdot \Bsigma }
+= 2 p_0 \delta^{rs}.
+\end{dmath}
+} % answer
+
+\makeproblem{\( \ubar v, \vbar u \) relations.}{problem:qftLecture21:4}{
+Prove \cref{thm:qftLecture21:1260}.
+} % problem
+
+\makeanswer{problem:qftLecture21:4}{
+We need only expand the matrix products
+\begin{dmath}\label{eqn:qftLecture21:1220}
+\ubar^r v^s
+=
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ p \cdot \osigma } & \zeta^{r\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \eta^s  \\
+-\sqrt{ p \cdot \osigma } \eta^s
+\end{bmatrix}
+=
+m \zeta^{r\T} \eta^s
+- m \zeta^{r\T} \eta^s
+=0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1240}
+\vbar^r u^s
+=
+\begin{bmatrix}
+-\eta^{r\T} \sqrt{ p \cdot \osigma } & \eta^{r\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s  \\
+\sqrt{ p \cdot \osigma } \zeta^s
+\end{bmatrix}
+=
+- m \eta^{r\T} \zeta^s
++ m \eta^{r\T} \zeta^s
+=0,
+\end{dmath}
+} % answer
+
+\makeproblem{Dagger orthonormality conditions.}{problem:qftLecture21:5}{
+Prove \cref{thm:qftLecture21:1261}.
+} % problem
+
+\makeanswer{problem:qftLecture21:5}{
+\begin{dmath}\label{eqn:qftLecture21:1260}
+u^{r\dagger}(\Bp)
+v^{s}(-\Bp)
+=
+\evalbar{
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ p \cdot \sigma } &\zeta^{r\T} \sqrt{ p \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ q \cdot \sigma } \eta^s \\
+-\sqrt{ q \cdot \osigma } \eta^s
+\end{bmatrix}
+}{p = (0, \Bp), q = (0, -\Bp)}
+=
+\begin{bmatrix}
+\zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } &\zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ \Bp \cdot \Bsigma } \eta^s \\
+-\sqrt{ -\Bp \cdot \Bsigma } \eta^s
+\end{bmatrix}
+=
+\zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } \sqrt{ \Bp \cdot \Bsigma } \eta^s
+-
+\zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma } \sqrt{ -\Bp \cdot \Bsigma } \eta^s
+%=
+%\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
+%-
+%\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
+=
+0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:qftLecture21:1280}
+v^{s\dagger}(-\Bp)
+u^{r}(\Bp)
+=
+\evalbar{
+\begin{bmatrix}
+\eta^{s\dagger}
+\sqrt{ q \cdot \sigma } &
+-
+\eta^{s\dagger}
+\sqrt{ q \cdot \osigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^r \\
+\sqrt{ p \cdot \osigma }\zeta^r
+\end{bmatrix}
+}{p = (0, \Bp), q = (0, -\Bp)}
+=
+\begin{bmatrix}
+\eta^{s\T} \sqrt{ \Bp \cdot \Bsigma } & -\eta^{s} \sqrt{ -\Bp \cdot \Bsigma }
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{ -\Bp \cdot \Bsigma } \zeta^r \\
+\sqrt{ \Bp \cdot \Bsigma } \zeta^r
+\end{bmatrix}
+=
+\eta^{s\T} \sqrt{ (-\Bp \cdot \Bsigma)(\Bp \cdot \Bsigma) } \zeta^r
+-
+\eta^{s\T} \sqrt{ (\Bp \cdot \Bsigma)(-\Bp \cdot \Bsigma) } \zeta^r
+=
+0.
+\end{dmath}
+} % answer
+
+\makeproblem{Direct product relation for the \(u\)'s.}{problem:qftLecture21:3}{
+Prove the \( u \) direct product relations of \cref{thm:qftLecture21:17}.
+} % problem
+
+\makeanswer{problem:qftLecture21:3}{
+\begin{dmath}\label{eqn:qftLecture21:1180}
+\sum u^s \otimes \ubar^s
+=
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s \\
+\sqrt{ p \cdot \osigma } \zeta^s
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+\zeta^{s\T} \sqrt{ p \cdot \osigma } &
+\zeta^{s\T} \sqrt{ p \cdot \sigma }
+\end{bmatrix}
+=
+\sum
+\begin{bmatrix}
+\sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
+\sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+m & p \cdot \sigma \\
+p \cdot \osigma & m
+\end{bmatrix}
+=
+m + p \cdot \gamma.
+\end{dmath}
+} % answer
+
+%}

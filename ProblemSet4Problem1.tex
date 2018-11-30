@@ -43,7 +43,11 @@ notice
 
   By the chain of logic described above, you have proven \cref{lemma}.
 
-Notice also that the lemma \cref{lemma} holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by $$:A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n:,$$
+Notice also that the lemma \cref{lemma} holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by
+\begin{dmath}\label{eqn:ProblemSet4Problem1:160}
+\normalorder{
+A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n},
+\end{dmath}
   i.e. with the product of operators with an arbitrary number of contractions (one, as written above), with a trivial modification of the last term (since, obviously, you can not contract $B$ with contractions).
 \makesubproblem{}{qft:problemSet4:1b}
 Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. Imagine that (\ref{w1}) holds for $n$ operators and prove that it holds for $n+1$, using \cref{lemma}.
@@ -77,34 +81,35 @@ For extra bonus, generalize all theorems above to anti commuting fields.
 The normal ordered sequence \( \normalorder{ A_1 A_2 \ldots A_n} B \) has the form
 \begin{dmath}\label{eqn:ProblemSet4Problem1:20}
 a_{k_1}^\dagger
-\cdots
+\ldots
 a_{k_r}^\dagger
 a_{k_{r+1}}
-\cdots
+\ldots
 a_{k_n}
 B
 \end{dmath}
 so if \( B = a_{k_{n+1}} \) is an anhillation operator the result is already normal ordered.  Since the Wick contraction with such a \( B \) is zero for all \( A_i \), that is
 \begin{dmath}\label{eqn:ProblemSet4Problem1:40}
 \begin{aligned}
-\contraction{}{a}{{}_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} }{a}
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+\contraction{}{a}{{}_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} }{a}
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}
 &= 0 \\
-\contraction{a_{k_1}^\dagger }{a}{{}_{k_2}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n}}{a}
-a_{k_1}^\dagger a_{k_2}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+\contraction{a_{k_1}^\dagger }{a}{{}_{k_2}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n}}{a}
+a_{k_1}^\dagger a_{k_2}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}
 &= 0 \\
 \vdots & \\
-\contraction{a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots }{a}{{}_{k_n}}{a}
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}
+\contraction{a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots }{a}{{}_{k_n}}{a}
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}
 &= 0,
 \end{aligned}.
 \end{dmath}
 Summarizing, we see that for anhillation operators \( B \) we have
 \begin{dmath}\label{eqn:ProblemSet4Problem1:100}
-\begin{aligned}
-:A_1 A_2 \ldots A_n: B &=  :A_1 A_2 \ldots A_n  B: \\
-\sum\limits_{1 \le k \le n}:A_1 \ldots \contraction{}{A}{{}_k \ldots A_n}{B} A_k \ldots A_n B: &= 0,
-\end{aligned}
+\normalorder{A_1 A_2 \ldots A_n} B =  \normalorder{A_1 A_2 \ldots A_n  B},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet4Problem1:200}
+\sum\limits_{1 \le k \le n} \normalorder{A_1 \ldots \contraction{}{A}{{}_k \ldots A_n}{B} A_k \ldots A_n B} = 0,
 \end{dmath}
 so \cref{lemma} is valid for any anhillation operator \( B \).
 
@@ -122,11 +127,11 @@ and use this iteratively to percolate \( B = a_{n+1}^\dagger \) through \( \norm
 \begin{dmath}\label{eqn:ProblemSet4Problem1:80}
 \normalorder{A_1 A_2 \ldots A_n} B
 =
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger a_{k_{r+1}} \cdots a_{k_n} a_{k_{n+1}}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}^\dagger
 =
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
-\cdots
+\ldots
 a_{k_{n-1}}
 \lr{
    a_{k_{n+1}}^\dagger
@@ -136,21 +141,21 @@ a_{k_{n-1}}
    a_{k_n} a_{k_{n+1}}^\dagger
 }
 =
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
-\cdots
+\ldots
 a_{k_{n-1}}
 a_{k_{n+1}}^\dagger
 a_{k_n}
 +
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger
 =
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
-\cdots
+\ldots
 a_{k_{n-2}}
 \lr{
 a_{k_{n+1}}^\dagger
@@ -161,13 +166,108 @@ a_{k_{n-1}} a_{k_{n+1}}^\dagger
 }
 a_{k_n}
 +
-a_{k_1}^\dagger \cdots a_{k_r}^\dagger
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger
 =
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+a_{k_{n-2}}
+a_{k_{n+1}}^\dagger
+a_{k_{n-1}}
+a_{k_n}
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+a_{k_{n-2}}
+\contraction{}{a}{{}_{k_{n+1}} }{a}
+a_{k_{n-1}} a_{k_{n+1}}^\dagger
+a_{k_n}
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\contraction{}{a}{{}_{k_n} }{a}
+a_{k_n} a_{k_{n+1}}^\dagger.
 \end{dmath}
-%Now let \( B = a_{n+1}^\dagger \)
+We can continue like this until \( a^\dagger_{k_{n+1}} \) has percolated all the way through the anhillation operators
+\begin{dmath}\label{eqn:ProblemSet4Problem4:120}
+\normalorder{A_1 A_2 \ldots A_n} B
+=
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+\contraction{}{a}{{}_{k_{r+1}}}{a}
+a_{k_{r+1}}
+a_{k_{n+1}}^\dagger
+\ldots
+a_{k_{n-1}}
+a_{k_n}
++
+\cdots
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+a_{k_{n-2}}
+\contraction{}{a}{{}_{k_{n+1}} }{a}
+a_{k_{n-1}} a_{k_{n+1}}^\dagger
+a_{k_n}
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+\contraction{}{a}{{}_{k_n} }{a}
+a_{k_n} a_{k_{n+1}}^\dagger.
+\end{dmath}
+By the Wick operator definition, this may be rewritten with the \( a^\dagger_{k_{n+1}} \) at the end, that is
+\begin{dmath}\label{eqn:ProblemSet4Problem4:140}
+\normalorder{A_1 A_2 \ldots A_n} B
+=
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+\contraction{}{a}{{}_{k_{r+1}}
+\ldots
+a_{k_{n-1}}
+a_{k_n}}
+{a}
+a_{k_{r+1}}
+\ldots
+a_{k_{n-1}}
+a_{k_n}
+a_{k_{n+1}}^\dagger
++
+\cdots
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+a_{k_{n-2}}
+\contraction{}{a}{{}_{k_{n-1}}
+a_{k_n}
+}{a}
+a_{k_{n-1}}
+a_{k_n}
+a_{k_{n+1}}^\dagger
++
+a_{k_1}^\dagger \ldots a_{k_r}^\dagger
+a_{k_{r+1}}
+\ldots
+\contraction{}{a}{{}_{k_n} }{a}
+a_{k_n} a_{k_{n+1}}^\dagger.
+\end{dmath}
+Since \( \contraction{}{a}{{}^\dagger_{k_{i}}}{a} a^\dagger_{k_{i}} a_{k_{n+1}}^\dagger = 0 \) we may add in contractions with all the creation operators.  Doing that completes the proof of \cref{lemma}.
+
+For a contraction such as that of \cref{eqn:ProblemSet4Problem1:160} we need only modify the trailing sum of contractions.  That is
+\begin{equation}\label{eqn:ProblemSet4Problem1:180}
+\normalorder{A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n} B
+=
+\normalorder{A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n B}
++
+\sum\limits_{1 \ge k, k \notin \setlr{2,p}, k \le n}
+\bcontraction{: A_1 A_2 \ldots }{A}{{}_k \ldots  A_p \ldots A_n :}{B}
+: A_1 \contraction{}{A}{{}_2\ldots A_k \ldots}{A} A_2 \ldots A_k \ldots  A_p \ldots A_n : B.
+\end{equation}
+This will clearly also be the case if the operator sequence \( \normalorder{A_1 \ldots A_n} \) includes any number of other contractions.
 
 \makeSubAnswer{}{qft:problemSet4:1b}
 TODO.

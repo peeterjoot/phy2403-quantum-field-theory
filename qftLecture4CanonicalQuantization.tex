@@ -43,7 +43,7 @@ so
 Let's introduce an explicit space time split.  We'll write
 \begin{dmath}\label{eqn:qftLecture4:880}
 L = \int d^3 x \lr{
-\inv{2} (\partial_0 \phi(\Bx, t))^2 - \inv{2} \lr{ \spacegrad \phi(\Bx, t) }^2 - \frac{m^2}{2} \phi
+\inv{2} (\partial_0 \phi(\Bx, t))^2 - \inv{2} \lr{ \spacegrad \phi(\Bx, t) }^2 - \frac{m^2}{2} \phi^2
 },
 \end{dmath}
 so that the action is
@@ -64,12 +64,12 @@ Why \( \delta \)?  Has to do with an implicit Dirac function to eliminate the in
 \begin{dmath}\label{eqn:qftLecture4:940}
 H
 = \int d^3 x \evalbar{\lr{ \pi(\bar{\Bx}, t) \dot{\phi}(\bar{\Bx}, t) - L }}{\dot{\phi}(\bar{\Bx}, t) = \pi(x, t) }
-= \int d^3 x \lr{ (\pi(\Bx, t))^2 - \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m}{2} \phi^2 },
+= \int d^3 x \lr{ (\pi(\Bx, t))^2 - \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} \phi^2 },
 \end{dmath}
 or
 \begin{dmath}\label{eqn:qftLecture4:960}
 H
-= \int d^3 x \lr{ \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi(\Bx, t))^2 + \frac{m}{2} (\phi(\Bx, t))^2 }
+= \int d^3 x \lr{ \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi(\Bx, t))^2 + \frac{m^2}{2} (\phi(\Bx, t))^2 }
 \end{dmath}
 
 In analogy to the momentum, position commutator in QM
