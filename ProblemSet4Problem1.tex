@@ -76,12 +76,21 @@ Now prove the actual Wick theorem \cref{w1}. Assuming that it holds for $n=2$. I
 Notice that \cref{c5} is equivalent to \cref{c2} when $A_i$'s are either creation or annihilation operators. Argue that \cref{w1} holds verbatim.
 
 \makesubproblem{}{qft:problemSet4:1d}
-{\bf The time-ordered Wick theorem:} Use the above Wick theorem to prove the time-ordered version. Notice that, despite appearances, there is not much left to do. Now, we have space-time rather than momentum space arguments and the theorem is now formulated as follows:\begin{eqnarray}
- \label{w2}
-T( A_1 \ldots A_n ) &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
- & & + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n}: \\
- && + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots \nonumber~,
- \end{eqnarray}
+{\bf The time-ordered Wick theorem:} Use the above Wick theorem to prove the time-ordered version. Notice that, despite appearances, there is not much left to do. Now, we have space-time rather than momentum space arguments and the theorem is now formulated as follows:
+%\begin{eqnarray}
+% \label{w2}
+%T( A_1 \ldots A_n ) &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
+% & & + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n}: \\
+% && + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots \nonumber~,
+%\end{eqnarray}
+\begin{equation}\label{w2}
+\begin{aligned}
+T( A_1 \ldots A_n ) &= :A_1 \ldots A_n: \\
+&\qquad   + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n}: \\
+&\qquad  + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots ~,
+\end{aligned}
+\end{equation}
+
  with the difference that $A_i$ are fields (we are considering real scalar fields),  $1 \ldots n$ denote space-time points, and the contraction is now the Feynman propagator, e.g. $D_F(x_1-x_2)$, etc.
 
  Notice that  to prove (\ref{w2}) one can consider a particular time ordering. Then the $T$ product becomes the normal product of operators (as they are assumed ordered). The space-time dependence can be taken out by Fourier transform which multiplies every term.  Every operator is a sum of creation and annihilation operators. Their commutators are exactly the ones giving rise to the contraction in \cref{c2}, on one hand, and to the function $D(x_i -x_j)$ after Fourier transform, on the other (recall that this function appears in the Feynman propagator).
@@ -637,148 +646,181 @@ We are now asked to make one final redefinition of the contraction operator
   \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert T(A_i A_j)\vert 0 \rangle~,
 \end{dmath}
 This is clearly still identical to either of the previous definitions when \( A_i, A_j \) are creation and anhillation operators.
-Considering the \( n = 2 \) case again, with \( A_i = \phi(x), A_j = \phi(y) \) defined by
-\cref{eqn:ProblemSet4Problem1:360}, we clearly have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:460}
+
+Let's consider a couple concrete cases again, starting with
+\( n = 2 \) case again, writing \( A = A_i = \phi(x), B = A_j = \phi(y) \) defined by
+\cref{eqn:ProblemSet4Problem1:360}.
+For the \( x^0 > y^0 \) case we have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:520}
 T( A B )
 =
-\normalorder{T(A B)}
+A B
+=
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   +
+   e^{-i p \cdot x}
+   a_\Bp
+}
+\lr{
+   e^{i q \cdot y}
+   a_\Bq^\dagger
+   +
+   e^{-i q \cdot y}
+   a_\Bq
+}
+=
+\normalorder{AB}
 +
-\contraction{}{A}{}{B}
-A B,
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{i p \cdot x}
+\contraction{}{
+   a}{{}_\Bp
+   e^{-i q \cdot y}}
+   {a}
+   a_\Bp
+   e^{-i q \cdot y}
+   a_\Bq^\dagger
+=
+\int \frac{d^3 p }{(2 \pi)^3 2 \omega_\Bp }
+   e^{-i p \cdot (x-y)}
+=
+\normalorder{AB}
++
+D(x - y),
 \end{dmath}
-where the contraction is now defined by \cref{eqn:ProblemSet4Problem1:440}.  We now have to ask what the meaning of a normal ordered time ordered product is.  The \( n = 2 \) case illustrates this nicely.  If \( y^0 > x^0 \), then
+on the other hand, if \( x^0 < y^0 \), using the same procedure, we must have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:540}
+T( A B )
+=
+B A
+=
+\normalorder{BA}
++
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{i p \cdot x}
+\contraction{}{
+   a}{{}_\Bp
+   e^{-i q \cdot y}}
+   {a}
+   a_\Bp
+   e^{-i q \cdot y}
+   a_\Bq^\dagger
+=
+\normalorder{AB}
++
+D(y - x),
+\end{dmath}
+so
 \begin{dmath}\label{eqn:ProblemSet4Problem1:480}
-\normalorder{ T\lr{ \phi(x) \phi(y)} }
-=
-\normalorder{ \phi(y) \phi(x) }
-=
-\bra{0}
-\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
-\normalorder{
-\lr{
-   e^{i q \cdot y}
-   a_\Bq^\dagger
-   +
-   e^{-i q \cdot y}
-   a_\Bq
-}
-\lr{
-   e^{i p \cdot x}
-   a_\Bp^\dagger
-   +
-   e^{-i p \cdot x}
-   a_\Bp
-}
-}
-\ket{0}
-=
-\bra{0}
-\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
-\lr{
-   e^{i q \cdot y}
-   e^{i p \cdot x}
-   a_\Bq^\dagger
-   a_\Bp^\dagger
-   +
-   e^{-i q \cdot y}
-   e^{i p \cdot x}
-   a_\Bp^\dagger
-   a_\Bq
-+
-   e^{i q \cdot y}
-   e^{-i p \cdot x}
-   a_\Bq^\dagger
-   a_\Bp
-   +
-   e^{-i q \cdot y}
-   e^{-i p \cdot x}
-   a_\Bq
-   a_\Bp
-}
-\ket{0},
+T(AB) = \normalorder{AB} + D_F(x - y).
 \end{dmath}
-however, if \( x^0 > y^0 \)
+Since \( D_F(x - y) = \bra{0} T( \phi(x) \phi(y)) \ket{0} = \contraction{}{A}{}{B} AB \), we have
 \begin{dmath}\label{eqn:ProblemSet4Problem1:500}
-\normalorder{ T( \phi(x) \phi(y) }
-=
-\normalorder{ \phi(x) \phi(y) }
-=
-\bra{0}
-\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
-\normalorder{
-\lr{
-   e^{i p \cdot x}
-   a_\Bp^\dagger
-   +
-   e^{-i p \cdot x}
-   a_\Bp
-}
-\lr{
-   e^{i q \cdot y}
-   a_\Bq^\dagger
-   +
-   e^{-i q \cdot y}
-   a_\Bq
-}
-}
-\ket{0}
-=
-\bra{0}
-\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
-\lr{
-   e^{i q \cdot y}
-   e^{i p \cdot x}
-   a_\Bq^\dagger
-   a_\Bp^\dagger
-   +
-   e^{-i q \cdot y}
-   e^{i p \cdot x}
-   a_\Bp^\dagger
-   a_\Bq
-+
-   e^{i q \cdot y}
-   e^{-i p \cdot x}
-   a_\Bq^\dagger
-   a_\Bp
-   +
-   e^{-i q \cdot y}
-   e^{-i p \cdot x}
-   a_\Bq
-   a_\Bp
-}
-\ket{0},
+T(AB)
+= \normalorder{AB} + \contraction{}{A}{}{B} AB
+= \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB },
 \end{dmath}
-which equals \cref{eqn:ProblemSet4Problem1:480}, that is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:n}
-\normalorder{ T\lr{ \phi(x) \phi(y)} }
-=
-\normalorder{ T\lr{ \phi(x) \phi(y)} }
-\end{dmath}
-so we see that the time ordering of a normal ordered product, such as \( \normalorder{ T(A B) } = \normalorder{ T(B A) } \), is redundant.  Such an argument clearly extends to multiple products.  We also need this argument to extend to contractions against the fields in a normal ordering product.  In particular, for three fields \( A, B, C \)
-\begin{dmath}\label{eqn:ProblemSet4Problem1:520}
+   which proves \cref{w2} for the \( n = 2 \) case.
+
+   Now consider the \( n = 3 \) case, where \( A,B \) are defined as above, and \( C = \phi(z) \) is a third field.
+   \begin{enumerate}[I.]
+   \item For \( x^0 > y^0 > z^0 \), we have
+   \begin{dmath}\label{eqn:ProblemSet4Problem1:560}
+   T(A B C)
+   =
+   A B C
+   =
+   T(A B) C
+   =
+   \lr{
+   \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
+   }
+   C
+   =
+   \normalorder{\contraction{A}{B}{}{C} ABC }
+   +
+   \normalorder{\contraction{}{A}{B}{C} ABC }
+   +
+   \normalorder{\contraction{}{A}{}{B} AB } C,
+   \end{dmath}
+   \item For \( y^0 > x^0 > z^0 \), we have
+   \begin{dmath}\label{eqn:ProblemSet4Problem1:580}
+   T( A B C )
+   =
+   B A C
+   =
+   T( B A ) C
+   =
+   T( A B ) C
+   \end{dmath}
+   which equals \cref{eqn:ProblemSet4Problem1:560}.
+   \item For \( z^0 > x^0 > y^0 \), we have
+   \begin{dmath}\label{eqn:ProblemSet4Problem1:600}
+   T( A B C )
+   =
+   C A B
+   =
+   C T( A B )
+   =
+   C
+   \lr{
+   \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
+   }
+   =
+   \normalorder{\contraction{}{C}{}{A} CAB }
+   +
+   \normalorder{\contraction{}{C}{A}{B} CAB }
+   +
+   C \normalorder{\contraction{}{A}{}{B} AB },
+   \end{dmath}
+   which also equals \cref{eqn:ProblemSet4Problem1:560}.
+   \item For \( z^0 > y^0 > x^0 \), we have
+   \begin{dmath}\label{eqn:ProblemSet4Problem1:620}
+   T( A B C )
+   = C B A
+   = C T( B A )
+   = C T( A B ),
+   \end{dmath}
+   which equals \cref{eqn:ProblemSet4Problem1:600}.
+   \item For \( x^0 > z^0 > y^0 \), we have
+   \begin{dmath}\label{eqn:ProblemSet4Problem1:640}
 T( A B C )
 =
-T( T(A B) C )
+A C B
 =
-T( \lr{ \normalorder{A B} +
-\contraction{}{A}{}{B}
-A B} C
-)
+T(A C) B
 =
-T( \lr{ \normalorder{A B} } C ) + (\contraction{}{A}{}{B} A B) C,
-\end{dmath}
-so we see that proving the time ordered Wick's theorem requires that we prove a variation of our lemma \cref{lemma}, which for the \( n = 2 \) case, is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:540}
-T( \lr{ \normalorder{A B} } C )
+\lr{
+\normalorder{AC} + \normalorder{\contraction{}{A}{}{C} AC }
+}
+B
 =
-\contraction{}{A}{}{C}
-A B C
+\normalorder{\contraction{}{A}{C}{B} ACB }
 +
-\contraction{A}{B}{}{C}
-A B C
+\normalorder{\contraction{A}{C}{}{B} ACB }
++
+\normalorder{\contraction{}{A}{}{C} AC } B,
 \end{dmath}
+which eauals \cref{eqn:ProblemSet4Problem1:560}.
+\item For \( y^0 > z^0 > x^0 \), we have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:660}
+T( A B C )
+=
+B C A
+=
+B T( C A )
+=
+B T( A C ),
+\end{dmath}
+which equals \cref{eqn:ProblemSet4Problem1:640}.
+\end{enumerate}
+All cases considered, we have now proven \cref{w2} for the \( n = 3 \) case.
 
-\makeSubAnswer{}{qft:problemSet4:1e}
-TODO.
+Regardless of the time ordering of the fields, we end up with all possible combinations of contractions between all pairs of fields.  It is clear how this would generalize to higher numbers of fields.  This demonstration leaves me sufficiently convinced of the proof of the theorem, as desired.
+
+%\makeSubAnswer{}{qft:problemSet4:1e}
+%TODO.
 }
