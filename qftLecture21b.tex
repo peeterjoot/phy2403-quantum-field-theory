@@ -29,8 +29,8 @@
 \newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 21, Part II: XXX.  Taught by Prof.\ Erich Poppitz}
-%\chapter{XXX}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 21, Part II: Dirac Hamiltonian, Hamiltonian eigenvalues, general solution, creation and annihilation operators, Dirac Sea, anti-electrons.  Taught by Prof.\ Erich Poppitz}
+%\chapter{Dirac Hamiltonian, Hamiltonian eigenvalues, general solution, creation and anhillation operators, Dirac Sea, antielectrons}
 \label{chap:qftLecture21b}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
@@ -70,9 +70,9 @@ To prove \cref{thm:qftLecture21b:1}, we start with the spacetime expansion of th
 = \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi.
 \end{dmath}
 We see that the momentum conjugate to \( \Psi \) is
-\begin{dmath}\label{eqn:qftLecture21b:520}
+\begin{equation}\label{eqn:qftLecture21b:520}
 \pi_\psi = \PD{\dot{\Psi}}{\LL} = i \Psi^\dagger.
-\end{dmath}
+\end{equation}
 Computing the
 Hamiltonian density in the usual way, we have
 \begin{dmath}\label{eqn:qftLecture21b:540}
@@ -141,8 +141,8 @@ As with the KG equation, let's introduce a generic solution formed from linear c
    e^{i p \cdot x} v^s_\Bp b_\Bp^s
 }.
 \end{dmath}
-\maketheorem{Dirac Hamiltonian in terms of creation and anhillation operators.}{thm:qftLecture21b:7}{
-Substution of the superposition \cref{eqn:qftLecture21b:800} into
+\maketheorem{Dirac Hamiltonian in terms of creation and annihilation operators.}{thm:qftLecture21b:7}{
+Substitution of the superposition \cref{eqn:qftLecture21b:800} into
 the Dirac Hamiltonian of
 \cref{thm:qftLecture21b:1} results in
 \begin{equation*}
@@ -330,7 +330,7 @@ With a minus sign in the Hamiltonian, there is no bound to the energy from below
 We can save the day, making the ``Dirac sea'' argument, roughly speaking that we can consider a set of completely full negative energy states, where creation of a particle makes a hole in one of those states\footnote{There was a long discussion of this topic in class that I was not able to capture in my notes.}, as sketched roughly in
 \cref{fig:diracSea:diracSeaFig1}.
 \imageFigure{../figures/phy2403-quantum-field-theory/diracSeaFig1}{Dirac Sea.}{fig:diracSea:diracSeaFig1}{0.4}
-Such an argument does not work for Boson's (photon's, ...) since an arbitrary number of such particles can be stuffed into any given state.  It will turn out that our operators are Fermions, which gets us out of this trouble.
+Such an argument does not work for Bosons (photons, ...) since an arbitrary number of such particles can be stuffed into any given state.  It will turn out that our operators are Fermions, which gets us out of this trouble.
 
 We can also get out of this hole algebraically.  For \( X = a, b \), let
 \begin{dmath}\label{eqn:qftLecture21b:900}
@@ -339,7 +339,7 @@ X^{s \dagger}_\Bp &= \tilde{X}^s_\Bp \\
 X^s_\Bp &= \tilde{X}^{s \dagger}_\Bp.
 \end{aligned}
 \end{dmath}
-It turns out that some properties of our creation and anhillation operators are
+It turns out that some properties of our creation and annihilation operators are
 \begin{dmath}\label{eqn:qftLecture21b:920}
 \begin{aligned}
 (a^s_p)^2 &= 0 \\
@@ -394,7 +394,7 @@ H_{\text{Dirac}}
 }.
 \end{dmath}
 
-We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with antielectrons.
+We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with anti-electrons.
 
 \section{Problems.}
 
