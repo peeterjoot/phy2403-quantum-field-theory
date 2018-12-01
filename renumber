@@ -181,3 +181,5 @@ perl -p -i ../latex/bin/latexRegex.pl qftLecture21.tex
 perl -p -i ../latex/bin/latexRegex.pl qftLecture21b.tex
 ../latex/bin/lgrep qftLecture22.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl qftLecture22.tex
+../latex/bin/lgrep qftLecture23.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl qftLecture23.tex
