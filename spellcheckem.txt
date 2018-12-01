@@ -8,6 +8,8 @@ ProblemSet2Problem2.tex
 ProblemSet2Problem3.tex
 ProblemSet2Problem4.tex
 ProblemSet3Problem1.tex
+ProblemSet3Problem2.tex
+ProblemSet3Problem3.tex
 ProblemSet3Problem4.tex
 braOmega.tex
 momentum.tex
@@ -59,3 +61,5 @@ qftLukeProblemSet1Problem6.tex
 scalarFieldCreationOpCommutator.tex
 scalarFieldHamiltonian.tex
 usefulFormulas.tex
+qftLecture21b.tex
+qftLecture21bProblems.tex

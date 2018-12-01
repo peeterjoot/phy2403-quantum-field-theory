@@ -3,44 +3,44 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture21b}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-\newcommand{\oPsi}[0]{\overbar{\Psi}}
-\newcommand{\osigma}[0]{\overbar{\sigma}}
-\newcommand{\ubar}[0]{\overbar{u}}
-\newcommand{\vbar}[0]{\overbar{v}}
-\newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
-\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
-\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
-\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 21, Part II: Dirac Hamiltonian, Hamiltonian eigenvalues, general solution, creation and annihilation operators, Dirac Sea, anti-electrons.  Taught by Prof.\ Erich Poppitz}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{qftLecture21b}
+%\renewcommand{\dirname}{notes/phy2403/}
+%\newcommand{\keywords}{PHY2403H}
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%%\usepackage{phy2403}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_figures}
+%\usepackage{mathtools}
+%\usepackage{siunitx}
+%\usepackage{macros_cal} % LL
+%
+%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%\newcommand{\oPsi}[0]{\overbar{\Psi}}
+%\newcommand{\osigma}[0]{\overbar{\sigma}}
+%\newcommand{\ubar}[0]{\overbar{u}}
+%\newcommand{\vbar}[0]{\overbar{v}}
+%\newcommand{\deltathree}[0]{\delta^{(3)}}
+%\newcommand{\deltafour}[0]{\delta^{(4)}}
+%\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+%\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+%\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+%
+%\beginArtNoToc
+%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 21, Part II: Dirac Hamiltonian, Hamiltonian eigenvalues, general solution, creation and annihilation operators, Dirac Sea, anti-electrons.  Taught by Prof.\ Erich Poppitz}
 %\chapter{Dirac Hamiltonian, Hamiltonian eigenvalues, general solution, creation and anhillation operators, Dirac Sea, antielectrons}
 \label{chap:qftLecture21b}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
+%\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+%
+%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%
 \section{Lagrangian.}
 
 \maketheorem{Dirac Hamiltonian.}{thm:qftLecture21b:1}{
@@ -126,7 +126,7 @@ Rearranging gives
 \end{dmath}
 and \cref{thm:qftLecture21b:2} follows immediately.
 
-\section{General solution.}
+\section{General solution and Hamiltonian.}
 As with the KG equation, let's introduce a generic solution formed from linear combinations of our specific \( u^s(p) = u^s_\Bp, v^s(p) = v^s_\Bp \) solutions
 %.  Such a zero time solution might look like
 %Adding time back in the mix the most general wave function is
@@ -396,123 +396,5 @@ H_{\text{Dirac}}
 
 We'll end up dropping the vacuum energy term.  We'll end up labelling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with anti-electrons.
 
-\section{Problems.}
-
-\makeproblem{Derive the Dirac Hamiltonian without using the zero-time field substitution.}{problem:qftLecture21b:1}{
-} % problem
-
-\makeanswer{problem:qftLecture21b:1}{
-With time left in the mix the fields are
-\begin{dmath}\label{eqn:qftLecture21b:1180}
-\begin{aligned}
-\Psi(x)
-&=
-\sum_{s = 1}^2
-\int \frac{d^3 p}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp } }
-\lr{
-   e^{-i p \cdot x} u^s_\Bp a_\Bp^s
-+
-   e^{i p \cdot x} v^s_\Bp b_\Bp^s
-} \\
-\Psi^\dagger(x)
-&=
-\sum_{r = 1}^2
-\int \frac{d^3 q}{(2 \pi)^3 \sqrt{ 2 \omega_\Bq } }
-\lr{
-   e^{i q \cdot x} u^{r\dagger}_\Bq a_\Bq^{r \dagger}
-+
-   e^{-i q \cdot x} v^{r\dagger}_\Bq b_\Bq^{r \dagger}
-},
-\end{aligned}
-\end{dmath}
-and the Hamiltonian is
-\begin{dmath}\label{eqn:qftLecture21b:1200}
-H_{\text{Dirac}}
-=
-\sum_{r,s = 1}^2
-\int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
-\lr{
-   e^{i q \cdot x} u^{r \dagger}_\Bq a_\Bq^{r \dagger}
-+
-   e^{-i q \cdot x} v^{r \dagger}_\Bq b_\Bq^{r \dagger}
-}
-\omega_\Bp
-\lr{
-   e^{-i p \cdot x} u^s_\Bp a_\Bp^s
--
-   e^{i p \cdot x} v^s_\Bp b_\Bp^s
-}
-=
-\sum_{r,s = 1}^2
-\int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
-\lr{
-   e^{i \omega_\Bq t - i \Bq \cdot \Bx }
-   u^{r \dagger}_\Bq a_\Bq^{r \dagger}
-+
-   e^{-i \omega_\Bq t + i \Bq \cdot \Bx }
-   v^{r \dagger}_\Bq b_\Bq^{r \dagger}
-}
-\omega_\Bp
-\lr{
-   e^{-i \omega_\Bp t + i \Bp \cdot \Bx }
-   u^s_\Bp a_\Bp^s
--
-   e^{i \omega_\Bp t - i \Bp \cdot \Bx }
-   v^s_\Bp b_\Bp^s
-}
-=
-\sum_{r,s = 1}^2
-\int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
-\lr{
-   e^{i \omega_\Bq t - i \Bq \cdot \Bx }
-   u^{r \dagger}_\Bq a_\Bq^{r \dagger}
-+
-   e^{-i \omega_\Bq t - i \Bq \cdot \Bx }
-   v^{r \dagger}_{-\Bq} b_{-\Bq}^{r \dagger}
-}
-\omega_\Bp
-\lr{
-   e^{-i \omega_\Bp t + i \Bp \cdot \Bx }
-   u^s_\Bp a_\Bp^s
--
-   e^{i \omega_\Bp t + i \Bp \cdot \Bx }
-   v^s_{-\Bp} b_{-\Bp}^s
-}
-=
-\sum_{r,s = 1}^2
-\int \frac{d^3 p }{(2 \pi)^3 2 }
-\lr{
-   e^{i \omega_\Bq t }
-   u^{r \dagger}_\Bq a_\Bq^{r \dagger}
-+
-   e^{-i \omega_\Bq t }
-   v^{r \dagger}_{-\Bq} b_{-\Bq}^{r \dagger}
-}
-\lr{
-   e^{-i \omega_\Bp t }
-   u^s_\Bp a_\Bp^s
--
-   e^{i \omega_\Bp t }
-   v^s_{-\Bp} b_{-\Bp}^s
-}
-=
-\sum_{r,s = 1}^2
-\int \frac{d^3 p }{(2 \pi)^3 2 }
-\lr{
-   u^{r \dagger}_\Bq 
-   u^s_\Bp 
-   a_\Bq^{r \dagger}
-   a_\Bp^s
--
-   v^{r \dagger}_{-\Bq} 
-   v^s_{-\Bp} 
-   b_{-\Bq}^{r \dagger}
-   b_{-\Bp}^s
-},
-\end{dmath}
-where a \( \deltathree(\Bp-\Bq) \) was factored out and evaluated, and the remaining \( v^{r\dagger}_{-\Bp} u^s, u^{r \dagger} v^s_{-\Bp} \) terms were killed off.
-A final use of \cref{eqn:qftLecture21b:1100} completes the proof.
-} % answer
-
 %}
-\EndNoBibArticle
+%\EndNoBibArticle

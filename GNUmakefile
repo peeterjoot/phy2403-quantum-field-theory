@@ -69,7 +69,8 @@ all :: l17
 #all :: l19
 #all :: l20
 #all :: l21
-all :: l21b
+#all :: l21b
+all :: l22
 #all :: p1
 #all :: p2
 #all :: p3
@@ -100,7 +101,8 @@ q17.pdf : qftLecture17.tex
 #l19: qftLecture19.pdf
 #l20: qftLecture20.pdf
 #l21: qftLecture21.pdf
-l21b: qftLecture21b.pdf
+#l21b: qftLecture21b.pdf
+l22: qftLecture22.pdf
 #p1: ProblemSet1.pdf
 #p2: ProblemSet2.pdf
 #p3: ProblemSet3.pdf
