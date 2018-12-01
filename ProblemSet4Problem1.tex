@@ -22,15 +22,30 @@ O_1 A_i O_2 A_k =   O_1 O_2 \contraction{}{A}{{}_i} {A}  A_i A_k ~,
 
  Finally, we use $:A \ldots B:$ to denote the expression where all annihilation operators appear to the right of all creation operators, i.e. the usual normal ordered expression. Then,
  Wick's theorem---as used in many body physics---is formulated as follows:
- \begin{eqnarray}
- \label{w1}
- A_1 \ldots A_n &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
- & & + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1 \ldots}{A} A_1 \ldots A_{n}: \\
- && + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots \nonumber~.
- \end{eqnarray}
+\begin{dmath}\label{w1}
+\begin{aligned}
+ A_1 \ldots A_n &=
+\normalorder{A_1 \ldots A_n}  \\
+&+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n}
++ \ldots +
+\normalorder{\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n}
++
+\normalorder{\contraction{}{A}{{}_1 \ldots}{A} A_1 \ldots A_{n}}  \\
+&+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n}
+ + \ldots.
+\end{aligned}
+\end{dmath}
+% \begin{eqnarray}
+% \label{w1}
+% A_1 \ldots A_n &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
+% & & + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1 \ldots}{A} A_1 \ldots A_{n}: \\
+% && + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots \nonumber~.
+% \end{eqnarray}
  The first line contains the normal-ordered product of all operators without contractions, the second line---all possible terms with one contraction (not involving only $A_1$ of course, but all single-contraction terms, which would be painful to indicate), the third line has all possible two-contraction terms, etc.
 
-Now, you will prove (\ref{w1}) in steps.
+Now, you will prove \cref{w1} in steps.
 \makesubproblem{}{qft:problemSet4:1a}
 Prove the following Lemma:
  \begin{equation}
@@ -50,7 +65,7 @@ A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n},
 \end{dmath}
   i.e. with the product of operators with an arbitrary number of contractions (one, as written above), with a trivial modification of the last term (since, obviously, you can not contract $B$ with contractions).
 \makesubproblem{}{qft:problemSet4:1b}
-Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. Imagine that (\ref{w1}) holds for $n$ operators and prove that it holds for $n+1$, using \cref{lemma}.
+Now prove the actual Wick theorem \cref{w1}. Assuming that it holds for $n=2$. Imagine that \cref{w1} holds for $n$ operators and prove that it holds for $n+1$, using \cref{lemma}.
 \makesubproblem{}{qft:problemSet4:1c}
 {\bf An intermediate step:} Let now $A_i$ and $B$ be operators expressed as some linear combinations of creation and annihilation operators. In particular the subscripts $i$ may now indicate spatial dependence, rather than momentum eigenvalues. Now, define the contraction as follows:
    \begin{equation}
@@ -58,7 +73,7 @@ Now prove the actual Wick theorem (\ref{w1}). Assuming that it holds for $n=2$. 
   \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert A_i A_j \vert 0 \rangle~,
  \end{equation}
  where $\vert 0 \rangle$ is the Fock vacuum.
-Notice that \cref{c5} is equivalent to \cref{c2} when $A_i$'s are either creation or annihilation operators. Argue that (\ref{w1}) holds verbatim.
+Notice that \cref{c5} is equivalent to \cref{c2} when $A_i$'s are either creation or annihilation operators. Argue that \cref{w1} holds verbatim.
 
 \makesubproblem{}{qft:problemSet4:1d}
 {\bf The time-ordered Wick theorem:} Use the above Wick theorem to prove the time-ordered version. Notice that, despite appearances, there is not much left to do. Now, we have space-time rather than momentum space arguments and the theorem is now formulated as follows:\begin{eqnarray}
@@ -270,7 +285,163 @@ For a contraction such as that of \cref{eqn:ProblemSet4Problem1:160} we need onl
 This will clearly also be the case if the operator sequence \( \normalorder{A_1 \ldots A_n} \) includes any number of other contractions.
 
 \makeSubAnswer{}{qft:problemSet4:1b}
-TODO.
+Let's start in a more pedestrian fashion than diving straight into the induction, considering the first few values of \( n \) explicitly.
+\begin{itemize}
+\item \( n = 2 \).
+We'd like to expand \( A B \), say, in terms of contractions.  Because \( A = \normalorder{A} \), that is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:220}
+A B
+= \normalorder{A} B
+=
+\normalorder{ A B } +
+\contraction{}{A}{}{B}
+A B
+,
+\end{dmath}
+by \cref{lemma}.  This proves \cref{w1} for the \( n = 2 \) case.
+\item \( n = 3 \).  Let's now expand \( A B C \)
+\begin{dmath}\label{eqn:ProblemSet4Problem1:240}
+A B C
+=
+(A B) C
+=
+\lr{
+   \normalorder{ A B } +
+   \contraction{}{A}{}{B}
+   A B
+} C.
+\end{dmath}
+We are now able to apply \cref{lemma} to \( \normalorder{ AB } C \), to find
+\begin{dmath}\label{eqn:ProblemSet4Problem1:260}
+A B C
+=
+\lr{
+   \normalorder{ A B } +
+   \contraction{}{A}{}{B}
+   A B
+} C
+=
+\normalorder{ A B C }
++
+\normalorder{ A \contraction{}{ B }{}{C } B C }
++
+\normalorder{ \contraction{}{ A }{B}{C } A B C }
++
+(\contraction{}{A}{}{B}
+   A B ) C
+=
+\normalorder{ A B C }
++
+\normalorder{ A \contraction{}{ B }{}{C } B C }
++
+\normalorder{ \contraction{}{ A }{B}{C } A B C }
++
+\normalorder{ \contraction{}{A}{}{B} A B C },
+\end{dmath}
+where we also made use of \( \normalorder{ \contraction{}{A}{}{B} A B } C = \normalorder{ \contraction{}{A}{}{B} A B C } \).
+This proves \cref{w1} for the \( n = 3 \) case.
+\item \( n = 4 \).  This time we have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:300}
+\begin{aligned}
+A B C D
+&=
+(A B C) D \\
+&=
+\lr{
+\normalorder{ A B C }
++
+\normalorder{ A \contraction{}{ B }{}{C } B C }
++
+\normalorder{ \contraction{}{ A }{B}{C } A B C }
++
+\normalorder{ \contraction{}{A}{}{B} A B C }
+} D \\
+&=
+\normalorder{ A B C D } +
+\normalorder{
+   \contraction{}{A}{B C}{D}
+   A B C D
+}
++
+\normalorder{
+   \contraction{A}{B}{C}{D}
+   A B C D
+}
++
+\normalorder{
+   \contraction{A B}{C}{}{D}
+   A B C D
+} \\
+&\qquad+
+\normalorder{
+   \bcontraction{}{A}{\contraction{}{ B }{}{C } B C}{ D}
+   A \contraction{}{ B }{}{C } B C D
+}
++
+\normalorder{
+   \bcontraction{A}{B}{C}{D}
+   \contraction{}{ A }{B}{C }
+   A B C D
+}
++
+\normalorder{
+   \contraction{}{A}{}{B} A B
+   \bcontraction{}{C}{}{D} C D
+}.
+\end{aligned}
+\end{dmath}
+This time we have the normal ordering of all the operators, of all the operators with one set of contractions and of all the operators with two sets of contractions (although in that last case, the normal ordering is redundant.)
+
+\item \( n + 1 \).  The way to proceed is now clear, but is just hard to write.
+\begin{dmath}\label{eqn:ProblemSet4Problem1:280}
+\begin{aligned}
+A_1 \ldots A_n A_{n+1}
+&=
+(A_1 \ldots A_n) A_{n+1} \\
+&=
+\Biglr{
+\normalorder{A_1 \ldots A_n} \\
+&\qquad+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n}
++ \ldots +
+\normalorder{\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n}
++
+\normalorder{\contraction{}{A}{{}_1 \ldots}{A} A_1 \ldots A_{n}} \\
+&\qquad+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n}
+ + \ldots
+} A_{n+1} \\
+&=
+\normalorder{A_1 \ldots A_n A_{n+1}} + \sum_{k \ne n + 1}
+\normalorder{
+\contraction{A_1 \ldots }{A}{{}_k \ldots A_n }{A}
+A_1 \ldots A_k \ldots A_n A_{n+1}
+}  \\
+&\qquad+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n A_{n+1}}
++
+\sum_{k \notin \setlr{1,2,n+1}}
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \ldots
+\contraction{}{A}{{}_k\ldots A_n }{A}
+A_k\ldots A_n A_{n+1}
+}
++ \cdots \\
+&\qquad+
+\normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n A_{n+1}}
++
+\sum_{k \notin \setlr{1,2,3,4,n+1}}
+\normalorder{
+   \contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots
+   \contraction{}{A}{{}_k \ldots A_n}{A}
+   A_k \ldots A_n A_{n+1}
+}
++ \cdots
+\end{aligned}
+\end{dmath}
+Reading between the dots, we see that this is the (normal ordered) of all possible contractions, completing the proof of \cref{w1}\footnote{While this barrage of visually discordant contractions can be thought of as a proof of the result, I find the concrete example of the \( n = 4 \) case much more satisfying as a ``proof'', despite not being general.  There the idea is clear, even without the formalism of an inductive proof.}.
+
+\end{itemize}
+
 \makeSubAnswer{}{qft:problemSet4:1c}
 TODO.
 \makeSubAnswer{}{qft:problemSet4:1d}
