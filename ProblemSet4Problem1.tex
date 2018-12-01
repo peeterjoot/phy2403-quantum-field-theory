@@ -443,9 +443,342 @@ Reading between the dots, we see that this is the sum of all possible normal-ord
 \end{itemize}
 
 \makeSubAnswer{}{qft:problemSet4:1c}
-TODO.
+Let's first show that our new contraction definition \cref{c5} is equivalent to \cref{c2} when the operators are creation and anhillation operators.  It's easy to see that all the zero cases from \cref{c2} are recovered from this new definition
+\begin{dmath}\label{eqn:ProblemSet4Problem1:320}
+\begin{aligned}
+\contraction{}{a}{{}_{\Bp}^\dagger }{a}
+a_{\Bp}^\dagger a_{\Bq}^\dagger &= \bra{0} a_{\Bp}^\dagger a_{\Bq}^\dagger \ket{0} = 0 \\
+\contraction{}{a}{{}_{\Bp}^\dagger }{a}
+a_{\Bp}^\dagger a_{\Bq} &= \bra{0} a_{\Bp}^\dagger a_{\Bq} \ket{0} = 0 \\
+\contraction{}{a}{{}_\Bq}{a}
+a_{\Bp} a_{\Bq} &= \bra{0} a_{\Bp} a_{\Bq} \ket{0} = 0,
+\end{aligned}
+\end{dmath}
+The only non-zero case is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:340}
+\contraction{}{a}{{}_{\Bp}}{a}
+a_{\Bp} a_{\Bq}^\dagger
+=
+\bra{0} a_{\Bp} a_{\Bq}^\dagger \ket{0}
+\bra{0}
+\lr{
+a_{\Bq}^\dagger
+a_{\Bp}
++
+(2 \pi)^3 \deltathree(\Bp - \Bq)
+}
+\ket{0}
+=
+(2 \pi)^3 \deltathree(\Bp - \Bq),
+\end{dmath}
+which also matches \cref{c2} as desired, showing that \cref{c5} provides a nice compact representation of the contraction operator for any pair of creation and anhillation operators.
+
+Now let's consider a pair of time dependent linear combinations of creation and anhillation operators.  Let
+\begin{dmath}\label{eqn:ProblemSet4Problem1:360}
+\begin{aligned}
+A_i
+&= \int \frac{d^3 p}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp }}
+\lr{
+   e^{i p \cdot x} a_\Bp^\dagger
+   +
+   e^{-i p \cdot x} a_\Bp
+} \\
+A_j
+&= \int \frac{d^3 q}{(2 \pi)^3 \sqrt{ 2 \omega_\Bq }}
+\lr{
+   e^{i q \cdot y} a_\Bq^\dagger
+   +
+   e^{-i q \cdot y} a_\Bq
+}.
+\end{aligned}
+\end{dmath}
+For such a combination let's show that \cref{w1} still applies.
+\begin{dmath}\label{eqn:ProblemSet4Problem1:380}
+A_i A_j
+=
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   +
+   e^{-i p \cdot x}
+   a_\Bp
+}
+\lr{
+   e^{i q \cdot y}
+   a_\Bq^\dagger
+   +
+   e^{-i q \cdot y}
+   a_\Bq
+}
+=
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i p \cdot x}
+   e^{i q \cdot y}
+   a_\Bp^\dagger
+   a_\Bq^\dagger
++
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+   a_\Bp
+   a_\Bq^\dagger
++
+   e^{i p \cdot x}
+   e^{-i q \cdot y}
+   a_\Bp^\dagger
+   a_\Bq
++
+   e^{-i p \cdot x}
+   e^{-i q \cdot y}
+   a_\Bp
+   a_\Bq
+}
+=
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i p \cdot x}
+   e^{i q \cdot y}
+   a_\Bp^\dagger
+   a_\Bq^\dagger
++
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+\lr{
+   a_\Bq^\dagger
+   a_\Bp
++ (2 \pi)^3 \deltathree( \Bp - \Bq)
+}
++
+   e^{i p \cdot x}
+   e^{-i q \cdot y}
+   a_\Bp^\dagger
+   a_\Bq
++
+   e^{-i p \cdot x}
+   e^{-i q \cdot y}
+   a_\Bp
+   a_\Bq
+}
+=
+\normalorder{A_i A_j}
++
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+   (2 \pi)^3 \deltathree(\Bp - \Bq).
+\end{dmath}
+However,
+\begin{dmath}\label{eqn:ProblemSet4Problem1:400}
+\contraction{}{A}{{}_i }{A}
+A_i A_j
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   +
+   e^{-i p \cdot x}
+   a_\Bp
+}
+\lr{
+   e^{i q \cdot y}
+   a_\Bq^\dagger
+   +
+   e^{-i q \cdot y}
+   a_\Bq
+}
+\ket{0}
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+   a_\Bp
+   a_\Bq^\dagger
+\ket{0}
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+\lr{
+   a_\Bq^\dagger
+   a_\Bp
++ (2 \pi)^3 \deltathree(\Bp - \Bq)
+}
+\ket{0}
+=
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+   e^{-i p \cdot x}
+   e^{i q \cdot y}
+ (2 \pi)^3 \deltathree(\Bp - \Bq).
+\end{dmath}
+It happens that we have a sybolic designation for this combination, namely \(
+\contraction{}{A}{{}_i }{A}
+A_i A_j = D(x - y) \), but the take away is really just the \( n = 2 \) statement of Wick's theorem
+\begin{dmath}\label{eqn:ProblemSet4Problem1:420}
+A_i A_j =
+\normalorder{
+A_i A_j }
++
+\contraction{}{A}{{}_i }{A}
+A_i A_j
+,
+\end{dmath}
+which we see now applies to both pure creation and anhillation operators, as well as the combinations that we use to represent fields.  We could have just as easily have used a less specific linear combination than a presumed field -- had we done so, we'd have the same result, but wouldn't have been able to identify the contraction as \( D(x-y) \).
+
+As \cref{eqn:ProblemSet4Problem1:420} was the starting point for the inductive procedure that we used to prove \cref{w1}, that theorem holds verbatim as desired.
+
 \makeSubAnswer{}{qft:problemSet4:1d}
-TODO.
+We are now asked to make one final redefinition of the contraction operator
+\begin{dmath}\label{eqn:ProblemSet4Problem1:440}
+  \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert T(A_i A_j)\vert 0 \rangle~,
+\end{dmath}
+This is clearly still identical to either of the previous definitions when \( A_i, A_j \) are creation and anhillation operators.
+Considering the \( n = 2 \) case again, with \( A_i = \phi(x), A_j = \phi(y) \) defined by
+\cref{eqn:ProblemSet4Problem1:360}, we clearly have
+\begin{dmath}\label{eqn:ProblemSet4Problem1:460}
+T( A B )
+=
+\normalorder{T(A B)}
++
+\contraction{}{A}{}{B}
+A B,
+\end{dmath}
+where the contraction is now defined by \cref{eqn:ProblemSet4Problem1:440}.  We now have to ask what the meaning of a normal ordered time ordered product is.  The \( n = 2 \) case illustrates this nicely.  If \( y^0 > x^0 \), then
+\begin{dmath}\label{eqn:ProblemSet4Problem1:480}
+\normalorder{ T\lr{ \phi(x) \phi(y)} }
+=
+\normalorder{ \phi(y) \phi(x) }
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\normalorder{
+\lr{
+   e^{i q \cdot y}
+   a_\Bq^\dagger
+   +
+   e^{-i q \cdot y}
+   a_\Bq
+}
+\lr{
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   +
+   e^{-i p \cdot x}
+   a_\Bp
+}
+}
+\ket{0}
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i q \cdot y}
+   e^{i p \cdot x}
+   a_\Bq^\dagger
+   a_\Bp^\dagger
+   +
+   e^{-i q \cdot y}
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   a_\Bq
++
+   e^{i q \cdot y}
+   e^{-i p \cdot x}
+   a_\Bq^\dagger
+   a_\Bp
+   +
+   e^{-i q \cdot y}
+   e^{-i p \cdot x}
+   a_\Bq
+   a_\Bp
+}
+\ket{0},
+\end{dmath}
+however, if \( x^0 > y^0 \)
+\begin{dmath}\label{eqn:ProblemSet4Problem1:500}
+\normalorder{ T( \phi(x) \phi(y) }
+=
+\normalorder{ \phi(x) \phi(y) }
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\normalorder{
+\lr{
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   +
+   e^{-i p \cdot x}
+   a_\Bp
+}
+\lr{
+   e^{i q \cdot y}
+   a_\Bq^\dagger
+   +
+   e^{-i q \cdot y}
+   a_\Bq
+}
+}
+\ket{0}
+=
+\bra{0}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\lr{
+   e^{i q \cdot y}
+   e^{i p \cdot x}
+   a_\Bq^\dagger
+   a_\Bp^\dagger
+   +
+   e^{-i q \cdot y}
+   e^{i p \cdot x}
+   a_\Bp^\dagger
+   a_\Bq
++
+   e^{i q \cdot y}
+   e^{-i p \cdot x}
+   a_\Bq^\dagger
+   a_\Bp
+   +
+   e^{-i q \cdot y}
+   e^{-i p \cdot x}
+   a_\Bq
+   a_\Bp
+}
+\ket{0},
+\end{dmath}
+which equals \cref{eqn:ProblemSet4Problem1:480}, that is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:n}
+\normalorder{ T\lr{ \phi(x) \phi(y)} }
+=
+\normalorder{ T\lr{ \phi(x) \phi(y)} }
+\end{dmath}
+so we see that the time ordering of a normal ordered product, such as \( \normalorder{ T(A B) } = \normalorder{ T(B A) } \), is redundant.  Such an argument clearly extends to multiple products.  We also need this argument to extend to contractions against the fields in a normal ordering product.  In particular, for three fields \( A, B, C \)
+\begin{dmath}\label{eqn:ProblemSet4Problem1:520}
+T( A B C )
+=
+T( T(A B) C )
+=
+T( \lr{ \normalorder{A B} +
+\contraction{}{A}{}{B}
+A B} C
+)
+=
+T( \lr{ \normalorder{A B} } C ) + (\contraction{}{A}{}{B} A B) C,
+\end{dmath}
+so we see that proving the time ordered Wick's theorem requires that we prove a variation of our lemma \cref{lemma}, which for the \( n = 2 \) case, is
+\begin{dmath}\label{eqn:ProblemSet4Problem1:540}
+T( \lr{ \normalorder{A B} } C )
+=
+\contraction{}{A}{}{C}
+A B C
++
+\contraction{A}{B}{}{C}
+A B C
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet4:1e}
 TODO.
 }
