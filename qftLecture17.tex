@@ -144,14 +144,15 @@ and final state
 \end{dmath}
 We defined decay rate as the ratio of the number of initial particles to the number of final particles.
 
-The probability is
+The probability is proportional to
 \begin{dmath}\label{eqn:qftLecture17:280}
 \rho \sim \Abs{\bra{f} S \ket{i}}^2
 =
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
-\times \Abs{ M_{fi} }^2
+\times \Abs{ M_{fi} }^2,
 \end{dmath}
+where the proportionality is because we will have to divide by all the norms of the final states\footnote{Required for the probabillity to be no greater than one.}.
 
 Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set the argument of one of the delta functions to zero, which gives us a vacuum volume element factor
 \begin{equation}\label{eqn:qftLecture17:300}
@@ -163,30 +164,31 @@ Saying that \( \delta(x) f(x) = \delta(x) f(0) \) we can set the argument of one
 \end{equation}
 so
 \begin{dmath}\label{eqn:qftLecture17:320}
-\frac{\text{probability for \( i \rightarrow f\)}}{\text{unit time}}
+\frac{\text{probability for \( i \rightarrow f\) }}{\text{unit time}} 
 \sim
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
 V_3
-\times \Abs{ M_{fi} }^2
+\times \Abs{ M_{fi} }^2,
 \end{dmath}
 
-\begin{dmath}\label{eqn:qftLecture17:340}
-\braket{\Bk}{\Bk} = 2 \omega_\Bk V_3
-\end{dmath}
-
-coming from
-
+For the norms, we use the relativistic normalization
 \begin{dmath}\label{eqn:qftLecture17:360}
 \braket{k}{p} = (2 \pi)^3 2 \omega_\Bp \deltathree(\Bp - \Bk)
 \end{dmath}
-so
+and our volume element interpretation of \( \deltathree(0) \)\footnote{Originally seen in \cref{eqn:qftLecture6:420}.}, which is
+%\begin{dmath}\label{eqn:qftLecture17:340} 
+%\braket{\Bk}{\Bk} = 2 \omega_\Bk V_3
+%\end{dmath}
+%so
 \begin{dmath}\label{eqn:qftLecture17:380}
-\braket{k}{k} = 2 \omega_\Bp V_3
+\braket{p}{p} 
+= 2 \omega_\Bp \int d^3 x \evalbar{e^{i \Bp \cdot \Bx}}{\Bx = 0}
+= 2 \omega_\Bp V_3.
 \end{dmath}
-
+We now have the full expression for the probability per unit time
 \begin{dmath}\label{eqn:qftLecture17:400}
 \frac{\text{probability for \(i \rightarrow f\)}}{\text{unit time}}
-\sim
+=
 \frac{
 (2 \pi)^4 \deltafour( p_{\text{in}} - \sum p_f )
 \Abs{ M_{fi} }^2 V_3
@@ -198,8 +200,8 @@ so
 2 \omega_{\Bp_n} V_3^n
 }
 \end{dmath}
-\paragraph{FIXME: Where did all these terms downstairs come from?  They weren't in \cref{eqn:qftLecture17:320}.  Is this a new quantity mislabeled?}
 
+\paragraph{In terms of number of states in a small momentum space volume.}
 If we multiply the number of final states with \( p_i^f \in (p_i^f, p_i^f + dp_i^f) \) for a particle in a box
 \begin{dmath}\label{eqn:qftLecture17:420}
 p_x = \frac{ 2 \pi n_x}{L}
@@ -260,7 +262,7 @@ For \( 2 \rightarrow \text{many} \) transitions
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }
 \end{dmath}
 
-We need to divide by the flux
+We need to divide by the flux to obtain the cross section.
 
 In the CM frame, as sketched in
 \cref{fig:qftLecture17:qftLecture17Fig7},

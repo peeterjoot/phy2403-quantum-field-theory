@@ -48,47 +48,54 @@ d\sigma( AB \rightarrow 1 \cdots n)
 \prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} }.
 \end{equation}
 
+For two particles, the particle data book this factor has the identification
+\begin{dmath}\label{eqn:qftLecture18:180}
+d(LIPS)_2 =
+(2 \pi)^4 \deltafour( \sum p_i - \sum_f p^f )
+\prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} },
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture18:440}
+\sigma = \frac{d(LIPS)_2 \Abs{M_{fi}}^2 }{
+4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
+}.
+\end{dmath}
+
+\makedigression{
 \paragraph{Digression: One to three muon decay}
 I can't recall what prompted this, but an example of muon (a negative charged ``heavy electron'') decay was given, sketched in
-\cref{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}.
+%\cref{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}.
+\cref{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}.
 In such decay lepton number and charge both have to be conserved.  This is why such a decay must have a mu-neutrino (\(\nu_\mu\)), as well as an antineutrino (\(\overbar{\nu}_e\)) along with the electron (\(e^-\)).
-\imageFigure{../figures/phy2403-quantum-field-theory/L18TwoToTwoScatteringFig2}{Muon decay: One to three scattering.}{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}{0.3}
+%\imageFigure{../figures/phy2403-quantum-field-theory/L18TwoToTwoScatteringFig2}{Muon decay: One to three scattering.}{fig:L18TwoToTwoScattering:L18TwoToTwoScatteringFig2}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/L18OnetoThreeDecayFig1}{Muon decay: One to three scattering.}{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}{0.3}
+}
 
-\paragraph{Back to the scattering:}
-Example:
-\begin{dmath}\label{eqn:qftLecture18:40}
-\phi \phi \rightarrow \phi \phi
-\end{dmath}
+%\paragraph{Back to the scattering:}
+\paragraph{Example: \( \phi \phi \rightarrow \phi \phi \):}
 
-%\cref{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}.
-\imageFigure{../figures/phy2403-quantum-field-theory/L18OnetoThreeDecayFig1}{Two to two scattering.}{fig:L18OnetoThreeDecay:L18OnetoThreeDecayFig1}{0.3}
-
-1) Do flux factor in CM frame as sketched in \cref{fig:L18TwoToTwoScatteringCMFrame:L18TwoToTwoScatteringCMFrameFig3}.
-
+Let's calculate the flux factor for the \( 2 \rightarrow 2 \) scattering sketched in \cref{fig:L18TwoToTwoScatteringCMFrame:L18TwoToTwoScatteringCMFrameFig3} from the CM frame.  Our four-momenta are
 \imageFigure{../figures/phy2403-quantum-field-theory/L18TwoToTwoScatteringCMFrameFig3}{Two to two scattering in CM frame.}{fig:L18TwoToTwoScatteringCMFrame:L18TwoToTwoScatteringCMFrameFig3}{0.3}
-
-\begin{dmath}\label{eqn:qftLecture18:60}
-\begin{aligned}
-k_A^2 &= \frac{s}{4} - \Bk^2 = m^2 \\
-k_B^2 &= \frac{s}{4} - \Bk^2 = m^2
-\end{aligned}
-\end{dmath}
-
-(initial particles are on shell)
-
 \begin{dmath}\label{eqn:qftLecture18:80}
 \begin{aligned}
 k_A &= \lr{ \frac{\sqrt{s}}{2}, -\Bk } \\
-k_B &= \lr{ \frac{\sqrt{s}}{2}, +\Bk }
+k_B &= \lr{ \frac{\sqrt{s}}{2}, +\Bk },
 \end{aligned}
 \end{dmath}
-
-In CM:
-
+where
 \begin{dmath}\label{eqn:qftLecture18:100}
-\sqrt{s} = E_A + E_B
+\sqrt{s} = E_A + E_B,
 \end{dmath}
-
+and \( s \) is known as a Mandelstam variable (see for example: \citep{wiki:Mandelstam}.
+\index{Mandelstam variable}
+The particles are each on shell, so
+\begin{dmath}\label{eqn:qftLecture18:60}
+\begin{aligned}
+k_A^2 &= \frac{s}{4} - \Bk^2 = m^2 \\
+k_B^2 &= \frac{s}{4} - \Bk^2 = m^2.
+\end{aligned}
+\end{dmath}
+The flux factor is
 \begin{dmath}\label{eqn:qftLecture18:120}
 4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
 =
@@ -97,33 +104,27 @@ In CM:
 4 \sqrt{
 \lr{ \frac{s}{4} + \Bk^2 - m^2 }
 \lr{ \frac{s}{4} + \Bk^2 + m^2 }
-}
+}.
 \end{dmath}
-
-but
-\begin{dmath}\label{eqn:qftLecture18:140}
-\frac{s}{4} - m^2 = \Bk^2
-\end{dmath}
-
+Using \cref{eqn:qftLecture18:60}, gives
+%but
+%\begin{dmath}\label{eqn:qftLecture18:140}
+%\frac{s}{4} - m^2 = \Bk^2
+%\end{dmath}
+%
 \begin{dmath}\label{eqn:qftLecture18:160}
 4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
+%=
+%4 \sqrt{ (2 \Bk^2)(2 \Bk^2 + 2 m^2)}
 =
-4 \sqrt{ \cancel{2} \Bk^2 \frac{s}{\cancel{2}} }
+4 \sqrt{ (2 \Bk^2)\frac{s}{2}}
 =
-4 \Abs{\Bk} \sqrt{s}
+4 \Abs{\Bk} \sqrt{s}.
 \end{dmath}
 
-\paragraph{Note:} \( s \) is known as a Mandelstam variable (see for example: \citep{wiki:Mandelstam}).
-\index{Mandelstam variable}
-
-We have two particles
-
-In the particle data book this factor
-\begin{dmath}\label{eqn:qftLecture18:180}
-(2 \pi)^4 \deltafour( \sum p_i - \sum_f p^f )
-\prod_{f} \frac{ d^3 p}{(2 \pi)^3 2 \omega_{\Bp^f} },
-\end{dmath}
-is called \( d(LIPS)_2 \).  In the CM frame the delta function simplifies and we have
+\section{\(d(LIPS)_2\).}
+%We have two particles
+  In the CM frame the delta function simplifies and we have
 
 \begin{dmath}\label{eqn:qftLecture18:200}
 d(LIPS)_2
@@ -142,44 +143,64 @@ d(LIPS)_2
 \begin{dmath}\label{eqn:qftLecture18:220}
 p_1 = \lr{ \frac{\sqrt{s}}{2}, \Bp_1 }
 \end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture18:240}
+The square of this four-momentum is
+\begin{equation}\label{eqn:qftLecture18:240}
 p_1^2 = m^2 = \frac{s}{4} - \Bp_1^2,
-\end{dmath}
-
+\end{equation}
 so
-
 \begin{dmath}\label{eqn:qftLecture18:260}
-\Bp_2 = \frac{s}{4} - m^2
+\Bp_1^2 = \frac{s}{4} - m^2
 \end{dmath}
 
-With
+Using the delta function identity
 \begin{dmath}\label{eqn:qftLecture18:280}
-\delta(f(x)) = \frac{\delta(x^\conj)}{f'(x^\conj)},
+\delta(f(x)) = \evalbar{\frac{\delta(x^\conj)}{f'(x^\conj)}}{f(x^\conj) = 0},
 \end{dmath}
-where \( f(x^\conj) = 0 \).
-
-giving
+and letting \( d^3 p_1 = d\Omega \calp^2 d\calp, \calp = \Abs{\Bp_1}\), and \( f(\calp) = 2 \sqrt{\calp^2 + m^2} = \sqrt{s} \) we have a zero at
+\begin{dmath}\label{eqn:qftLecture18:380}
+x^\conj = \calp - \sqrt{s/4 - m^2},
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture18:400}
+\calp^2 = \frac{s}{4} - m^2.
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture18:420}
+f'(x^\conj)
+=
+\frac{d}{d\calp} 2 \sqrt{\calp^2 + m^2}
+=
+2 \inv{2} 2 \frac{\calp}{\omega_1}
+=
+\frac{2 \calp}{\omega_1}.
+\end{dmath}
 \begin{dmath}\label{eqn:qftLecture18:300}
 d(LIPS)_2
 =
 \frac{ d^3 p_1}{(2 \pi)^3} \inv{ 4 \omega_1^2}
-2 \pi \delta( p_1 - \sqrt{s/4 - m^2} )
+2 \pi \delta( \calp - \sqrt{s/4 - m^2} )
 =
-\frac{d^2 \Omega p_1^2 dp_1}{(2 \pi)^2 4 \omega_1^2 } \frac{\delta(p_1 - \sqrt{s/4 - m^2}}{2 p_1/\omega_1}
+\frac{d^2 \Omega \calp^2 d\calp}{(2 \pi)^2 4 \omega_1^2 } \frac{\delta(\calp - \sqrt{s/4 - m^2})}{2 \calp/\omega_1}
 =
-\frac{d^2 \Omega p_1^2 dp_1}{(2 \pi)^2 8 \omega_1 }
+\frac{d^2 \Omega \calp d\calp}{(2 \pi)^2 8 \omega_1 } \delta(\calp - \sqrt{s/4 - m^2}),
+\end{dmath}
+but \( \int dx x \delta(x - x^\conj) = x^\conj \), so
+\begin{dmath}\label{eqn:qftLecture18:460}
+d(LIPS)_2
 =
-\frac{d^2 \Omega p_1}{16 \pi^2 \sqrt{s} },
+\frac{d^2 \Omega \calp}{(2 \pi)^2 8 \omega_1 }
+=
+\frac{d^2 \Omega \calp}{16 \pi^2 \sqrt{s} },
 \end{dmath}
 since \( \omega_1 = \sqrt{s}/2 \).
 
-This gives
-\begin{dmath}\label{eqn:qftLecture18:320}
-\frac{d\sigma}{d^2 \Omega}
+Putting the pieces \cref{eqn:qftLecture18:160}, \cref{eqn:qftLecture18:320} together, and plugging into
+\begin{dmath}\label{eqn:qftLecture18:480}
+\frac{d \sigma}{d^2 \Omega} = \frac{d(LIPS)_2}{d^2 \Omega} \Abs{M_{fi}}^2
+\inv{
+   4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
+}
 =
-\frac{ p_1 }{16 \pi^2 \sqrt{s} }
-\frac{ \lambda^2 }{ \Abs{p_1} \sqrt{s} } 4
+\frac{\calp}{16 \pi^2 \sqrt{s} }
+\Abs{-i\lambda}^2 \inv{ 4 \Abs{\Bk} \sqrt{s} }
 =
 \frac{\lambda^2}{64 \pi^2 s}.
 \end{dmath}
@@ -196,7 +217,7 @@ the total cross section is
 =
 \frac{\lambda^2}{32 s}.
 \end{dmath}
-There was a counting adjustment made here that I didn't quite catch.
+There was a counting adjustment made here that I didn't catch.
 
 %}
 %\EndArticle

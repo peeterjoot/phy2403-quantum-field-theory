@@ -98,6 +98,7 @@ $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 #l16: qftLecture16.pdf
 l17: q17.pdf
 q17.pdf : qftLecture17.tex
+q17.pdf : qftLecture18.tex
 #l18: qftLecture18.pdf
 #l19: qftLecture19.pdf
 #l20: qftLecture20.pdf

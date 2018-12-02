@@ -23,7 +23,6 @@
 %\usepackage{txfonts} % \ointclockwise
 
 \newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
 %\newcommand{\br3}[1]{{(3)}}
 %\newcommand{\br4}[1]{{(4)}}
 
@@ -171,19 +170,19 @@ Further confounding me was the fact that my old QM book used a different sign co
 
 \section{blah}
 
-\begin{dmath}\label{eqn:facebook:n}
+\begin{dmath}\label{eqn:facebook:540}
 %\delta^\brn{3}(x - y)
 \deltathree(x - y)
 \end{dmath}
 
 \section{GA q.}
 
-\begin{dmath}\label{eqn:QandA:n}
+\begin{dmath}\label{eqn:QandA:560}
 (\Ba\cross \Bb)\cdot(\Ba\cross \Bb)
 =[-I(\Ba\wedge \Bb)]\cdot[-I(\Ba\wedge \Bb)]
 =[I(\Ba\wedge \Bb)]\cdot[I(\Ba\wedge \Bb)],
 \end{dmath}
-\begin{dmath}\label{eqn:QandA:n}
+\begin{dmath}\label{eqn:QandA:580}
 (Ia)\cdot \Bb=I(\Ba\wedge \Bb)
 =I[(\Ba\wedge \Bb)\wedge(I(\Ba\wedge \Bb))]
 \Ba\wedge(Ib)=I(\Ba\cdot \Bb)
@@ -222,7 +221,7 @@ p \cdot \overbar{\sigma} &= p^0 \sigma^0 + \Bp \cdot \Bsigma.
 \end{aligned}
 \end{equation*}
 
-This makes sense to me, as it follows the usual pattern \( x \cdot p = x^\mu p_\mu = x^0 p^0 - \Bx \cdot \Bp \).  
+This makes sense to me, as it follows the usual pattern \( x \cdot p = x^\mu p_\mu = x^0 p^0 - \Bx \cdot \Bp \).
 
 I ask because I got confused looking at Peskin and Schroeder, where they seemingly use an opposite sign convention where \( \sigma \cdot x \) was first defined, namely eq. 3.41 and its neighbours where they write
 \begin{equation*}
@@ -238,7 +237,7 @@ It took a bit of thought, but I think the explaination for this difference is be
 So, when Peskin and Schroeder apply this to \( \sigma \cdot \partial \), it really means
 \begin{equation*}
 \begin{aligned}
-\sigma \cdot \partial 
+\sigma \cdot \partial
 &= \sigma^0 \partial^0 - \Bsigma \cdot (-\spacegrad) \\
 &= \partial_0 + \Bsigma \cdot \spacegrad
 \end{aligned}
@@ -249,17 +248,74 @@ So, when Peskin and Schroeder apply this to \( \sigma \cdot \partial \), it real
 \section{normalizationQ}
 
 I'd thought of this relativistic normalization as a mapping between three-vector and four-vector momentum states
-\begin{dmath}\label{eqn:QandA:n}
+\begin{dmath}\label{eqn:QandA:600}
 \ket{p} = \sqrt{2 \Omega_\Bp} \ket{\Bp}.
 \end{dmath}
 This means that the non-relativisitic normalization of three-momentum states
-\begin{dmath}\label{eqn:QandA:n}
+\begin{dmath}\label{eqn:QandA:620}
 \braket{\Bp}{\Bq} = (2 \pi)^3 \delta^{(3)}(\Bp - \Bq)
 \end{dmath}
 results in the desired Lorentz-invariant normalization of four-momentum states
-\begin{dmath}\label{eqn:QandA:n}
+\begin{dmath}\label{eqn:QandA:640}
 \braket{p}{q} = (2 \pi)^3 2 \omega_\Bp \delta^{(3)}(\Bp - \Bq).
 \end{dmath}
+
+\section{scattering}
+
+\begin{equation}\label{eqn:QandA:660}
+\frac{\text{probability for \( i \rightarrow f\)}}{\text{unit time}}
+\sim
+(2 \pi)^4 \delta^{(4)}( p_{\text{in}} - \sum p_f )
+V_3
+\times \Abs{ M_{fi} }^2
+\end{equation}
+
+\begin{equation}\label{eqn:QandA:680}
+\frac{\text{probability for \(i \rightarrow f\)}}{\text{unit time}}
+\sim
+\frac{
+(2 \pi)^4 \delta^{(4)}( p_{\text{in}} - \sum p_f )
+\Abs{ M_{fi} }^2 V_3
+}
+{
+2 \omega_\Bk V_3
+2 \omega_{\Bp_1}
+\cdots
+2 \omega_{\Bp_n} V_3^n
+}
+\end{equation}
+
+\begin{dmath}\label{eqn:qftLecture17:380}
+\braket{p}{p} = 2 \omega_\Bp V_3
+\end{dmath}
+
+\section{Connecting the algebra to interpretation: two point correlation function.}
+
+This is going to sound like a really dumb question, because I didn't ask early enough, and now
+my confusion is building on itself.
+
+We came up with expressions for the two point correlation function
+\begin{equation}\label{eqn:QandA:700}
+ \bra{\Omega} T(\phi(x_1) \phi(x_2)) \ket{\Omega}
+\end{equation}
+and generalized that to many fields
+\begin{equation}\label{eqn:QandA:720}
+\begin{aligned}
+ \bra{\Omega} & T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega} \\
+&=
+ \bra{0} T(\phi(x_1) \cdots \phi(x_n)) \ket{0}  \\
+&-i \lambda
+ \bra{0} T(\phi(x_1) \cdots \phi(x_n)) \int dt H_I \ket{0} \\
+& + \cdots
+\end{aligned}
+\end{equation}
+So far so good.  This was just algebra.  We then developed Wick's theorem so that we could evaluate these expressions.
+
+I think that I was okay up to that point (especially after doing the HW4 problem on Wick's theorem).
+
+However, it wasn't clear to me why we were looking at something like \( \bra{\Omega} T(\phi(x_1) \phi(x_2)) \ket{\Omega} \) in the first place.  Somehow, we seem to have ended up interpretting these time ordered matrix elements (or their diagramatic representations) as representations of processes that took an initial configuration of \( N' \) particles and mapped it to a final configuration that had \( M' \) particles.  Looking in retrospect, I really don't understand what magic hat that was pulled from.
+
+For example, in (4.42), suddenly \( \bra{0} T(\phi(x_1) \phi(x_2) \phi(x_3) \phi(x_4)) \ket{0} \) has a diagramatic representation where they claim: "the diagrams do suggest an interpretation: Particles are create at two spacetime points, each propagates to one of the other points, and then they are annihilated."
 
 \EndArticle
 %\EndNoBibArticle
