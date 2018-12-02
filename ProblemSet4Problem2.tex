@@ -23,7 +23,208 @@ Use this coupling to compute the width  $\Gamma(h \rightarrow \phi^3 \phi^3)$ of
 
 \makeanswer{qft:problemSet4:2}{
 \makeSubAnswer{}{qft:problemSet4:2a}
-TODO.
+Here's a reminder and summary of the Higgs Lagrangian we will be working with in this problem
+\begin{dmath}\label{eqn:ProblemSet4Problem2:640}
+\LL = \trace{
+   \lr{
+      \partial_\mu H^\dagger \partial^\mu H
+   }
+}
+- V,
+\end{dmath}
+where
+\begin{dmath}\label{eqn:ProblemSet4Problem2:660}
+V =
+-\Abs{m}^2 \trace{
+   \lr{
+      H^\dagger H
+   }
+}
++ \lambda
+\lr{
+   \trace{
+      H^\dagger H
+   }
+}^2.
+\end{dmath}
+It was postulated that the field had a radial component \( h \), the Higgs field, and an rotational component \( \Omega \), where the total field was given by
+\begin{dmath}\label{eqn:ProblemSet4Problem2:680}
+H(x) = \frac{\Abs{m}}{2 \sqrt{ \lambda } }\Omega(x) ( 1 + h(x) ),
+\end{dmath}
+where
+\begin{equation}\label{eqn:ProblemSet4Problem2:700}
+\Omega = e^{ i \Bsigma \cdot \Bphi } = e^{i \phi^a(x) \sigma^a }.
+\end{equation}
+
+Assuming that \( h(x) \) and \( \phi^a(x) \) commute, \( H^\dagger H \) can be computed with relative ease, and has only radial dependence
+\begin{dmath}\label{eqn:ProblemSet4Problem2:380}
+\trace{\lr{H^\dagger H}}
+=
+\frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\lr{ e^{-i \Bsigma \cdot \Bphi} e^{i \Bsigma \cdot \Bphi} }}
+=
+\frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\BOne}
+=
+\frac{\Abs{m}^2}{2 \lambda} (1 + h)^2.
+\end{dmath}
+For the derivative quadratic form, we find
+\begin{dmath}\label{eqn:ProblemSet4Problem2:400}
+\partial_\mu H^\dagger \partial^\mu H
+=
+\frac{\Abs{m}^2}{4 \lambda}
+\lr{
+   \partial_\mu h \Omega^\dagger
+   + (1 + h) \partial_\mu \Omega^\dagger
+}
+\lr{
+   \partial^\mu h \Omega
+   + (1 + h)
+\partial^\mu \Omega
+}
+=
+\frac{\Abs{m}^2}{4 \lambda}
+\lr{
+   \partial_\mu h \Omega^\dagger \partial^\mu h \Omega
+   + (1 + h)
+      \lr{
+         \partial_\mu h
+         \Omega^\dagger (\partial^\mu \Omega)
+       +
+         \partial^\mu h
+         (\partial_\mu \Omega^\dagger) \Omega
+      }
+   + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
+}.
+\end{dmath}
+Because \( \Omega^\dagger \Omega = 1 \), we have
+\begin{dmath}\label{eqn:ProblemSet4Problem2:480}
+\partial_\mu h
+\Omega^\dagger (\partial^\mu \Omega)
+ +
+\partial^\mu h
+(\partial_\mu \Omega^\dagger) \Omega
+=
+\partial_\mu h
+\lr{
+   \Omega^\dagger (\partial^\mu \Omega)
+    +
+   (\partial^\mu \Omega^\dagger) \Omega
+}
+=
+\partial_\mu h
+\lr{
+   \partial^\mu (\Omega^\dagger \Omega) - (\partial^\mu \Omega^\dagger) \Omega
+    +
+   (\partial^\mu \Omega^\dagger) \Omega
+}
+=
+   \partial^\mu (1)
+= 0.
+\end{dmath}
+All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to all orders, not just quadratic).
+
+Taking traces (and using cyclic permutation of the matrices in the trace operations),
+the Lagrangian density is now determined
+\begin{dmath}\label{eqn:ProblemSet4Problem2:500}
+\LL =
+\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+\frac{\Abs{m}^2}{4 \lambda} ( 1 + h )^2
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
++ \Abs{m}^2
+\frac{\Abs{m}^2}{2 \lambda} \lr{ 1 + h }^2
+- \lambda
+\lr{\frac{\Abs{m}^2}{2 \lambda}}^2
+\lr{ 1 + h }^4
+=
+\frac{\Abs{m}^2}{2 \lambda} \LL',
+\end{dmath}
+where \( \LL' \) is the ``canonically normalized'' Lagrangian
+\begin{dmath}\label{eqn:ProblemSet4Problem2:720}
+\LL' =
+%\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+%\frac{\Abs{m}^2}{4 \lambda}
+\inv{2}
+( 1 + h )^2
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
++
+\Abs{m}^2
+%\frac{\Abs{m}^2}{2 \lambda}
+\lr{ 1 + h }^2
+-
+%\lambda
+%\lr{\frac{\Abs{m}^2}{2 \lambda}}^2
+\frac{\Abs{m}^2}{2}
+\lr{ 1 + h }^4.
+\end{dmath}
+
+The coupling, let's call it \( c \), is to first order in \( h \) is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:740}
+c = \inv{2} 2 h
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}.
+\end{dmath}
+Looking at these derivatives, to first order, we have
+\begin{dmath}\label{eqn:ProblemSet4Problem2:580}
+\partial_\mu \Omega
+=
+\partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
+=
+i \Bsigma \cdot \partial_\mu \Bphi,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:ProblemSet4Problem2:760}
+c
+=
+h
+\trace{\lr{
+   (-i \Bsigma \cdot \partial_\mu \Bphi^\dagger)
+   (i \Bsigma \cdot \partial^\mu \Bphi)
+}}
+=
+h
+\trace{\lr{
+   (\Bsigma \cdot \partial_\mu \Bphi)
+   (\Bsigma \cdot \partial^\mu \Bphi)
+}},
+\end{dmath}
+where the real nature of each of the \( \phi^a \)'s has been used to eliminate the \( \dagger\).
+The structure of this trace is that of
+\begin{dmath}\label{eqn:ProblemSet4Problem2:780}
+\trace{\lr{
+   (\Bsigma \cdot \Bx)
+   (\Bsigma \cdot \By)
+}}
+=
+x^a y^b
+\trace{\lr{
+   \sigma^a \sigma^b
+}}
+=
+x^a y^b
+\left\{
+\begin{array}{l l}
+2 & \quad \mbox{\( a = b \)} \\
+0 & \quad \mbox{\( a \ne b \)} \\
+\end{array}
+\right.
+=
+2 \Bx \cdot \By,
+\end{dmath}
+so the coupling is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:800}
+c = 2 h
+\partial_\mu \phi^a \partial^\mu \phi^a.
+\end{dmath}
+This answers the question of the constant, which we find is \( 2 \) after the canonical normalization.
+
 \makeSubAnswer{}{qft:problemSet4:2b}
 TODO.
 \makeSubAnswer{}{qft:problemSet4:2c}
