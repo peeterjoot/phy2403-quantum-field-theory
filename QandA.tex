@@ -317,5 +317,127 @@ However, it wasn't clear to me why we were looking at something like \( \bra{\Om
 
 For example, in (4.42), suddenly \( \bra{0} T(\phi(x_1) \phi(x_2) \phi(x_3) \phi(x_4)) \ket{0} \) has a diagramatic representation where they claim: "the diagrams do suggest an interpretation: Particles are create at two spacetime points, each propagates to one of the other points, and then they are annihilated."
 
+\section{Pf}
+
+1. The problem statement, all variables and given/known data
+
+Given a coupling \( h \; \partial_\mu \phi^a \partial^\mu \phi^a \), meant to model the first order interaction of the Higgs field \( h \) to boson fields \( \phi^a \), compute the width  $\Gamma(h \rightarrow \phi^3 \phi^3)$ of the Higgs particle to decay to two longitudinal (say) $Z$-bosons (hence the index $3$).
+
+We've been told that we only need to consider first order pertubative terms.
+
+2. Relevant equations
+
+\begin{equation}\label{eqn:QandA:740}
+\begin{aligned}
+\bra{\Omega} T( h(x_1) \phi^3(x_2) \phi^3(x_3) e^{-i \int dt H_{\text{int}} }) \ket{\Omega}
+&=
+\frac{
+\bra{0} T( h(x_1) \phi^3(x_2) \phi^3(x_3) e^{-i \int dt H_{\text{int}} }) \ket{0}
+}
+{
+\bra{0} T( e^{-i \int dt H_{\text{int}} }) \ket{0}
+} \\
+&=
+\text{some of all connected amputated diagrams with three external points,}
+\end{aligned}
+\end{equation}
+where \( T \) designates the time ordering operator.
+
+3. The attempt at a solution
+
+The conjugate momenta are
+\begin{equation}\label{eqn:QandA:760}
+\pi^a = \PD{(\partial_0 \phi^a)}{L_{\text{int}}} = 2 h \partial_0 \phi^a,
+\end{equation}
+so the interaction Hamiltonian is
+\begin{equation}\label{eqn:QandA:780}
+\begin{aligned}
+H_{\text{int}} &= \int d^3 x
+\lr{
+\pi^a \partial_0 \phi^a - L_{\text{int}}
+} \\
+&=
+\int d^3 x \lr{ 2 h (\partial_0 \phi^a)^2 - h (\partial_0 \phi^a)^2 + h (\partial_k \phi^a)^2
+} \\
+&=
+\int d^3 x h(x) \lr{ (\partial_0 \phi^a)^2 + (\partial_k \phi^a)^2
+},
+\end{aligned}
+\end{equation}
+In particular, the \( e^{-i \int dt H_{\text{int}}} \) exponential
+This is a somewhat strange seeming Hamiltonian (to me, at least given my rudimentary knowledge), as the only interactions I've seen in class have involved powers of the fields, whereas this one has derivatives of those too.
+
+Based on the scalar theory example \( \phi \phi \rightarrow \phi \phi \) example we worked in class, I figured that I need to calculate the first order diagrams of
+\begin{equation}\label{eqn:QandA:800}
+\begin{aligned}
+\bra{0} &T( h(x_1) \phi^3(x_2) \phi^3(x_3) e^{-i \int d^4 z H_{\text{int}}(z) }) \ket{0} \\
+&=
+\bra{0} T( h(x) \phi^3(y) \phi^3(w) \Biglr{ 
+1 
+- i \int d^4 z h(z) \lr{ \partial_0 \phi^3(z) \partial_0 \phi^3 z - \partial_k \phi^3(z) \partial_k \phi^3(z) } } \ket{0},
+\end{aligned}
+\end{equation}
+Because \( h, \phi^a \) commute, as well as any \( \phi^a, \phi^b, a \ne b \), it seems to me that the contraction of \( h(x), h(z) \) results in a Feynman propagator
+\begin{equation}\label{eqn:QandA:820}
+D_F(x - z)
+=
+\bra{0} T( h(x) h(z)) \ket{0}.
+\end{equation}
+We can also have contractions between \( \phi^3(y) \phi^3(w) \) and the derivatives of the \( \phi(z) \)'s in the interaction integral, or contractions between the \( \phi^3(y), \phi^3(w) \)'s and the derivative terms, but all the \( h, \phi^a \) contractions should be zero since those fields commute.  I thought the interpretation of the contractions of the derivatives fields would be
+\begin{equation}\label{eqn:QandA:840}
+\begin{aligned}
+\bra{0} T( \phi^3(x_i) \partial_k \phi^a(z)) \ket{0}
+&=
+\bra{0} T( \phi^3(x_i) \partial_\mu \phi^a(z)) \ket{0} \\
+&=
+\bra{0} T( \phi^3(x_i) \partial_\mu \phi^3(z)) \ket{0} \\
+&=
+\partial_\mu^{(z)} D_F( x_i - z ),
+\end{aligned}
+\end{equation}
+the derivative of a Feynman propagator for \( \phi^3 \) between the \( x_i \) and \( z \) vertices.
+
+\paragraph{edit}
+
+\begin{equation*}
+\LL =
+\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+\frac{\Abs{m}^2}{4 \lambda} ( 1 + h )^2
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
++ \Abs{m}^2
+\frac{\Abs{m}^2}{2 \lambda} \lr{ 1 + h }^2
+- \lambda
+\lr{\frac{\Abs{m}^2}{2 \lambda}}^2
+\lr{ 1 + h }^4
+=
+\frac{\Abs{m}^2}{\lambda} \LL',
+\end{equation*}
+where \( \LL' \) is the ``canonically normalized'' \footnote{Canonically normalized is assumed to mean that there's a one-half factor on the kinetic terms} Lagrangian
+\begin{equation*}
+\LL' =
+   \inv{2} \partial_\mu h \partial^\mu h
++
+\inv{4}
+( 1 + h )^2
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
++
+\inv{2}
+\Abs{m}^2
+\lr{ 1 + h }^2
+-
+\frac{\Abs{m}^2}{4}
+\lr{ 1 + h }^4,
+\end{equation*}
+where
+\begin{equation*}
+\Omega = e^{i \sigma^a \phi^a}.
+\end{equation*}
+
 \EndArticle
 %\EndNoBibArticle

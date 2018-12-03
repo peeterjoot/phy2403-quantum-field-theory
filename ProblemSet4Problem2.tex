@@ -139,34 +139,30 @@ the Lagrangian density is now determined
 \lr{\frac{\Abs{m}^2}{2 \lambda}}^2
 \lr{ 1 + h }^4
 =
-\frac{\Abs{m}^2}{2 \lambda} \LL',
+\frac{\Abs{m}^2}{\lambda} \LL',
 \end{dmath}
-where \( \LL' \) is the ``canonically normalized'' Lagrangian
+where \( \LL' \) is the ``canonically normalized'' \footnote{Canonically normalized is assumed to mean that there's a one-half factor on the kinetic terms} Lagrangian
 \begin{dmath}\label{eqn:ProblemSet4Problem2:720}
 \LL' =
-%\frac{\Abs{m}^2}{2 \lambda}
-   \partial_\mu h \partial^\mu h
+   \inv{2} \partial_\mu h \partial^\mu h
 +
-%\frac{\Abs{m}^2}{4 \lambda}
-\inv{2}
+\inv{4}
 ( 1 + h )^2
    \trace{\lr{
       \partial_\mu \Omega^\dagger \partial^\mu \Omega
    }}
 +
+\inv{2}
 \Abs{m}^2
-%\frac{\Abs{m}^2}{2 \lambda}
 \lr{ 1 + h }^2
 -
-%\lambda
-%\lr{\frac{\Abs{m}^2}{2 \lambda}}^2
-\frac{\Abs{m}^2}{2}
+\frac{\Abs{m}^2}{4}
 \lr{ 1 + h }^4.
 \end{dmath}
 
 The coupling, let's call it \( c \), is to first order in \( h \) is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:740}
-c = \inv{2} 2 h
+c = \inv{4} 2 h
    \trace{\lr{
       \partial_\mu \Omega^\dagger \partial^\mu \Omega
    }}.
@@ -183,12 +179,13 @@ so
 \begin{dmath}\label{eqn:ProblemSet4Problem2:760}
 c
 =
-h
+\inv{2} h
 \trace{\lr{
    (-i \Bsigma \cdot \partial_\mu \Bphi^\dagger)
    (i \Bsigma \cdot \partial^\mu \Bphi)
 }}
 =
+\inv{2}
 h
 \trace{\lr{
    (\Bsigma \cdot \partial_\mu \Bphi)
@@ -220,10 +217,10 @@ x^a y^b
 \end{dmath}
 so the coupling is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:800}
-c = 2 h
+c = h
 \partial_\mu \phi^a \partial^\mu \phi^a.
 \end{dmath}
-This answers the question of the constant, which we find is \( 2 \) after the canonical normalization.
+This answers the question of the constant, which we find is just \( 1 \) after canonical normalization.
 
 \makeSubAnswer{}{qft:problemSet4:2b}
 TODO.

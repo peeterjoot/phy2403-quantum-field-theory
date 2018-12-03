@@ -52,8 +52,7 @@
 %%\end{equation*}
 %%} % definition
 %%
-\section{Definitions and motivation (cont.)}
-
+%\section{Definitions and motivation (cont.)}
 In QFT we typically study \( 2 \rightarrow n \) inelastic scattering.  Most commonly the nature of the final state particles are different from the nature of the incoming state.
 
 For example, we can collide an electron and anti-electron, and can get muon and anti-muon particles as sketched in
@@ -185,7 +184,7 @@ Because we'll be squaring the amplitudes, we can assume that the \( e^{i H_0(T-t
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture16:300}
-\bra{ \Bp_1, \cdots \Bp_n } i\hatT { \Bk_A, \Bk_B }
+\bra{ \Bp_1, \cdots \Bp_n } i\hatT \ket{ \Bk_A, \Bk_B }
 =
 \lim_{T \rightarrow \infty(1 - i \epsilon) }
 \prescript{}{0}{
@@ -195,7 +194,8 @@ T( e^{-i \int_{-T}^T H_i(t') dt' } )
 }_0
 \end{dmath}
 
-These are connected and amputated graphs.
+We will see that evaluating this beastie amounts to summing all the 
+connected and amputated diagrams, a subset of all the possible graphs.  Why this is true is not covered in this course (i.e. see QFT II and/or \S 7.2 \citep{peskin1995introduction}).  Using the \( \phi^4 \)th theory, \citep{tobiasQFTL10FeynmanDiagrams} provides a very nice example that shows how the first order disconnected diagrams happen to cancel out perfectly (even though they both represent infinities!).
 
 \paragraph{What is ``connected and amputated''?}
 
@@ -272,16 +272,18 @@ a_\Bp a^\dagger_\Bk
 \end{dmath}
 
 Summarizing
-\begin{dmath}\label{eqn:qftLecture16:380}
+\boxedEquation{eqn:qftLecture16:380}{
+%\begin{dmath}\label{eqn:qftLecture16:380}
 \begin{aligned}
-\contraction{}{\phi}{{}_I(x_1)}{a}
-\phi_I(x_1) a^\dagger_{\Bp}
+\contraction{}{\phi}{{}_I(x)}{a}
+\phi_I(x) a^\dagger_{\Bp}
 &= e^{-i p \cdot x} \\
 \contraction{}{a}{{}_\Bp}{\phi}
-a_\Bp \phi_I(x_1)
+a_\Bp \phi_I(x)
 &= e^{i p \cdot x}.
 \end{aligned}
-\end{dmath}
+%\end{dmath}
+}
 
 \section{Example diagrams.}
 
