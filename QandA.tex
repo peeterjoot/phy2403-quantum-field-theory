@@ -439,5 +439,38 @@ where
 \Omega = e^{i \sigma^a \phi^a}.
 \end{equation*}
 
+\section{Rose}
+
+\begin{equation*}
+\bra{ \Bp_1, \Bp_2 } \hat{S} \ket{ \Bk}
+=
+\bra{ \Bp_1, \Bp_2 } T\lr{ e^{-i\int dt H_{\text{int}}(t)} } \ket{ \Bk},
+\end{equation*}
+that is
+\begin{equation*}
+i \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
+   h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x)
+} \ket{ \Bk}.
+\end{equation*}
+
+\begin{equation*}
+\langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
+\end{equation*}
+
+\begin{equation*}
+i \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
+=
+i \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+=
+-i \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+=
+-i p_1 \cdot p_2 (2 \pi)^4 \deltafour(p_1 + p_2 - k).
+\end{equation*}
+
+I'm sure that we agree that \( \int_{-\infty}^\infty f(x) \delta(x - a) = f(a) \).  Correct?
+But we also have \( \int_{-\infty}^\infty f(x) (\Theta(x - a + \epsilon) - \Theta( x - a - \epsilon)) \delta(x - a) = f(a) \) -- i.e. we don't change the result we multiply the function by rectangular box of unit height of width \( 2 \epsilon > 0 \) centered on \( a \).
+
+That second integral is just \( \int_{a - \epsilon}^{a + \epsilon} f(x) \delta( x - a ) \).
+
 \EndArticle
 %\EndNoBibArticle

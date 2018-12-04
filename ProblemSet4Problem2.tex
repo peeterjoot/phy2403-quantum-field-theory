@@ -6,6 +6,8 @@
 From the $SU(2)_L \times SU(2)_R$ model of Homework 2---really, the Higgs Lagrangian of the Standard Model, find the coupling of the $h$-particle (the Higgs boson) to the $\phi^a$ particles (these are now Goldstone bosons, in the electroweak theory, they become the longitudinal components of the $W$ and $Z$ particles). Canonically normalizing $h$ and $\phi^a$, this coupling has the form
 \begin{equation}
 \label{gg1}
+\LL_{\text{int}}
+=
 const. \; h \; \partial_\mu \phi^a \partial^\mu \phi^a~.
 \end{equation}
 
@@ -129,7 +131,8 @@ the Lagrangian density is now determined
 \frac{\Abs{m}^2}{2 \lambda}
    \partial_\mu h \partial^\mu h
 +
-\frac{\Abs{m}^2}{4 \lambda} ( 1 + h )^2
+\frac{\Abs{m}^2}{4 \lambda}
+( 1 + h )^2
    \trace{\lr{
       \partial_\mu \Omega^\dagger \partial^\mu \Omega
    }}
@@ -137,37 +140,12 @@ the Lagrangian density is now determined
 \frac{\Abs{m}^2}{2 \lambda} \lr{ 1 + h }^2
 - \lambda
 \lr{\frac{\Abs{m}^2}{2 \lambda}}^2
-\lr{ 1 + h }^4
-=
-\frac{\Abs{m}^2}{\lambda} \LL',
-\end{dmath}
-where \( \LL' \) is the ``canonically normalized'' \footnote{Canonically normalized is assumed to mean that there's a one-half factor on the kinetic terms} Lagrangian
-\begin{dmath}\label{eqn:ProblemSet4Problem2:720}
-\LL' =
-   \inv{2} \partial_\mu h \partial^\mu h
-+
-\inv{4}
-( 1 + h )^2
-   \trace{\lr{
-      \partial_\mu \Omega^\dagger \partial^\mu \Omega
-   }}
-+
-\inv{2}
-\Abs{m}^2
-\lr{ 1 + h }^2
--
-\frac{\Abs{m}^2}{4}
 \lr{ 1 + h }^4.
+%=
+%\frac{\Abs{m}^2}{\lambda} \LL',
 \end{dmath}
 
-The coupling, let's call it \( c \), is to first order in \( h \) is
-\begin{dmath}\label{eqn:ProblemSet4Problem2:740}
-c = \inv{4} 2 h
-   \trace{\lr{
-      \partial_\mu \Omega^\dagger \partial^\mu \Omega
-   }}.
-\end{dmath}
-Looking at these derivatives, to first order, we have
+Now let's expand the \( \Omega \) derivatives.  To first order, we have
 \begin{dmath}\label{eqn:ProblemSet4Problem2:580}
 \partial_\mu \Omega
 =
@@ -177,22 +155,21 @@ i \Bsigma \cdot \partial_\mu \Bphi,
 \end{dmath}
 so
 \begin{dmath}\label{eqn:ProblemSet4Problem2:760}
-c
+   \trace{\lr{
+      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+   }}
 =
-\inv{2} h
 \trace{\lr{
    (-i \Bsigma \cdot \partial_\mu \Bphi^\dagger)
    (i \Bsigma \cdot \partial^\mu \Bphi)
 }}
 =
-\inv{2}
-h
 \trace{\lr{
    (\Bsigma \cdot \partial_\mu \Bphi)
    (\Bsigma \cdot \partial^\mu \Bphi)
 }},
 \end{dmath}
-where the real nature of each of the \( \phi^a \)'s has been used to eliminate the \( \dagger\).
+where the real nature of each of the \( \phi^a \)'s has been used to eliminate the \( \dagger\)'s.
 The structure of this trace is that of
 \begin{dmath}\label{eqn:ProblemSet4Problem2:780}
 \trace{\lr{
@@ -215,12 +192,68 @@ x^a y^b
 =
 2 \Bx \cdot \By,
 \end{dmath}
-so the coupling is
-\begin{dmath}\label{eqn:ProblemSet4Problem2:800}
-c = h
+
+The Lagrangian density, including just the kinetic term, and the first order \( h \) interaction is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:501}
+\LL
+=
+\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+\frac{\Abs{m}^2}{4 \lambda} (2 h) 2 \partial_\mu \phi^a \partial^\mu \phi^a
++ \cdots
+=
+\frac{\Abs{m}^2}{2 \lambda}
+   \partial_\mu h \partial^\mu h
++
+\frac{\Abs{m}^2}{\lambda} h \partial_\mu \phi^a \partial^\mu \phi^a.
+\end{dmath}
+Imposing a transformation of the fields
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1180}
+\begin{aligned}
+h &\rightarrow \frac{\sqrt{\lambda}}{\Abs{m}} h \\
+\phi^a &\rightarrow \frac{\sqrt{\lambda}}{\Abs{m}} \phi^a,
+\end{aligned}
+\end{dmath}
+we find that the portion of the Lagrangian including just the kinetic and interaction terms is transformed to
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1200}
+\LL \rightarrow
+\inv{2}
+   \partial_\mu h \partial^\mu h
++
+\frac{\sqrt{\lambda}}{\Abs{m}} h \partial_\mu \phi^a \partial^\mu \phi^a.
+\end{dmath}
+This is now ``canonically normalized'' \footnote{Canonically normalized is assumed to mean that there's a one-half factor on the kinetic terms}.
+%\begin{dmath}\label{eqn:ProblemSet4Problem2:720}
+%\LL' =
+%+
+%\inv{4}
+%( 1 + h )^2
+%   \trace{\lr{
+%      \partial_\mu \Omega^\dagger \partial^\mu \Omega
+%   }}
+%+
+%\inv{2}
+%\Abs{m}^2
+%\lr{ 1 + h }^2
+%-
+%\frac{\Abs{m}^2}{4}
+%\lr{ 1 + h }^4.
+%\end{dmath}
+%
+The coupling to first order in \( h \) is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:740}
+\LL_{\text{int}}
+=
+\frac{\sqrt{\lambda}}{\Abs{m}}
+h
 \partial_\mu \phi^a \partial^\mu \phi^a.
 \end{dmath}
-This answers the question of the constant, which we find is just \( 1 \) after canonical normalization.
+The constant in question (let's call it \( \chi \)) has been found to be
+\boxedEquation{eqn:ProblemSet4Problem2:1220}{
+\chi =
+\frac{\sqrt{\lambda}}{\Abs{m}}.
+}
 
 \makeSubAnswer{}{qft:problemSet4:2b}
 
@@ -255,18 +288,18 @@ Similarly,
 e^{i p \cdot z}.
 \end{dmath}
 
-Apparently\footnote{According to a ``trust-me, it's a long story'' kind of statement related to a classmate from Professor Poppitz.}, the interaction Hamiltonian density that we want to use for this problem is \( H_{\text{int}} = -\LL_{\text{int}} \).  Given that, the
+Apparently\footnote{According to a ``trust-me, it's a long story'' kind of statement related to a classmate from Professor Poppitz.}, the interaction Hamiltonian density that we want to use for this problem is \( H_{\text{int}} = -\LL_{\text{int}} \).  Given that, the exponential argument expands to
 \begin{dmath}\label{eqn:ProblemSet4Problem2:880}
 -i \int dt H_{\text{int}}(t)
 =
-i \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+i \chi \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
 =
-i \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+i \chi \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
 \end{dmath}
 so the
 first order expansion of the scattering amplitude is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:900}
-i \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
+i \chi \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
    h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x)
 } \ket{ \Bk}.
 \end{dmath}
@@ -278,7 +311,7 @@ There are two possible diagrams associated with this amplitude, sketched in \cre
 
 Algebraically, in terms of contractions the first diagram is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:920}
-i \int d^4 x
+i \chi \int d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^a(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x) \lvert}{\Bk}
@@ -286,29 +319,30 @@ i \int d^4 x
 \end{dmath}
 however, since \( \Bp_i \) are the momenta for \( \phi^3 \) particles, only the \( a = 3 \) terms above contribute, leaving
 \begin{dmath}\label{eqn:ProblemSet4Problem2:940}
-i \int d^4 x
+i \chi \int d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert}{\Bk}
 \langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
 =
-i \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
+i \chi \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
 =
-i \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+i \chi \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
 =
--i \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+-i \chi \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
 =
--i p_1 \cdot p_2 (2 \pi)^4 \deltafour(p_1 + p_2 - k).
+-i \chi (p_1 \cdot p_2) (2 \pi)^4 \deltafour(p_1 + p_2 - k).
 \end{dmath}
-This equals \( i \calM_{fi} (2 \pi)^4 \deltafour(p_1 + p_2 - k) \), so
+This equals \( i M_{fi} (2 \pi)^4 \deltafour(p_1 + p_2 - k) \), so
 \begin{dmath}\label{eqn:ProblemSet4Problem2:960}
-\calM_{fi} = -p_1 \cdot p_2.
+M_{fi} = - \chi (p_1 \cdot p_2).
 \end{dmath}
-We can how start plugging this into our decay rate formula
+
+We can now start plugging this into our decay rate formula
 \begin{dmath}\label{eqn:ProblemSet4Problem2:980}
-\Gamma = \inv{2 M} \int d(LIPS)_2 \Abs{\calM_{fi}}^2,
+\Gamma = \inv{2 \omega_\Bk} \int d(LIPS)_2 \Abs{M_{fi}}^2,
 \end{dmath}
-where
+where\footnote{Prof. Luke's notes write \( D \) for \( d(LIPS)_2 \).}
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1000}
 d(LIPS)_2
 =
@@ -316,26 +350,30 @@ d(LIPS)_2
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
 =
-(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_1 + \omega_2 - \omega_I)
+(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_1 + \omega_2 - \omega_\Bk)
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
 \end{dmath}
-(Prof. Luke's notes call this last factor \( D \).)
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1020}
 \Gamma
-= \inv{2 M} \int
+=
+\chi^2
+\int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
-(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_I)
+\inv{ 2\omega_\Bk}
+(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_\Bk)
 (-p_1 \cdot p_2)^2.
 \end{dmath}
-This is simplest to evaluate in the CM frame, as sketched in \cref{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}, where \( \Bk = 0 \).  This leaves
+This is simplest to evaluate in the center of mass frame, as sketched in \cref{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}, where \( \Bk = 0 \), and \( \omega_\Bk = m_h \), the Higgs mass.  This leaves
 \imageFigure{../figures/phy2403-quantum-field-theory/hw4p2CenterOfMassFrameFig3}{Center of mass frame.}{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}{0.3}
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1040}
 \Gamma
-= \inv{2 M} \int
+=
+\chi^2
+\int
 \frac{d^3 p_1}{(2 \pi)^2 4 \omega_{\Bp_1}^2}
-\delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_I)
+\delta(2 \omega_{\Bp_1} - \omega_I)
 \evalbar{(p_1 \cdot p_2)^2}{\Bp_2 = -\Bp_1}.
 \end{dmath}
 If
@@ -351,13 +389,91 @@ p_1 \cdot p_2
 = \omega_{\Bp_1} \omega_{\Bp_2} - \Bp_1 \cdot \Bp_2,
 \end{dmath}
 and
-\begin{dmath}\label{eqn:ProblemSet4Problem2:1100}
+\begin{equation}\label{eqn:ProblemSet4Problem2:1100}
 \evalbar{p_1 \cdot p_2}{\Bp_2 = -\Bp_1}
-= \omega_{\Bp_1} \omega_{\Bp_1} + \Bp_1^2
+= \omega_{\Bp_1} \omega_{\Bp_1} + \Bp_1^2 = m_1^2 + 2 \Bp_1^2,
+\end{equation}
+however, the \( \phi^3 \) particles are Bosons (no mass!), so this is just
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1120}
+\evalbar{p_1 \cdot p_2}{\Bp_2 = -\Bp_1}
+= 2 \Bp_1^2.
 \end{dmath}
+so \cref{eqn:ProblemSet4Problem2:1020} becomes
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1140}
+\Gamma
+=
+\chi^2
+\int
+\frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
+\frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
+\inv{ 2 m_h}
+(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - m_h)
+4 \Abs{\Bp_1}^4
+=
+\chi^2
+\int
+\frac{d^3 p_1}{(2 \pi)^3 \omega_{\Bp_1}^2 }
+\inv{ 2 m_h}
+(2 \pi) \delta( 2 \omega_{\Bp_1} - m_h)
+\Abs{\Bp_1}^4
+=
+\chi^2
+\int
+\frac{d^3 p_1}{(2 \pi)^2 }
+\inv{ 2 m_h}
+\delta( 2 \omega_{\Bp_1} - m_h)
+\Abs{\Bp_1}^2.
+\end{dmath}
+Evaluating in spherical coordinates with \( \Abs{\Bp_1} = \calp \), we are left with
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1160}
+\Gamma
+=
+\chi^2
+\frac{4 \pi}{8 m_h \pi^2}
+\int_0^\infty
+d\calp
+\calp^4
+\delta( 2 \calp - m_h)
+=
+\chi^2
+\frac{1}{2 m_h \pi}
+\int_0^\infty
+d\calp
+\calp^4
+\frac{\delta( \calp - m_h/2)}{2}
+=
+\frac{\chi^2 m_h^3}{64 \pi},
+\end{dmath}
+where no adjustment of the integration range \( \int_0^\infty p^4 \rightarrow \inv{2} \int_{-\infty}^\infty p^4 \) transformation was made before evaluating the delta function.  That was done on purpose since the
+zero of our delta function sits at \( m_h/2 > 0 \), a point already in the \( [0, \infty] \) range of the delta function integral above.  The final result, putting in our constant factor \( \chi \) from \cref{eqn:ProblemSet4Problem2:1220} is
+\boxedEquation{eqn:ProblemSet4Problem2:1240}{
+\Gamma( h \rightarrow \phi^3 \phi^3 )
+=
+\frac{\lambda}{\Abs{m}^2}
+\frac{m_h^3}{64 \pi}.
+}
+
+\paragraph{Commentary on possible errors.}
+I'm not entirely convinced that this answer is not off by some \( 2^n \) factor, even assuming no plain old algebraic errors.  The easiest place I can imagine messing this up, is by double counting our indistinguishable Boson's.  I think that I've implicitly accounted for that indistinguishability by by not separately labelling \( \phi^3_A, \phi^3_B \) end points in the first diagram of \cref{fig:hw4p2}, therefore counting that diagram only once.
 
 \makeSubAnswer{}{qft:problemSet4:2c}
-TODO.
+
+The results of plugging the numbers can be found in \cref{fig:hw4p2Mathematica:hw4p2MathematicaFig1}.
+\imageFigure{../figures/phy2403-quantum-field-theory/hw4p2MathematicaFig1}{Plugging in the numbers.}{fig:hw4p2Mathematica:hw4p2MathematicaFig1}{0.5}
+, we have
+%\begin{dmath}\label{eqn:ProblemSet4Problem2:n}
+%\Gamma
+%=
+%\frac{\lambda}{\Abs{m}^2}
+%\frac{m_h^3}{64 \pi}
+%=
+%\inv{ (246 \,\si{GeV})^2 } \frac{ (125 \,\si{GeV})^3 }{ 64 \pi }
+%=
+%0.161 \,\si{GeV}
+%\end{dmath}
+
+I'm honestly unsure how I can compare this meaningfully to figure 5 of the referenced document.  In particular, if the rest mass of the higgs is 125GeV, then why is \( \Gamma \) also plotted at lower \( \si{GeV} \) values?
+
 \makeSubAnswer{}{qft:problemSet4:2d}
-TODO.
+From \cref{fig:hw4p2Mathematica:hw4p2MathematicaFig1}, we see that \( \lambda = 127 \,\si{GeV} \), which isn't small by any typical measure!
 }
