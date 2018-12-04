@@ -223,7 +223,139 @@ c = h
 This answers the question of the constant, which we find is just \( 1 \) after canonical normalization.
 
 \makeSubAnswer{}{qft:problemSet4:2b}
-TODO.
+
+The scattering calculation machine that was presented in class, assumes that the final states scattering process can be related to a scattering matrix with the following structure
+\begin{equation}\label{eqn:ProblemSet4Problem2:820}
+\prescript{}{\text{out}}{\braket{\Bp_1, \Bp_2}{\Bk}}_{\text{in}}
+=
+\bra{ \Bp_1, \Bp_2 } \hat{S} \ket{ \Bk}
+=
+\bra{ \Bp_1, \Bp_2 } T\lr{ e^{-i\int dt H_{\text{int}}(t)} } \ket{ \Bk}
+\end{equation}
+where \( \Bk \) is the momentum of the initial higgs particle, \( \Bp_i \) are the momenta of the Z-boson disinegration products, and we evaluate the amplitude by summing ``connected amputated diagrams''.
+
+With the plus-minus decomposition of the field \( h(z) = h^{+}(z) + h^{-}(z) \), contracting the field with the initial momentum state gives
+\begin{dmath}\label{eqn:ProblemSet4Problem2:840}
+h(z) \ket{\Bk}
+=
+h^{+}(z) \ket{\Bk}
+=
+\int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i q \cdot z} a_\Bq \ket{\Bk}
+=
+\int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i q \cdot z} a_\Bq \sqrt{ 2 \omega_\Bk } a_\Bk^\dagger \ket{0}
+=
+\int d^3 q e^{-i q \cdot z} \deltathree( \Bq - \Bk ) \ket{0}
+=
+e^{-i k \cdot z}.
+\end{dmath}
+Similarly,
+\begin{dmath}\label{eqn:ProblemSet4Problem2:860}
+\bra{\Bp} \phi^3(z)
+=
+e^{i p \cdot z}.
+\end{dmath}
+
+Apparently\footnote{According to a ``trust-me, it's a long story'' kind of statement related to a classmate from Professor Poppitz.}, the interaction Hamiltonian density that we want to use for this problem is \( H_{\text{int}} = -\LL_{\text{int}} \).  Given that, the
+\begin{dmath}\label{eqn:ProblemSet4Problem2:880}
+-i \int dt H_{\text{int}}(t)
+=
+i \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+=
+i \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+\end{dmath}
+so the
+first order expansion of the scattering amplitude is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:900}
+i \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
+   h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x)
+} \ket{ \Bk}.
+\end{dmath}
+There are two possible diagrams associated with this amplitude, sketched in \cref{fig:hw4p2}, but only the first qualifies as ``connected amputated''.
+\imageTwoFigures
+{../figures/phy2403-quantum-field-theory/hw4p2decayFig1}
+{../figures/phy2403-quantum-field-theory/hw4p2VirtualProcessFig2}
+{Possible figures}{fig:hw4p2}{scale=0.2}
+
+Algebraically, in terms of contractions the first diagram is
+\begin{dmath}\label{eqn:ProblemSet4Problem2:920}
+i \int d^4 x
+\contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
+\contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^a(x) \partial^\mu }{\phi}
+\bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x) \lvert}{\Bk}
+\langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x) \lvert \Bk \rangle,
+\end{dmath}
+however, since \( \Bp_i \) are the momenta for \( \phi^3 \) particles, only the \( a = 3 \) terms above contribute, leaving
+\begin{dmath}\label{eqn:ProblemSet4Problem2:940}
+i \int d^4 x
+\contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
+\contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu }{\phi}
+\bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert}{\Bk}
+\langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
+=
+i \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
+=
+i \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+=
+-i \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+=
+-i p_1 \cdot p_2 (2 \pi)^4 \deltafour(p_1 + p_2 - k).
+\end{dmath}
+This equals \( i \calM_{fi} (2 \pi)^4 \deltafour(p_1 + p_2 - k) \), so
+\begin{dmath}\label{eqn:ProblemSet4Problem2:960}
+\calM_{fi} = -p_1 \cdot p_2.
+\end{dmath}
+We can how start plugging this into our decay rate formula
+\begin{dmath}\label{eqn:ProblemSet4Problem2:980}
+\Gamma = \inv{2 M} \int d(LIPS)_2 \Abs{\calM_{fi}}^2,
+\end{dmath}
+where
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1000}
+d(LIPS)_2
+=
+(2 \pi)^4 \deltafour(p_1 + p_2 - k)
+\frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
+\frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
+=
+(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_1 + \omega_2 - \omega_I)
+\frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
+\frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
+\end{dmath}
+(Prof. Luke's notes call this last factor \( D \).)
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1020}
+\Gamma
+= \inv{2 M} \int
+\frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
+\frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
+(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_I)
+(-p_1 \cdot p_2)^2.
+\end{dmath}
+This is simplest to evaluate in the CM frame, as sketched in \cref{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}, where \( \Bk = 0 \).  This leaves
+\imageFigure{../figures/phy2403-quantum-field-theory/hw4p2CenterOfMassFrameFig3}{Center of mass frame.}{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}{0.3}
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1040}
+\Gamma
+= \inv{2 M} \int
+\frac{d^3 p_1}{(2 \pi)^2 4 \omega_{\Bp_1}^2}
+\delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_I)
+\evalbar{(p_1 \cdot p_2)^2}{\Bp_2 = -\Bp_1}.
+\end{dmath}
+If
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1060}
+\begin{aligned}
+p_1 &= (\omega_{\Bp_1}, \Bp_1) \\
+p_2 &= (\omega_{\Bp_2}, \Bp_2),
+\end{aligned}
+\end{dmath}
+then
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1080}
+p_1 \cdot p_2
+= \omega_{\Bp_1} \omega_{\Bp_2} - \Bp_1 \cdot \Bp_2,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:ProblemSet4Problem2:1100}
+\evalbar{p_1 \cdot p_2}{\Bp_2 = -\Bp_1}
+= \omega_{\Bp_1} \omega_{\Bp_1} + \Bp_1^2
+\end{dmath}
+
 \makeSubAnswer{}{qft:problemSet4:2c}
 TODO.
 \makeSubAnswer{}{qft:problemSet4:2d}
