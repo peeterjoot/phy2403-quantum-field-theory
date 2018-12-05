@@ -29,7 +29,7 @@
 \newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
 
 \beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 22: XXX.  Taught by Prof.\ Erich Poppitz}
+\generatetitle{PHY2403H Quantum Field Theory.  Lecture 22: Dirac sea, charges, angular momentum, spin, U(1) symmetries, electrons and positrons.  Taught by Prof.\ Erich Poppitz}
 %\chapter{XXX}
 \label{chap:qftLecture22}
 
@@ -37,10 +37,12 @@
 %%
 %%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
+\paragraph{DISCLAIMER:}
 
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+
+Notes for this particular class were kindly provided by Emily XX, and YY.  I've done my best to make my own sense of them, as
+I was not able to attend the class.
 
 \section{Recall:}
 
@@ -199,6 +201,74 @@ Q
 \end{dmath}
 where we dropped the charge associated with the Dirac sea.
 
+This charge operator characterizes the \( a, b \) operators.  \( a \) particles have charge \( +1 \), and \( b \) particles have charge \( -1 \), or vice-versa depending on convention.
+
+\begin{itemize}
+\item \( a \) : call it an electron.
+\item \( b \) : call it an positron.
+\end{itemize}
+Each come with spin up and down variations.
+
+\makedigression{
+Left to us to study up on the interesting stories of
+
+\begin{itemize}
+\item time reversal
+\item parity
+\item charge conjugation
+\end{itemize}
+
+Each of these can be studied as separate symmetries.  References include \citep{peskin1995introduction},
+\citep{TongQFT}, and
+\citep{LukeQFT}.
+} % digression
+
+There are two sets of \( U(1) \) symmetries, the first called a vector symmetry
+\begin{dmath}\label{eqn:qftLecture22:400}
+U(1)_V : \Psi \rightarrow e^{i \alpha } \Psi,
+\end{dmath}
+where \( \alpha \) is scalar valued.
+The other \( U(1) \) symmetry is called an axial symmetry\footnote{It was apparently pointed out in class (I didn't attend) that we should recall that for \( m = 0 \) electrons and positrons separate, obeying separate equations.  I'm not sure how that is connected to this symmetry.}
+\begin{dmath}\label{eqn:qftLecture22:420}
+U(1)_A : \Psi \rightarrow e^{i \alpha \gamma_5 } \Psi,
+\end{dmath}
+where
+\begin{equation}\label{eqn:qftLecture22:440}
+\gamma_5 = i \gamma^0
+\gamma^1
+\gamma^2
+\gamma^3
+=
+\begin{bmatrix}
+-1 & 0 \\
+0 & 1
+\end{bmatrix}.
+\end{equation}
+
+Observe that \( \gamma_5^\dagger = \gamma_5 \).  It can also be shown that
+\begin{dmath}\label{eqn:qftLecture22:460}
+\antisymmetric{\gamma_5}{\gamma^\mu} = 0.
+\end{dmath}
+Under this transformation
+\begin{dmath}\label{eqn:qftLecture22:480}
+\oPsi i \gamma^\mu \partial_\mu \Psi
+\rightarrow
+\lr{ \Psi^\dagger e^{-i \alpha \gamma_5 } \gamma^0} i \gamma^\mu \partial_\mu \lr{ e^{i \alpha \gamma_5 } \Psi }
+=
+\Psi^\dagger \gamma^0 i \partial_\mu \Psi
+\end{dmath}
+FIXME: show.
+Also
+\begin{dmath}\label{eqn:qftLecture22:500}
+m \oPsi \Psi
+\rightarrow
+m \lr{ \Psi^\dagger e^{-i \alpha \gamma_5 } \gamma^0 \lr{ e^{i \alpha \gamma_5 } \Psi }
+=
+m \oPsi
+e^{2 i \alpha \gamma_5} \Psi,
+\end{dmath}
+FIXME: show.
+We see that the axial \( U(1) \) transformation is only a symmetry when \( m \ne 0 \) and \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
+
 %}
 \EndArticle
-%\EndNoBibArticle
