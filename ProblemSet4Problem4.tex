@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{Lorentz transforms of spinors---some useful identities}{qft:problemSet4:4}{
+\makeoproblem{Lorentz transforms of spinors---some useful identities}{qft:problemSet4:4}{2018 HW4.IV}{
 
 {\flushleft{C}}onsider the matrix $$\Lambda_{1\over 2} = e^{- {i\over 2} \omega_{\mu\nu} S^{\mu\nu}}~.$$
 Here, $S^{\mu\nu} = {i\over 4} [\gamma^\mu, \gamma^\nu ]$ is as defined in class, in terms of the four $\gamma$-matrices (notice that, when using the representation of the $\gamma$ matrices in terms of Pauli matrices, the matrix $\Lambda_{1\over 2}$ looks like two sets of $M$ (and $M^*$) matrices discussed in class, now combined into one four-by-four object).
@@ -16,6 +16,7 @@ Consider the fermion bilinear $\bar\psi \gamma^\mu \gamma^\nu \psi ={1\over 2} \
 } % makeproblem
 
 \makeanswer{qft:problemSet4:4}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet4:4a}
 For infinesimal transformations we can show this using the BCH theorem.  First let
 \begin{dmath}\label{eqn:ProblemSet4Problem4:20}
@@ -310,4 +311,5 @@ For the commutator term we have
 \end{aligned}
 \end{dmath}
 which is the transformation property \cref{eqn:ProblemSet4Problem4:220} for second rank tensors noted above.
+}
 }

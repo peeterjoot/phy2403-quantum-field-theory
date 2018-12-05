@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeproblem{The ``$h \rightarrow WW, ZZ$" Higgs-decay width.}{qft:problemSet4:2}{
+\makeoproblem{The ``$h \rightarrow WW, ZZ$" Higgs-decay width.}{qft:problemSet4:2}{2018 HW4.II}{
 From the $SU(2)_L \times SU(2)_R$ model of Homework 2---really, the Higgs Lagrangian of the Standard Model, find the coupling of the $h$-particle (the Higgs boson) to the $\phi^a$ particles (these are now Goldstone bosons, in the electroweak theory, they become the longitudinal components of the $W$ and $Z$ particles). Canonically normalizing $h$ and $\phi^a$, this coupling has the form
 \begin{equation}
 \label{gg1}
@@ -24,6 +24,7 @@ Use this coupling to compute the width  $\Gamma(h \rightarrow \phi^3 \phi^3)$ of
 } % makeproblem
 
 \makeanswer{qft:problemSet4:2}{
+\withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet4:2a}
 Here's a reminder and summary of the Higgs Lagrangian we will be working with in this problem
 \begin{dmath}\label{eqn:ProblemSet4Problem2:640}
@@ -342,7 +343,7 @@ We can now start plugging this into our decay rate formula
 \begin{dmath}\label{eqn:ProblemSet4Problem2:980}
 \Gamma = \inv{2 \omega_\Bk} \int d(LIPS)_2 \Abs{M_{fi}}^2,
 \end{dmath}
-where\footnote{Prof. Luke's notes write \( D \) for \( d(LIPS)_2 \).}
+where\footnote{\citep{LukeQFT} uses \( D \) for the \( d(LIPS)_2 \) symbol we used in class.}
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1000}
 d(LIPS)_2
 =
@@ -476,4 +477,5 @@ I was initially unsure how to compare this meaningfully to figure 5 of the refer
 
 \makeSubAnswer{}{qft:problemSet4:2d}
 From \cref{fig:hw4p2Mathematica:hw4p2MathematicaFig1}, we see that \( \lambda = 127 \,\si{GeV} \), which isn't small by any typical measure!
+}
 }
