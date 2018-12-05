@@ -42,7 +42,162 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Recall:}
+
+From the Dirac Lagrangian density
+\begin{dmath}\label{eqn:qftLecture22:20}
+\LL = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
+\end{dmath}
+we found the Hamiltonian
+\begin{dmath}\label{eqn:qftLecture22:40}
+H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   -
+   b_\Bp^{s \dagger} b_\Bp^s
+}.
+\end{dmath}
+This appears to be an energy with no bottom.  Dirac prescribes: assume Pauli exclusion for \( b \) and fill all the negative energy levels.
+
+\paragraph{Fermi statistics:}
+Grassman numbers\footnote{Is it a coincidence that these look like lightlike four-vectors \( x^2 = x^\mu x^\mu = 0 \)?}
+\begin{dmath}\label{eqn:qftLecture22:60}
+\lr{ b^\dagger }^2 = 0 = b^2 = a^2 = \lr{ a^\dagger }^2.
+\end{dmath}
+
+Creating a particle of negative energy \( b^\dagger \) is like \underline{destroying} a hole.
+
+Our creation and anhillation operators are presumed to have non-trivial \underline{anti}-commutation relations (unlike the scalar theory where we had the same sort of commutation relations)
+\begin{dmath}\label{eqn:qftLecture22:80}
+\symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
+\end{dmath}
+and those relations were used to cast the Hamiltonian in a more familiar form
+\begin{dmath}\label{eqn:qftLecture22:100}
+H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   +
+   \tilde{b}_\Bp^{s \dagger}
+   \tilde{b}_\Bp^s
+}
+- V_3
+\int \frac{d^3 p}{(2\pi)^3} 2 \omega_\Bp.
+\end{dmath}
+Fermions have negative zero-point energy \( -4 \times \) that of real massive scalar.
+\makedigression{
+Supersymmetry transforms these into one another, and was thought to solve the cosmic constant problem.
+} % digression
+
+\section{Moving on.}
+
+We now switch notations, and drop the tildes, also defining the Fock vacuum by
+\begin{dmath}\label{eqn:qftLecture22:120}
+\begin{aligned}
+a_\Bp^s \ket{0} &= 0 \\
+b_\Bp^s \ket{0} &= 0.
+\end{aligned}
+\end{dmath}
+Then
+\begin{dmath}\label{eqn:qftLecture22:140}
+H a_\Bp^{s\dagger} \ket{0} = \omega_\Bp (a_\Bp^{s\dagger} \ket{0}).
+\end{dmath}
+FIXME: show.
+Similarly
+\begin{dmath}\label{eqn:qftLecture22:160}
+\BP =
+\int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \Bp
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   +
+   b_\Bp^{s \dagger} b_\Bp^s
+},
+\end{dmath}
+gives
+\begin{dmath}\label{eqn:qftLecture22:180}
+\BP a_\Bq^{s\dagger} \ket{0} = \omega_\Bq (a_\Bq^{s\dagger} \ket{0}).
+\end{dmath}
+FIXME: show.
+
+Under Lorentz transformation, including rotations:
+\begin{dmath}\label{eqn:qftLecture22:200}
+\begin{aligned}
+\Psi(x) &\rightarrow \Psi'(x') = \Lambda_{1/2} \Psi(x) \\
+\delta \Psi(x) &= \Psi'(x) - \Psi(x) \\
+\Lambda_{1/2} &= 1 - \frac{i \omega_{\mu\nu}}{2} S^{\mu\nu} \\
+\Psi'(x) &= \Lambda_{1/2} \Psi(\Lambda^{-1} x).
+\end{aligned}
+\end{dmath}
+For rotation around \( \zcap \) only \( \omega_{12} \) is non-zero and
+\begin{dmath}\label{eqn:qftLecture22:220}
+\Lambda_{1/2} = 1 - \frac{i \alpha}{2}
+\begin{bmatrix}
+\sigma^3 & 0 \\
+0 & \sigma^3
+\end{bmatrix}
+\end{dmath}
+From \( \delta \Psi = \Lambda_{1/2} \Psi(\Lambda^{-1} x) - \Psi(x) \) the Noether current can be found to be
+\begin{dmath}\label{eqn:qftLecture22:240}
+\BJ = \int d^3 x \Psi^\dagger(x) \lr{ \Bx \cross \underbrace{(-i \spacegrad)}_{orbital} + \inv{2} \underbrace{\BOne \otimes \Bsigma}_{spin} },
+\end{dmath}
+where
+\begin{dmath}\label{eqn:qftLecture22:260}
+\BOne \otimes \Bsigma =
+\begin{bmatrix}
+\Bsigma & 0 \\
+0 & \Bsigma
+\end{bmatrix}.
+\end{dmath}
+
+For the rest frame of a particle (zero momentum), it can be shown that
+\begin{dmath}\label{eqn:qftLecture22:280}
+J^3 a_\Bp^{s\dagger} \ket{0} = \pm \inv{2} \evalbar{ a_\Bp^{s\dagger} \ket{0}}{\Bp = 0},
+\end{dmath}
+where the \( + \) is for \( s = 1 \) and the \( - \) is for \( s = 2 \).
+FIXME: check these.
+
+It can also be shown that
+\begin{dmath}\label{eqn:qftLecture22:300}
+J^3 b_\Bp^{s\dagger} \ket{0} = \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\Bp = 0}.
+\end{dmath}
+Roughly speaking, we can characterize these as opposite signed projections of the 3rd component of angular momentum.
+FIXME: check these too.
+
+We also have a \( U(1) \) global symmetry which implies charge.  If we let
+\begin{dmath}\label{eqn:qftLecture22:320}
+\begin{aligned}
+\Psi &\rightarrow e^{i \alpha} \Psi \\
+\oPsi &\rightarrow e^{-i \alpha} \oPsi,
+\end{aligned}
+\end{dmath}
+then
+\begin{dmath}\label{eqn:qftLecture22:340}
+j^\mu
+= \PD{(\partial_\mu \Psi}}{\LL} \delta \Psi
+= \PD{(\partial_\mu \Psi}}{\LL} i \alpha \Psi
+= \oPsi i \gamma^\mu i \alpha \Psi
+= -\oPsi \gamma^\mu \alpha \Psi
+\equiv - \alpha J^\mu,
+\end{dmath}
+that is
+\begin{dmath}\label{eqn:qftLecture22:360}
+J^\mu = \oPsi \gamma^\mu \Psi
+\end{dmath}
+
+Define the charge as
+\begin{dmath}\label{eqn:qftLecture22:380}
+Q
+= \int d^3x J^0
+= \int d^3x \oPsi \gamma^0 \Psi
+= \int d^3x \Psi^\dagger \Psi
+= \int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   -
+   b_\Bp^{s \dagger}
+   b_\Bp^s
+},
+\end{dmath}
+where we dropped the charge associated with the Dirac sea.
 
 %}
 \EndArticle
