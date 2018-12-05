@@ -120,18 +120,19 @@ The transformation to first order is therefore
 \ultensor{\Lambda}{\mu}{\beta} \gamma^\beta.
 \end{dmath}
 
-\makeSubAnswer{}{qft:problemSet4:4b}
-In class we found the block matrix representation of \( \Lambda_{1/2} \)
+To extend the argument to finite angles we use the usual argument.  For example, for a finite rotation \( e^{i \theta} \), we may decompose such a rotation into \( n \) small pieces, \( e^{i\theta/n} \) and compound those rotations by applying the small ones in sequence \( \lr{ e^{i \theta/n} }^n \).  Given the block matrix structure of \( \Lambda_{1/2} \)
 \begin{dmath}\label{eqn:ProblemSet4Problem4:120}
 \Lambda_{1/2}
 =
 \begin{bmatrix}
 e^{-\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^l } & 0 \\
 0 & e^{\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl} \sigma^l }  \\
-\end{bmatrix}.
+\end{bmatrix},
 \end{dmath}
+(as found in class), where we have \( 2 \times 2 \) exponentials on the diagonals, the same argument applies.
 
-For a diagonal matrix such as this one, we can compute \( \gamma^0 A^\dagger \gamma^0 \) in the block matrix representation
+\makeSubAnswer{}{qft:problemSet4:4b}
+As \( \Lambda_{1/2} \) is a diagonal matrix, we can compute \( \gamma^0 A^\dagger \gamma^0 \) in the block matrix representation
 \begin{dmath}\label{eqn:ProblemSet4Problem4:140}
 \gamma^0
 \begin{bmatrix}

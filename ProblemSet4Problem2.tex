@@ -249,9 +249,9 @@ The coupling to first order in \( h \) is
 h
 \partial_\mu \phi^a \partial^\mu \phi^a.
 \end{dmath}
-The constant in question (let's call it \( \chi \)) has been found to be
+The constant in question (called \( 1/v \) in problem 3) has been found to be
 \boxedEquation{eqn:ProblemSet4Problem2:1220}{
-\chi =
+\inv{v} =
 \frac{\sqrt{\lambda}}{\Abs{m}}.
 }
 
@@ -292,14 +292,14 @@ Apparently\footnote{According to a ``trust-me, it's a long story'' kind of state
 \begin{dmath}\label{eqn:ProblemSet4Problem2:880}
 -i \int dt H_{\text{int}}(t)
 =
-i \chi \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+i \inv{v} \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
 =
-i \chi \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+i \inv{v} \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
 \end{dmath}
 so the
 first order expansion of the scattering amplitude is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:900}
-i \chi \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
+i \inv{v} \int d^4 x \bra{ \Bp_1, \Bp_2 } T\lr{
    h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x)
 } \ket{ \Bk}.
 \end{dmath}
@@ -311,7 +311,7 @@ There are two possible diagrams associated with this amplitude, sketched in \cre
 
 Algebraically, in terms of contractions the first diagram is
 \begin{dmath}\label{eqn:ProblemSet4Problem2:920}
-i \chi \int d^4 x
+i \inv{v} \int d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^a(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x) \lvert}{\Bk}
@@ -319,23 +319,23 @@ i \chi \int d^4 x
 \end{dmath}
 however, since \( \Bp_i \) are the momenta for \( \phi^3 \) particles, only the \( a = 3 \) terms above contribute, leaving
 \begin{dmath}\label{eqn:ProblemSet4Problem2:940}
-i \chi \int d^4 x
+i \inv{v} \int d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert}{\Bk}
 \langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
 =
-i \chi \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
+i \inv{v} \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
 =
-i \chi \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+i \inv{v} \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
 =
--i \chi \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
+-i \inv{v} \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
 =
--i \chi (p_1 \cdot p_2) (2 \pi)^4 \deltafour(p_1 + p_2 - k).
+-i \inv{v} (p_1 \cdot p_2) (2 \pi)^4 \deltafour(p_1 + p_2 - k).
 \end{dmath}
 This equals \( i M_{fi} (2 \pi)^4 \deltafour(p_1 + p_2 - k) \), so
 \begin{dmath}\label{eqn:ProblemSet4Problem2:960}
-M_{fi} = - \chi (p_1 \cdot p_2).
+M_{fi} = - \inv{v} (p_1 \cdot p_2).
 \end{dmath}
 
 We can now start plugging this into our decay rate formula
@@ -357,7 +357,7 @@ d(LIPS)_2
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1020}
 \Gamma
 =
-\chi^2
+\inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
@@ -370,7 +370,7 @@ This is simplest to evaluate in the center of mass frame, as sketched in \cref{f
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1040}
 \Gamma
 =
-\chi^2
+\inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^2 4 \omega_{\Bp_1}^2}
 \delta(2 \omega_{\Bp_1} - \omega_I)
@@ -402,7 +402,7 @@ so \cref{eqn:ProblemSet4Problem2:1020} becomes
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1140}
 \Gamma
 =
-\chi^2
+\inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
@@ -410,14 +410,14 @@ so \cref{eqn:ProblemSet4Problem2:1020} becomes
 (2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - m_h)
 4 \Abs{\Bp_1}^4
 =
-\chi^2
+\inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 \omega_{\Bp_1}^2 }
 \inv{ 2 m_h}
 (2 \pi) \delta( 2 \omega_{\Bp_1} - m_h)
 \Abs{\Bp_1}^4
 =
-\chi^2
+\inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^2 }
 \inv{ 2 m_h}
@@ -428,21 +428,21 @@ Evaluating in spherical coordinates with \( \Abs{\Bp_1} = \calp \), we are left 
 \begin{dmath}\label{eqn:ProblemSet4Problem2:1160}
 \Gamma
 =
-\chi^2
+\inv{v^2}
 \frac{4 \pi}{8 m_h \pi^2}
 \int_0^\infty
 d\calp
 \calp^4
 \delta( 2 \calp - m_h)
 =
-\chi^2
+\inv{v^2}
 \frac{1}{2 m_h \pi}
 \int_0^\infty
 d\calp
 \calp^4
 \frac{\delta( \calp - m_h/2)}{2}
 =
-\frac{\chi^2 m_h^3}{64 \pi},
+\inv{v^2} \frac{m_h^3}{64 \pi},
 \end{dmath}
 where no adjustment of the integration range \( \int_0^\infty p^4 \rightarrow \inv{2} \int_{-\infty}^\infty p^4 \) transformation was made before evaluating the delta function.  That was done on purpose since the
 zero of our delta function sits at \( m_h/2 > 0 \), a point already in the \( [0, \infty] \) range of the delta function integral above.  The final result, putting in our constant factor \( \chi \) from \cref{eqn:ProblemSet4Problem2:1220} is
@@ -472,7 +472,7 @@ The results of plugging the numbers can be found in \cref{fig:hw4p2Mathematica:h
 %0.161 \,\si{GeV}
 %\end{dmath}
 
-I'm honestly unsure how I can compare this meaningfully to figure 5 of the referenced document.  In particular, if the rest mass of the higgs is 125GeV, then why is \( \Gamma \) also plotted at lower \( \si{GeV} \) values?
+I was initially unsure how to compare this meaningfully to figure 5 of the referenced document, since the rest mass of the higgs is 125GeV, yet \( \Gamma \) was plotted at a range of \( \si{GeV} \) values.  However, this document appears to roughly coincide with the date of the Higgs discovery.  We see in the figures that the decay rate (on a logarithmic scale!) is much smaller for values of the Higgs mass roughly below the threshold mass at which the Higgs was discovered.  In a sense, they allow for a determination of the mass, by looking at the energy ranges for which there are scattering events of the desired types.
 
 \makeSubAnswer{}{qft:problemSet4:2d}
 From \cref{fig:hw4p2Mathematica:hw4p2MathematicaFig1}, we see that \( \lambda = 127 \,\si{GeV} \), which isn't small by any typical measure!
