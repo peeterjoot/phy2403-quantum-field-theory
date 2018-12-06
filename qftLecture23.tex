@@ -42,8 +42,229 @@
 These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
 %, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
-\section{YYY}
+\section{Review}
+
+\begin{dmath}\label{eqn:qftLecture23:140}
+\LL_{\text{Dirac}} = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture23:160}
+\Psi(x) =
+\sum_{s = 1}^2
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\lr{
+   e^{-i p \cdot x} u^s(p) a_\Bp^s
+   +
+   e^{i p \cdot x} v^s(p) a_\Bp^{s \dagger}
+}
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture23:180}
+\oPsi(x) = \Psi^\dagger(x) \gamma^0 =
+\sum_{s = 1}^2
+\int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
+\lr{
+   e^{i p \cdot x} \ubar^s(p) a_\Bp^{s\dagger}
+   +
+   e^{-i p \cdot x} \vbar^s(p) a_\Bp^{s}
+}
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture23:200}
+\symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
+\end{dmath}
+
+There are some symmetries
+\begin{itemize}
+\item \( SO(1,3) \)
+\item \( P, C, T \) : DIY
+\item \( U(1)_V \) : \( \Psi \rightarrow e^{i \alpha} \Psi \)
+\item \( U(1)_A \) : If \( m = 0 \), then \( U(1)_A : \Psi \rightarrow e^{i \alpha \gamma_5 } \Psi \).  If \( m \ne 0 \) only for \( \alpha = \pi \) : \( \Psi \rightarrow -\Psi \).
+\end{itemize}
+
+Now introduce interaction with photon by using a \( U(1) \) gauge field, and demand invariance under \( U(1)_V \) with \( \alpha = \alpha(x) \).  Now
+\begin{dmath}\label{eqn:qftLecture23:20}
+\Psi(x) \rightarrow e^{i \alpha(x) } \Psi(x)
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture23:280}
+\partial_\mu \Psi(x) \rightarrow
+e^{i \alpha(x) } \lr{ \partial_\mu \Psi(x) + i \partial_\mu \alpha(x) } \Psi
+\end{dmath}
+
+Solution.  Introduce \( A_\mu(x) \), such that under \( U(1)_V \) we have
+
+\begin{dmath}\label{eqn:qftLecture23:300}
+A_\mu(x) \rightarrow A_\mu(x) - \inv{e} \partial_\mu \alpha(x)
+\end{dmath}
+
+where ``e'' is a dimensionless coupling constant
+
+\begin{dmath}\label{eqn:qftLecture23:320}
+\partial_\mu \Psi(x) \rightarrow
+\lr{ \partial_\mu + i e A_\mu } \Psi
+\rightarrow
+e^{i \alpha(x} \lr{ \partial_\mu \Psi + \cancel{ i \partial_\mu \alpha} - \cancel{ i \partial_\mu \alpha } ... }
+\end{dmath}
+
+We've now constructed the QED Lagrangian density
+\begin{dmath}\label{eqn:qftLecture23:40}
+\LL_{\text{QED}} = \oPsi \lr{ i \gamma^\mu \lr{ \partial_\mu + i e A_\mu } - m } \Psi - \inv{4} F_{\mu\nu} F^{\mu\nu}.
+\end{dmath}
+%This is Gauged \( U(1)_V \) symmetry.
+
+We may write this as
+\begin{dmath}\label{eqn:qftLecture23:60}
+\LL_{\text{QED}} =
+\underbrace{- \inv{4} F_{\mu\nu} F^{\mu\nu}
++
+\oPsi \lr{ i \gamma^\mu \partial_\mu - m } \Psi
+}_{\text{Free Lagrangian}}
+-
+\underbrace{e \oPsi \gamma_\mu \Psi A^\mu }_{\text{interaction Lagrangian}}
+\end{dmath}
+
+We introduce spinor fields \( \Psi_e \) and muon fields \( \Psi_\mu \), so that the total Lagrangian is now
+\begin{dmath}\label{eqn:qftLecture23:80}
+\LL_{\text{QED}}
+=
+- \inv{4} F_{\mu\nu} F^{\mu\nu}
++
+\oPsi_e \lr{ i \gamma^\mu \partial_\mu - m } \Psi_e
+-
+e \oPsi_e \gamma_\mu \Psi_e A^\mu
++
+\oPsi_\mu \lr{ i \gamma^\mu \partial_\mu - m } \Psi_\mu
+-
+e \oPsi_\mu \gamma_\mu \Psi_\mu A^\mu
+\end{dmath}
+
+\begin{itemize}
+\item \( m_e \sim 0.5 \,\si{MeV} \)
+\item \( m_\mu \sim 105 \,\si{MeV} \)
+\end{itemize}
+
+There are also quark fields that we can add into the mix
+\begin{dmath}\label{eqn:qftLecture23:100}
+\LL_{\text{quarks}} = \sum_q \oPsi_q \lr{ i \gamma^\mu - m_q } \Psi_q + e Q_q \oPsi_q \gamma^\nu \Psi_q A_\nu
+\end{dmath}
+Quark charges are \( Q_q = (2/3, -1/3) \).
+It turns out that the only way to produce quarks is through (electron?) interaction?
+
+Can also introduce a Fermi interaction
+
+\begin{dmath}\label{eqn:qftLecture23:120}
+\LL_{4-Fermi} = \frac{c}{v^2} \oPsi_\mu \gamma^\nu \lr{ 1 - \gamma_5 } \Psi_{\nu, \mu} - \oPsi_e \lr{ 1 - \gamma_5 } ....
+\end{dmath}
+
+We are now going to do some calculations with \cref{eqn:qftLecture23:80}
+
+In that interaction the \( -e \oPsi_e \gamma_\mu \Psi_e A^\mu \) can create and anhillate (what?)
+
+F1
+F2
+F3
+
+For Grassman (anti-commuting) operators
+
+\begin{dmath}\label{eqn:qftLecture23:220}
+T( O_f(x) O'_f(x)) =
+\Theta ( x_0 - x_0' ) O_f(x) O_f(x')
++
+\Theta ( x_0' - x_0 ) O_f(x') O_f(x)
+\end{dmath}
+
+\begin{dmath}\label{eqn:qftLecture23:240}
+\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 = D_{F_{\alpha \beta}}(x - y),
+\end{dmath}
+where \( \alpha, \beta = 1, 2, 3, 4 \).
+
+Referring back to
+%\begin{dmath}\label{eqn:qftLecture23:160}
+%\begin{dmath}\label{eqn:qftLecture23:180}
+
+\begin{dmath}\label{eqn:qftLecture23:260}
+\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
+=
+\int \frac{d^3 p}{(2\pi)^3 \sqrt{ 2 \omega_\Bp } }
+\int \frac{d^3 q}{(2\pi)^3 \sqrt{ 2 \omega_\Bq } }
+\lr{
+   e^{-i p \cdot x} e^{+ i q \cdot y}
+   \Theta ( x_0 - y_0 ) u^s_\alpha(p) \ubar^r_\beta(q) \expectation{ a_\Bp^s a_\Bq^{r\dagger} }
++
+   e^{i p \cdot x} e^{- i q \cdot y}
+   \Theta ( y_0 - x_0 ) \vbar^s_\beta(p) v^r_\beta(q) \expectation{ b_\Bq^s a_\Bp^{r\dagger} }
+}
+=
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp }
+\lr{
+   e^{-i p \cdot (x-y)}
+   \Theta ( x_0 - y_0 ) u^s_\alpha(p) \ubar^r_\beta(p)
++
+   e^{i p \cdot (x- y)}
+   \Theta ( y_0 - x_0 ) \vbar^s_\beta(p) v^r_\beta(p)
+}
+=
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp }
+\lr{
+   e^{-i p \cdot x}
+   \Theta ( x_0 - y_0 )
+\lr{ \gamma^\mu_{\alpha\beta} p_\mu + m}
++
+   e^{i p \cdot x}
+   \Theta ( y_0 - x_0 )
+\lr{ \gamma^\mu_{\alpha\beta} p_\mu - m}
+}
+=
+\end{dmath}
+where \( \gamma^\mu_{\alpha\beta} \) are the \( \alpha, \beta \) components of the gamma matrices.
+Now we can replace the \( p_\mu \)'s with derivatives acting on the exponentials
+
+\begin{dmath}\label{eqn:qftLecture23:340}
+\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
+=
+\Theta ( x_0 - y_0 )
+\lr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)}
+-
+\Theta ( y_0 - x_0 )
+\lr{ -i \gamma^\mu_{\alpha\beta} \partial_\mu - m }
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)}
+=
+\Theta ( x_0 - y_0 )
+\lr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }
+D(x - y)
+-
+\Theta ( y_0 - x_0 )
+\lr{ -i \gamma^\mu_{\alpha\beta} \partial_\mu - m }
+D(y - x)
+=
+\lr{ \gamma^\mu_{\alpha\beta} \partial_\mu^{(x)} + m }
+\lr{
+   \Theta ( x_0 - y_0 )
+   D(x - y)
+   +
+   \Theta ( y_0 - x_0 )
+   D(y - x)
+}
+-
+i \gamma^0 \delta(x^0 - y^0) \cancel{\lr{ D(x - y) - D(y - x) }},
+\end{dmath}
+where we've killed off a factor that is zero (off the light cone?)
+
+We are left with just an action on the Feynman propagator
+\begin{dmath}\label{eqn:qftLecture23:360}
+\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
+=
+\lr{ \gamma^\mu_{\alpha\beta} \partial_\mu^{(x)} + m } D_F(x - y)
+=
+\int \frac{d^4 p}{(2 \pi)^4 } \frac{ i ( \gamma^\mu_{\alpha\beta} p_\mu + m ) }{p^2 - m^2 + i \epsilon} e^{-i p \cdot (x - y)}
+\end{dmath}
+
+Now that we have a propagator, let's try
+
+\begin{dmath}\label{eqn:qftLecture23:380}
+\LL_{\text{int}} = \int dt d^3 x \lr{ e \oPsi \gamma_\mu \Psi A^\mu }
+\end{dmath}
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
+\EndNoBibArticle
