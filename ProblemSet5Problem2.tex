@@ -1,0 +1,314 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\makeproblem{Problem II: Electromagnetic theory in 2+1 dimensions.}{qft:problemSet5:2}{
+See handout for full problem description.
+\begin{dmath}\label{eqn:ProblemSet5Problem2:100}
+\LL = -\inv{4} F_{\alpha\beta} F^{\alpha\beta} + c \epsilon^{\mu\alpha\beta} A_\mu F_{\alpha\beta}.
+\end{dmath}
+\makesubproblem{}{qft:problemSet5:2a}
+Find the Noether current of this symmetry.
+\makesubproblem{}{qft:problemSet5:2b}
+Does the conservation of this current bring any new insight, compared to what you already know from the
+equations of motion?
+\makesubproblem{}{qft:problemSet5:2c}
+What becomes of this Noether current if one only keeps the most relevant term in the Lagrangian? Is the
+corresponding charge, constructed as we usually do, gauge invariant?
+} % makeproblem
+
+\makeanswer{qft:problemSet5:2}{
+
+Let's explicitly calculate a few things before moving on to the specific problem questions.
+\paragraph{EOM.}
+
+The first order field derivative is
+\begin{dmath}\label{eqn:ProblemSet5Problem2:20}
+\PD{A_\mu}{\LL}
+=
+c \epsilon^{\mu\alpha\beta} F_{\alpha\beta},
+\end{dmath}
+and the second order derivative is
+\begin{dmath}\label{eqn:ProblemSet5Problem2:40}
+\PD{(\partial_\nu A_\mu)}{\LL}
+=
+\lr{
+   -\inv{2} F^{\alpha\beta}
+   + c \epsilon^{\sigma\alpha\beta} A_\sigma
+}
+\PD{(\partial_\nu A_\mu)}{
+F_{\alpha\beta}
+}
+=
+   -\inv{2} F^{\nu\mu}
+   + c \epsilon^{\sigma\nu\mu} A_\sigma
+   +\inv{2} F^{\mu\nu}
+   - c \epsilon^{\sigma\mu\nu} A_\sigma
+=
+   F^{\mu\nu}
+   + 2 c \epsilon^{\sigma\nu\mu} A_\sigma,
+\end{dmath}
+so the EOM is
+\begin{dmath}\label{eqn:ProblemSet5Problem2:120}
+0 =
+\PD{A_\mu}{\LL}
+-
+\partial_\nu
+\PD{(\partial_\nu A_\mu)}{\LL}
+=
+c \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+-
+   \partial_\nu F^{\mu\nu}
+   - 2 c \epsilon^{\sigma\nu\mu} \partial_\nu A_\sigma
+=
+c \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+-
+   \partial_\nu F^{\mu\nu}
+   - c \epsilon^{\sigma\nu\mu} F_{\nu\sigma}
+=
+c \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+-
+   \partial_\nu F^{\mu\nu}
+   - c \epsilon^{\mu \beta\alpha} F_{\alpha\beta}
+\end{dmath}
+or
+\begin{dmath}\label{eqn:ProblemSet5Problem2:180}
+\partial_\nu F^{\mu\nu}
+=
+2 c \epsilon^{\mu\alpha\beta} F_{\alpha\beta}.
+\end{dmath}
+
+The given coupling from the Lagrangian results in a effective-current (not Noether current) in the equations of motion (just as the normal \( A_\mu j^\mu \) gives rise to equations of motion of the form \( \partial_\nu F^{\mu\nu} \sim j^\mu \).
+
+\paragraph{Gauge invariance.}
+Let's verify the invariance under the gauge transformation \( A_\mu \rightarrow A_\mu + \partial_\mu \omega \).
+
+The field transforms as
+\begin{dmath}\label{eqn:ProblemSet5Problem2:60}
+F_{\mu\nu} \rightarrow
+\partial_\mu\lr{
+A_\nu + \partial_\nu \omega
+}
+-
+\partial_\nu\lr{
+A_\mu + \partial_\mu \omega
+}
+=
+F_{\mu\nu} + \lr{ \partial_{\mu\nu} - \partial_{\nu\mu} } \omega
+=
+F_{\mu\nu}.
+\end{dmath}
+Only the coupling term has any remnant after the gauge transformation
+\begin{dmath}\label{eqn:ProblemSet5Problem2:80}
+\LL \rightarrow
+\LL
++ c \epsilon^{\mu\alpha\beta} \partial_\mu \omega F_{\alpha\beta}
+=
+\LL
++ \partial_\mu \lr{ c \omega \epsilon^{\mu\alpha\beta} F_{\alpha\beta} }
+- c \omega \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta}
+=
+\LL
++ \partial_\mu \lr{ c \omega \epsilon^{\mu\alpha\beta} F_{\alpha\beta} }
+=
+\LL
++ \partial_\mu J^\mu,
+\end{dmath}
+where the divergence of
+\begin{dmath}\label{eqn:ProblemSet5Problem2:340}
+J^\mu = c \omega \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+\end{dmath}
+only contributes a boundary term to the action.  Note that
+%Integrating that remainder by parts gives
+%\begin{dmath}\label{eqn:ProblemSet5Problem2:160}
+%c \epsilon^{\mu\alpha\beta} \partial_\mu \omega F_{\alpha\beta}
+%=
+%c \epsilon^{\mu\alpha\beta}
+%\lr{
+%   \partial_\mu \lr{ \omega F_{\alpha\beta} }
+%   -
+%   \omega \partial_\mu F_{\alpha\beta}
+%}
+%=
+%c \epsilon^{\mu\alpha\beta}
+%   \partial_\mu \lr{ \omega F_{\alpha\beta} }
+%-c
+%\omega
+%\epsilon^{\mu\alpha\beta}
+%   \partial_\mu F_{\alpha\beta}
+%=
+%\partial_\mu \lr{ c \epsilon^{\mu\alpha\beta} \omega F_{\alpha\beta} },
+%\end{dmath}
+we've identified and dropped a ``Bianchi identity'' sum along the way.
+\makedigression{
+The proof that this slightly different (from usual) form of the Bianchi identity is zero is essentially the same as the usual one from standard electromagnetism.  In fact, the argument from Hw1 can be used as-is, simply removing one index from the \( \epsilon \)
+\begin{dmath}\label{eqn:ProblemSet5Problem2:200}
+\epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta}
+=
+\epsilon^{\mu\alpha\beta} \partial_\mu \lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
+=
+\epsilon^{\mu\alpha\beta} \partial_\mu \partial_\alpha A_\beta
+-\epsilon^{\mu\beta\alpha} \partial_\mu \partial_\beta A_\alpha
+=
+2 \epsilon^{\mu\alpha\beta} \partial_\mu \partial_\alpha A_\beta.
+\end{dmath}
+This is zero since it's a contraction of an antisymmetric and symmetric tensor.
+} % digression
+
+Summarizing, so far
+%\begin{dmath}\label{eqn:ProblemSet5Problem2:260}
+\boxedEquation{eqn:ProblemSet5Problem2:260}{
+\begin{aligned}
+\partial_\nu F^{\mu\nu} &= 2 c \epsilon^{\mu\alpha\beta} F_{\alpha\beta} \\
+\LL &\rightarrow \LL + \partial_\mu J^\mu \\
+J^\mu &=
+c \omega \epsilon^{\mu\alpha\beta} F_{\alpha\beta}.
+\end{aligned}
+}
+%\end{dmath}
+
+\makeSubAnswer{}{qft:problemSet5:2a}
+We've done some of the work to compute the Noether current, from \cref{eqn:ProblemSet5Problem2:40} we have
+\begin{dmath}\label{eqn:ProblemSet5Problem2:360}
+\PD{(\partial_\mu A_\nu)}{\LL}
+=
+   F^{\nu\mu}
+   + 2 c \epsilon^{\sigma\mu\nu} A_\sigma.
+\end{dmath}
+If \( \partial_\mu \omega = \eta_\mu \) then
+\begin{dmath}\label{eqn:ProblemSet5Problem2:280}
+\omega = \eta_\mu x^\mu,
+\end{dmath}
+and we can now compute the Noether current associated with the symmetry \( \delta A_\mu = \eta_\mu \)
+\begin{dmath}\label{eqn:ProblemSet5Problem2:220}
+j^\mu
+=
+\PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu -J^\mu
+=
+\lr{
+   F^{\nu\mu}
+   + 2 c \epsilon^{\sigma\mu\nu} A_\sigma
+} \eta_\nu
+-
+c x^\sigma \eta_\sigma \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+=
+\lr{
+   F^{\nu\mu}
+   + 2 c \epsilon^{\sigma\mu\nu} A_\sigma
+   - c x^\sigma \ulDelta{\nu}{\sigma} \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+} \eta_\nu,
+\end{dmath}
+or
+\boxedEquation{eqn:ProblemSet5Problem2:320}{
+\begin{aligned}
+   j^\mu
+   &= T^{\mu\nu} \eta_\nu \\
+T^{\mu\nu} &=
+   F^{\nu\mu}
+   + 2 c \epsilon^{\sigma\mu\nu} A_\sigma
+   - c x^\nu \epsilon^{\mu\alpha\beta} F_{\alpha\beta}.
+\end{aligned}
+}
+Introducing an energy momentum tensor, allows us to factor the uninteresting \( \eta_\nu \) constants out of the mix, and rewrite the current conservation equation \( 0 = \partial_\mu j^\mu \) as \( 0 = \partial_\mu T^{\mu\nu} \).
+
+\makeSubAnswer{}{qft:problemSet5:2b}
+Let's compute the divergence to see if we learn anything new
+\begin{dmath}\label{eqn:ProblemSet5Problem2:240}
+\partial_\mu T^{\mu\nu}
+=
+%\partial_\sigma F^{\mu\sigma} &=
+\partial_\mu
+\lr{
+   F^{\nu\mu}
+   + 2 c \epsilon^{\sigma\mu\nu} A_\sigma
+   - c x^\nu \epsilon^{\mu\alpha\beta} F_{\alpha\beta}.
+}
+=
+2 c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   + c \epsilon^{\sigma\mu\nu} F_{\mu\sigma}
+   - c \partial_\mu x^\nu \epsilon^{\mu\alpha\beta} F_{\alpha\beta}
+   - c x^\nu \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta}
+=
+2 c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   + c \epsilon^{\beta\alpha\nu} F_{\alpha\beta}
+   - c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   - c x^\nu \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta}
+=
+2 c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   - c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   - c \epsilon^{\nu\alpha\beta} F_{\alpha\beta}
+   - c x^\nu \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta},
+\end{dmath}
+leaving just
+\begin{dmath}\label{eqn:ProblemSet5Problem2:380}
+0 = - c x^\nu \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta},
+\end{dmath}
+which holds for any values \( x^\nu \), so the current conservation equation only tells us that
+\begin{dmath}\label{eqn:ProblemSet5Problem2:400}
+\epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta} = 0,
+\end{dmath}
+which is just the Bianchi identity that we already knew.
+
+\makeSubAnswer{}{qft:problemSet5:2c}
+I had some trouble figuring out what was meant by keeping only the most relevant coupling, given that we only have one coupling to start with?  Additionally
+\begin{enumerate}
+\item The current for the \( c = 0 \) case would clearly be gauge invariant since it only has only a \( F^{\mu\nu} \) term.  That current and the associated charge is not terribly interesting, and it doesn't make sense to ask about it.
+\item It doesn't make sense to consider a Lagrangian with only the coupling term.  The EOM for that case doesn't even have derivative terms.
+\end{enumerate}
+
+In class, \underline{relevant} was defined as a coupling for which the coupling constant had positive mass dimension.  For our system, in natural units the action \( \int d^3 x \LL \) is dimensionless, which allows us to assign dimensions to some of our terms.  Those are
+\begin{equation}\label{eqn:ProblemSet5Problem2:420}
+1
+= [ L^3 \LL ]
+= M^{-3} [ \LL ]
+\implies
+[ \LL ] = M^3,
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet5Problem2:440}
+[F]^2 = M^3 \implies [F] = M^{3/2},
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet5Problem2:460}
+[F] = L^{-1} [A] = M [A] = M^{3/2} \implies [A] = M^{1/2},
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet5Problem2:480}
+M^3 = [c A F] = [c] M^{1/2} M^{3/2} = [c] M^2 \implies [c] = M.
+\end{equation}
+
+By this criteria the \( c \) coupling is relevant, since it has a positive mass dimension.  Since it is also the only coupling, it is also the most relevant coupling, and my conclusion is that we are being asked whether the charge associated with the current calculated above is gauge invarient.
+
+With that conclusion in place, let's continue to calculate the charge, which is
+
+\begin{dmath}\label{eqn:ProblemSet5Problem2:500}
+Q
+= \int d^3 x j^0
+= \int d^3 x T{0\nu} \eta_\nu
+=
+\int d^3 x
+\lr{
+   F^{\nu 0}
+   + 2 c \epsilon^{\sigma 0 \nu} A_\sigma
+   - c x^\nu \epsilon^{0 \alpha\beta} F_{\alpha\beta}
+}.
+\end{dmath}
+Under gauge transformation, this becomes
+\begin{dmath}\label{eqn:ProblemSet5Problem2:520}
+Q \rightarrow Q
++
+\int d^3 x
+   2 c \epsilon^{\sigma 0 \nu} \eta_\sigma \eta_\nu,
+\end{dmath}
+but
+\begin{dmath}\label{eqn:ProblemSet5Problem2:540}
+\epsilon^{\sigma 0 \nu} \eta_\sigma \eta_\nu
+=
+\epsilon^{1 0 2} \eta_1 \eta_2
+\epsilon^{2 0 1} \eta_2 \eta_1
+=
+\lr{ -1 + 1 } \eta_1 \eta_2
+= 0,
+\end{dmath}
+so, \underline{yes}, the charge for this symmetry is gauge invariant.
+
+} % answer
+%}

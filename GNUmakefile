@@ -76,6 +76,7 @@ all :: l23
 #all :: p2
 #all :: p3
 #all :: p4
+all :: p5
 
 $(THISBOOK).pdf :: $(shell cat spellcheckem.txt)
 
@@ -110,6 +111,7 @@ l23: qftLecture23.pdf
 #p2: ProblemSet2.pdf
 #p3: ProblemSet3.pdf
 p4: ProblemSet4.pdf
+p5: ProblemSet5.pdf
 q: QandA.pdf
 l: lukenotetypos.pdf
 
@@ -135,6 +137,10 @@ ProblemSet4.pdf : ProblemSet4Problem1.tex
 ProblemSet4.pdf : ProblemSet4Problem2.tex
 ProblemSet4.pdf : ProblemSet4Problem3.tex
 ProblemSet4.pdf : ProblemSet4Problem4.tex
+
+ProblemSet5.pdf : ProblemSet5Problem1.tex
+ProblemSet5.pdf : ProblemSet5Problem2.tex
+ProblemSet5.pdf : ProblemSet5Problem3.tex
 
 .PHONY: spellcheck
 spellcheck: $(SPELLCHECK)

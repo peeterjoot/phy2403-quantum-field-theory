@@ -1,0 +1,59 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\input{../latex/assignment.tex}
+\renewcommand{\basename}{qftProblemSet5}
+\renewcommand{\dirname}{notes/phy2403-quantum-field-theory/}
+\newcommand{\keywords}{Quantum Field Theory, PHY2403H}
+\newcommand{\dateintitle}{}
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{macros_cal}
+%\usepackage{phy2403-quantum-field-theory}
+\usepackage{siunitx}
+%\usepackage{esint} % \oiint
+\usepackage{peeters_figures}
+
+\renewcommand{\QuestionNB}{\alph{Question}.\ }
+\renewcommand{\theQuestion}{\alph{Question}}
+
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
+\newcommand{\oPsi}[0]{\overbar{\Psi}}
+\newcommand{\osigma}[0]{\overbar{\sigma}}
+\newcommand{\ubar}[0]{\overbar{u}}
+\newcommand{\vbar}[0]{\overbar{v}}
+\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+
+%-----------------------------------------
+\newcommand{\deltathree}[0]{\delta^{(3)}}
+\newcommand{\deltafour}[0]{\delta^{(4)}}
+%-----------------------------------------
+% l15b
+\newcommand{\normalorder}[1]{\text{:\({#1}\):}}
+%-----------------------------------------
+% ps4
+\usepackage{simplewick}
+%-----------------------------------------
+
+\beginArtNoToc
+\generatetitle{PHY2403H Quantum Field Theory.  Problem Set 5}
+%\chapter{XXX}
+\label{chap:qftProblemSet5}
+
+%\section{Disclaimer}
+%
+%This is an ungraded set of answers to the problems posed.
+
+%\input{ProblemSet5Problem1.tex}
+\input{ProblemSet5Problem2.tex}
+%\input{ProblemSet5Problem3.tex}
+
+%\EndArticle
+\EndNoBibArticle
