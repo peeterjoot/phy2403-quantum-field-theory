@@ -338,9 +338,9 @@ In particular, we can apply the BCH theorem to a field operator
 \begin{dmath}\label{eqn:qftLecture8:800}
 \hatU(\Ba) \phihat(\Bx) \hatU^\dagger(\Ba)
 =
-e^{i a^j \hat{p}^j }
+e^{i a^j \hat{P}^j }
 \phihat(\Bx)
-e^{-i a^k \hat{p}^k }
+e^{-i a^k \hat{P}^k }
 =
 \phihat(\Bx)
 + i a^j \antisymmetric{\hatP^j}{\phihat(\Bx)} + \frac{-a^{j_1} a^{j_2}}{2} \antisymmetric{\hatP^{j_1}}{\antisymmetric{\hatP^{j_2}}{\phihat(\Bx)}},
@@ -635,12 +635,16 @@ or after flipping signs
 j^\mu_{\text{dil}}
 = \partial^\mu \phi \lr{ 1 + x^\nu \partial_\nu } \phi - \inv{2} x^\mu
 \partial_\nu \phi \partial^\nu \phi
-= x_\nu \lr{ \partial^\mu \phi \partial^\nu \phi - \inv{2} {\delta^{\nu}}_\mu \partial_\lambda \phi \partial^\lambda \phi }
+= x_\nu \lr{ \partial^\mu \phi \partial^\nu \phi - \inv{2} g^{\mu\nu} \partial_\lambda \phi \partial^\lambda \phi }
 + \inv{2} \partial^\mu (\phi^2),
 \end{dmath}
 
 \begin{dmath}\label{eqn:qftLecture8:1300}
 j^\mu_{\text{dil}} = -x_\nu T^{\nu \mu} + \inv{2} \partial^\mu (\phi^2).
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture8:1620}
+T^{\mu\nu} =
+\partial^\mu \phi \partial^\nu \phi - g^{\mu\nu} \LL
 \end{dmath}
 
 The current and \( T^{\mu\nu} \) can both be redefined \( j^{\mu'} = j^\mu + \partial_\nu C^{\nu\mu} \) adding an antisymmetric \( C^{\mu\nu} = -C^{\nu\mu} \)
