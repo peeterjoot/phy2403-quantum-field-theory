@@ -231,15 +231,15 @@ Let's calculate this with our scalar theory Lagrangian
 \begin{dmath}\label{eqn:qftLecture7:420}
 \LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi).
 \end{dmath}
-The Lagrangian variation is
+The Lagrangian variation\footnote{Using: \( \partial_\alpha((1/2)\partial_\mu \phi \partial^\mu \phi) = 2(1/2) \partial_\mu \phi( \partial_\alpha \partial^\mu \phi)\).} is
 \begin{dmath}\label{eqn:qftLecture7:440}
 \evalbar{\delta \LL}{\phi \rightarrow \phi + \delta \phi, \delta\phi = - a^\mu \partial_\mu \phi}
 =
 (\partial_\mu \phi) \delta (\partial^\mu \phi) - m^2 \phi \delta \phi - \PD{\phi}{V} \delta \phi
 =
-(\partial_\mu \phi)(-a^\nu \partial_\nu \phi \partial^\mu \phi) + m^2 \phi a^\nu \partial_\nu \phi + \PD{\phi}{V} a^\nu \partial_\nu \phi
+(\partial_\mu \phi)(-a^\nu \partial_\nu \partial^\mu \phi) + m^2 \phi a^\nu \partial_\nu \phi + \PD{\phi}{V} a^\nu \partial_\nu \phi
 =
-- a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
+- a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
 =
 - a^\nu \partial_\nu \LL,
 \end{dmath}

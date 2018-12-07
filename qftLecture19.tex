@@ -41,13 +41,13 @@
 
 \index{Pauli matrix}
 Given a real vector \( \Bx \) and the Pauli matrices
-\begin{equation}\label{eqn:qftLecture18:400}
+\begin{equation}\label{eqn:qftLecture19:1794}
 \sigma^1 = \PauliX, \qquad
 \sigma^2 = \PauliY, \qquad
 \sigma^3 = \PauliZ.
 \end{equation}
 We may form a Pauli matrix representation of a vector
-\begin{dmath}\label{eqn:qftLecture18:420}
+\begin{dmath}\label{eqn:qftLecture19:1814}
 \Bsigma \cdot \Bx
 =
 \begin{bmatrix}
@@ -58,7 +58,7 @@ x^1 + i x^2 & -x^3
 where \( \Bsigma = \lr{ \sigma^1, \sigma^2, \sigma^3 } \).
 This matrix, like the Pauli matrixes, is a \( 2 \times 2 \) Hermitian traceless matrix.
 We find that the determinant is
-\begin{dmath}\label{eqn:qftLecture18:480}
+\begin{dmath}\label{eqn:qftLecture19:1834}
 \det (\Bsigma \cdot \Bx)
 =
 -(x^3)^2 - (x^1)^2 - (x^2)^2
@@ -67,18 +67,18 @@ We find that the determinant is
 \end{dmath}
 
 We may form
-\begin{dmath}\label{eqn:qftLecture18:440}
+\begin{dmath}\label{eqn:qftLecture19:1854}
 U (\Bsigma \cdot \Bx) U^\dagger,
 \end{dmath}
 where \( U \) is a unitary \( 2 \times 2 \) unit determinant matrix, satisfying
-\begin{dmath}\label{eqn:qftLecture18:460}
+\begin{dmath}\label{eqn:qftLecture19:1874}
 \begin{aligned}
 U^\dagger U &= 1 \\
 \det U &= 1.
 \end{aligned}
 \end{dmath}
 Further
-\begin{dmath}\label{eqn:qftLecture18:500}
+\begin{dmath}\label{eqn:qftLecture19:1894}
 \det (U \Bsigma \cdot \Bx) U^\dagger
 =
 \det U \det (\Bsigma \cdot \Bx) \det U^\dagger
@@ -89,7 +89,7 @@ Further
 Moral: \( U (\Bsigma \cdot \Bx) U^\dagger = \Bsigma \cdot \Bx' \), where \( \Bx' \) has the same length of \( \Bx \).
 
 We may use this to represent an arbitrary rotation
-\begin{dmath}\label{eqn:qftLecture18:520}
+\begin{dmath}\label{eqn:qftLecture19:1914}
 U (\Bsigma \cdot \Bx) U^\dagger
 = {R^{i}}_j x^j \sigma^i
 \end{dmath}
@@ -98,15 +98,15 @@ We say that \( U \in SU(2) \) and \( R \in SU(3) \), and \( SU(2) \) is called t
 
 Pauli figured out that, in non-relativistic QM, that this type of transformation also applies to (spin) wave functions (spinors)
 \index{spinor}
-\begin{equation}\label{eqn:qftLecture18:540}
+\begin{equation}\label{eqn:qftLecture19:1934}
 \Psi(\Bx) \rightarrow \Psi'(\Bx') = U \Psi(\Bx)
 \end{equation}
 where
-\begin{equation}\label{eqn:qftLecture18:560}
+\begin{equation}\label{eqn:qftLecture19:1954}
 \Bx \rightarrow \Bx' = R \Bx,
 \end{equation}
 and \( R^\T R = 1 \).  Here \( \Psi \) is a two element vector
-\begin{dmath}\label{eqn:qftLecture18:580}
+\begin{dmath}\label{eqn:qftLecture19:1974}
 \Psi(\Bx) =
 \begin{bmatrix}
 \Psi_\uparrow(\Bx) \\
@@ -135,7 +135,7 @@ Having seen such representations and their \( SU(2) \) transformations in NRQM, 
 
 \section{Lorentz group}
 Let
-\begin{dmath}\label{eqn:qftLecture18:600}
+\begin{dmath}\label{eqn:qftLecture19:1994}
 (x^0, \Bx) =
 x^0 \sigma^0 - \Bsigma \cdot \Bx
 =
@@ -145,7 +145,7 @@ x^0 - x^3 & -x^1 + i x^2 \\
 \end{bmatrix}.
 \end{dmath}
 This has determinant
-\begin{dmath}\label{eqn:qftLecture18:620}
+\begin{dmath}\label{eqn:qftLecture19:2014}
 \det
 (x^0, \Bx) =
 (x^0)^2
@@ -158,7 +158,7 @@ This has determinant
 = x^\mu x_\mu.
 \end{dmath}
 We therefore identify \( (x^0, \Bx) \) as a four vector
-\begin{dmath}\label{eqn:qftLecture18:640}
+\begin{dmath}\label{eqn:qftLecture19:2034}
 (x^0, \Bx) = x_\mu \sigma^\mu = x^\mu \sigma^\nu g_{\mu\nu}.
 \end{dmath}
 We say that \( SL(2, \bbC)\) is a double cover of \( SO(1,3)\).
