@@ -49,7 +49,7 @@ From the Dirac Lagrangian density
 \begin{dmath}\label{eqn:qftLecture22:20}
 \LL = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
 \end{dmath}
-we found the Hamiltonian
+we found that the energy can be expressed using Hamiltonian
 \begin{dmath}\label{eqn:qftLecture22:40}
 H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
 \lr{
@@ -58,23 +58,43 @@ H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
    b_\Bp^{s \dagger} b_\Bp^s
 }.
 \end{dmath}
-This appears to be an energy with no bottom.  Dirac prescribes: assume Pauli exclusion for \( b \) and fill all the negative energy levels.
+This appears to be an energy with no bottom.  Dirac prescribes: assume Pauli exclusion for \( b \) and fill all the negative energy levels.  If we treat \( a, b \) as Bosonic (commuting), then energy is unbounded from below.  This is a problem, because once you add interactions the system falls into the abyss, something that we can represent as sketched in \cref{fig:lecture22Abyss:lecture22AbyssFig1}.  Another representation of such unstable system that comes to mind is the inverted pendulum sketched in
+\cref{fig:lecture22:lecture22Fig2}.
+\imageFigure{../figures/phy2403-quantum-field-theory/lecture22AbyssFig1}{Unbounded potential well.}{fig:lecture22Abyss:lecture22AbyssFig1}{0.2}
+\imageFigure{../figures/phy2403-quantum-field-theory/lecture22Fig2}{Unstable configuration (inverted pendulum).}{fig:lecture22:lecture22Fig2}{0.2}
 
-\paragraph{Fermi statistics:}
-Grassman numbers\footnote{Is it a coincidence that these look like lightlike four-vectors \( x^2 = x^\mu x^\mu = 0 \)?}
+Dirac fixed this by imagining that all negative energy states are ``full''.  This doesn't quite fix it, \underline{unless} the particles obey the Pauli Principle.
+Creating a particle of negative energy \( b^\dagger \) is like \underline{destroying} a hole.
+
+Mathematically, we postulate that our operators
+\begin{enumerate}
+\item Obey Fermi statistics, behaving like ``Grassman numbers''
 \begin{equation}\label{eqn:qftLecture22:60}
 \lr{ b^\dagger }^2 = 0 = b^2 = a^2 = \lr{ a^\dagger }^2.
 \end{equation}
-
-Creating a particle of negative energy \( b^\dagger \) is like \underline{destroying} a hole.
-
+All the \(a, b, a^\dagger, \cdots \)'s square to zero\footnote{Is it a coincidence that these look like lightlike four-vectors \( x^2 = x^\mu x^\mu = 0 \)?}
+\item
 Our creation and anhillation operators are presumed to have non-trivial \underline{anti}-commutation relations (unlike the scalar theory where we had the same sort of commutation relations)
 \begin{dmath}\label{eqn:qftLecture22:80}
-\symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
+\begin{aligned}
+\symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} &= (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq) \\
+\symmetric{\tilde{b}_\Bp^s}{\tilde{b}_\Bq^{r\dagger}} &= (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq).
+\end{aligned}
 \end{dmath}
-and those relations were used to cast the Hamiltonian in a more familiar form
+\end{enumerate}
+
+The relations were used to cast the Hamiltonian in a more familiar form
 \begin{dmath}\label{eqn:qftLecture22:100}
-H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+H
+= \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   +
+   \tilde{b}_\Bp^{s \dagger}
+   \tilde{b}_\Bp^s
+   - \underbrace{(2 \pi)^3 \deltathree(0)}_{\text{zero point energy}}
+}
+= \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
 \lr{
    a_\Bp^{s \dagger} a_\Bp^s
    +
@@ -91,18 +111,89 @@ Supersymmetry transforms these into one another, and was thought to solve the co
 
 \section{Moving on.}
 
-We now switch notations, and drop the tildes, also defining the Fock vacuum by
+We now switch notations, drop the tildes, and ignore the zero point energy
+\begin{dmath}\label{eqn:qftLecture22:520}
+H
+=
+\int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+\lr{
+   a_\Bp^{s \dagger} a_\Bp^s
+   +
+   b_\Bp^{s \dagger}
+   b_\Bp^s
+}
+\end{dmath}
+
+We define the Fock vacuum by
 \begin{dmath}\label{eqn:qftLecture22:120}
 \begin{aligned}
 a_\Bp^s \ket{0} &= 0 \\
-b_\Bp^s \ket{0} &= 0.
+b_\Bp^s \ket{0} &= 0,
 \end{aligned}
 \end{dmath}
-Then
-\begin{dmath}\label{eqn:qftLecture22:140}
-H a_\Bp^{s\dagger} \ket{0} = \omega_\Bp (a_\Bp^{s\dagger} \ket{0}).
+and presume that we have relativistically normalized creation operators
+\begin{dmath}\label{eqn:qftLecture22:540}
+\begin{aligned}
+a^s(p) \ket{0} &= \sqrt{ 2 \omega_\Bp} a_\Bp^{s\dagger} \ket{0} \\
+b^s(p) \ket{0} &= \sqrt{ 2 \omega_\Bp} b_\Bp^{s\dagger} \ket{0}.
+\end{aligned}
 \end{dmath}
-FIXME: show.
+
+Let's see how the Hamiltonian acts on each of our possible a single particle states (with momentum \( \Bp \) and spin \( r \))
+\begin{dmath}\label{eqn:qftLecture22:140}
+H \ket{\Bp, r}
+=
+H
+\sqrt{2 \omega_\Bp} a_\Bp^{r\dagger} \ket{0}
+=
+\int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
+\lr{
+   a_\Bq^{s \dagger}
+   a_\Bq^s
+   +
+   b_\Bq^{s \dagger}
+   b_\Bq^s
+}
+\sqrt{2 \omega_\Bp} a_\Bp^{r\dagger} \ket{0}
+=
+\int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
+   a_\Bq^{s \dagger}
+   a_\Bq^s
+a_\Bp^{r\dagger} \ket{0}
+\sqrt{2 \omega_\Bp}
+=
+\int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
+   a_\Bq^{s \dagger}
+\lr{
+  -a_\Bq^s
+   a_\Bp^{r\dagger}
++ (2\pi)^3 \deltathree( \Bp - \Bq )
+}
+\ket{0}
+\sqrt{2 \omega_\Bp}
+=
+\int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
+   a_\Bq^{s \dagger}
+\lr{
+  -a_\Bq^s
+\underbrace{   a_\Bp^{r\dagger}
+\ket{0}
+}_{=0}
++ (2\pi)^3 \delta^{rs} \deltathree( \Bp - \Bq )
+\ket{0}
+}
+\sqrt{2 \omega_\Bp}
+=
+\omega_\Bp \lr{ a_\Bp^{r \dagger}
+\ket{0}
+\sqrt{2 \omega_\Bp}
+}
+=
+\omega_\Bp \ket{\Bp, r}.
+\end{dmath}
+The Hamiltonian has the expected energy operator characteristics.  This is also clearly the case for our \( b \) operators too.
+
+\section{Momentum.}
 Similarly
 \begin{dmath}\label{eqn:qftLecture22:160}
 \BP =

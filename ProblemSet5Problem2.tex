@@ -3,11 +3,23 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\makeproblem{Problem II: Electromagnetic theory in 2+1 dimensions.}{qft:problemSet5:2}{
-See handout for full problem description.
+\makeoproblem{Problem II: Electromagnetic theory in 2+1 dimensions.}{qft:problemSet5:2}{2018 HW5.II}{
+Consider the theory in three space-time dimensions described by the Lagrangian \cref{eqn:ProblemSet5Problem2:100}.
+This theory provides an
+example of an internal symmetry, where the equations of motion are invariant, but the Lagrangian is not. In other
+words, this an example of the general case considered in class, with the Lagrangian changing into a divergence under
+a symmetry transformation (usually this was the case for spacetime symmetries). Terms in the Lagrangian that
+change under an internal symmetry into a total derivative are often called ``Wess-Zumino terms.''
+The theory in question is electrodynamics in 3d (hence the indices \( \mu, \nu = 0, 1, 2 \)), with the following Lagrangian:
 \begin{dmath}\label{eqn:ProblemSet5Problem2:100}
 \LL = -\inv{4} F_{\alpha\beta} F^{\alpha\beta} + c \epsilon^{\mu\alpha\beta} A_\mu F_{\alpha\beta}.
 \end{dmath}
+where \( \epsilon^{\mu\alpha\beta} \) is the totally antisymmetric tensor in 3d, with, say \( \epsilon^{012} = +1.\)
+
+The Lagrangian is invariant under gauge transformations, \( \delta A_\mu = \partial_\mu \omega \), up to surface term.
+
+The internal symmetry in question\footnote{Hint: The following identity might come handy, \( x \PD{x}{} \delta(x) = -\delta(x) \) (in words: the delta function is homogeneous of order \(-1\)). Also, if you think that helps,
+feel free to normal order (does it help?).} is a shift of the vector field by a constant, \( \delta A_\mu =  \eta_\mu = \text{const}.\)
 \makesubproblem{}{qft:problemSet5:2a}
 Find the Noether current of this symmetry.
 \makesubproblem{}{qft:problemSet5:2b}

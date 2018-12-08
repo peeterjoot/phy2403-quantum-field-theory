@@ -1,0 +1,194 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{momentumDirac}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+\usepackage{macros_cal} % LL
+\usepackage{slashed}
+
+%\newcommand{\munu}[0]{\mu\nu}
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%s/\\ultensor{\([^}]\+\)}{\([^}]\+\)}{\([^}]\+\)}/{{\1}^\2}_\3/g
+%s/ulLambda/ultensor{\\Lambda}/g
+\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
+
+
+\newcommand{\oPsi}[0]{\overbar{\Psi}}
+\newcommand{\osigma}[0]{\overbar{\sigma}}
+\newcommand{\ubar}[0]{\overbar{u}}
+\newcommand{\vbar}[0]{\overbar{v}}
+\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+
+
+\beginArtNoToc
+
+\generatetitle{Momentum operator for the Dirac field?}
+%\chapter{Momentum operator for the Dirac field?}
+%\label{chap:momentumDirac}
+
+In the notes I have for last Monday's lecture I see the momentum operator defined by
+\begin{dmath}\label{eqn:momentumDirac:20}
+\BP = \sum_{s = 1}^2
+\int \frac{d^3 q}{(2\pi)^3} \Bp \lr{
+   a_\Bp^{s\dagger}
+   a_\Bp^{s}
+   +
+   b_\Bp^{s\dagger}
+   b_\Bp^{s}
+}.
+\end{dmath}
+
+There's a ``use Noether's theorem'' comment associated with this.  For the scalar field, using Noether's theorem, we identified the conserved charge of a spacetime translation as the momentum operator
+\begin{dmath}\label{eqn:momentumDirac:40}
+P^i = \int d^3 x T^{0i} = - \int d^3 x \pi(x) \spacegrad \phi(x),
+\end{dmath}
+and if we plugged in the creation and anhillation operator representation of \( \pi, \phi \), out comes
+\begin{dmath}\label{eqn:momentumDirac:60}
+\BP =
+\inv{2} \int \frac{d^3 q}{(2\pi)^3} \Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger},
+\end{dmath}
+(plus \( e^{\pm 2 i \omega_\Bp t} \) terms that we can argue away.)
+
+It wasn't clear to me how this worked with the Dirac field, but it turns out that this does follow systematically as expected.  For a spacetime translation
+\begin{dmath}\label{eqn:momentumDirac:80}
+x^\mu \rightarrow x^\mu + a^\mu,
+\end{dmath}
+we find
+\begin{dmath}\label{eqn:momentumDirac:100}
+\delta \Psi = -a^\mu \partial_\mu \Psi,
+\end{dmath}
+so for the Dirac Lagrangian, we have
+\begin{dmath}\label{eqn:momentumDirac:120}
+\delta \LL
+= \delta \lr{ \oPsi \lr{ i \gamma^\mu \partial_\mu - m } \Psi }
+=
+(\delta \oPsi) \lr{ i \gamma^\mu \partial_\mu - m } \Psi
++
+\oPsi \lr{ i \gamma^\mu \partial_\mu - m } \delta \Psi
+=
+(-a^\sigma \partial_\sigma \oPsi) \lr{ i \gamma^\mu \partial_\mu - m } \Psi
++
+\oPsi \lr{ i \gamma^\mu \partial_\mu - m } (-a^\sigma \partial_\sigma \Psi )
+=
+-a^\sigma \partial_\sigma \LL
+=
+\partial_\sigma (-a^\sigma \LL),
+\end{dmath}
+i.e. \( J^\mu = -a^\mu \LL \).
+To plugging this into the Noether current calculating machine, we have
+\begin{dmath}\label{eqn:momentumDirac:160}
+\PD{(\partial_\mu \Psi)}{\LL}
+=
+\PD{(\partial_\mu \Psi)}{} \lr{ \oPsi i \gamma^\sigma \partial_\sigma \Psi - m \oPsi \Psi }
+=
+\oPsi i \gamma^\mu,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:momentumDirac:180}
+\PD{(\partial_\mu \oPsi)}{\LL} = 0,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:momentumDirac:140}
+j^\mu
+=
+(\delta \oPsi) \PD{(\partial_\mu \oPsi)}{\LL}
++
+\PD{(\partial_\mu \Psi)}{\LL} (\delta \Psi)
+- a^\mu \LL
+=
+\oPsi i \gamma^\mu (-a^\sigma \partial_\sigma \Psi)
+- a^\sigma \ulDelta{\mu}{\sigma} \LL
+=
+- a^\sigma
+\lr{
+   \oPsi i \gamma^\mu \partial_\sigma \Psi
+   + \ulDelta{\mu}{\sigma} \LL
+}
+=
+-a_\nu
+\lr{
+   \oPsi i \gamma^\mu \partial^\nu \Psi
+   + g^{\mu\nu} \LL
+}.
+\end{dmath}
+
+We can now define an energy-momentum tensor
+\begin{dmath}\label{eqn:momentumDirac:200}
+T^{\mu\nu}
+=
+   \oPsi i \gamma^\mu \partial^\nu \Psi
+   + g^{\mu\nu} \LL.
+\end{dmath}
+A couple things are of notable in this tensor.  One is that it is not symmetric, and there's doesn't appear to be any hope
+of making it so.  For example, the space+time components are way different
+\begin{dmath}\label{eqn:momentumDirac:220}
+\begin{aligned}
+T^{0k} &= \oPsi i \gamma^0 \partial^k \Psi \\
+T^{k0} &= \oPsi i \gamma^k \partial^0 \Psi,
+\end{aligned}
+\end{dmath}
+so if we want a momentum like creature, we have to use \( T^{0k} \), not \( T^{k0} \).  The charge associated with that current is
+\begin{dmath}\label{eqn:momentumDirac:240}
+Q^k
+=
+\int d^3 x
+\oPsi i \gamma^0 \partial^k \Psi
+=
+\int d^3 x
+\Psi^\dagger (-i \partial_k) \Psi,
+\end{dmath}
+or translating from component to vector form
+\begin{dmath}\label{eqn:momentumDirac:260}
+\BP =
+\int d^3 x
+\Psi^\dagger (-i \spacegrad) \Psi,
+\end{dmath}
+which is the how the momentum operator is first stated in \citep{peskin1995introduction}.  Here the vector notation doesn't have any specific representation, but it is interesting to observe how this is directly related to the massless Dirac Lagrangian
+
+\begin{dmath}\label{eqn:momentumDirac:280}
+\LL(m = 0)
+=
+\oPsi i \gamma^\mu \partial_\mu \Psi
+=
+\Psi^\dagger i \gamma^\mu \partial_\mu \Psi
+=
+\Psi^\dagger i (\partial_0 + \gamma_0 \gamma^k \partial_k) \Psi
+=
+\Psi^\dagger i (\partial_0 - \gamma_0 \gamma_k \partial_k ) \Psi,
+\end{dmath}
+but since \( \gamma_0 \gamma_k \) is a \( 4 \times 4 \) representation of the Pauli matrix \( \sigma_k \)\footnote{There is ambiguity as to what order of products \( \gamma_0 \gamma_k \), or \( \gamma_k \gamma_0 \) to pick to represent the Pauli basis (\citep{doran2003gap} uses \( \gamma_k \gamma_0 \)), but we also have sign ambiguity in assembling a Noether charge from the conserved current, so I don't think that matters.}
+Lagrangian itself breaks down into
+\begin{dmath}\label{eqn:momentumDirac:300}
+\LL(m = 0)
+=
+\Psi^\dagger i \partial_0 \Psi
++
+\Bsigma \cdot \lr{ \Psi^\dagger (-i\spacegrad) \Psi },
+\end{dmath}
+components, and lo and behold, out pops the momentum operator density!  Some part of this should be expected this since the Dirac equation in momentum space is just \( \slashed{p} - m  = 0 \), so there is an intimate connection with the operator portion and momentum.
+
+The last detail to fill in is going from \cref{eqn:momentumDirac:260} to \cref{eqn:momentumDirac:20} using the \( a, b\) representation of the field.  That's an algebraically messy looking job that I don't feel like trying at the moment.
+
+%}
+\EndArticle

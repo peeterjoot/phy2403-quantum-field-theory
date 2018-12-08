@@ -198,3 +198,6 @@ perl -p -i ../latex/bin/latexRegex.pl ProblemSet5Problem2.tex
 
 #../latex/bin/lgrep ProblemSet5Problem3.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl ProblemSet5Problem3.tex
+
+../latex/bin/lgrep momentumDirac.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl momentumDirac.tex
