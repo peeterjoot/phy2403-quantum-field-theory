@@ -1,0 +1,162 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{DiracUVmatricesExplicit}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\newcommand{\osigma}[0]{\overbar{\sigma}}
+\newcommand{\oPsi}[0]{\overbar{\Psi}}
+
+\beginArtNoToc
+
+\generatetitle{Explicit expansion of the Dirac u,v matrices}
+%\chapter{Explicit expansion of the Dirac u,v matrices}
+%\label{chap:DiracUVmatricesExplicit}
+
+We found that the solution of the \( u(p), v(p) \) matrices were
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:20}
+\begin{aligned}
+u(p) &=
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \zeta \\
+\sqrt{p \cdot \osigma} \zeta \\
+\end{bmatrix} \\
+v(p) &=
+\begin{bmatrix}
+\sqrt{p \cdot \sigma} \eta \\
+-\sqrt{p \cdot \osigma} \eta \\
+\end{bmatrix},
+\end{aligned}
+\end{dmath}
+where
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:40}
+\begin{aligned}
+p \cdot \sigma &= p_0 \sigma_0 - \Bsigma \cdot \Bp \\
+p \cdot \osigma &= p_0 \sigma_0 + \Bsigma \cdot \Bp
+\end{aligned}
+\end{dmath}
+It was pointed out that these square roots can be conceptualized as (in the right basis) as the diagonal matrices of the eigenvalue square roots.
+
+It was also pointed out that we don't tend to need the explicit form of these square roots.We saw that to be the case in all our calculations, where these always showed up in the end in quadratic combinations like \( \sqrt{ (p \cdot \sigma)^2 }, \sqrt{ (p \cdot \sigma)(p \cdot \osigma)}, \cdots \), which nicely reduced each time without requiring the matrix roots.
+
+I encountered a case where it would have been nice to have the explicit representation.  In particular, I wanted to use Mathematica to symbolically expand \( \oPsi i \gamma^\mu \partial_\mu \Psi \) in terms of \( a^s_\Bp, b^r_\Bp, \cdots \) representation, to verify that the massless Dirac Lagrangian are in fact the energy and momentum operators (and to compare to the explicit form of the momentum operator found in eq. 3.105 \citep{peskin1995introduction}).  For that mechanical task, I needed explicit representations of all the \( u^s(p), v^r(p) \) matrices to plug in.
+
+It happens that \( 2 \times 2 \) matrices can be square-rooted symbolically (FIXME: link to squarerootOfFourSigmaDotP.nb notebook).  In particular, the matrices \( p \cdot \sigma, p \cdot \osigma \)  have nice simple eigenvalues \( \pm \Norm{\Bp} + \omega_\Bp \).  The corresponding unnormalized eigenvectors for \( p \cdot \sigma \) are
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:60}
+\begin{aligned}
+e_1 &=
+\begin{bmatrix}
+- p_x + i p_y \\
+p_z + \Norm{\Bp}
+\end{bmatrix} \\
+e_1 &=
+\begin{bmatrix}
+- p_x + i p_y \\
+p_z - \Norm{\Bp}
+\end{bmatrix} \\
+\end{aligned}
+\end{dmath}
+This means that we can diagonalize \( p \cdot \sigma \) as
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:80}
+p \cdot \sigma
+= U
+\begin{bmatrix}
+\omega + \Norm{\Bp} & 0 \\
+0 & \omega - \Norm{\Bp}
+\end{bmatrix}
+U^\dagger,
+\end{dmath}
+where \( U \) is the matrix of the normalized eigenvectors
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:100}
+U =
+\begin{bmatrix}
+e_1' & e_2'
+\end{bmatrix}
+=
+\inv{ \sqrt{ 2 \Bp^2 + 2 p_z \Norm{\Bp} } }
+\begin{bmatrix}
+-p_x + i p_y & -p_x + i p_y \\
+p_z + \Norm{\Bp} & p_z - \Norm{\Bp}
+\end{bmatrix}.
+\end{dmath}
+
+Letting Mathematica churn through the matrix products
+\cref{eqn:DiracUVmatricesExplicit:80} gives
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:120}
+\sqrt{ p \cdot \sigma }
+=
+\inv{
+   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+}
+\begin{bmatrix}
+\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } & - p_x + i p_y \\
+- p_x - i p_y & \omega + p_z + \sqrt{ \omega^2 - \Bp^2 }
+\end{bmatrix}.
+\end{dmath}
+Now we can plug in \( \zeta^{1\T} = (1,0), \zeta^{2\T} = (0,1), \eta^{1\T} = (1,0), \eta^{2\T} = (0,1) \) to find the explicit form of our \( u\)'s and \( v\)'s
+\begin{dmath}\label{eqn:DiracUVmatricesExplicit:140}
+\begin{aligned}
+u^1(p) &=
+\inv{
+   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+}
+\begin{bmatrix}
+\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+- p_x - i p_y \\
+\omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+ p_x + i p_y \\
+\end{bmatrix} \\
+u^2(p) &=
+\inv{
+   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+}
+\begin{bmatrix}
+ - p_x + i p_y \\
+ \omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+   p_x - i p_y \\
+ \omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+\end{bmatrix} \\
+v^1(p) &=
+\inv{
+   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+}
+\begin{bmatrix}
+\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+- p_x - i p_y \\
+-\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+-p_x - i p_y \\
+\end{bmatrix}
+v^2(p) &=
+\inv{
+   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+}
+\begin{bmatrix}
+ - p_x + i p_y \\
+ \omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+  -p_x + i p_y \\
+ -\omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+\end{bmatrix}
+\end{aligned}.
+\end{dmath}
+This is now a convenient form to try the next symbolic manipulation task.
+
+%}
+\EndArticle

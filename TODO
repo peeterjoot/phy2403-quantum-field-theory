@@ -1,6 +1,10 @@
+- use one of \Abs{\Bp} or \Norm{\Bp} for vector magnitude, but not both (as I believe I'm doing).
+
 - incorporate: momentumDirac.tex
 
    (as appendix or digression)
+
+   -- work the problem of finding 3.105 from 3.99/3.100.
 
 - l22: 
 
