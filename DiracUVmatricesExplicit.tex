@@ -50,7 +50,7 @@ where
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:40}
 \begin{aligned}
 p \cdot \sigma &= p_0 \sigma_0 - \Bsigma \cdot \Bp \\
-p \cdot \osigma &= p_0 \sigma_0 + \Bsigma \cdot \Bp
+p \cdot \osigma &= p_0 \sigma_0 + \Bsigma \cdot \Bp.
 \end{aligned}
 \end{dmath}
 It was pointed out that these square roots can be conceptualized as (in the right basis) as the diagonal matrices of the eigenvalue square roots.
@@ -71,7 +71,7 @@ e_1 &=
 \begin{bmatrix}
 - p_x + i p_y \\
 p_z - \Norm{\Bp}
-\end{bmatrix} \\
+\end{bmatrix}.
 \end{aligned}
 \end{dmath}
 This means that we can diagonalize \( p \cdot \sigma \) as
@@ -79,8 +79,8 @@ This means that we can diagonalize \( p \cdot \sigma \) as
 p \cdot \sigma
 = U
 \begin{bmatrix}
-\omega + \Norm{\Bp} & 0 \\
-0 & \omega - \Norm{\Bp}
+\omega_\Bp+ \Norm{\Bp} & 0 \\
+0 & \omega_\Bp- \Norm{\Bp}
 \end{bmatrix}
 U^\dagger,
 \end{dmath}
@@ -99,64 +99,68 @@ p_z + \Norm{\Bp} & p_z - \Norm{\Bp}
 \end{dmath}
 
 Letting Mathematica churn through the matrix products
-\cref{eqn:DiracUVmatricesExplicit:80} gives
+\cref{eqn:DiracUVmatricesExplicit:80} verifies the diagonalization, and for the roots, we find
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:120}
 \sqrt{ p \cdot \sigma }
 =
 \inv{
-   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+   \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } & - p_x + i p_y \\
-- p_x - i p_y & \omega + p_z + \sqrt{ \omega^2 - \Bp^2 }
+\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } & - p_x + i p_y \\
+- p_x - i p_y & \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 }
 \end{bmatrix}.
 \end{dmath}
-Now we can plug in \( \zeta^{1\T} = (1,0), \zeta^{2\T} = (0,1), \eta^{1\T} = (1,0), \eta^{2\T} = (0,1) \) to find the explicit form of our \( u\)'s and \( v\)'s
+The matrix \( \sqrt{ p \cdot \osigma } \) has the same form, but we just have to flip the signs on our \( \Bp \)'s.
+
+We are now ready to plug in \( \zeta^{1\T} = (1,0), \zeta^{2\T} = (0,1), \eta^{1\T} = (1,0), \eta^{2\T} = (0,1) \) to find the explicit form of our \( u\)'s and \( v\)'s
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:140}
 \begin{aligned}
 u^1(p) &=
 \inv{
-   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+   \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 - p_x - i p_y \\
-\omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+\omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
  p_x + i p_y \\
 \end{bmatrix} \\
 u^2(p) &=
 \inv{
-   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+   \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
  - p_x + i p_y \\
- \omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+ \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
    p_x - i p_y \\
- \omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+ \omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 \end{bmatrix} \\
 v^1(p) &=
 \inv{
-   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+   \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 - p_x - i p_y \\
--\omega - p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+-\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 -p_x - i p_y \\
-\end{bmatrix}
+\end{bmatrix} \\
 v^2(p) &=
 \inv{
-   \sqrt{ \omega - \Norm{\Bp} } + \sqrt{ \omega + \Norm{\Bp} }
+   \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
  - p_x + i p_y \\
- \omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
+ \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
   -p_x + i p_y \\
- -\omega + p_z + \sqrt{ \omega^2 - \Bp^2 } \\
-\end{bmatrix}
-\end{aligned}.
+ -\omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+\end{bmatrix}.
+\end{aligned}
 \end{dmath}
-This is now a convenient form to try the next symbolic manipulation task.
+This is now a convenient form to try the next symbolic manipulation task.  If nothing else this takes some of the mystery out of the original compact notation, since we see that the \( u,v \)'s are just \( 4 \) element column vectors, and we know their explicit form should we want them.
+
+Also note that in class we made a note that we should take the positive roots of the eigenvalue diagonal matrix.  It doesn't look like that is really required.  We need not even use the same sign for each root.  Squaring the resulting matrix root in the end will recover the original \( p \cdot \sigma \) matrix.
 
 %}
 \EndArticle

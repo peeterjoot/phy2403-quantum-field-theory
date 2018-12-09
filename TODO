@@ -1,6 +1,8 @@
+- standarize on \pi, not \Pi.
+
 - use one of \Abs{\Bp} or \Norm{\Bp} for vector magnitude, but not both (as I believe I'm doing).
 
-- incorporate: momentumDirac.tex
+- incorporate: momentumDirac.tex, DiracUVmatricesExplicit.tex
 
    (as appendix or digression)
 
