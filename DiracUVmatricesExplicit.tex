@@ -111,6 +111,18 @@ Letting Mathematica churn through the matrix products
 - p^1 - i p^2 & \omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 }
 \end{bmatrix}.
 \end{dmath}
+%Assuming on shell \( \omega^2 - \Bp^2 = m^2 \) values, this simplifies to
+%\begin{dmath}\label{eqn:DiracUVmatricesExplicit:121}
+%\sqrt{ p \cdot \sigma }
+%=
+%\inv{
+%   \sqrt{ 2 \omega_\Bp + 2 m }
+%}
+%\begin{bmatrix}
+%\omega_\Bp- p^3 + m & - p^1 + i p^2 \\
+%- p^1 - i p^2 & \omega_\Bp+ p^3 + m
+%\end{bmatrix}.
+%\end{dmath}
 The matrix \( \sqrt{ p \cdot \osigma } \) has the same form, but we just have to flip the signs on our \( \Bp \)'s.
 
 We are now ready to plug in \( \zeta^{1\T} = (1,0), \zeta^{2\T} = (0,1), \eta^{1\T} = (1,0), \eta^{2\T} = (0,1) \) to find the explicit form of our \( u\)'s and \( v\)'s
@@ -161,6 +173,135 @@ v^2(p) &=
 This is now a convenient form to try the next symbolic manipulation task.  If nothing else this takes some of the mystery out of the original compact notation, since we see that the \( u,v \)'s are just \( 4 \) element column vectors, and we know their explicit form should we want them.
 
 Also note that in class we made a note that we should take the positive roots of the eigenvalue diagonal matrix.  It doesn't look like that is really required.  We need not even use the same sign for each root.  Squaring the resulting matrix root in the end will recover the original \( p \cdot \sigma \) matrix.
+
+\section{Compact representation of \( \sqrt{p \cdot \sigma}, \sqrt{p \cdot \osigma} \).}
+
+With the help of Mathematica,
+\cref{eqn:DiracUVmatricesExplicit:120} was found,
+a compact
+representation of the root of \( p \cdot \sigma \).
+A bit of examination shows that we can do much better.  The leading scalar term can be simplified by squaring it
+\begin{dmath}\label{eqn:squarerootpsigma:140}
+\lr{ \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} } }^2
+=
+\omega_\Bp- \Norm{\Bp} + \omega_\Bp+ \Norm{\Bp} + 2 \sqrt{ \omega_\Bp^2 - \Bp^2 }
+=
+2 \omega_\Bp + 2 m,
+\end{dmath}
+where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been inserted.  Using that again in the matrix, we have
+\begin{dmath}\label{eqn:squarerootpsigma:160}
+\sqrt{ p \cdot \sigma }
+=
+\inv{\sqrt{ 2 \omega_\Bp + 2 m }}
+\begin{bmatrix}
+\omega_\Bp- p^3 + m & - p^1 + i p^2 \\
+- p^1 - i p^2 & \omega_\Bp+ p^3 + m
+\end{bmatrix}
+=
+\inv{\sqrt{ 2 \omega_\Bp + 2 m }}
+\lr{
+   (\omega_\Bp + m) \sigma^0
+   -p^1 \PauliX
+   -p^2 \PauliY
+   -p^3 \PauliZ
+}
+=
+\inv{\sqrt{ 2 \omega_\Bp + 2 m }}
+\lr{
+   (\omega_\Bp + m) \sigma^0
+   -p^1 \sigma^1
+   -p^2 \sigma^2
+   -p^3 \sigma^3
+}
+=
+\inv{\sqrt{ 2 \omega_\Bp + 2 m }}
+\lr{
+   (\omega_\Bp + m) \sigma^0 - \Bsigma \cdot \Bp
+}.
+\end{dmath}
+
+We've now found a nice algebraic form for these matrix roots
+%\begin{dmath}\label{eqn:squarerootpsigma:180}
+\boxedEquation{eqn:squarerootpsigma:180}{
+\begin{aligned}
+\sqrt{p \cdot \sigma} &= \inv{\sqrt{ 2 \omega_\Bp + 2 m }} \lr{ m + p \cdot \sigma } \\
+\sqrt{p \cdot \osigma} &= \inv{\sqrt{ 2 \omega_\Bp + 2 m }} \lr{ m + p \cdot \osigma}.
+\end{aligned}
+}
+
+As a check, let's square one of these explicitly
+\begin{dmath}\label{eqn:squarerootpsigma:200}
+\lr{ \sqrt{p \cdot \sigma} }^2
+= \inv{2 \omega_\Bp + 2 m }
+\lr{ m^2 + (p \cdot \sigma)^2 + 2 m (p \cdot \sigma) }
+= \inv{2 \omega_\Bp + 2 m }
+\lr{ m^2 + (\omega_\Bp^2 - 2 \omega_\Bp \Bsigma \cdot \Bp + \Bp^2) + 2 m (p \cdot \sigma) }
+= \inv{2 \omega_\Bp + 2 m }
+\lr{ 2 \omega_\Bp^2 - 2 \omega_\Bp \Bsigma \cdot \Bp + 2 m (\omega_\Bp - \Bsigma \cdot \Bp) }
+= \inv{2 \omega_\Bp + 2 m }
+\lr{ 2 \omega_\Bp \lr{ \omega_\Bp + m }  - (2 \omega_\Bp + 2 m) \Bsigma \cdot \Bp }
+=
+\omega_\Bp - \Bsigma \cdot \Bp
+=
+p \cdot \sigma,
+\end{dmath}
+which validates the result.
+
+We can also put the spinor solutions \( u, v \) in a nice compact square-root-free format
+\boxedEquation{eqn:squarerootpsigma:220}{
+\begin{aligned}
+u(p) &= \inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+( m + p \cdot \sigma ) \zeta \\
+( m + p \cdot \osigma ) \zeta \\
+\end{bmatrix} \\
+v(p) &=
+\inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+( m + p \cdot \sigma ) \eta \\
+-( m + p \cdot \osigma ) \eta
+\end{bmatrix}.
+\end{aligned}
+}
+\Cref{eqn:squarerootpsigma:220} is probably a much nicer starting point for evaluating the various \( u, v, \ubar, \vbar \) product relationships.
+
+We now also know that we can return to \cref{eqn:DiracUVmatricesExplicit:140} and put the explicit (root-free) representation of the \( u, v \) spinors in a slightly tidier form
+\begin{dmath}\label{eqn:squarerootpsigma:240}
+\begin{aligned}
+u^1(p) &=
+\inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+\omega_\Bp- p^3 + m \\
+- p^1 - i p^2 \\
+\omega_\Bp+ p^3 + m \\
+ p^1 + i p^2 \\
+\end{bmatrix} \\
+u^2(p) &=
+\inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+ - p^1 + i p^2 \\
+ \omega_\Bp+ p^3 + m \\
+   p^1 - i p^2 \\
+ \omega_\Bp- p^3 + m \\
+\end{bmatrix} \\
+v^1(p) &=
+\inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+\omega_\Bp- p^3 + m \\
+- p^1 - i p^2 \\
+-\omega_\Bp- p^3 + m \\
+-p^1 - i p^2 \\
+\end{bmatrix} \\
+v^2(p) &=
+\inv{\sqrt{ 2 m + 2 \omega_\Bp }}
+\begin{bmatrix}
+ - p^1 + i p^2 \\
+ \omega_\Bp+ p^3 + m \\
+  -p^1 + i p^2 \\
+ -\omega_\Bp+ p^3 + m \\
+\end{bmatrix}.
+\end{aligned}
+\end{dmath}
 
 %}
 %\EndArticle

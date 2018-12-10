@@ -1,3 +1,7 @@
+ProblemSet4Problem1.tex
+ProblemSet4Problem2.tex
+ProblemSet4Problem3.tex
+ProblemSet4Problem4.tex
 ProblemSet1Problem1.tex
 ProblemSet1Problem2.tex
 ProblemSet1Problem3.tex
