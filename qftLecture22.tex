@@ -16,6 +16,12 @@
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{macros_cal} % LL
+\usepackage{slashed}
+
+%s/\\ultensor{\([^}]\+\)}{\([^}]\+\)}{\([^}]\+\)}/{{\1}^\2}_\3/g
+%s/ulLambda/ultensor{\\Lambda}/g
+\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
 \newcommand{\oPsi}[0]{\overbar{\Psi}}
@@ -109,7 +115,7 @@ Fermions have negative zero-point energy \( -4 \times \) that of real massive sc
 Supersymmetry transforms these into one another, and was thought to solve the cosmic constant problem.
 } % digression
 
-\section{Moving on.}
+\section{Hamiltonian action on single particle states.}
 
 We now switch notations, drop the tildes, and ignore the zero point energy
 \begin{dmath}\label{eqn:qftLecture22:520}
@@ -193,22 +199,157 @@ a_\Bp^{r\dagger} \ket{0}
 \end{dmath}
 The Hamiltonian has the expected energy operator characteristics.  This is also clearly the case for our \( b \) operators too.
 
-\section{Momentum.}
-Similarly
-\begin{dmath}\label{eqn:qftLecture22:160}
+\section{Spacetime translation symmetries.}
+
+%There's a ``use Noether's theorem'' comment associated with this.
+For the scalar field, using Noether's theorem, we identified the conserved charge of a spatial translation as the momentum operator
+\begin{dmath}\label{eqn:momentumDirac:40}
+P^i = \int d^3 x T^{0i} = - \int d^3 x \pi(x) \spacegrad \phi(x),
+\end{dmath}
+and if we plugged in the creation and anhillation operator representation of \( \pi, \phi \), out comes
+\begin{dmath}\label{eqn:momentumDirac:60}
 \BP =
-\int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \Bp
+\inv{2} \int \frac{d^3 q}{(2\pi)^3} \Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger},
+\end{dmath}
+(plus \( e^{\pm 2 i \omega_\Bp t} \) terms that we can argue away.)
+
+For the Dirac field, this works the same way if we systematically apply Noether's theorem.  In particular, for a spacetime translation
+\begin{dmath}\label{eqn:momentumDirac:80}
+x^\mu \rightarrow x^\mu + a^\mu,
+\end{dmath}
+we find
+\begin{dmath}\label{eqn:momentumDirac:100}
+\delta \Psi = -a^\mu \partial_\mu \Psi,
+\end{dmath}
+so for the Dirac Lagrangian, we have
+\begin{dmath}\label{eqn:momentumDirac:120}
+\delta \LL
+= \delta \lr{ \oPsi \lr{ i \gamma^\mu \partial_\mu - m } \Psi }
+=
+(\delta \oPsi) \lr{ i \gamma^\mu \partial_\mu - m } \Psi
++
+\oPsi \lr{ i \gamma^\mu \partial_\mu - m } \delta \Psi
+=
+(-a^\sigma \partial_\sigma \oPsi) \lr{ i \gamma^\mu \partial_\mu - m } \Psi
++
+\oPsi \lr{ i \gamma^\mu \partial_\mu - m } (-a^\sigma \partial_\sigma \Psi )
+=
+-a^\sigma \partial_\sigma \LL
+=
+\partial_\sigma (-a^\sigma \LL),
+\end{dmath}
+i.e. \( J^\mu = -a^\mu \LL \).
+To plugging this into the Noether current calculating machine, we have
+\begin{dmath}\label{eqn:momentumDirac:160}
+\PD{(\partial_\mu \Psi)}{\LL}
+=
+\PD{(\partial_\mu \Psi)}{} \lr{ \oPsi i \gamma^\sigma \partial_\sigma \Psi - m \oPsi \Psi }
+=
+\oPsi i \gamma^\mu,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:momentumDirac:180}
+\PD{(\partial_\mu \oPsi)}{\LL} = 0,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:momentumDirac:140}
+j^\mu
+=
+(\delta \oPsi) \PD{(\partial_\mu \oPsi)}{\LL}
++
+\PD{(\partial_\mu \Psi)}{\LL} (\delta \Psi)
+- a^\mu \LL
+=
+\oPsi i \gamma^\mu (-a^\sigma \partial_\sigma \Psi)
+- a^\sigma \ulDelta{\mu}{\sigma} \LL
+=
+- a^\sigma
 \lr{
-   a_\Bp^{s \dagger} a_\Bp^s
+   \oPsi i \gamma^\mu \partial_\sigma \Psi
+   + \ulDelta{\mu}{\sigma} \LL
+}
+=
+-a_\nu
+\lr{
+   \oPsi i \gamma^\mu \partial^\nu \Psi
+   + g^{\mu\nu} \LL
+}.
+\end{dmath}
+
+We can now define an energy-momentum tensor
+\begin{dmath}\label{eqn:momentumDirac:200}
+T^{\mu\nu}
+=
+   \oPsi i \gamma^\mu \partial^\nu \Psi
+   + g^{\mu\nu} \LL.
+\end{dmath}
+A couple things are of notable in this tensor.  One is that it is not symmetric, and there's doesn't appear to be any hope
+of making it so.  For example, the space+time components are way different
+\begin{dmath}\label{eqn:momentumDirac:220}
+\begin{aligned}
+T^{0k} &= \oPsi i \gamma^0 \partial^k \Psi \\
+T^{k0} &= \oPsi i \gamma^k \partial^0 \Psi,
+\end{aligned}
+\end{dmath}
+so if we want a momentum like creature, we have to use \( T^{0k} \), not \( T^{k0} \).  The charge associated with that current is
+\begin{dmath}\label{eqn:momentumDirac:240}
+Q^k
+=
+\int d^3 x
+\oPsi i \gamma^0 \partial^k \Psi
+=
+\int d^3 x
+\Psi^\dagger (-i \partial_k) \Psi,
+\end{dmath}
+or translating from component to vector form
+\begin{dmath}\label{eqn:momentumDirac:260}
+\BP =
+\int d^3 x
+\Psi^\dagger (-i \spacegrad) \Psi,
+\end{dmath}
+which is the how the momentum operator is first stated in \citep{peskin1995introduction}.  Here the vector notation doesn't have any specific representation, but it is interesting to observe how this is directly related to the massless Dirac Lagrangian
+
+\begin{dmath}\label{eqn:momentumDirac:280}
+\LL(m = 0)
+=
+\oPsi i \gamma^\mu \partial_\mu \Psi
+=
+\Psi^\dagger i \gamma^\mu \partial_\mu \Psi
+=
+\Psi^\dagger i (\partial_0 + \gamma_0 \gamma^k \partial_k) \Psi
+=
+\Psi^\dagger i (\partial_0 - \gamma_0 \gamma_k \partial_k ) \Psi,
+\end{dmath}
+but since \( \gamma_0 \gamma_k \) is a \( 4 \times 4 \) representation of the Pauli matrix \( \sigma_k \)\footnote{There is ambiguity as to what order of products \( \gamma_0 \gamma_k \), or \( \gamma_k \gamma_0 \) to pick to represent the Pauli basis (\citep{doran2003gap} uses \( \gamma_k \gamma_0 \)), but we also have sign ambiguity in assembling a Noether charge from the conserved current, so I don't think that matters.}
+Lagrangian itself breaks down into
+\begin{dmath}\label{eqn:momentumDirac:300}
+\LL(m = 0)
+=
+\Psi^\dagger i \partial_0 \Psi
++
+\Bsigma \cdot \lr{ \Psi^\dagger (-i\spacegrad) \Psi },
+\end{dmath}
+components, and lo and behold, out pops the momentum operator density!  Some part of this should be expected this since the Dirac equation in momentum space is just \( (\slashed{p} - m)e^{-i p \cdot x} = 0 \), so there is an intimate connection with the operator portion and momentum.
+
+It can apparently be shown that the result of expanding
+\cref{eqn:momentumDirac:260} to \cref{eqn:momentumDirac:20} using the \( a, b\) representation of the field produces
+\begin{dmath}\label{eqn:momentumDirac:20}
+\BP = \sum_{s = 1}^2
+\int \frac{d^3 q}{(2\pi)^3} \Bp \lr{
+   a_\Bp^{s\dagger}
+   a_\Bp^{s}
    +
-   b_\Bp^{s \dagger} b_\Bp^s
+   b_\Bp^{s\dagger}
+   b_\Bp^{s}
 },
 \end{dmath}
-gives
+which is an energy eigenoperator for a single particle momentum state
 \begin{dmath}\label{eqn:qftLecture22:180}
 \BP a_\Bq^{s\dagger} \ket{0} = \omega_\Bq (a_\Bq^{s\dagger} \ket{0}).
 \end{dmath}
-FIXME: show.
+FIXME: show!
+
+\section{Rotation symmetries: angular momentum operator.}
 
 Under Lorentz transformation, including rotations:
 \begin{dmath}\label{eqn:qftLecture22:200}
@@ -254,6 +395,7 @@ J^3 b_\Bp^{s\dagger} \ket{0} = \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\
 Roughly speaking, we can characterize these as opposite signed projections of the 3rd component of angular momentum.
 FIXME: check these too.
 
+\section{\(U(1)_V\) symmetry: charge!}
 We also have a \( U(1) \) global symmetry which implies charge.  If we let
 \begin{dmath}\label{eqn:qftLecture22:320}
 \begin{aligned}
@@ -299,26 +441,13 @@ This charge operator characterizes the \( a, b \) operators.  \( a \) particles 
 \end{itemize}
 Each come with spin up and down variations.
 
-\makedigression{
-Left to us to study up on the interesting stories of
-
-\begin{itemize}
-\item time reversal
-\item parity
-\item charge conjugation
-\end{itemize}
-
-Each of these can be studied as separate symmetries.  References include \citep{peskin1995introduction},
-\citep{TongQFT}, and
-\citep{LukeQFT}.
-} % digression
-
-There are two sets of \( U(1) \) symmetries, the first called a vector symmetry
+\section{\(U(1)_A\) symmetry: what was the charge for this one called?}
+There are two sets of \( U(1) \) symmetries, the first called a vector symmetry (above)
 \begin{equation}\label{eqn:qftLecture22:400}
 U(1)_V : \Psi \rightarrow e^{i \alpha } \Psi,
 \end{equation}
 where \( \alpha \) is scalar valued.
-The other \( U(1) \) symmetry is called an axial symmetry\footnote{It was apparently pointed out in class (I didn't attend) that we should recall that for \( m = 0 \) electrons and positrons separate, obeying separate equations.  I'm not sure how that is connected to this symmetry.}
+The other \( U(1) \) symmetry is called an axial symmetry\footnote{It was apparently pointed out in class that we should recall that for \( m = 0 \) electrons and positrons separate, obeying separate equations.  I'm not sure how that is connected to this symmetry, nor what that really means.}
 \begin{equation}\label{eqn:qftLecture22:420}
 U(1)_A : \Psi \rightarrow e^{i \alpha \gamma_5 } \Psi,
 \end{equation}
@@ -359,6 +488,19 @@ e^{2 i \alpha \gamma_5} \Psi,
 \end{dmath}
 FIXME: show.
 We see that the axial \( U(1) \) transformation is only a symmetry when \( m \ne 0 \) and \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
+
+\section{CPT symmetries}
+Left to us to study up on the interesting stories of
+
+\begin{itemize}
+\item time reversal
+\item parity
+\item charge conjugation
+\end{itemize}
+
+Each of these can be studied as separate symmetries.  References include \citep{peskin1995introduction},
+\citep{TongQFT}, and
+\citep{LukeQFT}.
 
 %}
 \EndArticle

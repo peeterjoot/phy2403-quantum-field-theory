@@ -1,16 +1,18 @@
+- periods ending sections, chapters, figure labels, ...
+
 - standarize on \pi, not \Pi.
 
 - use one of \Abs{\Bp} or \Norm{\Bp} for vector magnitude, but not both (as I believe I'm doing).
 
-- incorporate: momentumDirac.tex, DiracUVmatricesExplicit.tex
-
-   (as appendix or digression)
-
-   -- work the problem of finding 3.105 from 3.99/3.100.
+- work the problem of finding 3.105 from 3.99/3.100. (Dirac momentum operator)
 
 - l22: 
 
-   Go through emily's notes and merge with Stefan's.
+   Go through emily's notes and merge with Stefan's (ongoing).
+
+   Post those when done, and send FB messenger links to each of them.
+
+   Credit them in the preface.
 
 - l23:
   

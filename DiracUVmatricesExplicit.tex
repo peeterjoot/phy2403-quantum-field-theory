@@ -3,33 +3,33 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{DiracUVmatricesExplicit}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\newcommand{\osigma}[0]{\overbar{\sigma}}
-\newcommand{\oPsi}[0]{\overbar{\Psi}}
-
-\beginArtNoToc
-
-\generatetitle{Explicit expansion of the Dirac u,v matrices}
-%\chapter{Explicit expansion of the Dirac u,v matrices}
-%\label{chap:DiracUVmatricesExplicit}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{DiracUVmatricesExplicit}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\newcommand{\osigma}[0]{\overbar{\sigma}}
+%\newcommand{\oPsi}[0]{\overbar{\Psi}}
+%
+%\beginArtNoToc
+%
+%\generatetitle{Explicit expansion of the Dirac u,v spinors}
+%\chapter{Explicit expansion of the Dirac u,v spinors}
+\label{chap:DiracUVmatricesExplicit}
 
 We found that the solution of the \( u(p), v(p) \) matrices were
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:20}
@@ -64,13 +64,13 @@ It happens that \( 2 \times 2 \) matrices can be square-rooted symbolically (FIX
 \begin{aligned}
 e_1 &=
 \begin{bmatrix}
-- p_x + i p_y \\
-p_z + \Norm{\Bp}
+- p^1 + i p^2 \\
+p^3 + \Norm{\Bp}
 \end{bmatrix} \\
 e_1 &=
 \begin{bmatrix}
-- p_x + i p_y \\
-p_z - \Norm{\Bp}
+- p^1 + i p^2 \\
+p^3 - \Norm{\Bp}
 \end{bmatrix}.
 \end{aligned}
 \end{dmath}
@@ -91,10 +91,10 @@ U =
 e_1' & e_2'
 \end{bmatrix}
 =
-\inv{ \sqrt{ 2 \Bp^2 + 2 p_z \Norm{\Bp} } }
+\inv{ \sqrt{ 2 \Bp^2 + 2 p^3 \Norm{\Bp} } }
 \begin{bmatrix}
--p_x + i p_y & -p_x + i p_y \\
-p_z + \Norm{\Bp} & p_z - \Norm{\Bp}
+-p^1 + i p^2 & -p^1 + i p^2 \\
+p^3 + \Norm{\Bp} & p^3 - \Norm{\Bp}
 \end{bmatrix}.
 \end{dmath}
 
@@ -107,8 +107,8 @@ Letting Mathematica churn through the matrix products
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } & - p_x + i p_y \\
-- p_x - i p_y & \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 }
+\omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } & - p^1 + i p^2 \\
+- p^1 - i p^2 & \omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 }
 \end{bmatrix}.
 \end{dmath}
 The matrix \( \sqrt{ p \cdot \osigma } \) has the same form, but we just have to flip the signs on our \( \Bp \)'s.
@@ -121,40 +121,40 @@ u^1(p) &=
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
-- p_x - i p_y \\
-\omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
- p_x + i p_y \\
+\omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+- p^1 - i p^2 \\
+\omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+ p^1 + i p^2 \\
 \end{bmatrix} \\
 u^2(p) &=
 \inv{
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
- - p_x + i p_y \\
- \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
-   p_x - i p_y \\
- \omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+ - p^1 + i p^2 \\
+ \omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+   p^1 - i p^2 \\
+ \omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 \end{bmatrix} \\
 v^1(p) &=
 \inv{
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
-\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
-- p_x - i p_y \\
--\omega_\Bp- p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
--p_x - i p_y \\
+\omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+- p^1 - i p^2 \\
+-\omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+-p^1 - i p^2 \\
 \end{bmatrix} \\
 v^2(p) &=
 \inv{
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
 }
 \begin{bmatrix}
- - p_x + i p_y \\
- \omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
-  -p_x + i p_y \\
- -\omega_\Bp+ p_z + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+ - p^1 + i p^2 \\
+ \omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
+  -p^1 + i p^2 \\
+ -\omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 \end{bmatrix}.
 \end{aligned}
 \end{dmath}
@@ -163,4 +163,4 @@ This is now a convenient form to try the next symbolic manipulation task.  If no
 Also note that in class we made a note that we should take the positive roots of the eigenvalue diagonal matrix.  It doesn't look like that is really required.  We need not even use the same sign for each root.  Squaring the resulting matrix root in the end will recover the original \( p \cdot \sigma \) matrix.
 
 %}
-\EndArticle
+%\EndArticle
