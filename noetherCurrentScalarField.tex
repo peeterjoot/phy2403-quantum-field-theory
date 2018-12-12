@@ -45,41 +45,41 @@ First, from the Noether current for the scalar field Lagrangian in question, wha
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:40}
 T^{\mu \nu}
-= \Pi^\mu \partial^\nu \phi - g^{\mu \nu} \LL
-= \Pi^\mu \partial^\nu \phi - g^{\mu \nu} \inv{2} \lr{ \partial_\alpha \phi \partial^\alpha \phi - \mu^2 \phi^2 }
-= \Pi^\mu \Pi^\nu - g^{\mu \nu} \inv{2} \lr{ \Pi_\alpha \Pi^\alpha - \mu^2 \phi^2 }
-= \Pi^\mu \Pi^\nu - \inv{2} g^{\mu \nu} g_{\alpha\beta} \Pi^\beta \Pi^\alpha + \inv{2} g^{\mu \nu} \mu^2 \phi^2.
+= \pi^\mu \partial^\nu \phi - g^{\mu \nu} \LL
+= \pi^\mu \partial^\nu \phi - g^{\mu \nu} \inv{2} \lr{ \partial_\alpha \phi \partial^\alpha \phi - \mu^2 \phi^2 }
+= \pi^\mu \pi^\nu - g^{\mu \nu} \inv{2} \lr{ \pi_\alpha \pi^\alpha - \mu^2 \phi^2 }
+= \pi^\mu \pi^\nu - \inv{2} g^{\mu \nu} g_{\alpha\beta} \pi^\beta \pi^\alpha + \inv{2} g^{\mu \nu} \mu^2 \phi^2.
 \end{dmath}
 
 Consider some special cases for the indexes.  For \( \mu = \nu = 0 \), the result is the Hamiltonian density
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:200}
 T^{00}
-= \Pi^0 \Pi^0 - \inv{2} g^{0 0} \Pi_\alpha \Pi^\alpha + \inv{2} g^{0 0} \mu^2 \phi^2
-= \Pi^0 \Pi^0 - \inv{2} \Pi_\alpha \Pi^\alpha + \inv{2} \mu^2 \phi^2
-= \inv{2} \Pi^0 \Pi^0 - \inv{2} \Pi_n \Pi^n + \inv{2} \mu^2 \phi^2
-= \inv{2} \Pi^2 + \inv{2} (\spacegrad \phi)^2 + \inv{2} \mu^2 \phi^2,
+= \pi^0 \pi^0 - \inv{2} g^{0 0} \pi_\alpha \pi^\alpha + \inv{2} g^{0 0} \mu^2 \phi^2
+= \pi^0 \pi^0 - \inv{2} \pi_\alpha \pi^\alpha + \inv{2} \mu^2 \phi^2
+= \inv{2} \pi^0 \pi^0 - \inv{2} \pi_n \pi^n + \inv{2} \mu^2 \phi^2
+= \inv{2} \pi^2 + \inv{2} (\spacegrad \phi)^2 + \inv{2} \mu^2 \phi^2,
 \end{dmath}
 
-where \( \Pi^2 = (\partial_0 \phi)^2 \ne \partial^2 \phi \).  For any \( \mu \ne \nu \) the off diagonal metric elements are zero, leaving just
+where \( \pi^2 = (\partial_0 \phi)^2 \ne \partial^2 \phi \).  For any \( \mu \ne \nu \) the off diagonal metric elements are zero, leaving just
 \begin{dmath}\label{eqn:noetherCurrentScalarField:220}
-T^{\mu\nu} = \Pi^\mu \Pi^\nu.
+T^{\mu\nu} = \pi^\mu \pi^\nu.
 \end{dmath}
 
 Finally, when \( n \ne 0 \), the remaining diagonal terms are
 \begin{dmath}\label{eqn:noetherCurrentScalarField:240}
 T^{nn}
-= \Pi^n \Pi^n - \inv{2} g^{n n} \Pi_\alpha \Pi^\alpha + \inv{2} g^{n n} n^2 \phi^2
-= \Pi^n \Pi^n + \inv{2} \Pi_\alpha \Pi^\alpha - \inv{2} \mu^2 \phi^2
-= \inv{2} \Pi^2 + \Pi^n \Pi^n - \inv{2} \Pi^m \Pi^m - \inv{2} \mu^2 \phi^2
-= \inv{2} \Pi^2 + \inv{2} \Pi^n \Pi^n - \inv{2} \sum_{m\ne n,0} \Pi^m \Pi^m - \inv{2} \mu^2 \phi^2
-= \inv{2} \sum_{m = n,0} \Pi^m \Pi^m - \inv{2} \sum_{m\ne n,0} \Pi^m \Pi^m - \inv{2} \mu^2 \phi^2.
+= \pi^n \pi^n - \inv{2} g^{n n} \pi_\alpha \pi^\alpha + \inv{2} g^{n n} n^2 \phi^2
+= \pi^n \pi^n + \inv{2} \pi_\alpha \pi^\alpha - \inv{2} \mu^2 \phi^2
+= \inv{2} \pi^2 + \pi^n \pi^n - \inv{2} \pi^m \pi^m - \inv{2} \mu^2 \phi^2
+= \inv{2} \pi^2 + \inv{2} \pi^n \pi^n - \inv{2} \sum_{m\ne n,0} \pi^m \pi^m - \inv{2} \mu^2 \phi^2
+= \inv{2} \sum_{m = n,0} \pi^m \pi^m - \inv{2} \sum_{m\ne n,0} \pi^m \pi^m - \inv{2} \mu^2 \phi^2.
 \end{dmath}
 
 The canonical momenta are
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:60}
-\Pi^\mu
+\pi^\mu
 =
 \partial^\mu
 \int \frac{d^3 k}{(2\pi)^{3/2} \sqrt{ 2 \omega_k }} \lr{ a_{\Bk} e^{-i k \cdot x} + a_{\Bk}^\dagger e^{i k \cdot x} },
@@ -96,7 +96,7 @@ i k^\mu \exp\lr{ i k \cdot x },
 
 so
 \begin{dmath}\label{eqn:noetherCurrentScalarField:100}
-\Pi^\mu
+\pi^\mu
 =
 i
 \int \frac{d^3 k k^\mu}{(2\pi)^{3/2} \sqrt{ 2 \omega_k }} \lr{ - a_{\Bk} e^{-i k \cdot x} + a_{\Bk}^\dagger e^{i k \cdot x} }
@@ -116,7 +116,7 @@ e^{ i \Bk \cdot \Bx}
 
 This gives
 \begin{dmath}\label{eqn:noetherCurrentScalarField:120}
-\int d^3 x \Pi^\mu \Pi^\nu
+\int d^3 x \pi^\mu \pi^\nu
 =
 -
 \inv{2}
@@ -196,8 +196,8 @@ Further reduction of the leading \( k^\mu p^\nu \) term has a sign that depends 
 First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:140}
-\int d^3 x \Pi^\mu \Pi^0 =
-\int d^3 x \Pi^0 \Pi^\mu
+\int d^3 x \pi^\mu \pi^0 =
+\int d^3 x \pi^0 \pi^\mu
 =
 -\inv{2}
 \int d^3 k k^\mu
@@ -331,7 +331,7 @@ a_{\Bk}^\dagger
 For \( \mu = m \ne 0 \), and \( \nu = n \ne 0 \), we have
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:620}
-\int d^3 x \Pi^m \Pi^n
+\int d^3 x \pi^m \pi^n
 =
 \inv{2}
 \int d^3 k \frac{ k^m k^n }{\omega_k}
@@ -352,7 +352,7 @@ TODO: some stuff is wrong here.
 For \( \nu \ne 0 \)
 
 \begin{dmath}\label{eqn:noetherCurrentScalarField:160}
-\int d^3 x \Pi^\mu \Pi^\nu
+\int d^3 x \pi^\mu \pi^\nu
 =
 -\inv{2}
 \int d^3 k \frac{k^\mu k^\nu}{\omega_k}
@@ -378,7 +378,7 @@ Here's a summary of these products
 \begin{subequations}
 \label{eqn:noetherCurrentScalarField:260}
 \begin{dmath}\label{eqn:noetherCurrentScalarField:300}
-\int d^3 x \Pi^0 \Pi^0
+\int d^3 x \pi^0 \pi^0
 =
 -\inv{2}
 \int d^3 k \omega_k
@@ -390,8 +390,8 @@ Here's a summary of these products
 },
 \end{dmath}
 \begin{dmath}\label{eqn:noetherCurrentScalarField:280}
-\int d^3 x \Pi^n \Pi^0
-= \int d^3 x \Pi^0 \Pi^n
+\int d^3 x \pi^n \pi^0
+= \int d^3 x \pi^0 \pi^n
 =
 -\inv{2}
 \int d^3 k k^n
@@ -403,7 +403,7 @@ Here's a summary of these products
 },
 \end{dmath}
 %\begin{dmath}\label{eqn:noetherCurrentScalarField:320}
-%\int d^3 x \Pi^n \Pi^n
+%\int d^3 x \pi^n \pi^n
 %=
 % \inv{2}
 %\int d^3 k \frac{k^n k^n}{\omega_k}
@@ -415,7 +415,7 @@ Here's a summary of these products
 %},
 %\end{dmath}
 \begin{dmath}\label{eqn:noetherCurrentScalarField:340}
-\int d^3 x \Pi^m \Pi^n
+\int d^3 x \pi^m \pi^n
 =
 \inv{2}
 \int d^3 k \frac{k^m k^n}{\omega_k}
@@ -465,7 +465,7 @@ The other diagonal components, for \( r \ne s \ne t \) are
 =
 \int d^3 x
 \lr{
-\inv{2} \sum_{m = r,0} \Pi^m \Pi^m - \inv{2} \sum_{m = s,t} \Pi^m \Pi^m - \inv{2} \mu^2 \phi^2
+\inv{2} \sum_{m = r,0} \pi^m \pi^m - \inv{2} \sum_{m = s,t} \pi^m \pi^m - \inv{2} \mu^2 \phi^2
 }
 =
 \inv{4}

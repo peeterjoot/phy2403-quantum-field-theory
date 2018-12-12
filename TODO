@@ -1,3 +1,16 @@
+- It wasn't clear to me how we switched from equal time (t = 0) scalar \phi representation to the
+   Lorentz invariant notation.  This is really a switch to the Hiesenberg picture.  Osborne makes that explicit here:
+
+      https://youtu.be/1aujG95k35M?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS&t=818
+
+   (lecture 6)
+
+   [implicit use of the BCH theorem in a way that may not have been obvious -- not sure he'd introduced that.]
+
+   -- also in that lecture: he provides an experimental motivation for why we'd care about <0| [phi(x) \phi(y)] |0>
+      (differences of two point correlation functions) in the first place.  I didn't understand all the steps in that discussion, but
+      you at least understand that measurement results in exactly those commutators.
+
 - periods ending sections, chapters, figure labels, ...
 
 - standarize on \pi, not \Pi.
