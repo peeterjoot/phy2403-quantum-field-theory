@@ -345,98 +345,159 @@ The momentum operator can be written as
 \end{equation*}
 } % theorem
 
-To show this, we can plug in the field representations (\citep{peskin1995introduction} eq. 3.99, 3.100)
+The following is an attempt to show this, but it ends up with sign error that I've had trouble identifying.
+
+Starting with the field representations (\citep{peskin1995introduction} eq. 3.99, 3.100)
 \begin{dmath}\label{eqn:qftLecture22:580}
 \begin{aligned}
 \Psi(x) &= \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}} \sum_{s = 1}^2
 \lr{ a_\Bp^s u^s(p) e^{-i p \cdot x} + b_\Bp^{s \dagger} v^s(p) e^{i p \cdot x} } \\
 \oPsi(x) &= \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq}} \sum_{r = 1}^2
-\lr{ b_\Bq^r \vbar^r(q) e^{-i q \cdot x} + a_\Bq^{s \dagger} \ubar^r(q) e^{i q \cdot x} },
+\lr{ b_\Bq^r \vbar^r(q) e^{-i q \cdot x} + a_\Bq^{r \dagger} \ubar^r(q) e^{i q \cdot x} },
 \end{aligned}
 \end{dmath}
-to find
+we get
 \begin{dmath}\label{eqn:qftLecture22:600}
+\begin{aligned}
 P^k
-=
+&=
+-i \int \Psi^\dagger \partial^k \Psi \\
+&=
 -i \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq }} \sum_{r,s = 1}^2
 \lr{
    b_\Bq^r
    \vbar^r(q)
    e^{-i q \cdot x}
 +
-   a_\Bq^{s \dagger}
+   a_\Bq^{r \dagger}
    \ubar^r(q)
    e^{i q \cdot x}
 }
 \gamma^0
-(i p_k)
+(i p^k)
 \lr{
+-
    a_\Bp^s
    u^s(p)
    e^{-i p \cdot x}
--
++
    b_\Bp^{s \dagger}
    v^s(p)
    e^{i p \cdot x}
-}
-=
-\int \frac{d^3 p}{ (2 \pi)^3 2 \omega_\Bp } \sum_{r,s = 1}^2
-\lr{
+} \\
+&=
+\int \frac{d^3 p}{ (2 \pi)^3 2 \omega_\Bp }
+p^k
+\sum_{r,s = 1}^2
+\biglr{
 -  b_{-\Bq}^r
    a_\Bp^s
    \vbar^r(-\Bp)
    \gamma^0
    u^s(\Bp)
    e^{-2 i \omega_\Bp t}
--
++
+   a_{-\Bq}^{r \dagger}
+   b_\Bp^{s \dagger}
+   \ubar^r(-\Bp)
+   \gamma^0
+   v^s(\Bp)
+   e^{2 i \omega_\Bp t} \\
+&\qquad
++
    b_\Bp^r
    b_\Bp^{s \dagger}
    \vbar^r(\Bp)
    \gamma^0
    v^s(\Bp)
-+
-   a_\Bp^{s \dagger}
+-
+   a_\Bp^{r \dagger}
    a_\Bp^s
    \ubar^r(\Bp)
    \gamma^0
    u^s(\Bp)
--
-   a_{-\Bq}^{s \dagger}
-   b_\Bp^{s \dagger}
-   \ubar^r(-\Bp)
-   \gamma^0
-   v^s(\Bp)
-   e^{2 i \omega_\Bp t}
-}
+}.
+\end{aligned}
 \end{dmath}
 The frequency dependent cross terms are killed by the orthogonality conditions
 %FIXME: \cref{thm:qftLecture21:1261}
-\( v^{r \dagger}(-\Bp) u^s(\Bp) = u^{r\dagger}(\Bp) v^s(-\Bp) = 0\)\footnote{For the KG field we had to work much harder to argue those cross terms away in the momentum operator.}, and the rest simplify using
+\( v^{r \dagger}(-\Bp) u^s(\Bp) = u^{r\dagger}(\Bp) v^s(-\Bp) = 0\)
+%\footnote{For the KG field we had to work much harder to argue those cross terms away in the momentum operator.}
+, and the rest simplify using
 %FIXME: \cref{eqn:qftLecture21:1200}
 \( u^{r\dagger}(\Bp) u^s(\Bp) = v^{r\dagger}(\Bp) v^s(\Bp) = 2 \omega_\Bp \delta^{sr} \), leaving
 \begin{dmath}\label{eqn:qftLecture22:620}
 P^k
 =
-\int \frac{d^3 p}{ (2 \pi)^3 } \sum_{r = 1}^2
+\int \frac{d^3 p}{ (2 \pi)^3 }
+p^k
+\sum_{r = 1}^2
 \lr{
 \lr{
+-
    b_\Bp^{r \dagger}
    b_\Bp^r
--
++
 (2\pi)^3 \deltathree(0)
 }
-+
+-
    a_\Bp^{r \dagger}
    a_\Bp^r
 }.
 \end{dmath}
-Discarding the vacuum energy term completes the proof.
 
-The momentum operator is also an energy eigenoperator for a single particle momentum state
-\begin{dmath}\label{eqn:qftLecture22:180}
-\BP a_\Bq^{s\dagger} \ket{0} = \omega_\Bq (a_\Bq^{s\dagger} \ket{0}).
+This has a vacuum term that can be ignored, but I still end up with an overall sign error?
+
+\maketheorem{Momentum operator eigenvalues.}{thm:qftLecture22:640}{
+The eigenvalues of the momentum operator with respect to single particle momentum states are just those momenta
+\begin{equation*}
+\BP a_\Bq^{s\dagger} \ket{0} = \Bq (a_\Bq^{s\dagger} \ket{0}).
+\end{equation*}
+} % theorem
+
+Here's a partial proof, introducing a state associated with a Fermion creation operator
+\begin{dmath}\label{eqn:qftLecture22:660}
+\ket{\Bq, r} = \sqrt{ 2 \omega_\Bq } a_\Bq^{r\dagger} \ket{0}.
 \end{dmath}
-FIXME: show!
+The action of the momentum operator on such as state is
+\begin{dmath}\label{eqn:qftLecture22:680}
+\BP
+\ket{\Bq, r}
+=
+\sum_{r = 1}^2
+\int \frac{d^3 p}{ (2 \pi)^3 }
+\Bp
+\lr{
+   b_\Bp^{r \dagger}
+   \cancel{b_\Bp^r}
++
+   a_\Bp^{r \dagger}
+   a_\Bp^r
+}
+\sqrt{ 2 \omega_\Bq } a_\Bq^{r\dagger} \ket{0}
+=
+\sum_{r = 1}^2
+\int \frac{d^3 p}{ (2 \pi)^3 }
+\Bp
+   a_\Bp^{r \dagger}
+\lr{
+   - a_\Bq^{r\dagger}
+   a_\Bp^r
++
+   \delta^{rs} (2 \pi)^3 \deltathree( \Bq - \Bp)
+}
+\sqrt{ 2 \omega_\Bq }
+\ket{0}
+=
+\Bq
+   a_\Bq^{r \dagger}
+\sqrt{ 2 \omega_\Bq }
+\ket{0}
+=
+\Bq
+\ket{\Bq, r}.
+\end{dmath}
+Clearly the same argument holds for antifermion states.
 
 \section{Rotation symmetries: angular momentum operator.}
 
@@ -512,7 +573,38 @@ Q
 = \int d^3x J^0
 = \int d^3x \oPsi \gamma^0 \Psi
 = \int d^3x \Psi^\dagger \Psi
-= \int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2
+=
+\int \frac{d^3 p}{ (2 \pi)^3 2 \omega_\Bp }
+\sum_{r,s = 1}^2
+\biglr{
++  b_{-\Bq}^r
+      a_\Bp^s
+   \vbar^r(-\Bp)
+   \gamma^0
+   u^s(\Bp)
+   e^{-2 i \omega_\Bp t}
++
+   a_{-\Bq}^{r \dagger}
+   b_\Bp^{s \dagger}
+   \ubar^r(-\Bp)
+   \gamma^0
+   v^s(\Bp)
+   e^{2 i \omega_\Bp t} \\
++
+   b_\Bp^r
+   b_\Bp^{s \dagger}
+   \vbar^r(\Bp)
+   \gamma^0
+   v^s(\Bp)
++
+   a_\Bp^{r \dagger}
+   a_\Bp^s
+   \ubar^r(\Bp)
+   \gamma^0
+   u^s(\Bp)
+}
+=
+\int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2
 \lr{
    a_\Bp^{s \dagger} a_\Bp^s
    -
@@ -520,7 +612,8 @@ Q
    b_\Bp^s
 },
 \end{dmath}
-where we dropped the charge associated with the Dirac sea.
+where the expansion of \( \Psi^\dagger \Psi \) was lifted from \cref{eqn:qftLecture22:600} (removing the \( p^k \)'s and flipping all signs positive),
+and where any charge associated with the Dirac sea has been dropped.
 
 This charge operator characterizes the \( a, b \) operators.  \( a \) particles have charge \( +1 \), and \( b \) particles have charge \( -1 \), or vice-versa depending on convention.
 
@@ -552,20 +645,48 @@ where
 0 & 1
 \end{bmatrix}.
 \end{equation}
+FIXME: link to uvspinor.nb
 
-Observe that \( \gamma_5^\dagger = \gamma_5 \).  It can also be shown that
-\begin{dmath}\label{eqn:qftLecture22:460}
-\antisymmetric{\gamma_5}{\gamma^\mu} = 0.
+Observe that \( \gamma_5^\dagger = \gamma_5 \)
+\begin{dmath}\label{eqn:qftLecture22:700}
+\gamma_5^\dagger
+=
+-i
+\gamma_3^\dagger
+\gamma_2^\dagger
+\gamma_1^\dagger
+\gamma_0
+=
+-i
+\gamma^0 \gamma_3 \gamma^0
+\gamma^0 \gamma_2 \gamma^0
+\gamma^0 \gamma_1 \gamma^0
+\gamma_0
+=
+-i
+\gamma^0 \gamma_3
+\gamma_2
+\gamma_1
+= \gamma^5.
 \end{dmath}
+It can also be shown that
+\begin{dmath}\label{eqn:qftLecture22:460}
+\symmetric{\gamma_5}{\gamma^\mu} = 0.
+\end{dmath}
+FIXME: link to uvspinor.nb
+
 Under this transformation
 \begin{dmath}\label{eqn:qftLecture22:480}
 \oPsi i \gamma^\mu \partial_\mu \Psi
 \rightarrow
 \lr{ \Psi^\dagger e^{-i \alpha \gamma_5 } \gamma^0} i \gamma^\mu \partial_\mu \lr{ e^{i \alpha \gamma_5 } \Psi }
 =
-\Psi^\dagger \gamma^0 i \partial_\mu \Psi
+\lr{ \Psi^\dagger \gamma^0 e^{ i \alpha \gamma_5 } } i e^{-i \alpha \gamma_5 } \gamma^\mu \partial_\mu \Psi
+=
+\Psi^\dagger \gamma^0 i \gamma^\mu \partial_\mu \Psi,
 \end{dmath}
-FIXME: show.
+since the anticommutator property \cref{eqn:qftLecture22:460} implies \( e^{i \alpha \gamma_5 } \gamma^\mu = \gamma^\mu e^{-i\alpha \gamma_5} \).
+
 Also
 \begin{dmath}\label{eqn:qftLecture22:500}
 m \oPsi \Psi
@@ -575,8 +696,7 @@ m \lr{ \Psi^\dagger e^{-i \alpha \gamma_5 }} \gamma^0 \lr{ e^{i \alpha \gamma_5 
 m \oPsi
 e^{2 i \alpha \gamma_5} \Psi,
 \end{dmath}
-FIXME: show.
-We see that the axial \( U(1) \) transformation is only a symmetry when \( m \ne 0 \) and \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
+We see that for \( m \ne 0 \) the axial \( U(1) \) transformation is only a symmetry when \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
 
 \section{CPT symmetries}
 Left to us to study up on the interesting stories of
