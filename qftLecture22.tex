@@ -345,9 +345,25 @@ The momentum operator can be written as
 \end{equation*}
 } % theorem
 
-The following is an attempt to show this, but it ends up with sign error that I've had trouble identifying.
+To derive this, we have to assign meaning to \( \BP = \int \Psi^\dagger (-\spacegrad) \Psi \).  There is an implied basis for these vectors that presumably commutes with \( \Psi, \Psi^\dagger \).  Let's suppose that we have a standard orthonormal basis for \R{3} \( \setlr{\Be_1, \Be_2, \Be_3} \), so that our two vectors can be written.
+\begin{dmath}\label{eqn:qftLecture22:720}
+\begin{aligned}
+\BP &= \sum_{k = 1}^3 \Be_k P^k \\
+\spacegrad &= \sum_{k = 1}^3 \Be_k \partial_k = -\sum_{k = 1}^3 \Be_k \partial^k.
+\end{aligned}
+\end{dmath}
 
-Starting with the field representations (\citep{peskin1995introduction} eq. 3.99, 3.100)
+Now we can express the momentum operator in coordinate form (sums implied), as
+\begin{dmath}\label{eqn:qftLecture22:740}
+\Be_k P^k = \int d^3 x \Psi^\dagger (i \Be_k \partial^k) \Psi,
+\end{dmath}
+so if we can commute these assumed basis elements \( \Be_k \) with \( \Psi^\dagger\) we have
+\begin{dmath}\label{eqn:qftLecture22:760}
+P^k = i\int d^3 x \Psi^\dagger \partial^k \Psi.
+\end{dmath}
+Note that this disagrees with \citep{LukeQFT}, but I believe it is correct (and it works).
+
+Inserting the field representations (\citep{peskin1995introduction} eq. 3.99, 3.100)
 \begin{dmath}\label{eqn:qftLecture22:580}
 \begin{aligned}
 \Psi(x) &= \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}} \sum_{s = 1}^2
@@ -356,14 +372,14 @@ Starting with the field representations (\citep{peskin1995introduction} eq. 3.99
 \lr{ b_\Bq^r \vbar^r(q) e^{-i q \cdot x} + a_\Bq^{r \dagger} \ubar^r(q) e^{i q \cdot x} },
 \end{aligned}
 \end{dmath}
-we get
+we can now compute
 \begin{dmath}\label{eqn:qftLecture22:600}
 \begin{aligned}
 P^k
 &=
--i \int \Psi^\dagger \partial^k \Psi \\
+i \int \Psi^\dagger \partial^k \Psi \\
 &=
--i \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq }} \sum_{r,s = 1}^2
+i \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq }} \sum_{r,s = 1}^2
 \lr{
    b_\Bq^r
    \vbar^r(q)
@@ -390,13 +406,13 @@ P^k
 p^k
 \sum_{r,s = 1}^2
 \biglr{
--  b_{-\Bq}^r
++  b_{-\Bq}^r
    a_\Bp^s
    \vbar^r(-\Bp)
    \gamma^0
    u^s(\Bp)
    e^{-2 i \omega_\Bp t}
-+
+-
    a_{-\Bq}^{r \dagger}
    b_\Bp^{s \dagger}
    \ubar^r(-\Bp)
@@ -404,13 +420,13 @@ p^k
    v^s(\Bp)
    e^{2 i \omega_\Bp t} \\
 &\qquad
-+
+-
    b_\Bp^r
    b_\Bp^{s \dagger}
    \vbar^r(\Bp)
    \gamma^0
    v^s(\Bp)
--
++
    a_\Bp^{r \dagger}
    a_\Bp^s
    \ubar^r(\Bp)
@@ -419,13 +435,16 @@ p^k
 }.
 \end{aligned}
 \end{dmath}
-The frequency dependent cross terms are killed by the orthogonality conditions
+Using
 %FIXME: \cref{thm:qftLecture21:1261}
-\( v^{r \dagger}(-\Bp) u^s(\Bp) = u^{r\dagger}(\Bp) v^s(-\Bp) = 0\)
-%\footnote{For the KG field we had to work much harder to argue those cross terms away in the momentum operator.}
-, and the rest simplify using
 %FIXME: \cref{eqn:qftLecture21:1200}
-\( u^{r\dagger}(\Bp) u^s(\Bp) = v^{r\dagger}(\Bp) v^s(\Bp) = 2 \omega_\Bp \delta^{sr} \), leaving
+\begin{dmath}\label{eqn:qftLecture22:780}
+\begin{aligned}
+v^{r \dagger}(-\Bp) u^s(\Bp) &= u^{r\dagger}(\Bp) v^s(-\Bp) = 0 \\
+u^{r\dagger}(\Bp) u^s(\Bp) &= v^{r\dagger}(\Bp) v^s(\Bp) = 2 \omega_\Bp \delta^{sr},
+\end{aligned}
+\end{dmath}
+the frequency dependent cross terms are killed\footnote{For the KG field we had to work much harder to argue those cross terms away in the momentum operator.}, and the rest simplify to give
 \begin{dmath}\label{eqn:qftLecture22:620}
 P^k
 =
@@ -434,19 +453,18 @@ p^k
 \sum_{r = 1}^2
 \lr{
 \lr{
--
++
    b_\Bp^{r \dagger}
    b_\Bp^r
 +
 (2\pi)^3 \deltathree(0)
 }
--
++
    a_\Bp^{r \dagger}
    a_\Bp^r
 }.
 \end{dmath}
-
-This has a vacuum term that can be ignored, but I still end up with an overall sign error?
+This has a vacuum term that can be ignored, so a final multiplication with and sum over the basis vectors \( \Be_k \), completes the proof.
 
 \maketheorem{Momentum operator eigenvalues.}{thm:qftLecture22:640}{
 The eigenvalues of the momentum operator with respect to single particle momentum states are just those momenta
@@ -506,18 +524,56 @@ Under Lorentz transformation, including rotations:
 \begin{aligned}
 \Psi(x) &\rightarrow \Psi'(x') = \Lambda_{1/2} \Psi(x) \\
 \delta \Psi(x) &= \Psi'(x) - \Psi(x) \\
-\Lambda_{1/2} &= 1 - \frac{i \omega_{\mu\nu}}{2} S^{\mu\nu} \\
+\Lambda_{1/2} &= e^{-\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}} \approx 1 - \frac{i \omega_{\mu\nu}}{2} S^{\mu\nu} \\
 \Psi'(x) &= \Lambda_{1/2} \Psi(\Lambda^{-1} x).
 \end{aligned}
 \end{dmath}
-For rotation around \( \zcap \) only \( \omega_{12} \) is non-zero and
-\begin{dmath}\label{eqn:qftLecture22:220}
-\Lambda_{1/2} = 1 - \frac{i \alpha}{2}
+For rotation around \( \zcap \) only \( \omega_{12} \) is non-zero.  We also have \( S^{12} = S^{21} \) and
+\begin{dmath}\label{eqn:qftLecture22:800}
+S^{12}
+= \frac{i}{4} \antisymmetric{\gamma^1}{\gamma^2}
+= \frac{i}{2} \gamma^1 \gamma^2
+= \frac{i}{2}
+\begin{bmatrix}
+0 & \sigma^1 \\
+-\sigma^1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 & \sigma^2 \\
+-\sigma^2 & 0
+\end{bmatrix}
+= \frac{i}{2}
+\begin{bmatrix}
+- \sigma^1 \sigma^2 & 0 \\
+0 & -\sigma^1 \sigma^2
+\end{bmatrix}
+= -\frac{1}{2}
 \begin{bmatrix}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}
 \end{dmath}
+so
+\begin{dmath}\label{eqn:qftLecture22:820}
+-\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
+=
+-i \omega_{12} S^{12}
+=
+\frac{i}{2} \omega_{12}
+\begin{bmatrix}
+\sigma^3 & 0 \\
+0 & \sigma^3
+\end{bmatrix}.
+\end{dmath}
+If we let \( \omega_{12} = -\alpha \), we have
+\begin{dmath}\label{eqn:qftLecture22:220}
+\Lambda_{1/2} = 1 - \frac{i \alpha}{2}
+\begin{bmatrix}
+\sigma^3 & 0 \\
+0 & \sigma^3
+\end{bmatrix}.
+\end{dmath}
+
 From \( \delta \Psi = \Lambda_{1/2} \Psi(\Lambda^{-1} x) - \Psi(x) \) the Noether current can be found to be
 \begin{dmath}\label{eqn:qftLecture22:240}
 \BJ = \int d^3 x \Psi^\dagger(x) \lr{ \Bx \cross \underbrace{(-i \spacegrad)}_{orbital} + \inv{2} \underbrace{\BOne \otimes \Bsigma}_{spin} },
@@ -530,20 +586,21 @@ where
 0 & \Bsigma
 \end{bmatrix}.
 \end{dmath}
+FIXME: show.
 
 For the rest frame of a particle (zero momentum), it can be shown that
 \begin{dmath}\label{eqn:qftLecture22:280}
 J^3 a_\Bp^{s\dagger} \ket{0} = \pm \inv{2} \evalbar{ a_\Bp^{s\dagger} \ket{0}}{\Bp = 0},
 \end{dmath}
 where the \( + \) is for \( s = 1 \) and the \( - \) is for \( s = 2 \).
-FIXME: check these.
+FIXME: show
 
 It can also be shown that
 \begin{dmath}\label{eqn:qftLecture22:300}
 J^3 b_\Bp^{s\dagger} \ket{0} = \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\Bp = 0}.
 \end{dmath}
+FIXME: show.
 Roughly speaking, we can characterize these as opposite signed projections of the 3rd component of angular momentum.
-FIXME: check these too.
 
 \section{\(U(1)_V\) symmetry: charge!}
 We also have a \( U(1) \) global symmetry which implies charge.  If we let
