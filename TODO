@@ -1,3 +1,7 @@
+- for each kind of detail deferred to a problem, link to that problem.
+
+- move various detailed derivations to problems, perhaps switching to theorem/lemma/... for them.
+
 - It wasn't clear to me how we switched from equal time (t = 0) scalar \phi representation to the
    Lorentz invariant notation.  This is really a switch to the Hiesenberg picture.  Osborne makes that explicit here:
 
@@ -10,22 +14,6 @@
    -- also in that lecture: he provides an experimental motivation for why we'd care about <0| [phi(x) \phi(y)] |0>
       (differences of two point correlation functions) in the first place.  I didn't understand all the steps in that discussion, but
       you at least understand that measurement results in exactly those commutators.
-
-- periods ending sections, chapters, figure labels, ...
-
-- standarize on \pi, not \Pi.
-
-- use one of \Abs{\Bp} or \Norm{\Bp} for vector magnitude, but not both (as I believe I'm doing).
-
-- work the problem of finding 3.105 from 3.99/3.100. (Dirac momentum operator)
-
-- l22: 
-
-   Go through emily's notes and merge with Stefan's (ongoing).
-
-   Post those when done, and send FB messenger links to each of them.
-
-   Credit them in the preface.
 
 - l23:
   
@@ -52,10 +40,6 @@
    Drei -- three (long "i")
    vs.
    ich -- (I) short i
-
-- translate 
-
-   s/KG/Klein-Gordon/g
 
 - FIXME: link: diracWeylMatrixRepresentationAndIdentities.nb
    Link to this and various other notebooks at the appropriate points and generate a mathematica.tex for this book.

@@ -2,54 +2,54 @@
 % Copyright © 2017 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{qftLecture22}
-\renewcommand{\dirname}{notes/phy2403/}
-\newcommand{\keywords}{PHY2403H}
-\input{../latex/peeter_prologue_print2.tex}
-
-%\usepackage{phy2403}
-\usepackage{peeters_braket}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_figures}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{macros_cal} % LL
-\usepackage{slashed}
-
-%s/\\ultensor{\([^}]\+\)}{\([^}]\+\)}{\([^}]\+\)}/{{\1}^\2}_\3/g
-%s/ulLambda/ultensor{\\Lambda}/g
-\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
-\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
-%{
-
-\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
-\newcommand{\oPsi}[0]{\overbar{\Psi}}
-\newcommand{\osigma}[0]{\overbar{\sigma}}
-\newcommand{\ubar}[0]{\overbar{u}}
-\newcommand{\vbar}[0]{\overbar{v}}
-\newcommand{\deltathree}[0]{\delta^{(3)}}
-\newcommand{\deltafour}[0]{\delta^{(4)}}
-\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
-\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
-\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
-
-\beginArtNoToc
-\generatetitle{PHY2403H Quantum Field Theory.  Lecture 22: Dirac sea, charges, angular momentum, spin, U(1) symmetries, electrons and positrons.  Taught by Prof.\ Erich Poppitz}
-%\chapter{XXX}
-\label{chap:qftLecture22}
-
-%%Peeter's lecture notes from class.  These may be incoherent and rough.
-%%
-%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
-
-\paragraph{DISCLAIMER:}
-
-These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
-
-Notes for this particular class were kindly provided by Emily Tyhurst, and Stefan Divic.  I've done my best to make my own sense of them, as I was not able to attend the class.
-
-\section{Recall:}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{qftLecture22}
+%\renewcommand{\dirname}{notes/phy2403/}
+%\newcommand{\keywords}{PHY2403H}
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%%\usepackage{phy2403}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_figures}
+%\usepackage{mathtools}
+%\usepackage{siunitx}
+%\usepackage{macros_cal} % LL
+%\usepackage{slashed}
+%
+%%s/\\ultensor{\([^}]\+\)}{\([^}]\+\)}{\([^}]\+\)}/{{\1}^\2}_\3/g
+%%s/ulLambda/ultensor{\\Lambda}/g
+%\newcommand{\ulLambda}[2]{\ultensor{\Lambda}{#1}{#2}}
+%\newcommand{\ulDelta}[2]{\ultensor{\delta}{#1}{#2}}
+%%{
+%
+%\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
+%\newcommand{\oPsi}[0]{\overbar{\Psi}}
+%\newcommand{\osigma}[0]{\overbar{\sigma}}
+%\newcommand{\ubar}[0]{\overbar{u}}
+%\newcommand{\vbar}[0]{\overbar{v}}
+%\newcommand{\deltathree}[0]{\delta^{(3)}}
+%\newcommand{\deltafour}[0]{\delta^{(4)}}
+%\newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
+%\newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
+%\newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+%
+%\beginArtNoToc
+%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 22: Dirac sea, charges, angular momentum, spin, U(1) symmetries, electrons and positrons.  Taught by Prof.\ Erich Poppitz}
+%%\chapter{XXX}
+%\label{chap:qftLecture22}
+%
+%%%Peeter's lecture notes from class.  These may be incoherent and rough.
+%%%
+%%%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, covering \textchapref{{1}} \citep{peskin1995introduction} content.
+%
+%\paragraph{DISCLAIMER:}
+%
+%These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Prof. Erich Poppitz, fall 2018.
+%
+%Notes for this particular class were kindly provided by Emily Tyhurst, and Stefan Divic.  I've done my best to make my own sense of them, as I was not able to attend the class.
+%
+\section{Review.}
 
 From the Dirac Lagrangian density
 \begin{dmath}\label{eqn:qftLecture22:20}
@@ -80,7 +80,7 @@ Mathematically, we postulate that our operators
 \end{equation}
 All the \(a, b, a^\dagger, \cdots \)'s square to zero\footnote{Is it a coincidence that these look like lightlike four-vectors \( x^2 = x^\mu x^\mu = 0 \)?}
 \item
-Our creation and anhillation operators are presumed to have non-trivial \underline{anti}-commutation relations (unlike the scalar theory where we had the same sort of commutation relations)
+Our creation and annihilation operators are presumed to have non-trivial \underline{anti}-commutation relations (unlike the scalar theory where we had the same sort of commutation relations)
 \begin{dmath}\label{eqn:qftLecture22:80}
 \begin{aligned}
 \symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} &= (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq) \\
@@ -206,7 +206,7 @@ For the scalar field, using Noether's theorem, we identified the conserved charg
 \begin{dmath}\label{eqn:momentumDirac:40}
 P^i = \int d^3 x T^{0i} = - \int d^3 x \pi(x) \spacegrad \phi(x),
 \end{dmath}
-and if we plugged in the creation and anhillation operator representation of \( \pi, \phi \), out comes
+and if we plugged in the creation and annihilation operator representation of \( \pi, \phi \), out comes
 \begin{dmath}\label{eqn:momentumDirac:60}
 \BP =
 \inv{2} \int \frac{d^3 q}{(2\pi)^3} \Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger},
@@ -331,7 +331,7 @@ Lagrangian itself breaks down into
 \end{dmath}
 components, and lo and behold, out pops the momentum operator density!  Some part of this should be expected this since the Dirac equation in momentum space is just \( (\slashed{p} - m)e^{-i p \cdot x} = 0 \), so there is an intimate connection with the operator portion and momentum.
 
-\maketheorem{Creation and anhillation form of the momentum operator.}{thm:qftLecture22:560}{
+\maketheorem{Creation and annihilation form of the momentum operator.}{thm:qftLecture22:560}{
 The momentum operator can be written as
 \begin{equation*}
 \BP = \sum_{s = 1}^2
@@ -436,15 +436,14 @@ p^k
 \end{aligned}
 \end{dmath}
 Using
-%FIXME: \cref{thm:qftLecture21:1261}
-%FIXME: \cref{eqn:qftLecture21:1200}
 \begin{dmath}\label{eqn:qftLecture22:780}
 \begin{aligned}
 v^{r \dagger}(-\Bp) u^s(\Bp) &= u^{r\dagger}(\Bp) v^s(-\Bp) = 0 \\
 u^{r\dagger}(\Bp) u^s(\Bp) &= v^{r\dagger}(\Bp) v^s(\Bp) = 2 \omega_\Bp \delta^{sr},
 \end{aligned}
 \end{dmath}
-the frequency dependent cross terms are killed\footnote{For the KG field we had to work much harder to argue those cross terms away in the momentum operator.}, and the rest simplify to give
+(\cref{thm:qftLecture21:1261}, \cref{eqn:qftLecture21:1200})
+the frequency dependent cross terms are killed\footnote{For the Klein-Gordon scalar field we had to work much harder to argue those cross terms away in the momentum operator.}, and the rest simplify to give
 \begin{dmath}\label{eqn:qftLecture22:620}
 P^k
 =
@@ -528,7 +527,7 @@ Under Lorentz transformation, including rotations:
 \Psi'(x) &= \Lambda_{1/2} \Psi(\Lambda^{-1} x).
 \end{aligned}
 \end{dmath}
-For rotation around \( \zcap \) only \( \omega_{12} \) is non-zero.  We also have \( S^{12} = S^{21} \) and
+For a rotation around \( \zcap \) only \( \omega_{12} \) is non-zero.  We also have \( S^{12} = S^{21} \) and
 \begin{dmath}\label{eqn:qftLecture22:800}
 S^{12}
 = \frac{i}{4} \antisymmetric{\gamma^1}{\gamma^2}
@@ -547,36 +546,147 @@ S^{12}
 - \sigma^1 \sigma^2 & 0 \\
 0 & -\sigma^1 \sigma^2
 \end{bmatrix}
-= -\frac{1}{2}
+= \frac{i}{2}
+\begin{bmatrix}
+- i \sigma^3 & 0 \\
+0 & -i \sigma^3
+\end{bmatrix}
+= \frac{1}{2}
 \begin{bmatrix}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}
 \end{dmath}
 so
-\begin{dmath}\label{eqn:qftLecture22:820}
+\begin{equation}\label{eqn:qftLecture22:820}
 -\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
 =
 -i \omega_{12} S^{12}
 =
-\frac{i}{2} \omega_{12}
+-\frac{i}{2} \omega_{12}
 \begin{bmatrix}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}.
-\end{dmath}
-If we let \( \omega_{12} = -\alpha \), we have
+\end{equation}
+If we let \( \omega_{12} = \alpha \), we have
 \begin{dmath}\label{eqn:qftLecture22:220}
-\Lambda_{1/2} = 1 - \frac{i \alpha}{2}
+\Lambda_{1/2} =
+1 - \frac{i \alpha}{2}
 \begin{bmatrix}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}.
 \end{dmath}
 
-From \( \delta \Psi = \Lambda_{1/2} \Psi(\Lambda^{-1} x) - \Psi(x) \) the Noether current can be found to be
+To compute the in the field we also need
+\begin{dmath}\label{eqn:qftLecture22:860}
+\Psi(\Lambda^{-1} x)
+=
+\Psi(x^\mu - \ultensor{\omega}{\mu}{\nu} x^\nu)
+=
+\Psi(x) - \evalbar{a^\sigma \partial_\sigma \Psi(x)}{a^\sigma = \ultensor{\omega}{\sigma}{\nu} x^\nu}
+=
+\Psi(x) - \ultensor{\omega}{\sigma}{\nu} x^\nu \partial_\sigma \Psi(x)
+=
+\Psi(x) - \omega^{\sigma\nu} x_\nu \partial_\sigma \Psi(x)
+=
+\Psi(x) - \omega^{\sigma\nu} x_\nu \partial_\sigma \Psi(x)
+=
+\Psi(x) - \sum_{\sigma < \nu} \omega^{\sigma\nu}
+\lr{
+x_\nu \partial_\sigma \Psi(x)
+-x_\sigma \partial_\nu \Psi(x)
+}
+=
+\Psi(x) - \alpha
+\lr{
+   x_2 \partial_1 \Psi(x)
+   -x_1 \partial_2 \Psi(x)
+}
+=
+\Psi(x) - \alpha
+\lr{
+   x^1 \partial_2 \Psi(x)
+   -x^2 \partial_1 \Psi(x)
+}
+=
+\Psi(x) - \alpha (\Bx \cross \spacegrad)_z \Psi(x).
+\end{dmath}
+We can now compute the variation of the field
+\begin{dmath}\label{eqn:qftLecture22:840}
+\delta \Psi
+=
+\Lambda_{1/2} \Psi(\Lambda^{-1} x) - \Psi(x)
+=
+\lr{ 1
+- \frac{i \alpha}{2}
+\begin{bmatrix}
+\sigma^3 & 0 \\
+0 & \sigma^3
+\end{bmatrix}
+}
+\lr{
+   \Psi(x) - \alpha (\Bx \cross \spacegrad)_z \Psi(x)
+}
+- \Psi(x)
+=
+- \frac{i \alpha}{2}
+\begin{bmatrix}
+\sigma^3 & 0 \\
+0 & \sigma^3
+\end{bmatrix} \Psi
+- \alpha (\Bx \cross \spacegrad)_z \Psi(x)
++ O(\alpha^2).
+\end{dmath}
+%Generalizing to arbitary rotation orientation, to first order, the field variation is
+%\begin{dmath}\label{eqn:qftLecture22:880}
+%\delta \Psi
+%=
+%- \frac{i \alpha}{2}
+%\begin{bmatrix}
+%\Bsigma  & 0 \\
+%0 & \Bsigma
+%\end{bmatrix} \Psi
+%- \alpha (\Bx \cross \spacegrad) \Psi(x).
+%\end{dmath}
+Because the Dirac Lagrangian is Lorentz invariant, the Noether current has no \( J^\mu \) term, and is
 \begin{dmath}\label{eqn:qftLecture22:240}
-\BJ = \int d^3 x \Psi^\dagger(x) \lr{ \Bx \cross \underbrace{(-i \spacegrad)}_{orbital} + \inv{2} \underbrace{\BOne \otimes \Bsigma}_{spin} },
+j^\mu_\alpha
+=
+\PD{(\partial_\mu \Psi)}{\LL}
+\delta \Psi
+=
+\lr{ \oPsi i \gamma^\mu }
+\lr{
+   - \frac{i \alpha}{2}
+   \begin{bmatrix}
+   \sigma^3  & 0 \\
+   0 & \sigma^3
+   \end{bmatrix}
+   - \alpha (\Bx \cross \spacegrad)_z
+}
+\Psi.
+\end{dmath}
+In particular, the conserved charge (setting \( \alpha = 1 \)) is
+\begin{dmath}\label{eqn:qftLecture22:900}
+J^0
+=
+\int d^3 x
+\lr{ \Psi^\dagger }
+\lr{
+   \frac{1}{2}
+   \begin{bmatrix}
+   \sigma^3  & 0 \\
+   0 & \sigma^3
+   \end{bmatrix}
+   - i (\Bx \cross \spacegrad)_z
+}
+\Psi.
+\end{dmath}
+Generalizing to arbitrary rotation orientation, this can be written out as
+\begin{dmath}\label{eqn:qftLecture22:920}
+\BJ = \int d^3 x \Psi^\dagger(x) \lr{ \underbrace{\Bx \cross (-i \spacegrad)}_{\text{orbital angular momentum}} + \inv{2} \underbrace{\BOne \otimes \Bsigma}_{\text{spin angular momentum}} } \Psi,
 \end{dmath}
 where
 \begin{dmath}\label{eqn:qftLecture22:260}
@@ -584,23 +694,19 @@ where
 \begin{bmatrix}
 \Bsigma & 0 \\
 0 & \Bsigma
-\end{bmatrix}.
+\end{bmatrix},
 \end{dmath}
-FIXME: show.
+and where the orbital and spin angular momenta have been called out.
 
-For the rest frame of a particle (zero momentum), it can be shown that
+For the rest frame of a particle (zero momentum), \citep{peskin1995introduction} makes an argument that
 \begin{dmath}\label{eqn:qftLecture22:280}
-J^3 a_\Bp^{s\dagger} \ket{0} = \pm \inv{2} \evalbar{ a_\Bp^{s\dagger} \ket{0}}{\Bp = 0},
+\begin{aligned}
+J^3 a_\Bp^{s\dagger} \ket{0} &= \pm \inv{2} \evalbar{ a_\Bp^{s\dagger} \ket{0}}{\Bp = 0} \\
+J^3 b_\Bp^{s\dagger} \ket{0} &= \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\Bp = 0}.
+\end{aligned}
 \end{dmath}
 where the \( + \) is for \( s = 1 \) and the \( - \) is for \( s = 2 \).
-FIXME: show
-
-It can also be shown that
-\begin{dmath}\label{eqn:qftLecture22:300}
-J^3 b_\Bp^{s\dagger} \ket{0} = \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\Bp = 0}.
-\end{dmath}
-FIXME: show.
-Roughly speaking, we can characterize these as opposite signed projections of the 3rd component of angular momentum.
+The eigenvectors of the angular momentum operator are the single particle states, with eigenvalues \( \pm 1/2 \), where the sign of the eigenvalues toggles for anti-Fermions.
 
 \section{\(U(1)_V\) symmetry: charge!}
 We also have a \( U(1) \) global symmetry which implies charge.  If we let
@@ -755,7 +861,7 @@ e^{2 i \alpha \gamma_5} \Psi,
 \end{dmath}
 We see that for \( m \ne 0 \) the axial \( U(1) \) transformation is only a symmetry when \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
 
-\section{CPT symmetries}
+\section{CPT symmetries.}
 Left to us to study up on the interesting stories of
 
 \begin{itemize}
@@ -769,4 +875,4 @@ Each of these can be studied as separate symmetries.  References include \citep{
 \citep{LukeQFT}.
 
 %}
-\EndArticle
+%\EndArticle
