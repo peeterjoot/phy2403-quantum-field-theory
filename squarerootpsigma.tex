@@ -1,0 +1,122 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{squarerootpsigma}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\newcommand{\osigma}[0]{\overbar{\sigma}}
+%
+%\beginArtNoToc
+%
+%\generatetitle{Dirac spinor relations after rest frame boost}
+%%\chapter{Dirac spinor relations after rest frame boost}
+%%\label{chap:squarerootpsigma}
+%
+\makeproblem{Exponential form of \( \sqrt{p \cdot \sigma}, \sqrt{p \cdot \osigma} \).}{problem:squarerootpsigma:1}{
+In \citep{tobiasQFTL15DiracSquarerootPdotSigma}, 
+Prof Osmond explicitly boosts a \( u^s(p_0) \) Dirac spinor from the rest frame with rest frame energy \( p_0 \), and claims
+\begin{dmath}\label{eqn:squarerootpsigma:20}
+\begin{aligned}
+   \sqrt{m} e^{-\inv{2} \eta \sigma^3} &= \sqrt{ p \cdot \sigma } \\
+   \sqrt{m} e^{\inv{2} \eta \sigma^3} &= \sqrt{ p \cdot \osigma },
+\end{aligned}
+\end{dmath}
+for the components of \( u^s(\Lambda p_0) \).
+
+Validate these identities by squaring both sides.
+} % problem
+
+\makeanswer{problem:squarerootpsigma:1}{
+First
+\begin{dmath}\label{eqn:squarerootpsigma:40}
+   e^{\pm \inv{2} \eta \sigma^3 }
+   =
+   \cosh\lr{ \inv{2} \eta \sigma^3 }
+   \pm
+   \sinh\lr{ \inv{2} \eta \sigma^3 } \sigma^3,
+\end{dmath}
+which squares to (FIXME: link to uvspinor.nb)
+\begin{dmath}\label{eqn:squarerootpsigma:60}
+   \lr{ e^{\pm \inv{2} \eta \sigma^3 } }^2
+=
+\begin{bmatrix}
+   e^{\pm \eta} & 0 \\
+   0 & e^{\mp \eta}
+\end{bmatrix}.
+\end{dmath}
+
+Explicitly boosting the rest energy \( p_0 \) gives
+\begin{dmath}\label{eqn:squarerootpsigma:80}
+\begin{bmatrix}
+   p_0 \\
+   0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+   \cosh\eta & \sinh\eta \\
+   \sinh\eta & \cosh\eta \\
+\end{bmatrix}
+\begin{bmatrix}
+   p_0 \\
+   0
+\end{bmatrix}
+=
+p_0
+\begin{bmatrix}
+   \cosh\eta \\
+   \sinh\eta
+\end{bmatrix},
+\end{dmath}
+so after the boost
+\begin{dmath}\label{eqn:squarerootpsigma:100}
+p \cdot \sigma
+\rightarrow
+p_0 \lr{ \cosh \eta - \sinh \eta \sigma^3 }
+= p_0
+\begin{bmatrix}
+   \cosh\eta - \sinh\eta & 0 \\
+   0 & \cosh\eta + \sinh\eta
+\end{bmatrix}
+=
+p_0
+\begin{bmatrix}
+   e^{-\eta} & 0 \\
+   0 & e^{\eta}
+\end{bmatrix},
+\end{dmath}
+where \( p_0 = m \) is still the rest frame energy.  However, according to
+\cref{eqn:squarerootpsigma:60} this is exactly
+\begin{dmath}\label{eqn:squarerootpsigma:120}
+   \lr{\sqrt{m} e^{-\inv{2} \eta \sigma^3 }}^2
+\end{dmath}
+
+Since \( p \cdot \osigma \) flips the signs of the spatial momentum, we have shown that
+\begin{dmath}\label{eqn:squarerootpsigma:140}
+\begin{aligned}
+   \lr{\sqrt{m} e^{-\inv{2} \eta \sigma^3 }}^2 &= p \cdot \sigma \\
+   \lr{\sqrt{m} e^{\inv{2} \eta \sigma^3 }}^2 &= p \cdot \osigma,
+\end{aligned}
+\end{dmath}
+which isn't a full proof of the claimed result (i.e. the most general orientation isn't considered), but at least validates the claim.
+} % answer
+
+%}
+%\EndArticle

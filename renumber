@@ -209,3 +209,5 @@ perl -p -i ../latex/bin/latexRegex.pl DiracUVmatricesExplicit.tex
 #perl -p -i ../latex/bin/latexRegex.pl squarerootpsigma.tex
 ../latex/bin/lgrep momentumQuestion.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl momentumQuestion.tex
+../latex/bin/lgrep squarerootpsigma.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl squarerootpsigma.tex

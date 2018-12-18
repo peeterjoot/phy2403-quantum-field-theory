@@ -44,9 +44,13 @@ These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Pr
 
 \section{Review.}
 
+Our Lagrangian is
 \begin{dmath}\label{eqn:qftLecture23:140}
 \LL_{\text{Dirac}} = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
 \end{dmath}
+which can be consider solved by fields \( \Psi(x), \oPsi(x) = \Psi^\dagger(x) \gamma^0 \)
+\begin{subequations}
+\label{eqn:qftLecture23:420}
 \begin{dmath}\label{eqn:qftLecture23:160}
 \Psi(x) =
 \sum_{s = 1}^2
@@ -58,7 +62,8 @@ These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Pr
 }
 \end{dmath}
 \begin{dmath}\label{eqn:qftLecture23:180}
-\oPsi(x) = \Psi^\dagger(x) \gamma^0 =
+\oPsi(x)
+=
 \sum_{s = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
 \lr{
@@ -67,12 +72,21 @@ These are notes for the UofT course PHY2403H, Quantum Field Theory, taught by Pr
    e^{-i p \cdot x} \vbar^s(p) a_\Bp^{s}
 }
 \end{dmath}
-
+\end{subequations}
+where the creation and anhillation operators satisfy
+\begin{subequations}
+\label{eqn:qftLecture23:400}
 \begin{dmath}\label{eqn:qftLecture23:200}
 \symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
 \end{dmath}
+\begin{dmath}\label{eqn:qftLecture23:201}
+\symmetric{b_\Bp^s}{b_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
+\end{dmath}
+\end{subequations}
+(plus various relations for the \( u,v\)'s.)
 
-There are some symmetries
+\section{Photon.}
+Recall that we identified a number of symmetries
 \begin{itemize}
 \item \( SO(1,3) \)
 \item \( P, C, T \) : DIY
@@ -80,14 +94,14 @@ There are some symmetries
 \item \( U(1)_A \) : If \( m = 0 \), then \( U(1)_A : \Psi \rightarrow e^{i \alpha \gamma_5 } \Psi \).  If \( m \ne 0 \) only for \( \alpha = \pi \) : \( \Psi \rightarrow -\Psi \).
 \end{itemize}
 
-Now introduce interaction with photon by using a \( U(1) \) gauge field, and demand invariance under \( U(1)_V \) with \( \alpha = \alpha(x) \).  Now
+Photon interaction can be introduced by utilizing a \( U(1) \) gauge field, demanding invariance under \( U(1)_V \) with \( \alpha = \alpha(x) \).  That is
 \begin{dmath}\label{eqn:qftLecture23:20}
-\Psi(x) \rightarrow e^{i \alpha(x) } \Psi(x)
+\Psi(x) \rightarrow e^{i \alpha(x) } \Psi(x),
 \end{dmath}
-
+which has derivatives
 \begin{dmath}\label{eqn:qftLecture23:280}
 \partial_\mu \Psi(x) \rightarrow
-e^{i \alpha(x) } \lr{ \partial_\mu \Psi(x) + i \partial_\mu \alpha(x) } \Psi
+e^{i \alpha(x) } \lr{ \partial_\mu \Psi(x) + i \partial_\mu \alpha(x) \Psi(x) }.
 \end{dmath}
 
 Solution.  Introduce \( A_\mu(x) \), such that under \( U(1)_V \) we have
@@ -95,14 +109,12 @@ Solution.  Introduce \( A_\mu(x) \), such that under \( U(1)_V \) we have
 \begin{dmath}\label{eqn:qftLecture23:300}
 A_\mu(x) \rightarrow A_\mu(x) - \inv{e} \partial_\mu \alpha(x)
 \end{dmath}
-
 where ``e'' is a dimensionless coupling constant
-
 \begin{dmath}\label{eqn:qftLecture23:320}
 \partial_\mu \Psi(x) \rightarrow
 \lr{ \partial_\mu + i e A_\mu } \Psi
 \rightarrow
-e^{i \alpha(x} \lr{ \partial_\mu \Psi + \cancel{ i \partial_\mu \alpha} - \cancel{ i \partial_\mu \alpha } ... }
+e^{i \alpha(x)} \lr{ \partial_\mu \Psi + \cancel{ i \partial_\mu \alpha} \Psi - \cancel{ i \partial_\mu \alpha } \Psi }
 \end{dmath}
 
 We've now constructed the QED Lagrangian density

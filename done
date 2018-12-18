@@ -1,7 +1,3 @@
-- translate 
-
-   s/KG/Klein-Gordon/g
-
 - periods ending sections, chapters, figure labels, ...
 
 - standarize on \pi, not \Pi.
