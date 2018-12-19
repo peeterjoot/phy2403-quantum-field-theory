@@ -1,3 +1,9 @@
+- what's wrong with the mmacells sty for this book?
+
+  Some stuff would be nice to embed directly.
+
+- go through and add various formulas to the new results appendix section.
+
 - for each kind of detail deferred to a problem, link to that problem.
 
 - move various detailed derivations to problems, perhaps switching to theorem/lemma/... for them.
@@ -43,7 +49,6 @@
 
 - FIXME: link: diracWeylMatrixRepresentationAndIdentities.nb
    Link to this and various other notebooks at the appropriate points and generate a mathematica.tex for this book.
-   -- need to go through those .nb's and add metadata info for each.
 
 - make these problem links:
 

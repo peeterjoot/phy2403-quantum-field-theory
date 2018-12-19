@@ -22,7 +22,7 @@ SOURCE_DIRS += $(FIGURES)
 #REDACTED := -redacted
 
 #GENERATED_SOURCES += matlab.tex 
-#GENERATED_SOURCES += mathematica.tex 
+GENERATED_SOURCES += mathematica.tex 
 #GENERATED_SOURCES += julia.tex 
 
 SOURCES += noetherCurrentScalarField.tex
@@ -161,7 +161,7 @@ mmacells.sty: mmacells/mmacells.sty
 	cp $^ $@
 
 #julia.tex : ../julia/METADATA
-#mathematica.tex : ../mathematica/METADATA
+mathematica.tex : ../mathematica/METADATA
 #matlab.tex : ../matlab/METADATA
 
 dropbox:
