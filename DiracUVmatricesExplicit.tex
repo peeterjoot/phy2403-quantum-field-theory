@@ -59,7 +59,7 @@ It was also pointed out that we don't tend to need the explicit form of these sq
 
 I encountered a case where it would have been nice to have the explicit representation.  In particular, I wanted to use Mathematica to symbolically expand \( \oPsi i \gamma^\mu \partial_\mu \Psi \) in terms of \( a^s_\Bp, b^r_\Bp, \cdots \) representation, to verify that the massless Dirac Lagrangian are in fact the energy and momentum operators (and to compare to the explicit form of the momentum operator found in eq. 3.105 \citep{peskin1995introduction}).  For that mechanical task, I needed explicit representations of all the \( u^s(p), v^r(p) \) matrices to plug in.
 
-It happens that \( 2 \times 2 \) matrices can be square-rooted symbolically \cref{path:phy2403-quantum-field-theory:squarerootOfFourSigmaDotP.nb}.  In particular, the matrices \( p \cdot \sigma, p \cdot \osigma \)  have nice simple eigenvalues \( \pm \Norm{\Bp} + \omega_\Bp \).  The corresponding unnormalized eigenvectors for \( p \cdot \sigma \) are
+It happens that \( 2 \times 2 \) matrices can be square-rooted symbolically \nbref{squarerootOfFourSigmaDotP.nb}.  In particular, the matrices \( p \cdot \sigma, p \cdot \osigma \)  have nice simple eigenvalues \( \pm \Norm{\Bp} + \omega_\Bp \).  The corresponding unnormalized eigenvectors for \( p \cdot \sigma \) are
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:60}
 \begin{aligned}
 e_1 &=
@@ -268,7 +268,7 @@ v(p) &=
 \end{bmatrix}.
 \end{aligned}
 }
-\Cref{eqn:squarerootpsigma:220} is probably a much nicer starting point for evaluating the various \( u, v, \ubar, \vbar \) product relationships.  In particular, again using Mathematica \cref{path:phy2403-quantum-field-theory:uvspinors.nb}, this is a nice representation for showing that
+\Cref{eqn:squarerootpsigma:220} is probably a much nicer starting point for evaluating the various \( u, v, \ubar, \vbar \) product relationships.  In particular, again using Mathematica \nbref{uvspinors.nb}, this is a nice representation for showing that
 \begin{dmath}\label{eqn:DiracUVmatricesExplicit:260}
 \begin{aligned}
 \ubar^r(p) \gamma^k u^s(p) &= 2 \delta^{rs} p^k \\
