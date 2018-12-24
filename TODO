@@ -1,3 +1,5 @@
+- convert underbraces to mathLabelBox's
+
 - mathimagefigure for the mathematica notebooks.
 
 - what's wrong with the mmacells sty for this book?
@@ -64,11 +66,17 @@ grep -ni HW[1234] *tex
 
 - SL, SU, SO looks weird in the book (example Lecture19: I think they looked okay in the standalone article based lecture notes).  Use a macro for those instead to handle nicer formatting.
 
+- some DIY's:
+
+   qftLecture14.tex:\paragraph{Claim: (DIY):}
+   qftLecture15.tex:(DIY: work through the details -- this is a problem in \citep{peskin1995introduction})
+   qftLecture17.tex:(Claim: DIY)
+   qftLecture23.tex:\item \( P, C, T \) : DIY
+
 - Maintainance:
    - Indexing after (up to l15 is also rough.)
    - handle various DIY/Fixme/todo's
    - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
-   - L17: very rough.  go through M. Luke's notes and try to make sense of things: pg 98-103.
 - Spelling/grammar:
    - Audit for basic grammar, proper "latex" sentences.
    - Spell check all.
@@ -77,8 +85,6 @@ grep -ni HW[1234] *tex
    - Consolidate review material into more streamlined story.
    - Better chapter/section layout (more topical, less narrative timeline)
 - Problems:
-   - switched ps1-3 to use makeoproblem.  Do the same for ps4 when submitted.
-   - ps1-3 marked up with \withproblemsetsParagraph{} -- do the same for ps4 when submitted.
    - go back and do ps2 p4 completely (and not as I did)
    - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
 - Versioning:
@@ -86,4 +92,3 @@ grep -ni HW[1234] *tex
    -- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
       -- ie: revinfo for redacted version is probably from projects repo, not this one.  How about copy the .revinfo dir from this one.
       -- tried a makefile hack, but it didn't work.  left commented out.
-- reflection: FIXME: (when l19 included).

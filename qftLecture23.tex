@@ -11,11 +11,13 @@
 
 %\usepackage{phy2403}
 \usepackage{peeters_braket}
-%\usepackage{peeters_layout_exercise}
+\usepackage{peeters_layout_exercise}
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{macros_cal} % LL
+\usepackage{simplewick}
+\usepackage{slashed}
 
 \newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
 \newcommand{\oPsi}[0]{\overbar{\Psi}}
@@ -126,12 +128,23 @@ We've now constructed the QED Lagrangian density
 We may write this as
 \begin{dmath}\label{eqn:qftLecture23:60}
 \LL_{\text{QED}} =
-\underbrace{- \inv{4} F_{\mu\nu} F^{\mu\nu}
+\mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
+{
+- \inv{4} F_{\mu\nu} F^{\mu\nu}
 +
 \oPsi \lr{ i \gamma^\mu \partial_\mu - m } \Psi
-}_{\text{Free Lagrangian}}
+}
+{
+Free Lagrangian
+}
 -
-\underbrace{e \oPsi \gamma_\mu \Psi A^\mu }_{\text{interaction Lagrangian}}
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+e \oPsi \gamma_\mu \Psi A^\mu 
+}
+{
+interaction Lagrangian
+}
 \end{dmath}
 
 We introduce spinor fields \( \Psi_e \) and muon fields \( \Psi_\mu \), so that the total Lagrangian is now
@@ -276,6 +289,142 @@ Now that we have a propagator, let's try
 \begin{dmath}\label{eqn:qftLecture23:380}
 \LL_{\text{int}} = \int dt d^3 x \lr{ e \oPsi \gamma_\mu \Psi A^\mu }
 \end{dmath}
+
+\section{Part II.  from paper notes}
+
+We can consider various scattering processes, such as \( e^{+} e^{-} \rightarrow \mu^{+} \mu^{-} \) as sketched in
+\cref{fig:l23:l23Fig1}, or
+\( e^{+} e^{-} \rightarrow e^{+} e^{-} \) as sketched in
+\cref{fig:l23:l23Fig2}, or
+Compton scattering \( e^{-} \gamma \rightarrow e^{-} \gamma \) as sketched in
+\cref{fig:l23:l23Fig3}.
+\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig1}{Electron, positron decay to muon pairs.}{fig:l23:l23Fig1}{0.2}
+\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig2}{Electron, positron collision.}{fig:l23:l23Fig2}{0.3}
+\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig3}{Compton scattering.}{fig:l23:l23Fig3}{0.2}
+
+To do so we need to determine the Feynman rules for Fermions.  For Fermions \( \Psi \) and anti-Fermions \( \oPsi \) we have
+\begin{dmath}\label{eqn:qftLecture23:440}
+\begin{aligned}
+\contraction{}{\Psi}{\lvert}{\Bp} \Psi \ket{\Bp, s} &= u^s(p) \\
+\contraction{}{\oPsi}{\lvert}{\Bp} \oPsi \ket{\Bp, s} &= \vbar^s(p) \\
+\contraction{\langle}{\Bp}{, s \rvert}{\Psi} \langle \Bp, s \rvert \Psi &= \ubar^s(p) \\
+\contraction{\langle}{\Bp}{, s \rvert}{\oPsi} \langle \Bp, s \rvert  \oPsi &= v^s(p),
+\end{aligned}
+\end{dmath}
+where we mean
+\begin{dmath}\label{eqn:qftLecture23:460}
+\ket{\Bp, s} = a_\Bp^{s\dagger} \ket{0} \sqrt{ 2 \omega_\Bp },
+\end{dmath}
+for Fermions, and
+\begin{dmath}\label{eqn:qftLecture23:480}
+\ket{\Bp, s} = b_\Bp^{s\dagger} \ket{0} \sqrt{ 2 \omega_\Bp },
+\end{dmath}
+for anti-Fermions.
+
+The flow of Fermion and anti-Fermion number charge is designated by arrow direction in the diagram, as in the respective diagrams of \cref{fig:l23:l23Fig4}.
+\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig4}{Flow of \# charge.}{fig:l23:l23Fig4}{0.3}
+
+The Feynman propagator for Fermions is
+\begin{dmath}\label{eqn:qftLecture23:500}
+\frac{ i \lr{ \slashed{p} + m } }{p^2 - m^2 + i \epsilon},
+\end{dmath}
+whereas the photon propagator is
+\begin{dmath}\label{eqn:qftLecture23:520}
+\expectation{ A_\mu A_\nu } = -i \frac{g_{\mu\nu}}{q^2 + i \epsilon}.
+\end{dmath}
+
+\section{Example: \( e^{-} e^{+} \rightarrow \mu^{-} \mu^{+} \).}
+As an example, consider the process sketched in \cref{fig:l23:l23Fig5}.
+\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig5}{\( e^{-} e^{+} \rightarrow \mu^{-} \mu^{+} \) process.}{fig:l23:l23Fig5}{0.3}
+
+The matrix element is
+\begin{dmath}\label{eqn:qftLecture23:540}
+\contraction{\langle}{\mu^{+}}{\mu^{-} \rvert \oPsi \gamma^\sigma}{\Psi}
+\bcontraction{\langle \mu^{+}}{\mu^{-}}{\rvert}{\oPsi}
+\contraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi }{A^\sigma}{}{A^\rho}
+\contraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho}{\oPsi}{\gamma^\rho \Psi \lvert}{e^{+}}
+\bcontraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho \oPsi \gamma^\rho}{\Psi}{\lvert e^{+}}{e^{-}}
+\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho \oPsi \gamma^\rho \Psi \lvert e^{+} e^{-} \rangle
+=
+\mathLabelBox{
+\vbar^{s'}(p')
+}
+{
+incoming anti-electron
+}
+(-i e \gamma^\rho )
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+u^s(p)
+}
+{
+incoming electron
+}
+\mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
+{
+\lr{ \frac{-i g_{\rho\sigma}}{q^2} }
+}
+{
+ignoring \( i \epsilon \).
+}
+\ubar^r(k) (-i e \gamma^\sigma ) v^r(k')
+\end{dmath}
+\paragraph{Question:} Why are we writing the factors of the matrix element from left to right, corresponding to the right to left reading of the matrix element?
+
+\Cref{eqn:qftLecture23:540} reduces to
+\begin{dmath}\label{eqn:qftLecture23:560}
+i M
+=
+i \frac{e^2}{q^2}
+\vbar^{s'}(p') \gamma^\rho u^s(p)
+\ubar^r(k) \gamma_\rho v^r(k'),
+\end{dmath}
+where the \( (2 \pi)^4 \deltafour(...) \) term hasn't been made explicit.
+
+We'd like to compute the absolute square of \cref{eqn:qftLecture23:560}, and use the following lemma to do so.
+\makelemma{Some conjugates.}{lemma:qftLecture23:1}{
+\begin{equation*}
+\begin{aligned}
+(\vbar \gamma^\mu u)^\dagger &= \ubar \gamma^\mu v \\
+(\ubar \gamma^\mu v)^\dagger &= \vbar \gamma^\mu u.
+\end{aligned}
+\end{equation*}
+} % lemma
+The proof is left to \cref{problem:qftLecture23:1}.  Employing this, we have
+\begin{dmath}\label{eqn:qftLecture23:600}
+\Abs{M}^2
+=
+\frac{e^4}{q^4}
+\lr{
+\vbar^r(k')
+\gamma_\rho
+u^r(k)
+\ubar^s(p)
+\gamma^\rho
+v^{s'}(p')
+}
+\times
+\lr{
+\vbar^{s'}(p') \gamma^\mu u^s(p)
+\ubar^r(k) \gamma_\mu v^r(k')
+}.
+\end{dmath}
+
+\section{Problems.}
+\makeproblem{Prove \cref{lemma:qftLecture23:1}}{problem:qftLecture23:1}{
+} % problem
+\makeanswer{problem:qftLecture23:1}{
+We will prove only the first, which is representative
+\begin{dmath}\label{eqn:qftLecture23:580}
+(\vbar \gamma^\mu u)^\dagger
+=
+u^\dagger (\gamma^\mu)^\dagger (v^\dagger \gamma^0)^\dagger
+=
+u^\dagger \gamma^0 \gamma^\mu \gamma^0 \gamma^0 v
+=
+\ubar \gamma^\mu v.
+\end{dmath}
+} % answer
 
 %}
 %\EndArticle

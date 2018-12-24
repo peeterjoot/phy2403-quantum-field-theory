@@ -195,7 +195,23 @@ S[\phi] = \int d^4 x \LL(\phi, \partial_\mu \phi).
 
 Let's keep an example such as the following in mind
 \begin{dmath}\label{eqn:qftLecture4:400}
-\LL = \underbrace{\inv{2} \partial_\mu \phi \partial^\mu \phi}_{\text{Kinetic term}} - \underbrace{m^2 \phi - \lambda \phi^4}_{\text{all relevant and marginal couplings}}.
+\LL = 
+\mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
+{
+\inv{2} \partial_\mu \phi \partial^\mu \phi
+}
+{
+Kinetic term
+}
+- 
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+m^2 \phi - \lambda \phi^4
+}
+{
+all relevant and marginal couplings
+}
+.
 \end{dmath}
 The even powers can be justified by assuming there is some symmetry that kills the odd powered terms.
 

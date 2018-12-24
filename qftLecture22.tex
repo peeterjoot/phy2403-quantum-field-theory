@@ -93,14 +93,22 @@ The relations were used to cast the Hamiltonian in a more familiar form
 \begin{dmath}\label{eqn:qftLecture22:100}
 H
 = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
-\lr{
+\biglr{
    a_\Bp^{s \dagger} a_\Bp^s
    +
    \tilde{b}_\Bp^{s \dagger}
    \tilde{b}_\Bp^s
-   - \underbrace{(2 \pi)^3 \deltathree(0)}_{\text{zero point energy}}
+   - 
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+      (2 \pi)^3 \deltathree(0)
 }
-= \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
+{
+zero point energy
+}
+}
+=
+\int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
 \lr{
    a_\Bp^{s \dagger} a_\Bp^s
    +
@@ -171,8 +179,9 @@ a_\Bp^{r\dagger} \ket{0}
 \int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
    a_\Bq^{s \dagger}
 \lr{
-  -a_\Bq^s
+  -
    a_\Bp^{r\dagger}
+a_\Bq^s
 + (2\pi)^3 \deltathree( \Bp - \Bq )
 }
 \ket{0}
@@ -180,13 +189,19 @@ a_\Bp^{r\dagger} \ket{0}
 =
 \int \frac{d^3 q}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bq
    a_\Bq^{s \dagger}
-\lr{
-  -a_\Bq^s
-\underbrace{   a_\Bp^{r\dagger}
-\ket{0}
-}_{=0}
-+ (2\pi)^3 \delta^{rs} \deltathree( \Bp - \Bq )
-\ket{0}
+\biglr{
+  -
+      a_\Bp^{r\dagger}
+   \mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+   {
+a_\Bq^s
+      \ket{0}
+   }
+   {
+   \(=0\)
+   }
+   + (2\pi)^3 \delta^{rs} \deltathree( \Bp - \Bq )
+   \ket{0}
 }
 \sqrt{2 \omega_\Bp}
 =
@@ -345,7 +360,7 @@ The momentum operator can be written as
 \end{equation*}
 } % theorem
 
-To derive this, we have to assign meaning to \( \BP = \int \Psi^\dagger (-\spacegrad) \Psi \).  There is an implied basis for these vectors that presumably commutes with \( \Psi, \Psi^\dagger \).  Let's suppose that we have a standard orthonormal basis for \R{3} \( \setlr{\Be_1, \Be_2, \Be_3} \), so that our two vectors can be written.
+To derive this, we have to assign meaning to \( \BP = \int \Psi^\dagger (-i \spacegrad) \Psi \).  There is an implied basis for these vectors that presumably commutes with \( \Psi, \Psi^\dagger \).  Let's suppose that we have a standard orthonormal basis for \R{3} \( \setlr{\Be_1, \Be_2, \Be_3} \), so that our two vectors can be written.
 \begin{dmath}\label{eqn:qftLecture22:720}
 \begin{aligned}
 \BP &= \sum_{k = 1}^3 \Be_k P^k \\
@@ -686,7 +701,23 @@ J^0
 \end{dmath}
 Generalizing to arbitrary rotation orientation, this can be written out as
 \begin{dmath}\label{eqn:qftLecture22:920}
-\BJ = \int d^3 x \Psi^\dagger(x) \lr{ \underbrace{\Bx \cross (-i \spacegrad)}_{\text{orbital angular momentum}} + \inv{2} \underbrace{\BOne \otimes \Bsigma}_{\text{spin angular momentum}} } \Psi,
+\BJ = \int d^3 x \Psi^\dagger(x) \biglr{ 
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+\Bx \cross (-i \spacegrad)
+}
+{
+orbital angular momentum
+}
+ + \inv{2} 
+\mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
+{
+\BOne \otimes \Bsigma
+}
+{
+spin angular momentum
+}
+} \Psi,
 \end{dmath}
 where
 \begin{dmath}\label{eqn:qftLecture22:260}
@@ -696,7 +727,7 @@ where
 0 & \Bsigma
 \end{bmatrix},
 \end{dmath}
-and where the orbital and spin angular momenta have been called out.
+and where the orbital and spin angular momenta have been called out.  A nice video treatment of this topic can be found in \citep{tobiasQFTL16}.
 
 For the rest frame of a particle (zero momentum), \citep{peskin1995introduction} makes an argument that
 \begin{dmath}\label{eqn:qftLecture22:280}

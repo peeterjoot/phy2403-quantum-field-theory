@@ -308,13 +308,17 @@ u(\Bp) =
 \frac{\sqrt{p \cdot \sigma}}{m} & 0 \\
 0 & \frac{\sqrt{p \cdot \overbar{\sigma}}}{m}
 \end{bmatrix}
-\underbrace{
-\sqrt{m}
-\begin{bmatrix}
-\zeta \\
-\zeta
-\end{bmatrix}}
-_{u(\Bp = 0)}
+\mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
+{
+   \sqrt{m}
+   \begin{bmatrix}
+   \zeta \\
+   \zeta
+   \end{bmatrix}
+}
+{
+\(u(\Bp = 0)\)
+}
 \end{dmath}
 We'd like to check that this is an element of \( SL(2,\bbC) \).
 We'll also see in the end that we don't have to calculate these square roots, since we always end up with two spinors and when all is said we end up with products of these roots.
