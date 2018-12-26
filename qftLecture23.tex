@@ -29,6 +29,7 @@
 \newcommand{\ITwo}[0]{{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}}}
 \newcommand{\DiracGammaZero}[0]{{\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}}
 \newcommand{\DiracGammaK}[1]{{\begin{bmatrix} 0 & \sigma^{#1} \\ -\sigma^{#1} & 0 \end{bmatrix}}}
+\newcommand{\nbref}[1]{#1}
 
 \beginArtNoToc
 \generatetitle{PHY2403H Quantum Field Theory.  Lecture 23: XXX.  Taught by Prof.\ Erich Poppitz}
@@ -140,7 +141,7 @@ Free Lagrangian
 -
 \mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
 {
-e \oPsi \gamma_\mu \Psi A^\mu 
+e \oPsi \gamma_\mu \Psi A^\mu
 }
 {
 interaction Lagrangian
@@ -367,7 +368,7 @@ incoming electron
 {
 ignoring \( i \epsilon \).
 }
-\ubar^r(k) (-i e \gamma^\sigma ) v^r(k')
+\ubar^r(k) (-i e \gamma^\sigma ) v^{r'}(k')
 \end{dmath}
 \paragraph{Question:} Why are we writing the factors of the matrix element from left to right, corresponding to the right to left reading of the matrix element?
 
@@ -377,7 +378,7 @@ i M
 =
 i \frac{e^2}{q^2}
 \vbar^{s'}(p') \gamma^\rho u^s(p)
-\ubar^r(k) \gamma_\rho v^r(k'),
+\ubar^r(k) \gamma_\rho v^{r'}(k'),
 \end{dmath}
 where the \( (2 \pi)^4 \deltafour(...) \) term hasn't been made explicit.
 
@@ -396,7 +397,7 @@ The proof is left to \cref{problem:qftLecture23:1}.  Employing this, we have
 =
 \frac{e^4}{q^4}
 \lr{
-\vbar^r(k')
+\vbar^{r'}(k')
 \gamma_\rho
 u^r(k)
 \ubar^s(p)
@@ -406,7 +407,239 @@ v^{s'}(p')
 \times
 \lr{
 \vbar^{s'}(p') \gamma^\mu u^s(p)
-\ubar^r(k) \gamma_\mu v^r(k')
+\ubar^r(k) \gamma_\mu v^{r'}(k')
+}.
+\end{dmath}
+
+The problem can be simplified by computing the cross section that sums over all spins, assuming that the states are not polarized (i.e. average over all the up, down states).
+\makedigression{
+Such an average is related to the density matrix
+\begin{dmath}\label{eqn:qftLecture23:620}
+\rho_{\text{in}} = \sum_{s s'} \ket{s s'} \inv{4} \bra{ s s'}.
+\end{dmath}
+\begin{dmath}\label{eqn:qftLecture23:640}
+\trace{
+\lr{
+   e^{i H t} \rho_{\text{in}} e^{i H t} \rho_\txtf
+   \ket{r r'} \bra{r r'}
+}
+}
+\end{dmath}
+} % digression
+That is, We want to sum over all the initial and final state polarizations \( \inv{4} \sum_{ss'} \sum_{rr'} \Abs{M}^2 \)
+
+\begin{dmath}\label{eqn:qftLecture23:610}
+\inv{4} \sum_{ss', rr'} \Abs{M}^2
+=
+\sum_{s s' r r'}
+\frac{e^4}{4 q^4}
+\vbar^{r'}(k')
+\gamma_\rho
+u^r(k)
+\ubar^r(k)
+\gamma_\mu
+v^{r'}(k')
+\ubar^s(p)
+\gamma^\rho
+v^{s'}(p')
+\vbar^{s'}(p')
+\gamma^\mu
+u^s(p)
+=
+\frac{e^4}{4 q^4}
+\sum_{r'}
+\vbar^{r'}(k')
+\gamma_\rho
+\lr{ \slashed{k} + m_\mu }
+\gamma_\mu
+v^{r'}(k')
+\times
+\sum_{s}
+\ubar^s(p)
+\gamma^\rho
+\lr{ \slashed{p'} - m_e }
+\gamma^\mu
+u^s(p),
+\end{dmath}
+where we first used the freedom to move the \( \ubar \gamma v, \vbar \gamma u \) terms, which are scalars, and then used
+\cref{thm:qftLecture21:17} to eliminate the sum over \( s', r \) indexes.
+
+Temporararily expressing the remaining factors in coordinates exposes a trace structure.  For example
+\begin{dmath}\label{eqn:qftLecture23:660}
+\sum_{r'}
+\vbar^{r'}(k')
+\gamma_\rho
+\lr{ \slashed{k} + m_\mu }
+\gamma_\mu
+v^{r'}(k')
+=
+\sum_{r'}
+(\vbar^{r'}(k'))_a
+(\gamma_\rho)_{ab}
+\lr{ \slashed{k} + m_\mu }_{bc}
+(\gamma_\mu)_{cd}
+(v^{r'}(k'))_d
+=
+\sum_{r'}
+(v^{r'}(k'))_d
+(\vbar^{r'}(k'))_a
+(\gamma_\rho)_{ab}
+\lr{ \slashed{k} + m_\mu }_{bc}
+(\gamma_\mu)_{cd}
+=
+\lr{ \slashed{k'} - m_\mu }_{da}
+(\gamma_\rho)_{ab}
+\lr{ \slashed{k} + m_\mu }_{bc}
+(\gamma_\mu)_{cd}
+=
+\trace{
+\lr{
+\lr{ \slashed{k'} - m_\mu }
+\gamma_\rho
+\lr{ \slashed{k} + m_\mu }
+\gamma_\mu
+}},
+\end{dmath}
+since the cyclic sum of matrix coordinates can be expressed as a trace, namely \( \trace{A B C} = A_{ab} B_{bc} C_{ca} \).  We are left with
+\begin{dmath}\label{eqn:qftLecture23:680}
+\inv{4} \sum_{ss', rr'} \Abs{M}^2
+=
+\frac{e^4}{4 q^4}
+\trace{ \lr{
+\lr{ \slashed{k'} - m_\mu }
+\gamma_\nu
+\lr{ \slashed{k} + m_\mu }
+\gamma_\mu
+}}
+\times
+\trace{ \lr{
+\lr{ \slashed{p} + m_e }
+\gamma^\nu
+\lr{ \slashed{p'} - m_e }
+\gamma^\mu
+}}.
+\end{dmath}
+Each trace is now a product of two, three, or four gamma matrices, which can be reduced using the identities:
+\makelemma{Dirac matrix product traces.}{lemma:qftLecture23:700}{
+\begin{equation*}
+\begin{aligned}
+\trace{\lr{ \gamma_\mu \gamma_\nu }} &= 4 g_{\mu\nu} \\
+\trace{\lr{ \gamma_\mu \gamma_\nu \gamma_\alpha }} &= 0 \\
+\trace{\lr{ \gamma_\mu \gamma_\nu \gamma_\alpha \gamma_\beta }} &= 4 \lr{
+   g_{\mu\nu} g_{\alpha\beta}
+   -
+   g_{\mu\alpha} g_{\nu\beta}
+   +
+   g_{\mu\beta} g_{\alpha\nu}
+}
+\end{aligned}
+\end{equation*}
+} % lemma
+Setting \( m_e = 0 \) (compared to \(m_\mu\))
+the \( p, p' \) dependent trace reduces to
+\begin{dmath}\label{eqn:qftLecture23:780}
+\trace{\lr{
+(\slashed{p} + m_e) \gamma^\nu (\slashed{p'} - m_e) \gamma^\mu
+}}
+=
+\trace{\lr{
+\slashed{p} \gamma^\nu \slashed{p'} \gamma^\mu
+}}
+=
+p_\alpha {p'}_\beta
+\trace{\lr{
+\gamma^\alpha
+\gamma^\nu
+\gamma^\beta
+\gamma^\mu
+}}
+=
+4 p_\alpha {p'}_\beta
+\lr{
+g^{\alpha\nu}
+g^{\beta\mu}
+-
+g^{\alpha\beta}
+g^{\nu\mu}
++
+g^{\alpha\mu}
+g^{\nu\beta}
+}
+=
+4 \lr{
+-
+p \cdot p'
+g^{\nu\mu}
++
+p^\nu {p'}^\mu
++
+p^\mu {p'}^\nu
+},
+\end{dmath}
+and the \( k, k' \) dependent trace reduces to
+\begin{dmath}\label{eqn:qftLecture23:800}
+\trace{ \lr{
+\lr{ \slashed{k'} - m_\mu }
+\gamma_\nu
+\lr{ \slashed{k} + m_\mu }
+\gamma_\mu
+}}
+=
+\trace{ \lr{
+\slashed{k'}
+\gamma_\nu
+\slashed{k}
+\gamma_\mu
+}}
+-
+m_\mu^2
+\trace{ \lr{
+\gamma_\nu
+\gamma_\mu
+}}
++
+m_\mu
+\cancel{
+\trace{ \lr{
+\slashed{k'}
+\gamma_\nu
+\gamma_\mu
+}}}
+-
+m_\mu
+\cancel{
+\trace{ \lr{
+\gamma_\nu
+\slashed{k}
+\gamma_\mu
+}}}
+=
+4\lr{
+   {k'}_\alpha
+   {k}_\beta
+   \lr{
+      g_{\alpha\nu} g_{\beta\mu}
+      -
+      g_{\alpha\beta} g_{\nu\mu}
+      +
+      g_{\alpha\mu} g_{\nu\beta}
+   }
+   -
+   m_\mu^2 g_{\nu\mu}
+}
+=
+4\lr{
+   {k'}_\nu
+   {k}_\mu
+   +
+   {k'}_\mu
+   {k}_\nu
+   -
+   \lr{
+   k \cdot k'
+   +
+      m_\mu^2 g_{\nu\mu}
+   }
 }.
 \end{dmath}
 
@@ -424,6 +657,75 @@ u^\dagger \gamma^0 \gamma^\mu \gamma^0 \gamma^0 v
 =
 \ubar \gamma^\mu v.
 \end{dmath}
+} % answer
+
+\makeproblem{Prove \cref{lemma:qftLecture23:700}}{problem:qftLecture23:2}{
+} % problem
+\makeanswer{problem:qftLecture23:2}{
+For the two matrix trace, consider
+\begin{dmath}\label{eqn:qftLecture23:700}
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+   +
+   \gamma_\nu \gamma_\mu
+}}
+=
+2 g_{\mu\nu}
+\trace{\lr{ 1 }}
+=
+8 g_{\mu\nu}
+,
+\end{dmath}
+but
+\begin{dmath}\label{eqn:qftLecture23:720}
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+   +
+   \gamma_\nu \gamma_\mu
+}}
+=
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+}}
+   +
+\trace{\lr{
+   \gamma_\nu \gamma_\mu
+}}
+=
+2 \trace{\lr{
+   \gamma_\mu \gamma_\nu
+}},
+\end{dmath}
+so \( \trace{\lr{ \gamma_\mu \gamma_\nu }} = 4 g_{\mu\nu} \) as claimed.
+For the traces of the three matrix products, there are three possible products of interest (for \(r \ne s\))
+\begin{dmath}\label{eqn:qftLecture23:740}
+\gamma^0 \gamma^r \gamma^s
+=
+- i \epsilon^{rst}
+\begin{bmatrix}
+0 & \sigma^t \\
+\sigma^t & 0
+\end{bmatrix},
+\end{dmath}
+which is traceless.  We also have (for distinct \(r,s,t\))
+\begin{dmath}\label{eqn:qftLecture23:760}
+\gamma^r \gamma^s \gamma^t
+=
+-
+\begin{bmatrix}
+0 & \sigma^r \sigma^s \sigma^t \\
+\sigma^r \sigma^s \sigma^t & 0
+\end{bmatrix},
+\end{dmath}
+which is also traceless.  All other three matrix products (except permutations of the two above) are proportional to a single \( \gamma^\mu \), which is traceless.  A lazier, brute force
+proof by Mathematica (\nbref{tracesOfDiracMatrixProducts.nb}) is also possible.
+For the four matrix traces, the trace will be zero unless we have two matching pairs of gamma matrices (since \( \gamma^0 \gamma^1 \gamma^2 \gamma^3 \) or its permutations is traceless.)  Assuming such matched pairs, we can reduce the product like so
+\begin{itemize}
+\item \( \mu = \nu \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = 4 g^{\alpha\beta} \)
+\item \( \mu = \alpha, \nu \ne \alpha \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = -4 g^{\nu\beta} \)
+\item \( \mu = \beta (\mu \ne \nu, \mu \ne \alpha) \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = 4 g^{\nu\alpha} \)
+\end{itemize}
+It's clear that we can summarize these possibilities as stated in \cref{lemma:qftLecture23:700}.
 } % answer
 
 %}
