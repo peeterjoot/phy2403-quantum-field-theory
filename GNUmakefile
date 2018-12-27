@@ -112,8 +112,8 @@ l23: qftLecture23.pdf
 #p3: ProblemSet3.pdf
 p4: ProblemSet4.pdf
 p5: ProblemSet5.pdf
-q: QandA.pdf
-l: lukenotetypos.pdf
+#q: QandA.pdf
+#l: lukenotetypos.pdf
 dr: diracuv.pdf
 
 qftLukeProblemSet1.pdf : qftLukeProblemSet1Problem1.tex

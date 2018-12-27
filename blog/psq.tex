@@ -1,0 +1,185 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{psq}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{XXX}
+%\chapter{XXX}
+%\label{chap:psq}
+% \citep{sakurai2014modern} pr X.Y
+% \citep{pozar2009microwave}
+% \citep{qftLectureNotes}
+% \citep{doran2003gap}
+% \citep{jackson1975cew}
+% \citep{griffiths1999introduction}
+
+\makeproblem{}{problem:psq:1}{
+Show that
+\begin{equation*}
+\lr{
+   p^\beta {p'}^\alpha
+   +
+   p^\alpha {p'}^\beta
+   -
+   p \cdot p'
+   g^{\alpha\beta}
+}
+\times
+\lr{
+   {k'}_\beta
+   {k}_\alpha
+   +
+   {k'}_\alpha
+   {k}_\beta
+   -
+   \lr{
+   k \cdot k'
+   +
+      m_\mu^2
+   }
+   g_{\alpha\beta}
+}
+=
+2
+\lr{
+   p \cdot k p' \cdot k'
+   +
+   p \cdot k' p' \cdot k
+   +
+   m_\mu^2 p \cdot p'
+}
+\end{equation*}
+} % problem
+
+\makeanswer{problem:psq:1}{
+Proceeding mechanically, but carefully, we have
+\begin{dmath}\label{eqn:psq:40}
+\begin{aligned}
+&  p^\beta {p'}^\alpha
+   {k'}_\beta
+   {k}_\alpha
++
+   p^\beta {p'}^\alpha
+   {k'}_\alpha
+   {k}_\beta
+-
+   p^\beta {p'}^\alpha
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&\qquad +
+   p^\alpha {p'}^\beta
+   {k'}_\beta
+   {k}_\alpha
++
+   p^\alpha {p'}^\beta
+   {k'}_\alpha
+   {k}_\beta
+-
+   p^\alpha {p'}^\beta
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&\qquad -
+   p \cdot p'
+   g^{\alpha\beta}
+   {k'}_\beta
+   {k}_\alpha
+-
+   p \cdot p'
+   g^{\alpha\beta}
+   {k'}_\alpha
+   {k}_\beta
++
+   p \cdot p'
+   g^{\alpha\beta}
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&=
+p \cdot k' p' \cdot k
++
+p \cdot k p' \cdot k'
+-
+p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&\qquad +
+p \cdot k p' \cdot k'
++
+p \cdot k' p' \cdot k
+-
+p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&\qquad -
+   p \cdot p'
+k \cdot k'
+-
+   p \cdot p'
+k \cdot k'
++
+4 p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&=
+  2 p \cdot k' p' \cdot k
++ 2 p \cdot k p' \cdot k'
+- 2 p \cdot p' k \cdot k'
++ 2 p \cdot p' \lr{ k \cdot k' + m_\mu^2 } \\
+&=
+  2 p \cdot k' p' \cdot k
++ 2 p \cdot k p' \cdot k'
++ 2 p \cdot p' m_\mu^2  \\
+&=
+2 \lr{
+    p \cdot k' p' \cdot k
++   p \cdot k p' \cdot k'
++   p \cdot p' m_\mu^2 
+}.
+\end{aligned}
+\end{dmath}
+} % answer
+
+%}
+\EndArticle
+%\EndNoBibArticle
