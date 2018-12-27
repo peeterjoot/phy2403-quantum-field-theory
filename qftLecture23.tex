@@ -203,18 +203,19 @@ where \( \alpha, \beta = 1, 2, 3, 4 \).
 
 Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that propagator is
 \begin{dmath}\label{eqn:qftLecture23:260}
+\begin{aligned}
 \expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
-=
+&=
 \int \frac{d^3 p}{(2\pi)^3 \sqrt{ 2 \omega_\Bp } }
 \int \frac{d^3 q}{(2\pi)^3 \sqrt{ 2 \omega_\Bq } }
-\lr{
+\biglr{
    e^{-i p \cdot x} e^{+ i q \cdot y}
-   \Theta ( x_0 - y_0 ) u^s_\alpha(p) \ubar^r_\beta(q) \expectation{ a_\Bp^s a_\Bq^{r\dagger} }
-+
+   \Theta ( x_0 - y_0 ) u^s_\alpha(p) \ubar^r_\beta(q) \expectation{ a_\Bp^s a_\Bq^{r\dagger} } \\
+\qquad +
    e^{i p \cdot x} e^{- i q \cdot y}
    \Theta ( y_0 - x_0 ) \vbar^s_\beta(p) v^r_\beta(q) \expectation{ b_\Bq^s a_\Bp^{r\dagger} }
-}
-=
+} \\
+&=
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp }
 \lr{
    e^{-i p \cdot (x-y)}
@@ -222,8 +223,8 @@ Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that
 +
    e^{i p \cdot (x- y)}
    \Theta ( y_0 - x_0 ) \vbar^s_\beta(p) v^r_\beta(p)
-}
-=
+} \\
+&=
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp }
 \lr{
    e^{-i p \cdot x}
@@ -234,40 +235,42 @@ Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that
    \Theta ( y_0 - x_0 )
 \lr{ \gamma^\mu_{\alpha\beta} p_\mu - m}
 }
-=
+\end{aligned}
 \end{dmath}
 where \( \gamma^\mu_{\alpha\beta} \) are the \( \alpha, \beta \) components of the gamma matrices.
 Now we can replace the \( p_\mu \)'s with derivatives acting on the exponentials
 
 \begin{dmath}\label{eqn:qftLecture23:340}
+\begin{aligned}
 \expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
-=
+&=
 \Theta ( x_0 - y_0 )
-\lr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }
-\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)}
--
+\biglr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)} \\
+&\qquad -
 \Theta ( y_0 - x_0 )
 \lr{ -i \gamma^\mu_{\alpha\beta} \partial_\mu - m }
-\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)}
-=
+\int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{-i p \cdot (x - y)} \\
+&=
 \Theta ( x_0 - y_0 )
 \lr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }
 D(x - y)
 -
 \Theta ( y_0 - x_0 )
 \lr{ -i \gamma^\mu_{\alpha\beta} \partial_\mu - m }
-D(y - x)
-=
+D(y - x) \\
+&=
 \lr{ \gamma^\mu_{\alpha\beta} \partial_\mu^{(x)} + m }
-\lr{
+\biglr{
    \Theta ( x_0 - y_0 )
-   D(x - y)
+   D(x - y) 
    +
    \Theta ( y_0 - x_0 )
    D(y - x)
-}
--
+} \\
+&-
 i \gamma^0 \delta(x^0 - y^0) \cancel{\lr{ D(x - y) - D(y - x) }},
+\end{aligned}
 \end{dmath}
 where we've killed off a factor that is zero (off the light cone?)
 
@@ -861,7 +864,6 @@ R =
 can be measured, and such measurement was deemed to be one of the validations of the QCD theory.  The \( 3 \sum_q (Q_q)^4 \) expression includes a 3 that is related to quark ``color'', and a sum over only the quark charges \( q \) that are light enough to be produced.  \citep{peskin1995introduction} fig. 5.3 includes an experimental depiction of such a measurement, which has a step function form roughly like
 \cref{fig:l23:l23Fig10}, where the steps occur at the energy levels that are sufficient to produce new quarks.
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig10}{\( R \) quark step function.}{fig:l23:l23Fig10}{0.3}
-
 
 %}
 %\EndArticle

@@ -1,4 +1,14 @@
-- mathimagefigure for the mathematica notebooks.
+- redraw:
+
+   \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig8}{Reflection and transmission of wave packets.}{fig:qftLecture15b:qftLecture15bFig8}{0.3}
+
+   \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig9}{Plane wave scattering off a potential.}{fig:qftLecture15b:qftLecture15bFig9}{0.4}
+
+   \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture16Fig18}{Symmetry coefficient counting.}{fig:qftLecture16:qftLecture16Fig18}{0.2}
+
+- redo as mmacell:
+
+   hw4p2numbers.nb -- hw4p2MathematicaFig1
 
 - what's wrong with the mmacells sty for this book?
 
