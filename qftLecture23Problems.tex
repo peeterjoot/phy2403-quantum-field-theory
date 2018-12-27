@@ -1,0 +1,238 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+
+%\section{Problems.}
+\makeproblem{Prove \cref{lemma:qftLecture23:1}}{problem:qftLecture23:1}{
+} % problem
+\makeanswer{problem:qftLecture23:1}{
+We will prove only the first, which is representative
+\begin{dmath}\label{eqn:qftLecture23:580}
+(\vbar \gamma^\mu u)^\dagger
+=
+u^\dagger (\gamma^\mu)^\dagger (v^\dagger \gamma^0)^\dagger
+=
+u^\dagger \gamma^0 \gamma^\mu \gamma^0 \gamma^0 v
+=
+\ubar \gamma^\mu v.
+\end{dmath}
+} % answer
+
+\makeproblem{Prove \cref{lemma:qftLecture23:700}}{problem:qftLecture23:2}{
+} % problem
+\makeanswer{problem:qftLecture23:2}{
+For the two matrix trace, consider
+\begin{dmath}\label{eqn:qftLecture23:700}
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+   +
+   \gamma_\nu \gamma_\mu
+}}
+=
+2 g_{\mu\nu}
+\trace{\lr{ 1 }}
+=
+8 g_{\mu\nu}
+,
+\end{dmath}
+but
+\begin{dmath}\label{eqn:qftLecture23:720}
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+   +
+   \gamma_\nu \gamma_\mu
+}}
+=
+\trace{\lr{
+   \gamma_\mu \gamma_\nu
+}}
+   +
+\trace{\lr{
+   \gamma_\nu \gamma_\mu
+}}
+=
+2 \trace{\lr{
+   \gamma_\mu \gamma_\nu
+}},
+\end{dmath}
+so \( \trace{\lr{ \gamma_\mu \gamma_\nu }} = 4 g_{\mu\nu} \) as claimed.
+For the traces of the three matrix products, there are three possible products of interest (for \(r \ne s\))
+\begin{dmath}\label{eqn:qftLecture23:740}
+\gamma^0 \gamma^r \gamma^s
+=
+- i \epsilon^{rst}
+\begin{bmatrix}
+0 & \sigma^t \\
+\sigma^t & 0
+\end{bmatrix},
+\end{dmath}
+which is traceless.  We also have (for distinct \(r,s,t\))
+\begin{dmath}\label{eqn:qftLecture23:760}
+\gamma^r \gamma^s \gamma^t
+=
+-
+\begin{bmatrix}
+0 & \sigma^r \sigma^s \sigma^t \\
+\sigma^r \sigma^s \sigma^t & 0
+\end{bmatrix},
+\end{dmath}
+which is also traceless.  All other three matrix products (except permutations of the two above) are proportional to a single \( \gamma^\mu \), which is traceless.  A lazier, brute force
+proof by Mathematica (\nbref{tracesOfDiracMatrixProducts.nb}) is also possible.
+For the four matrix traces, the trace will be zero unless we have two matching pairs of gamma matrices (since \( \gamma^0 \gamma^1 \gamma^2 \gamma^3 \) or its permutations is traceless.)  Assuming such matched pairs, we can reduce the product like so
+\begin{itemize}
+\item \( \mu = \nu \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = 4 g^{\alpha\beta} \)
+\item \( \mu = \alpha, \nu \ne \alpha \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = -4 g^{\nu\beta} \)
+\item \( \mu = \beta (\mu \ne \nu, \mu \ne \alpha) \implies \trace( \gamma^\mu \gamma^\nu \gamma^\alpha \gamma^\beta ) = 4 g^{\nu\alpha} \)
+\end{itemize}
+It's clear that we can summarize these possibilities as stated in \cref{lemma:qftLecture23:700}.
+} % answer
+
+\makeproblem{}{problem:psq:1}{
+Show that
+\begin{equation*}
+\lr{
+   p^\beta {p'}^\alpha
+   +
+   p^\alpha {p'}^\beta
+   -
+   p \cdot p'
+   g^{\alpha\beta}
+}
+\times
+\lr{
+   {k'}_\beta
+   {k}_\alpha
+   +
+   {k'}_\alpha
+   {k}_\beta
+   -
+   \lr{
+   k \cdot k'
+   +
+      m_\mu^2
+   }
+   g_{\alpha\beta}
+}
+=
+2
+\lr{
+   p \cdot k p' \cdot k'
+   +
+   p \cdot k' p' \cdot k
+   +
+   m_\mu^2 p \cdot p'
+}
+\end{equation*}
+} % problem
+
+\makeanswer{problem:psq:1}{
+Proceeding mechanically, but carefully, we have
+\begin{dmath}\label{eqn:psq:40}
+\begin{aligned}
+&  p^\beta {p'}^\alpha
+   {k'}_\beta
+   {k}_\alpha
++
+   p^\beta {p'}^\alpha
+   {k'}_\alpha
+   {k}_\beta
+-
+   p^\beta {p'}^\alpha
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&\qquad +
+   p^\alpha {p'}^\beta
+   {k'}_\beta
+   {k}_\alpha
++
+   p^\alpha {p'}^\beta
+   {k'}_\alpha
+   {k}_\beta
+-
+   p^\alpha {p'}^\beta
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&\qquad -
+   p \cdot p'
+   g^{\alpha\beta}
+   {k'}_\beta
+   {k}_\alpha
+-
+   p \cdot p'
+   g^{\alpha\beta}
+   {k'}_\alpha
+   {k}_\beta
++
+   p \cdot p'
+   g^{\alpha\beta}
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   }
+   g_{\alpha\beta} \\
+&=
+p \cdot k' p' \cdot k
++
+p \cdot k p' \cdot k'
+-
+p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&\qquad +
+p \cdot k p' \cdot k'
++
+p \cdot k' p' \cdot k
+-
+p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&\qquad -
+   p \cdot p'
+k \cdot k'
+-
+   p \cdot p'
+k \cdot k'
++
+4 p \cdot p'
+   \lr{
+      k \cdot k'
+      +
+      m_\mu^2
+   } \\
+&=
+  2 p \cdot k' p' \cdot k
++ 2 p \cdot k p' \cdot k'
+- 2 p \cdot p' k \cdot k'
++ 2 p \cdot p' \lr{ k \cdot k' + m_\mu^2 } \\
+&=
+  2 p \cdot k' p' \cdot k
++ 2 p \cdot k p' \cdot k'
++ 2 p \cdot p' m_\mu^2  \\
+&=
+2 \lr{
+    p \cdot k' p' \cdot k
++   p \cdot k p' \cdot k'
++   p \cdot p' m_\mu^2
+}.
+\end{aligned}
+\end{dmath}
+} % answer
+
+%}

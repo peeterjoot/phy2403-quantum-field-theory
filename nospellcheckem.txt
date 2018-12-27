@@ -1,4 +1,10 @@
 ProblemSet1.tex
+diracMatrixProperties.tex
+momentumQuestion.tex
+ProblemSet5Problem1.tex
+ProblemSet5Problem3.tex
+ProblemSet5.tex
+mathematica.tex
 ProblemSet2.tex
 ProblemSet3.tex
 ProblemSet4.tex
@@ -8,6 +14,7 @@ backmatter.tex
 chapters.tex
 classicthesis-config.tex
 currentBookCopyright.tex
-phy2403.tex
-lukenotetypos.tex
 diracuv.tex
+lukenotetypos.tex
+phy2403.tex
+q17.tex

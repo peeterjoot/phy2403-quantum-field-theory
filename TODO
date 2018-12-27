@@ -1,5 +1,3 @@
-- check for spellcheckem.txt completeness.
-
 - mathimagefigure for the mathematica notebooks.
 
 - what's wrong with the mmacells sty for this book?
@@ -24,10 +22,6 @@
    -- also in that lecture: he provides an experimental motivation for why we'd care about <0| [phi(x) \phi(y)] |0>
       (differences of two point correlation functions) in the first place.  I didn't understand all the steps in that discussion, but
       you at least understand that measurement results in exactly those commutators.
-
-- l23:
-  
-   Finish
 
 - Ps2: problem 4.
 

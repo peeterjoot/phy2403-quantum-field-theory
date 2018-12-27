@@ -1,3 +1,10 @@
+DiracUVmatricesExplicit.tex
+squarerootpsigma.tex
+qftLecture22.tex
+ProblemSet5Problem2.tex
+qftLecture23.tex
+qftLecture23Problems.tex
+reflection.tex
 ProblemSet4Problem1.tex
 ProblemSet4Problem2.tex
 ProblemSet4Problem3.tex
