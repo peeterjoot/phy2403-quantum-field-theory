@@ -1,3 +1,5 @@
+- review the problems from Luke's QFT I -- anything worth keeping?
+
 - redraw:
 
    \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig8}{Reflection and transmission of wave packets.}{fig:qftLecture15b:qftLecture15bFig8}{0.3}
@@ -17,6 +19,9 @@
 - go through and add various formulas to the new results appendix section.
 
 - for each kind of detail deferred to a problem, link to that problem.
+   step 1.  enumerate these problems.
+   step 2.  find the context
+   step 3.  link em.
 
 - move various detailed derivations to problems, perhaps switching to theorem/lemma/... for them.
 
@@ -33,64 +38,41 @@
       (differences of two point correlation functions) in the first place.  I didn't understand all the steps in that discussion, but
       you at least understand that measurement results in exactly those commutators.
 
-- Ps2: problem 4.
+- REWORK:
+   - Ps2: problem 4.
 
-   redo.
+      redo.
 
-- ps4: problem 3.
+   - ps4: problem 3.
 
-   rework the parts that I'm sure were wrong (unconditionally cancelling stuff as "unphysical".)
+      rework the parts that I'm sure were wrong (unconditionally cancelling stuff as "unphysical".)
 
-- ps5
+   - ps5
 
-- l20: on integration:
-
-   % FIXME: \cref{dfn:qftLecture19:31}
-
-- final spelling check:
-
-   s/klien/klein/
-
-   Drei -- three (long "i")
-   vs.
-   ich -- (I) short i
-
-- make these problem links:
-
-grep -ni HW[1234] *tex 
-
-   ProblemSet3Problem3.tex:64:using the half delta function representation from Hw2, this reduces to
-   qftLecture15b.tex:57:Contractions allow time ordered products to be written in a compact form.  In HW4 we are set with the task of demonstrating how this is done (i.e. proving \underline{Wick's theorem}.)
-   qftLecture16.tex:101:HW4 has a coupling like \( (h/V) \partial_\mu \phi^a \partial^\mu \phi^a \) for which a \( h \rightarrow \phi^a \phi^a \) decay is possible.
-   qftLecture19.tex:829:We will see (HW4) that Lorentz transformations take the form
-   qftLecture19.tex:1075:and (from HW4)
-   qftLecture9.tex:237:\paragraph{Example from HW2:}
-
-(when fixing, search for any remaining).
+      -- try p1 and p3 again (see grading, and try incomplete parts).
 
 - SL, SU, SO looks weird in the book (example Lecture19: I think they looked okay in the standalone article based lecture notes).  Use a macro for those instead to handle nicer formatting.
 
-- some DIY's:
+- some DIY's and FIXMEs:
 
    qftLecture14.tex:\paragraph{Claim: (DIY):}
    qftLecture15.tex:(DIY: work through the details -- this is a problem in \citep{peskin1995introduction})
    qftLecture17.tex:(Claim: DIY)
    qftLecture23.tex:\item \( P, C, T \) : DIY
 
+   Search for the rest of the FIXMEs (some possibly commented out).
+
 - Maintainance:
    - Indexing after (up to l15 is also rough.)
-   - handle various DIY/Fixme/todo's
+      - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
    - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
 - Spelling/grammar:
    - Audit for basic grammar, proper "latex" sentences.
+   - no blank line before or after equation unless new paragraph.
    - Spell check all.
-   - make sure spellcheckem is complete.
 - Organization:
    - Consolidate review material into more streamlined story.
    - Better chapter/section layout (more topical, less narrative timeline)
-- Problems:
-   - go back and do ps2 p4 completely (and not as I did)
-   - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
 - Versioning:
    -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
    -- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)

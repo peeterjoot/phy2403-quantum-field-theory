@@ -1,3 +1,19 @@
+- make these problem links:
+
+qftLecture9.tex:237:\paragraph{Example from HW2:}
+qftLecture15b.tex:57:Contractions allow time ordered products to be written in a compact form.  In HW4 we are set with the task of demonstrating how this is done (i.e. proving \underline{Wick's theorem}.)
+qftLecture16.tex:100:HW4 has a coupling like \( (h/V) \partial_\mu \phi^a \partial^\mu \phi^a \) for which a \( h \rightarrow \phi^a \phi^a \) decay is possible.
+qftLecture19.tex:836:We will see (HW4) that Lorentz transformations take the form
+qftLecture19.tex:1080:and (from HW4)
+
+- final spelling check:
+
+   s/klien/klein/
+
+   Drei -- three (long "i")
+   vs.
+   ich -- (I) short i
+
 - mathimagefigure for the mathematica notebooks.
 
 - convert underbraces to mathLabelBox's
