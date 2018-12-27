@@ -1,3 +1,7 @@
+- HW -> Hw
+
+   search for all H[wW] and convert to problem links.
+
 - redo as mmacell:
 
    hw4p2numbers.nb -- hw4p2MathematicaFig1
@@ -59,7 +63,6 @@
 - Spelling/grammar:
    - Audit for basic grammar, proper "latex" sentences.
    - no blank line before or after equation unless new paragraph.
-   - Spell check all.
 - Organization:
    - Consolidate review material into more streamlined story.
    - Better chapter/section layout (more topical, less narrative timeline)

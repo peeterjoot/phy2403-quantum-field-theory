@@ -180,7 +180,7 @@ We want to study the Green's function of this Klein-Gordon equation, defined to 
 \begin{dmath}\label{eqn:qftLecture11:740}
 \lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \deltafour(x - y),
 \end{dmath}
-where the \( -i \) factor is for convienience.
+where the \( -i \) factor is for convenience.
 This is analogous to the Green's function that we just studied for the QM harmonic oscillator.
 
 \makeproblem{Compute \( D(x-y) \) from the commutator.}{problem:qftLecture11:820}{
@@ -211,7 +211,7 @@ D(x - y)
 } % answer
 
 \makeproblem{Verification of harmonic oscillator Green's function.}{problem:qftLecture11:2}{
-Take the derivatives of a convolution of the Green's function \cref{eqn:qftLecture11:660} to show that it satisifies
+Take the derivatives of a convolution of the Green's function \cref{eqn:qftLecture11:660} to show that it satisfies
 \cref{eqn:qftLecture11:440}.
 } % problem
 
@@ -222,13 +222,13 @@ q(t)
 = \int_{-\infty}^\infty G(t - t') j(t') dt'
 = -\inv{\omega} \int_{-\infty}^\infty \sin(\omega(t - t')) \Theta(t - t') j(t') dt'.
 \end{equation}
-We are free to add any \( q_0(t) \) that satisfies the homogeneous wave equation \( q_0''(t) + \omega^2 q_0(t) = 0 \) to our assumed convolution solution \cref{eqn:qftLecture11:880}, but that isn't interesting for this exersize.
+We are free to add any \( q_0(t) \) that satisfies the homogeneous wave equation \( q_0''(t) + \omega^2 q_0(t) = 0 \) to our assumed convolution solution \cref{eqn:qftLecture11:880}, but that isn't interesting for this exercise.
 Since \( \Theta(t - t') = 0 \) for \( t - t' < 0 \), or \( t' > t \), the convolution can be written as
 \begin{dmath}\label{eqn:qftLecture11:900}
 q(t)
 = -\inv{\omega} \int_{-\infty}^t \sin(\omega(t - t')) j(t') dt',
 \end{dmath}
-which is now in a convient form to take derivatives.  We have contributions from the boundary's time dependence and from the integrand.  In particular
+which is now in a convenient form to take derivatives.  We have contributions from the boundary's time dependence and from the integrand.  In particular
 \begin{dmath}\label{eqn:qftLecture11:920}
 \ddt{} \int_{a(t)}^{b(t)} g(x, t) dx
 =
