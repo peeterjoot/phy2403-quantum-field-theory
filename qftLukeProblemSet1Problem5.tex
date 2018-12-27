@@ -20,75 +20,77 @@ where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the field
 \makeanswer{qft:LukeProblemSet1:5}{
 \withproblemsetsParagraph{
 
-I had to start with re-deriving the field equations for a Lagrange density since I'd forgotten what they were.  If a field \( \phi \) is varied \( \phi' = \phi + \overbar{\phi} \), with the zero variation on the boundaries of the action volume element, we have to first order
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem5:40}
-\LL'
-= \LL( \phi + \overbar{\phi}, \partial_\alpha ( \phi + \overbar{\phi}) )
-=
-\LL( \phi )
-+
-\PD{\overbar{\phi}}{\LL} \overbar{\phi}
-+
-\PD{\partial_\beta \overbar{\phi}}{\LL} \partial_\beta \overbar{\phi}.
-\end{dmath}
-
-The variation of the action is
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem5:60}
-\delta S
-=
-\int dV \lr{
-\PD{\overbar{\phi}}{\LL} \overbar{\phi}
-+
-\PD{\partial_\beta \overbar{\phi}}{\LL} \partial_\beta \overbar{\phi}
-}
-=
-\int dV \lr{
-\PD{\overbar{\phi}}{\LL} \overbar{\phi}
-+
-\partial_\beta \lr{
-\overbar{\phi}
-\PD{\partial_\beta \overbar{\phi}}{\LL}
-}
--
-\overbar{\phi}
-\partial_\beta \lr{
-\PD{\partial_\beta \overbar{\phi}}{\LL}
-}
-}
-=
-\int d\Omega
-\evalbar{
-\overbar{\phi}
-\PD{\partial_\beta \overbar{\phi}}{\LL}
-}
-{
-\Delta x^\beta
-}
-+
-\int dV
-\overbar{\phi}
-\lr{
-\PD{\overbar{\phi}}{\LL}
--
-\partial_\beta \lr{
-\PD{\partial_\beta \overbar{\phi}}{\LL}
-}
-}
-\end{dmath}
-
-The first integral vanishes given the boundary condition assumptions, and the second provides the equations for the field.  Generalizing that to multiple fields \( \phi_a \), and evaluating the derivatives at \( \overbar{\phi}_a = \phi_a \) we have
-
-\boxedEquation{eqn:qftProblemSet1Problem5:80}{
-\PD{\phi_a}{\LL}
-=
-\partial_\beta \lr{
-\PD{\partial_\beta \phi_a}{\LL}
-}.
-}
-
-Now we can tackle the problem.  Consider first just two fields, say \( \phi \) and \( \psi\), and consider
+%%I had to start with re-deriving the field equations for a Lagrange density since I'd forgotten what they were.  If a field \( \phi \) is varied \( \phi' = \phi + \overbar{\phi} \), with the zero variation on the boundaries of the action volume element, we have to first order
+%%
+%%\begin{dmath}\label{eqn:LukeProblemSet1Problem5:40}
+%%\LL'
+%%= \LL( \phi + \overbar{\phi}, \partial_\alpha ( \phi + \overbar{\phi}) )
+%%=
+%%\LL( \phi )
+%%+
+%%\PD{\overbar{\phi}}{\LL} \overbar{\phi}
+%%+
+%%\PD{\partial_\beta \overbar{\phi}}{\LL} \partial_\beta \overbar{\phi}.
+%%\end{dmath}
+%%
+%%The variation of the action is
+%%
+%%\begin{dmath}\label{eqn:LukeProblemSet1Problem5:60}
+%%\delta S
+%%=
+%%\int dV \lr{
+%%\PD{\overbar{\phi}}{\LL} \overbar{\phi}
+%%+
+%%\PD{\partial_\beta \overbar{\phi}}{\LL} \partial_\beta \overbar{\phi}
+%%}
+%%=
+%%\int dV \lr{
+%%\PD{\overbar{\phi}}{\LL} \overbar{\phi}
+%%+
+%%\partial_\beta \lr{
+%%\overbar{\phi}
+%%\PD{\partial_\beta \overbar{\phi}}{\LL}
+%%}
+%%-
+%%\overbar{\phi}
+%%\partial_\beta \lr{
+%%\PD{\partial_\beta \overbar{\phi}}{\LL}
+%%}
+%%}
+%%=
+%%\int d\Omega
+%%\evalbar{
+%%\overbar{\phi}
+%%\PD{\partial_\beta \overbar{\phi}}{\LL}
+%%}
+%%{
+%%\Delta x^\beta
+%%}
+%%+
+%%\int dV
+%%\overbar{\phi}
+%%\lr{
+%%\PD{\overbar{\phi}}{\LL}
+%%-
+%%\partial_\beta \lr{
+%%\PD{\partial_\beta \overbar{\phi}}{\LL}
+%%}
+%%}
+%%\end{dmath}
+%%
+%%The first integral vanishes given the boundary condition assumptions, and the second provides the equations for the field.  Generalizing that to multiple fields \( \phi_a \), and evaluating the derivatives at \( \overbar{\phi}_a = \phi_a \) we have
+%%
+%%\boxedEquation{eqn:qftProblemSet1Problem5:80}{
+%%\PD{\phi_a}{\LL}
+%%=
+%%\partial_\beta \lr{
+%%\PD{\partial_\beta \phi_a}{\LL}
+%%}.
+%%}
+%%
+%%Now we can tackle the problem.  
+%%XX
+Consider first just two fields, say \( \phi \) and \( \psi\), and consider
 
 \begin{dmath}\label{eqn:qftProblemSet1Problem5:100}
 \partial_\beta
