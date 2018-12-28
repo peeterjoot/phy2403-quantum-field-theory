@@ -32,6 +32,8 @@
       (differences of two point correlation functions) in the first place.  I didn't understand all the steps in that discussion, but
       you at least understand that measurement results in exactly those commutators.
 
+   Hmm.  Not sure where to mention this -- we seem to start with the time dependent fields, which wasn't how I remembered it.
+
 - REWORK:
    - Ps2: problem 4.
 
@@ -60,12 +62,15 @@
    - Indexing after (up to l15 is also rough.)
       - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
    - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
+
 - Spelling/grammar:
    - Audit for basic grammar, proper "latex" sentences.
    - no blank line before or after equation unless new paragraph.
+
 - Organization:
    - Consolidate review material into more streamlined story.
    - Better chapter/section layout (more topical, less narrative timeline)
+
 - Versioning:
    -- figure out something better (apply same logic to GAelectrodynamics/ too when done)
    -- versioning for redacted version doesn't work properly (shows 0.44 instead of 0.147 -- i.e. base repo version, not current for this repo.)
