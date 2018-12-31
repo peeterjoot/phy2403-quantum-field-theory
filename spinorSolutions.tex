@@ -3,35 +3,36 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{spinorSolutions}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-\usepackage{slashed}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Spinor solutions with alternate \( \gamma^0 \) representation.}
-%\chapter{XXX}
-%\label{chap:spinorSolutions}
+%%\input{../latex/blogpost.tex}
+%%\renewcommand{\basename}{spinorSolutions}
+%%%\renewcommand{\dirname}{notes/phy1520/}
+%%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%%\newcommand{\dateintitle}{}
+%%%\newcommand{\keywords}{}
+%%
+%%\input{../latex/peeter_prologue_print2.tex}
+%%
+%%\usepackage{peeters_layout_exercise}
+%%\usepackage{peeters_braket}
+%%\usepackage{peeters_figures}
+%%\usepackage{siunitx}
+%%\usepackage{verbatim}
+%%\usepackage{slashed}
+%%%\usepackage{mhchem} % \ce{}
+%%%\usepackage{macros_bm} % \bcM
+%%%\usepackage{macros_qed} % \qedmarker
+%%%\usepackage{txfonts} % \ointclockwise
+%%\newcommand{\osigma}[0]{\overbar{\sigma}}
+%%
+%%\beginArtNoToc
+%%
+%%\generatetitle{Spinor solutions with alternate \( \gamma^0 \) representation.}
+%\chapter{Spinor solutions with alternate \( \gamma^0 \) representation.}
+\label{chap:spinorSolutions}
 
 This follows an interesting derivation of the \( u, v \) spinors \citep{itzykson1980quantum}, adding some details.
 
-In class (QFT I) and \citep{peskin1995introduction} we used a non-diagonal \( gamma^0 \) representation
+In class (QFT I) and \citep{peskin1995introduction} we used a non-diagonal \( \gamma^0 \) representation
 \begin{dmath}\label{eqn:spinorSolutions:20}
 \gamma^0 =
 \begin{bmatrix}
@@ -72,14 +73,14 @@ This is a nice relation, as we can determine a portion of the structure of the r
 \begin{dmath}\label{eqn:spinorSolutions:120}
 \begin{aligned}
 u(E, \Bzero) &= (\gamma^0 + 1) \psi \\
-v(E, \Bzero) &= (\gamma^0 - 1) \psi
+v(E, \Bzero) &= (\gamma^0 - 1) \psi.
 \end{aligned}
 \end{dmath}
 Similarly, and more generally, we have
 \begin{dmath}\label{eqn:spinorSolutions:140}
 \begin{aligned}
 u(p) &= (\slashed{p} + m) \psi \\
-v(p) &= (\slashed{p} - m) \psi
+v(p) &= (\slashed{p} - m) \psi,
 \end{aligned}
 \end{dmath}
 also independent of the representation of \( \gamma^\mu \).  Looking forward to non-matrix representations of the Dirac equation (\citep{doran2003gap}) note that we have not yet imposed a spinorial structure on the solution
@@ -148,7 +149,7 @@ v(E, \Bzero) &=
 \begin{bmatrix}
 \phi \\
 \chi
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{dmath}
 Therefore a basis for the spinors \( u \) (in the rest frame), is
@@ -252,7 +253,7 @@ m
 \begin{bmatrix}
 E + m & - \Bsigma \cdot \Bp \\
 \Bsigma \cdot \Bp & -E + m
-\end{bmatrix} \\
+\end{bmatrix}.
 \end{aligned}
 \end{dmath}
 
@@ -278,7 +279,7 @@ v^a(p) &=
 \end{bmatrix},
 \end{aligned}
 \end{dmath}
-where an overall sign on \( v^a(p) \) has been dropped.  Let's check these
+where an overall sign on \( v^a(p) \) has been dropped.  Let's check the assumption that the rest frame and general solutions are so simply related
 \begin{dmath}\label{eqn:spinorSolutions:340}
 \lr{ \slashed{p} - m } u^a(p)
 =
@@ -316,6 +317,7 @@ E + m & - \Bsigma \cdot \Bp \\
 \end{bmatrix}
 = 0.
 \end{dmath}
+Everything works out nicely.  The form of the solution for this representation of \( \gamma^0 \) is much simpler than the Chiral solution that we found in class.  We end up with an explicit split of energy and spatial momentum components in the spinor solutions, instead of factors involving \( p \cdot \sigma \) and \( p \cdot \osigma \), which are arguably nicer from a Lorentz invariance point of view.
 
 %}
-\EndArticle
+%\EndArticle
