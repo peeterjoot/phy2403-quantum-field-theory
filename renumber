@@ -216,3 +216,5 @@ perl -p -i ../latex/bin/latexRegex.pl squarerootpsigma.tex
 
 #../latex/bin/lgrep psq.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl psq.tex
+../latex/bin/lgrep spinorSolutions.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl spinorSolutions.tex

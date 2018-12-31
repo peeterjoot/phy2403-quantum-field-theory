@@ -1,0 +1,321 @@
+%
+% Copyright © 2018 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{spinorSolutions}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+\usepackage{slashed}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Spinor solutions with alternate \( \gamma^0 \) representation.}
+%\chapter{XXX}
+%\label{chap:spinorSolutions}
+
+This follows an interesting derivation of the \( u, v \) spinors \citep{itzykson1980quantum}, adding some details.
+
+In class (QFT I) and \citep{peskin1995introduction} we used a non-diagonal \( gamma^0 \) representation
+\begin{dmath}\label{eqn:spinorSolutions:20}
+\gamma^0 =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix},
+\end{dmath}
+whereas in \citep{itzykson1980quantum} a diagonal representation is used
+\begin{dmath}\label{eqn:spinorSolutions:40}
+\gamma^0 =
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}.
+\end{dmath}
+This representation makes it particularly simple to determine the form of the \( u, v \) spinors.  We seek solutions of the Dirac equation
+\begin{dmath}\label{eqn:spinorSolutions:60}
+\begin{aligned}
+0 &= \lr{ i \gamma^\mu \partial_\mu - m } u(p) e^{-i p \cdot x}  \\
+0 &= \lr{ i \gamma^\mu \partial_\mu - m } v(p) e^{i p \cdot x},
+\end{aligned}
+\end{dmath}
+or
+\begin{dmath}\label{eqn:spinorSolutions:80}
+\begin{aligned}
+0 &= \lr{ \slashed{p} - m } u(p) e^{-i p \cdot x}  \\
+0 &= -\lr{ \slashed{p} + m } v(p) e^{i p \cdot x}.
+\end{aligned}
+\end{dmath}
+In the rest frame where \( \slashed{p} = E \gamma^0 \), where \( E = m = \omega_\Bp \), these take the particularly simple form
+\begin{dmath}\label{eqn:spinorSolutions:100}
+\begin{aligned}
+0 &= \lr{ \gamma^0 - 1 } u(E, \Bzero) \\
+0 &= \lr{ \gamma^0 + 1 } v(E, \Bzero).
+\end{aligned}
+\end{dmath}
+This is a nice relation, as we can determine a portion of the structure of the rest frame \( u, v \) that is independent of the Dirac matrix representation
+\begin{dmath}\label{eqn:spinorSolutions:120}
+\begin{aligned}
+u(E, \Bzero) &= (\gamma^0 + 1) \psi \\
+v(E, \Bzero) &= (\gamma^0 - 1) \psi
+\end{aligned}
+\end{dmath}
+Similarly, and more generally, we have
+\begin{dmath}\label{eqn:spinorSolutions:140}
+\begin{aligned}
+u(p) &= (\slashed{p} + m) \psi \\
+v(p) &= (\slashed{p} - m) \psi
+\end{aligned}
+\end{dmath}
+also independent of the representation of \( \gamma^\mu \).  Looking forward to non-matrix representations of the Dirac equation (\citep{doran2003gap}) note that we have not yet imposed a spinorial structure on the solution
+\begin{dmath}\label{eqn:spinorSolutions:260}
+\psi
+=
+\begin{bmatrix}
+\phi \\
+\chi
+\end{bmatrix},
+\end{dmath}
+where \( \phi, \chi \) are two component matrices.
+
+The particular choice of the diagonal representation \cref{eqn:spinorSolutions:40} for \( \gamma^0 \) makes it simple to determine additional structure for \( u, v \).  Consider the rest frame first, where
+\begin{dmath}\label{eqn:spinorSolutions:160}
+\begin{aligned}
+\gamma^0 - 1 &=
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 \\
+0 & 2
+\end{bmatrix} \\
+\gamma^0 + 1 &=
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 0 \\
+0 & 0
+\end{bmatrix},
+\end{aligned}
+\end{dmath}
+so we have
+\begin{dmath}\label{eqn:spinorSolutions:280}
+\begin{aligned}
+u(E, \Bzero) &=
+\begin{bmatrix}
+2 & 0 \\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+\phi \\
+\chi
+\end{bmatrix} \\
+v(E, \Bzero) &=
+\begin{bmatrix}
+0 & 0 \\
+0 & 2
+\end{bmatrix}
+\begin{bmatrix}
+\phi \\
+\chi
+\end{bmatrix}
+\end{aligned}
+\end{dmath}
+Therefore a basis for the spinors \( u \) (in the rest frame), is
+\begin{dmath}\label{eqn:spinorSolutions:180}
+u(E, \Bzero) \in \setlr{
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+0
+\end{bmatrix}
+},
+\end{dmath}
+and a basis for the rest frame spinors \( v \) is
+\begin{dmath}\label{eqn:spinorSolutions:200}
+v(E, \Bzero) \in \setlr{
+\begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+1
+\end{bmatrix}
+}.
+\end{dmath}
+Using the two spinor bases \( \zeta^a, \eta^a \) notation from class, we can write these
+\begin{dmath}\label{eqn:spinorSolutions:220}
+\begin{aligned}
+u^a(E, \Bzero) &=
+\begin{bmatrix}
+\zeta^a \\
+0
+\end{bmatrix},
+\qquad
+v^a(E, \Bzero) &=
+\begin{bmatrix}
+0 \\
+\eta^a \\
+\end{bmatrix}.
+\end{aligned}
+\end{dmath}
+
+For the non-rest frame solutions, \citep{itzykson1980quantum} opts not to boost, as in \citep{peskin1995introduction}, but to use the geometry of \( \slashed{p} \pm m \).  With their diagonal representation of \( \gamma^0 \) those are
+\begin{dmath}\label{eqn:spinorSolutions:240}
+\begin{aligned}
+\slashed{p} - m
+&=
+p_0
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
++
+p_k
+\begin{bmatrix}
+0 & \sigma^k \\
+- \sigma^k & 0
+\end{bmatrix}
+-
+m
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+E - m & - \Bsigma \cdot \Bp \\
+\Bsigma \cdot \Bp & -E - m
+\end{bmatrix} \\
+\slashed{p} + m
+&=
+p_0
+\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
++
+p_k
+\begin{bmatrix}
+0 & \sigma^k \\
+- \sigma^k & 0
+\end{bmatrix}
++
+m
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+E + m & - \Bsigma \cdot \Bp \\
+\Bsigma \cdot \Bp & -E + m
+\end{bmatrix} \\
+\end{aligned}
+\end{dmath}
+
+Let's assume that the arbitrary momentum solutions \cref{eqn:spinorSolutions:140} are each proportional to the rest frame solutions
+\begin{dmath}\label{eqn:spinorSolutions:300}
+\begin{aligned}
+u^a(p) &= (\slashed{p} + m) u^a(E, \Bzero) \\
+v^a(p) &= (\slashed{p} - m) u^a(E, \Bzero).
+\end{aligned}
+\end{dmath}
+Plugging in \cref{eqn:spinorSolutions:240} gives
+\begin{dmath}\label{eqn:spinorSolutions:320}
+\begin{aligned}
+u^a(p) &=
+\begin{bmatrix}
+(E + m) \zeta^a \\
+(\Bsigma \cdot \Bp ) \zeta^a
+\end{bmatrix} \\
+v^a(p) &=
+\begin{bmatrix}
+(\Bsigma \cdot \Bp) \eta^a \\
+(E + m) \eta^a
+\end{bmatrix},
+\end{aligned}
+\end{dmath}
+where an overall sign on \( v^a(p) \) has been dropped.  Let's check these
+\begin{dmath}\label{eqn:spinorSolutions:340}
+\lr{ \slashed{p} - m } u^a(p)
+=
+\begin{bmatrix}
+E - m & - \Bsigma \cdot \Bp \\
+\Bsigma \cdot \Bp & -E - m
+\end{bmatrix}
+\begin{bmatrix}
+(E + m) \zeta^a \\
+(\Bsigma \cdot \Bp ) \zeta^a
+\end{bmatrix}
+=
+\begin{bmatrix}
+(E^2 - m^2 - \Bp^2) \zeta^a \\
+0
+\end{bmatrix}
+= 0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:spinorSolutions:360}
+\lr{ \slashed{p} + m } v^a(p)
+=
+\begin{bmatrix}
+E + m & - \Bsigma \cdot \Bp \\
+\Bsigma \cdot \Bp & -E + m
+\end{bmatrix}
+\begin{bmatrix}
+(\Bsigma \cdot \Bp ) \eta^a \\
+(E + m) \eta^a \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+\Bp^2 + m^2 - E^2
+\end{bmatrix}
+= 0.
+\end{dmath}
+
+%}
+\EndArticle
