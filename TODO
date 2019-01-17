@@ -1,6 +1,6 @@
 - 
 
-   search for all Hw and convert to problem links.
+   search for all Hw, Homework, HW and convert to problem links.
 
 - redo as mmacell:
 
@@ -47,8 +47,6 @@
 
       -- try p1 and p3 again (see grading, and try incomplete parts).
 
-- SL, SU, SO looks weird in the book (example Lecture19: I think they looked okay in the standalone article based lecture notes).  Use a macro for those instead to handle nicer formatting.
-
 - some DIY's and FIXMEs:
 
    qftLecture14.tex:\paragraph{Claim: (DIY):}
@@ -59,8 +57,8 @@
    Search for the rest of the FIXMEs (some possibly commented out).
 
 - Maintainance:
-   - Indexing after (up to l15 is also rough.)
-      - none of the luke problems have indexing.  Did I do indexing for the 2018 problems?
+   - Indexing is fairly rough.
+      - none of the luke problems have indexing.  The 2018 problems are indexed after l15, and not much at that.
    - went through up to L11 and put key results into usefulFormulas.  Do the rest (including problem set review).
 
 - Spelling/grammar:

@@ -23,8 +23,15 @@
 %\newcommand{\deltafour}[0]{\delta^{(4)}}
 %
 %\beginArtNoToc
-%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 19: Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian.  Taught by Prof.\ Erich Poppitz}
-%%\chapter{Pauli matrices, Weyl spinors, SL(2,c), Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian}
+%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 19: Pauli matrices, Weyl spinors, \SL{2}, Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian.  Taught by Prof.\ Erich Poppitz}
+%%\chapter{Pauli matrices, Weyl spinors, \SL{2}, Weyl action, Weyl equation, Dirac matrix, Dirac action, Dirac Lagrangian}
+\index{Pauli matrices}
+\index{Weyl spinors}
+\index{\SL{2}}
+\index{Weyl action}
+\index{Weyl equation}
+\index{Dirac matrix}
+\index{Dirac action}
 \label{chap:qftLecture19}
 
 %%Peeter's lecture notes from class.  These may be incoherent and rough.
@@ -37,6 +44,7 @@
 %%%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 %%
 \section{Fermions: \R{3} rotations.}
+\index{fermion}
 %(Tail end of Lecture 18)
 
 \index{Pauli matrix}
@@ -94,7 +102,7 @@ U (\Bsigma \cdot \Bx) U^\dagger
 = {R^{i}}_j x^j \sigma^i
 \end{dmath}
 
-We say that \( U \in SU(2) \) and \( R \in SU(3) \), and \( SU(2) \) is called the ``universal cover of \(SO(3)\)''.
+We say that \( U \in \SU{2} \) and \( R \in \SU{3} \), and \( \SU{2} \) is called the ``universal cover of \(\SO{3}\)''.
 
 Pauli figured out that, in non-relativistic QM, that this type of transformation also applies to (spin) wave functions (spinors)
 \index{spinor}
@@ -131,9 +139,10 @@ U
 \Psi_\downarrow(\Bx)
 \end{bmatrix}.
 \end{equation}
-Having seen such representations and their \( SU(2) \) transformations in NRQM, we want to know what the relativistic generalization is.
+Having seen such representations and their \( \SU{2} \) transformations in NRQM, we want to know what the relativistic generalization is.
 
 \section{Lorentz group.}
+\index{Lorentz group}
 Let
 \begin{dmath}\label{eqn:qftLecture19:1994}
 (x^0, \Bx) =
@@ -161,9 +170,9 @@ We therefore identify \( (x^0, \Bx) \) as a four vector
 \begin{dmath}\label{eqn:qftLecture19:2034}
 (x^0, \Bx) = x_\mu \sigma^\mu = x^\mu \sigma^\nu g_{\mu\nu}.
 \end{dmath}
-We say that \( SL(2, \bbC)\) is a double cover of \( SO(1,3)\).
+We say that $\SL{2}$ is a double cover of $\SO{1,3}$.
 
-%\section{Rotations \( SU(2) \rightarrow SO(3) \).}
+%\section{Rotations \( \SU{2} \rightarrow \SO{3} \).}
 %%We will map the traditional vector basis to one with matrix basis elements using
 %%\begin{dmath}\label{eqn:qftLecture19:20}
 %%\Bx \rightarrow \Bsigma \cdot \Bx,
@@ -180,7 +189,7 @@ We say that \( SL(2, \bbC)\) is a double cover of \( SO(1,3)\).
 %%\det \Bsigma \cdot \Bx \sim \Bx^2.
 %%\end{dmath}
 %%
-%%We say that there is a double cover, as there are multiple representations of the rotation operator.  In particular \( U \) and \( -U \) of \( SU(2) \) correspond to the same \( SO(3) \) element.
+%%We say that there is a double cover, as there are multiple representations of the rotation operator.  In particular \( U \) and \( -U \) of \( \SU{2} \) correspond to the same \( \SO{3} \) element.
 Note that the matrix \( U \) can be built explicitly.  For example, it may be built up using Euler angles as sketched in \cref{fig:l19:l19Fig1}.
 \imageFigure{../figures/phy2403-quantum-field-theory/l19Fig1}{Euler angle rotations.}{fig:l19:l19Fig1}{0.3}
 or algebraically
@@ -189,9 +198,10 @@ U = e^{i \psi \sigma_3/2 } e^{i \theta \sigma_1/2} e^{i \phi \sigma_3/2}.
 \end{dmath}
 
 \section{Weyl spinors.}
+\index{Weyl spinor}
 We will see that there is generalization of Pauli spinors, called Weyl spinors, but we will have to introduce 4 component objects.
 
-We'd like to argue that there is a correspondence (also \( 2 \rightarrow 1 \)) between \( SL(2, \bbC) \rightarrow SO(1,3) \).
+We'd like to argue that there is a correspondence (also \( 2 \rightarrow 1 \)) between \(\SL{2} \rightarrow \SO{1,3} \).
 Here:
 \begin{itemize}
 \item \( S \) : special
@@ -199,10 +209,10 @@ Here:
 \item \( 2 \) : \( 2 \times 2 \)
 \item \( \bbC \) : complex.
 \end{itemize}
-and we say that \( M \in SL(2,\bbC) \) if \( \det M = 1 \), where \( M \) is a complex \( 2 \times 2 \), but not necessarily unitary.
-The \( SU(2) \) group is a subset of
-\( SL(2,\bbC) \).  In this representation
-\( SU(2) \) matrices are \( SL(2,\bbC) \) matrices, but not necessarily the opposite.
+and we say that \( M \in \SL{2} \) if \( \det M = 1 \), where \( M \) is a complex \( 2 \times 2 \), but not necessarily unitary.
+The \( \SU{2} \) group is a subset of
+\(\SL{2}\).  In this representation
+\( \SU{2} \) matrices are \(\SL{2}\) matrices, but not necessarily the opposite.
 
 We introduce a special notation for the identity matrix
 \begin{dmath}\label{eqn:qftLecture19:120}
@@ -251,7 +261,7 @@ x \cdot \sigma \rightarrow M x \cdot \sigma M^\dagger = x' \cdot \sigma,
 \end{equation}
 where \( (x')^2 = x^2 \).
 
-Motivated by this \( SL(2,\bbC) \rightarrow SO(1,3) \) correspondence, postulate that we study two component objects
+Motivated by this \(\SL{2} \rightarrow \SO{1,3} \) correspondence, postulate that we study two component objects
 \begin{dmath}\label{eqn:qftLecture19:240}
 U(x) =
 \begin{bmatrix}
@@ -259,7 +269,7 @@ U_1(x) \\
 U_2(x) \\
 \end{bmatrix},
 \end{dmath}
-where \( x = (x^0, x^1, x^2, x^3) \) is a four-vector, and assume that such objects transform as follows in \( SO(1,3) \)
+where \( x = (x^0, x^1, x^2, x^3) \) is a four-vector, and assume that such objects transform as follows in \( \SO{1,3} \)
 
 \begin{dmath}\label{eqn:qftLecture19:260}
 \begin{aligned}
@@ -382,6 +392,7 @@ U(x)
 
 We can now define
 \makedefinition{Weyl action (name?)}{dfn:qftLecture19:1234}{
+\index{Weyl action}
 We may construct the following Lorentz invariant action
 \begin{equation*}
 S_{\text{Weyl}} = \int d^4 x i U^\dagger(x) \sigma^\mu \partial_\mu U(x),
@@ -443,6 +454,7 @@ S_{\text{Weyl}},
 where it was assumed that any boundary terms vanish.
 
 \maketheorem{Weyl equation.}{dfn:qftLecture19:1254}{
+\index{Weyl equation}
 Variation of the action \cref{dfn:qftLecture19:1234} gives rise to the equations of motion
 \begin{equation*}
 \sigma^\mu \PD{x^\mu}{} U = 0
@@ -610,6 +622,7 @@ What we can do instead and maintain \( U(1) \) symmetries, is to introduce two U
 What we are really doing is assembling a four component spinor out of the two U's.
 
 \section{Lorentz symmetry.}
+\index{Lorentz symmetry}
 
 We want to examine the Lorentz invariance of \(U^\T \sigma_2 U\), but need an intermediate result first.
 \makelemma{Transpose of Pauli vector representation}{lemma:qftLecture19:21}{
@@ -682,10 +695,10 @@ e^{i \Norm{\Ba}} & 0 \\
 \end{vmatrix}
 = 1,
 \end{equation}
-so we see that such a matrix has the \( U^\dagger U = 1 \) and \( \det U = 1 \) properties that we desire for elements of \( SU(2) \)\footnote{In class the suitability of \( e^{i \Bsigma \cdot \Ba} \) as an element of \( SU(2) \) was demonstrated with an argument that diagonalizable matrices satisfy \( \det e^A = e^{\trace{A}} \)}.
-We haven't shown that all matrices \( U \in SU(2) \) can be written in this form, but let's assume that's the case.
+so we see that such a matrix has the \( U^\dagger U = 1 \) and \( \det U = 1 \) properties that we desire for elements of \( \SU{2} \)\footnote{In class the suitability of \( e^{i \Bsigma \cdot \Ba} \) as an element of \( \SU{2} \) was demonstrated with an argument that diagonalizable matrices satisfy \( \det e^A = e^{\trace{A}} \)}.
+We haven't shown that all matrices \( U \in \SU{2} \) can be written in this form, but let's assume that's the case.
 
-\paragraph{Claim:}  Generalizing from the exponential form of \( SU(2) \) elements seen above, we assume that any \( SL(2,\bbC) \) matrix \( M \) can be written as
+\paragraph{Claim:}  Generalizing from the exponential form of \( \SU{2} \) elements seen above, we assume that any \(\SL{2}\) matrix \( M \) can be written as
 \begin{dmath}\label{eqn:qftLecture19:680}
 M^\dagger =
 e^{i \Bsigma \cdot (\Ba + i \Bb) },
@@ -762,6 +775,7 @@ which is the result required to finish the proof of \cref{thm:qftLecture19:10}\f
 %%%to move the \( \sigma_2 \) into the exponential argument.
 %%%
 \section{Dirac matrices.}
+\index{Dirac matrix}
 \makedefinition{Dirac matrices.}{dfn:qftLecture19:1754}{
 The Dirac matrices \( \gamma^\mu, \mu \in \setlr{0,1,2,3} \) are matrices that satisfy
 \begin{equation*}
@@ -973,6 +987,7 @@ and for \( \mu = k \ne 0 \)
 which completes the proof.
 
 \section{Dirac Lagrangian.}
+\index{Dirac Lagrangian}
 
 We postulate that there is a four-component object
 \begin{equation}\label{eqn:qftLecture19:800}
@@ -1006,6 +1021,7 @@ where our vectors transform in the usual \( x \rightarrow x' = \Lambda x \) fash
 } % definition
 
 \makedefinition{Dirac Lagrangian.}{dfn:qftLecture19:31}{
+\index{Dirac Lagrangian}
 \begin{equation*}
 \LL_{\text{Dirac}} = \overbar{\Psi}(x)\lr{ i \gamma^\mu \partial_\mu - m } \Psi(x).
 \end{equation*}

@@ -2,15 +2,15 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeoproblem{A model with \(SU(2)_L \times SU(2)_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{2018 Hw2.II}{
+\makeoproblem{A model with \(\SU{2}_L \times \SU{2}_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{2018 Hw2.II}{
 This problem introduces a model to describe the symmetry realization of the nonabelian chiral symmetry in QCD (quantum chromodynamics).
 The word ``chiral'' should become clear later in this class, but the ``nonabelian'' part will be clear below.
-\(SU(2)_L \times SU(2)_R\) is an exact symmetry of QCD in the limit when the ``current masses'' of the \( u \) and \( d \) quark, \( m_u \) and \( m_d \), are taken to vanish.
+\(\SU{2}_L \times \SU{2}_R\) is an exact symmetry of QCD in the limit when the ``current masses'' of the \( u \) and \( d \) quark, \( m_u \) and \( m_d \), are taken to vanish.
 In the real world, it is an approximate symmetry, in the sense that \( m_u \) and \( m_d \) are small compared to the intrinsic scale of QCD, given, say, by the proton mass (\( m_{u,d} \sim \,\si{MeV} \ll 1 \,\si{GeV} \)).
 This is, thus, an example of an ``approximate symmetry''.
 
-Closer to the theory you will study below, the scalar model with \(SU(2)_L \times SU(2)_R\) symmetry, is really the same as the Higgs sector in the Standard Model, in the limit when the electromagnetic and weak interactions are turned off.
-\(SU(2)_L \times SU(2)_R\) becomes a symmetry in this limit.
+Closer to the theory you will study below, the scalar model with \(\SU{2}_L \times \SU{2}_R\) symmetry, is really the same as the Higgs sector in the Standard Model, in the limit when the electromagnetic and weak interactions are turned off.
+\(\SU{2}_L \times \SU{2}_R\) becomes a symmetry in this limit.
 It is only an approximate symmetry, as the electromagnetic and weak couplings (which explicitly break it) are dimensionless numbers smaller then unity.
 
 Finally, to end the preaching preamble, the notion of approximate symmetries is not new and you have, for sure, been exposed to its usefulness when studying the hydrogen atom spectrum in quantum mechanics.
@@ -24,17 +24,17 @@ It is given by:
 Show that
 \cref{eqn:ProblemSet2Problem2:10}
 %(1)
-is invariant under an \(SU(2)_L\) global symmetry transformation \( \Phi \rightarrow  U_L \Phi \), where \( U_L^\dagger U_L = 1 \) is a \( 2 \times 2 \) unitary matrix of unit determinant.
-In addition, the Lagrangian has a \( U(1) \) symmetry, not part of \(SU(2)_L\), acting as \( \Phi \rightarrow  e^{i\alpha}\Phi\).
+is invariant under an \(\SU{2}_L\) global symmetry transformation \( \Phi \rightarrow  U_L \Phi \), where \( U_L^\dagger U_L = 1 \) is a \( 2 \times 2 \) unitary matrix of unit determinant.
+In addition, the Lagrangian has a \( U(1) \) symmetry, not part of \(\SU{2}_L\), acting as \( \Phi \rightarrow  e^{i\alpha}\Phi\).
 Find the currents and conserved charges under these symmetries.
 
-Hint: recall that an infinitesimal \(SU(2)_L\) transformation can be written as \( U_L \approx \sigma^0 + i\omega_a \frac{\sigma^a}{2} \), where \( \sigma^0 \) is the unit \( 2 \times 2 \) matrix, \( \sigma^a, a = 1, 2, 3 \) are the Pauli matrices, and \( \omega_a \) are the three parameters of infinitesimal \(SU(2)_L\) transformations.
+Hint: recall that an infinitesimal \(\SU{2}_L\) transformation can be written as \( U_L \approx \sigma^0 + i\omega_a \frac{\sigma^a}{2} \), where \( \sigma^0 \) is the unit \( 2 \times 2 \) matrix, \( \sigma^a, a = 1, 2, 3 \) are the Pauli matrices, and \( \omega_a \) are the three parameters of infinitesimal \(\SU{2}_L\) transformations.
 
 \makesubproblem{}{qft:problemSet2:2b}
-Show that the charge operators, \( \hatQ^L_a, a = 1,2,3\), conserved due to \(SU(2)_L\) invariance, obey the angular momentum algebra, i.e., \( \antisymmetric{\hatQ^L_1}{ \hatQ^L_2 } = i \hatQ^L_3 \) (plus cyclic permutations).
+Show that the charge operators, \( \hatQ^L_a, a = 1,2,3\), conserved due to \(\SU{2}_L\) invariance, obey the angular momentum algebra, i.e., \( \antisymmetric{\hatQ^L_1}{ \hatQ^L_2 } = i \hatQ^L_3 \) (plus cyclic permutations).
 
 \makesubproblem{}{qft:problemSet2:2c}
-The Lagrangian \cref{eqn:ProblemSet2Problem2:10} has, however, a larger symmetry than simply the above \(SU(2)_L\).
+The Lagrangian \cref{eqn:ProblemSet2Problem2:10} has, however, a larger symmetry than simply the above \(\SU{2}_L\).
 To begin seeing this, instead of using \( \Phi = (\phi^1,\phi^2)^\T \) introduce the real and imaginary parts of \( \phi^{1,2} \).
 Use \( \phi^1 = \psi^1 +i \psi^2, \phi^2 = \psi^3 +i \psi^4 \), and introducing \( \Psi = (\psi^1,\psi^2,\psi^3,\psi^4)^\T\), show that \cref{eqn:ProblemSet2Problem2:10} can be written as:
 \begin{dmath}\label{eqn:ProblemSet2Problem2:20} % , (2)
@@ -44,12 +44,12 @@ on the way determining the (pure numbers) \(a, b, c\).
 The Lagrangian \cref{eqn:ProblemSet2Problem2:20} has, clearly, an \( O(4) \) symmetry, i.e., is invariant under \( \Psi \rightarrow  O \Psi\), where \( O \) is a \( 4 \times 4 \) orthogonal matrix, \( O^\T O = 1\).
 Is there a continuous U(1) allowed in this case?
 
-Comment: I will spare you finding the currents for \(SO(4)\) (\(SO(4)\) matrices are the restriction of \(O(4)\) matrices to the ones with unit determinant).
-What you will do next, instead, is to use the equivalence of Lie algebras \(SO(4) \approx SU(2)_L \times SU(2)_R\), which will come about by another change of variables (see below).
-Notice also that, as it comes, \(SO(4)\) happens to be the Euclidean version of \(SO(1,3)\).
+Comment: I will spare you finding the currents for \(\SO{4}\) (\(\SO{4}\) matrices are the restriction of \(O(4)\) matrices to the ones with unit determinant).
+What you will do next, instead, is to use the equivalence of Lie algebras \(\SO{4} \approx \SU{2}_L \times \SU{2}_R\), which will come about by another change of variables (see below).
+Notice also that, as it comes, \(\SO{4}\) happens to be the Euclidean version of \(\SO{1,3}\).
 
 \makesubproblem{}{qft:problemSet2:2d}
-To expose the \(SU(2)_L \times SU(2)_R\) symmetry of \cref{eqn:ProblemSet2Problem2:10}, now use the following change of variables.
+To expose the \(\SU{2}_L \times \SU{2}_R\) symmetry of \cref{eqn:ProblemSet2Problem2:10}, now use the following change of variables.
 Consider, instead of \(\Phi\) in \cref{eqn:ProblemSet2Problem2:10} the \(2 \times 2\) matrix \(H\) made up by components of \(\Phi\) as follows:
 \begin{equation}\label{eqn:ProblemSet2Problem2:30}
 H \equiv \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) =
@@ -59,7 +59,7 @@ H \equiv \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) =
 -\phi_1^\conj & \phi_2
 \end{bmatrix}
 \end{equation}
-Show that under \(SU(2) \) transformations,
+Show that under \(\SU{2} \) transformations,
 
 \begin{dmath}\label{eqn:ProblemSet2Problem2:520}
 H \rightarrow  \inv{\sqrt{2}} (i\sigma^2 (U_L\Phi)^\conj, U_L \Phi) = \inv{\sqrt{2}} (U_L i \sigma^2 \Phi^\conj, U_L\Phi) = U_L H.
@@ -100,24 +100,24 @@ can be written as
 \end{dmath}
 %(5)
 where \( \trace{}\) denotes the matrix trace.
-Show that now \cref{eqn:ProblemSet2Problem2:50} has \(SU(2)_L \times SU(2)_R\) symmetry,
+Show that now \cref{eqn:ProblemSet2Problem2:50} has \(\SU{2}_L \times \SU{2}_R\) symmetry,
 acting on \( H \) as
 \begin{dmath}\label{eqn:ProblemSet2Problem2:60}
 H \rightarrow U_L H U_R^\dagger,
 \end{dmath}
 % (6)
 where the action of \( U_R^\dagger \) on the right is pure convention (we could have taken \( U_R \) instead).
-\( U_L \) and \( U_R \) are two sets of independent \(SU(2) \) transformations.
+\( U_L \) and \( U_R \) are two sets of independent \(\SU{2} \) transformations.
 The \( L \) and \( R \) (left and right) names are self-evident in the way \cref{eqn:ProblemSet2Problem2:60} is written.
-Show that under \(SU(2)_L \times SU(2)_R\)
+Show that under \(\SU{2}_L \times \SU{2}_R\)
 \begin{dmath}\label{eqn:ProblemSet2Problem2:760}
 \delta H = i \omega_a^L \frac{\sigma^a}{2} H - i\omega_b^R H \frac{\sigma^b}{2}.
 \end{dmath}
 
-Hint: clearly, the only thing you need to show is \(SU(2)_R\) invariance, as \(SU(2)_L\) was already shown.
+Hint: clearly, the only thing you need to show is \(\SU{2}_R\) invariance, as \(\SU{2}_L\) was already shown.
 
 \makesubproblem{}{qft:problemSet2:2f}
-Show that the left and right \(SU(2) \) conserved currents can be written as
+Show that the left and right \(\SU{2} \) conserved currents can be written as
 \begin{dmath}\label{eqn:ProblemSet2Problem2:80}
 \begin{aligned}
 j^{\mu,a}_L &= \frac{i}{2} \trace{
@@ -144,7 +144,7 @@ Hint: notice that both currents are Hermitian and that the left is obtained from
 \makeanswer{qft:problemSet2:2}{
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:2a}
-Let's consider the \( SU(2)_L \) case first.  Noting that \( (\sigma^a)^\dagger = \sigma^a \), the transformed fields are
+Let's consider the \( \SU{2}_L \) case first.  Noting that \( (\sigma^a)^\dagger = \sigma^a \), the transformed fields are
 \begin{dmath}\label{eqn:ProblemSet2Problem2:100}
 \begin{aligned}
 \Phi' &= e^{i \Bsigma \cdot \Bomega/2} \Phi \\

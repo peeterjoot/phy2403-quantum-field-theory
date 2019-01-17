@@ -3,6 +3,7 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 \makeoproblem{Where is the particle?}{qft:problemSet3:4}{2018 Hw3.IV}{
+\index{particle localization}
 {\flushleft{In}} class, we did mention that, by analogy with non relativistic quantum mechanics, the state $\hat\phi(\Bx,t=0) \vert 0\rangle$ allows us to say something along the lines that {\it ``the operator $\hat\phi(\Bx)_+$ creates a particle at $\Bx$"}.
 These words are based on noticing  that in QM, we have
 $$\vert\Bx\rangle \sim \sum_{\Bp} e^{ i \Bp \cdot \Bx} \vert \Bp \rangle,$$
@@ -48,6 +49,7 @@ definitely a must-read! }
 \bigskip
 
 My final comment is that the most concise formulation of causality that goes beyond simply stating that the commutators vanish for spacelike separations is the one first due to Stueckelberg (1940's) and then finessed by Bogoljubov (1950's).
+\index{Stueckelberg}
 
 They consider the expectation value of an operator $\hat{O}(x)$   in a state prepared by the action of an operator $U[g]\vert 0\rangle$.
 $U[g]$ is an evolution operator (see below) which is a functional of some classical fields $g(y)$ used to prepare the state of the field (e.g. external e.m. fields using to focus, accelerate, etc., the particles; $g(y)$ could also be used to turn on and off the interactions in different space time regions). Thus the object of study is:
@@ -56,6 +58,9 @@ The causality condition, then, is that
 $$ {\delta \langle \hat{O}(x) \rangle \over \delta g[y]} = 0 ~ {\rm for } ~ x\sim y~.$$
 Now, recalling the form of the evolution operator,  $U[g] = T e^{  i \int dt d^3 x L_I(t, \Bx, g(\Bx,t))}$, and the Baker-Campbell-Hausdorf formula, it should be clear how the vanishing of the commutators outside the light cone becomes  relevant for the above condition  to hold.
 For Bogoljubov, the vanishing commutators are a {\it consequence} of the causality condition given in terms of variational derivatives, as expressed above; he derives the $S$-matrix expansion from that requirement along with a few others (locality and Lorentz invariance, basically).
+\index{Baker-Campbell-Hausdorf formula}
+\index{Bogoljubov}
+
 
 {\flushleft{T}he reason to include this comment was to close the loop on something that I mentioned in class, now that we've seen what $U[g]$ may look like.
  }

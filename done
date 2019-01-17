@@ -1,3 +1,5 @@
+- SL, SU, SO looks weird in the book (example Lecture19: I think they looked okay in the standalone article based lecture notes).  Use a macro for those instead to handle nicer formatting.
+
 - Poincare -> Poincar\'e
 
 - Spell check all.

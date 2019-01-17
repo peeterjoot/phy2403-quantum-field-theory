@@ -34,6 +34,13 @@
 %%\beginArtNoToc
 %%\generatetitle{PHY2403H Quantum Field Theory.  Lecture 23: QED and QCD interaction Lagrangian, Feynman propagator and rules for fermions, hadron pair production, scattering cross section, quark pair production.  Taught by Prof.\ Erich Poppitz}
 %%%\chapter{QED and QCD interaction Lagrangian, Feynman propagator and rules for fermions, hadron pair production, scattering cross section, quark pair production}
+\index{QED Lagrangian}
+\index{QCD Lagrangian}
+\index{Feynman propagator}
+\index{Feynman rules!fermions}
+\index{hadron pair production}
+\index{scattering cross section}
+\index{quark pair production}
 %%\label{chap:qftLecture23}
 %%
 %%\paragraph{DISCLAIMER: Notes from class, with auxillary details.}
@@ -87,9 +94,10 @@ where the creation and annihilation operators satisfy
 (plus various relations for the \( u,v\)'s.)
 
 \section{Photon.}
+\index{photon}
 Recall that we identified a number of symmetries
 \begin{itemize}
-\item \( SO(1,3) \)
+\item \( \SO{1,3} \)
 \item \( P, C, T \) : DIY
 \item \( U(1)_V \) : \( \Psi \rightarrow e^{i \alpha} \Psi \)
 \item \( U(1)_A \) : If \( m = 0 \), then \( U(1)_A : \Psi \rightarrow e^{i \alpha \gamma_5 } \Psi \).  If \( m \ne 0 \) only for \( \alpha = \pi \) : \( \Psi \rightarrow -\Psi \).
@@ -188,6 +196,7 @@ We now want to do some calculations with the photon interactions from \cref{eqn:
 %\imageFigure{../figures/phy2403-quantum-field-theory/l23Fig2}{Allowable diagrams}{fig:l23:l23Fig2}{0.3}
 
 \section{Propagator.}
+\index{propagator!fermion}
 
 Before we can study the interaction, we need to determine the structure of the propagator.  For Grassman (anti-commuting) operators
 \begin{dmath}\label{eqn:qftLecture23:220}
@@ -290,6 +299,7 @@ Now that we have a propagator, let's try
 \end{dmath}
 
 \section{Feynman rules.}
+\index{Feynman rules}
 We can consider various scattering processes, such as \( e^{+} e^{-} \rightarrow \mu^{+} \mu^{-} \) as sketched in
 \cref{fig:l23:l23Fig1}, or
 \( e^{+} e^{-} \rightarrow e^{+} e^{-} \) as sketched in
@@ -412,6 +422,7 @@ v^{s'}(p')
 The problem can be simplified by computing the cross section that sums over all spins, assuming that the states are not polarized (i.e. average over all the up, down states).
 \makedigression{
 Such an average is related to the density matrix
+\index{density matrix}
 \begin{dmath}\label{eqn:qftLecture23:620}
 \rho_{\text{in}} = \sum_{s s'} \ket{s s'} \inv{4} \bra{ s s'}.
 \end{dmath}
@@ -519,6 +530,7 @@ since the cyclic sum of matrix coordinates can be expressed as a trace, namely \
 \end{dmath}
 Each trace is now a product of two, three, or four gamma matrices, which can be reduced using the identities:
 \makelemma{Dirac matrix product traces.}{lemma:qftLecture23:700}{
+\index{Dirac matrix!trace}
 \begin{equation*}
 \begin{aligned}
 \trace{\lr{ \gamma_\mu \gamma_\nu }} &= 4 g_{\mu\nu} \\
@@ -838,6 +850,7 @@ whereas for \( E \gg m_\mu \) we've now found
 Three months of work has gained us an additional factor of \( 4/3 \)!
 
 \section{Measurement of intermediate quark scattering processes.}
+\index{quark scattering}
 In the diagram that we are working from for the \( e^{-} e^{+} \rightarrow \mu^{-} \mu^{+} \) process, we can replace the muon half of the interaction (\cref{fig:l23:l23Fig7})
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig7}{Electron and muon halves of the diagram}{fig:l23:l23Fig7}{0.3}
 with anything else that is charged, as sketched in
