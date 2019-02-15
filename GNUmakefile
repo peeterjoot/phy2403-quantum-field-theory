@@ -2,10 +2,6 @@ THISDIR := phy2403-quantum-field-theory
 THISBOOK := phy2403
 
 include make.revision
-
-#.revinfo/gitCommitDateAsMyTime.tex:\newcommand{\myTime}{April 2018}\newcommand{\myVersion}{version V0.117\xspace}
-VER := $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
-
 include ../latex/make.bookvars
 
 #ONCEFLAGS := -justonce
@@ -13,10 +9,6 @@ include ../latex/make.bookvars
 SOURCE_DIRS += appendix
 FIGURES := ../figures/$(THISBOOK)
 SOURCE_DIRS += $(FIGURES)
-
-# also toggle redacted classicthesis-config.tex
-# FIXME: changing this flag should be a dependency of matlab.tex 
-#REDACTED := -redacted
 
 #GENERATED_SOURCES += matlab.tex 
 GENERATED_SOURCES += mathematica.tex 
@@ -165,13 +157,6 @@ mathematica.tex : ../mathematica/METADATA
 dropbox:
 	cp $(THISBOOK).pdf ~/Dropbox/$(THISDIR)/$(THISBOOK).$(VER).pdf
 	git log --decorate > ~/Dropbox/$(THISDIR)/Changelog.txt
-
-dist:
-	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
-
-# a for annotate (releases).
-tag:
-	git tag -a $(THISBOOK).$(VER).pdf
 
 %.sp : %.tex
 	spellcheck $^
