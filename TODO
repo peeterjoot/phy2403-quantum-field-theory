@@ -1,4 +1,11 @@
-- 
+- makedigression is way off the page.  Will have to fix or workaround for kdp.
+
+-
+
+   LaTeX Warning: cref  reference format for label type `Question' undefined on input line 32.
+   LaTeX Warning: Reference `eqn:squarerootpsigma:220' on page 1 undefined on input line 272.
+
+-
 
    search for all Hw, Homework, HW and convert to problem links.
 

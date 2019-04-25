@@ -7,6 +7,7 @@
 %\chapter{Preface}
 % this suppresses an explicit chapter number for the preface.
 \chapter*{Preface}%\normalsize
+  \thispagestyle{empty}
   \addcontentsline{toc}{chapter}{Preface}
 
 This is a set of course notes from the Fall 2018, University of Toronto
@@ -14,11 +15,11 @@ Quantum Field Theorry (PHY2403), taught by Prof.\ Erich Poppitz.
 
 %\paragraph{Course Syllabus}
 
-\withproblemsetsMessage{
-\textcolor{Maroon}{
-\textit{THIS DOCUMENT IS REDACTED.  THE SOLUTION TO THE PROBLEM SETS ARE NOT VISIBLE.  PLEASE EMAIL ME FOR THE FULL VERSION IF YOU ARE NOT TAKING PHY2403.}
-}
-}
+%\withproblemsetsMessage{
+%\textcolor{Maroon}{
+%\textit{THIS DOCUMENT IS REDACTED.  THE SOLUTION TO THE PROBLEM SETS ARE NOT VISIBLE.  PLEASE EMAIL ME FOR THE FULL VERSION IF YOU ARE NOT TAKING PHY2403.}
+%}
+%}
 
 \paragraph{This document contains:}
 
@@ -31,12 +32,17 @@ Quantum Field Theorry (PHY2403), taught by Prof.\ Erich Poppitz.
 %\item Links to Matlab, Mathematica, and Julia notebooks associated with the course material and problems (but not problem sets).
 }%
 {
-\item My solutions for problem sets 1-4.%
-%\item Links to Matlab, Mathematica, and Julia notebooks associated with problems and course material.%
+\item My solutions (as-is, with errors.) for problem sets 1-4.%
+}
+\ifthenelse{\boolean{print-version}}
+{
+}
+{
+\item Links to Mathematica notebooks associated with problems and course material.%
 }
 \end{itemize}
 
-My thanks go to Professor Poppitz for teaching this course, and to 
+My thanks go to Professor Poppitz for teaching this course, and to
 Emily Tyhurst and Stefan Divic who kindly provided me their notes for lecture 22.
 
 %

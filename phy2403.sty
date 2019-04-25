@@ -36,22 +36,46 @@
 % \mathImageFigure{path}{caption}{label}{width}{nbpath}
 % nbpath like: ps2b:countItersAndPlot.m
 \newcommand{\mathImageFigure}[5]{%
+\ifthenelse{\boolean{print-version}}
+{
+\imageFigure{#1}{#2}{#3}{#4}
+}
+{
 \imageFigure{#1}{\nbcite{#5}{#2}}{#3}{#4}
+}
 }
 
 % \mathImageTwoFigures{path1}{path2}{caption}{fig:fff}{scale=0.3}{nbpath}
 \newcommand{\mathImageTwoFigures}[6]{%
+\ifthenelse{\boolean{print-version}}
+{
+\imageTwoFigures{#1}{#2}{#3}{#4}{#5}
+}
+{
 \imageTwoFigures{#1}{#2}{\nbcite{#6}{#3}}{#4}{#5}
+}
 }
 
 % \mathImageThreeFiguresOneLine{path1}{path2}{path3}{caption}{fig:fff}{scale=0.3}{nbpath}
 \newcommand{\mathImageThreeFiguresOneLine}[7]{%
+\ifthenelse{\boolean{print-version}}
+{
+\imageThreeFiguresOneLine{#1}{#2}{#3}{#4}{#5}{#6}
+}
+{
 \imageThreeFiguresOneLine{#1}{#2}{#3}{\nbcite{#7}{#4}}{#5}{#6}
+}
 }
 
 % \mathImageFourFiguresTwoLines{path1}{path2}{path3}{path4}{caption}{fig:fff}{scale=0.3}{nbpath}
 \newcommand{\mathImageFourFiguresTwoLines}[8]{%
+\ifthenelse{\boolean{print-version}}
+{
+\imageFourFiguresTwoLines{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+}
+{
 \imageFourFiguresTwoLines{#1}{#2}{#3}{#4}{\nbcite{#8}{#5}}{#6}{#7}
+}
 }
 
 \newcommand{\matlabFunc}[1]{%

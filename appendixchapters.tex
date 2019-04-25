@@ -2,19 +2,20 @@
 % Copyright © 2017 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\chapter{Useful formulas and review.}
+\mychapter{Useful formulas and review.}
    \input{usefulFormulas.tex}
-\chapter{Momentum of scalar field.}
+\mychapter{Momentum of scalar field.}
    \input{momentum.tex}
-\chapter{Reflection using Pauli matrices.}
+\mychapter{Reflection using Pauli matrices.}
    \input{reflection.tex}
-\chapter{Explicit expansion of the Dirac \texorpdfstring{\(u,v\)}{u,v} spinors.}
+\mychapter{Explicit expansion of the Dirac \texorpdfstring{\(u,v\)}{u,v} spinors.}
    \input{DiracUVmatricesExplicit.tex}
-\chapter{Spinor solutions with alternate \texorpdfstring{\(\gamma^0\)}{gamma-zero} representation.}
+\mychapter{Spinor solutions with alternate \texorpdfstring{\(\gamma^0\)}{gamma-zero} representation.}
    \input{spinorSolutions.tex}
-\chapter{Mathematica notebooks}
+\ifthenelse{\boolean{print-version}}
+{
+}
+{
+\mychapter{Mathematica notebooks}
    \input{mathematica.tex}
-%\chapter{Matlab notebooks}
-%   \input{matlab.tex}
-%\chapter{Julia notebooks}
-%   \input{julia.tex}
+}

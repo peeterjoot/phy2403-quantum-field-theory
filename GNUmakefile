@@ -1,6 +1,13 @@
 THISDIR := phy2403-quantum-field-theory
 THISBOOK := phy2403
 
+BIBLIOGRAPHY_PATH := classicthesis_mine
+HAVE_OWN_CONTENTS := 1
+#HAVE_OWN_TITLEPAGE := 1
+MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Index.tex
+MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/ContentsAndFigures.tex
+BOOKTEMPLATE := ../latex/classicthesis_mine/ClassicThesis2.tex
+
 include make.revision
 include ../latex/make.bookvars
 
@@ -10,9 +17,10 @@ SOURCE_DIRS += appendix
 FIGURES := ../figures/$(THISBOOK)
 SOURCE_DIRS += $(FIGURES)
 
-#GENERATED_SOURCES += matlab.tex 
-GENERATED_SOURCES += mathematica.tex 
-#GENERATED_SOURCES += julia.tex 
+#GENERATED_SOURCES += matlab.tex
+GENERATED_SOURCES += mathematica.tex
+GENERATED_SOURCES += backmatter.tex
+#GENERATED_SOURCES += julia.tex
 
 SOURCES += noetherCurrentScalarField.tex
 SOURCES += scalarFieldCreationOpCommutator.tex
@@ -168,4 +176,6 @@ copy : $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf
 $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf : $(THISBOOK).pdf
 	cp $^ $@
 
-
+backmatter.tex: ../latex/classicthesis_mine/backmatter2.tex
+	rm -f $@
+	ln -s ../latex/classicthesis_mine/backmatter2.tex backmatter.tex
