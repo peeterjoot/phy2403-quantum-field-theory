@@ -404,6 +404,9 @@ END-REDACTION%
 \newboolean{print-version}
 \setboolean{print-version}{false}
 
+\newboolean{with-mathematica}
+\setboolean{with-mathematica}{true}
+
 \ifthenelse{\boolean{use-lettersize}}
 {
    % http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Layout#The_Easy_Way
@@ -426,6 +429,7 @@ END-REDACTION%
    %\usepackage[paperheight=9.61in,paperwidth=6.69in,left=2cm,right=1.9cm,top=1.9cm,bottom=1.8cm]{geometry}
 
    \setboolean{print-version}{true}
+   \setboolean{with-mathematica}{false}
 }
 
 %\PassOptionsToPackage{answerdelayed}{exercise}
