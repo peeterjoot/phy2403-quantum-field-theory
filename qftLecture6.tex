@@ -136,14 +136,15 @@ i \int \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}} \omega_\Bq e^{i \Bq \cdot \Bx}
 \end{dmath}
 The commutator is
 \begin{dmath}\label{eqn:qftLecture6:280}
-\antisymmetric{\pi(\By, t)}{\phi(\Bx, t)}
-=
+\begin{aligned}
+&\antisymmetric{\pi(\By, t)}{\phi(\Bx, t)} \\
+&\,=
 i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
 \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
 \omega_\Bq
-e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
-\antisymmetric
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx} \, \times \\
+&\qquad\antisymmetric
 {
    -e^{-i \omega_\Bq t} a_\Bq
    +
@@ -153,37 +154,38 @@ e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
    e^{-i \omega_\Bp t} a_\Bp
    +
    e^{i \omega_\Bp t} a_{-\Bp}^\dagger
-}
-=
+} \\
+&\,=
 i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
 \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
 \omega_\Bq
-e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
-\lr{
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx} \, \times \\
+&\qquad \lr{
    - e^{i (\omega_\Bp -\omega_\Bq) t}
    \antisymmetric { a_\Bq } { a_{-\Bp}^\dagger }
    +
    e^{i (\omega_\Bq -\omega_\Bp) t}
    \antisymmetric{a_{-\Bq}^\dagger}{ a_\Bp }
-}
-=
+} \\
+&\,=
 i \int \frac{d^3 p}{(2\pi)^3
 \sqrt{2 \omega_\Bp}}
 \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}}
 \omega_\Bq (2\pi)^3
-e^{i \Bp \cdot \By + i \Bq \cdot \Bx}
-\lr{
+e^{i \Bp \cdot \By + i \Bq \cdot \Bx} \, \times \\
+&\qquad \lr{
    - e^{i (\omega_\Bp -\omega_\Bq) t} \deltathree(\Bq + \Bp)
    - e^{i (\omega_\Bq -\omega_\Bp) t} \deltathree(-\Bq -\Bp)
-}
-=
+} \\
+&\,=
 - 2 i \int \frac{d^3 p}{(2\pi)^3
 2 \omega_\Bp}
 \omega_\Bp
-e^{i \Bp \cdot (\By - \Bx)}
-=
+e^{i \Bp \cdot (\By - \Bx)} \\
+&\,=
 -i \deltathree(\By - \Bx),
+\end{aligned}
 \end{dmath}
 which is what we wanted to prove.
 

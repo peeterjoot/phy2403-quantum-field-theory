@@ -1,0 +1,17 @@
+This is a set of course notes from the Fall 2018, University of Toronto Quantum Field Theorry (PHY2403), taught by Prof. Erich Poppitz.
+
+This course covered:
+
+- Introduction: Energy and distance scales; units and conventions. Uncertainty relations in the relativistic domain and the need for multiple particle description.
+- Canonical quantization. Free scalar field theory.
+- Symmetries and conservation laws.
+- Interacting fields: Feynman diagrams and the S matrix; decay widths and phase space.
+- Spin 1/2 fields: Spinor representations, Dirac and Weyl spinors, Dirac equation. Quantizing fermi fields and statistics.
+- Vector fields and Quantum electrodynamics. 
+
+This book contains:
+
+- Lecture notes.
+- Personal notes exploring auxiliary details.
+- Worked practice problems.
+- My solutions (as-is, with errors.) for problem sets 1-4.
