@@ -79,10 +79,13 @@ To calculate \cref{eqn:ProblemSet1Problem5:260}, use the Euler-Maclaurin formula
 %$\zeta$-function regularization, see S. Hawking, Commun.Math.Phys. 55 (1977) 133.
 
 Most importantly, the result is independent of the method of regularization. ``By definition'', this is what we call a  physical result in QFT (=cutoff independent). Notice the striking difference with the $E_{vac}$ of \cref{eqn:ProblemSet1Problem3:20}, which inherently depends on the cutoff and can not be made physical  sense within QFT ... as you see, many lessons lurk in this ``simple'' problem!}
-\begin{eqnarray}
-{1\over 2} F(0) + F(1) + F(2) + \ldots - \int\limits_{n=0}^\infty d n F(n) = - {1\over 2!} B_2 F^\prime(0) -
-{1 \over 4!}B_4 F^{\prime \prime \prime } (0) + \ldots ~,
-\end{eqnarray}
+\begin{equation}
+\begin{aligned}
+{1\over 2} F(0) &+ F(1) + F(2) + \ldots - \int\limits_{n=0}^\infty d n F(n)  \\
+&=
+ - {1\over 2!} B_2 F^\prime(0) - {1 \over 4!}B_4 F^{\prime \prime \prime } (0) + \ldots ~,
+\end{aligned}
+\end{equation}
 where $B_2 = 1/6$, $B_4 = -1/30$, etc. are Bernoulli numbers, and primes denote  derivatives. Now,
 $f(0) = 1$ as stated above; furthermore, assume that all derivatives of our smearing function $f(k)$ vanish at zero (it is not difficult to construct examples of such functions).
 Show that   $F^\prime(0) = 0$,

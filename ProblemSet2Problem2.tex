@@ -2,7 +2,9 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeoproblem{A model with \(\SU{2}_L \times \SU{2}_R\) internal global symmetry: chiral symmetry and the Higgs}{qft:problemSet2:2}{2018 Hw2.II}{
+\makeoproblem{A model with \(\SU{2}_L \times \SU{2}_R\) internal global symmetry}
+%: chiral symmetry and the Higgs
+{qft:problemSet2:2}{2018 Hw2.II}{
 This problem introduces a model to describe the symmetry realization of the nonabelian chiral symmetry in QCD (quantum chromodynamics).
 The word ``chiral'' should become clear later in this class, but the ``nonabelian'' part will be clear below.
 \(\SU{2}_L \times \SU{2}_R\) is an exact symmetry of QCD in the limit when the ``current masses'' of the \( u \) and \( d \) quark, \( m_u \) and \( m_d \), are taken to vanish.
@@ -762,12 +764,13 @@ To proceed, we clearly want a trace based expression for the conserved current. 
 \end{dmath}
 
 That is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:800}
+\begin{equation}\label{eqn:ProblemSet2Problem2:800}
+\begin{aligned}
 \delta S
-=
+&=
 \delta \int d^4 x
-\trace{\lr{ \partial_\mu H^\dagger \partial^\mu H + V(H^\dagger H)}}
-=
+\trace{\lr{ \partial_\mu H^\dagger \partial^\mu H + V(H^\dagger H)}} \\
+&=
 \int d^4 x
 \trace{\lr{
 \partial_\mu (\delta H^\dagger) \partial^\mu H
@@ -780,15 +783,17 @@ That is
 +
    H^\dagger (\delta H)
 }
-}}
-=
+}} \\
+&=
 \int d^4 x
-\trace{\lr{
+\tr
+\Biglr{
 \partial_\mu (\delta H^\dagger \partial^\mu H )
 -\delta H^\dagger \partial_\mu \partial^\mu H
 +
 \partial^\mu (\partial_\mu H^\dagger \delta H)
-- (\partial^\mu \partial_\mu H^\dagger) \delta H
+- (\partial^\mu \partial_\mu H^\dagger) \delta H \\
+&\qquad
 +
 \PD{H^\dagger H}{V}
 \lr{
@@ -796,17 +801,17 @@ That is
 +
    H^\dagger (\delta H)
 }
-}}
-=
+} \\
+&=
 \int d^4 x
-\lr{
+\Biglr{
    \partial_\mu
    \trace{\lr{
    \delta H^\dagger \partial^\mu H
    +
    \partial^\mu H^\dagger \delta H
-   }}
-+
+   }} \\
+&\qquad +
    \trace{\lr{
    \delta H^\dagger
       \lr{ - \partial_\mu \partial^\mu H + \PD{H^\dagger H}{V} H }
@@ -816,7 +821,8 @@ That is
    }}
 }
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 The second trace must be the equivalent of the Euler-Lagrange equations.  It's not obvious how to pretty that up, but we can mandate that it must be zero for all variations \( \delta H, \delta H^\dagger \),
 which leaves us with
 \begin{dmath}\label{eqn:ProblemSet2Problem2:860}
