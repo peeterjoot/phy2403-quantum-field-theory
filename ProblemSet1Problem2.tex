@@ -204,11 +204,11 @@ consistent with \cref{eqn:ProblemSet1Problem2:340} found by evaluating the class
 
 Somewhat cavalierly, the divergence integrals of the delta function above were assumed to be zero.
 One possible justification for killing the delta function divergence integrals above first transforms those into surface integrals
-\begin{dmath}\label{eqn:ProblemSet1Problem2:800}
+\begin{equation}\label{eqn:ProblemSet1Problem2:800}
 \int_V d^3 y \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By f(\By) }
 =
 \int_{\partial V} dA_\By \deltathree(\By - \Bx) \ncap_\By \cdot \spacegrad_\By f(\By),
-\end{dmath}
+\end{equation}
 after which one argue that this is non-zero only when \( \Bx \) is on the boundary, so if we let the boundary go to infinity, it is zero everywhere, regardless of the normal derivative of the function being operated on\footnote{This was Prof. Poppitz's argument.  It's not completely convincing to me, as it requires integrating a delta function that may sit on the boundary.  However, what is the meaning of such a boundary integral, such as \( \int_0^\infty \delta(x) dx \)?  Apparently, such integrals are considered well defined in field theory, and we'll end up encountering these later too, and one of the future problems will help us understand an interpretation.}.
 %\citep{DavidMayrhofer} where the author starts with separate real and imaginary fields and builds the complex representation systematically.
 
@@ -308,9 +308,10 @@ We seek the commutators of all the \cref{eqn:ProblemSet1Problem2:1000} Fourier c
 = \antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger} \) and explicit expansion confirms this
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1020}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1040}
-\antisymmetric{a_\Bp}{b_\Bq}
-=
+\begin{equation}\label{eqn:ProblemSet1Problem2:1040}
+\begin{aligned}
+\antisymmetric{a_\Bp}{b_\Bq} 
+&=
 \int d^3 x
 d^3 y
 e^{-i \Bp \cdot \Bx}
@@ -318,10 +319,11 @@ e^{i \Bq \cdot \By}
 e^{i\omega_\Bp t}
 e^{i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad
 \antisymmetric{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }
-{ \phi^\dagger(\By, t) - \inv{i \omega_\Bq} \pi(\By, t) }
-=
+{ \phi^\dagger(\By, t) - \inv{i \omega_\Bq} \pi(\By, t) } \\
+&=
 \int
 d^3 x
 d^3 y
@@ -330,12 +332,13 @@ e^{i \Bq \cdot \By}
 e^{i\omega_\Bp t}
 e^{i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad
 \lr{
    -\inv{i \omega_\Bq} i \deltathree(\Bx - \By)
    -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
-}
-=
+} \\
+&=
 \inv{2} \int d^3 x e^{i (\Bq - \Bp) \cdot \Bx}
 e^{i\omega_\Bp t}
 e^{i\omega_\Bq t}
@@ -343,8 +346,8 @@ e^{i\omega_\Bq t}
 \lr{
    -\inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 (2 \pi)^3 \delta(\Bq - \Bp)
 y^{i\omega_\Bp t}
 e^{i\omega_\Bq t}
@@ -352,12 +355,14 @@ e^{i\omega_\Bq t}
 \lr{
    -\inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-= 0,
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1060}
-\antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger}
-=
+} \\
+&= 0,
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1060}
+\begin{aligned}
+\antisymmetric{a_\Bp^\dagger}{b_\Bq^\dagger} 
+&=
 \int
 d^3 x
 d^3 y
@@ -366,10 +371,11 @@ e^{-i \Bq \cdot \By}
 e^{-i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad
 \antisymmetric{ \phi^\dagger(\Bx, t) + \inv{i \omega_\Bp} \pi(\Bx, t) }
-{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) }
-=
+{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) } \\
+&=
 \int
 d^3 x
 d^3 y
@@ -378,12 +384,13 @@ e^{-i \Bq \cdot \By}
 e^{-i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad
 \lr{
    +\inv{i \omega_\Bq} i \deltathree(\Bx - \By)
    +\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
-}
-=
+} \\
+&=
 \inv{2} \int d^3 x e^{i (\Bp - \Bq) \cdot \Bx}
 e^{-i\omega_\Bp t}
 e^{-i\omega_\Bq t}
@@ -391,8 +398,8 @@ e^{-i\omega_\Bq t}
 \lr{
    \inv{ \omega_\Bq}
    -\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 (2 \pi)^3 \delta(\Bp - \Bq)
 e^{i\omega_\Bp t}
 e^{i\omega_\Bq t}
@@ -401,15 +408,17 @@ e^{i\omega_\Bq t}
    \inv{ \omega_\Bq}
    - \inv{ \omega_\Bp}
 }
-= 0.
-\end{dmath}
+&= 0.
+\end{aligned}
+\end{equation}
 \end{subequations}
 Finally, we expect that there are two pairs of non-zero commutators
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1080}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1100}
-\antisymmetric{a_\Bp}{a_\Bq^\dagger}
-=
+\begin{aligned}
+\antisymmetric{a_\Bp}{a_\Bq^\dagger} 
+&=
 \int d^3 x
 d^3 y
 e^{-i \Bp \cdot \Bx}
@@ -417,22 +426,23 @@ e^{i \Bq \cdot \By}
 e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
-\antisymmetric{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }
-{ \phi^\dagger(\By, t) + \inv{i \omega_\Bq} \pi(\By, t) }
-=
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad \antisymmetric{ \phi(\Bx, t) - \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }
+{ \phi^\dagger(\By, t) + \inv{i \omega_\Bq} \pi(\By, t) } \\
+&=
 \inv{2} \int d^3 x
 d^3 y
 e^{-i \Bp \cdot \Bx}
 e^{i \Bq \cdot \By}
 e^{i\omega_\Bp t}
-e^{-i\omega_\Bq t}
+e^{-i\omega_\Bq t} 
 \sqrt{\omega_\Bp \omega_\Bq}
-\lr{
+\,\times \\
+&\qquad \lr{
    \inv{i \omega_\Bq} i \deltathree(\Bx - \By)
    -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
-}
-=
+} \\
+&=
 \inv{2} \int d^3 x
 e^{i (\Bq -\Bp)\cdot \Bx}
 e^{i\omega_\Bp t}
@@ -441,8 +451,8 @@ e^{-i\omega_\Bq t}
 \lr{
    \inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 \inv{2} (2 \pi)^3 \delta(\Bq - \Bp)
 e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
@@ -450,13 +460,15 @@ e^{-i\omega_\Bq t}
 \lr{
    \inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 (2 \pi)^3 \delta(\Bq - \Bp),
+\end{aligned}
 \end{dmath}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1120}
-\antisymmetric{b_\Bp}{b_\Bq^\dagger}
-=
+\begin{aligned}
+\antisymmetric{b_\Bp}{b_\Bq^\dagger} 
+&=
 \int d^3 x
 d^3 y
 e^{i \Bp \cdot \Bx}
@@ -464,11 +476,11 @@ e^{-i \Bq \cdot \By}
 e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
-\antisymmetric
+\sqrt{\frac{\omega_\Bq}{2}} \, \times \\
+&\qquad \antisymmetric
 { \phi^\dagger(\Bx, t) - \inv{i \omega_\Bp} \pi(\Bx, t) }
-{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) }
-=
+{ \phi(\By, t) + \inv{i \omega_\Bq} \pi^\dagger(\By, t) } \\
+&=
 \int d^3 x
 d^3 y
 e^{i \Bp \cdot \Bx}
@@ -476,12 +488,12 @@ e^{-i \Bq \cdot \By}
 e^{i\omega_\Bp t}
 e^{-i\omega_\Bq t}
 \sqrt{\frac{\omega_\Bp}{2}}
-\sqrt{\frac{\omega_\Bq}{2}}
-\lr{
+\sqrt{\frac{\omega_\Bq}{2}} \,\times \\
+&\qquad \lr{
    \inv{i \omega_\Bq} i \deltathree(\Bx - \By)
    -\inv{i \omega_\Bp} (-i) \deltathree(\Bx - \By)
-}
-=
+} \\
+&=
 \inv{2} \int d^3 x
 e^{i (\Bp -\Bq)\cdot \Bx}
 e^{i\omega_\Bp t}
@@ -490,8 +502,8 @@ e^{-i\omega_\Bq t}
 \lr{
    \inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 \inv{2}
 (2 \pi)^3
 \deltathree(\Bp - \Bq)
@@ -501,10 +513,11 @@ e^{-i\omega_\Bq t}
 \lr{
    \inv{ \omega_\Bq}
    +\inv{ \omega_\Bp}
-}
-=
+} \\
+&=
 (2 \pi)^3
 \deltathree(\Bp - \Bq).
+\end{aligned}
 \end{dmath}
 \end{subequations}
 Other than the \( (2 \pi)^3 \) scale factor we see from the commutators \( \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}, \antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger} \) that the fields may be represented as a pair of independent creation and annihilation operators.
@@ -514,24 +527,25 @@ We use \cref{eqn:ProblemSet1Problem2:860} to find
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1180}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1200}
-\int d^3 x \pi^\dagger \pi
-=
+\begin{aligned}
+\int &d^3 x \pi^\dagger \pi \\
+&=
 \int d^3 x
 \frac{d^3 p}{(2\pi)^3}
 \frac{d^3 q}{(2\pi)^3}
 e^{i \Bp \cdot \Bx}
 e^{-i \Bq \cdot \Bx}
 \frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}}
-\frac{i \omega_\Bq}{\sqrt{2 \omega_\Bq}}
-\lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-\lr{ e^{i \omega_\Bq t} a_\Bq^\dagger - e^{-i \omega_\Bq t} b_\Bq }
-=
+\frac{i \omega_\Bq}{\sqrt{2 \omega_\Bq}} \,\times \\
+&\qquad \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
+\lr{ e^{i \omega_\Bq t} a_\Bq^\dagger - e^{-i \omega_\Bq t} b_\Bq } \\
+&=
 \inv{2} \int
 \frac{d^3 p}{(2\pi)^3}
 \omega_\Bp
 \lr{ e^{-i \omega_\Bp t} a_\Bp - e^{i \omega_\Bp t} b^\dagger_\Bp }
-\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
-=
+\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp } \\
+&=
 \inv{2} \int
 \frac{d^3 p}{(2\pi)^3}
 \omega_\Bp
@@ -540,16 +554,17 @@ e^{-i \Bq \cdot \Bx}
    + e^{ 2 i \omega_\Bp t} (-b_\Bp^\dagger a_\Bp^\dagger) +
    + e^{ -2 i \omega_\Bp t} (-a_\Bp b_\Bp )
 },
+\end{aligned}
 \end{dmath}
 \begin{dmath}\label{eqn:ProblemSet1Problem2:1220}
 \begin{aligned}
-\int d^3 x &\lr{ \spacegrad \phi^\dagger \cdot \spacegrad \phi + m^2 \phi^\dagger \phi } \\
+\int &d^3 x \lr{ \spacegrad \phi^\dagger \cdot \spacegrad \phi + m^2 \phi^\dagger \phi } \\
 &=
 \inv{2} \int d^3 x
 \frac{d^3 p}{(2\pi)^3}
 \frac{d^3 q}{(2\pi)^3}
-e^{i (\Bq -\Bp) \cdot \Bx}
-\frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
+e^{i (\Bq -\Bp) \cdot \Bx} \,\times \\
+&\qquad \frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
 \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
 \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
 &=
@@ -557,8 +572,8 @@ e^{i (\Bq -\Bp) \cdot \Bx}
 d^3 p
 \frac{d^3 q}{(2\pi)^3}
 \deltathree(\Bq - \Bp)
-\frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}}
-\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+\frac{ (\Bp \cdot \Bq + m^2) }{\sqrt{\omega_\Bp \omega_\Bq}} \,\times \\
+&\qquad \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
 \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
 &=
 \inv{2} \int
