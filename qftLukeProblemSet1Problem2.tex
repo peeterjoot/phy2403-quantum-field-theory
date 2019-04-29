@@ -112,19 +112,20 @@ z \ket{z}
 
 \makeSubAnswer{}{qft:LukeProblemSet1:2b}
 
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:200}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:200}
+\begin{aligned}
 \braket{z}{z'}
-=
+&=
 e^{-\Abs{z}^2/2 - \Abs{z'}^2/2 }
-\sum_{k,m = 0}^\infty \inv{\sqrt{k!}} (z^\conj)^k \bra{k} \inv{\sqrt{m!}} {z'}^m \ket{m}
-=
+\sum_{k,m = 0}^\infty \inv{\sqrt{k!}} (z^\conj)^k \bra{k} \inv{\sqrt{m!}} {z'}^m \ket{m} \\
+&=
 \exp\lr{
 -\Abs{z}^2/2 - \Abs{z'}^2/2 + z^\conj z
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 We also want to put the Hamiltonian into its number operator form by factoring it
-
 \begin{equation}\label{eqn:qftProblemSet1Problem2:220}
 \begin{aligned}
 H
