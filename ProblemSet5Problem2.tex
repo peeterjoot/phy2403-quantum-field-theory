@@ -3,7 +3,7 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\makeoproblem{Problem II: Electromagnetic theory in 2+1 dimensions.}{qft:problemSet5:2}{2018 Hw5.II}{
+\makeoproblem{Electromagnetic theory in 2+1 dimensions.}{qft:problemSet5:2}{2018 Hw5.II}{
 Consider the theory in three space-time dimensions described by the Lagrangian \cref{eqn:ProblemSet5Problem2:100}.
 This theory provides an
 example of an internal symmetry, where the equations of motion are invariant, but the Lagrangian is not. In other
@@ -152,10 +152,10 @@ only contributes a boundary term to the action.  Note that
 %=
 %\partial_\mu \lr{ c \epsilon^{\mu\alpha\beta} \omega F_{\alpha\beta} },
 %\end{dmath}
-we've identified and dropped a ``Bianchi identity'' sum along the way.
-\makedigression{
+we've identified and dropped a ``Bianchi identity'' sum along the way%
+\footnote{
 The proof that this slightly different (from usual) form of the Bianchi identity is zero is essentially the same as the usual one from standard electromagnetism.  In fact, the argument from Hw1 can be used as-is, simply removing one index from the \( \epsilon \)
-\begin{dmath}\label{eqn:ProblemSet5Problem2:200}
+\begin{dmath*}%\label{eqn:ProblemSet5Problem2:200}
 \epsilon^{\mu\alpha\beta} \partial_\mu F_{\alpha\beta}
 =
 \epsilon^{\mu\alpha\beta} \partial_\mu \lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
@@ -164,9 +164,9 @@ The proof that this slightly different (from usual) form of the Bianchi identity
 -\epsilon^{\mu\beta\alpha} \partial_\mu \partial_\beta A_\alpha
 =
 2 \epsilon^{\mu\alpha\beta} \partial_\mu \partial_\alpha A_\beta.
-\end{dmath}
+\end{dmath*}
 This is zero since it's a contraction of an antisymmetric and symmetric tensor.
-} % digression
+}. % digression
 
 Summarizing, so far
 %\begin{dmath}\label{eqn:ProblemSet5Problem2:260}

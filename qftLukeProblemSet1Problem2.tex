@@ -125,15 +125,15 @@ e^{-\Abs{z}^2/2 - \Abs{z'}^2/2 }
 
 We also want to put the Hamiltonian into its number operator form by factoring it
 
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:220}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:220}
+\begin{aligned}
 H
-= \omega\lr{ p^2 + q^2 }/2
-= \omega\lr{ \inv{2} \lr{ q - i p } \lr{ q + i p } - i \antisymmetric{q}{p}/2 }
-= \omega\lr{ a^\dagger a + \inv{2} }
-\end{dmath}
-
+&= \omega\lr{ p^2 + q^2 }/2 \\
+&= \omega\lr{ \inv{2} \lr{ q - i p } \lr{ q + i p } - i \antisymmetric{q}{p}/2 } \\
+&= \omega\lr{ a^\dagger a + \inv{2} }.
+\end{aligned}
+\end{equation}
 Having found that \( a \ket{z} = z \ket{z} \), we also have
-
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:280}
 \bra{z} a^\dagger
 =
@@ -143,7 +143,6 @@ Having found that \( a \ket{z} = z \ket{z} \), we also have
 =
 \bra{z} z^\conj,
 \end{dmath}
-
 so
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:240}
 \bra{z} H \ket{z}
@@ -164,21 +163,16 @@ so
 =
 \inv{\sqrt{2}} \lr{ q + \PD{q}{} } \braket{q}{z},
 \end{dmath}
-
 with \( \psi(q) = \braket{q}{z} \), this is
-
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:320}
 \lr{ z - \frac{q}{\sqrt{2}} } \psi = \inv{\sqrt{2}} \PD{q}{\psi},
 \end{dmath}
-
 which separates into
-
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:340}
 \lr{ \sqrt{2} z - q} dq = \frac{d\psi}{\psi}.
 \end{dmath}
 
 The solution is of the form
-
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:360}
 \psi
 \propto \exp\lr{ \sqrt{2} z q - q^2/2 }
@@ -191,7 +185,6 @@ SKETCH: This is a Gaussian, and when \( z \) is real is centred at \( \sqrt{2} z
 \makeSubAnswer{}{qft:LukeProblemSet1:2e}
 
 Noting that \( 2 q = \sqrt{2} \lr{ a + a^\dagger } \), and \( 2 i p = \sqrt{2}\lr{ a - a^\dagger } \)
-
 \begin{dmath}\label{eqn:qftProblemSet1Problem2:380}
 \bra{z} X \ket{z}
 =
