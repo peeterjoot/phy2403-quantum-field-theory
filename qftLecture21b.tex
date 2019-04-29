@@ -68,6 +68,7 @@ H
 \end{equation*}
 } % theorem
 
+\begin{proof}
 To prove \cref{thm:qftLecture21b:1}, we start with the spacetime expansion of the Dirac Lagrangian density
 \begin{dmath}\label{eqn:qftLecture21b:500}
 \LL_{\text{Dirac}}
@@ -93,6 +94,7 @@ Hamiltonian density in the usual way, we have
 Integrating over a 3-volume provides
 the Dirac Hamiltonian of
 \cref{thm:qftLecture21b:1}.
+\end{proof}
 
 Now we want to examine the
 action of \( -i \gamma^0 \gamma^j \partial_j + m \gamma^0 = \gamma^0 \lr{ -i \gamma^j \partial_j + m }\) on the plane wave solutions we have found.
@@ -105,8 +107,9 @@ For \(\Psi_u = u(p) e^{-i p \cdot x}\), and \( \Psi_v = v(p) e^{i p \cdot x} \),
 \end{aligned}
 \end{equation*}
 } % theorem
-\Cref{thm:qftLecture21b:2}, which shows that \( \Psi_u, \Psi_v \) are eigenvectors of the operator
+\Cref{thm:qftLecture21b:2} shows that \( \Psi_u, \Psi_v \) are eigenvectors of the operator
 \( \gamma^0 \lr{ -i \gamma^j \partial_j + m }\) with eigenvalues \( \pm \omega_\Bp \).
+\begin{proof}
 These eigenvalue equations follow from the Dirac equation for \( \Psi_u, \Psi_v \).  These are
 \begin{dmath}\label{eqn:qftLecture21b:1000}
 \lr{ i \gamma^\mu \partial_\mu - m } u e^{-i p \cdot x}
@@ -131,6 +134,7 @@ Rearranging gives
 \end{aligned}
 \end{dmath}
 and \cref{thm:qftLecture21b:2} follows immediately.
+\end{proof}
 
 \section{General solution and Hamiltonian.}
 As with the Klein-Gordon equation, let's introduce a generic solution formed from linear combinations of our specific \( u^s(p) = u^s_\Bp, v^s(p) = v^s_\Bp \) solutions
@@ -147,7 +151,7 @@ As with the Klein-Gordon equation, let's introduce a generic solution formed fro
    e^{i p \cdot x} v^s_\Bp b_\Bp^s
 }.
 \end{dmath}
-\maketheorem{Dirac Hamiltonian in terms of creation and annihilation operators.}{thm:qftLecture21b:7}{
+\maketheorem{Ladder representation of Dirac Hamiltonian.}{thm:qftLecture21b:7}{
 Substitution of the superposition \cref{eqn:qftLecture21b:800} into
 the Dirac Hamiltonian of
 \cref{thm:qftLecture21b:1} results in
@@ -167,6 +171,7 @@ H_{\text{Dirac}}
 \end{equation*}
 } % theorem
 
+\begin{proof}
 Deferring interpretation slightly, we first
 prove \cref{thm:qftLecture21b:7}, making the somewhat lazy guess that
 all the time dependent terms will be wiped out.  This assumption allows us to use the zero time fields of our superposition solution
@@ -329,6 +334,7 @@ H_{\text{Dirac}}
 }.
 \end{dmath}
 We see above how the mixed terms were killed off nicely by \cref{eqn:qftLecture21b:1160}.  That also justifies the use of the zero-time fields in this derivation, which can also be seen explicitly without use of the zero-time fields \cref{problem:qftLecture21b:1}.
+\end{proof}
 
 \paragraph{Interpretation.}
 With a minus sign in the Hamiltonian, there is no bound to the energy from below!  This makes it troublesome to interpret the \( a_\Bp \)'s and \( b_\Bp \)'s as the familiar raising and lowering operators that we know.

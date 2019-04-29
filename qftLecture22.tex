@@ -364,6 +364,7 @@ The momentum operator can be written as
 \end{equation*}
 } % theorem
 
+\begin{proof}
 To derive this, we have to assign meaning to \( \BP = \int \Psi^\dagger (-i \spacegrad) \Psi \).  There is an implied basis for these vectors that presumably commutes with \( \Psi, \Psi^\dagger \).  Let's suppose that we have a standard orthonormal basis for \R{3} \( \setlr{\Be_1, \Be_2, \Be_3} \), so that our two vectors can be written.
 \begin{dmath}\label{eqn:qftLecture22:720}
 \begin{aligned}
@@ -483,6 +484,7 @@ p^k
 }.
 \end{dmath}
 This has a vacuum term that can be ignored, so a final multiplication with and sum over the basis vectors \( \Be_k \), completes the proof.
+\end{proof}
 
 \maketheorem{Momentum operator eigenvalues.}{thm:qftLecture22:640}{
 \index{momentum operator}
@@ -492,7 +494,8 @@ The eigenvalues of the momentum operator with respect to single particle momentu
 \end{equation*}
 } % theorem
 
-Here's a partial proof, introducing a state associated with a fermion creation operator
+\begin{proof} (partial)
+Introduce a state associated with a fermion creation operator
 \begin{dmath}\label{eqn:qftLecture22:660}
 \ket{\Bq, r} = \sqrt{ 2 \omega_\Bq } a_\Bq^{r\dagger} \ket{0}.
 \end{dmath}
@@ -534,6 +537,7 @@ The action of the momentum operator on such as state is
 \Bq
 \ket{\Bq, r}.
 \end{dmath}
+\end{proof}
 Clearly the same argument holds for anti-fermion states.
 
 \section{Rotation symmetries: angular momentum operator.}

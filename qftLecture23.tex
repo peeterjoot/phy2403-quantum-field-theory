@@ -420,22 +420,24 @@ v^{s'}(p')
 }.
 \end{dmath}
 
-The problem can be simplified by computing the cross section that sums over all spins, assuming that the states are not polarized (i.e. average over all the up, down states).
-\makedigression{
+The problem can be simplified by computing the cross section that sums over all spins, assuming that the states are not polarized (i.e. average over all the up, down states)%
+\footnote{
+%\makedigression{
 Such an average is related to the density matrix
 \index{density matrix}
-\begin{dmath}\label{eqn:qftLecture23:620}
+\begin{dmath*}%\label{eqn:qftLecture23:620}
 \rho_{\text{in}} = \sum_{s s'} \ket{s s'} \inv{4} \bra{ s s'}.
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:640}
+\end{dmath*}
+\begin{dmath*}%\label{eqn:qftLecture23:640}
 \trace{
 \lr{
    e^{i H t} \rho_{\text{in}} e^{i H t} \rho_\txtf
    \ket{r r'} \bra{r r'}
 }
 }
-\end{dmath}
-} % digression
+\end{dmath*}
+%} % digression
+}.
 That is, We want to sum over all the initial and final state polarizations \( \inv{4} \sum_{ss'} \sum_{rr'} \Abs{M}^2 \)
 
 \begin{dmath}\label{eqn:qftLecture23:610}

@@ -71,14 +71,14 @@ where \( \zeta^1 = (1,0)^\T, \zeta^2 = (0,1)^\T \).
 \section{Normalization.}
 \index{spinor!normalization}
 
-\maketheorem{\( u^\dagger u \)}{thm:qftLecture21:1}{
+\maketheorem{\( u^\dagger u \).}{thm:qftLecture21:1}{
 \begin{equation*}
 u^{r \dagger} u^{s}
 = 2 p_0 \delta^{r s}.
 \end{equation*}
 } % theorem
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture21:120}
 u^{s \dagger} u^r
 =
@@ -172,10 +172,11 @@ We can easily see that \( \zeta^{s\dagger} \zeta^r = \delta^{rs} \) by writing o
 1
 \end{bmatrix}
 &=
-1,
+1.
 \end{aligned}
 \end{dmath}
-which completes the proof.
+%which completes the proof.
+\end{proof}
 
 %\begin{dmath}\label{eqn:qftLecture21:140}
 %u^{s \dagger} u^{s'}
@@ -193,7 +194,7 @@ We also want to compute \( \ubar u \), but need a couple intermediate results.
 \end{equation*}
 } % lemma
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture21:180}
 (p \cdot \sigma) (p \cdot \osigma)
 =
@@ -225,6 +226,7 @@ and
 \Bp^2
 = m^2.
 \end{dmath}
+\end{proof}
 
 \maketheorem{\( \ubar u \).}{thm:qftLecture21:3}{
 \begin{equation*}
@@ -232,7 +234,7 @@ and
 \end{equation*}
 } % theorem
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture21:160}
 \ubar^r u^s
 =
@@ -263,9 +265,10 @@ u^{r\dagger} \gamma^0 u^s
 =
 2 m \zeta^{r\dagger} \zeta^s
 =
-2 m \delta^{rs},
+2 m \delta^{rs}.
 \end{dmath}
-which completes the proof.
+%which completes the proof.
+\end{proof}
 
 \section{Other solution.}
 
@@ -398,6 +401,7 @@ x_n y_1 & \cdots  &        & x_n y_n
 \end{equation*}
 } % theorem
 
+\begin{proof}
 For the \( v \)'s
 \begin{dmath}\label{eqn:qftLecture21:420}
 \sum_{s = 1,2}
@@ -503,6 +507,7 @@ p \cdot \osigma & - m
 -m + p^\mu \gamma_\mu,
 \end{dmath}
 as stated.
+\end{proof}
 Proof for the \( u\)'s is left to \cref{problem:qftLecture21:3}.
 
 %}

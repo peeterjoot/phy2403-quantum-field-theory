@@ -119,9 +119,9 @@ where
 \maketheorem{Noether's theorem (1st).}{thm:qftLecture7:160}{
 If the equations of motion re invariant under \( \phi^\mu \rightarrow \phi^\mu + \delta \phi^\mu \), then there exists a conserved current \( j^\mu \) such that \( \partial_\mu j^\mu = 0 \).
 } % theorem
-
 Noether's first theorem applies to global symmetries, where the parameters are the same for all \( (\Bx, t)\).  Gauge symmetries are not examples of such global symmetries.
 
+\begin{proof}
 Given a Lagrangian density \( \LL(\phi(x), \phi_{,\mu}(x)) \), where \( \phi_{,\mu} \equiv \partial_\mu \phi \).  The action is
 \begin{dmath}\label{eqn:qftLecture7:160}
 S = \int d^d x \LL.
@@ -192,6 +192,7 @@ We write
 Q = \int d^3x j^0,
 \end{dmath}
 and call this the on-shell charge associated with the symmetry.
+\end{proof}
 \index{on-shell}
 
 \section{Spacetime translation.}

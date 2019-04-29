@@ -287,10 +287,10 @@ and this holds for all \( x^\mu \), we must have
 M \sigma_\mu M^\dagger = \sigma_\nu \ultensor{\Lambda}{\nu}{\mu}.
 }
 
-\maketheorem{Transformation of \( U^\dagger(x) \sigma_\mu U(x) \)}{thm:qftLecture19:1121}{
+\maketheorem{Transformation of \( U^\dagger(x) \sigma_\mu U(x) \).}{thm:qftLecture19:1121}{
 \( U^\dagger(x) \sigma_\mu U(x) \) transforms as a four vector.
 } % theorem
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture19:320}
 U^\dagger(x) \sigma_\mu U(x)
 \rightarrow
@@ -303,6 +303,7 @@ U^\dagger(x) \lr{ M \sigma_\mu M^\dagger } U(x)
 U^\dagger(x) \sigma_\nu U(x) \ultensor{\Lambda}{\nu}{\mu}
 \end{dmath}
 so we find that \( U^\dagger(x) \sigma_\mu U(x) \) transforms as a four vector as claimed.
+\end{proof}
 
 \maketheorem{Transformation of partials.}{thm:qftLecture19:1120}{
 The four-gradient coordinates transform as a four vector
@@ -313,7 +314,9 @@ The four-gradient coordinates transform as a four vector
 \end{equation*}
 } % theorem
 
-Proof\footnote{In class we proved this by considering the transformation properties of a direction derivative \( dx^\mu \cdot \partial_\mu \), but that isn't the method that seems most intuitive to me.}:
+\begin{proof}
+%Proof
+%\footnote{In class we proved this by considering the transformation properties of a direction derivative \( dx^\mu \cdot \partial_\mu \), but that isn't the method that seems most intuitive to me.}:
 Inverting the transformation relation
 \begin{dmath}\label{eqn:qftLecture19:1694}
 {x'}^\mu =
@@ -364,12 +367,13 @@ so
 % \ultensor{(\Lambda^{-1})}{\mu}{\sigma},
 %\end{dmath}
 %as stated.
+\end{proof}
 
-\maketheorem{Transformation of \( U^\dagger \sigma^\mu \partial_\mu U \)}{thm:qftLecture19:1122}{
+\maketheorem{Transformation of \( U^\dagger \sigma^\mu \partial_\mu U \).}{thm:qftLecture19:1122}{
 \( U^\dagger \sigma^\mu \partial_\mu U \) transforms as a four vector.
 } % theorem
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture19:400}
 U^\dagger(x) \sigma^\mu \PD{x^\mu}{} U(x)
 \rightarrow
@@ -388,8 +392,9 @@ U(x)
 =
 U^\dagger(x) \sigma^\nu
 \PD{{x}^\nu}{}
-U(x)
+U(x).
 \end{dmath}
+\end{proof}
 
 We can now define
 \makedefinition{Weyl action (name?)}{dfn:qftLecture19:1234}{
@@ -463,7 +468,8 @@ Variation of the action \cref{dfn:qftLecture19:1234} gives rise to the equations
 \end{equation*}
 which is called the Weyl equation.
 } % theorem
-Proof:
+
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture19:1294}
 \delta S
 =
@@ -497,6 +503,7 @@ i \int d^4 x
 }.
 \end{dmath}
 Requiring this to vanish for all variations \( \delta U^\dagger \) proves the result.
+\end{proof}
 
 Written out explicitly in matrix form, the Weyl equation is
 \begin{dmath}\label{eqn:qftLecture19:440}
@@ -521,15 +528,15 @@ or
 \end{dmath}
 \end{subequations}
 
-\maketheorem{Weyl equation relation to the massless Klein-Gordon equation.}{thm:qftLecture19:1274}{
+\maketheorem{Weyl equation, massless Klein-Gordon equation.}{thm:qftLecture19:1274}{
 The Weyl equation is equivalent to a set of massless Klein-Gordon equations.
 \begin{equation*}
 \partial_\mu \partial^\mu U_k = 0,
 \end{equation*}
 for \( k = 1, 2\).
 } % theorem
-Proof:
 
+\begin{proof}
 Multiplying \cref{eqn:qftLecture19:480} by \( \partial_1 + i \partial_2 \) gives
 \begin{dmath}\label{eqn:qftLecture19:520}
 \lr{ \partial_1 + i \partial_2 }
@@ -595,8 +602,8 @@ U_2
 =
 - \partial_\mu \partial^\mu U_1.
 \end{dmath}
-
-Because \( S_{\text{Weyl}} \) results in a massless Klein-Gordon equation, this is no good for electrons, and we have to look for a different action.
+\end{proof}
+Because \( S_{\text{Weyl}} \) results in a massless Klein-Gordon equation, this is no good for electrons.  We must look for a different action.
 
 %\paragraph{Q:} Can we write bilinear inut w/ no derivatives.
 %
@@ -626,7 +633,7 @@ What we are really doing is assembling a four component spinor out of the two U'
 \index{Lorentz symmetry}
 
 We want to examine the Lorentz invariance of \(U^\T \sigma_2 U\), but need an intermediate result first.
-\makelemma{Transpose of Pauli vector representation}{lemma:qftLecture19:21}{
+\makelemma{Transpose of Pauli vector representation.}{lemma:qftLecture19:21}{
 For any \( \Bx \in \bbR^3 \)
 \begin{equation*}
 (\Bsigma \cdot \Bx)^\T = -\sigma^2 (\Bsigma \cdot \Bx) \sigma^2,
@@ -637,6 +644,7 @@ or more compactly
 \end{equation*}
 Geometrically, this transposition operation reflects \( \Bx \) about the y-axis.
 } % lemma
+\begin{proof}
 Proving
 \cref{lemma:qftLecture19:21}
 is well suited to software \nbref{diracWeylMatrixRepresentationAndIdentities.nb},
@@ -666,13 +674,14 @@ which means that
 =
 - \sigma^2 (\Bsigma \cdot \Bx)^\T \sigma^2.
 \end{dmath}
+\end{proof}
 
 Now we are ready to proceed.
-\maketheorem{\(U^\T \sigma_2 U\) invariance}{thm:qftLecture19:10}{
+\maketheorem{\(U^\T \sigma_2 U\) invariance.}{thm:qftLecture19:10}{
 \(U^\T \sigma_2 U\) is Lorentz invariant.
 } % theorem
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture19:620}
 U^\T \sigma_2 U
 \rightarrow
@@ -698,6 +707,7 @@ e^{i \Norm{\Ba}} & 0 \\
 \end{equation}
 so we see that such a matrix has the \( U^\dagger U = 1 \) and \( \det U = 1 \) properties that we desire for elements of \( \SU{2} \)\footnote{In class the suitability of \( e^{i \Bsigma \cdot \Ba} \) as an element of \( \SU{2} \) was demonstrated with an argument that diagonalizable matrices satisfy \( \det e^A = e^{\trace{A}} \)}.
 We haven't shown that all matrices \( U \in \SU{2} \) can be written in this form, but let's assume that's the case.
+\end{proof}
 
 \paragraph{Claim:}  Generalizing from the exponential form of \( \SU{2} \) elements seen above, we assume that any \(\SL{2}\) matrix \( M \) can be written as
 \begin{dmath}\label{eqn:qftLecture19:680}
@@ -963,6 +973,7 @@ where the \( 1/2\) factor of \( \omega_{0i} \) vanished because we had a sum ove
 \end{equation*}
 } % theorem
 
+\begin{proof}
 The first two are clear from inspection of
 \cref{eqn:qftLecture19:1774}.
 For the last, for \( \mu = 0 \)
@@ -983,9 +994,10 @@ and for \( \mu = k \ne 0 \)
 =
 +\gamma^0 \gamma^0 \gamma^k
 =
-\gamma^k,
+\gamma^k.
 \end{dmath}
-which completes the proof.
+%which completes the proof.
+\end{proof}
 
 \section{Dirac Lagrangian.}
 \index{Dirac Lagrangian}
@@ -1037,7 +1049,8 @@ S = \int d^4 x \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi,
 is a real scalar and is Lorentz invariant.
 } % theorem
 
-\paragraph{Real:}
+\begin{proof}
+%\paragraph{Real:}
 To show that the action is real, we compute it's Hermitian conjugate, apply \cref{thm:qftLecture19:51} and integrate by parts
 \begin{dmath}\label{eqn:qftLecture19:1594}
 S^\dagger
@@ -1175,6 +1188,7 @@ The Lagrangian transforms as
 
 We find that \( \overbar{\Psi} \Psi = \Psi^\dagger \gamma^0 \Psi \) is a Lorentz scalar, whereas
 \( \overbar{\Psi} \gamma^\mu \Psi \) is a 4 vector.
+\end{proof}
 
 %Can create couplings like \( \overbar{\Psi}_1 \Psi_2 \overbar{\Psi}_3 \Psi_4 \)
 %or \( \overbar{\Psi} \gamma_\mu \partial^\mu \Psi \).

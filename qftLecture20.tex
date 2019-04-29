@@ -84,11 +84,12 @@ Varying the Dirac action (\cref{problem:qftLecture20:10}), we find the Dirac equ
 \lr{ i \gamma^\mu \partial_\mu - m } \Psi = 0.
 }
 
-\maketheorem{Dirac equations solutions satisfy the Klein-Gordon equation}{thm:qftLecture20:760}{
+\maketheorem{Dirac equations solutions satisfy the Klein-Gordon equation.}{thm:qftLecture20:760}{
 If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
 \( \Psi \) obeys the Klein-Gordon equation.
 } % theorem
 
+\begin{proof}
 \Cref{thm:qftLecture20:760} follows by pre-multiplying by a sort of ``conjugate'' operator\footnote{Q: Is there a name for such a conjugation operation?} \( i \gamma^\mu + m \) to find
 \begin{dmath}\label{eqn:qftLecture20:100}
 0 =
@@ -116,6 +117,7 @@ If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
 -\lr{ \partial_{00} - \spacegrad^2 + m^2 } \Psi,
 \end{dmath}
 which is a Klein-Gordon equation for \( \Psi \).
+\end{proof}
 
 \paragraph{Goal:}
 
@@ -333,7 +335,7 @@ We'll also see in the end that we don't have to calculate these square roots, si
 If matrix \( A \) is diagonalizable, then \( \det \sqrt{A} = \sqrt{ \det A } \).
 } % lemma
 
-Proof:
+\begin{proof}
 Suppose that
 \begin{dmath}\label{eqn:qftLecture20:900}
 A = U \diag( \lambda_1, \cdots \lambda_n ) U^\dagger,
@@ -354,6 +356,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 =
 \sqrt{ \det A }.
 \end{dmath}
+\end{proof}
 
 \makelemma{Determinant of \( p \cdot \sigma \).}{lemma:qftLecture20:7}{
 \begin{equation*}
@@ -361,8 +364,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 \end{equation*}
 } % lemma
 
-Proof:
-
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture20:420}
 \det \frac{\sqrt{p \cdot \sigma}}{\sqrt{m}}
 =
@@ -385,14 +387,15 @@ Proof:
 =
 1.
 \end{dmath}
+\end{proof}
 
-\makelemma{\((p \cdot \sigma)(p \cdot \overbar{\sigma})\)}{lemma:qftLecture20:17}{
+\makelemma{\((p \cdot \sigma)(p \cdot \overbar{\sigma})\).}{lemma:qftLecture20:17}{
 \begin{equation*}
 (p \cdot \sigma)(p \cdot \overbar{\sigma}) = m^2.
 \end{equation*}
 } % lemma
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture20:480}
 (p \cdot \sigma)(p \cdot \overbar{\sigma}) = \lr{ p^0 - \Bp \cdot \Bsigma }\lr{ p^0 + \Bp \cdot \Bsigma }
 =
@@ -402,12 +405,13 @@ Proof:
 =
 m^2.
 \end{dmath}
+\end{proof}
 
 \maketheorem{\( u(p) \) is a solution to the Dirac equation.}{thm:qftLecture20:13}{
 \Cref{eqn:qftLecture20:280} is a solution of \cref{eqn:qftLecture20:80}, the Dirac equation.
 } % theorem
 
-Proof:
+\begin{proof}
 \begin{dmath}\label{eqn:qftLecture20:460}
 \lr{ \gamma^\mu p_\mu -m } u(p)
 =
@@ -440,6 +444,7 @@ p \cdot \overbar{\sigma} & -m
 \end{bmatrix}
 = 0.
 \end{dmath}
+\end{proof}
 
 \paragraph{Summary:}
 For \( p^0 > 0, p^2  = m^2 \)
