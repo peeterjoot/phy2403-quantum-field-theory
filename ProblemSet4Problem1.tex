@@ -86,12 +86,11 @@ Notice that \cref{c5} is equivalent to \cref{c2} when $A_i$'s are either creatio
 %\end{eqnarray}
 \begin{equation}\label{w2}
 \begin{aligned}
-T( A_1 \ldots A_n ) &= :A_1 \ldots A_n: \\
-&\qquad   + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n}: \\
-&\qquad  + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots ~,
+T( &A_1 \ldots A_n ) = :A_1 \ldots A_n: \\
+&\qquad + :\contraction{}{A}{{}_1}{A} A_1 A_2 A_3\ldots A_n: + \ldots + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n-1} A_n: + :\contraction{}{A}{{}_1\ldots}{A} A_1 \ldots A_{n}: \\
+&\qquad + :\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n: + \ldots ~,
 \end{aligned}
 \end{equation}
-
  with the difference that $A_i$ are fields (we are considering real scalar fields),  $1 \ldots n$ denote space-time points, and the contraction is now the Feynman propagator, e.g. $D_F(x_1-x_2)$, etc.
 
  Notice that  to prove (\ref{w2}) one can consider a particular time ordering. Then the $T$ product becomes the normal product of operators (as they are assumed ordered). The space-time dependence can be taken out by Fourier transform which multiplies every term.  Every operator is a sum of creation and annihilation operators. Their commutators are exactly the ones giving rise to the contraction in \cref{c2}, on one hand, and to the function $D(x_i -x_j)$ after Fourier transform, on the other (recall that this function appears in the Feynman propagator).
@@ -285,13 +284,15 @@ Since \( \contraction{}{a}{{}^\dagger_{k_{i}}}{a} a^\dagger_{k_{i}} a_{k_{n+1}}^
 
 For a contraction such as that of \cref{eqn:ProblemSet4Problem1:160} we need only modify the trailing sum of contractions.  That is
 \begin{equation}\label{eqn:ProblemSet4Problem1:180}
-\normalorder{A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n} B
-=
+\begin{aligned}
+&\normalorder{A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n} B \\
+&=
 \normalorder{A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n B}
 +
 \sum\limits_{1 \ge k, k \notin \setlr{2,p}, k \le n}
 \bcontraction{: A_1 A_2 \ldots }{A}{{}_k \ldots  A_p \ldots A_n :}{B}
 : A_1 \contraction{}{A}{{}_2\ldots A_k \ldots}{A} A_2 \ldots A_k \ldots  A_p \ldots A_n : B.
+\end{aligned}
 \end{equation}
 This will clearly also be the case if the operator sequence \( \normalorder{A_1 \ldots A_n} \) includes any number of other contractions.
 
@@ -406,10 +407,10 @@ This time we have the normal ordering of all the operators, of all the operators
 \item \( n + 1 \).  The way to proceed is now clear, but is just hard to write.
 \begin{dmath}\label{eqn:ProblemSet4Problem1:280}
 \begin{aligned}
-A_1 \ldots A_n A_{n+1}
-&=
+&A_1 \ldots A_n A_{n+1}
+=
 (A_1 \ldots A_n) A_{n+1} \\
-&=
+&\quad=
 \Biglr{
 \normalorder{A_1 \ldots A_n} \\
 &\qquad+
@@ -422,7 +423,7 @@ A_1 \ldots A_n A_{n+1}
 \normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n}
  + \ldots
 } A_{n+1} \\
-&=
+&\quad=
 \normalorder{A_1 \ldots A_n A_{n+1}} + \sum_{k \ne n + 1}
 \normalorder{
 \contraction{A_1 \ldots }{A}{{}_k \ldots A_n }{A}

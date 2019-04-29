@@ -2,7 +2,7 @@
 % Copyright © 2018 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\makeoproblem{Interaction energy between static external charges}{qft:problemSet3:1}{2018 Hw3.I}{
+\makeoproblem{Interaction energy, static external charges.}{qft:problemSet3:1}{2018 Hw3.I}{
 \index{Yukawa coupling}
 \makesubproblem{}{qft:problemSet3:1a}
  Calculate the vacuum expectation value of the time ordered exponential
@@ -17,7 +17,11 @@ for the case of a massive free real scalar field. Here, $g$ is a coupling consta
    \end{equation}
    which is really the exponential of the second order term and $D_F$ is the Feynman propagator.
 \makesubproblem{}{qft:problemSet3:1b}
-Consider the case where $j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right)$. This source term represents two external opposite ``charges"\footnote{In other words, classical particles linearly coupled to $\phi$ (if $\phi$ was the electrostatic potential $A^0$, this would really be the electromagnetic charge.) For a discussion of whether an interaction like you will study can arise from a realistic QFT, see comment in 2. below.} a distance $R = |\BR|$ apart, created at $t=-T$ and existing for time $2 T$.  Show that, in the limit $T \gg R \gg 1/m$, eq.~(\ref{two}) {\it is proportional to}:
+Consider the case where 
+\begin{dmath}\label{eqn:ProblemSet3Problem1:13}
+j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right).
+\end{dmath}
+This source term represents two external opposite ``charges"\footnote{In other words, classical particles linearly coupled to $\phi$ (if $\phi$ was the electrostatic potential $A^0$, this would really be the electromagnetic charge.) For a discussion of whether an interaction like you will study can arise from a realistic QFT, see comment in 2. below.} a distance $R = |\BR|$ apart, created at $t=-T$ and existing for time $2 T$.  Show that, in the limit $T \gg R \gg 1/m$, eq.~(\ref{two}) {\it is proportional to}:
    \begin{equation}
    \label{three}
    e^{ - i 2T V(R)},
