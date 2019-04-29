@@ -214,14 +214,14 @@ where \( \alpha, \beta = 1, 2, 3, 4 \).
 Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that propagator is
 \begin{dmath}\label{eqn:qftLecture23:260}
 \begin{aligned}
-\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
+&\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 \\
 &=
 \int \frac{d^3 p}{(2\pi)^3 \sqrt{ 2 \omega_\Bp } }
 \int \frac{d^3 q}{(2\pi)^3 \sqrt{ 2 \omega_\Bq } }
 \biglr{
    e^{-i p \cdot x} e^{+ i q \cdot y}
    \Theta ( x_0 - y_0 ) u^s_\alpha(p) \ubar^r_\beta(q) \expectation{ a_\Bp^s a_\Bq^{r\dagger} } \\
-\qquad +
+&\qquad +
    e^{i p \cdot x} e^{- i q \cdot y}
    \Theta ( y_0 - x_0 ) \vbar^s_\beta(p) v^r_\beta(q) \expectation{ b_\Bq^s a_\Bp^{r\dagger} }
 } \\
@@ -252,7 +252,7 @@ Now we can replace the \( p_\mu \)'s with derivatives acting on the exponentials
 
 \begin{dmath}\label{eqn:qftLecture23:340}
 \begin{aligned}
-\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
+&\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 \\
 &=
 \Theta ( x_0 - y_0 )
 \biglr{ i \gamma^\mu_{\alpha\beta} \partial_\mu + m }

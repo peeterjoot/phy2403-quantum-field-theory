@@ -317,18 +317,18 @@ which is a positive (repulsive) variation of the Yukawa potential as defined in 
 \paragraph{Like charges.}
 
 For like charges the modification of \cref{eqn:ProblemSet3Problem1:60} is
-\begin{dmath}\label{eqn:ProblemSet3Problem1:280}
+\begin{equation}\label{eqn:ProblemSet3Problem1:280}
 \begin{aligned}
-\int &d^4 x d^4 y j(x) D_F(x - y) j(y)  \\
-&=
+&\int d^4 x d^4 y j(x) D_F(x - y) j(y)  \\
+&\,=
 \int_{-T}^T dt
 \int_{-T}^T dt'
 \int
 d^3 x d^3 y
-\left( \delta^{(3)}(\Bx) + \delta^{(3)}(\Bx - \BR)\right)
-D_F(\Bx - \By, t - t')
+\left( \delta^{(3)}(\Bx) + \delta^{(3)}(\Bx - \BR)\right) \,\times \\
+&\qquad D_F(\Bx - \By, t - t')
 \left( \delta^{(3)}(\By) + \delta^{(3)}(\By - \BR)\right) \\
-&=
+&\,=
 \int_{-T}^T dt
 \int_{-T}^T dt'
 \int
@@ -337,21 +337,21 @@ d^3 y
    D_F(- \By, t - t')
    +
    D_F(\BR - \By, t - t')
-}
-\left( \delta^{(3)}(\By) + \delta^{(3)}(\By - \BR)\right) \\
-&=
-\int_{-T}^T dt
-\int_{-T}^T dt'
-\lr{
-   D_F(\Bzero, t - t')
-   +
-   D_F(\BR, t - t')
-+
-   D_F(- \BR, t - t')
-   +
-   D_F(\Bzero, t - t')
-} \\
-&=
+}  \,\times \\
+&\qquad \left( \delta^{(3)}(\By) + \delta^{(3)}(\By - \BR)\right) \\
+%&\,=
+%\int_{-T}^T dt
+%\int_{-T}^T dt'
+%\lr{
+%   D_F(\Bzero, t - t')
+%   +
+%   D_F(\BR, t - t')
+%+
+%   D_F(- \BR, t - t')
+%   +
+%   D_F(\Bzero, t - t')
+%} \\
+&\,=
 \int_{-T}^T dt
 \int_{-T}^T dt'
 \lr{
@@ -362,7 +362,7 @@ d^3 y
    D_F(- \BR, t - t')
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Applying this sign adjustment to the calculation of \cref{eqn:ProblemSet3Problem1:200} we find
 \begin{dmath}\label{eqn:ProblemSet3Problem1:300}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
