@@ -148,9 +148,12 @@ After that the diagrams get messier to enumerate.  We can see the pattern by con
 \frac{(-1)^3}{3! 2^3}.
 \end{dmath}
 Here the \( 3! \) downstairs is to compensate for the fact that there are \( 3 \times 2 \) possible orderings of each distinct pair of endpoints.  Example:
-\begin{dmath}\label{eqn:ProblemSet3Problem2:280}
- \setlr{ ab, cd, ef }, \setlr{ ab, ef, cd}, \setlr{ cd, ab, ef }, \setlr{ cd, ef, ab }, \setlr{ ef, ab, cd }, \setlr{ ef, cd, ab }.
-\end{dmath}
+\begin{equation}\label{eqn:ProblemSet3Problem2:280}
+\begin{aligned}
+&\setlr{ ab, cd, ef }, \setlr{ ab, ef, cd}, \setlr{ cd, ab, ef }, \\
+&\setlr{ cd, ef, ab }, \setlr{ ef, ab, cd }, \setlr{ ef, cd, ab }.
+\end{aligned}
+\end{equation}
 The pattern of perfect cancellation is clear.  The \( j^{2n} \) order integral is
 \begin{dmath}\label{eqn:ProblemSet3Problem2:240}
 \frac{(-1)^n}{n!} \inv{(2n)!} \frac{(2n)!}{(2n -2)!2!} \cdots \frac{4!}{2!2!} \lambda^n
@@ -173,20 +176,24 @@ as desired.
 
 \makeSubAnswer{}{qft:problemSet3:2d}
 The probability for a single particle of momentum \( \Bk \) is
-\begin{dmath}\label{eqn:ProblemSet3Problem2:300}
+\begin{equation}\label{eqn:ProblemSet3Problem2:300}
+\begin{aligned}
 P_\Bk
-=
-\Abs{ \bra{0} T a_\Bk e^{i \int d^4 x j(x) \phi(x)} \ket{0} }^2
-=
-\sum_{n,m = 1}^\infty \frac{ i^n (-i)^m }{ n! m! }
+&=
+\Abs{ \bra{0} T a_\Bk e^{i \int d^4 x j(x) \phi(x)} \ket{0} }^2 \\
+&=
+\sum_{n,m = 1}^\infty \frac{ i^n (-i)^m }{ n! m! } 
+\, \times \\ &\qquad
 \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^n \ket{0}
-\lr{ \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^m \ket{0} }^\dagger
-=
+\lr{ \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^m \ket{0} }^\dagger \\
+&=
 \sum_{r,s = 1}^\infty \frac{ i^{2 r + 1} (-i)^{2 s + 1} }{ (2r + 1)! (2 s + 1)! }
+\, \times \\ &\qquad
 \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^{2 r + 1} \ket{0}
 \lr{ \bra{0} T a_\Bk \lr{ \int d^4 x j(x) \phi(x)}^{2 s + 1} \ket{0} }^\dagger
 ,
-\end{dmath}
+\end{aligned}
+\end{equation}
 where we've accounted for the fact that these matrix elements are zero for any even powers \( m, n \).
 
 For \( n = 1 \) we want to evaluate
