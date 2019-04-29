@@ -47,138 +47,190 @@ In terms of creation and annihilation operators, we know the form of the non-int
 H_0 = \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp a_\Bp^\dagger a_\Bp,
 \end{dmath}
 but the interaction contribution is much messier
-\begin{dmath}\label{eqn:ProblemSet2Problem4:80}
+\begin{equation}\label{eqn:ProblemSet2Problem4:80}
+\begin{aligned}
 H_{\text{int}}
-=
+&=
 \lambda \int d^3 x \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{12} \sqrt{
 \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
 } }
-\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp e^{i p \cdot x} }
+\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp e^{i p \cdot x} } \,\times \\
+&\qquad
 \lr{ a_\Bk e^{-i k \cdot x} + a_\Bk e^{i k \cdot x} }
 \lr{ a_\Bq e^{-i q \cdot x} + a_\Bq e^{i q \cdot x} }
-\lr{ a_\Bs e^{-i s \cdot x} + a_\Bs e^{i s \cdot x} }
-=
+\lr{ a_\Bs e^{-i s \cdot x} + a_\Bs e^{i s \cdot x} } \\
+&=
 \lambda \int d^3 x \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{12} \sqrt{
 \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
 } }
-\lr{ a_\Bp e^{-i \omega_\Bp t + i \Bp \cdot \Bx} + a_\Bp e^{i \omega_\Bp t - i \Bp \cdot \Bx} }
+\lr{ a_\Bp e^{-i \omega_\Bp t + i \Bp \cdot \Bx} + a_\Bp e^{i \omega_\Bp t - i \Bp \cdot \Bx} } 
+\,\times \\
+&\qquad
 \lr{ a_\Bk e^{-i \omega_\Bk t + i \Bk \cdot \Bx} + a_\Bk e^{i \omega_\Bk t - i \Bk \cdot \Bx} }
 \lr{ a_\Bq e^{-i \omega_\Bq t + i \Bq \cdot \Bx} + a_\Bq e^{i \omega_\Bq t - i \Bq \cdot \Bx} }
-\lr{ a_\Bs e^{-i \omega_\Bs t + i \Bs \cdot \Bx} + a_\Bs e^{i \omega_\Bs t - i \Bs \cdot \Bx} }
-=
+\,\times \\
+&\qquad
+\lr{ a_\Bs e^{-i \omega_\Bs t + i \Bs \cdot \Bx} + a_\Bs e^{i \omega_\Bs t - i \Bs \cdot \Bx} } \\
+&=
 \lambda \int \frac{ d^3 p d^3 k d^3 q d^3 s}{4 (2 \pi)^{9} \sqrt{
 \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_\Bs
 } }
-\lr{
+\Biglr{ 
+\\
+&\qquad
    a_\Bp a_\Bk a_\Bq a_\Bs e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_\Bs)t} \deltathree( \Bp + \Bk + \Bq + \Bs )
+\\
+&\qquad
    +
    a_\Bp a_\Bk a_\Bq a_\Bs^\dagger e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq - \omega_\Bs)t} \deltathree( \Bp + \Bk + \Bq - \Bs )
    +
    \cdots
+\\
+&\qquad
    +
    a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_\Bs^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_\Bs)t} \deltathree( -\Bp - \Bk - \Bq - \Bs )
-}
-=
+} \\
+&=
 \lambda \int \frac{ d^3 p d^3 k d^3 q }{4 (2 \pi)^{9}
 }
-\lr{
-   \inv{\sqrt{
+\Biglr{
+\\
+&\qquad
+   \frac{
+   a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
+   }{\sqrt{
       \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
    }}
-   a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
 +
-   \inv{\sqrt{
+\\
+&\qquad
+   \frac{
+   a_\Bp a_\Bk a_\Bq a_{\Bp + \Bk + \Bq}^\dagger e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq - \omega_{\Bp + \Bk + \Bq})t}
+   }{\sqrt{
       \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk + \Bq}
    }}
-   a_\Bp a_\Bk a_\Bq a_{\Bp + \Bk + \Bq}^\dagger e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq - \omega_{\Bp + \Bk + \Bq})t}
 +
    \cdots
 +
-   \inv{\sqrt{
+\\
+&\qquad
+   \frac{
+   a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
+   }{\sqrt{
       \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
    }}
-   a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Assuming we can normal order these terms as in \( H_0 \), we can rewrite the interaction as
-\begin{dmath}\label{eqn:ProblemSet2Problem4:100}
+\begin{equation}\label{eqn:ProblemSet2Problem4:100}
+\begin{aligned}
 H_{\text{int}}
-=
+&=
 \lambda \int \frac{ d^3 p d^3 k d^3 q }{4 (2 \pi)^{9} }
-\lr{
+\Biglr{ 
+\\
+&\qquad
    \binom{4}{0}
-      \inv{\sqrt{
+      \frac{
+      a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
+      }{\sqrt{
          \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
       }}
-      a_\Bp a_\Bk a_\Bq a_{-\Bp -\Bk - \Bq} e^{-i (\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{-\Bp -\Bk -\Bq})t}
+\\
+&\qquad
    +
    \binom{4}{1}
-      \inv{\sqrt{
+      \frac{
+      a_\Bp^\dagger a_\Bk a_\Bq a_{\Bp - \Bk - \Bq} e^{-i (-\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{\Bp - \Bk - \Bq})t}
+      }{\sqrt{
          \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp - \Bk - \Bq}
       }}
-      a_\Bp^\dagger a_\Bk a_\Bq a_{\Bp - \Bk - \Bq} e^{-i (-\omega_\Bp + \omega_\Bk + \omega_\Bq + \omega_{\Bp - \Bk - \Bq})t}
+\\
+&\qquad
    +
    \binom{4}{2}
-      \inv{\sqrt{
+      \frac{
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq a_{\Bp + \Bk - \Bq} e^{-i (-\omega_\Bp - \omega_\Bk + \omega_\Bq + \omega_{\Bp + \Bk - \Bq})t}
+      }{\sqrt{
          \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk - \Bq}
       }}
-      a_\Bp^\dagger a_\Bk^\dagger a_\Bq a_{\Bp + \Bk - \Bq} e^{-i (-\omega_\Bp - \omega_\Bk + \omega_\Bq + \omega_{\Bp + \Bk - \Bq})t}
+\\
+&\qquad
    +
    \binom{4}{3}
-      \inv{\sqrt{
+      \frac{
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{\Bp + \Bk + \Bq} e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq + \omega_{\Bp + \Bk + \Bq})t}
+      }{\sqrt{
          \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{\Bp + \Bk _ \Bq}
       }}
-      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{\Bp + \Bk + \Bq} e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq + \omega_{\Bp + \Bk + \Bq})t}
+\\
+&\qquad
    +
    \binom{4}{4}
-      \inv{\sqrt{
+      \frac{
+      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
+      }{\sqrt{
          \omega_\Bp  \omega_\Bk  \omega_\Bq  \omega_{-\Bp - \Bk - \Bq}
       }}
-      a_\Bp^\dagger a_\Bk^\dagger a_\Bq^\dagger a_{-\Bp -\Bk -\Bq}^\dagger e^{-i (-\omega_\Bp - \omega_\Bk - \omega_\Bq - \omega_{-\Bp -\Bk -\Bq})t}
 }
-\end{dmath}
+\end{aligned}
+\end{equation}
 If we restrict the allowed momenta to the discrete set \( \Bp \in \setlr{ \Bp_1, \Bp_2, \cdots \Bp_N} \), the total Hamiltonian including the interaction term
 takes the form
-\begin{dmath}\label{eqn:ProblemSet2Problem4:120}
-\text{\(:H:\)} =
+\begin{equation}\label{eqn:ProblemSet2Problem4:120}
+\begin{aligned}
+\text{\(:H:\)} &=
 \sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i}
 +
 \frac{
 \lambda
 }{4 }
 \sum_{j,m,n = 1}^N
-\lr{
+\Biglr{ 
+\\
+&\,
    \binom{4}{0}
-      \inv{\sqrt{
+      \frac{
+      a_{\Bp_j} a_{\Bp_m} a_{\Bp_n} a_{-\Bp -\Bk - \Bq} e^{-i (\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
+      }{\sqrt{
          \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{-{\Bp_j} - {\Bp_m} - {\Bp_n}}
       }}
-      a_{\Bp_j} a_{\Bp_m} a_{\Bp_n} a_{-\Bp -\Bk - \Bq} e^{-i (\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
+\\ &\,
    +
    \binom{4}{1}
-      \inv{\sqrt{
+      \frac{
+      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} - {\Bp_m} - {\Bp_n}})t}
+      }{\sqrt{
          \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} - {\Bp_m} - {\Bp_n}}
       }}
-      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} + \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} - {\Bp_m} - {\Bp_n}})t}
+\\ &\,
    +
    \binom{4}{2}
-      \inv{\sqrt{
+      \frac{
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}})t}
+      }{\sqrt{
          \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
       }}
-      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} + \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}})t}
+\\ &\,
    +
    \binom{4}{3}
-      \inv{\sqrt{
+      \frac{
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{{\Bp_j} + {\Bp_m} + {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} + {\Bp_n}})t}
+      }{\sqrt{
          \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
       }}
-      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{{\Bp_j} + {\Bp_m} + {\Bp_n}} e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} + \omega_{{\Bp_j} + {\Bp_m} + {\Bp_n}})t}
+\\ &\,
    +
    \binom{4}{4}
-      \inv{\sqrt{
+      \frac{
+      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{-{\Bp_j} -{\Bp_m} -{\Bp_n}}^\dagger e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} - \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
+      }{\sqrt{
          \omega_{\Bp_j}  \omega_{\Bp_m}  \omega_{\Bp_n}  \omega_{-{\Bp_j} - {\Bp_m} - {\Bp_n}}
       }}
-      a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{-{\Bp_j} -{\Bp_m} -{\Bp_n}}^\dagger e^{-i (-\omega_{\Bp_j} - \omega_{\Bp_m} - \omega_{\Bp_n} - \omega_{-{\Bp_j} -{\Bp_m} -{\Bp_n}})t}
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 When we did the same sort of calculation for \( (\spacegrad \phi)^2 + m^2 \phi^2 \) all the time dependent terms cancelled nicely, but that isn't obviously the case here.
 However, we haven't used the non-relativistic (low energy) constraint.  That constraint can be expressed as \( \Bp^2 \ll m^2 \), in which case \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \sim m \), the mass of each of the particles.  Incorporating that into our N-particle Hamiltonian, we have
 \begin{dmath}\label{eqn:ProblemSet2Problem4:140}

@@ -37,14 +37,16 @@ associated with field operator \( \phi \) commute.  Verify that.
 
 \makeanswer{problem:scalarFieldCreationOpCommutator:1}{
 
-\begin{dmath}\label{eqn:scalarFieldCreationOpCommutator:40}
-\antisymmetric{\alpha_k}{\alpha_m}
-=
+\begin{equation}\label{eqn:scalarFieldCreationOpCommutator:40}
+\begin{aligned}
+&\antisymmetric{\alpha_k}{\alpha_m} \\
+&\,=
 \inv{4}
 \frac{1}{(2\pi)^6}
 \int d^3 x d^3 y
 e^{-i \Bk \cdot \Bx }
-e^{-i \Bm \cdot \By }
+e^{-i \Bm \cdot \By } \,\times \\
+&\qquad
 \antisymmetric
 {
 \phi(x,0) + \frac{i}{\omega_k} \partial_0 \phi(x,0)
@@ -52,17 +54,20 @@ e^{-i \Bm \cdot \By }
 {
 \phi(y,0) + \frac{i}{\omega_m} \partial_0 \phi(y,0)
 }
+\\&\,
 =
 \frac{i}{4}
 \frac{1}{(2\pi)^6}
 \int d^3 x d^3 y
 e^{-i \Bk \cdot \Bx }
-e^{-i \Bm \cdot \By }
+e^{-i \Bm \cdot \By } \,\times \\
+&\qquad
 \lr{
 \antisymmetric{\phi(x,0)}{\inv{\omega_m} \partial_0 \phi(y,0)}
 +
 \antisymmetric{\inv{\omega_k} \partial_0 \phi(x,0)}{\phi(y,0)}
 }
+\\&\,
 =
 \frac{i}{4}
 \frac{1}{(2\pi)^6}
@@ -74,6 +79,7 @@ e^{-i \Bm \cdot \By }
 -
 \frac{i}{\omega_k} \deltathree(\Bx - \By)
 }
+\\&\,
 =
 -\frac{1}{4}
 \frac{1}{(2\pi)^6}
@@ -84,6 +90,7 @@ e^{ -i (\Bk + \Bm) \cdot \Bx }
 -
 \frac{1}{\omega_k}
 }
+\\&\,
 =
 -\frac{1}{4}
 \frac{1}{(2\pi)^3}
@@ -93,6 +100,7 @@ e^{ -i (\Bk + \Bm) \cdot \Bx }
 \frac{1}{\omega_k}
 }
 \deltathree(\Bk + \Bm)
+\\&\,
 =
 -\frac{1}{4}
 \frac{1}{(2\pi)^3}
@@ -102,9 +110,11 @@ e^{ -i (\Bk + \Bm) \cdot \Bx }
 \frac{1}{\omega_{\Norm{\Bk}}}
 }
 \deltathree(\Bk + \Bm)
+\\&\,
 =
 0.
-\end{dmath}
+\end{aligned}
+\end{equation}
 } % answer
 
 %}

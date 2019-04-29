@@ -701,50 +701,53 @@ We also have, also to all orders,
 %}
 \end{dmath}
 The current is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1000}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1000}
+\begin{aligned}
 j^{V,a}_\mu
-=
+&=
 \frac{i}{2}
 \trace{\lr{
    \partial_\mu H^\dagger \antisymmetric{\sigma^a}{H}
    +
    \partial_\mu H \antisymmetric{\sigma^a}{H^\dagger}
-}}
-=
+}} \\
+&=
 \frac{i}{2}
 \expectation{H}^2
-\trace{\lr{
+\tr
+\Biglr{
    \lr{
       \partial_\mu h \Omega^\dagger
          + (1 + h) \partial_\mu \Omega^\dagger
    }
-   h \antisymmetric{\sigma^a}{\Omega}
-+
+   h \antisymmetric{\sigma^a}{\Omega} \\
+&\qquad +
    \lr{
       \partial_\mu h \Omega
       + (1 + h )\partial_\mu \Omega
    }
    h \antisymmetric{\sigma^a}{\Omega^\dagger}
-}}
-=
+}
+\\
+&=
 \frac{i}{2}
 \expectation{H}^2
-\lr{
+\Biglr{
    (\partial_\mu h) h
    \trace{\lr{
          \Omega^\dagger \antisymmetric{\sigma^a }{\Omega}
          +
          \Omega \antisymmetric{\sigma^a }{\Omega^\dagger}
-   }}
-   +
+   }} \\
+   &\qquad +
    h(1+h)
    \trace{\lr{
          \partial_\mu \Omega^\dagger \antisymmetric{\sigma^a}{\Omega}
       +
          \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
    }}
-}
-=
+} \\
+&=
 \frac{i}{2}
 \expectation{H}^2
 \lr{
@@ -752,7 +755,8 @@ j^{V,a}_\mu
    +
    h(1+h) B
 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 where
 \begin{dmath}\label{eqn:ProblemSet2Problem3:1100}
 \begin{aligned}
