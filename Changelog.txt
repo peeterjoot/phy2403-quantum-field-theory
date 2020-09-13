@@ -1,0 +1,10 @@
+phy2403.V0.1.259.pdf (in progress.)
+
+- Fix index mixup
+- spelling fixes (including Theorry in the preface!)
+- URL fixes.
+- Fix listing hyphenation
+- revert centre spelling correction.
+- bump version.
+- s/were were/were/
+- s/by by/by/
