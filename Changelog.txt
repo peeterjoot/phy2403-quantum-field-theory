@@ -1,5 +1,6 @@
 phy2403.V0.1.259.pdf (in progress.)
 
+- d'Lambertian -> d'Alembertian (Thanks to Jack Paladin.)
 - Fix index mixup
 - spelling fixes (including Theorry in the preface!)
 - URL fixes.
