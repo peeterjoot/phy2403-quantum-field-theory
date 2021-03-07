@@ -2,8 +2,11 @@
 % Copyright © 2017 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
+\iftoggle{print-version}{}
+{
 \mychapter{Useful formulas and review.}
    \input{usefulFormulas.tex}
+}
 \mychapter{Momentum of scalar field.}
    \input{momentum.tex}
 \mychapter{Reflection using Pauli matrices.}
@@ -12,10 +15,9 @@
    \input{DiracUVmatricesExplicit.tex}
 \mychapter{Spinor solutions with alternate \texorpdfstring{\(\gamma^0\)}{gamma-zero} representation.}
    \input{spinorSolutions.tex}
-\ifthenelse{\boolean{with-mathematica}}
+\iftoggle{print-version}{}
 {
 \mychapter{Mathematica notebooks}
+\index{Mathematica}
    \input{mathematica.tex}
-}
-{
 }

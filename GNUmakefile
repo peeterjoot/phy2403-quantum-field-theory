@@ -9,6 +9,16 @@ MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/
 MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/ContentsAndFigures.tex
 BOOKTEMPLATE := ../latex/classicthesis_mine/ClassicThesis2.tex
 
+# comment this out for online pdf version (uncomment for KDP)
+PRINT_VERSION := 1
+
+ifndef PRINT_VERSION
+PARAMS += --no-print
+endif
+ifdef PRINT_VERSION
+DISTEXTRA := kdp
+endif
+
 include make.revision
 include ../latex/make.bookvars
 
@@ -176,6 +186,9 @@ copy : $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf
 
 $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf : $(THISBOOK).pdf
 	cp $^ $@
+
+parameters.sty : ../latex/bin/mkparams
+	../latex/bin/mkparams $(PARAMS) > $@
 
 backmatter.tex: ../latex/classicthesis_mine/backmatter2.tex
 	rm -f $@
