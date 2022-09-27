@@ -100,17 +100,20 @@ p^3 + \Norm{\Bp} & p^3 - \Norm{\Bp}
 
 Letting Mathematica churn through the matrix products
 \cref{eqn:DiracUVmatricesExplicit:80} verifies the diagonalization, and for the roots, we find
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:120}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:120}
+\begin{aligned}
 \sqrt{ p \cdot \sigma }
-=
+&=
 \inv{
    \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} }
-}
+} \times \\
+&\quad
 \begin{bmatrix}
 \omega_\Bp- p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } & - p^1 + i p^2 \\
 - p^1 - i p^2 & \omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 }
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %Assuming on shell \( \omega^2 - \Bp^2 = m^2 \) values, this simplifies to
 %\begin{dmath}\label{eqn:DiracUVmatricesExplicit:121}
 %\sqrt{ p \cdot \sigma }

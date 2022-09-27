@@ -998,13 +998,14 @@ where \( \trace{(ABC)} = \trace{(BCA)} = \trace{(CAB)} \) was used coerce this r
 
 To help show that the charges obey the angular momentum relations we can prepare by evaluating the trace operators.  For \( j^{\mu,a}_L \) this reduction submits nicely to block matrix form using \cref{eqn:ProblemSet2Problem2:880}.
 %
-\begin{dmath}\label{eqn:ProblemSet2Problem2:960}
+\begin{equation}\label{eqn:ProblemSet2Problem2:960}
+\begin{aligned}
 j^{\mu, a}_L
-=
+&=
 \frac{i}{2} \trace{\lr{
 \partial^\mu H^\dagger \sigma^a H - H^\dagger \sigma^a \partial^\mu H
-}}
-=
+}} \\
+&=
 \frac{i}{4}
    \trace{\lr{
 \begin{bmatrix}
@@ -1024,10 +1025,11 @@ i \sigma^2 \partial^\mu \Phi^\conj & \partial^\mu \Phi
 \begin{bmatrix}
 i \sigma^2 \Phi^\conj & \Phi
 \end{bmatrix}
-  }}
-=
-\frac{i}{4}
-   \trace{\lr{
+  }} \\
+\end{aligned}
+\end{equation}
+These matrix products expand to
+\begin{equation}\label{eqn:ProblemSet2Problem2:1140}
 \begin{bmatrix}
 -i \Phi^\T \sigma^2 \sigma^a i \sigma^2 \partial^\mu \Phi^\conj & \cdots \\
 \cdots & \Phi^\dagger \sigma^a \partial^\mu \Phi
@@ -1037,17 +1039,21 @@ i \sigma^2 \Phi^\conj & \Phi
 -i \partial^\mu \Phi^\T \sigma^2 \sigma^a i \sigma^2 \Phi^\conj & \cdots \\
 \cdots &
 \partial^\mu \Phi^\dagger \sigma^a \Phi
-\end{bmatrix}
-  }}
-=
+\end{bmatrix},
+\end{equation}
+so
+\begin{equation}\label{eqn:ProblemSet2Problem2:1160}
+\begin{aligned}
+j^{\mu, a}_L
+&=
 \frac{i}{4}
 \lr{
   \Phi^\T \sigma^2 \sigma^a \sigma^2 \partial^\mu \Phi^\conj
 + \Phi^\dagger \sigma^a \partial^\mu \Phi
 - \partial^\mu \Phi^\T \sigma^2 \sigma^a \sigma^2 \Phi^\conj
 - \partial^\mu \Phi^\dagger \sigma^a \Phi
-}
-=
+} \\
+&=
 \frac{i}{4}
 \times
 \left\{
@@ -1063,8 +1069,8 @@ i \sigma^2 \Phi^\conj & \Phi
 - \partial^\mu \Phi^\dagger \sigma^a \Phi
  & \quad \mbox{\( a \ne 2 \)}
 \end{array}
-\right.
-=
+\right. \\
+&=
 \frac{i}{4}
 \times
 \left\{
@@ -1080,14 +1086,16 @@ i \sigma^2 \Phi^\conj & \Phi
 - \partial^\mu \Phi^\dagger \sigma^a \Phi
  & \quad \mbox{\( a \ne 2 \)}
 \end{array}
-\right.
-=
+\right. \\
+&=
 \frac{i}{2}
 \lr{
    \Phi^\dagger \sigma^a \partial^\mu \Phi
    - \partial^\mu \Phi^\dagger \sigma^a \Phi
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
+
 The conserved charge has the structure
 \begin{dmath}\label{eqn:ProblemSet2Problem2:1000}
 Q^{a}_L
