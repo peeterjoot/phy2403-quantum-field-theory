@@ -47,42 +47,32 @@
 %%%
 \section{Natural units.}
 \index{natural units}
-
-\begin{dmath}\label{eqn:qftLecture2:20}
+\begin{equation}\label{eqn:qftLecture2:20}
 \begin{aligned}
-[\Hbar] &= [\text{action}] = M \frac{L^2}{T^2} T = \frac{M L^2}{T} \\
-[c]    &= [\text{velocity}] = \frac{L}{T} \\
-       &  [\text{energy}] = M \frac{L^2}{T^2}.
+[\Hbar] = [\text{action}]   &= M \frac{L^2}{T^2} T = \frac{M L^2}{T} \\
+[c]     = [\text{velocity}] &= \frac{L}{T} \\
+          [\text{energy}]   &= M \frac{L^2}{T^2}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Setting \( c = 1 \) means
-
-\begin{dmath}\label{eqn:qftLecture2:240}
-\frac{L}{T} = 1
-\end{dmath}
-
+\begin{equation}\label{eqn:qftLecture2:240}
+\frac{L}{T} = 1,
+\end{equation}
 and setting \( \Hbar = 1 \) means
-
-\begin{dmath}\label{eqn:qftLecture2:260}
-[\Hbar] = [\text{action}] = M L \cancel{\frac{L}{T}} = M L
-\end{dmath}
-
+\begin{equation}\label{eqn:qftLecture2:260}
+[\Hbar] = [\text{action}] = M L \cancel{\frac{L}{T}} = M L,
+\end{equation}
 therefore
-
-\begin{dmath}\label{eqn:qftLecture2:280}
+\begin{equation}\label{eqn:qftLecture2:280}
 [L] = \inv{\text{mass}}
-\end{dmath}
-
+\end{equation}
 and
-
-\begin{dmath}\label{eqn:qftLecture2:300}
-[\text{energy}] = M \cancel{\frac{L^2}{T^2}} = \text{mass}\, \si{eV}
-\end{dmath}
+\begin{equation}\label{eqn:qftLecture2:300}
+[\text{energy}] = M \cancel{\frac{L^2}{T^2}} = \text{mass}\, \si{eV}.
+\end{equation}
 
 Summary
-
-
 \begin{itemize}
 \item
 \( \text{energy} \sim \si{eV} \)
@@ -94,14 +84,13 @@ Summary
 
 %e (dimensionless)
 From:
-\begin{dmath}\label{eqn:qftLecture2:320}
+\begin{equation}\label{eqn:qftLecture2:320}
 \alpha = \frac{e^2}{4 \pi \cancel{\Hbar c}}
-\end{dmath}
+\end{equation}
 which is dimensionless (\(1/137\)), so electric charge is dimensionless.
 
 Some useful numbers in natural units
-
-\begin{dmath}\label{eqn:qftLecture2:40}
+\begin{equation}\label{eqn:qftLecture2:40}
 \begin{aligned}
    m_\txte &\sim 10^{-27} \si{g} \sim 0.5 \si{MeV} \\
    m_\txtp &\sim 2000 m_\txte \sim 1 \si{GeV} \\
@@ -109,47 +98,39 @@ Some useful numbers in natural units
    m_\mu &\sim 105 \si{MeV} \\
    \Hbar c &\sim 200 \si{MeV} \,\si{fm} = 1
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 %distance \inv{\si{MeV}} \sim 10^{-11} \si{cm} 10^{-15} m, or 10^{-13} cm.
 
 \section{Gravity.}
 \index{gravity}
-
 Interaction energy of two particles
-
-\begin{dmath}\label{eqn:qftLecture2:60}
+\begin{equation}\label{eqn:qftLecture2:60}
 G_\txtN \frac{m_1 m_2}{r}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture2:80}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture2:80}
 [\text{energy}] \sim [G_\txtN] \frac{M^2}{L}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture2:100}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture2:100}
 [G_\txtN]
 \sim
-[\text{energy}] \frac{L}{M^2}
-\end{dmath}
-
+[\text{energy}] \frac{L}{M^2},
+\end{equation}
 but energy x distance is dimensionless (action) in our units
-
-\begin{dmath}\label{eqn:qftLecture2:120}
+\begin{equation}\label{eqn:qftLecture2:120}
 [G_\txtN]
 \sim
 {\text{dimensionless}}{M^2}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture2:140}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture2:140}
 \frac{G_\txtN}{\Hbar c} \sim \inv{M^2} \sim \frac{1}{10^{20} \si{GeV}}
-\end{dmath}
+\end{equation}
 
 Planck mass
-
-\begin{dmath}\label{eqn:qftLecture2:160}
+\begin{equation}\label{eqn:qftLecture2:160}
 M_{\text{Planck}} \sim \sqrt{\frac{\Hbar c}{G_\txtN}}
 \sim 10^{-4} g \sim \inv{\lr{10^{20} \si{GeV}}^2}
-\end{dmath}
+\end{equation}
 
 We can revisit the scale diagram from last lecture in terms of MeV mass/energy values, as sketched in
 \cref{fig:Lecture2:Lecture2Fig1}.
@@ -166,21 +147,20 @@ We'll compute the cross section of a number of different systems in this course.
 \imageFigure{../figures/phy2403-quantum-field-theory/Lecture2Fig2}{Electron electron scattering.}{fig:Lecture2:Lecture2Fig2}{0.2}
 
 We assume that QED is highly relativistic.  In natural units, our scale factor is basically the square of the electric charge
-\begin{dmath}\label{eqn:qftLecture2:180}
+\begin{equation}\label{eqn:qftLecture2:180}
 \alpha \sim e^2,
-\end{dmath}
+\end{equation}
 so the cross section has the form
-\begin{dmath}\label{eqn:qftLecture2:200}
+\begin{equation}\label{eqn:qftLecture2:200}
 \sigma \sim \frac{\alpha^2}{E^2} \lr{ 1 + O(\alpha) + O(\alpha^2) + \cdots }
-\end{dmath}
+\end{equation}
 
 In gravity we could consider scattering of electrons, where \( G_\txtN \) takes the place of \( \alpha \).  However, \( G_\txtN \) has dimensions.
 
 For electron-electron scattering due to gravitons
-
-\begin{dmath}\label{eqn:qftLecture2:220}
+\begin{equation}\label{eqn:qftLecture2:220}
 \sigma \sim \frac{G_\txtN^2 E^2}{1 + G_\txtN E^2 + \cdots }
-\end{dmath}
+\end{equation}
 
 Now the cross section grows with energy.  This will cause some problems (violating unitarity: probabilities greater than 1!) when \( O(G_\txtN E^2) = 1 \).
 

@@ -33,108 +33,115 @@
 %SO(1,d-1),d=3
 
 We require that Lorentz transformations leave the dot product invariant, that is \( x \cdot y = x' \cdot y' \), or
-\begin{dmath}\label{eqn:qftLecture3:20}
+\begin{equation}\label{eqn:qftLecture3:20}
 x^\mu g_{\mu\nu} y^\nu = {x'}^\mu g_{\mu\nu} {y'}^\nu.
-\end{dmath}
+\end{equation}
 Explicitly, with coordinate transformations
-\begin{dmath}\label{eqn:qftLecture3:40}
+\begin{equation}\label{eqn:qftLecture3:40}
 \begin{aligned}
 {x'}^\mu &= {\Lambda^\mu}_\rho x^\rho \\
 {y'}^\mu &= {\Lambda^\mu}_\rho y^\rho
 \end{aligned}
-\end{dmath}
+\end{equation}
 such a requirement is equivalent to demanding that
-\begin{dmath}\label{eqn:qftLecture3:500}
+\begin{equation}\label{eqn:qftLecture3:500}
+\begin{aligned}
 x^\mu g_{\mu\nu} y^\nu
-=
+&=
 {\Lambda^\mu}_\rho x^\rho
 g_{\mu\nu}
-{\Lambda^\nu}_\kappa y^\kappa
-=
+{\Lambda^\nu}_\kappa y^\kappa \\
+&=
 x^\mu
 {\Lambda^\alpha}_\mu
 g_{\alpha\beta}
 {\Lambda^\beta}_\nu
 y^\nu,
-\end{dmath}
+\end{aligned}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture3:60}
+\begin{equation}\label{eqn:qftLecture3:60}
 g_{\mu\nu}
 %= {\Lambda^k}_\mu g_{\kappa \rho} {\Lambda^\rho}_\nu
 =
 {\Lambda^\alpha}_\mu
 g_{\alpha\beta}
 {\Lambda^\beta}_\nu
-\end{dmath}
+\end{equation}
 
 multiplying by the inverse we find
-\begin{dmath}\label{eqn:qftLecture3:200}
+\begin{equation}\label{eqn:qftLecture3:200}
+\begin{aligned}
 g_{\mu\nu}
 {\lr{\Lambda^{-1}}^\nu}_\lambda
-=
+&=
 %{\Lambda^\kappa}_\mu g_{\kappa \rho} {\Lambda^\rho}_\nu
 {\Lambda^\alpha}_\mu
 g_{\alpha\beta}
 {\Lambda^\beta}_\nu
-{\lr{\Lambda^{-1}}^\nu}_\lambda
-=
+{\lr{\Lambda^{-1}}^\nu}_\lambda \\
+&=
 %{\Lambda^\kappa}_\mu g_{\kappa \lambda}
 {\Lambda^\alpha}_\mu
-g_{\alpha\lambda}
-=
+g_{\alpha\lambda} \\
+&=
 g_{\lambda\alpha}
 {\Lambda^\alpha}_\mu.
-\end{dmath}
+\end{aligned}
+\end{equation}
 This is now amenable to expressing in matrix form
-\begin{dmath}\label{eqn:qftLecture3:220}
+\begin{equation}\label{eqn:qftLecture3:220}
+\begin{aligned}
 (G \Lambda^{-1})_{\mu\lambda}
-=
-(G \Lambda)_{\lambda\mu}
-=
-((G \Lambda)^\T)_{\mu\lambda}
-=
+&=
+(G \Lambda)_{\lambda\mu} \\
+&=
+((G \Lambda)^\T)_{\mu\lambda} \\
+&=
 (\Lambda^\T G)_{\mu\lambda},
-\end{dmath}
+\end{aligned}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture3:80}
+\begin{equation}\label{eqn:qftLecture3:80}
 G \Lambda^{-1}
 =
 (G \Lambda)^\T.
-\end{dmath}
+\end{equation}
 
 Taking determinants (using the normal identities for products of determinants, determinants of transposes and inverses), we find
-\begin{dmath}\label{eqn:qftLecture3:100}
-\cancel{det(G) }
-det(\Lambda^{-1})
+\begin{equation}\label{eqn:qftLecture3:100}
+\cancel{\det(G) }
+\det(\Lambda^{-1})
 =
-\cancel{det(G)} det(\Lambda),
-\end{dmath}
+\cancel{\det(G)} \det(\Lambda),
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture3:120}
-det(\Lambda)^2 = 1,
-\end{dmath}
+\begin{equation}\label{eqn:qftLecture3:120}
+\det(\Lambda)^2 = 1,
+\end{equation}
 or
-\( det(\Lambda)^2 = \pm 1 \).  We will generally ignore the case of reflections in spacetime that have a negative determinant.
+\( \det(\Lambda)^2 = \pm 1 \).  We will generally ignore the case of reflections in spacetime that have a negative determinant.
 
 Smart-alec Peeter pointed out after class last time that we can do the same thing easier in matrix notation
-\begin{dmath}\label{eqn:qftLecture3:140}
+\begin{equation}\label{eqn:qftLecture3:140}
 \begin{aligned}
 x' &= \Lambda x \\
 y' &= \Lambda y
 \end{aligned}
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture3:160}
+\begin{equation}\label{eqn:qftLecture3:160}
+\begin{aligned}
 x' \cdot y'
-=
-(x')^\T G y'
-=
+&=
+(x')^\T G y' \\
+&=
 x^\T \Lambda^\T G \Lambda y,
-\end{dmath}
+\end{aligned}
+\end{equation}
 which we require to be \( x \cdot y = x^\T G y \) for all four vectors \( x, y \), that is
-\begin{dmath}\label{eqn:qftLecture3:180}
+\begin{equation}\label{eqn:qftLecture3:180}
 \Lambda^\T G \Lambda = G.
-\end{dmath}
+\end{equation}
 We can find the result \cref{eqn:qftLecture3:120} immediately without having to first translate from index notation to matrices.
-
 %\EndArticle

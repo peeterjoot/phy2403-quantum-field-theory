@@ -51,7 +51,7 @@ H^\dagger &= \inv{\sqrt{2}}
 \end{aligned}
 \end{equation*}
 so
-\begin{dmath}\label{eqn:facebook:20}
+\begin{equation}\label{eqn:facebook:20}
 j^{\mu, a}_L
 =
 \frac{i}{2}
@@ -88,7 +88,7 @@ i \sigma^2 \Phi^\conj & \Phi
 \cdots
 =
 \frac{i}{2} \lr{ \partial^\mu \Phi^\dagger \sigma^a \Phi - \Phi^\dagger \sigma^a \partial^\mu \Phi}
-\end{dmath}
+\end{equation}
 
 Actually, it looks like I have one cross term after the expansion to second order
 
@@ -103,18 +103,18 @@ i \lr{ \partial_\mu h \sigma^a \partial^\mu \phi^a
 The hint seems to suggest that particle number is conserved, even though the interaction term does not have the structure of a number operator.  I have to conclude (too late for problem set submission) that I don't really understand what is meant by preservation of particle number in this case, and will need to see the problem set solution or discuss this in office hours to understand what is being asked for.
 %\makeSubAnswer{}{qft:problemSet2:4c}
 If we designate an N-particle momentum state by
-\begin{dmath}\label{eqn:ProblemSet2Problem4:180}
+\begin{equation}\label{eqn:ProblemSet2Problem4:180}
 \ket{\Bp_1, \Bp_2, \cdots \Bp_N} =
 a_{\Bp_1}^\dagger
 a_{\Bp_2}^\dagger
 \cdots
 a_{\Bp_N}^\dagger \ket{0, 0, \cdots, 0},
-\end{dmath}
+\end{equation}
 then the interaction terms action on such a state is
-\begin{dmath}\label{eqn:ProblemSet2Problem4:200}
+\begin{equation}\label{eqn:ProblemSet2Problem4:200}
       a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
 \ket{\Bp_1, \Bp_2, \cdots \Bp_N}.
-\end{dmath}
+\end{equation}
 I'm not sure if this is meaningful, or how to interpret it, and think that I'm going to have to get explanation about what this abstraction means.  I'm also not sure what is meant by the question ``What kinds of scattering processes does it describe.''
 %\makeSubAnswer{}{qft:problemSet2:4d}
 Not attempted.
@@ -167,32 +167,28 @@ I'm not sure if I wrote this down wrong in during the lecture, but I think this 
 
 Further confounding me was the fact that my old QM book used a different sign convention for the translation operator (
 \citep{desai2009quantum} uses \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \), instead of \( \bra{\Bx + \Ba} = \bra{\Bx} U(\Ba) \) as we found.)
-
 \section{blah}
-
-\begin{dmath}\label{eqn:facebook:540}
+\begin{equation}\label{eqn:facebook:540}
 %\delta^\brn{3}(x - y)
 \deltathree(x - y)
-\end{dmath}
-
+\end{equation}
 \section{GA q.}
-
-\begin{dmath}\label{eqn:QandA:560}
+\begin{equation}\label{eqn:QandA:560}
 (\Ba\cross \Bb)\cdot(\Ba\cross \Bb)
 =[-I(\Ba\wedge \Bb)]\cdot[-I(\Ba\wedge \Bb)]
 =[I(\Ba\wedge \Bb)]\cdot[I(\Ba\wedge \Bb)],
-\end{dmath}
-\begin{dmath}\label{eqn:QandA:580}
+\end{equation}
+\begin{equation}\label{eqn:QandA:580}
 (Ia)\cdot \Bb=I(\Ba\wedge \Bb)
 =I[(\Ba\wedge \Bb)\wedge(I(\Ba\wedge \Bb))]
 \Ba\wedge(Ib)=I(\Ba\cdot \Bb)
 =I^2(\Ba\wedge \Bb)\cdot(\Ba\wedge \Bb)
 =I^2(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
 =-(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
-\end{dmath}
+\end{equation}
 
 I find it hard to follow what you have done.  This is how I'd show it.
-\begin{dmath*}
+\begin{equation*}
 \lr{ \Ba \cross \Bb } \cdot \lr{ \Ba \cross \Bb }
 =
 \gpgradezero{
@@ -210,7 +206,7 @@ I find it hard to follow what you have done.  This is how I'd show it.
 - \Ba \cdot \lr{ (\Bb \cdot \Ba) \Bb - \Bb^2 \Ba }
 =
 \Ba^2 \Bb^2 - (\Bb \cdot \Ba)^2.
-\end{dmath*}
+\end{equation*}
 
 \section{l20}
 
@@ -248,20 +244,18 @@ So, when Peskin and Schroeder apply this to \( \sigma \cdot \partial \), it real
 \section{normalizationQ}
 
 I'd thought of this relativistic normalization as a mapping between three-vector and four-vector momentum states
-\begin{dmath}\label{eqn:QandA:600}
+\begin{equation}\label{eqn:QandA:600}
 \ket{p} = \sqrt{2 \Omega_\Bp} \ket{\Bp}.
-\end{dmath}
+\end{equation}
 This means that the non-relativisitic normalization of three-momentum states
-\begin{dmath}\label{eqn:QandA:620}
+\begin{equation}\label{eqn:QandA:620}
 \braket{\Bp}{\Bq} = (2 \pi)^3 \delta^{(3)}(\Bp - \Bq)
-\end{dmath}
+\end{equation}
 results in the desired Lorentz-invariant normalization of four-momentum states
-\begin{dmath}\label{eqn:QandA:640}
+\begin{equation}\label{eqn:QandA:640}
 \braket{p}{q} = (2 \pi)^3 2 \omega_\Bp \delta^{(3)}(\Bp - \Bq).
-\end{dmath}
-
+\end{equation}
 \section{scattering}
-
 \begin{equation}\label{eqn:QandA:660}
 \frac{\text{probability for \( i \rightarrow f\)}}{\text{unit time}}
 \sim
@@ -269,7 +263,6 @@ results in the desired Lorentz-invariant normalization of four-momentum states
 V_3
 \times \Abs{ M_{fi} }^2
 \end{equation}
-
 \begin{equation}\label{eqn:QandA:680}
 \frac{\text{probability for \(i \rightarrow f\)}}{\text{unit time}}
 \sim
@@ -284,10 +277,9 @@ V_3
 2 \omega_{\Bp_n} V_3^n
 }
 \end{equation}
-
-\begin{dmath}\label{eqn:qftLecture17:380}
+\begin{equation}\label{eqn:qftLecture17:380}
 \braket{p}{p} = 2 \omega_\Bp V_3
-\end{dmath}
+\end{equation}
 
 \section{Connecting the algebra to interpretation: two point correlation function.}
 
@@ -326,7 +318,6 @@ Given a coupling \( h \; \partial_\mu \phi^a \partial^\mu \phi^a \), meant to mo
 We've been told that we only need to consider first order pertubative terms.
 
 2. Relevant equations
-
 \begin{equation}\label{eqn:QandA:740}
 \begin{aligned}
 \bra{\Omega} T( h(x_1) \phi^3(x_2) \phi^3(x_3) e^{-i \int dt H_{\text{int}} }) \ket{\Omega}

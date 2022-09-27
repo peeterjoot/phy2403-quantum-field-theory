@@ -5,7 +5,6 @@
 %{
 \makeoproblem{Complex scalar field.}{qft:problemSet1:2}{2018 Hw1.II (from \citep{peskin1995introduction} pr. 2.2)}{
 Consider a complex scalar field with action
-
 \begin{equation}\label{eqn:ProblemSet1Problem2:1400}
 S = \int d^4x\lr{\partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi}. 
 \end{equation}
@@ -17,9 +16,9 @@ Show that \( H = \int d^3x \lr{ \pi^\dagger \pi + \spacegrad \phi^\dagger \cdot 
 Introduce complex amplitudes, diagonalize the Hamiltonian, and quantize the theory. Show that the theory has now two sets of particles.
 \makesubproblem{}{qft:problemSet1:2c}
 Write the charge conserved due to the global \( U(1) \) symmetry,
-\begin{dmath}\label{eqn:ProblemSet1Problem2:580}
+\begin{equation}\label{eqn:ProblemSet1Problem2:580}
 Q = \int d^3 x \frac{i}{2} \lr{ \phi^\dagger \pi^\dagger - \pi \phi },
-\end{dmath}
+\end{equation}
 in
 terms of creation and annihilation operators and find the charge of the particles of each type.
 \index{complex scalar field}
@@ -29,23 +28,23 @@ terms of creation and annihilation operators and find the charge of the particle
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:2a}
 Classically, evaluating the Euler-Lagrange equations gives us
-\begin{dmath}\label{eqn:ProblemSet1Problem2:20}
+\begin{equation}\label{eqn:ProblemSet1Problem2:20}
 \begin{aligned}
 \PD{\phi}{\LL} &= -m^2 \phi^\dagger \\
 \PD{(\partial_\mu \phi)}{\LL} &= \partial^\mu \phi^\dagger \\
 \PD{\phi^\dagger}{\LL} &= -m^2 \phi       \\
 \PD{(\partial_\mu \phi^\dagger)}{\LL} &= \partial^\mu \phi,
 \end{aligned}
-\end{dmath}
+\end{equation}
 so the equations of the field are respectively
-\begin{dmath}\label{eqn:ProblemSet1Problem2:40}
+\begin{equation}\label{eqn:ProblemSet1Problem2:40}
 %\boxedEquation{eqn:ProblemSet1Problem2:40}{
 \begin{aligned}
 \partial_\mu \partial^\mu \phi^\dagger &=  -m^2 \phi^\dagger \\
 \partial_\mu \partial^\mu \phi &=  -m^2 \phi.
 \end{aligned}
 %}
-\end{dmath}
+\end{equation}
 These are Klein-Gordon equations for each field variable \( \phi, \phi^\dagger \) as expected, although this can be made more explicit written out explicitly in the stationary observer frame
 \boxedEquation{eqn:ProblemSet1Problem2:340}{
 \begin{aligned}
@@ -54,19 +53,19 @@ These are Klein-Gordon equations for each field variable \( \phi, \phi^\dagger \
 \end{aligned}
 }
 To find the Hamiltonian, note that the Lagrangian density written out explicitly is
-\begin{dmath}\label{eqn:ProblemSet1Problem2:60}
+\begin{equation}\label{eqn:ProblemSet1Problem2:60}
 \LL = \partial_0 \phi^\dagger \partial_0 \phi - (\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) - m^2 \phi^\dagger \phi,
-\end{dmath}
+\end{equation}
 so the conjugate momentum densities are
-\begin{dmath}\label{eqn:ProblemSet1Problem2:80}
+\begin{equation}\label{eqn:ProblemSet1Problem2:80}
 \begin{aligned}
 \pi(\Bx, t) &= \PD{(\partial_0 \phi)}{\LL} = \partial_0 \phi^\dagger \\
 \pi^\dagger(\Bx, t) &= \PD{(\partial_0 \phi^\dagger)}{\LL} = \partial_0 \phi \\
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 The Hamiltonian (including a ``\(p \dot{q}\)'' term for each of \( \phi, \phi^\dagger \)) is
-\begin{dmath}\label{eqn:ProblemSet1Problem2:100}
+\begin{equation}\label{eqn:ProblemSet1Problem2:100}
 H
 = \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\dagger \partial_0 \phi^\dagger - \LL }
 =
@@ -77,7 +76,7 @@ H
 \int d^3 x \lr{ \pi^\dagger \pi +
 (\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) + m^2 \phi^\dagger \phi
  }
-\end{dmath}
+\end{equation}
 \makeSubAnswer{}{qft:problemSet1:2b}
 To canonically quantize the fields, we promote the fields to operators, demand that we have commutators for conjugate pairs of operators
 \begin{equation}\label{eqn:ProblemSet1Problem2:120}
@@ -91,7 +90,7 @@ and require all the other operator pairs \( \phi \phi^\dagger, \pi \pi^\dagger, 
 Before diagonalizing the Hamiltonian, let's verify that applying computing Hamilton's equations using such quantized operators recovers the Klein-Gordon equations we expect.
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:700}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:720}
+\begin{equation}\label{eqn:ProblemSet1Problem2:720}
 \PD{t}{\phi}(\Bx, t)
 = i \antisymmetric{H}{\phi(\Bx)}
 =
@@ -108,8 +107,8 @@ i \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
 i \int d^3 y \pi^\dagger(\By) (-i) \deltathree(\By - \Bx)
 =
 \pi^\dagger(\Bx)
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:740}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:740}
 \PD{t}{\phi^\dagger}(\Bx, t)
 = i \antisymmetric{H}{\phi^\dagger(\Bx)}
 =
@@ -126,8 +125,8 @@ i \int d^3 y \pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi^\dagger(\Bx)}
 i \int d^3 y \pi(\By) (-i) \deltathree(\By - \Bx)
 =
 \pi(\Bx)
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:760}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:760}
 \PD{t}{\pi}(\Bx, t)
 =
 i \antisymmetric{H}{\pi(\Bx)}
@@ -161,8 +160,8 @@ i \int d^3 y \lr{
 =
    \spacegrad^2 \phi^\dagger(\Bx)
 - m^2 \phi^\dagger(\Bx).
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:780}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:780}
 \PD{t}{\pi^\dagger}(\Bx, t)
 =
 i \antisymmetric{H}{\pi^\dagger(\Bx)}
@@ -196,15 +195,15 @@ i \int d^3 y \lr{
 =
    \spacegrad^2 \phi(\Bx)
 - m^2 \phi(\Bx).
-\end{dmath}
+\end{equation}
 \end{subequations}
 This recovers the Klein-Gordon equations
-\begin{dmath}\label{eqn:ProblemSet1Problem2:820}
+\begin{equation}\label{eqn:ProblemSet1Problem2:820}
 \begin{aligned}
 \lr{ \PDSq{t}{} - \spacegrad^2 + m^2 } &\phi(\Bx, t) = 0 \\
 \lr{ \PDSq{t}{} - \spacegrad^2 + m^2 } &\phi^\dagger(\Bx, t) = 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 consistent with \cref{eqn:ProblemSet1Problem2:340} found by evaluating the classical Euler-Lagrange equations.
 
 Somewhat cavalierly, the divergence integrals of the delta function above were assumed to be zero.
@@ -220,61 +219,61 @@ after which one argue that this is non-zero only when \( \Bx \) is on the bounda
 \paragraph{Diagonal basis for the Hamiltonian.}
 In class we saw that a momentum space representation of \( \phi, \pi \) for the scalar single field Lagrangian simplified the Hamiltonian considerably.
 Let's assume a similar momentum space representation of our field operator
-\begin{dmath}\label{eqn:ProblemSet1Problem2:840}
+\begin{equation}\label{eqn:ProblemSet1Problem2:840}
 \wtilde{\phi}(\Bp, t) = \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
-\end{dmath}
+\end{equation}
 but will not make any a-priori assumption that the quantized field operator \( \phi \) is Hermitian.
 We find the following spatial representation of the operator \( \phi \) and it's relations
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:860}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:880}
+\begin{equation}\label{eqn:ProblemSet1Problem2:880}
 \phi(\Bx, t) =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:900}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:900}
 \phi^\dagger(\Bx, t) =
 \int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
 \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1140}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1140}
 \spacegrad \phi(\Bx, t) =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{i \Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1160}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1160}
 \spacegrad \phi^\dagger(\Bx, t) =
 \int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
 \frac{-i \Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:920}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:920}
 \pi(\Bx, t) = \PD{t}{\phi^\dagger}
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{-i \Bp \cdot \Bx}
 \frac{i \omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:940}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:940}
 \pi^\dagger(\Bx, t) = \PD{t}{\phi}
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }.
-\end{dmath}
+\end{equation}
 \end{subequations}
 By inspection, we may read off the Fourier transform of \( \wtilde{\pi^\dagger} \), which is
-\begin{dmath}\label{eqn:ProblemSet1Problem2:960}
+\begin{equation}\label{eqn:ProblemSet1Problem2:960}
 \wtilde{\pi^\dagger}(\Bp, t)
 =
 \frac{i\omega_\Bp}{\sqrt{2 \omega_\Bp}} \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp },
-\end{dmath}
+\end{equation}
 which allows, with \cref{eqn:ProblemSet1Problem2:840}, inversion for operators \( a_\Bp, b^\dagger_\Bp \)
-\begin{dmath}\label{eqn:ProblemSet1Problem2:980}
+\begin{equation}\label{eqn:ProblemSet1Problem2:980}
 \begin{aligned}
 a_\Bp &= e^{i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \wtilde{\phi} - \inv{i \omega_\Bp} \wtilde{\pi^\dagger} } \\
 b_\Bp^\dagger &= e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \wtilde{\phi} + \inv{i \omega_\Bp} \wtilde{\pi^\dagger} },
 \end{aligned}
-\end{dmath}
+\end{equation}
 or, in terms of spatial operators
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1000}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1000}
 \begin{aligned}
 a_\Bp &=
 \int d^3 x e^{-i \Bp \cdot \Bx}
@@ -289,7 +288,7 @@ b_\Bp^\dagger &=
 \int d^3 x e^{-i \Bp \cdot \Bx}
 e^{-i\omega_\Bp t} \sqrt{\frac{\omega_\Bp}{2}} \lr{ \phi(\Bx, t) + \inv{i \omega_\Bp} \pi^\dagger(\Bx, t) }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 %a_\Bq^\dagger &=
 %\int d^3 y e^{i \Bq \cdot \By}
 %e^{-i\omega_\Bq t} \sqrt{\frac{\omega_\Bq}{2}} \lr{ \phi^\dagger(\By, t) + \inv{i \omega_\Bq} \pi(\By, t) } \\
@@ -420,7 +419,7 @@ e^{i\omega_\Bq t}
 Finally, we expect that there are two pairs of non-zero commutators
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1080}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1100}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1100}
 \begin{aligned}
 \antisymmetric{a_\Bp}{a_\Bq^\dagger} 
 &=
@@ -469,8 +468,8 @@ e^{-i\omega_\Bq t}
 &=
 (2 \pi)^3 \delta(\Bq - \Bp),
 \end{aligned}
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1120}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1120}
 \begin{aligned}
 \antisymmetric{b_\Bp}{b_\Bq^\dagger} 
 &=
@@ -523,7 +522,7 @@ e^{-i\omega_\Bq t}
 (2 \pi)^3
 \deltathree(\Bp - \Bq).
 \end{aligned}
-\end{dmath}
+\end{equation}
 \end{subequations}
 %Other than the \( (2 \pi)^3 \) scale factor we see from 
 The \( \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger}, \antisymmetric{b_\Bp^\dagger}{b_\Bq^\dagger} \) commutators show that the fields may be represented as a pair of independent creation and annihilation operators.
@@ -532,7 +531,7 @@ Let's compute the Hamiltonian representation next to verify that it diagonalizes
 We use \cref{eqn:ProblemSet1Problem2:860} to find
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:1180}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1200}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1200}
 \begin{aligned}
 \int &d^3 x \pi^\dagger \pi \\
 &=
@@ -561,8 +560,8 @@ e^{-i \Bq \cdot \Bx}
    + e^{ -2 i \omega_\Bp t} (-a_\Bp b_\Bp )
 },
 \end{aligned}
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1220}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1220}
 \begin{aligned}
 \int &d^3 x \lr{ \spacegrad \phi^\dagger \cdot \spacegrad \phi + m^2 \phi^\dagger \phi } \\
 &=
@@ -601,11 +600,11 @@ d^3 p
    e^{-2 i \omega_\Bp t} \lr{ b_\Bp a_\Bp }
 }
 \end{aligned}
-\end{dmath}
+\end{equation}
 \end{subequations}
 Summing \cref{eqn:ProblemSet1Problem2:1180}, we find the
 Hamiltonian has the expected diagonal representation
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1240}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1240}
 H =
 \inv{2}
 \int
@@ -619,7 +618,7 @@ H =
 +
    b_\Bp b_\Bp^\dagger
 },
-\end{dmath}
+\end{equation}
 or in normal form
 \boxedEquation{eqn:ProblemSet1Problem2:1260}{
 :H: =
@@ -636,22 +635,22 @@ or in normal form
 
 Before diving into computation, it is worth deriving \cref{eqn:ProblemSet1Problem2:580} manually, since the naive calculation using the current as derived in class differs slightly.  We can find the current/charge as stated in the problem if our variation maintains the order of the conjugate pairs.  The symmetry is that imposed by the transformation
 %
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1300}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1300}
 \begin{aligned}
 \phi(x) &\rightarrow e^{-i\theta/2} \phi(x) \approx (1 - i\theta/2)\phi(x) \\
 \phi^\dagger(x) &\rightarrow e^{i\theta/2} \phi^\dagger(x) \approx (1 + i\theta/2)\phi^\dagger(x),
 \end{aligned}
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1320}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1320}
 \begin{aligned}
 \delta \phi(x) &= -\frac{i}{2} \theta \phi(x) \\
 \delta \phi^\dagger(x) &= \frac{i}{2} \theta \phi^\dagger(x).
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 The Lagrangian is left unchanged by this transformation, so we can determine the current directly by varying the action, but do so leaving the order of the \(\phi^\dagger\) and \( \phi\) terms in the Lagrangian unchanged
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1340}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1340}
 \delta S
 = \int d^4 x \delta \lr{ \partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi }
 = \int d^4 x
@@ -698,9 +697,9 @@ The Lagrangian is left unchanged by this transformation, so we can determine the
    \delta \phi^\dagger \partial^\mu \phi
  + \partial^\mu \phi^\dagger \delta \phi
 },
-\end{dmath}
+\end{equation}
 where the Euler-Lagrange equations for each of the fields has been imposed to kill off the last two integrals.  We are left with a current
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1360}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1360}
 j^\mu =
    \delta \phi^\dagger \partial^\mu \phi
  + \partial^\mu \phi^\dagger \delta \phi
@@ -709,9 +708,9 @@ j^\mu =
    \phi^\dagger \lr{ \partial^\mu \phi }
  - \lr{ \partial^\mu \phi^\dagger} \phi
 }.
-\end{dmath}
+\end{equation}
 In particular
-\begin{dmath}\label{eqn:ProblemSet1Problem2:1380}
+\begin{equation}\label{eqn:ProblemSet1Problem2:1380}
 \evalbar{j^0}{\theta = 1}
 =
 \frac{i}{2} \lr{
@@ -722,10 +721,10 @@ In particular
 \frac{i}{2} \lr{
    \phi^\dagger \pi^\dagger - \pi \phi
 }.
-\end{dmath}
+\end{equation}
 This recovers \cref{eqn:ProblemSet1Problem2:580}, and we are now set to compute the charge by plugging in
 \cref{eqn:ProblemSet1Problem2:580}
-\begin{dmath}\label{eqn:ProblemSet1Problem2:600}
+\begin{equation}\label{eqn:ProblemSet1Problem2:600}
 Q =
 \frac{i}{2}
 \int d^3 x
@@ -775,7 +774,7 @@ e^{i (\Bp -\Bq)\cdot \Bx}
 \lr{
    a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
 },
-\end{dmath}
+\end{equation}
 or, in normal order
 \boxedEquation{eqn:ProblemSet1Problem2:1280}{
 :Q:
@@ -788,14 +787,14 @@ or, in normal order
 }
 }
 To understand the action of the charge operator (a set of number operators) we may apply it to the states corresponding to each creation operator.  With
-\begin{dmath}\label{eqn:ProblemSet1Problem2:640}
+\begin{equation}\label{eqn:ProblemSet1Problem2:640}
 \begin{aligned}
 \ket{\Bk}_a &= a^\dagger_\Bk \ket{0} \\
 \ket{\Bk}_b &= b^\dagger_\Bk \ket{0},
 \end{aligned}
-\end{dmath}
+\end{equation}
 we find
-\begin{dmath}\label{eqn:ProblemSet1Problem2:660}
+\begin{equation}\label{eqn:ProblemSet1Problem2:660}
 Q \ket{\Bk}_a =
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
@@ -824,9 +823,9 @@ a_\Bk^\dagger \ket{0}
 =
 \inv{2}
 \ket{\Bk}_a,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet1Problem2:680}
+\begin{equation}\label{eqn:ProblemSet1Problem2:680}
 Q \ket{\Bk}_b =
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
@@ -855,7 +854,7 @@ b_\Bk^\dagger \ket{0}
 =
 -\inv{2}
 \ket{\Bk}_b.
-\end{dmath}
+\end{equation}
 So, we could say that the particles associated with creation operator \( a_\Bp^\dagger \) have a (1/2) charge and
 particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.
 However, the \( 1/2 \), as well as the sign itself, was arbitrary, coming from the value of \( \theta \) used in the transformation of the field.   Therefore,

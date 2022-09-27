@@ -14,18 +14,18 @@ D(x) \equiv \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(x)} = \int \frac{d^3 p}{(
 \end{equation}
 \makesubproblem{}{qft:problemSet2:1a}
 For m = 0 (``photon''), show that:
-\begin{dmath}\label{eqn:ProblemSet2Problem1:40}
+\begin{equation}\label{eqn:ProblemSet2Problem1:40}
 D(x) = -\inv{2 \pi^2} \calP \inv{t^2 - r^2} - \frac{i}{8 \pi} \lr{
 \frac{\delta(t - r)}{r}
 -\frac{\delta(t + r)}{r}
 },
-\end{dmath}
+\end{equation}
 where \( r = \Norm{\Bx} \). Notice that \( D(x) \) is singular on the light cone \( t = r\). Does it vanish for spacelike separations?
 
 Hint: Please recall that (and why!)
-\begin{dmath}\label{eqn:ProblemSet2Problem1:60}
+\begin{equation}\label{eqn:ProblemSet2Problem1:60}
 \inv{a \pm i \epsilon} = \calP \inv{a} \mp i \pi \delta(a)
-\end{dmath}
+\end{equation}
 (here \( \calP \) denotes ``principal value integration'',
 as this relation is to be understood in terms of generalized functions, i.e. in the back of your mind it always needs to be integrated over a with suitable smooth and integrable ``test functions''). Note
 also that what looks like a ``half-delta-function integral'' \( \int_0^\infty dy e^{i x y} \)
@@ -42,16 +42,16 @@ For \( m^2 > 0 \), study the behavior of \( D(x) \) for spacelike \( x \) and fi
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:1a}
 Let's evaluate the integral in spherical polar coordinates
-\begin{dmath}\label{eqn:ProblemSet2Problem1:80}
+\begin{equation}\label{eqn:ProblemSet2Problem1:80}
 \begin{aligned}
 \Bp &= p (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta) \\
 \Bx &= r(0, 0, 1) \\
 d^3 p &= p^2 dp \sin\theta d\theta d\phi \\
 \omega_\Bp &= \sqrt{\Bp^2 + \cancel{m^2}} = \Norm{\Bp} = p.
 \end{aligned},
-\end{dmath}
+\end{equation}
 which gives
-\begin{dmath}\label{eqn:ProblemSet2Problem1:100}
+\begin{equation}\label{eqn:ProblemSet2Problem1:100}
 D(x)
 =
 \inv{(2\pi)^2} \int_{p = 0}^\infty dp\, p^2 \int_{\theta = 0}^\pi -d(\cos\theta) \inv{2 p} e^{-i p t + i p r \cos\theta}
@@ -72,9 +72,9 @@ e^{-i p t}
    e^{- i p (r+t)}
    -e^{i p (r-t)}
 }
-\end{dmath}
+\end{equation}
 As hinted, this half delta function should be interpreted offset slightly
-\begin{dmath}\label{eqn:ProblemSet2Problem1:120}
+\begin{equation}\label{eqn:ProblemSet2Problem1:120}
 D(x)
 =
 \frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
@@ -103,12 +103,12 @@ D(x)
         \frac{1}{ r + t - \epsilon }
       + \frac{1}{ r - t + \epsilon }
    }
-\end{dmath}
+\end{equation}
 Employing the hint
 \cref{eqn:ProblemSet2Problem1:60}\footnote{A nice explanation of this second hint can be found in \citep{wiki:Sokhotski} under ``Proof of the real version''.},
 \cref{eqn:ProblemSet2Problem1:120}
 can be cast into delta function form
-\begin{dmath}\label{eqn:ProblemSet2Problem1:140}
+\begin{equation}\label{eqn:ProblemSet2Problem1:140}
 D(x)
 =
 \frac{1}{8 \pi^2 r}
@@ -122,16 +122,16 @@ D(x)
    \lr{
         \calP \frac{2 r }{ r^2 - t^2 } + i \pi \lr{ \delta( r + t ) - \delta( r - t ) }
    },
-\end{dmath}
+\end{equation}
 which, after cosmetic rearrangement, is \cref{eqn:ProblemSet2Problem1:40}.
 
 \makeSubAnswer{}{qft:problemSet2:1b}
 Let's evaluate \( D(x) \) function at spacelike point \( x = (0, r\zcap) \), and switch to polar momentum space coordinates
-\begin{dmath}\label{eqn:ProblemSet2Problem1:99}
+\begin{equation}\label{eqn:ProblemSet2Problem1:99}
 \Bp = p (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta).
-\end{dmath}
+\end{equation}
 This gives
-\begin{dmath}\label{eqn:ProblemSet2Problem1:160}
+\begin{equation}\label{eqn:ProblemSet2Problem1:160}
 D(0, r \zcap)
 =
 \inv{(2\pi)^3}
@@ -151,17 +151,17 @@ D(0, r \zcap)
 =
 \frac{-i}{2 (2\pi)^2 r}
 \int_{-\infty}^\infty dp \frac{p}{\sqrt{p^2 + m^2}} e^{i p r},
-\end{dmath}
+\end{equation}
 where a \( u = \cos\theta \) substitution was made, followed by \( p = -p' \) in the second integral.
 
 This integral can be evaluated with the half dogbone contour sketched in \cref{fig:halfDogBoneContour:halfDogBoneContourFig1}.  The exponential \( e^{i p r} \) vanishes on the infinite radial contours \( D, E \) since the real part of \( i p r \) is negative in the upper half plane.  We are left with
-\begin{dmath}\label{eqn:ProblemSet2Problem1:180}
+\begin{equation}\label{eqn:ProblemSet2Problem1:180}
 \int_A = -\int_B - \int_C.
-\end{dmath}
+\end{equation}
 \imageFigure{../figures/phy2403-quantum-field-theory/halfDogBoneContourFig1}{Contour for branch at \( p = i m \).}{fig:halfDogBoneContour:halfDogBoneContourFig1}{0.2}
 
 That doesn't look like a particularly helpful transformation at first, but because we are integrating around the branch cut running from \( [i m, i\infty] \), the square root differs by an \( 2 \pi i \) argument on each side of the cut.  Along contour \( B \) that square root is
-\begin{dmath}\label{eqn:ProblemSet2Problem1:200}
+\begin{equation}\label{eqn:ProblemSet2Problem1:200}
 (p^2 + m^2)^{1/2}
 =
 \lr{ e^{i \pi} \lr{ -p^2 - m^2} }^{1/2}
@@ -169,9 +169,9 @@ That doesn't look like a particularly helpful transformation at first, but becau
 e^{i \pi/2} \sqrt{ -p^2 - m^2 }
 =
 i \sqrt{ -p^2 - m^2 }
-\end{dmath}
+\end{equation}
 and along contour \( D \)
-\begin{dmath}\label{eqn:ProblemSet2Problem1:220}
+\begin{equation}\label{eqn:ProblemSet2Problem1:220}
 (p^2 + m^2)^{1/2}
 =
 \lr{ e^{3 i \pi} \lr{ -p^2 - m^2} }^{1/2}
@@ -179,9 +179,9 @@ and along contour \( D \)
 e^{3 i \pi/2} \sqrt{ -p^2 - m^2 }
 =
 -i \sqrt{ -p^2 - m^2 }.
-\end{dmath}
+\end{equation}
 Specifically
-\begin{dmath}\label{eqn:ProblemSet2Problem1:240}
+\begin{equation}\label{eqn:ProblemSet2Problem1:240}
 \int_A
 = -\int_B - \int_C
 =
@@ -193,9 +193,9 @@ Specifically
 =
 -\frac{1}{(2\pi)^2 r}
 \int_{i m}^{i \infty} dp \frac{p}{\sqrt{-p^2 - m^2}} e^{i p r}.
-\end{dmath}
+\end{equation}
 Changing the integration variable to \( q \in [m, \infty] \) (i.e. \( p = i q \)), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem1:260}
+\begin{equation}\label{eqn:ProblemSet2Problem1:260}
 D(0, r \zcap)
 =
 \frac{1}{(2\pi)^2 r}
@@ -211,6 +211,6 @@ D(0, r \zcap)
 \sim
 r^{-3/2}
 e^{-r m }.
-\end{dmath}
+\end{equation}
 where the integral was evaluated with Mathematica, and the asymptotic approximation is from \citep{abramowitz1964handbook} \S 9.7.2 (\( K_\nu(z) \sim \sqrt{\pi/2z} e^{-z} \).)  For \( r \gg 1/m \), this goes to zero quickly.
 }}

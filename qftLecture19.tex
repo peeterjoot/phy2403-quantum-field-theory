@@ -56,52 +56,52 @@ Given a real vector \( \Bx \) and the Pauli matrices
 \sigma^3 = \PauliZ.
 \end{equation}
 We may form a Pauli matrix representation of a vector
-\begin{dmath}\label{eqn:qftLecture19:1814}
+\begin{equation}\label{eqn:qftLecture19:1814}
 \Bsigma \cdot \Bx
 =
 \begin{bmatrix}
 x^3 & x^1 - i x^2 \\
 x^1 + i x^2 & -x^3
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 where \( \Bsigma = \lr{ \sigma^1, \sigma^2, \sigma^3 } \).
 This matrix, like the Pauli matrices, is a \( 2 \times 2 \) Hermitian traceless matrix.
 We find that the determinant is
-\begin{dmath}\label{eqn:qftLecture19:1834}
+\begin{equation}\label{eqn:qftLecture19:1834}
 \det (\Bsigma \cdot \Bx)
 =
 -(x^3)^2 - (x^1)^2 - (x^2)^2
 =
 -\Bx^2.
-\end{dmath}
+\end{equation}
 
 We may form
-\begin{dmath}\label{eqn:qftLecture19:1854}
+\begin{equation}\label{eqn:qftLecture19:1854}
 U (\Bsigma \cdot \Bx) U^\dagger,
-\end{dmath}
+\end{equation}
 where \( U \) is a unitary \( 2 \times 2 \) unit determinant matrix, satisfying
-\begin{dmath}\label{eqn:qftLecture19:1874}
+\begin{equation}\label{eqn:qftLecture19:1874}
 \begin{aligned}
 U^\dagger U &= 1 \\
 \det U &= 1.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Further
-\begin{dmath}\label{eqn:qftLecture19:1894}
+\begin{equation}\label{eqn:qftLecture19:1894}
 \det (U \Bsigma \cdot \Bx) U^\dagger
 =
 \det U \det (\Bsigma \cdot \Bx) \det U^\dagger
 =
 \det (\Bsigma \cdot \Bx).
-\end{dmath}
+\end{equation}
 
 Moral: \( U (\Bsigma \cdot \Bx) U^\dagger = \Bsigma \cdot \Bx' \), where \( \Bx' \) has the same length of \( \Bx \).
 
 We may use this to represent an arbitrary rotation
-\begin{dmath}\label{eqn:qftLecture19:1914}
+\begin{equation}\label{eqn:qftLecture19:1914}
 U (\Bsigma \cdot \Bx) U^\dagger
 = {R^{i}}_j x^j \sigma^i
-\end{dmath}
+\end{equation}
 
 We say that \( U \in \SU{2} \) and \( R \in \SU{3} \), and \( \SU{2} \) is called the ``universal cover of \(\SO{3}\)''.
 
@@ -115,13 +115,13 @@ where
 \Bx \rightarrow \Bx' = R \Bx,
 \end{equation}
 and \( R^\T R = 1 \).  Here \( \Psi \) is a two element vector
-\begin{dmath}\label{eqn:qftLecture19:1974}
+\begin{equation}\label{eqn:qftLecture19:1974}
 \Psi(\Bx) =
 \begin{bmatrix}
 \Psi_\uparrow(\Bx) \\
 \Psi_\downarrow(\Bx)
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so the transformation should be thought of as a matrix operation
 \begin{equation}\label{eqn:qftLecture19:80}
 \begin{bmatrix}
@@ -145,7 +145,7 @@ Having seen such representations and their \( \SU{2} \) transformations in NRQM,
 \section{Lorentz group.}
 \index{Lorentz group}
 Let
-\begin{dmath}\label{eqn:qftLecture19:1994}
+\begin{equation}\label{eqn:qftLecture19:1994}
 (x^0, \Bx) =
 x^0 \sigma^0 - \Bsigma \cdot \Bx
 =
@@ -153,9 +153,9 @@ x^0 \sigma^0 - \Bsigma \cdot \Bx
 x^0 - x^3 & -x^1 + i x^2 \\
 -x^1 - i x^2 & x^0 + x^3
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 This has determinant
-\begin{dmath}\label{eqn:qftLecture19:2014}
+\begin{equation}\label{eqn:qftLecture19:2014}
 \det
 (x^0, \Bx) =
 (x^0)^2
@@ -166,37 +166,37 @@ This has determinant
 -
 (x^3)^2
 = x^\mu x_\mu.
-\end{dmath}
+\end{equation}
 We therefore identify \( (x^0, \Bx) \) as a four vector
-\begin{dmath}\label{eqn:qftLecture19:2034}
+\begin{equation}\label{eqn:qftLecture19:2034}
 (x^0, \Bx) = x_\mu \sigma^\mu = x^\mu \sigma^\nu g_{\mu\nu}.
-\end{dmath}
+\end{equation}
 We say that $\SL{2}$ is a double cover of $\SO{1,3}$.
 
 %\section{Rotations \( \SU{2} \rightarrow \SO{3} \).}
 %%We will map the traditional vector basis to one with matrix basis elements using
-%%\begin{dmath}\label{eqn:qftLecture19:20}
+%%\begin{equation}\label{eqn:qftLecture19:20}
 %%\Bx \rightarrow \Bsigma \cdot \Bx,
-%%\end{dmath}
+%%\end{equation}
 %%where \( \Bsigma = (\sigma^1, \sigma^2, \sigma^3) \), and \( \sigma^k \) are the Pauli matrices.
 %%
 %%A transformation of the following form
-%%\begin{dmath}\label{eqn:qftLecture19:40}
+%%\begin{equation}\label{eqn:qftLecture19:40}
 %%U^\dagger (\Bsigma \cdot \Bx) U = \Bx' \cdot \Bsigma,
-%%\end{dmath}
+%%\end{equation}
 %%where the matrix \( U \) has \( \det U = 1 \) and is unitary \( U^\dagger U = \BOne \),
 %%is length preserving.  We saw that was the case since
-%%\begin{dmath}\label{eqn:qftLecture19:60}
+%%\begin{equation}\label{eqn:qftLecture19:60}
 %%\det \Bsigma \cdot \Bx \sim \Bx^2.
-%%\end{dmath}
+%%\end{equation}
 %%
 %%We say that there is a double cover, as there are multiple representations of the rotation operator.  In particular \( U \) and \( -U \) of \( \SU{2} \) correspond to the same \( \SO{3} \) element.
 Note that the matrix \( U \) can be built explicitly.  For example, it may be built up using Euler angles as sketched in \cref{fig:l19:l19Fig1}.
 \imageFigure{../figures/phy2403-quantum-field-theory/l19Fig1}{Euler angle rotations.}{fig:l19:l19Fig1}{0.2}
 or algebraically
-\begin{dmath}\label{eqn:qftLecture19:100}
+\begin{equation}\label{eqn:qftLecture19:100}
 U = e^{i \psi \sigma_3/2 } e^{i \theta \sigma_1/2} e^{i \phi \sigma_3/2}.
-\end{dmath}
+\end{equation}
 
 \section{Weyl spinors.}
 \index{Weyl spinor}
@@ -216,15 +216,15 @@ The \( \SU{2} \) group is a subset of
 \( \SU{2} \) matrices are \(\SL{2}\) matrices, but not necessarily the opposite.
 
 We introduce a special notation for the identity matrix
-\begin{dmath}\label{eqn:qftLecture19:120}
+\begin{equation}\label{eqn:qftLecture19:120}
 \sigma^0 \equiv
 \begin{bmatrix}
 1 & 0 \\
 0 & 1
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 and can now form four vectors in a matrix representation
-\begin{dmath}\label{eqn:qftLecture19:140}
+\begin{equation}\label{eqn:qftLecture19:140}
 x \cdot \sigma
 \equiv
 x^\mu \sigma_\mu
@@ -235,27 +235,27 @@ x^0 \sigma^0 - \Bsigma \cdot \Bx
 x^0 - x^3    & -x^1 + i x^2 \\
 -x^1 - i x^2 & x^0 + x^3
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 Such \( 2 \times 2 \) matrices are Hermitian.  Notice that the space of \( 2 \times 2 \) Hermitian matrices is 4 dimensional.
 
 We found that
-\begin{dmath}\label{eqn:qftLecture19:160}
+\begin{equation}\label{eqn:qftLecture19:160}
 \det( x^\mu \sigma_\mu )
 =
 (x^0)^2 - \Bx^2.
-\end{dmath}
+\end{equation}
 
 The transformation
-\begin{dmath}\label{eqn:qftLecture19:180}
+\begin{equation}\label{eqn:qftLecture19:180}
 x^\mu \sigma_\mu \rightarrow M \lr{ x^\mu \sigma_\mu } M^\dagger,
-\end{dmath}
+\end{equation}
 maps \( 2 \times 2 \) Hermitian matrices to \( 2 \times 2 \) Hermitian matrices using a unit determinant transformation \( M \).  Note that \( M \) is not unitary, as it is an arbitrary (Hermitian) matrix.  In particular \( M M^\dagger \ne 1 \)!
 Also note that the determinant of the transformed object is
-\begin{dmath}\label{eqn:qftLecture19:200}
+\begin{equation}\label{eqn:qftLecture19:200}
 \det \lr{ M \lr{ x^\mu \sigma_\mu } M^\dagger }
 =
 1 \times \det \lr{ x^\mu \sigma_\mu } \times 1,
-\end{dmath}
+\end{equation}
 since \( \det M = 1 \), so that we see that the Lorentz invariant length is preserved by such a transformation.  This can be expressed as
 \begin{equation}\label{eqn:qftLecture19:220}
 x \cdot \sigma \rightarrow M x \cdot \sigma M^\dagger = x' \cdot \sigma,
@@ -263,25 +263,24 @@ x \cdot \sigma \rightarrow M x \cdot \sigma M^\dagger = x' \cdot \sigma,
 where \( (x')^2 = x^2 \).
 
 Motivated by this \(\SL{2} \rightarrow \SO{1,3} \) correspondence, postulate that we study two component objects
-\begin{dmath}\label{eqn:qftLecture19:240}
+\begin{equation}\label{eqn:qftLecture19:240}
 U(x) =
 \begin{bmatrix}
 U_1(x) \\
 U_2(x) \\
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 where \( x = (x^0, x^1, x^2, x^3) \) is a four-vector, and assume that such objects transform as follows in \( \SO{1,3} \)
-
-\begin{dmath}\label{eqn:qftLecture19:260}
+\begin{equation}\label{eqn:qftLecture19:260}
 \begin{aligned}
 U(x) \rightarrow U'(x') &= M^\dagger U(x) \\
 x^\mu \rightarrow {x'}^\mu &= \ultensor{\Lambda}{\mu}{\nu} x^\nu,
 \end{aligned}
-\end{dmath}
+\end{equation}
 where \( M^\dagger \) is the one giving rise to \( \Lambda \).  To understand what is meant by ``giving rise to'', consider
-\begin{dmath}\label{eqn:qftLecture19:280}
+\begin{equation}\label{eqn:qftLecture19:280}
 M x^\mu \sigma_\mu M^\dagger = {x'}^\nu \sigma_\nu = \sigma_\nu \ultensor{\Lambda}{\nu}{\mu} x^\mu,
-\end{dmath}
+\end{equation}
 and this holds for all \( x^\mu \), we must have
 \boxedEquation{eqn:qftLecture19:300}{
 M \sigma_\mu M^\dagger = \sigma_\nu \ultensor{\Lambda}{\nu}{\mu}.
@@ -291,7 +290,7 @@ M \sigma_\mu M^\dagger = \sigma_\nu \ultensor{\Lambda}{\nu}{\mu}.
 \( U^\dagger(x) \sigma_\mu U(x) \) transforms as a four vector.
 } % theorem
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture19:320}
+\begin{equation}\label{eqn:qftLecture19:320}
 U^\dagger(x) \sigma_\mu U(x)
 \rightarrow
 {U'}^\dagger(x') \sigma_\mu U'(x')
@@ -301,7 +300,7 @@ U^\dagger(x) \sigma_\mu U(x)
 U^\dagger(x) \lr{ M \sigma_\mu M^\dagger } U(x)
 =
 U^\dagger(x) \sigma_\nu U(x) \ultensor{\Lambda}{\nu}{\mu}
-\end{dmath}
+\end{equation}
 so we find that \( U^\dagger(x) \sigma_\mu U(x) \) transforms as a four vector as claimed.
 \end{proof}
 
@@ -318,10 +317,10 @@ The four-gradient coordinates transform as a four vector
 %Proof
 %\footnote{In class we proved this by considering the transformation properties of a direction derivative \( dx^\mu \cdot \partial_\mu \), but that isn't the method that seems most intuitive to me.}:
 Inverting the transformation relation
-\begin{dmath}\label{eqn:qftLecture19:1694}
+\begin{equation}\label{eqn:qftLecture19:1694}
 {x'}^\mu =
 \ultensor{\Lambda}{\mu}{\nu} x^\nu,
-\end{dmath}
+\end{equation}
 gives
 \begin{equation}\label{eqn:qftLecture19:1714}
 x^\sigma
@@ -333,7 +332,7 @@ x^\sigma
 {x'}^\mu,
 \end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture19:1734}
+\begin{equation}\label{eqn:qftLecture19:1734}
 \partial_\mu
 \rightarrow
 (\partial_\mu)'
@@ -347,25 +346,25 @@ so
 \PD{x^\sigma}{}
 =
 \ultensor{(\Lambda^{-1})}{\sigma}{\mu} \partial_\sigma.
-\end{dmath}
+\end{equation}
 %Because a four vector dot product is Lorentz invariant, including a directional derivative \( a^\mu \cdot \partial_\mu \), we have
-%\begin{dmath}\label{eqn:qftLecture19:340}
+%\begin{equation}\label{eqn:qftLecture19:340}
 %a^\mu \PD{x^\mu} {}
 %= {a'}^\nu \PD{{x'}^\mu} {}
 %= \ultensor{\Lambda}{\nu}{\mu} a^\mu \PD{{x'}^\nu}{}.
-%\end{dmath}
+%\end{equation}
 %As this holds for all \( a^\mu \) we must have
-%\begin{dmath}\label{eqn:qftLecture19:360}
+%\begin{equation}\label{eqn:qftLecture19:360}
 %\PD{x^\mu}{} =
 %\PD{{x'}^\nu}{}
 % \ultensor{\Lambda}{\nu}{\mu},
-%\end{dmath}
+%\end{equation}
 %and can multiply by \( \ultensor{(\Lambda^{-1})}{\mu}{\sigma} \) to find
-%\begin{dmath}\label{eqn:qftLecture19:380}
+%\begin{equation}\label{eqn:qftLecture19:380}
 %\PD{{x'}^\sigma}{} =
 %\PD{x^\mu}{}
 % \ultensor{(\Lambda^{-1})}{\mu}{\sigma},
-%\end{dmath}
+%\end{equation}
 %as stated.
 \end{proof}
 
@@ -374,7 +373,7 @@ so
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture19:400}
+\begin{equation}\label{eqn:qftLecture19:400}
 U^\dagger(x) \sigma^\mu \PD{x^\mu}{} U(x)
 \rightarrow
 {U'}^\dagger(x') \sigma^\mu \PD{{x'}^\mu}{} U'(x')
@@ -393,7 +392,7 @@ U(x)
 U^\dagger(x) \sigma^\nu
 \PD{{x}^\nu}{}
 U(x).
-\end{dmath}
+\end{equation}
 \end{proof}
 
 We can now define
@@ -437,8 +436,7 @@ i & 0 \\
 \end{bmatrix}}^\dagger = -i \sigma^3
 \end{equation}
 \end{subequations}
-
-\begin{dmath}\label{eqn:qftLecture19:1414}
+\begin{equation}\label{eqn:qftLecture19:1414}
 S_{\text{Weyl}}^\dagger
 = \int d^4 x
 \partial_\mu U^\dagger(x) (i\sigma^\mu)^\dagger U(x)
@@ -456,7 +454,7 @@ U^\dagger(x) i \sigma^\mu \partial_\mu U(x)
 U^\dagger(x) i \sigma^\mu \partial_\mu U(x)
 =
 S_{\text{Weyl}},
-\end{dmath}
+\end{equation}
 where it was assumed that any boundary terms vanish.
 
 \maketheorem{Weyl equation.}{dfn:qftLecture19:1254}{
@@ -470,7 +468,7 @@ which is called the Weyl equation.
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture19:1294}
+\begin{equation}\label{eqn:qftLecture19:1294}
 \delta S
 =
 i \int d^4 x
@@ -501,12 +499,12 @@ i \int d^4 x
 +
    \lr{ \delta U^\dagger \lr{ i \sigma^\mu \partial_\mu U } }^\dagger
 }.
-\end{dmath}
+\end{equation}
 Requiring this to vanish for all variations \( \delta U^\dagger \) proves the result.
 \end{proof}
 
 Written out explicitly in matrix form, the Weyl equation is
-\begin{dmath}\label{eqn:qftLecture19:440}
+\begin{equation}\label{eqn:qftLecture19:440}
 \begin{bmatrix}
 \partial_0 + \partial_3 & \partial_1 - i \partial_2  \\
 \partial_1 + i \partial_2 & \partial_0 - \partial_3
@@ -516,16 +514,16 @@ U_1 \\
 U_2
 \end{bmatrix}
 = 0,
-\end{dmath}
+\end{equation}
 or
 \begin{subequations}
 \label{eqn:qftLecture19:460}
-\begin{dmath}\label{eqn:qftLecture19:480}
+\begin{equation}\label{eqn:qftLecture19:480}
 (\partial_0 + \partial_3)U_1 + (\partial_1 - i \partial_2) U_2 = 0
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture19:500}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture19:500}
 (\partial_1 + i \partial_2)U_1 + (\partial_0 - \partial_3) U_2 = 0.
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 \maketheorem{Weyl equation, massless Klein-Gordon equation.}{thm:qftLecture19:1274}{
@@ -538,7 +536,7 @@ for \( k = 1, 2\).
 
 \begin{proof}
 Multiplying \cref{eqn:qftLecture19:480} by \( \partial_1 + i \partial_2 \) gives
-\begin{dmath}\label{eqn:qftLecture19:520}
+\begin{equation}\label{eqn:qftLecture19:520}
 \lr{ \partial_1 + i \partial_2 }
 \Biglr{
    (\partial_0 + \partial_3)U_1 + (\partial_1 - i \partial_2) U_2
@@ -573,9 +571,9 @@ U_2
 } U_2
 =
 - \partial_\mu \partial^\mu U_2.
-\end{dmath}
+\end{equation}
 Similarly, multiplying \cref{eqn:qftLecture19:500} by \( \partial_1 - i \partial_2 \) we find
-\begin{dmath}\label{eqn:qftLecture19:1274}
+\begin{equation}\label{eqn:qftLecture19:1274}
 0
 =
 \lr{ \partial_1 - i \partial_2 }
@@ -601,7 +599,7 @@ U_2
 } U_1
 =
 - \partial_\mu \partial^\mu U_1.
-\end{dmath}
+\end{equation}
 \end{proof}
 Because \( S_{\text{Weyl}} \) results in a massless Klein-Gordon equation, this is no good for electrons.  We must look for a different action.
 
@@ -612,21 +610,21 @@ Because \( S_{\text{Weyl}} \) results in a massless Klein-Gordon equation, this 
 \paragraph{Claim:} \( U^\T \sigma_2 U \) is the only bilinear Lorentz invariant that we can add to the action.
 
 An action like:
-\begin{dmath}\label{eqn:qftLecture19:560}
+\begin{equation}\label{eqn:qftLecture19:560}
 \LL_{\text{mass}} = \inv{2} m U^\T \sigma_2 U + \inv{2} m^\conj U^\dagger \sigma_2 (U^\dagger)^\T,
-\end{dmath}
+\end{equation}
 may exist in nature (we don't know), and are called Majorana neutrino masses.  The problem with such a Lagrangian density is that it breaks \( U(1) \) symmetry.  In particular \( U \rightarrow e^{i \alpha} U \) symmetry of the kinetic term.  This means that the particle associated with such a Lagrangian cannot be charged.
 
 Recall that we introduced electromagnetic potentials into NRQM with
-\begin{dmath}\label{eqn:qftLecture19:580}
+\begin{equation}\label{eqn:qftLecture19:580}
 i \Hbar \PD{t}{} \Psi = \inv{2m} \lr{ \spacegrad - e \BA }^2 \Psi
-\end{dmath}
+\end{equation}
 which is a gauge transformation.  We'd like to have this capability.
 
 What we can do instead and maintain \( U(1) \) symmetries, is to introduce two U's, like
-\begin{dmath}\label{eqn:qftLecture19:600}
+\begin{equation}\label{eqn:qftLecture19:600}
 \LL_{\text{mass}} = \inv{2} m U_1^\T \sigma_2 U_2 + \inv{2} m^\conj U_2^\dagger \sigma_2 (U_1^\dagger)^\T
-\end{dmath}
+\end{equation}
 What we are really doing is assembling a four component spinor out of the two U's.
 
 \section{Lorentz symmetry.}
@@ -649,15 +647,15 @@ Proving
 \cref{lemma:qftLecture19:21}
 is well suited to software \nbref{diracWeylMatrixRepresentationAndIdentities.nb},
 but can also be done algebraically with ease.  First note that
-\begin{dmath}\label{eqn:qftLecture19:740}
+\begin{equation}\label{eqn:qftLecture19:740}
 \begin{aligned}
 \sigma_1^\T &= \sigma_1 \\
 \sigma_2^\T &= -\sigma_2 \\
 \sigma_3^\T &= \sigma_3
 \end{aligned}
-\end{dmath}
+\end{equation}
 which means that
-\begin{dmath}\label{eqn:qftLecture19:1454}
+\begin{equation}\label{eqn:qftLecture19:1454}
 (\Bsigma \cdot \Bx)^\T
 =
 \sigma^1 x^1 - \sigma^2 x^2 + \sigma^3 x^3
@@ -673,7 +671,7 @@ which means that
 } \sigma^2
 =
 - \sigma^2 (\Bsigma \cdot \Bx)^\T \sigma^2.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 Now we are ready to proceed.
@@ -682,21 +680,21 @@ Now we are ready to proceed.
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture19:620}
+\begin{equation}\label{eqn:qftLecture19:620}
 U^\T \sigma_2 U
 \rightarrow
 {U'}^\T \sigma_2 U'
 =
 U^\T {M^\dagger}^\T \sigma_2 M^\dagger U,
-\end{dmath}
+\end{equation}
 where \( U' = M^\dagger U \) and \( {U'}^\T = U^\T {M^\dagger}^T \).
 
 Note that if we can show that \( {M^\dagger}^\T \sigma_2 M^\dagger = \sigma_2 \), then we are done.
 
 It is simple to show that any
-\begin{dmath}\label{eqn:qftLecture19:640}
+\begin{equation}\label{eqn:qftLecture19:640}
 U = e^{i \Bsigma \cdot \Ba},
-\end{dmath}
+\end{equation}
 for \( \Ba \in \bbR^{3} \), has eigenvalues \( \pm i \Norm{\Ba} \).  The determinant of such a matrix is
 \begin{equation}\label{eqn:qftLecture19:1434}
 \det U = \begin{vmatrix}
@@ -710,14 +708,14 @@ We haven't shown that all matrices \( U \in \SU{2} \) can be written in this for
 \end{proof}
 
 \paragraph{Claim:}  Generalizing from the exponential form of \( \SU{2} \) elements seen above, we assume that any \(\SL{2}\) matrix \( M \) can be written as
-\begin{dmath}\label{eqn:qftLecture19:680}
+\begin{equation}\label{eqn:qftLecture19:680}
 M^\dagger =
 e^{i \Bsigma \cdot (\Ba + i \Bb) },
-\end{dmath}
+\end{equation}
 for \( \Ba, \Bb \in \bbR^3 \).
 
 The transpose of an exponential of a sigma matrix goes like
-\begin{dmath}\label{eqn:qftLecture19:1474}
+\begin{equation}\label{eqn:qftLecture19:1474}
 (e^{\Bsigma \cdot \Bu})^\T
 =
 \sum_{k = 0}^\infty \inv{k!}\lr{(\Bsigma \cdot \Bu)^k}^\T
@@ -732,9 +730,9 @@ The transpose of an exponential of a sigma matrix goes like
 \sigma_2
 e^{-\Bsigma \cdot \Bu}
 \sigma_2,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture19:700}
+\begin{equation}\label{eqn:qftLecture19:700}
 {M^\dagger}^\T \sigma_2 M^\dagger
 =
 \lr{ e^{i \Bsigma \cdot (\Ba + i \Bb) } }^\T
@@ -750,10 +748,9 @@ e^{i \Bsigma \cdot (\Ba + i \Bb) }
 e^{i \Bsigma \cdot (\Ba + i \Bb) }
 =
 \sigma_2,
-\end{dmath}
+\end{equation}
 which is the result required to finish the proof of \cref{thm:qftLecture19:10}\footnote{A slightly different derivation was done in class, but this one makes more sense to me.}.
-
-%%%\begin{dmath}\label{eqn:qftLecture19:760}
+%%%\begin{equation}\label{eqn:qftLecture19:760}
 %%%{M^\dagger}^\T \sigma_2 M^\dagger
 %%%=
 %%%\sigma_2
@@ -775,14 +772,14 @@ which is the result required to finish the proof of \cref{thm:qftLecture19:10}\f
 %%%e^{i (\Ba + i \Bb) \cdot \Bsigma }
 %%%=
 %%%\sigma_2
-%%%\end{dmath}
+%%%\end{equation}
 %%%
 %%%where we used an argument like
-%%%\begin{dmath}\label{eqn:qftLecture19:780}
+%%%\begin{equation}\label{eqn:qftLecture19:780}
 %%%e^{A} \sigma_2
 %%%= \sigma_2( 1 + A + \inv{2} A^2 ...)
 %%%= ?
-%%%\end{dmath}
+%%%\end{equation}
 %%%to move the \( \sigma_2 \) into the exponential argument.
 %%%
 \section{Dirac matrices.}
@@ -818,14 +815,14 @@ and
 \end{equation*}
 } % definition
 The metric relations can also be written explicitly in the handy form
-\begin{dmath}\label{eqn:qftLecture19:860}
+\begin{equation}\label{eqn:qftLecture19:860}
 \begin{aligned}
 \lr{\gamma^0}^2 &= 1 \\
 \lr{\gamma^i}^2 &= -1.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Written out explicitly, these matrices are
-\begin{dmath}\label{eqn:qftLecture19:1774}
+\begin{equation}\label{eqn:qftLecture19:1774}
 \begin{aligned}
 \gamma^0
 &=
@@ -860,24 +857,24 @@ Written out explicitly, these matrices are
  0 & 1 & 0 & 0 \\
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 We will see in \cref{qft:problemSet4:4} (Hw4) that Lorentz transformations take the form
-\begin{dmath}\label{eqn:qftLecture19:1494}
+\begin{equation}\label{eqn:qftLecture19:1494}
 x' \cdot \gamma = \Lambda_{1/2}^{-1} \lr{ x \cdot \gamma } \Lambda_{1/2},
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture19:1514}
+\begin{equation}\label{eqn:qftLecture19:1514}
 \Lambda_{1/2}
 =
 e^{-\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}},
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture19:920}
+\begin{equation}\label{eqn:qftLecture19:920}
 S^{\mu\nu} = \frac{i}{4} \antisymmetric{\gamma^\mu}{\gamma^\nu}.
-\end{dmath}
+\end{equation}
 In particular
-\begin{dmath}\label{eqn:qftLecture19:940}
+\begin{equation}\label{eqn:qftLecture19:940}
 S^{0k}
 = \frac{i}{4} \antisymmetric{\gamma^0}{\gamma^k}
 = \frac{i}{2} \gamma^0 \gamma^k
@@ -896,9 +893,9 @@ S^{0k}
 -\sigma^k & 0 \\
 0 & \sigma^k
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 will generate boosts, whereas (for \( j \ne k \))
-\begin{dmath}\label{eqn:qftLecture19:960}
+\begin{equation}\label{eqn:qftLecture19:960}
 S^{jk}
 = \frac{i}{4} \antisymmetric{\gamma^j}{\gamma^k}
 = \frac{i}{2} \gamma^j \gamma^k
@@ -923,11 +920,11 @@ S^{jk}
 \sigma^l & 0 \\
 0 & \sigma^l
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 are rotations (and in this case, are Hermitian).
 
 The explicit expansion of the half Lorentz transformation operator is
-\begin{dmath}\label{eqn:qftLecture19:1000}
+\begin{equation}\label{eqn:qftLecture19:1000}
 \begin{aligned}
 \Lambda_{1/2}
 &=
@@ -958,7 +955,7 @@ e^{-\lr{ \inv{2} \omega_{0k} \sigma^k + \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^
 0 & e^{-\lr{ -\inv{2} \omega_{0k} \sigma^k + \frac{i}{4} \omega_{jk} e^{jkl} \sigma^l }}  \\
 \end{bmatrix}
 \end{aligned}
-\end{dmath}
+\end{equation}
 where the \( 1/2\) factor of \( \omega_{0i} \) vanished because we had a sum over \( 0i \) and \( i0 \) which have been grouped.
 
 \makelemma{Some Dirac matrix identities.}{thm:qftLecture19:51}{
@@ -977,15 +974,15 @@ where the \( 1/2\) factor of \( \omega_{0i} \) vanished because we had a sum ove
 The first two are clear from inspection of
 \cref{eqn:qftLecture19:1774}.
 For the last, for \( \mu = 0 \)
-\begin{dmath}\label{eqn:qftLecture19:1554}
+\begin{equation}\label{eqn:qftLecture19:1554}
 \gamma^0 (\gamma^0)^\dagger \gamma^0
 =
 \gamma^0 \gamma^0\gamma^0
 =
 \gamma^0,
-\end{dmath}
+\end{equation}
 and for \( \mu = k \ne 0 \)
-\begin{dmath}\label{eqn:qftLecture19:1574}
+\begin{equation}\label{eqn:qftLecture19:1574}
 \gamma^0 (\gamma^k)^\dagger \gamma^0
 =
 \gamma^0 (-\gamma^k) \gamma^0
@@ -995,7 +992,7 @@ and for \( \mu = k \ne 0 \)
 +\gamma^0 \gamma^0 \gamma^k
 =
 \gamma^k.
-\end{dmath}
+\end{equation}
 %which completes the proof.
 \end{proof}
 
@@ -1019,13 +1016,13 @@ where \( \psi_\mu \)'s are all complex fields, and assume that the fields transf
 \Psi(x) \rightarrow \Psi'(x') = \Lambda_{1/2} \Psi(x),
 \end{equation}
 where our vectors transform in the usual \( x \rightarrow x' = \Lambda x \) fashion, where the incremental form of the Lorentz transformation is the usual
-\begin{dmath}\label{eqn:qftLecture19:980}
+\begin{equation}\label{eqn:qftLecture19:980}
 \ultensor{\Lambda}{\mu}{\nu} =
 \ultensor{\delta}{\mu}{\nu}
 +
 \ultensor{\omega}{\mu}{\nu}
 + O(\omega^2).
-\end{dmath}
+\end{equation}
 
 \makedefinition{Overbar operator (name?).}{dfn:qftLecture19:1534}{
 \begin{equation*}
@@ -1052,7 +1049,7 @@ is a real scalar and is Lorentz invariant.
 \begin{proof}
 %\paragraph{Real:}
 To show that the action is real, we compute it's Hermitian conjugate, apply \cref{thm:qftLecture19:51} and integrate by parts
-\begin{dmath}\label{eqn:qftLecture19:1594}
+\begin{equation}\label{eqn:qftLecture19:1594}
 S^\dagger
 =
 \int d^4 x
@@ -1104,19 +1101,19 @@ m
 \Psi
 =
 S,
-\end{dmath}
+\end{equation}
 where \( \partial_\mu \) without an overarrow means the traditional right acting operator, and assuming that the boundary terms vanish.
 
 To show the Lorentz invariance, we will consider just the transformation of the Dirac Lagrangian density.  We need a couple additional pieces of information to do so, the first of which is the transformation property\footnote{Not proven here, but there's an argument for that in \citep{peskin1995introduction} (eq. 3.33).}
-\begin{dmath}\label{eqn:qftLecture19:1614}
+\begin{equation}\label{eqn:qftLecture19:1614}
 \overbar{\Psi} \rightarrow \Psi \Lambda^{-1}_{1/2},
-\end{dmath}
+\end{equation}
 and (from \cref{qft:problemSet4:4} (Hw4))
-\begin{dmath}\label{eqn:qftLecture19:1634}
+\begin{equation}\label{eqn:qftLecture19:1634}
 \Lambda^{-1}_{1/2} \gamma^\mu \Lambda_{1/2} = \ultensor{\Lambda}{\mu}{\alpha}\gamma^\alpha.
-\end{dmath}
+\end{equation}
 The Lagrangian transforms as
-\begin{dmath}\label{eqn:qftLecture19:1020}
+\begin{equation}\label{eqn:qftLecture19:1020}
 \overbar{\Psi}(x) \lr{ i \gamma^\mu \partial_\mu - m } \Psi(x)
 \rightarrow
 \overbar{\Psi'}(x') \gamma^0 \lr{ i \gamma^\mu \PD{{x'}^\mu}{} - m } \Psi'(x')
@@ -1184,7 +1181,7 @@ The Lagrangian transforms as
 %%\Psi^\dagger \gamma^0 i \gamma^\alpha \partial_\alpha \Psi - m \Psi^\dagger \gamma_0 \Psi
 =
 \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi
-\end{dmath}
+\end{equation}
 
 We find that \( \overbar{\Psi} \Psi = \Psi^\dagger \gamma^0 \Psi \) is a Lorentz scalar, whereas
 \( \overbar{\Psi} \gamma^\mu \Psi \) is a 4 vector.

@@ -53,13 +53,13 @@
 The following notes follow \textchapref{{1}} \citep{peskin1995introduction} \S 5.1 fairly closely (filling in some details, leaving out some others.)
 
 Our Lagrangian is
-\begin{dmath}\label{eqn:qftLecture23:140}
+\begin{equation}\label{eqn:qftLecture23:140}
 \LL_{\text{Dirac}} = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
-\end{dmath}
+\end{equation}
 which can be consider solved by fields \( \Psi(x), \oPsi(x) = \Psi^\dagger(x) \gamma^0 \)
 \begin{subequations}
 \label{eqn:qftLecture23:420}
-\begin{dmath}\label{eqn:qftLecture23:160}
+\begin{equation}\label{eqn:qftLecture23:160}
 \Psi(x) =
 \sum_{s = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
@@ -68,8 +68,8 @@ which can be consider solved by fields \( \Psi(x), \oPsi(x) = \Psi^\dagger(x) \g
    +
    e^{i p \cdot x} v^s(p) a_\Bp^{s \dagger}
 }
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:180}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:180}
 \oPsi(x)
 =
 \sum_{s = 1}^2
@@ -79,17 +79,17 @@ which can be consider solved by fields \( \Psi(x), \oPsi(x) = \Psi^\dagger(x) \g
    +
    e^{-i p \cdot x} \vbar^s(p) a_\Bp^{s}
 }
-\end{dmath}
+\end{equation}
 \end{subequations}
 where the creation and annihilation operators satisfy
 \begin{subequations}
 \label{eqn:qftLecture23:400}
-\begin{dmath}\label{eqn:qftLecture23:200}
+\begin{equation}\label{eqn:qftLecture23:200}
 \symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:201}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:201}
 \symmetric{b_\Bp^s}{b_\Bq^{r\dagger}} = (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq),
-\end{dmath}
+\end{equation}
 \end{subequations}
 (plus various relations for the \( u,v\)'s.)
 
@@ -104,36 +104,35 @@ Recall that we identified a number of symmetries
 \end{itemize}
 
 Photon interaction can be introduced by utilizing a \( U(1) \) gauge field, demanding invariance under \( U(1)_V \) with \( \alpha = \alpha(x) \).  That is
-\begin{dmath}\label{eqn:qftLecture23:20}
+\begin{equation}\label{eqn:qftLecture23:20}
 \Psi(x) \rightarrow e^{i \alpha(x) } \Psi(x),
-\end{dmath}
+\end{equation}
 which has derivatives
-\begin{dmath}\label{eqn:qftLecture23:280}
+\begin{equation}\label{eqn:qftLecture23:280}
 \partial_\mu \Psi(x) \rightarrow
 e^{i \alpha(x) } \lr{ \partial_\mu \Psi(x) + i \partial_\mu \alpha(x) \Psi(x) }.
-\end{dmath}
+\end{equation}
 
 Solution.  Introduce \( A_\mu(x) \), such that under \( U(1)_V \) we have
-
-\begin{dmath}\label{eqn:qftLecture23:300}
+\begin{equation}\label{eqn:qftLecture23:300}
 A_\mu(x) \rightarrow A_\mu(x) - \inv{e} \partial_\mu \alpha(x)
-\end{dmath}
+\end{equation}
 where ``e'' is a dimensionless coupling constant
-\begin{dmath}\label{eqn:qftLecture23:320}
+\begin{equation}\label{eqn:qftLecture23:320}
 \partial_\mu \Psi(x) \rightarrow
 \lr{ \partial_\mu + i e A_\mu } \Psi
 \rightarrow
 e^{i \alpha(x)} \lr{ \partial_\mu \Psi + \cancel{ i \partial_\mu \alpha} \Psi - \cancel{ i \partial_\mu \alpha } \Psi }
-\end{dmath}
+\end{equation}
 
 We've now constructed the QED Lagrangian density
-\begin{dmath}\label{eqn:qftLecture23:40}
+\begin{equation}\label{eqn:qftLecture23:40}
 \LL_{\text{QED}} = \oPsi \lr{ i \gamma^\mu \lr{ \partial_\mu + i e A_\mu } - m } \Psi - \inv{4} F_{\mu\nu} F^{\mu\nu}.
-\end{dmath}
+\end{equation}
 %This is Gauged \( U(1)_V \) symmetry.
 
 We may write this as
-\begin{dmath}\label{eqn:qftLecture23:60}
+\begin{equation}\label{eqn:qftLecture23:60}
 \LL_{\text{QED}} =
 \mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
 {
@@ -152,10 +151,10 @@ e \oPsi \gamma_\mu \Psi A^\mu
 {
 interaction Lagrangian
 }
-\end{dmath}
+\end{equation}
 
 We introduce spinor fields \( \Psi_e \) and muon fields \( \Psi_\mu \), so that the total Lagrangian is now
-\begin{dmath}\label{eqn:qftLecture23:80}
+\begin{equation}\label{eqn:qftLecture23:80}
 \LL_{\text{QED}}
 =
 - \inv{4} F_{\mu\nu} F^{\mu\nu}
@@ -167,7 +166,7 @@ e \oPsi_e \gamma_\mu \Psi_e A^\mu
 \oPsi_\mu \lr{ i \gamma^\mu \partial_\mu - m } \Psi_\mu
 -
 e \oPsi_\mu \gamma_\mu \Psi_\mu A^\mu
-\end{dmath}
+\end{equation}
 
 \begin{itemize}
 \item \( m_e \sim 0.5 \,\si{MeV} \)
@@ -175,17 +174,16 @@ e \oPsi_\mu \gamma_\mu \Psi_\mu A^\mu
 \end{itemize}
 
 There are also quark fields that we can add into the mix
-\begin{dmath}\label{eqn:qftLecture23:100}
+\begin{equation}\label{eqn:qftLecture23:100}
 \LL_{\text{quarks}} = \sum_q \oPsi_q \lr{ i \gamma^\mu - m_q } \Psi_q + e Q_q \oPsi_q \gamma^\nu \Psi_q A_\nu
-\end{dmath}
+\end{equation}
 Quark charges are \( Q_q = (2/3, -1/3) \).
 It turns out that the only way to produce quarks is through (electron?) interaction?
 
 Can also introduce a Fermi interaction
-
-\begin{dmath}\label{eqn:qftLecture23:120}
+\begin{equation}\label{eqn:qftLecture23:120}
 \LL_{4-Fermi} = \frac{c}{v^2} \oPsi_\mu \gamma^\nu \lr{ 1 - \gamma_5 } \Psi_{\nu, \mu} - \oPsi_e \lr{ 1 - \gamma_5 } ....
-\end{dmath}
+\end{equation}
 
 We now want to do some calculations with the photon interactions from \cref{eqn:qftLecture23:80}.  In particular, we will study the effects of the \( -e \oPsi_e \gamma_\mu \Psi_e A^\mu \) interaction Lagrangian.
 %This can result in creation and annihilation processes, including pair production (sketched in \cref{fig:l23:l23Fig1}), and
@@ -199,20 +197,20 @@ We now want to do some calculations with the photon interactions from \cref{eqn:
 \index{propagator!fermion}
 
 Before we can study the interaction, we need to determine the structure of the propagator.  For Grassman (anti-commuting) operators
-\begin{dmath}\label{eqn:qftLecture23:220}
+\begin{equation}\label{eqn:qftLecture23:220}
 T( O_f(x) O'_f(x)) =
 \Theta ( x_0 - x_0' ) O_f(x) O_f(x')
 +
 \Theta ( x_0' - x_0 ) O_f(x') O_f(x)
-\end{dmath}
+\end{equation}
 The propagator can be determined from
-\begin{dmath}\label{eqn:qftLecture23:240}
+\begin{equation}\label{eqn:qftLecture23:240}
 \expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 = D_{F_{\alpha \beta}}(x - y),
-\end{dmath}
+\end{equation}
 where \( \alpha, \beta = 1, 2, 3, 4 \).
 
 Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that propagator is
-\begin{dmath}\label{eqn:qftLecture23:260}
+\begin{equation}\label{eqn:qftLecture23:260}
 \begin{aligned}
 &\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 \\
 &=
@@ -246,11 +244,10 @@ Referring back to \cref{eqn:qftLecture23:160}, \cref{eqn:qftLecture23:180}, that
 \lr{ \gamma^\mu_{\alpha\beta} p_\mu - m}
 }
 \end{aligned}
-\end{dmath}
+\end{equation}
 where \( \gamma^\mu_{\alpha\beta} \) are the \( \alpha, \beta \) components of the gamma matrices.
 Now we can replace the \( p_\mu \)'s with derivatives acting on the exponentials
-
-\begin{dmath}\label{eqn:qftLecture23:340}
+\begin{equation}\label{eqn:qftLecture23:340}
 \begin{aligned}
 &\expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0 \\
 &=
@@ -281,22 +278,22 @@ D(y - x) \\
 &-
 i \gamma^0 \delta(x^0 - y^0) \cancel{\lr{ D(x - y) - D(y - x) }},
 \end{aligned}
-\end{dmath}
+\end{equation}
 where we've killed off a factor that is zero (off the light cone?)
 
 We are left with just an action on the Feynman propagator
-\begin{dmath}\label{eqn:qftLecture23:360}
+\begin{equation}\label{eqn:qftLecture23:360}
 \expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
 =
 \lr{ \gamma^\mu_{\alpha\beta} \partial_\mu^{(x)} + m } D_F(x - y)
 =
 \int \frac{d^4 p}{(2 \pi)^4 } \frac{ i ( \gamma^\mu_{\alpha\beta} p_\mu + m ) }{p^2 - m^2 + i \epsilon} e^{-i p \cdot (x - y)}
-\end{dmath}
+\end{equation}
 
 Now that we have a propagator, let's try
-\begin{dmath}\label{eqn:qftLecture23:380}
+\begin{equation}\label{eqn:qftLecture23:380}
 \LL_{\text{int}} = \int dt d^3 x \lr{ e \oPsi \gamma_\mu \Psi A^\mu }.
-\end{dmath}
+\end{equation}
 
 \section{Feynman rules.}
 \index{Feynman rules}
@@ -311,35 +308,35 @@ Compton scattering \( e^{-} \gamma \rightarrow e^{-} \gamma \) as sketched in
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig3}{Compton scattering.}{fig:l23:l23Fig3}{0.15}
 
 To do so we need to determine the Feynman rules for fermions.  For fermions \( \Psi \) and anti-fermions \( \oPsi \) we have
-\begin{dmath}\label{eqn:qftLecture23:440}
+\begin{equation}\label{eqn:qftLecture23:440}
 \begin{aligned}
 \contraction{}{\Psi}{\lvert}{\Bp} \Psi \ket{\Bp, s} &= u^s(p) \\
 \contraction{}{\oPsi}{\lvert}{\Bp} \oPsi \ket{\Bp, s} &= \vbar^s(p) \\
 \contraction{\langle}{\Bp}{, s \rvert}{\Psi} \langle \Bp, s \rvert \Psi &= \ubar^s(p) \\
 \contraction{\langle}{\Bp}{, s \rvert}{\oPsi} \langle \Bp, s \rvert  \oPsi &= v^s(p),
 \end{aligned}
-\end{dmath}
+\end{equation}
 where we mean
-\begin{dmath}\label{eqn:qftLecture23:460}
+\begin{equation}\label{eqn:qftLecture23:460}
 \ket{\Bp, s} = a_\Bp^{s\dagger} \ket{0} \sqrt{ 2 \omega_\Bp },
-\end{dmath}
+\end{equation}
 for fermions, and
-\begin{dmath}\label{eqn:qftLecture23:480}
+\begin{equation}\label{eqn:qftLecture23:480}
 \ket{\Bp, s} = b_\Bp^{s\dagger} \ket{0} \sqrt{ 2 \omega_\Bp },
-\end{dmath}
+\end{equation}
 for anti-fermions.
 
 The flow of fermion and anti-fermion number charge is designated by arrow direction in the diagram, as in the respective diagrams of \cref{fig:l23:l23Fig4}.
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig4}{Flow of \# charge.}{fig:l23:l23Fig4}{0.15}
 
 The Feynman propagator for fermions is
-\begin{dmath}\label{eqn:qftLecture23:500}
+\begin{equation}\label{eqn:qftLecture23:500}
 \frac{ i \lr{ \slashed{p} + m } }{p^2 - m^2 + i \epsilon},
-\end{dmath}
+\end{equation}
 whereas the photon propagator is
-\begin{dmath}\label{eqn:qftLecture23:520}
+\begin{equation}\label{eqn:qftLecture23:520}
 \expectation{ A_\mu A_\nu } = -i \frac{g_{\mu\nu}}{q^2 + i \epsilon}.
-\end{dmath}
+\end{equation}
 
 %\section{Example: \( e^{-} e^{+} \rightarrow \mu^{-} \mu^{+} \).}
 \section{Example: \texorpdfstring{\( e^{-} e^{+} \rightarrow \mu^{-} \mu^{+} \)}{electron-antielectron to muons process}.}
@@ -348,7 +345,7 @@ As an example, consider the process sketched in \cref{fig:l23:l23Fig5}.
 Such a process is ``ultra-relativistic'', in that the electron and positron pair must be moving \underline{very fast} to create muons.
 
 The matrix element is
-\begin{dmath}\label{eqn:qftLecture23:540}
+\begin{equation}\label{eqn:qftLecture23:540}
 \contraction{\langle}{\mu^{+}}{\mu^{-} \rvert \oPsi \gamma^\sigma}{\Psi}
 \bcontraction{\langle \mu^{+}}{\mu^{-}}{\rvert}{\oPsi}
 \contraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi }{A^\sigma}{}{A^\rho}
@@ -378,17 +375,17 @@ incoming electron
 ignoring \( i \epsilon \).
 }
 \ubar^r(k) (-i e \gamma^\sigma ) v^{r'}(k')
-\end{dmath}
+\end{equation}
 \paragraph{Question:} Why are we writing the factors of the matrix element from left to right, corresponding to the right to left reading of the matrix element?
 
 \Cref{eqn:qftLecture23:540} reduces to
-\begin{dmath}\label{eqn:qftLecture23:560}
+\begin{equation}\label{eqn:qftLecture23:560}
 i M
 =
 i \frac{e^2}{q^2}
 \vbar^{s'}(p') \gamma^\rho u^s(p)
 \ubar^r(k) \gamma_\rho v^{r'}(k'),
-\end{dmath}
+\end{equation}
 where the \( (2 \pi)^4 \deltafour(...) \) term hasn't been made explicit.
 
 We'd like to compute the absolute square of \cref{eqn:qftLecture23:560}, and use the following lemma to do so.
@@ -401,7 +398,7 @@ We'd like to compute the absolute square of \cref{eqn:qftLecture23:560}, and use
 \end{equation*}
 } % lemma
 The proof is left to \cref{problem:qftLecture23:1}.  Employing this, we have
-\begin{dmath}\label{eqn:qftLecture23:600}
+\begin{equation}\label{eqn:qftLecture23:600}
 \Abs{M}^2
 =
 \frac{e^4}{q^4}
@@ -418,29 +415,28 @@ v^{s'}(p')
 \vbar^{s'}(p') \gamma^\mu u^s(p)
 \ubar^r(k) \gamma_\mu v^{r'}(k')
 }.
-\end{dmath}
+\end{equation}
 
 The problem can be simplified by computing the cross section that sums over all spins, assuming that the states are not polarized (i.e. average over all the up, down states)%
 \footnote{
 %\makedigression{
 Such an average is related to the density matrix
 \index{density matrix}
-\begin{dmath*}%\label{eqn:qftLecture23:620}
+\begin{equation*}%\label{eqn:qftLecture23:620}
 \rho_{\text{in}} = \sum_{s s'} \ket{s s'} \inv{4} \bra{ s s'}.
-\end{dmath*}
-\begin{dmath*}%\label{eqn:qftLecture23:640}
+\end{equation*}
+\begin{equation*}%\label{eqn:qftLecture23:640}
 \trace{
 \lr{
    e^{i H t} \rho_{\text{in}} e^{i H t} \rho_\txtf
    \ket{r r'} \bra{r r'}
 }
 }
-\end{dmath*}
+\end{equation*}
 %} % digression
 }.
 That is, We want to sum over all the initial and final state polarizations \( \inv{4} \sum_{ss'} \sum_{rr'} \Abs{M}^2 \)
-
-\begin{dmath}\label{eqn:qftLecture23:610}
+\begin{equation}\label{eqn:qftLecture23:610}
 \inv{4} \sum_{ss', rr'} \Abs{M}^2
 =
 \sum_{s s' r r'}
@@ -472,12 +468,12 @@ v^{r'}(k')
 \lr{ \slashed{p'} - m_e }
 \gamma^\mu
 u^s(p),
-\end{dmath}
+\end{equation}
 where we first used the freedom to move the \( \ubar \gamma v, \vbar \gamma u \) terms, which are scalars, and then used
 \cref{thm:qftLecture21:17} to eliminate the sum over \( s', r \) indexes.
 
 Temporarily expressing the remaining factors in coordinates exposes a trace structure.  For example
-\begin{dmath}\label{eqn:qftLecture23:660}
+\begin{equation}\label{eqn:qftLecture23:660}
 \sum_{r'}
 \vbar^{r'}(k')
 \gamma_\rho
@@ -511,9 +507,9 @@ v^{r'}(k')
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
 }},
-\end{dmath}
+\end{equation}
 since the cyclic sum of matrix coordinates can be expressed as a trace, namely \( \trace{A B C} = A_{ab} B_{bc} C_{ca} \).  We are left with
-\begin{dmath}\label{eqn:qftLecture23:680}
+\begin{equation}\label{eqn:qftLecture23:680}
 \inv{4} \sum_{ss', rr'} \Abs{M}^2
 =
 \frac{e^4}{4 q^4}
@@ -530,7 +526,7 @@ since the cyclic sum of matrix coordinates can be expressed as a trace, namely \
 \lr{ \slashed{p'} - m_e }
 \gamma^\mu
 }}.
-\end{dmath}
+\end{equation}
 Each trace is now a product of two, three, or four gamma matrices, which can be reduced using the identities:
 \makelemma{Dirac matrix product traces.}{lemma:qftLecture23:700}{
 \index{Dirac matrix!trace}
@@ -552,7 +548,7 @@ The proof is left to \cref{problem:qftLecture23:2}.
 
 Utilizing the above, and setting \( m_e = 0 \) (compared to \(m_\mu\))
 the \( p, p' \) dependent trace reduces to
-\begin{dmath}\label{eqn:qftLecture23:780}
+\begin{equation}\label{eqn:qftLecture23:780}
 \trace{\lr{
 (\slashed{p} + m_e) \gamma^\nu (\slashed{p'} - m_e) \gamma^\mu
 }}
@@ -590,9 +586,9 @@ p^\nu {p'}^\mu
 +
 p^\mu {p'}^\nu
 },
-\end{dmath}
+\end{equation}
 and the \( k, k' \) dependent trace reduces to
-\begin{dmath}\label{eqn:qftLecture23:800}
+\begin{equation}\label{eqn:qftLecture23:800}
 \trace{ \lr{
 \lr{ \slashed{k'} - m_\mu }
 \gamma_\nu
@@ -657,10 +653,10 @@ m_\mu
    }
    g_{\nu\mu}
 }.
-\end{dmath}
+\end{equation}
 
 We can now multiply out the traces and simplify (\cref{problem:psq:1}) to get
-\begin{dmath}\label{eqn:qftLecture23:820}
+\begin{equation}\label{eqn:qftLecture23:820}
 \inv{4} \sum_{\text{spins}} \Abs{M}^2
 =
 \frac{8 e^4}{q^4}
@@ -669,41 +665,41 @@ We can now multiply out the traces and simplify (\cref{problem:psq:1}) to get
 +   p \cdot k p' \cdot k'
 +   p \cdot p' m_\mu^2
 }.
-\end{dmath}
+\end{equation}
 The next task is to consider these four vector dot products from the center of mass frame for the electrons, as sketched in
 \cref{fig:l23:l23Fig6}.
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig6}{Electron center of mass frame.}{fig:l23:l23Fig6}{0.2}
 Let \( q \) represent the total rest frame four momentum
-\begin{dmath}\label{eqn:qftLecture23:840}
+\begin{equation}\label{eqn:qftLecture23:840}
 q = p + p' = (2 E, \Bzero),
-\end{dmath}
+\end{equation}
 where \( q^2 = 4 E^2 \).
 We also have
 \begin{subequations}
 \label{eqn:qftLecture23:960}
-\begin{dmath}\label{eqn:qftLecture23:860}
+\begin{equation}\label{eqn:qftLecture23:860}
 p \cdot p'
 = \lr{ E, E \zcap} \cdot \lr{ E, -E \zcap }
 =
 E^2 - E^2 (\zcap \cdot (-\zcap))
 =
 2 E^2.
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:880}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:880}
 p \cdot k
 = (E, E \zcap) \cdot (E, \Bk)
 =
 E^2 - E \Norm{\Bk} \cos\theta,
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:900}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:900}
 p \cdot k'
 = (E, E \zcap) \cdot (E, -\Bk)
 =
 E^2 - (E \zcap) \cdot( -\Bk)
 =
 E^2 + E \Norm{\Bk} \cos\theta
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:920}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:920}
 p' \cdot k'
 =
 (E, -E \zcap) \cdot (E, -\Bk)
@@ -711,8 +707,8 @@ p' \cdot k'
 E^2 - (-E \zcap) \cdot( -\Bk)
 =
 E^2 - E \Norm{\Bk} \cos\theta
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture23:940}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture23:940}
 p' \cdot k
 =
 (E, -E \zcap) \cdot (E, \Bk)
@@ -720,18 +716,18 @@ p' \cdot k
 E^2 -(-E \zcap) \cdot \Bk
 =
 E^2 + E \Norm{\Bk} \cos\theta,
-\end{dmath}
+\end{equation}
 \end{subequations}
 but
-\begin{dmath}\label{eqn:qftLecture23:980}
+\begin{equation}\label{eqn:qftLecture23:980}
 \Bk^2 = E^2 - m_\mu^2,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture23:1000}
+\begin{equation}\label{eqn:qftLecture23:1000}
 \Norm{\Bk} = E \sqrt{ 1 - \frac{m_\mu^2}{E^2} }.
-\end{dmath}
+\end{equation}
 We can now put the pieces back together and almost have the non-polarized cross section
-\begin{dmath}\label{eqn:qftLecture23:1020}
+\begin{equation}\label{eqn:qftLecture23:1020}
 \inv{4} \sum_{\text{spins}} \Abs{M}^2
 =
 \frac{ 8 e^4}{ (4 E^2)^2 }
@@ -767,7 +763,7 @@ We can now put the pieces back together and almost have the non-polarized cross 
    +
    2 \frac{m_\mu^2}{E^2}
 },
-\end{dmath}
+\end{equation}
 or
 \boxedEquation{eqn:qftLecture23:1040}{
 \inv{4} \sum_{\text{spins}} \Abs{M}^2
@@ -778,13 +774,13 @@ e^4 \lr{
 }.
 }
 The total (average polarization) differential cross section (\citep{peskin1995introduction} eq. 4.84), is
-\begin{dmath}\label{eqn:qftLecture23:1060}
+\begin{equation}\label{eqn:qftLecture23:1060}
 {\frac{d\sigma}{d\Omega}}_{\text{CM}}
 =
 \inv{ 2 E_A 2 E_B \Abs{v_A - v_B} } \frac{\Abs{\Bk}}{(2 \pi)^2 4 E_{\text{CM}} } \inv{4} \sum_{\text{spins}} \Abs{M}^2.
-\end{dmath}
+\end{equation}
 Plug in \( E_A = E_B = 2 E_{\text{CM}} \), \( v_A - v_B \sim 2 c = 2 \), \( e^2 = 4 \pi \alpha \), and \cref{eqn:qftLecture23:1040} for
-\begin{dmath}\label{eqn:qftLecture23:1080}
+\begin{equation}\label{eqn:qftLecture23:1080}
 {\frac{d\sigma}{d\Omega}}_{\text{CM}}
 =
 \inv{ E_{\text{CM}}^2 (2) } \inv{(4 \pi)^2 E_{\text{CM}}} \frac{E_{\text{CM}}}{2}
@@ -801,9 +797,9 @@ Plug in \( E_A = E_B = 2 E_{\text{CM}} \), \( v_A - v_B \sim 2 c = 2 \), \( e^2 
    1 + \frac{m_\mu^2}{E^2}
    + \lr{ 1 - \frac{m_\mu^2}{E^2} } \cos^2\theta
 }.
-\end{dmath}
+\end{equation}
 Integrating to find the total cross section we have
-\begin{dmath}\label{eqn:qftLecture23:1100}
+\begin{equation}\label{eqn:qftLecture23:1100}
 \sigma_{\text{total}}
 = \int d \Omega \frac{d\sigma}{d\Omega}
 = 2 \pi \int_{-1}^1 d \cos\theta
@@ -827,7 +823,7 @@ Integrating to find the total cross section we have
    1 + \frac{m_\mu^2}{E^2}
 +\inv{3} \lr{ 1 - \frac{m_\mu^2}{E^2} }
 },
-\end{dmath}
+\end{equation}
 or
 \boxedEquation{eqn:qftLecture23:1120}{
 \sigma_{\text{total}}
@@ -841,15 +837,15 @@ or
 where \( E_{\text{CM}} = 2 E \).
 
 At the start of the year dimensional analysis was used to state the total cross section, which was determined to have the form
-\begin{dmath}\label{eqn:qftLecture23:1140}
+\begin{equation}\label{eqn:qftLecture23:1140}
 \sigma_{\text{total}} \sim \frac{\alpha^2}{s},
-\end{dmath}
+\end{equation}
 whereas for \( E \gg m_\mu \) we've now found
-\begin{dmath}\label{eqn:qftLecture23:1160}
+\begin{equation}\label{eqn:qftLecture23:1160}
 \sigma_{\text{total}}
 =
 \frac{4 \pi \alpha^2}{3 E_{\text{CM}}^2 }.
-\end{dmath}
+\end{equation}
 Three months of work has gained us an additional factor of \( 4/3 \)!
 
 %\section{Measurement of intermediate quark scattering processes.}
@@ -870,7 +866,7 @@ If one hypothesizes a proportionality relationship between the hadron (i.e. muon
 \sigma_{\text{total}}(  e^{-} e^{+} \rightarrow \text{quarks} ),
 \end{equation}
 the ratio between the two
-\begin{dmath}\label{eqn:qftLecture23:1200}
+\begin{equation}\label{eqn:qftLecture23:1200}
 R =
 \frac{
 \sigma_{\text{total}}(  e^{-} e^{+} \rightarrow \text{quarks} ) }
@@ -878,7 +874,7 @@ R =
 \sigma_{\text{total}}(  e^{-} e^{+} \rightarrow \text{hadrons} )
 }
 = 3 \sum_q (Q_q)^4,
-\end{dmath}
+\end{equation}
 can be measured, and such measurement was deemed to be one of the validations of the QCD theory.  The \( 3 \sum_q (Q_q)^4 \) expression includes a 3 that is related to quark ``color'', and a sum over only the quark charges \( q \) that are light enough to be produced.  \citep{peskin1995introduction} fig. 5.3 includes an experimental depiction of such a measurement, which has a step function form roughly like
 \cref{fig:l23:l23Fig10}, where the steps occur at the energy levels that are sufficient to produce new quarks.
 \imageFigure{../figures/phy2403-quantum-field-theory/l23Fig10}{\( R \) quark step function.}{fig:l23:l23Fig10}{0.2}

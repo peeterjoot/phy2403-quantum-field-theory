@@ -26,80 +26,83 @@ In \citep{LukeQFT} it is left as an exercise to expand the scalar field Hamilton
 
 \makeanswer{problem:scalarFieldHamiltonian:1}{
 The field operator expanded in terms of the raising and lowering operators is
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:20}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:20}
+\begin{aligned}
 \phi(x)
-=
+&=
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i k \cdot x}
 + a_\Bk^\dagger e^{i k \cdot x}
-}
-=
+} \\
+&=
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t + i \Bk \cdot \Bx}
 +a_\Bk^\dagger e^{i \omega_k t - i \Bk \cdot \Bx}
-}
-=
+} \\
+&=
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t + i \Bk \cdot \Bx}
 +a_{-\Bk}^\dagger e^{i \omega_k t + i \Bk \cdot \Bx}
-}
-=
+} \\
+&=
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t } +a_{-\Bk}^\dagger e^{i \omega_k t}
 }
 e^{ i \Bk \cdot \Bx}
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 Note that \( x \) and \( k \) here are both four-vectors, so this field is dependent on a spacetime point, but the integration is over a spatial volume.  This is discussed in the class notes but also justified nicely in \citep{peskin1995introduction} using the structure of the raising and lower operators.  The trick of reversing the sign above is also from that text.
 
 The Hamiltonian in terms of the fields was
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:40}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:40}
 H = \inv{2} \int d^3 x \lr{ \pi^2 + \lr{ \spacegrad \phi }^2 + \mu^2 \phi^2 }.
-\end{dmath}
+\end{equation}
 
 The field derivatives are
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:60}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:60}
+\begin{aligned}
 \pi
-= \partial_0 \phi
+&= \partial_0 \phi
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t } +a_{-\Bk}^\dagger e^{i \omega_k t}
 }
-e^{ i \Bk \cdot \Bx}
-=
+e^{ i \Bk \cdot \Bx} \\
+&=
 i
 \int \frac{ d^3 k}{ (2 \pi)^{3/2}} \sqrt{ \frac{\omega_k}{2} } \lr{
 -a_\Bk e^{-i \omega_k t } +a_{-\Bk}^\dagger e^{i \omega_k t}
 }
 e^{ i \Bk \cdot \Bx}
 ,
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 and
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:80}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:80}
+\begin{aligned}
 \partial_n \phi
-= \partial_n
+&= \partial_n
 \int \frac{ d^3 k}{ (2 \pi)^{3/2} \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t } +a_{-\Bk}^\dagger e^{i \omega_k t}
 }
-e^{ i \Bk \cdot \Bx}
-=
+e^{ i \Bk \cdot \Bx} \\
+&=
 i
 \int \frac{ d^3 k}{ (2 \pi)^{3/2}} \frac{k^n}{ \sqrt{ 2 \omega_k } } \lr{
 a_\Bk e^{-i \omega_k t } +a_{-\Bk}^\dagger e^{i \omega_k t}
 }
 e^{ i \Bk \cdot \Bx}
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 Introducing a second set of momentum variables \( \Bj \), the momentum portion of the Hamiltonian is
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:100}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:100}
+\begin{aligned}
 \inv{2} \int d^3 x \pi^2
-=
+&=
 -\inv{2}
 \inv{(2 \pi)^{3}}
 \int d^3 x
@@ -119,8 +122,8 @@ d^3 k
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
 e^{ i \Bk \cdot \Bx}
-e^{ i \Bj \cdot \Bx}
-=
+e^{ i \Bj \cdot \Bx} \\
+&=
 -\inv{2}
 \int
 d^3 j
@@ -137,8 +140,8 @@ d^3 k
 -a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
-\deltathree( \Bk + \Bj )
-=
+\deltathree( \Bk + \Bj ) \\
+&=
 -\inv{2}
 \int
 d^3 k
@@ -152,7 +155,7 @@ d^3 k
  \lr{
 -a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
-}
+} \\
 %=
 %-\inv{4}
 %\inv{(2 \pi)^{3}}
@@ -183,7 +186,7 @@ d^3 k
 % - a_\Bj^\dagger a_\Bk e^{-i (\omega_k -\omega_j) t } \deltathree(\Bj - \Bk)
 %- a_\Bj a_\Bk^\dagger e^{-i (\omega_j - \omega_k) t } \deltathree(\Bk - \Bj)
 %}
-=
+&=
 -\inv{4}
 \int
 d^3 k
@@ -194,13 +197,14 @@ d^3 k
 - a_\Bk^\dagger a_\Bk
 - a_{-\Bk} a_{-\Bk}^\dagger
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 For the gradient portion of the Hamiltonian we have
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:120}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:120}
+\begin{aligned}
 \inv{2} \int d^3 x \lr{ \spacegrad \phi }^2
-=
+&=
 -\inv{2}
 \inv{(2 \pi)^{3}}
 \int d^3 x
@@ -218,8 +222,8 @@ d^3 k
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
 e^{ i \Bj \cdot \Bx}
-e^{ i \Bk \cdot \Bx}
-=
+e^{ i \Bk \cdot \Bx} \\
+&=
 -\inv{2}
 \int
 d^3 j
@@ -234,8 +238,8 @@ d^3 k
  a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
-\deltathree(\Bj + \Bk)
-=
+\deltathree(\Bj + \Bk) \\
+&=
 \inv{2}
 \int
 d^3 k
@@ -248,8 +252,8 @@ d^3 k
  \lr{
  a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
-}
-=
+} \\
+&=
 \inv{4}
 \int
 d^3 k
@@ -260,13 +264,14 @@ d^3 k
  + a_\Bk^\dagger a_\Bk
  + a_{-\Bk} a_{-\Bk}^\dagger
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 Finally, for the mass term, we have
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:140}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:140}
+\begin{aligned}
 \inv{2} \int d^3 x \mu^2 \phi^2
-=
+&=
 \frac{\mu^2}{2}
 \inv{(2 \pi)^{3}}
 \int d^3 x
@@ -283,8 +288,8 @@ d^3 k
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
 e^{ i \Bj \cdot \Bx}
-e^{ i \Bk \cdot \Bx}
-=
+e^{ i \Bk \cdot \Bx} \\
+&=
 \frac{\mu^2}{2}
 \int
 d^3 j
@@ -298,8 +303,8 @@ d^3 k
  a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
 }
-\deltathree(\Bj + \Bk)
-=
+\deltathree(\Bj + \Bk) \\
+&=
 \frac{\mu^2}{2}
 \int
 d^3 k
@@ -311,7 +316,7 @@ d^3 k
  \lr{
  a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
-}
+} \\
 %=
 %\frac{\mu^2}{2}
 %\inv{(2 \pi)^{3}}
@@ -338,7 +343,7 @@ d^3 k
 %+a_\Bj a_\Bk^\dagger e^{i (\omega_k - \omega_j) t } \deltathree (\Bk - \Bj)
 %+a_\Bj^\dagger a_\Bk e^{-i (\omega_k + \omega_j) t } \deltathree (\Bj - \Bk)
 %}
-=
+&=
 \frac{\mu^2}{4}
 \int
 d^3 k
@@ -349,11 +354,11 @@ d^3 k
 +a_{-\Bk} a_{-\Bk}^\dagger
 +a_\Bk^\dagger a_\Bk
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 Now all the pieces can be put back together again
-
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:160}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:160}
 \begin{aligned}
 H
 &=
@@ -420,10 +425,10 @@ a_{-\Bk}^\dagger a_\Bk^\dagger e^{2 i \omega_k t }
 }
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 With \( \omega_k^2 = \Bk^2 + \mu^2 \), the time dependent terms are killed leaving
-\begin{dmath}\label{eqn:scalarFieldHamiltonian:180}
+\begin{equation}\label{eqn:scalarFieldHamiltonian:180}
 H
 =
 \inv{2}
@@ -433,8 +438,7 @@ H
   a_\Bk a_\Bk^\dagger
 + a_\Bk^\dagger a_\Bk
 }.
-\end{dmath}
+\end{equation}
 } % answer
-
 %}
 %\EndArticle

@@ -37,16 +37,16 @@
 The problem we are preparing to do was to study the problem of ``particle creation by external classical source''.
 
 We continue with a real scalar field, free, massive, but with an interaction with a source
-\begin{dmath}\label{eqn:qftLecture12:20}
+\begin{equation}\label{eqn:qftLecture12:20}
 S_{\text{int}} = \int d^4 x j(x) \phi(x).
-\end{dmath}
+\end{equation}
 \paragraph{Modern application:} think of \( \phi \) has some SM field and think of \( j \) as due to inflaton (i.e. cosmological inflation interaction) oscillation.  In the inflationary model, the process of ``reheating'' creates all the matter in the universe.  We won't be talking about inflation, but will be considering a toy model that has some similar characteristics to the inflationary theory.
 \index{inflation}
 
 The equation of motion that we end up with is
-\begin{dmath}\label{eqn:qftLecture12:40}
+\begin{equation}\label{eqn:qftLecture12:40}
 \lr{ \partial_\mu \partial^\mu + m^2} \phi = j,
-\end{dmath}
+\end{equation}
 and we wish to solve this using Green's function techniques.
 
 \makedefinition{Klein-Gordon Green's function.}{dfn:qftLecture12:60}{
@@ -57,11 +57,11 @@ The QFT conventions for the Klein-Gordon Green's function is
 } % definition
 
 As usual, we assume that it is possible to find a solution \( \phi \) by convolution
-\begin{dmath}\label{eqn:qftLecture12:80}
+\begin{equation}\label{eqn:qftLecture12:80}
 \phi(x) = i \int d^4 y G(x - y) j(y).
-\end{dmath}
+\end{equation}
 \paragraph{Check:}
-\begin{dmath}\label{eqn:qftLecture12:100}
+\begin{equation}\label{eqn:qftLecture12:100}
 \lr{ \partial_\mu \partial^\mu + m^2} \phi(x)
 =
 i
@@ -70,37 +70,37 @@ i
 =
 i \int d^4 y (-i) \deltafour(x - y) j(y)
 = j(x).
-\end{dmath}
+\end{equation}
 
 Also, as usual, we take out our Fourier transforms, the power tool of physics, and determine the structure of the Green's function by inverting the transform equation
-\begin{dmath}\label{eqn:qftLecture12:120}
+\begin{equation}\label{eqn:qftLecture12:120}
 G(x - y) = \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot (x-y) } \tilde{G}(p).
-\end{dmath}
+\end{equation}
 Operating with Klein-Gordon gives
-\begin{dmath}\label{eqn:qftLecture12:520}
+\begin{equation}\label{eqn:qftLecture12:520}
 \lr{ \partial_\mu \partial^\mu + m^2}
 G(x)
 =
 \int \frac{d^4 p}{(2 \pi)^4}
 \lr{ (-i p_\mu)(-i p^\mu) + m^2 }
 e^{-i p \cdot (x-y) } \tilde{G}(p).
-\end{dmath}
+\end{equation}
 This must equal
-\begin{dmath}\label{eqn:qftLecture12:140}
+\begin{equation}\label{eqn:qftLecture12:140}
 -i \deltafour(x - y) =
 -i \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot (x -y)},
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture12:160}
+\begin{equation}\label{eqn:qftLecture12:160}
 \lr{ m^2 - p_\mu p^\mu } \tilde{G}(p) = -i.
-\end{dmath}
+\end{equation}
 The Green's function in the momentum domain is
-\begin{dmath}\label{eqn:qftLecture12:180}
+\begin{equation}\label{eqn:qftLecture12:180}
 \tilde{G}(p) = \frac{i}{p^2 - m^2}.
-\end{dmath}
+\end{equation}
 
 The inverse transform provides the spatial domain representation of the Green's function
-\begin{dmath}\label{eqn:qftLecture12:200}
+\begin{equation}\label{eqn:qftLecture12:200}
 G(x)
 =
 \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x }
@@ -109,7 +109,7 @@ G(x)
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \int \frac{d p_0}{2 \pi} e^{-i p_0 x^0 }
 \frac{i}{(p_0 - \omega_\Bp)(p_0 + \omega_\Bp)}.
-\end{dmath}
+\end{equation}
 
 In the \( p_0 \) plane, we have two poles at \( p_0 = \pm \omega_\Bp \).
 There are 4 ways to go around the poles, the retarded time deformation that we used to derive the Green's function for the harmonic oscillator, as sketched in \cref{fig:retardedTimeContours:retardedTimeContoursFig1}, the advanced time deformation sketched in \cref{fig:deformationForAdvancedTime:deformationForAdvancedTimeFig2}, and mixed deformations.
@@ -132,7 +132,7 @@ where \( -i (i \Imag(p_0) x_0) < 0 \).
 \imageFigure{../figures/phy2403-quantum-field-theory/feynmanContourFig4}{Feynman propagator contour for \( t > 0 \).}{fig:feynmanContour:feynmanContourFig4}{0.15}
 
 Here we pick up just the pole at \( p_0 = \omega_\Bp \), and take a negatively oriented path
-\begin{dmath}\label{eqn:qftLecture12:220}
+\begin{equation}\label{eqn:qftLecture12:220}
 G_\txtF
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
@@ -149,12 +149,12 @@ G_\txtF
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{ e^{-i \omega_\Bp x^0 } }{2 \omega_\Bp}.
-\end{dmath}
+\end{equation}
 
 \paragraph{Case II.  \( x^0 < 0 \)}
 
 For \( x^0 < 0 \) we use an upper half plane contour with the same deformation around the poles.  This time
-\begin{dmath}\label{eqn:qftLecture12:240}
+\begin{equation}\label{eqn:qftLecture12:240}
 G_\txtF
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
@@ -171,47 +171,47 @@ G_\txtF
 =
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{ e^{i \omega_\Bp x^0 } }{2 \omega_\Bp}.
-\end{dmath}
+\end{equation}
 We've obtained
 a piecewise representation of the Green's function, where the only difference is the sign of the \( i \omega_\Bp x^0 \) exponential.
 
 We can combine
 \cref{eqn:qftLecture12:220}
 \cref{eqn:qftLecture12:240} by using \( \Theta \) functions
-\begin{dmath}\label{eqn:qftLecture12:260}
+\begin{equation}\label{eqn:qftLecture12:260}
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{i \Bp \cdot \Bx}
 \lr{
 e^{-i \omega_\Bp x^0 } \Theta(x_0)
 +
 e^{i \omega_\Bp x^0 } \Theta(-x_0)
 }.
-\end{dmath}
+\end{equation}
 The first integral (without the \(\Theta\) factor) is the Wightman function
 \index{Wightman function}
-%\begin{dmath}\label{eqn:qftLecture12:280}
+%\begin{equation}\label{eqn:qftLecture12:280}
 \boxedEquation{eqn:qftLecture12:280}{
 D(x)
 =
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} \evalbar{e^{-i p \cdot x}}{p^0 = \omega_\Bp}.
 }
-%\end{dmath}
+%\end{equation}
 
 For the second integral, we make a change of variables \( \Bp \rightarrow -\Bp \) leaving
-\begin{dmath}\label{eqn:qftLecture12:300}
+\begin{equation}\label{eqn:qftLecture12:300}
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{i \Bp \cdot \Bx + i \omega_\Bp x^0}
 \rightarrow
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{-i \Bp \cdot \Bx + i \omega_\Bp x^0}
 =
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{-i p \cdot x}
 = D(-x),
-\end{dmath}
+\end{equation}
 so
-%\begin{dmath}\label{eqn:qftLecture12:320}
+%\begin{equation}\label{eqn:qftLecture12:320}
 \index{Feynman propagator}
 \boxedEquation{eqn:qftLecture12:340}{
 G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x).
 }
-%\end{dmath}
+%\end{equation}
 
 \input{qftLecture13PoleShifting.tex}
 
@@ -219,21 +219,21 @@ G_\txtF (x) = \Theta(x^0) D(x) + \Theta(-x^0) D(-x).
 \index{Wightman function}
 
 Recall that the Wightman function \cref{eqn:qftLecture12:280} also had a matrix element representation
-\begin{dmath}\label{eqn:qftLecture12:360}
+\begin{equation}\label{eqn:qftLecture12:360}
 D(x) = \bra{0} \phi(x) \phi(0) \ket{0}.
-\end{dmath}
+\end{equation}
 This can be shown by expansion.
-\begin{dmath}\label{eqn:qftLecture12:380}
+\begin{equation}\label{eqn:qftLecture12:380}
 \bra{0} \phi(x) \phi(0) \ket{0}
 =
 \bra{0}
 \int \frac{d^3 p}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bp}} \evalbar{\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x} }}{p_0 = \omega_\Bp}
 \int \frac{d^3 q}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bq}} \lr{ a_\Bq^\dagger + a_\Bq }
 \ket{0}.
-\end{dmath}
+\end{equation}
 Since \( a_\Bq \ket{0} = 0 = \bra{0} a_\Bp^\dagger \), \cref{eqn:qftLecture12:380}
 reduces to
-\begin{dmath}\label{eqn:qftLecture12:540}
+\begin{equation}\label{eqn:qftLecture12:540}
 \bra{0} \phi(x) \phi(0) \ket{0}
 =
 \bra{0}
@@ -279,18 +279,18 @@ e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 =
 \int \frac{d^3 p}{(2 \pi)^3} \evalbar{ \frac{e^{-i p \cdot x}}{2 \omega_\Bp} }
 {p_0 = \omega_\Bp}.
-\end{dmath}
+\end{equation}
 
 \section{Retarded Green's function.}
 
 Claim: Retarded Green's function (bumps up contour) can be written
-\begin{dmath}\label{eqn:qftLecture12:400}
+\begin{equation}\label{eqn:qftLecture12:400}
 D_R(x) = \theta(x_0) (D(x) - D(-x)),
-\end{dmath}
+\end{equation}
 where \( D(x) \) is given by \cref{eqn:qftLecture12:280}.
 Proof: The upper half plane contour (\(x_0 < 0\)) is zero since it encloses no poles.  For the
 lower half plane contour we have
-\begin{dmath}\label{eqn:qftLecture12:420}
+\begin{equation}\label{eqn:qftLecture12:420}
 \evalbar{D_R(x)}{x_0 > 0}
 =
 i \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx} \int \frac{dp_0}{2 \pi} e^{-i p_0 x^0 }
@@ -314,21 +314,19 @@ e^{i \omega_\Bp x^0 }
 }
 =
 D(x) - D(-x).
-\end{dmath}
+\end{equation}
 
 What does the field look like in terms of the propagator?
 Assuming that \( \phi_0 \) satisfies the homogeneous equation, we have
-\begin{dmath}\label{eqn:qftLecture12:440}
+\begin{equation}\label{eqn:qftLecture12:440}
 \phi(x)
 = \phi_0(x) + i \int d^4 y D_R(x - y) j(y)
 = \phi_0(x) + i \int d^3 y d y_0 \Theta(x_0 - y_0) \lr{ D(x - y) - D(y - x) } j(y).
-\end{dmath}
+\end{equation}
 
 Imagine that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}.
-
 \imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.15}
-
-\begin{dmath}\label{eqn:qftLecture12:460}
+\begin{equation}\label{eqn:qftLecture12:460}
 \begin{aligned}
 &\evalbar{\phi(x)}{x^0 > t_{\text{after}}}
 = \phi_0(x) \\
@@ -339,13 +337,13 @@ Imagine that we have a windowed source function \( j(y^0, \By) \), as sketched i
    \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } e^{i p \cdot (x - y)} j(y)
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Define
-\begin{dmath}\label{eqn:qftLecture12:480}
+\begin{equation}\label{eqn:qftLecture12:480}
 \tilde{j}(p) = \int d^4 y e^{i p \cdot y} j(y),
-\end{dmath}
+\end{equation}
 which gives
-\begin{dmath}\label{eqn:qftLecture12:500}
+\begin{equation}\label{eqn:qftLecture12:500}
 \evalbar{\phi(x)}{x^0 > t_{\text{after}}}
 = \phi_0(x)
 + i \int \frac{d^3 p }{(2 \pi)^3}
@@ -357,7 +355,7 @@ which gives
    - e^{i p \cdot x} \tilde{j}(-p)
 }
 }{p_0 = \omega_\Bp}.
-\end{dmath}
+\end{equation}
 We will interpret this in the next lecture, and start in on Feynman diagrams.
 
 %}

@@ -42,21 +42,21 @@
 
 We imagined that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}, which is acting as a forcing source for the non-homogeneous Klein-Gordon equation
 %\imageFigure{../figures/phy2403-quantum-field-theory/windowedImpulseFig5}{Finite window impulse response.}{fig:windowedImpulse:windowedImpulseFig5}{0.2}
-\begin{dmath}\label{eqn:qftLecture13:20}
+\begin{equation}\label{eqn:qftLecture13:20}
 \lr{ \partial_\mu \partial^\mu + m^2 } \phi = j.
-\end{dmath}
+\end{equation}
 Our solution was
-\begin{dmath}\label{eqn:qftLecture13:40}
+\begin{equation}\label{eqn:qftLecture13:40}
 \phi(x) = \phi(x_0) + i \int d^4 y D_R( x - y) j(y),
-\end{dmath}
+\end{equation}
 where \( \phi(x_0) \) obeys the homogeneous equation, and
-\begin{dmath}\label{eqn:qftLecture13:60}
+\begin{equation}\label{eqn:qftLecture13:60}
 D_R(x - y) = \Theta(x^0 - y^0) \lr{ D(x - y) - D(y - x) },
-\end{dmath}
+\end{equation}
 and \( D(x) = \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp } \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \) is the Wightman function.
 
 For \( x^0 > t_{\text{after}} \)
-\begin{dmath}\label{eqn:qftLecture13:80}
+\begin{equation}\label{eqn:qftLecture13:80}
 \phi(x)
 =
 \int \frac{d^3 p}{(2\pi)^3 \sqrt{ 2 \omega_\Bp }}
@@ -72,9 +72,9 @@ For \( x^0 > t_{\text{after}} \)
 }{
    p^0 = \omega_\Bp
 }
-\end{dmath}
+\end{equation}
 where we have used \( \tilde{j}^\conj(p_0, \Bp) = \tilde{j}(p_0, -\Bp) \).  This gives
-\begin{dmath}\label{eqn:qftLecture13:100}
+\begin{equation}\label{eqn:qftLecture13:100}
 \phi(x) =
 \int \frac{d^3 p}{(2\pi)^3 \sqrt{ 2 \omega_\Bp } }
 \evalbar{
@@ -87,25 +87,25 @@ where we have used \( \tilde{j}^\conj(p_0, \Bp) = \tilde{j}(p_0, -\Bp) \).  This
 }{
 p^0 = \omega_\Bp
 }
-\end{dmath}
+\end{equation}
 
 It was left as an exercise to show that given
-\begin{dmath}\label{eqn:qftLecture13:120}
+\begin{equation}\label{eqn:qftLecture13:120}
 H = \int d^3 p \lr{ \inv{2} \pi^2 + \inv{2} \lr{ \spacegrad \phi}^2 + \frac{m^2}{2} \phi^2 },
-\end{dmath}
+\end{equation}
 we obtain
-\begin{dmath}\label{eqn:qftLecture13:140}
+\begin{equation}\label{eqn:qftLecture13:140}
 H_{\text{after}} =
 \int d^3 p \omega_\Bp
 \lr{ a_\Bp^\dagger - i \frac{\tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
 \lr{ a_\Bp + i \frac{\tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }.
-\end{dmath}
+\end{equation}
 
 System in ground state
 \begin{equation}\label{eqn:qftLecture13:160}
 \bra{0} \hatH_{\text{before}} \ket{0} = \expectation{E}_{\text{before}} = 0.
 \end{equation}
-\begin{dmath}\label{eqn:qftLecture13:180}
+\begin{equation}\label{eqn:qftLecture13:180}
 \bra{0} \hatH_{\text{after}} \ket{0} = \expectation{E}_{\text{after}}
 =
 \int d^3 p \omega_\Bp
@@ -113,11 +113,11 @@ System in ground state
 =
 \inv{2} \int d^3 p
 \Abs{\tilde{j}(p)}^2.
-\end{dmath}
+\end{equation}
 We can identify
-\begin{dmath}\label{eqn:qftLecture13:200}
+\begin{equation}\label{eqn:qftLecture13:200}
 N(\Bp) =
 \frac{\Abs{\tilde{j}(p)}^2}{2 \omega_\Bp},
-\end{dmath}
+\end{equation}
 as the number density of particles with momentum \( \Bp \).
 

@@ -23,7 +23,7 @@ O_1 A_i O_2 A_k =   O_1 O_2 \contraction{}{A}{{}_i} {A}  A_i A_k ~,
 
  Finally, we use $:A \ldots B:$ to denote the expression where all annihilation operators appear to the right of all creation operators, i.e. the usual normal ordered expression. Then,
  Wick's theorem---as used in many body physics---is formulated as follows:
-\begin{dmath}\label{w1}
+\begin{equation}\label{w1}
 \begin{aligned}
  A_1 \ldots A_n &=
 \normalorder{A_1 \ldots A_n}  \\
@@ -37,7 +37,7 @@ O_1 A_i O_2 A_k =   O_1 O_2 \contraction{}{A}{{}_i} {A}  A_i A_k ~,
 \normalorder{\contraction{}{A}{{}_1}{A} A_1 A_2 \contraction{}{A}{{}_3}{A} A_3 A_4 \ldots A_n}
  + \ldots.
 \end{aligned}
-\end{dmath}
+\end{equation}
 % \begin{eqnarray}
 % \label{w1}
 % A_1 \ldots A_n &=& \;\;\; :A_1 \ldots A_n:\nonumber \\
@@ -60,10 +60,10 @@ notice
   By the chain of logic described above, you have proven \cref{lemma}.
 
 Notice also that the lemma \cref{lemma} holds also if the product $$:A_1 A_2 \ldots A_n:$$ is replaced by
-\begin{dmath}\label{eqn:ProblemSet4Problem1:160}
+\begin{equation}\label{eqn:ProblemSet4Problem1:160}
 \normalorder{
 A_1 \contraction{}{A}{{}_2\ldots}{A} A_2 \ldots  A_p \ldots A_n},
-\end{dmath}
+\end{equation}
   i.e. with the product of operators with an arbitrary number of contractions (one, as written above), with a trivial modification of the last term (since, obviously, you can not contract $B$ with contractions).
 \makesubproblem{}{qft:problemSet4:1b}
 Now prove the actual Wick theorem \cref{w1}. Assuming that it holds for $n=2$. Imagine that \cref{w1} holds for $n$ operators and prove that it holds for $n+1$, using \cref{lemma}.
@@ -104,7 +104,7 @@ For extra bonus, generalize all theorems above to anti commuting fields.
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet4:1a}
 The normal ordered sequence \( \normalorder{ A_1 A_2 \ldots A_n} B \) has the form
-\begin{dmath}\label{eqn:ProblemSet4Problem1:20}
+\begin{equation}\label{eqn:ProblemSet4Problem1:20}
 a_{k_1}^\dagger
 \ldots
 a_{k_r}^\dagger
@@ -112,9 +112,9 @@ a_{k_{r+1}}
 \ldots
 a_{k_n}
 B
-\end{dmath}
+\end{equation}
 so if \( B = a_{k_{n+1}} \) is an anhillation operator the result is already normal ordered.  Since the Wick contraction with such a \( B \) is zero for all \( A_i \), that is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:40}
+\begin{equation}\label{eqn:ProblemSet4Problem1:40}
 \begin{aligned}
 \contraction{}{a}{{}_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} }{a}
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}
@@ -127,19 +127,19 @@ a_{k_1}^\dagger a_{k_2}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}
 &= 0,
 \end{aligned}.
-\end{dmath}
+\end{equation}
 Summarizing, we see that for anhillation operators \( B \) we have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:100}
+\begin{equation}\label{eqn:ProblemSet4Problem1:100}
 \normalorder{A_1 A_2 \ldots A_n} B =  \normalorder{A_1 A_2 \ldots A_n  B},
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet4Problem1:200}
+\begin{equation}\label{eqn:ProblemSet4Problem1:200}
 \sum\limits_{1 \le k \le n} \normalorder{A_1 \ldots \contraction{}{A}{{}_k \ldots A_n}{B} A_k \ldots A_n B} = 0,
-\end{dmath}
+\end{equation}
 so \cref{lemma} is valid for any anhillation operator \( B \).
 
 For creation operators \( B \), we can cast the commutation relations into Wick form
-\begin{dmath}\label{eqn:ProblemSet4Problem1:60}
+\begin{equation}\label{eqn:ProblemSet4Problem1:60}
 a_m a_k^\dagger
 =
 a_k^\dagger a_m + (2\pi)^3 \deltathree(k - m)
@@ -147,9 +147,9 @@ a_k^\dagger a_m + (2\pi)^3 \deltathree(k - m)
 a_k^\dagger a_m +
 \contraction{}{a}{{}_m}{a}
 a_m a_k^\dagger,
-\end{dmath}
+\end{equation}
 and use this iteratively to percolate \( B = a_{n+1}^\dagger \) through \( \normalorder{A_1 A_2 \ldots A_n} \).  That is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:80}
+\begin{equation}\label{eqn:ProblemSet4Problem1:80}
 \normalorder{A_1 A_2 \ldots A_n} B
 =
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}^\dagger
@@ -216,9 +216,9 @@ a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
-\end{dmath}
+\end{equation}
 We can continue like this until \( a^\dagger_{k_{n+1}} \) has percolated all the way through the anhillation operators
-\begin{dmath}\label{eqn:ProblemSet4Problem1:120}
+\begin{equation}\label{eqn:ProblemSet4Problem1:120}
 \normalorder{A_1 A_2 \ldots A_n} B
 =
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
@@ -244,9 +244,9 @@ a_{k_{r+1}}
 \ldots
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
-\end{dmath}
+\end{equation}
 By the Wick operator definition, this may be rewritten with the \( a^\dagger_{k_{n+1}} \) at the end, that is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:140}
+\begin{equation}\label{eqn:ProblemSet4Problem1:140}
 \normalorder{A_1 A_2 \ldots A_n} B
 =
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
@@ -279,7 +279,7 @@ a_{k_{r+1}}
 \ldots
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
-\end{dmath}
+\end{equation}
 Since \( \contraction{}{a}{{}^\dagger_{k_{i}}}{a} a^\dagger_{k_{i}} a_{k_{n+1}}^\dagger = 0 \) we may add in contractions with all the creation operators.  Doing that completes the proof of \cref{lemma}.
 
 For a contraction such as that of \cref{eqn:ProblemSet4Problem1:160} we need only modify the trailing sum of contractions.  That is
@@ -301,7 +301,7 @@ Let's start in a more pedestrian fashion than diving straight into the induction
 \begin{itemize}
 \item \( n = 2 \).
 We'd like to expand \( A B \), say, in terms of contractions.  Because \( A = \normalorder{A} \), that is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:220}
+\begin{equation}\label{eqn:ProblemSet4Problem1:220}
 A B
 = \normalorder{A} B
 =
@@ -309,10 +309,10 @@ A B
 \contraction{}{A}{}{B}
 A B
 ,
-\end{dmath}
+\end{equation}
 by \cref{lemma}.  This proves \cref{w1} for the \( n = 2 \) case.
 \item \( n = 3 \).  Let's now expand \( A B C \)
-\begin{dmath}\label{eqn:ProblemSet4Problem1:240}
+\begin{equation}\label{eqn:ProblemSet4Problem1:240}
 A B C
 =
 (A B) C
@@ -322,9 +322,9 @@ A B C
    \contraction{}{A}{}{B}
    A B
 } C.
-\end{dmath}
+\end{equation}
 We are now able to apply \cref{lemma} to \( \normalorder{ AB } C \), to find
-\begin{dmath}\label{eqn:ProblemSet4Problem1:260}
+\begin{equation}\label{eqn:ProblemSet4Problem1:260}
 A B C
 =
 \lr{
@@ -349,11 +349,11 @@ A B C
 \normalorder{ \contraction{}{ A }{B}{C } A B C }
 +
 \normalorder{ \contraction{}{A}{}{B} A B C },
-\end{dmath}
+\end{equation}
 where we also made use of \( \normalorder{ \contraction{}{A}{}{B} A B } C = \normalorder{ \contraction{}{A}{}{B} A B C } \).
 This proves \cref{w1} for the \( n = 3 \) case.
 \item \( n = 4 \).  This time we have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:300}
+\begin{equation}\label{eqn:ProblemSet4Problem1:300}
 \begin{aligned}
 A B C D
 &=
@@ -401,11 +401,11 @@ A B C D
    \bcontraction{}{C}{}{D} C D
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 This time we have the normal ordering of all the operators, of all the operators with one set of contractions and of all the operators with two sets of contractions (although in that last case, the normal ordering is redundant.)
 
 \item \( n + 1 \).  The way to proceed is now clear, but is just hard to write.
-\begin{dmath}\label{eqn:ProblemSet4Problem1:280}
+\begin{equation}\label{eqn:ProblemSet4Problem1:280}
 \begin{aligned}
 &A_1 \ldots A_n A_{n+1}
 =
@@ -449,14 +449,14 @@ A_k\ldots A_n A_{n+1}
 }
 + \cdots
 \end{aligned}
-\end{dmath}
+\end{equation}
 Reading between the dots, we see that this is the sum of all possible normal-ordered contractions, completing the proof of \cref{w1}\footnote{While this barrage of visually discordant contractions can be thought of as a proof of the result, I find the concrete example of the \( n = 4 \) case much more satisfying as a ``proof'', despite not being general.  There the idea is clear, even without the formalism of an inductive proof.}.
 
 \end{itemize}
 
 \makeSubAnswer{}{qft:problemSet4:1c}
 Let's first show that our new contraction definition \cref{c5} is equivalent to \cref{c2} when the operators are creation and anhillation operators.  It's easy to see that all the zero cases from \cref{c2} are recovered from this new definition
-\begin{dmath}\label{eqn:ProblemSet4Problem1:320}
+\begin{equation}\label{eqn:ProblemSet4Problem1:320}
 \begin{aligned}
 \contraction{}{a}{{}_{\Bp}^\dagger }{a}
 a_{\Bp}^\dagger a_{\Bq}^\dagger &= \bra{0} a_{\Bp}^\dagger a_{\Bq}^\dagger \ket{0} = 0 \\
@@ -465,9 +465,9 @@ a_{\Bp}^\dagger a_{\Bq} &= \bra{0} a_{\Bp}^\dagger a_{\Bq} \ket{0} = 0 \\
 \contraction{}{a}{{}_\Bq}{a}
 a_{\Bp} a_{\Bq} &= \bra{0} a_{\Bp} a_{\Bq} \ket{0} = 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 The only non-zero case is
-\begin{dmath}\label{eqn:ProblemSet4Problem1:340}
+\begin{equation}\label{eqn:ProblemSet4Problem1:340}
 \contraction{}{a}{{}_{\Bp}}{a}
 a_{\Bp} a_{\Bq}^\dagger
 =
@@ -482,11 +482,11 @@ a_{\Bp}
 \ket{0}
 =
 (2 \pi)^3 \deltathree(\Bp - \Bq),
-\end{dmath}
+\end{equation}
 which also matches \cref{c2} as desired, showing that \cref{c5} provides a nice compact representation of the contraction operator for any pair of creation and anhillation operators.
 
 Now let's consider a pair of time dependent linear combinations of creation and anhillation operators.  Let
-\begin{dmath}\label{eqn:ProblemSet4Problem1:360}
+\begin{equation}\label{eqn:ProblemSet4Problem1:360}
 \begin{aligned}
 A_i
 &= \int \frac{d^3 p}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp }}
@@ -503,9 +503,9 @@ A_j
    e^{-i q \cdot y} a_\Bq
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 For such a combination let's show that \cref{w1} still applies.
-\begin{dmath}\label{eqn:ProblemSet4Problem1:380}
+\begin{equation}\label{eqn:ProblemSet4Problem1:380}
 A_i A_j
 =
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
@@ -579,9 +579,9 @@ A_i A_j
    e^{-i p \cdot x}
    e^{i q \cdot y}
    (2 \pi)^3 \deltathree(\Bp - \Bq).
-\end{dmath}
+\end{equation}
 However,
-\begin{dmath}\label{eqn:ProblemSet4Problem1:400}
+\begin{equation}\label{eqn:ProblemSet4Problem1:400}
 \contraction{}{A}{{}_i }{A}
 A_i A_j
 =
@@ -626,11 +626,11 @@ A_i A_j
    e^{-i p \cdot x}
    e^{i q \cdot y}
  (2 \pi)^3 \deltathree(\Bp - \Bq).
-\end{dmath}
+\end{equation}
 It happens that we have a symbolic designation for this combination, namely \(
 \contraction{}{A}{{}_i }{A}
 A_i A_j = D(x - y) \), but the take away is really just the \( n = 2 \) statement of Wick's theorem
-\begin{dmath}\label{eqn:ProblemSet4Problem1:420}
+\begin{equation}\label{eqn:ProblemSet4Problem1:420}
 A_i A_j =
 \normalorder{
 A_i A_j }
@@ -638,23 +638,23 @@ A_i A_j }
 \contraction{}{A}{{}_i }{A}
 A_i A_j
 ,
-\end{dmath}
+\end{equation}
 which we see now applies to both pure creation and anhillation operators, as well as the combinations that we use to represent fields.  We could have just as easily have used a less specific linear combination than a presumed field -- had we done so, we'd have the same result, but wouldn't have been able to identify the contraction as \( D(x-y) \).
 
 As \cref{eqn:ProblemSet4Problem1:420} was the starting point for the inductive procedure that we used to prove \cref{w1}, that theorem holds verbatim as desired.
 
 \makeSubAnswer{}{qft:problemSet4:1d}
 We are now asked to make one final redefinition of the contraction operator
-\begin{dmath}\label{eqn:ProblemSet4Problem1:440}
+\begin{equation}\label{eqn:ProblemSet4Problem1:440}
   \contraction{}{A}{{}_i} {A}  A_i A_j = \langle 0 \vert T(A_i A_j)\vert 0 \rangle~,
-\end{dmath}
+\end{equation}
 This is clearly still identical to either of the previous definitions when \( A_i, A_j \) are creation and anhillation operators.
 
 Let's consider a couple concrete cases again, starting with
 \( n = 2 \) case again, writing \( A = A_i = \phi(x), B = A_j = \phi(y) \) defined by
 \cref{eqn:ProblemSet4Problem1:360}.
 For the \( x^0 > y^0 \) case we have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:520}
+\begin{equation}\label{eqn:ProblemSet4Problem1:520}
 T( A B )
 =
 A B
@@ -693,9 +693,9 @@ A B
 \normalorder{AB}
 +
 D(x - y),
-\end{dmath}
+\end{equation}
 on the other hand, if \( x^0 < y^0 \), using the same procedure, we must have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:540}
+\begin{equation}\label{eqn:ProblemSet4Problem1:540}
 T( A B )
 =
 B A
@@ -715,23 +715,23 @@ B A
 \normalorder{AB}
 +
 D(y - x),
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet4Problem1:480}
+\begin{equation}\label{eqn:ProblemSet4Problem1:480}
 T(AB) = \normalorder{AB} + D_F(x - y).
-\end{dmath}
+\end{equation}
 Since \( D_F(x - y) = \bra{0} T( \phi(x) \phi(y)) \ket{0} = \contraction{}{A}{}{B} AB \), we have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:500}
+\begin{equation}\label{eqn:ProblemSet4Problem1:500}
 T(AB)
 = \normalorder{AB} + \contraction{}{A}{}{B} AB
 = \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB },
-\end{dmath}
+\end{equation}
    which proves \cref{w2} for the \( n = 2 \) case.
 
    Now consider the \( n = 3 \) case, where \( A,B \) are defined as above, and \( C = \phi(z) \) is a third field.
    \begin{enumerate}[I.]
    \item For \( x^0 > y^0 > z^0 \), we have
-   \begin{dmath}\label{eqn:ProblemSet4Problem1:560}
+   \begin{equation}\label{eqn:ProblemSet4Problem1:560}
    T(A B C)
    =
    A B C
@@ -748,9 +748,9 @@ T(AB)
    \normalorder{\contraction{}{A}{B}{C} ABC }
    +
    \normalorder{\contraction{}{A}{}{B} AB } C,
-   \end{dmath}
+   \end{equation}
    \item For \( y^0 > x^0 > z^0 \), we have
-   \begin{dmath}\label{eqn:ProblemSet4Problem1:580}
+   \begin{equation}\label{eqn:ProblemSet4Problem1:580}
    T( A B C )
    =
    B A C
@@ -758,10 +758,10 @@ T(AB)
    T( B A ) C
    =
    T( A B ) C
-   \end{dmath}
+   \end{equation}
    which equals \cref{eqn:ProblemSet4Problem1:560}.
    \item For \( z^0 > x^0 > y^0 \), we have
-   \begin{dmath}\label{eqn:ProblemSet4Problem1:600}
+   \begin{equation}\label{eqn:ProblemSet4Problem1:600}
    T( A B C )
    =
    C A B
@@ -778,18 +778,18 @@ T(AB)
    \normalorder{\contraction{}{C}{A}{B} CAB }
    +
    C \normalorder{\contraction{}{A}{}{B} AB },
-   \end{dmath}
+   \end{equation}
    which also equals \cref{eqn:ProblemSet4Problem1:560}.
    \item For \( z^0 > y^0 > x^0 \), we have
-   \begin{dmath}\label{eqn:ProblemSet4Problem1:620}
+   \begin{equation}\label{eqn:ProblemSet4Problem1:620}
    T( A B C )
    = C B A
    = C T( B A )
    = C T( A B ),
-   \end{dmath}
+   \end{equation}
    which equals \cref{eqn:ProblemSet4Problem1:600}.
    \item For \( x^0 > z^0 > y^0 \), we have
-   \begin{dmath}\label{eqn:ProblemSet4Problem1:640}
+   \begin{equation}\label{eqn:ProblemSet4Problem1:640}
 T( A B C )
 =
 A C B
@@ -806,10 +806,10 @@ B
 \normalorder{\contraction{A}{C}{}{B} ACB }
 +
 \normalorder{\contraction{}{A}{}{C} AC } B,
-\end{dmath}
+\end{equation}
 which equals \cref{eqn:ProblemSet4Problem1:560}.
 \item For \( y^0 > z^0 > x^0 \), we have
-\begin{dmath}\label{eqn:ProblemSet4Problem1:660}
+\begin{equation}\label{eqn:ProblemSet4Problem1:660}
 T( A B C )
 =
 B C A
@@ -817,7 +817,7 @@ B C A
 B T( C A )
 =
 B T( A C ),
-\end{dmath}
+\end{equation}
 which equals \cref{eqn:ProblemSet4Problem1:640}.
 \end{enumerate}
 All cases considered, we have now proven \cref{w2} for the \( n = 3 \) case.

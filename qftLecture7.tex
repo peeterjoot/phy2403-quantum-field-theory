@@ -35,7 +35,7 @@ Given the complexities of the non-linear systems we want to investigate, examina
 
 \begin{itemize}
 \item ``internal'' symmetries.  This means that the symmetries do not act on space time \( (\Bx, t) \).  An example is
-\begin{dmath}\label{eqn:qftLecture7:20}
+\begin{equation}\label{eqn:qftLecture7:20}
 \phi^i =
 \begin{bmatrix}
 \psi_1 \\
@@ -43,16 +43,16 @@ Given the complexities of the non-linear systems we want to investigate, examina
 \vdots \\
 \psi_N \\
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 If we map
 \( \phi^i \rightarrow O^i_j \phi^j \) where \( O^\T O = 1 \), then we call this an internal symmetry.
 The corresponding Lagrangian density might be something like
-\begin{dmath}\label{eqn:qftLecture7:40}
+\begin{equation}\label{eqn:qftLecture7:40}
 \LL = \inv{2} \partial_\mu \Bphi \cdot \partial^\mu \Bphi - \frac{m^2}{2} \Bphi \cdot \Bphi - V(\Bphi \cdot \Bphi)
-\end{dmath}
+\end{equation}
 \item spacetime symmetries: Translations, rotations, boosts, dilatations.  We will consider continuous symmetries, which can be defined as a succession of infinitesimal transformations.
 An example from \(O(2)\) is a rotation
-\begin{dmath}\label{eqn:qftLecture7:60}
+\begin{equation}\label{eqn:qftLecture7:60}
 \begin{bmatrix}
 \phi^1 \\
 \phi^2 \\
@@ -66,9 +66,9 @@ An example from \(O(2)\) is a rotation
 \phi^1 \\
 \phi^2
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 or if \( \alpha \sim 0 \)
-\begin{dmath}\label{eqn:qftLecture7:80}
+\begin{equation}\label{eqn:qftLecture7:80}
 \begin{bmatrix}
 \phi^1 \\
 \phi^2 \\
@@ -93,15 +93,15 @@ or if \( \alpha \sim 0 \)
 \phi^2 \\
 -\phi^1
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 In index notation we write
-\begin{dmath}\label{eqn:qftLecture7:100}
+\begin{equation}\label{eqn:qftLecture7:100}
 \phi^i \rightarrow \phi^i + \alpha e^{ij} \phi^j,
-\end{dmath}
+\end{equation}
 where \( \epsilon^{12} = +1, \epsilon^{21} = -1 \) is the completely antisymmetric tensor.  This can be written in more general form as
-\begin{dmath}\label{eqn:qftLecture7:120}
+\begin{equation}\label{eqn:qftLecture7:120}
 \phi^i \rightarrow \phi^i + \delta \phi^i,
-\end{dmath}
+\end{equation}
 where \( \delta \phi^i \) is considered to be an infinitesimal transformation.
 \end{itemize}
 
@@ -123,19 +123,19 @@ Noether's first theorem applies to global symmetries, where the parameters are t
 
 \begin{proof}
 Given a Lagrangian density \( \LL(\phi(x), \phi_{,\mu}(x)) \), where \( \phi_{,\mu} \equiv \partial_\mu \phi \).  The action is
-\begin{dmath}\label{eqn:qftLecture7:160}
+\begin{equation}\label{eqn:qftLecture7:160}
 S = \int d^d x \LL.
-\end{dmath}
+\end{equation}
 The equations of motion are invariant if under \( \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta_\epsilon \phi(x)\), we have
-\begin{dmath}\label{eqn:qftLecture7:180}
+\begin{equation}\label{eqn:qftLecture7:180}
 \LL(\phi) \rightarrow \LL'(\phi') = \LL(\phi) + \partial_\mu J_\epsilon^\mu(\phi) + O(\epsilon^2).
-\end{dmath}
+\end{equation}
 Then there exists a conserved current.  In QFT we say that the E.O.M's are ``on shell''.
 Note that \cref{eqn:qftLecture7:180} is a
 symmetry since we have added a total derivative to the Lagrangian which leaves the equations of motion of unchanged.
 
 In general, the change of action under arbitrary variation of \( \delta \phi\) of the fields is
-\begin{dmath}\label{eqn:qftLecture7:200}
+\begin{equation}\label{eqn:qftLecture7:200}
 \delta S
 =
 \int d^d x \delta \LL(\phi, \partial_\mu \phi)
@@ -154,20 +154,20 @@ In general, the change of action under arbitrary variation of \( \delta \phi\) o
 =
 \int d^d x
 \partial_\mu \lr{ \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi }.
-\end{dmath}
+\end{equation}
 However from \cref{eqn:qftLecture7:180}
-\begin{dmath}\label{eqn:qftLecture7:220}
+\begin{equation}\label{eqn:qftLecture7:220}
 \delta_\epsilon \LL = \partial_\mu J_\epsilon^\mu(\phi, \partial_\mu \phi),
-\end{dmath}
+\end{equation}
 so after equating these variations we fine that
-\begin{dmath}\label{eqn:qftLecture7:240}
+\begin{equation}\label{eqn:qftLecture7:240}
 \delta S = \int d^d x \delta_\epsilon \LL = \int d^d x \partial_\mu J_\epsilon^\mu,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture7:260}
+\begin{equation}\label{eqn:qftLecture7:260}
 0 = \int d^d x
 \partial_\mu \lr{ \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi - J_\epsilon^\mu },
-\end{dmath}
+\end{equation}
 or \( \partial_\mu j^\mu = 0 \) provided
 \boxedEquation{eqn:qftLecture7:280}{
 j^\mu =
@@ -176,7 +176,7 @@ j^\mu =
 
 Integrating the divergence of the current over a space time volume, perhaps that of \cref{fig:spacetimeCylinder:spacetimeCylinderFig1}, is also zero.  That is
 %\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
-\begin{dmath}\label{eqn:qftLecture7:300}
+\begin{equation}\label{eqn:qftLecture7:300}
 0 =
 \int d^4 x \, \partial_\mu j^\mu
 =
@@ -184,13 +184,13 @@ Integrating the divergence of the current over a space time volume, perhaps that
 =
 \int d^3 \Bx dt \, \partial_t j^0 -
 \cancel{\int d^3 \Bx dt \spacegrad \cdot \Bj},
-\end{dmath}
+\end{equation}
 where the spatial divergence is zero assuming there's no current leaving the volume on the infinite boundary (no \(\Bj\) at spatial infinity.)
 
 We write
-\begin{dmath}\label{eqn:qftLecture7:560}
+\begin{equation}\label{eqn:qftLecture7:560}
 Q = \int d^3x j^0,
-\end{dmath}
+\end{equation}
 and call this the on-shell charge associated with the symmetry.
 \end{proof}
 \index{on-shell}
@@ -209,31 +209,31 @@ where the fields transform as
 Contrast this to a Lorentz transformation that had the form \( x^\mu \rightarrow {x'}^\mu = {\Lambda^\mu}_\nu x^\nu \).
 
 If \(\phi'(x + a) = \phi(x) \), then
-\begin{dmath}\label{eqn:qftLecture7:360}
+\begin{equation}\label{eqn:qftLecture7:360}
 \phi'(x) + a^\mu \partial_\mu \phi'(x) =
 \phi'(x) + a^\mu \partial_\mu \phi(x) =
 \phi(x),
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture7:380}
+\begin{equation}\label{eqn:qftLecture7:380}
 \phi'(x)
 = \phi(x) - a^\mu \partial_\mu \phi'(x)
 = \phi(x) + \delta_a \phi(x),
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture7:580}
+\begin{equation}\label{eqn:qftLecture7:580}
 \delta_a \phi(x) = - a^\mu \partial_\mu \phi(x).
-\end{dmath}
+\end{equation}
 Under \( \phi \rightarrow \phi - a^\mu \partial_\mu \phi \), we have
-\begin{dmath}\label{eqn:qftLecture7:400}
+\begin{equation}\label{eqn:qftLecture7:400}
 \LL(\phi) \rightarrow \LL(\phi) - a^\mu \partial_\mu \LL.
-\end{dmath}
+\end{equation}
 Let's calculate this with our scalar theory Lagrangian
-\begin{dmath}\label{eqn:qftLecture7:420}
+\begin{equation}\label{eqn:qftLecture7:420}
 \LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi).
-\end{dmath}
+\end{equation}
 The Lagrangian variation\footnote{Using: \( \partial_\alpha((1/2)\partial_\mu \phi \partial^\mu \phi) = 2(1/2) \partial_\mu \phi( \partial_\alpha \partial^\mu \phi)\).} is
-\begin{dmath}\label{eqn:qftLecture7:440}
+\begin{equation}\label{eqn:qftLecture7:440}
 \evalbar{\delta \LL}{\phi \rightarrow \phi + \delta \phi, \delta\phi = - a^\mu \partial_\mu \phi}
 =
 (\partial_\mu \phi) \delta (\partial^\mu \phi) - m^2 \phi \delta \phi - \PD{\phi}{V} \delta \phi
@@ -243,32 +243,32 @@ The Lagrangian variation\footnote{Using: \( \partial_\alpha((1/2)\partial_\mu \p
 - a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
 =
 - a^\nu \partial_\nu \LL,
-\end{dmath}
+\end{equation}
 so the current is
-\begin{dmath}\label{eqn:qftLecture7:600}
+\begin{equation}\label{eqn:qftLecture7:600}
 j^\mu
 =
 (\partial^\mu \phi) (-a^\nu \partial_\nu \phi) + a^\mu \LL
 =
 -a^\nu \lr{ \partial^\mu \phi \partial_\nu \phi - \delta^\mu_\nu \LL }.
-\end{dmath}
+\end{equation}
 We really have a current for each \( \nu \) direction and can make that explicit writing
-\begin{dmath}\label{eqn:qftLecture7:460}
+\begin{equation}\label{eqn:qftLecture7:460}
 \delta_\nu \LL = -\partial_\nu \LL
 = - \partial_\mu \lr{ {\delta^\mu}_\nu \LL }
 = \partial_\mu {j^\mu}_\nu
-\end{dmath}
+\end{equation}
 we write
-\begin{dmath}\label{eqn:qftLecture7:480}
+\begin{equation}\label{eqn:qftLecture7:480}
 {j^\mu}_\nu = \PD{x_\mu}{\phi} \lr{ - \PD{x^\nu}{\phi} } + {\delta^\mu}_\nu \LL,
-\end{dmath}
+\end{equation}
 where \( \nu \) are labels which coordinates are translated:
-\begin{dmath}\label{eqn:qftLecture7:500}
+\begin{equation}\label{eqn:qftLecture7:500}
 \begin{aligned}
 \partial_\nu \phi &= - \partial_\nu \phi \\
 \partial_\nu \LL &= - \partial_\nu \LL.
 \end{aligned}
-\end{dmath}
+\end{equation}
 We call the conserved quantities elements of the energy-momentum tensor, and write it as
 \index{energy momentum tensor}
 \boxedEquation{eqn:qftLecture7:520}{
@@ -276,7 +276,7 @@ We call the conserved quantities elements of the energy-momentum tensor, and wri
 }
 
 Incidentally, we picked a non-standard sign convention for the tensor, as an explicit expansion of \( T^{00} \), the energy density component, shows
-\begin{dmath}\label{eqn:qftLecture7:540}
+\begin{equation}\label{eqn:qftLecture7:540}
 {T^0}_0 =
 -\PD{t}{\phi}
 \PD{t}{\phi}
@@ -289,7 +289,7 @@ Incidentally, we picked a non-standard sign convention for the tensor, as an exp
 -\inv{2} \PD{t}{\phi} \PD{t}{\phi}
 - \inv{2} (\spacegrad \phi) \cdot (\spacegrad \phi)
 - \frac{m^2}{2} \phi^2 - V(\phi).
-\end{dmath}
+\end{equation}
 Had we translated by \( -a^\mu \) we'd have a positive definite tensor instead.
 
 %%\section{Problems.}
@@ -300,9 +300,9 @@ Had we translated by \( -a^\mu \) we'd have a positive definite tensor instead.
 %%
 %%\makeanswer{problem:qftLecture7:560}{
 %%Given
-%%\begin{dmath}\label{eqn:qftLecture7:620}
+%%\begin{equation}\label{eqn:qftLecture7:620}
 %%\LL' = \LL + \partial_\mu a^\mu
-%%\end{dmath}
+%%\end{equation}
 %%} % answer
 
 %}

@@ -9,20 +9,17 @@
 %\makesubproblem{}{qft:LukeProblemSet1:5a}
 
 Show that replacing the Lagrange density \( L = L(\phi_a, \partial_\alpha \phi_a ) \) by
-
 \begin{equation}\label{eqn:LukeProblemSet1Problem5:20}
 L' = L + \partial_\mu \wedge^\mu(x),
 \end{equation}
 %
 where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the fields \( \phi_a(x) \), does not alter the equations of motion. Thus, when constructing the most general Lagrange density for a field, we do not have to include terms which are total derivatives. This will simplify life.
 } % makeproblem
-
 \makeanswer{qft:LukeProblemSet1:5}{
 \withproblemsetsParagraph{
-
 %%I had to start with re-deriving the field equations for a Lagrange density since I'd forgotten what they were.  If a field \( \phi \) is varied \( \phi' = \phi + \overbar{\phi} \), with the zero variation on the boundaries of the action volume element, we have to first order
 %%
-%%\begin{dmath}\label{eqn:LukeProblemSet1Problem5:40}
+%%\begin{equation}\label{eqn:LukeProblemSet1Problem5:40}
 %%\LL'
 %%= \LL( \phi + \overbar{\phi}, \partial_\alpha ( \phi + \overbar{\phi}) )
 %%=
@@ -31,11 +28,11 @@ where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the field
 %%\PD{\overbar{\phi}}{\LL} \overbar{\phi}
 %%+
 %%\PD{\partial_\beta \overbar{\phi}}{\LL} \partial_\beta \overbar{\phi}.
-%%\end{dmath}
+%%\end{equation}
 %%
 %%The variation of the action is
 %%
-%%\begin{dmath}\label{eqn:LukeProblemSet1Problem5:60}
+%%\begin{equation}\label{eqn:LukeProblemSet1Problem5:60}
 %%\delta S
 %%=
 %%\int dV \lr{
@@ -76,7 +73,7 @@ where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the field
 %%\PD{\partial_\beta \overbar{\phi}}{\LL}
 %%}
 %%}
-%%\end{dmath}
+%%\end{equation}
 %%
 %%The first integral vanishes given the boundary condition assumptions, and the second provides the equations for the field.  Generalizing that to multiple fields \( \phi_a \), and evaluating the derivatives at \( \overbar{\phi}_a = \phi_a \) we have
 %%
@@ -91,8 +88,7 @@ where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the field
 %%Now we can tackle the problem.  
 %%XX
 Consider first just two fields, say \( \phi \) and \( \psi\), and consider
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem5:100}
+\begin{equation}\label{eqn:qftProblemSet1Problem5:100}
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi}{} \partial_\mu \wedge^\mu
@@ -111,11 +107,10 @@ Consider first just two fields, say \( \phi \) and \( \psi\), and consider
 \partial_\beta \PD{\phi}{ \wedge^\beta }
 =
 \PD{\phi}{ \partial_\beta \wedge^\beta }.
-\end{dmath}
+\end{equation}
 
 We see that the divergence \( \partial_\mu \wedge^\mu \) also satisfies the field Euler-Lagrange equations for the field \( \phi \).  This will clearly be the case for multiple fields.  Making that explicit, we can generalize the above slightly
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem5:120}
+\begin{equation}\label{eqn:qftProblemSet1Problem5:120}
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi_a}{} \partial_\mu \wedge^\mu
@@ -130,7 +125,7 @@ We see that the divergence \( \partial_\mu \wedge^\mu \) also satisfies the fiel
 \partial_\beta \PD{\phi_b}{ \wedge^\mu } \delta_{b a} {\delta^\beta}_\mu
 =
 \PD{\phi_a}{ \partial_\beta \wedge^\beta }.
-\end{dmath}
+\end{equation}
 
 %\makeSubAnswer{}{qft:LukeProblemSet1:5a}
 }

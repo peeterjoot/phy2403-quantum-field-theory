@@ -5,8 +5,7 @@
 %{
 \section{Feynman's Green's function.}
 \index{Feynman propagator}
-
-\begin{dmath}\label{eqn:qftLecture13:280}
+\begin{equation}\label{eqn:qftLecture13:280}
 D_F(x)
 =
 \Theta(x^0) D(x) +
@@ -14,9 +13,9 @@ D_F(x)
 =
 \Theta(x^0) \bra{0} \phi(x) \phi(0) \ket{0}
 +\Theta(x^0) \bra{0} \phi(-x) \phi(0) \ket{0}.
-\end{dmath}
+\end{equation}
 Utilizing a translation operation \( U(a) = e^{i a_\mu P^\mu } \), where \( U(a) \phi(y) U^\dagger(a) = \phi(y + a) \), this second operation can be written as
-\begin{dmath}\label{eqn:qftLecture13:300}
+\begin{equation}\label{eqn:qftLecture13:300}
 \bra{0} \phi(-x) \phi(0) \ket{0}
 =
 \bra{0} U^\dagger(a) U(a) \phi(-x) U^\dagger(a) U(a) \phi(0) U^\dagger(a) U(a) \ket{0}
@@ -24,15 +23,15 @@ Utilizing a translation operation \( U(a) = e^{i a_\mu P^\mu } \), where \( U(a)
 \bra{0} U(a) \phi(-x) U^\dagger(a) U(a) \phi(0) U^\dagger(a) \ket{0}
 =
 \bra{0} \phi(-x + a) \phi(a) \ket{0},
-\end{dmath}
+\end{equation}
 In particular, with \( a = x \)
-\begin{dmath}\label{eqn:qftLecture13:320}
+\begin{equation}\label{eqn:qftLecture13:320}
 \bra{0} \phi(-x) \phi(0) \ket{0}
 =
 \bra{0} \phi(0) \phi(x) \ket{0},
-\end{dmath}
+\end{equation}
 so the Feynman's Green function can be written
-\begin{dmath}\label{eqn:qftLecture13:340}
+\begin{equation}\label{eqn:qftLecture13:340}
 D_F(x) =
 \Theta(x^0) \bra{0} \phi(x) \phi(0) \ket{0}
 +\Theta(x^0) \bra{0} \phi(x) \phi(x) \ket{0}
@@ -46,7 +45,7 @@ D_F(x) =
 \phi(0) \phi(x)
 }
 \ket{0}.
-\end{dmath}
+\end{equation}
 We define
 \index{time ordered product}
 \makedefinition{Time ordered product.}{dfn:qftLecture13:360}{
@@ -78,13 +77,12 @@ D_F(x) = \bra{0} T(\phi(x) \phi(0)) \ket{0}.
 \index{perturbation theory}
 
 We perturb the Hamiltonian
-\begin{dmath}\label{eqn:qftLecture13:500}
+\begin{equation}\label{eqn:qftLecture13:500}
 H = H_0 + H_{\text{int}},
-\end{dmath}
+\end{equation}
 where \( H_0 \) is the free Hamiltonian and \( H_{\text{int}} \) is the interaction term (the perturbation).
 
 \paragraph{Example:}
-
 \begin{equation}\label{eqn:qftLecture13:460}
 \begin{aligned}
 H_0 &= SHO = \frac{p^2}{2} + \frac{\omega^2 q^2}{2} \\
@@ -94,14 +92,14 @@ H_{\text{int}} &= \lambda q^4.
 i.e.  the anharmonic oscillator.
 
 In QFT
-\begin{dmath}\label{eqn:qftLecture13:480}
+\begin{equation}\label{eqn:qftLecture13:480}
 \begin{aligned}
 H_0 &=
 \int d^3 x \lr{ \inv{2} \pi^2 + \inv{2} \lr{ \spacegrad \phi}^2 + \frac{m^2}{2} \phi^2 } \\
 H_{\text{int}} &=
 \lambda \int d^3 x \phi^4.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 We will expand the interaction in small \( \lambda \).  Perturbation theory is the expansion in a small dimensionless coupling constant, such as
 \begin{itemize}
@@ -114,27 +112,26 @@ We will expand the interaction in small \( \lambda \).  Perturbation theory is t
 %\section{Perturbation theory, interaction representation and Dyson formula.}
 \index{interaction representation}
 \index{Dyson formula}
-
-\begin{dmath}\label{eqn:qftLecture13:520}
+\begin{equation}\label{eqn:qftLecture13:520}
 H = H_0 + H_{\text{int}}
-\end{dmath}
+\end{equation}
 Example interaction
-\begin{dmath}\label{eqn:qftLecture13:540}
+\begin{equation}\label{eqn:qftLecture13:540}
 H_{\text{int}} = \lambda \int d^3 x \phi^4.
-\end{dmath}
+\end{equation}
 
 We know all there is to know about \( H_0 \) (decoupled SHOs, ...)
-\begin{dmath}\label{eqn:qftLecture13:560}
+\begin{equation}\label{eqn:qftLecture13:560}
 H_0 \ket{0} = \ket{0} E^0_{\text{vac}}
-\end{dmath}
+\end{equation}
 where \( E^0_{\text{vac}} = 0 \).  Assume
-\begin{dmath}\label{eqn:qftLecture13:580}
+\begin{equation}\label{eqn:qftLecture13:580}
 \lr{ H_0 + H_{\text{int}} } \ket{\Omega} = \ket{\Omega} E_{\text{vac}},
-\end{dmath}
+\end{equation}
 where the ground state energy of the perturbed system is zero when \( \lambda = 0 \).  That is \( E_{\text{vac}}(\lambda = 0 ) = 0 \).
 
 So for
-\begin{dmath}\label{eqn:qftLecture13:600}
+\begin{equation}\label{eqn:qftLecture13:600}
 \evalbar{\phi(x) }{x^0 = t_0, \text{some fixed value}}
 =
 \int \frac{d^3}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp } }
@@ -146,22 +143,22 @@ So for
 {
 p^0 = \omega_\Bp
 }.
-\end{dmath}
+\end{equation}
 Let's call \( \phi(\Bx, t_0) \) the free Schr\"{o}dinger operator, where
 \( \phi(\Bx, t_0) \) is evaluated at a fixed value of \( t_0 \).  At such a point, the Schr\"{o}dinger and Heisenberg pictures coincide.
-\begin{dmath}\label{eqn:qftLecture13:620}
+\begin{equation}\label{eqn:qftLecture13:620}
 \antisymmetric{\phi(\Bx, t_0)}{\pi(\By, t_0)} = i \deltathree(\Bx - \By).
-\end{dmath}
+\end{equation}
 
 Normally (QM) one defines the Heisenberg operator as
-\begin{dmath}\label{eqn:qftLecture13:640}
+\begin{equation}\label{eqn:qftLecture13:640}
 O_H = e^{i H(t - t_0)} O_S e^{-i H(t - t_0)},
-\end{dmath}
+\end{equation}
 where \( O_H \) depends on time, and \( O_S \) is defined at a fixed time \( t_0 \), usually 0.
 From \cref{eqn:qftLecture13:640} we find
-\begin{dmath}\label{eqn:qftLecture13:660}
+\begin{equation}\label{eqn:qftLecture13:660}
 \ddt{O_H} = i \antisymmetric{H}{O_H}.
-\end{dmath}
+\end{equation}
 The equivalent of \cref{eqn:qftLecture13:640} in QFT is very complicated.  We'd like to develop an intermediate picture.
 
 We will define an intermediate picture, called the ``interaction representation'', which is equivalent to the Heisenberg picture with respect to \( H_0 \).
@@ -176,7 +173,7 @@ e^{-i H_0(t - t_0) }.
 } % definition
 
 This is familiar, and is the Heisenberg picture operator that we had in free QFT
-\begin{dmath}\label{eqn:qftLecture13:700}
+\begin{equation}\label{eqn:qftLecture13:700}
 \phi_I(t, \Bx) =
 \int \frac{d^3}{(2 \pi)^3 \sqrt{ 2 \omega_\Bp } }
 \evalbar{
@@ -187,11 +184,11 @@ This is familiar, and is the Heisenberg picture operator that we had in free QFT
 {
 p^0 = \omega_\Bp
 },
-\end{dmath}
+\end{equation}
 where \( x_0 = t \).
 
 The Heisenberg picture operator is
-\begin{dmath}\label{eqn:qftLecture13:720}
+\begin{equation}\label{eqn:qftLecture13:720}
 \phi_H(t, \Bx)
 =
 \phi(t, \Bx)
@@ -211,25 +208,24 @@ e^{-i H_0(t - t_0) }
 \phi_I(t, \Bx)
 e^{-i H_0(t - t_0) }
 e^{i H(t - t_0) }
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture13:760}
+\begin{equation}\label{eqn:qftLecture13:760}
 \phi_H(t, \Bx)
 =
 U^\dagger(t, t_0)
 \phi_I(t_0, \Bx)
 U(t, t_0),
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture13:740}
+\begin{equation}\label{eqn:qftLecture13:740}
 U(t, t_0) =
 e^{i H_0(t - t_0) }
 e^{-i H(t - t_0) }.
-\end{dmath}
+\end{equation}
 
 We want to apply perturbation techniques to find \( U(t, t_0) \) which is complicated.
-
-\begin{dmath}\label{eqn:qftLecture13:780}
+\begin{equation}\label{eqn:qftLecture13:780}
 i \PD{t}{} U(t, t_0)
 =
 i e^{i H_0(t - t_0) } i H_0
@@ -247,7 +243,7 @@ H_{\text{int}}
 e^{-i H_0(t - t_0) }
 e^{i H_0(t - t_0) }
 e^{-i H(t - t_0) },
-\end{dmath}
+\end{equation}
 so we have
 \boxedEquation{eqn:qftLecture13:800}{
 i \PD{t}{} U(t, t_0)
@@ -257,23 +253,23 @@ H_{\text{int}, I}(t) U(t, t_0).
 For the (Schr\"{o}dinger) interaction \( H_{\text{int}} = \
 \lambda \int d^3 x \phi^4(\Bx, t_0)  \), what we really mean by
 \( H_{\text{int}, I}(t) \) is
-\begin{dmath}\label{eqn:qftLecture13:820}
+\begin{equation}\label{eqn:qftLecture13:820}
 H_{\text{int}, I}(t) = \lambda \int d^3 x \phi_I^4(\Bx, t).
-\end{dmath}
+\end{equation}
 
 It will be more convenient to remove the explicit \( \lambda \) factor from the interaction Hamiltonian, and write instead
-\begin{dmath}\label{eqn:qftLecture13:880}
+\begin{equation}\label{eqn:qftLecture13:880}
 H_{\text{int}, I}(t) = \int d^3 x \phi_I^4(\Bx, t),
-\end{dmath}
+\end{equation}
 so the equation to solve is
-\begin{dmath}\label{eqn:qftLecture13:1220}
+\begin{equation}\label{eqn:qftLecture13:1220}
 i \PD{t}{} U(t, t_0)
 =
 \lambda H_{\text{int}, I}(t) U(t, t_0).
-\end{dmath}
+\end{equation}
 
 We assume that
-\begin{dmath}\label{eqn:qftLecture13:900}
+\begin{equation}\label{eqn:qftLecture13:900}
 U(t, t_0)
 =
 U_0(t, t_0)
@@ -281,10 +277,10 @@ U_0(t, t_0)
 + \lambda^2 U_2(t, t_0)
 + \cdots
 + \lambda^n U_n(t, t_0).
-\end{dmath}
+\end{equation}
 
 Plugging into \cref{eqn:qftLecture13:880} we have
-\begin{dmath}\label{eqn:qftLecture13:1160}
+\begin{equation}\label{eqn:qftLecture13:1160}
 \begin{aligned}
   i &\lambda^0 \PD{t}{}U_0(t, t_0)
 + i \lambda^1 \PD{t}{}U_1(t, t_0)
@@ -301,53 +297,53 @@ Plugging into \cref{eqn:qftLecture13:880} we have
 + \lambda^n U_n(t, t_0)
 },
 \end{aligned},
-\end{dmath}
+\end{equation}
 so
 equating equal powers of \( \lambda \) on each side gives a recurrence relation for each \( U_k, k > 0 \)
-\begin{dmath}\label{eqn:qftLecture13:1180}
+\begin{equation}\label{eqn:qftLecture13:1180}
 \PD{t}{}U_k(t, t_0) = -i H_{\text{int}, I}(t) U_{k-1}(t, t_0).
-\end{dmath}
+\end{equation}
 
 Let's consider each power in turn.
 \paragraph{\(O(\lambda^0)\):}
 
 Solving \cref{eqn:qftLecture13:800} to \( O(\lambda^0) \) gives
-\begin{dmath}\label{eqn:qftLecture13:840}
+\begin{equation}\label{eqn:qftLecture13:840}
 i \PD{t}{} U_0(t, t_0) = 0,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture13:860}
+\begin{equation}\label{eqn:qftLecture13:860}
 U(t, t_0) = 1 + O(\lambda).
-\end{dmath}
+\end{equation}
 
 \paragraph{\(O(\lambda^1)\):}
-%%\begin{dmath}\label{eqn:qftLecture13:920}
+%%\begin{equation}\label{eqn:qftLecture13:920}
 %%\lambda i \PD{t}{U_1(t, t_0)} = \lambda
 %%H_{\text{int}, I}(t) U_0(t, t_0)
-%%\end{dmath}
+%%\end{equation}
 %%or
-\begin{dmath}\label{eqn:qftLecture13:940}
+\begin{equation}\label{eqn:qftLecture13:940}
 \PD{t}{U_1(t, t_0)} = -i H_{\text{int}, I}(t),
-\end{dmath}
+\end{equation}
 which has solution
-\begin{dmath}\label{eqn:qftLecture13:960}
+\begin{equation}\label{eqn:qftLecture13:960}
 U_1(t, t_0) = -i \int_{t_0}^t H_{\text{int}, I}(t') dt'.
-\end{dmath}
+\end{equation}
 
 \paragraph{\(O(\lambda^2)\):}
-%%\begin{dmath}\label{eqn:qftLecture13:980}
+%%\begin{equation}\label{eqn:qftLecture13:980}
 %%\lambda^2 i \PD{t}{U_2(t, t_0)} = \lambda^2
 %%H_{\text{int}, I}(t) U_1(t, t_0),
-%%\end{dmath}
+%%\end{equation}
 %%or
-\begin{dmath}\label{eqn:qftLecture13:1000}
+\begin{equation}\label{eqn:qftLecture13:1000}
 \PD{t}{U_2(t, t_0)}
 = -i H_{\text{int}, I}(t) U_1(t, t_0)
 = (-i)^2 H_{\text{int}, I}(t)
 \int_{t_0}^t H_{\text{int}, I}(t') dt',
-\end{dmath}
+\end{equation}
 which has solution
-\begin{dmath}\label{eqn:qftLecture13:1020}
+\begin{equation}\label{eqn:qftLecture13:1020}
 U_2(t, t_0)
 = (-i )^2
 \int_{t_0}^t H_{\text{int}, I}(t'') dt''
@@ -358,16 +354,16 @@ U_2(t, t_0)
 dt'
 H_{\text{int}, I}(t'')
 H_{\text{int}, I}(t').
-\end{dmath}
+\end{equation}
 \paragraph{\(O(\lambda^3)\):}
-\begin{dmath}\label{eqn:qftLecture13:1060}
+\begin{equation}\label{eqn:qftLecture13:1060}
 \PD{t}{U_3(t, t_0)}
 =
 -i
 H_{\text{int}, I}(t) U_2(t, t_0),
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture13:1240}
+\begin{equation}\label{eqn:qftLecture13:1240}
 U_3(t, t_0)
 =
 -i
@@ -390,7 +386,7 @@ H_{\text{int}, I}(t')
 H_{\text{int}, I}(t''')
 H_{\text{int}, I}(t'')
 H_{\text{int}, I}(t').
-\end{dmath}
+\end{equation}
 
 \paragraph{Simplifying the integration region.}
 
@@ -398,17 +394,17 @@ For the two fold integral, the integration range is the upper triangular region 
 \imageFigure{../figures/phy2403-quantum-field-theory/upperTriangleIntegrationRegionFig2}{Upper triangular integration region.}{fig:upperTriangleIntegrationRegion:upperTriangleIntegrationRegionFig2}{0.2}
 
 \paragraph{Claim:} We can integrate over the entire square, and divide by two, provided we keep the time ordering
-\begin{dmath}\label{eqn:qftLecture13:1040}
+\begin{equation}\label{eqn:qftLecture13:1040}
 U_2(t, t_0)
 = \frac{(-i )^2}{2}
 \int_{t_0}^t dt''
 \int_{t_0}^{t''}
 dt'
 T(H_{\text{int}, I}(t'') H_{\text{int}, I}(t') ).
-\end{dmath}
+\end{equation}
 
 Demonstration:
-\begin{dmath}\label{eqn:qftLecture13:1100}
+\begin{equation}\label{eqn:qftLecture13:1100}
 \begin{aligned}
 \frac{(-i)^2}{2}
 &\int_{t_0}^t dt''
@@ -427,10 +423,10 @@ H_I(t'') H_I(t') \\
 \Theta(t'- t'')
 H_I(t') H_I(t''),
 \end{aligned}
-\end{dmath}
+\end{equation}
 but the \( \Theta(t'' - t') \) function is non-zero only for \( t'' - t' > 0 \), or \( t' < t'' \), and the
 \( \Theta(t' - t'') \) function is non-zero only for \( t' - t'' > 0 \), or \( t'' < t' \), so we can adjust the integration ranges for
-\begin{dmath}\label{eqn:qftLecture13:1260}
+\begin{equation}\label{eqn:qftLecture13:1260}
 \begin{aligned}
 &\frac{(-i)^2}{2}
 \int_{t_0}^t dt''
@@ -459,11 +455,11 @@ H_I(t'') H_I(t') \\
 &=
 U_2(t, t_0),
 \end{aligned}
-\end{dmath}
+\end{equation}
 where we swapped integration variables in second integral.  We can clearly do the same thing for the higher order repeated integrals, but instead of a \(1/2 = 1/2!\) adjustment for the number of orderings, we will require a \( 1/n! \) adjustment for an \( n \)-fold integral.
 
 \paragraph{Summary:}
-\begin{dmath}\label{eqn:qftLecture13:1120}
+\begin{equation}\label{eqn:qftLecture13:1120}
 \begin{aligned}
 U_0 &= 1 \\
 U_1 &= -i \int_{t_0}^t dt_1 H_I(t_1) \\
@@ -492,17 +488,17 @@ H_I(t_2)
 H_I(t_n)
 ) \\
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Summing we find
-\begin{dmath}\label{eqn:qftLecture13:1140}
+\begin{equation}\label{eqn:qftLecture13:1140}
 U(t, t_0) = T \exp\lr{-i
 \int_{t_0}^t dt_1 H_I(t')
 }
 =
 \sum_{n = 0}^\infty
 \frac{(-i)^n}{n!} \int_{t_0}^t dt_1 \cdots dt_n T( H_I(t_1) \cdots H_I(t_n) ).
-\end{dmath}
+\end{equation}
 
 This is called Dyson's formula.
 

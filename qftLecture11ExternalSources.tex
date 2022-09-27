@@ -5,39 +5,36 @@
 %{
 \section{Harmonic oscillator.}
 \index{harmonic oscillator}
-
-\begin{dmath}\label{eqn:qftLecture11:320}
+\begin{equation}\label{eqn:qftLecture11:320}
 L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q.
-\end{dmath}
+\end{equation}
 
 The term \( j(t) \) shifts the origin in a time dependent fashion (graphical illustration in class wiggling a hockey stick, as a sample of a harmonic oscillator).
 
 %F5,6
-\begin{dmath}\label{eqn:qftLecture11:340}
+\begin{equation}\label{eqn:qftLecture11:340}
 H = \frac{p^2}{2} + \frac{\omega^2}{t} q^2 + j(t) q
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture11:360}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture11:360}
 \begin{aligned}
 i \qdot_H(t) &= \antisymmetric{q_H}{H} = i p_H \\
 i \pdot_H(t) &= \antisymmetric{p_H}{H} = -i \omega^2 q_H - i j(t)
 \end{aligned}
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftLecture11:380}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture11:380}
 \ddot{q}_H(t) = - \omega^2 q_H(t) - j(t)
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture11:400}
+\begin{equation}\label{eqn:qftLecture11:400}
 (\partial_{tt} + \omega^2 ) q_H(t) = - j(t)
-\end{dmath}
+\end{equation}
 
 %%q_H(t > t_{\text{after}} = q_H( t, t < t_before) +
 %%\int_{t_before}^{t_after} G_R(t - t') j(t') dt'
-\begin{dmath}\label{eqn:qftLecture11:420}
+\begin{equation}\label{eqn:qftLecture11:420}
 q_H(t) = q_H^0( t ) +
 \int G_R(t - t') j(t') dt'.
-\end{dmath}
+\end{equation}
 
 This solves the equation provided \( G_R(t - t') \) has the property that
 \boxedEquation{eqn:qftLecture11:440}{
@@ -47,7 +44,7 @@ G_R(t - t')
 }
 
 That is
-\begin{dmath}\label{eqn:qftLecture11:460}
+\begin{equation}\label{eqn:qftLecture11:460}
 (\partial_{tt} + \omega^2)
 q_H(t) =
 (\partial_{tt} + \omega^2)
@@ -55,69 +52,71 @@ q_H^0( t )
 +
 (\partial_{tt} + \omega^2)
 \int G_R(t - t') j(t') dt'.
-\end{dmath}
+\end{equation}
 
 This function \( G_R \) is called the retarded Green's function.  We want to find this function, and as usual, we do this by taking the Fourier transform of \cref{eqn:qftLecture11:440}
-
-\begin{dmath}\label{eqn:qftLecture11:480}
+\begin{equation}\label{eqn:qftLecture11:480}
+\begin{aligned}
 \int dt e^{i p t}
 (\partial_{tt} + \omega^2) G_R(t - t')
-=
+&=
 -\int_{-\infty}^\infty dt e^{i p t}
-\delta(t - t')
-= - e^{i p t'}.
-\end{dmath}
+\delta(t - t') \\
+&= - e^{i p t'}.
+\end{aligned}
+\end{equation}
 
 Let
-\begin{dmath}\label{eqn:qftLecture11:500}
+\begin{equation}\label{eqn:qftLecture11:500}
 G(t - t')  = \int \frac{dp }{2 \pi} e^{- i p'(t - t')} \tilde{G}(p'),
-\end{dmath}
+\end{equation}
 so
-
-\begin{dmath}\label{eqn:qftLecture11:520}
+\begin{equation}\label{eqn:qftLecture11:520}
+\begin{aligned}
 - e^{i pt'}
-=
+&=
 \int dt e^{i p t}
 (\partial_{tt} + \omega^2)
-\int \frac{dp'}{2 \pi} e^{- i p'(t - t')} \tilde{G}(p')
-=
+\int \frac{dp'}{2 \pi} e^{- i p'(t - t')} \tilde{G}(p') \\
+&=
 \int dt e^{i p t} \int
-\frac{dp'}{2 \pi} \lr{ -{p'}^2 + \omega^2 } e^{- i p'(t - t')} \tilde{G}(p')
-=
-\int dp' \lr{ -{p'}^2 + \omega^2 } e^{i p' t'} \delta(p - p') \tilde{G}(p')
-=
+\frac{dp'}{2 \pi} \lr{ -{p'}^2 + \omega^2 } e^{- i p'(t - t')} \tilde{G}(p') \\
+&=
+\int dp' \lr{ -{p'}^2 + \omega^2 } e^{i p' t'} \delta(p - p') \tilde{G}(p') \\
+&=
 \lr{ -{p}^2 + \omega^2 } \tilde{G}(p) e^{i p t'},
-\end{dmath}
+\end{aligned}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture11:540}
+\begin{equation}\label{eqn:qftLecture11:540}
 \tilde{G}(p)
 = \inv{p^2 - \omega^2}.
-\end{dmath}
+\end{equation}
 
 Now
-\begin{dmath}\label{eqn:qftLecture11:560}
+\begin{equation}\label{eqn:qftLecture11:560}
 G(t)
 = \int \frac{dp}{2 \pi} e^{-i p t}
 \tilde{G}(p).
-\end{dmath}
+\end{equation}
 
 Let's write the momentum space Green's function as
-\begin{dmath}\label{eqn:qftLecture11:580}
+\begin{equation}\label{eqn:qftLecture11:580}
 \tilde{G}(p)
 = \inv{(p - \omega)(p + \omega)}.
-\end{dmath}
+\end{equation}
 The solution contained
-\begin{dmath}\label{eqn:qftLecture11:600}
+\begin{equation}\label{eqn:qftLecture11:600}
 \int G(t - t') j(t') dt'.
-\end{dmath}
+\end{equation}
 Suppose \( j(t) = 0 \) for all \( t < t_0 \).  We want the effect of \( j(t) \) to be felt in the future, for example, \(j(t) \) is an impulse starting at some time.  We want \( G(t) \) to vanish at negative times.
 
 We want the integral
-\begin{dmath}\label{eqn:qftLecture11:620}
+\begin{equation}\label{eqn:qftLecture11:620}
 G(t)
 = \int \frac{dp}{2 \pi} e^{-i p t}
 \inv{(p - \omega)(p + \omega)},
-\end{dmath}
+\end{equation}
 to vanish when \( t < 0 \).
 
 % t - t' > 0 ; t > t'
@@ -130,8 +129,7 @@ Question: since we are integrating over the real line, how can we get away with 
 Answer: it works.  If we do this we get a Green's function that makes sense (better answer later?)
 
 We add an infinite circle, so that we can integrate over a closed contour, and pick the contour so that it is zero for \( t < 0 \) and non-zero (enclosed poles) for \( t > 0 \).
-
-\begin{dmath}\label{eqn:qftLecture11:640}
+\begin{equation}\label{eqn:qftLecture11:640}
 G_R(t > 0)
 = \int_C \frac{dp}{2 \pi} e^{-i p t}
 \inv{(p - \omega)(p + \omega)}
@@ -143,7 +141,7 @@ G_R(t > 0)
 }
 =
 -\frac{\sin(\omega t)}{\omega}.
-\end{dmath}
+\end{equation}
 
 Now we write the Green's function for all time as
 \boxedEquation{eqn:qftLecture11:660}{
@@ -157,29 +155,28 @@ The question of what contour to pick can now be justified by the result, since t
 \section{Field theory (where we are going).}
 
 We will consider a massive real scalar field theory with an external source with action
-
-\begin{dmath}\label{eqn:qftLecture11:680}
+\begin{equation}\label{eqn:qftLecture11:680}
 S = \int d^4 x \lr{
 \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 + j(x) \phi(x)
 }.
-\end{dmath}
+\end{equation}
 
 We don't have examples of currents that create scalar fields, but to study such as system, recall that
 in electromagnetism we added sources to the field by adding a term like
-\begin{dmath}\label{eqn:qftLecture11:700}
+\begin{equation}\label{eqn:qftLecture11:700}
 \int d^4 x A^\mu(x) j_\mu(x),
-\end{dmath}
+\end{equation}
 to our action.
 
 The equation of motion can be found to be
-\begin{dmath}\label{eqn:qftLecture11:720}
+\begin{equation}\label{eqn:qftLecture11:720}
 \lr{ \partial_\mu \partial^\mu + m^2 } \phi(x) = j(x).
-\end{dmath}
+\end{equation}
 
 We want to study the Green's function of this Klein-Gordon equation, defined to obey
-\begin{dmath}\label{eqn:qftLecture11:740}
+\begin{equation}\label{eqn:qftLecture11:740}
 \lr{ \partial_\mu \partial^\mu + m^2 }_x G(x - y) = -i \deltafour(x - y),
-\end{dmath}
+\end{equation}
 where the \( -i \) factor is for convenience.
 This is analogous to the Green's function that we just studied for the QM harmonic oscillator.
 
@@ -189,7 +186,7 @@ Generalize the derivation \cref{eqn:qftLecture11:800} by computing the commutato
 
 \makeanswer{problem:qftLecture11:820}{
 Let
-\begin{dmath}\label{eqn:qftLecture11:860}
+\begin{equation}\label{eqn:qftLecture11:860}
 D(x - y)
 = \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(y)}
 =
@@ -207,7 +204,7 @@ D(x - y)
 =
 \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp}
 \evalbar{ e^{-i p \cdot (x - y)} }{p^0 = \omega_\Bp}.
-\end{dmath}
+\end{equation}
 } % answer
 
 \makeproblem{Verification of harmonic oscillator Green's function.}{problem:qftLecture11:2}{
@@ -224,38 +221,38 @@ q(t)
 \end{equation}
 We are free to add any \( q_0(t) \) that satisfies the homogeneous wave equation \( q_0''(t) + \omega^2 q_0(t) = 0 \) to our assumed convolution solution \cref{eqn:qftLecture11:880}, but that isn't interesting for this exercise.
 Since \( \Theta(t - t') = 0 \) for \( t - t' < 0 \), or \( t' > t \), the convolution can be written as
-\begin{dmath}\label{eqn:qftLecture11:900}
+\begin{equation}\label{eqn:qftLecture11:900}
 q(t)
 = -\inv{\omega} \int_{-\infty}^t \sin(\omega(t - t')) j(t') dt',
-\end{dmath}
+\end{equation}
 which is now in a convenient form to take derivatives.  We have contributions from the boundary's time dependence and from the integrand.  In particular
-\begin{dmath}\label{eqn:qftLecture11:920}
+\begin{equation}\label{eqn:qftLecture11:920}
 \ddt{} \int_{a(t)}^{b(t)} g(x, t) dx
 =
 g(b(t)) b'(t) - g(a(t)) a'(t) + \int_a^b \frac{\partial}{\partial t} g(x, t) dx.
-\end{dmath}
+\end{equation}
 Assuming that \( j(-\infty) = 0 \), this gives
-\begin{dmath}\label{eqn:qftLecture11:940}
+\begin{equation}\label{eqn:qftLecture11:940}
 \ddt{q(t)}
 =
 -\inv{\omega} \evalbar{\sin(\omega(t - t')) j(t') }{t' = t}
 -\int_{-\infty}^t \cos(\omega(t - t')) j(t') dt'
 =
 -\int_{-\infty}^t \cos(\omega(t - t')) j(t') dt'.
-\end{dmath}
+\end{equation}
 For the second derivative we have
-\begin{dmath}\label{eqn:qftLecture11:960}
+\begin{equation}\label{eqn:qftLecture11:960}
 q''(t) =
 - \evalbar{ \cos(\omega(t - t')) j(t') }{t' = t}
 +\omega \int_{-\infty}^t \sin(\omega(t - t')) j(t') dt'
 =
 -j(t) -\omega^2
 \int_{-\infty}^t \frac{-\sin(\omega(t - t'))}{\omega} j(t') dt',
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture11:980}
+\begin{equation}\label{eqn:qftLecture11:980}
 q''(t) = -j(t) - \omega^2 q(t),
-\end{dmath}
+\end{equation}
 which is our forced Harmonic oscillator equation.
 } % answer
 

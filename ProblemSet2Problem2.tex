@@ -20,9 +20,9 @@ Finally, to end the preaching preamble, the notion of approximate symmetries is 
 \makesubproblem{}{qft:problemSet2:2a}
 The Lagrangian you will study is that of two complex scalar fields, assembled into a column \( \Phi = (\phi_1,\phi_2)^\T \) (the \( \T \) is here so I do not have to go through the trouble to write a column instead of a row).
 It is given by:
-\begin{dmath}\label{eqn:ProblemSet2Problem2:10} %(1)
+\begin{equation}\label{eqn:ProblemSet2Problem2:10} %(1)
 \LL = \partial_\mu \Phi^\dagger \partial_\mu \Phi - m^2 \Phi^\dagger \Phi - \lambda \lr{\Phi^\dagger\Phi}^2.
-\end{dmath}
+\end{equation}
 Show that
 \cref{eqn:ProblemSet2Problem2:10}
 %(1)
@@ -39,9 +39,9 @@ Show that the charge operators, \( \hatQ^L_a, a = 1,2,3\), conserved due to \(\S
 The Lagrangian \cref{eqn:ProblemSet2Problem2:10} has, however, a larger symmetry than simply the above \(\SU{2}_L\).
 To begin seeing this, instead of using \( \Phi = (\phi^1,\phi^2)^\T \) introduce the real and imaginary parts of \( \phi^{1,2} \).
 Use \( \phi^1 = \psi^1 +i \psi^2, \phi^2 = \psi^3 +i \psi^4 \), and introducing \( \Psi = (\psi^1,\psi^2,\psi^3,\psi^4)^\T\), show that \cref{eqn:ProblemSet2Problem2:10} can be written as:
-\begin{dmath}\label{eqn:ProblemSet2Problem2:20} % , (2)
+\begin{equation}\label{eqn:ProblemSet2Problem2:20} % , (2)
 \LL = a \partial_\mu \Psi^\T \partial^\mu \Psi -b m^2 \Psi^\T \Psi - c \lambda(\Psi^\T\Psi)^2
-\end{dmath}
+\end{equation}
 on the way determining the (pure numbers) \(a, b, c\).
 The Lagrangian \cref{eqn:ProblemSet2Problem2:20} has, clearly, an \( O(4) \) symmetry, i.e., is invariant under \( \Psi \rightarrow  O \Psi\), where \( O \) is a \( 4 \times 4 \) orthogonal matrix, \( O^\T O = 1\).
 Is there a continuous U(1) allowed in this case?
@@ -63,27 +63,27 @@ H \equiv \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) =
 \end{equation}
 Show that under \(\SU{2} \) transformations,
 %
-\begin{dmath}\label{eqn:ProblemSet2Problem2:520}
+\begin{equation}\label{eqn:ProblemSet2Problem2:520}
 H \rightarrow  \inv{\sqrt{2}} (i\sigma^2 (U_L\Phi)^\conj, U_L \Phi) = \inv{\sqrt{2}} (U_L i \sigma^2 \Phi^\conj, U_L\Phi) = U_L H.
-\end{dmath}
+\end{equation}
 
 Hint: the tricky part is to show that \( i\sigma^2(U_L\Phi)^\conj = i\sigma^2 U_L^\conj \Phi^\conj = U_L i \sigma^2 \Phi^\conj\).
 What you need to show, then, is that \( \sigma^2 U_L \sigma^2 = U_L^\conj \) (this fact will be very useful in our future studies of spinors, so make sure you understand it).
 
 \makesubproblem{}{qft:problemSet2:2e}
 Using the change of variables \cref{eqn:ProblemSet2Problem2:30}, show that
-\begin{dmath}\label{eqn:ProblemSet2Problem2:40}
+\begin{equation}\label{eqn:ProblemSet2Problem2:40}
 H^\dagger H = \inv{2}
 \begin{bmatrix}
 \Abs{\phi_1}^2 + \Abs{\phi_2}^2 & 0 \\
 0 & \Abs{\phi_1}^2 + \Abs{\phi_2}^2
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 % (4)
 and, hence, that
 \cref{eqn:ProblemSet2Problem2:10} %(1)
 can be written as
-\begin{dmath}\label{eqn:ProblemSet2Problem2:50}
+\begin{equation}\label{eqn:ProblemSet2Problem2:50}
 \LL = \trace{
    \lr{
       \partial_\mu H^\dagger \partial^\mu H
@@ -99,28 +99,28 @@ can be written as
       H^\dagger H
    }
 }^2
-\end{dmath}
+\end{equation}
 %(5)
 where \( \trace{}\) denotes the matrix trace.
 Show that now \cref{eqn:ProblemSet2Problem2:50} has \(\SU{2}_L \times \SU{2}_R\) symmetry,
 acting on \( H \) as
-\begin{dmath}\label{eqn:ProblemSet2Problem2:60}
+\begin{equation}\label{eqn:ProblemSet2Problem2:60}
 H \rightarrow U_L H U_R^\dagger,
-\end{dmath}
+\end{equation}
 % (6)
 where the action of \( U_R^\dagger \) on the right is pure convention (we could have taken \( U_R \) instead).
 \( U_L \) and \( U_R \) are two sets of independent \(\SU{2} \) transformations.
 The \( L \) and \( R \) (left and right) names are self-evident in the way \cref{eqn:ProblemSet2Problem2:60} is written.
 Show that under \(\SU{2}_L \times \SU{2}_R\)
-\begin{dmath}\label{eqn:ProblemSet2Problem2:760}
+\begin{equation}\label{eqn:ProblemSet2Problem2:760}
 \delta H = i \omega_a^L \frac{\sigma^a}{2} H - i\omega_b^R H \frac{\sigma^b}{2}.
-\end{dmath}
+\end{equation}
 
 Hint: clearly, the only thing you need to show is \(\SU{2}_R\) invariance, as \(\SU{2}_L\) was already shown.
 
 \makesubproblem{}{qft:problemSet2:2f}
 Show that the left and right \(\SU{2} \) conserved currents can be written as
-\begin{dmath}\label{eqn:ProblemSet2Problem2:80}
+\begin{equation}\label{eqn:ProblemSet2Problem2:80}
 \begin{aligned}
 j^{\mu,a}_L &= \frac{i}{2} \trace{
 \lr{
@@ -133,7 +133,7 @@ j^{\mu,b}_R &= \frac{i}{2} \trace{
 }
 }
 \end{aligned}
-\end{dmath}
+\end{equation}
 and that the corresponding generators \( \hatQ^{L,R}_a \) obey the commutation relations of two commuting angular momentum algebras.
 
 Hint: notice that both currents are Hermitian and that the left is obtained from the right by interchanging \( H \) with \( H^\dagger\).
@@ -147,26 +147,26 @@ Hint: notice that both currents are Hermitian and that the left is obtained from
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:2a}
 Let's consider the \( \SU{2}_L \) case first.  Noting that \( (\sigma^a)^\dagger = \sigma^a \), the transformed fields are
-\begin{dmath}\label{eqn:ProblemSet2Problem2:100}
+\begin{equation}\label{eqn:ProblemSet2Problem2:100}
 \begin{aligned}
 \Phi' &= e^{i \Bsigma \cdot \Bomega/2} \Phi \\
 {\Phi'}^\dagger &= \Phi^\dagger e^{-i \Bsigma \cdot \Bomega/2},
 \end{aligned}
-\end{dmath}
+\end{equation}
 so \( {\Phi'}^\dagger \Phi' = \Phi^\dagger \Phi \), and
 so \( \partial_\mu {\Phi'}^\dagger \partial^\mu \Phi' = \partial_\mu \Phi^\dagger \partial^\mu \Phi \).
 This shows that the Lagrangian density is invariant under this transformation.
 
 The variation of the field is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:120}
+\begin{equation}\label{eqn:ProblemSet2Problem2:120}
 \delta \Phi
 = \Phi' - \Phi
 \approx \lr{ 1 + i \Bsigma \cdot \Bomega/2} \Phi - \Phi
 =
 \frac{i}{2} \Bsigma \cdot \Bomega \Phi,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem2:140}
+\begin{equation}\label{eqn:ProblemSet2Problem2:140}
 \delta (\Phi^\dagger \Phi)
 =
 (\delta \Phi^\dagger) \Phi + \Phi^\dagger \delta \Phi
@@ -177,9 +177,9 @@ so
 }
 =
 0,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet2Problem2:160}
+\begin{equation}\label{eqn:ProblemSet2Problem2:160}
 \delta (\partial_\mu \Phi^\dagger \partial^\mu \Phi)
 =
 \partial_\mu (\delta \Phi^\dagger) \partial^\mu \Phi
@@ -193,9 +193,9 @@ and
 }
 =
 0,
-\end{dmath}
+\end{equation}
 so \( \delta \LL = 0 \).  To calculate the conserved current, we have to be slightly careful with the order of operations so that the matrix products are compatible
-\begin{dmath}\label{eqn:ProblemSet2Problem2:180}
+\begin{equation}\label{eqn:ProblemSet2Problem2:180}
 j^\mu_\Bomega
 =
 \PD{(\partial_\mu \Phi)}{\LL} \delta \Phi
@@ -209,9 +209,9 @@ j^\mu_\Bomega
    -
    \Phi^\dagger (\Bsigma \cdot \Bomega) \partial^\mu \Phi
 },
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet2Problem2:200}
+\begin{equation}\label{eqn:ProblemSet2Problem2:200}
 j^{\mu a} =
 \frac{i}{2}
 \lr{
@@ -219,19 +219,19 @@ j^{\mu a} =
    -
    \Phi^\dagger \sigma^a \partial^\mu \Phi
 },
-\end{dmath}
+\end{equation}
 where \( j^\mu_\Bomega = \omega_a j^{\mu a} \).
 
 For the \( U(1) \) case we clearly have \( \LL' = \LL \).  The variation is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:220}
+\begin{equation}\label{eqn:ProblemSet2Problem2:220}
 \delta \Phi
 = \Phi' - \Phi
 \approx (1 + i\alpha) \Phi - \Phi
 =
 i\alpha \Phi,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem2:240}
+\begin{equation}\label{eqn:ProblemSet2Problem2:240}
 \delta (\Phi^\dagger \Phi)
 =
 (\delta \Phi^\dagger) \Phi
@@ -246,9 +246,9 @@ i \alpha
 }
 =
 0,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet2Problem2:260}
+\begin{equation}\label{eqn:ProblemSet2Problem2:260}
 \delta (\partial_\mu \Phi^\dagger \partial^\mu \Phi)
 =
 \partial_\mu (\delta \Phi^\dagger) \partial^\mu \Phi
@@ -263,10 +263,10 @@ i \alpha
 }
 =
 0,
-\end{dmath}
+\end{equation}
 so \( \delta \LL = 0 \).
 The conserved current, again being careful of the order, is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:280}
+\begin{equation}\label{eqn:ProblemSet2Problem2:280}
 j^\mu_\alpha
 =
 \PD{(\partial_\mu \Phi)}{\LL} \delta \Phi
@@ -280,11 +280,11 @@ i \alpha
    -
    \Phi^\dagger (\partial^\mu \Phi)
 }.
-\end{dmath}
+\end{equation}
 
 \makeSubAnswer{}{qft:problemSet2:2b}
 The conserved charge is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:300}
+\begin{equation}\label{eqn:ProblemSet2Problem2:300}
 Q^a
 = \frac{i}{2} \int d^3 x
 \lr{
@@ -299,9 +299,9 @@ Q^a
    -
    \Phi^\dagger \sigma^a \Pi
 },
-\end{dmath}
+\end{equation}
 which can be expressed in terms of the individual fields so the commutators can be computed more easily.  Expanding out the matrices, we have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:980}
+\begin{equation}\label{eqn:ProblemSet2Problem2:980}
 =
 \frac{i}{2} \int d^3 x
 \lr{
@@ -309,11 +309,11 @@ which can be expressed in terms of the individual fields so the commutators can 
    -
    \phi^\dagger_r \sigma^a_{rs} \pi_s
 }.
-\end{dmath}
+\end{equation}
 To simplify the commutator expansion, assume that
 \( r,s \) indexed functions are functions of \( \Bx \) and
 \( m,n \) indexed functions are functions of \( \By \), for
-\begin{dmath}\label{eqn:ProblemSet2Problem2:320}
+\begin{equation}\label{eqn:ProblemSet2Problem2:320}
 \antisymmetric{Q^a}{Q^b}
 =
 -\frac{1}{4} \int d^3 x d^3 y
@@ -418,9 +418,9 @@ To simplify the commutator expansion, assume that
    + \pi^\dagger_m \phi^\dagger_r \antisymmetric{ \pi_s}{ \phi_n}
    + \antisymmetric{ \phi^\dagger_r}{ \pi^\dagger_m} \pi_s \phi_n
 }.
-\end{dmath}
+\end{equation}
 Each of these commutators has a \( \deltathree(\Bx - \By) \) term, leaving
-\begin{dmath}\label{eqn:ProblemSet2Problem2:340}
+\begin{equation}\label{eqn:ProblemSet2Problem2:340}
 \antisymmetric{Q^a}{Q^b}
 =
 \frac{i}{4} \int d^3 x
@@ -495,11 +495,11 @@ Each of these commutators has a \( \deltathree(\Bx - \By) \) term, leaving
 }
 =
 i \epsilon^{a b c} Q^c,
-\end{dmath}
+\end{equation}
 as desired.
 \makeSubAnswer{}{qft:problemSet2:2c}
 Let's consider the mass term first, which becomes
-\begin{dmath}\label{eqn:ProblemSet2Problem2:360}
+\begin{equation}\label{eqn:ProblemSet2Problem2:360}
 \Phi^\dagger \Phi
 =
 \phi_1^\dagger \phi_1
@@ -523,14 +523,14 @@ Let's consider the mass term first, which becomes
 i (\psi^1 \psi^2 - \psi^2 \psi^1)
 +
 i (\psi^3 \psi^4 - \psi^4 \psi^3).
-\end{dmath}
+\end{equation}
 Since \( \Phi^\dagger \Phi \) is a real scalar in the original representation, the imaginary parts of this representation must also be zero (i.e. \( \psi^1, \psi^2 \) and \( \psi^3, \psi^4 \) each respectively commute).  This leaves
-\begin{dmath}\label{eqn:ProblemSet2Problem2:380}
+\begin{equation}\label{eqn:ProblemSet2Problem2:380}
 \Phi^\dagger \Phi
 = \Psi^\T \Psi,
-\end{dmath}
+\end{equation}
 so \( b, c = 1 \).  For the derivative term, we have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:400}
+\begin{equation}\label{eqn:ProblemSet2Problem2:400}
 \partial_\mu \Phi^\dagger \partial^\mu \Phi
 =
 \partial_\mu \phi_1^\dagger \partial^\mu \phi_1
@@ -564,29 +564,29 @@ i (\partial_\mu \psi^3 \partial^\mu \psi^4 - \partial_\mu \psi^4 \partial^\mu \p
 i (\partial_\mu \psi^1 \partial^\mu \psi^2 - \partial^\mu \psi^2 \partial_\mu \psi^1)
 +
 i (\partial_\mu \psi^3 \partial^\mu \psi^4 - \partial^\mu \psi^4 \partial_\mu \psi^3),
-\end{dmath}
+\end{equation}
 where a matched raising and lowering operation has been performed on half the terms.  Because of the \( \psi^{1,2} \) and \( \psi^{3,4} \) commutation properties observed previously, the imaginary terms are killed, leaving
-\begin{dmath}\label{eqn:ProblemSet2Problem2:420}
+\begin{equation}\label{eqn:ProblemSet2Problem2:420}
 \partial_\mu \Phi^\dagger \partial^\mu \Phi
 =
 \partial_\mu \Psi^\T \partial^\mu \Psi,
-\end{dmath}
+\end{equation}
 so \( a = 1 \).
 
 For the question of the \( U(1) \) symmetry, suppose that \( \Psi \rightarrow e^{i\alpha} \Psi \).  We then have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:440}
+\begin{equation}\label{eqn:ProblemSet2Problem2:440}
 \delta \LL = 2 i \alpha \LL - 2 i \alpha \lambda \lr{ \Psi^\T \Psi }^2,
-\end{dmath}
+\end{equation}
 which does not have the required four-divergence form required for a conserved current, so there is no \( U(1) \) symmetry.
 \makeSubAnswer{}{qft:problemSet2:2d}
 We want to examine the transformation of \( \sigma^2 (U_L\Phi)^\conj \), which, to first order in \( \Bomega \) is
-\begin{dmath}\label{eqn:ProblemSet2Problem2:460}
+\begin{equation}\label{eqn:ProblemSet2Problem2:460}
 \sigma^2 (U_L\Phi)^\conj
 \rightarrow
 \sigma^2 U_L^\conj \Phi^\conj
 \approx
 \Phi^\conj - \frac{i}{2} \sigma^2 \omega_a (\sigma^a)^\conj \Phi^\conj
-\end{dmath}
+\end{equation}
 Because \( \sigma^1 = \PauliX, \sigma^3 = \PauliZ \) are real, and \( \sigma^2 \) is purely imaginary, we have \( (\sigma^1)^\conj = \sigma^1, (\sigma^3)^\conj = \sigma^3 \), and
 \begin{equation}\label{eqn:ProblemSet2Problem2:480}
 (\sigma^2)^\conj =
@@ -597,7 +597,7 @@ Because \( \sigma^1 = \PauliX, \sigma^3 = \PauliZ \) are real, and \( \sigma^2 \
 \end{bmatrix} = -\sigma^2.
 \end{equation}
 Utilizing these conjugation relations, and the commutation identities \( \sigma^i \sigma^j = -\sigma^j \sigma^i \) for \( i \ne j \), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:500}
+\begin{equation}\label{eqn:ProblemSet2Problem2:500}
 \sigma^2 (U_L\Phi)^\conj
 \rightarrow
 \Phi^\conj - \frac{i}{2} \lr{
@@ -630,27 +630,27 @@ Utilizing these conjugation relations, and the commutation identities \( \sigma^
 \Phi^\conj
 =
 U_L \sigma^2 \Phi^\conj.
-\end{dmath}
+\end{equation}
 Plugging into \( H = \inv{\sqrt{2}} (i\sigma^2\Phi^\conj,\Phi) \), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:560}
+\begin{equation}\label{eqn:ProblemSet2Problem2:560}
 H
 \rightarrow \inv{\sqrt{2}} (i\sigma^2(U_L \Phi)^\conj,U_L \Phi)
 = \inv{\sqrt{2}} (U_L i\sigma^2\Phi^\conj,U_L \Phi)
 = U_L H,
-\end{dmath}
+\end{equation}
 proving \cref{eqn:ProblemSet2Problem2:520} as desired.
 
 Incidentally, \cref{eqn:ProblemSet2Problem2:500} shows that
-\begin{dmath}\label{eqn:ProblemSet2Problem2:540}
+\begin{equation}\label{eqn:ProblemSet2Problem2:540}
 \sigma^2 U_L^\conj
 =
 U_L \sigma^2,
-\end{dmath}
+\end{equation}
 the identity that was claimed to be important for future spinor theory work.
 
 \makeSubAnswer{}{qft:problemSet2:2e}
 %
-\begin{dmath}\label{eqn:ProblemSet2Problem2:580}
+\begin{equation}\label{eqn:ProblemSet2Problem2:580}
 H^\dagger H
 =
 \inv{2}
@@ -667,17 +667,17 @@ H^\dagger H
 \phi_2^\conj \phi_2 + \phi_1 \phi_1^\conj & \phi_2 \phi_1 - \phi_1 \phi_2 \\
 \phi_1^\conj \phi_2^\conj - \phi_2^\conj \phi_1^\conj & \phi_1^\conj \phi_1 + \phi_2^\conj \phi_2
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 Assuming \( \antisymmetric{\phi_1}{\phi_2} = 0 \), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem2:600}
+\begin{equation}\label{eqn:ProblemSet2Problem2:600}
 H^\dagger H = \inv{2}
 \begin{bmatrix}
 \Abs{\phi_1}^2 + \Abs{\phi_2}^2 & 0 \\
 0 & \Abs{\phi_1}^2 + \Abs{\phi_2}^2
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet2Problem2:620}
+\begin{equation}\label{eqn:ProblemSet2Problem2:620}
 \trace{
    H^\dagger H
 }
@@ -688,36 +688,36 @@ and
 }
 =
 \Phi^\conj \Phi.
-\end{dmath}
+\end{equation}
 For the derivative terms
-\begin{dmath}\label{eqn:ProblemSet2Problem2:640}
+\begin{equation}\label{eqn:ProblemSet2Problem2:640}
 \partial_\mu H^\dagger \partial^\mu H
 =
 \begin{bmatrix}
 \partial_\mu \phi_2^\conj \partial^\mu \phi_2 + \partial_\mu \phi_1 \partial^\mu \phi_1^\conj & \partial_\mu \phi_2 \partial^\mu \phi_1 - \partial_\mu \phi_1 \partial^\mu \phi_2 \\
 \partial_\mu \phi_1^\conj \partial^\mu \phi_2^\conj - \partial_\mu \phi_2^\conj \partial^\mu \phi_1^\conj & \partial_\mu \phi_1^\conj \partial^\mu \phi_1 + \partial_\mu \phi_2^\conj \partial^\mu \phi_2
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 Applying matched raising and lowering operations on one half of each of the cross terms kills them, leaving
-\begin{dmath}\label{eqn:ProblemSet2Problem2:720}
+\begin{equation}\label{eqn:ProblemSet2Problem2:720}
 \partial_\mu H^\dagger \partial^\mu H
 =
 \begin{bmatrix}
 \partial_\mu \phi_2^\conj \partial^\mu \phi_2 + \partial_\mu \phi_1 \partial^\mu \phi_1^\conj & 0 \\
 0 & \partial_\mu \phi_1^\conj \partial^\mu \phi_1 + \partial_\mu \phi_2^\conj \partial^\mu \phi_2
 \end{bmatrix}
-\end{dmath},
+\end{equation},
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem2:660}
+\begin{equation}\label{eqn:ProblemSet2Problem2:660}
 \trace{\partial_\mu H^\dagger \partial^\mu H }
 =
 \partial_\mu \Phi^\dagger
 \partial^\mu \Phi,
-\end{dmath}
+\end{equation}
 proving \cref{eqn:ProblemSet2Problem2:50}.
 
 We can see that the transformation \cref{eqn:ProblemSet2Problem2:60} leaves the Lagrangian density unchanged by direct substitution.  Let's do this term by term
-\begin{dmath}\label{eqn:ProblemSet2Problem2:680}
+\begin{equation}\label{eqn:ProblemSet2Problem2:680}
 \partial_\mu H^\dagger \partial^\mu H
 \rightarrow
 \partial_\mu (U_R H^\dagger \cancel{U_L^\dagger}) \partial^\mu (\cancel{U_L} H U_R^\dagger)
@@ -727,9 +727,9 @@ U_R (\partial_\mu H^\dagger \partial^\mu H) U_R^\dagger
 (\partial_\mu H^\dagger \partial^\mu H) U_R U_R^\dagger
 =
 \partial_\mu H^\dagger \partial^\mu H,
-\end{dmath}
+\end{equation}
 since \( \partial_\mu H^\dagger \partial^\mu H \) is a scalar.  Similarly
-\begin{dmath}\label{eqn:ProblemSet2Problem2:700}
+\begin{equation}\label{eqn:ProblemSet2Problem2:700}
  H^\dagger  H
 \rightarrow
  (U_R H^\dagger \cancel{U_L^\dagger})  (\cancel{U_L} H U_R^\dagger)
@@ -739,11 +739,11 @@ U_R ( H^\dagger  H) U_R^\dagger
 ( H^\dagger  H) U_R U_R^\dagger
 =
  H^\dagger  H.
-\end{dmath}
+\end{equation}
 
 Finally, the variation of \( H \) is given by
 %
-\begin{dmath}\label{eqn:ProblemSet2Problem2:740}
+\begin{equation}\label{eqn:ProblemSet2Problem2:740}
 \delta H
 = H' - H
 \approx
@@ -754,14 +754,14 @@ Finally, the variation of \( H \) is given by
 \frac{i}{2} \lr{ \omega_a^L \sigma^a H - H \omega_b^R \sigma^b } + O(\omega^2)
 =
 \frac{i}{2} \lr{ \omega_a^L \sigma^a H - \omega_a^R H \sigma^a },
-\end{dmath}
+\end{equation}
 which recovers \cref{eqn:ProblemSet2Problem2:760} as desired.
 
 \makeSubAnswer{}{qft:problemSet2:2f}
 To proceed, we clearly want a trace based expression for the conserved current.  To determine the structure of that current, we can vary the action using a Lagrangian density of the following form
-\begin{dmath}\label{eqn:ProblemSet2Problem2:780}
+\begin{equation}\label{eqn:ProblemSet2Problem2:780}
 \LL = \trace{\lr{ \partial_\mu H^\dagger \partial^\mu H + V(H^\dagger H)}}.
-\end{dmath}
+\end{equation}
 
 That is
 \begin{equation}\label{eqn:ProblemSet2Problem2:800}
@@ -825,7 +825,7 @@ That is
 \end{equation}
 The second trace must be the equivalent of the Euler-Lagrange equations.  It's not obvious how to pretty that up, but we can mandate that it must be zero for all variations \( \delta H, \delta H^\dagger \),
 which leaves us with
-\begin{dmath}\label{eqn:ProblemSet2Problem2:860}
+\begin{equation}\label{eqn:ProblemSet2Problem2:860}
 \delta S =
 \int d^4 x
    \partial_\mu
@@ -834,9 +834,9 @@ which leaves us with
    +
    \partial^\mu H^\dagger \delta H
    }}.
-\end{dmath}
+\end{equation}
 A Noether conserved current requires \( \delta S = \int d^4 x \partial_\mu J^\mu \), or
-\begin{dmath}\label{eqn:ProblemSet2Problem2:820}
+\begin{equation}\label{eqn:ProblemSet2Problem2:820}
    \partial_\mu
    \trace{\lr{
    \delta H^\dagger \partial^\mu H
@@ -844,9 +844,9 @@ A Noether conserved current requires \( \delta S = \int d^4 x \partial_\mu J^\mu
    \partial^\mu H^\dagger \delta H
    }}
    = \partial_\mu J^\mu,
-\end{dmath}
+\end{equation}
 so defining a Noether current as
-\begin{dmath}\label{eqn:ProblemSet2Problem2:840}
+\begin{equation}\label{eqn:ProblemSet2Problem2:840}
 j^\mu =
    \trace{\lr{
    \delta H^\dagger \partial^\mu H
@@ -854,7 +854,7 @@ j^\mu =
    \partial^\mu H^\dagger \delta H
    }}
 - J^\mu,
-\end{dmath}
+\end{equation}
 we have \( \partial_\mu j^\mu = 0 \) as desired.
 
 In case the hand waving portion of the argument above (mandating that the second trace is zero as it must be equivalent to the Euler-Lagrange equations) is not convincing,
@@ -863,7 +863,7 @@ then we guess that
 is the desired
 form of the Noether current, and justify that guess
 for our specific case by direct expansion using
-\begin{dmath}\label{eqn:ProblemSet2Problem2:880}
+\begin{equation}\label{eqn:ProblemSet2Problem2:880}
 \begin{aligned}
 H &= \inv{\sqrt{2}}
 \begin{bmatrix}
@@ -874,9 +874,9 @@ H^\dagger &= \inv{\sqrt{2}}
 -i \Phi^\T \sigma^2 \\ \Phi^\dagger
 \end{bmatrix} \\
 \end{aligned},
-\end{dmath}
+\end{equation}
 which gives
-\begin{dmath}\label{eqn:ProblemSet2Problem2:900}
+\begin{equation}\label{eqn:ProblemSet2Problem2:900}
 \trace{\lr{
 \delta H^\dagger \partial^\mu H + \partial^\mu H^\dagger \delta H
 }}
@@ -914,7 +914,7 @@ i \sigma^2 \delta \Phi^\conj & \delta \Phi
 \delta \phi_2 \partial^\mu \phi_2^\conj
 +
 \delta \phi_2^\conj \partial^\mu \phi_2.
-\end{dmath}
+\end{equation}
 This is precisely the Noether current in terms of the original fields \( \phi_{1,2}, \phi_{1,2}^\conj \), given that we have \( J^\mu = 0 \) for our Lagrangian.
 
 To prove \cref{eqn:ProblemSet2Problem2:80}, we can now substitute
@@ -924,7 +924,7 @@ into
 Let \( (\delta H)_L = i \omega_a^L \frac{\sigma^a}{2} H \), and
 \(
 (\delta H)_R = - i\omega_b^R H \frac{\sigma^b}{2} \), and compute the \( L,R \) currents separately
-\begin{dmath}\label{eqn:ProblemSet2Problem2:920}
+\begin{equation}\label{eqn:ProblemSet2Problem2:920}
 j_L^\mu
 =
    \trace{\lr{
@@ -952,11 +952,11 @@ i \omega_a^L \frac{\sigma^a}{2} H
    \partial^\mu H^\dagger
 \sigma^a H
    }},
-\end{dmath}
+\end{equation}
 With \( j^{\mu}_L = \omega_a j^{\mu, a}_L \), we've
 proven \cref{eqn:ProblemSet2Problem2:80} for the left current.
 For the right current
-\begin{dmath}\label{eqn:ProblemSet2Problem2:940}
+\begin{equation}\label{eqn:ProblemSet2Problem2:940}
 j_R^\mu
 =
    \trace{\lr{
@@ -991,7 +991,7 @@ j_R^\mu
 H \sigma^a
    \partial^\mu H^\dagger
    }},
-\end{dmath}
+\end{equation}
 where \( \trace{(ABC)} = \trace{(BCA)} = \trace{(CAB)} \) was used coerce this result into the desired form.  An assignment \( j^\mu_R = \omega_a j^{\mu,a}_R \) completes the proof.
 
 \paragraph{Charges.}
@@ -1097,7 +1097,7 @@ j^{\mu, a}_L
 \end{equation}
 
 The conserved charge has the structure
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1000}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1000}
 Q^{a}_L
 =
 \frac{i}{2}
@@ -1106,19 +1106,19 @@ Q^{a}_L
    \Phi^\dagger \sigma^a \Pi
    - \Pi^\dagger \sigma^a \Phi
 },
-\end{dmath}
+\end{equation}
 which differs only by a sign from the conserved charge that we found in \cref{eqn:ProblemSet2Problem2:300}, which we already demonstrated has the commutator properties of angular momentum operators.
 
 A \cref{eqn:ProblemSet2Problem2:960} reduction is possible for \( j^{\mu,a}_R \) too, but needs to be setup differently.  Let
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1020}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1020}
 \Psi =
 \begin{bmatrix}
 \phi_2 \\
 \phi_1^\conj
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 which allows us to put \( H, H^\dagger \) in an appropriate block matrix form
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1040}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1040}
 \begin{aligned}
 H &=
 \inv{\sqrt{2}}
@@ -1132,10 +1132,10 @@ H^\dagger &=
 \Psi & -i \sigma^2 \Psi^\conj
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Plugging this in for \( j^{\mu, a}_R \) we find
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1060}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1060}
 j^{\mu, a}_R
 =
 \frac{i}{2} \trace{\lr{
@@ -1212,9 +1212,9 @@ j^{\mu, a}_R
   \partial^\mu \Psi^\dagger \sigma^a \Psi
 - \Psi^\dagger \sigma^a \partial^\mu \Psi
 }.
-\end{dmath}
+\end{equation}
 The conserved charge is therefore
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1080}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1080}
 Q^{a}_R
 =
 \frac{i}{2}
@@ -1223,20 +1223,20 @@ Q^{a}_R
   \dot{\Psi}^\dagger \sigma^a \Psi
 - \Psi^\dagger \sigma^a \dot{\Psi }
 }.
-\end{dmath}
+\end{equation}
 This clearly also satisfies the angular momentum commutation relations.
 \paragraph{Charge commutation: partial:}
 The charges \( Q^a_R, Q^b_L \) should commute by virtue of originating from two independent symmetries, but to show this seems ugly.
 
 Here is a partial attempt.  In terms of the matrix elements
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1100}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1100}
 \begin{aligned}
 Q^{L,a} &= \frac{i}{2} \int d^3 x \lr{ \dot{H}^\dagger_{rs} \sigma^a_{st} H_{tr} - H^\dagger_{rs} \sigma^a_{st} \dot{H}_{tr} } \\
 Q^{R,b} &= \frac{i}{2} \int d^3 y \lr{ \dot{H}_{rs} \sigma^a_{st} H^\dagger_{tr} - H_{rs} \sigma^b_{st} \dot{H}^\dagger_{tr} } \\
 \end{aligned},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem2:1120}
+\begin{equation}\label{eqn:ProblemSet2Problem2:1120}
 \antisymmetric{Q^{L,a}}{Q^{R,b}}
 =
 -\inv{4}
@@ -1252,7 +1252,7 @@ so
 { \dot{H}^\conj_{sr} H_{tr} - H^\conj_{sr} \dot{H}_{tr} }
 { \dot{H}_{mn} H^\conj_{mo} - H_{mn} \dot{H}^\conj_{mo} }
 \sigma^a_{st} \sigma^b_{no}.
-\end{dmath}
+\end{equation}
 For this to be zero, each of these \( 16 \times 3 \times 3 \) commutators must be zero.  Presumably, we could plug in the \( \phi_{1,2}, \pi_{1,2}, \phi^\conj_{1,2}, \pi^\conj_{1,2} \) values, and find that this is the case (perhaps only when the \( \sigma^a_{st} \sigma^b_{no} \) elements are non-zero.)
 On paper, I did write out \( \dot{H}^\conj_{sr} H_{tr} - H^\conj_{sr} \dot{H}_{tr} \) in terms of \((\phi, \pi)\)'s, and it was interesting that all of the operator factors in each of those sum of pairs commuted.  That expansion was fairly tedious, and probably not completely correct, and I did not attempt to do the same for \( \dot{H}_{mn} H^\conj_{mo} - H_{mn} \dot{H}^\conj_{mo} \) and show that those two sets of four operators (each with four pairs) commuted.
 There has got to be an easier way!  If there is not, such a proof is a job for a computer program, and not a person.

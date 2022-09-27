@@ -34,12 +34,12 @@
 \makeproblem{Exponential form of \( \sqrt{p \cdot \sigma}, \sqrt{p \cdot \osigma} \).}{problem:squarerootpsigma:1}{
 In \citep{tobiasQFTL15DiracSquarerootPdotSigma},
 Prof Osmond explicitly boosts a \( u^s(p_0) \) Dirac spinor from the rest frame with rest frame energy \( p_0 \), and claims
-\begin{dmath}\label{eqn:squarerootpsigma:20}
+\begin{equation}\label{eqn:squarerootpsigma:20}
 \begin{aligned}
    \sqrt{m} e^{-\inv{2} \eta \sigma^3} &= \sqrt{ p \cdot \sigma } \\
    \sqrt{m} e^{\inv{2} \eta \sigma^3} &= \sqrt{ p \cdot \osigma },
 \end{aligned}
-\end{dmath}
+\end{equation}
 for the components of \( u^s(\Lambda p_0) \).
 
 Validate these identities by squaring both sides.
@@ -47,25 +47,25 @@ Validate these identities by squaring both sides.
 
 \makeanswer{problem:squarerootpsigma:1}{
 First
-\begin{dmath}\label{eqn:squarerootpsigma:40}
+\begin{equation}\label{eqn:squarerootpsigma:40}
    e^{\pm \inv{2} \eta \sigma^3 }
    =
    \cosh\lr{ \inv{2} \eta \sigma^3 }
    \pm
    \sinh\lr{ \inv{2} \eta \sigma^3 } \sigma^3,
-\end{dmath}
+\end{equation}
 which squares to (\nbref{uvspinors.nb})
-\begin{dmath}\label{eqn:squarerootpsigma:60}
+\begin{equation}\label{eqn:squarerootpsigma:60}
    \lr{ e^{\pm \inv{2} \eta \sigma^3 } }^2
 =
 \begin{bmatrix}
    e^{\pm \eta} & 0 \\
    0 & e^{\mp \eta}
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 
 Explicitly boosting the rest energy \( p_0 \) gives
-\begin{dmath}\label{eqn:squarerootpsigma:80}
+\begin{equation}\label{eqn:squarerootpsigma:80}
 \begin{bmatrix}
    p_0 \\
    0
@@ -85,9 +85,9 @@ p_0
    \cosh\eta \\
    \sinh\eta
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so after the boost
-\begin{dmath}\label{eqn:squarerootpsigma:100}
+\begin{equation}\label{eqn:squarerootpsigma:100}
 p \cdot \sigma
 \rightarrow
 p_0 \lr{ \cosh \eta - \sinh \eta \sigma^3 }
@@ -102,20 +102,20 @@ p_0
    e^{-\eta} & 0 \\
    0 & e^{\eta}
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 where \( p_0 = m \) is still the rest frame energy.  According to
 \cref{eqn:squarerootpsigma:60} this is exactly
-\begin{dmath}\label{eqn:squarerootpsigma:120}
+\begin{equation}\label{eqn:squarerootpsigma:120}
    \lr{\sqrt{m} e^{-\inv{2} \eta \sigma^3 }}^2.
-\end{dmath}
+\end{equation}
 
 Since \( p \cdot \osigma \) flips the signs of the spatial momentum, we have shown that
-\begin{dmath}\label{eqn:squarerootpsigma:140}
+\begin{equation}\label{eqn:squarerootpsigma:140}
 \begin{aligned}
    \lr{\sqrt{m} e^{-\inv{2} \eta \sigma^3 }}^2 &= p \cdot \sigma \\
    \lr{\sqrt{m} e^{\inv{2} \eta \sigma^3 }}^2 &= p \cdot \osigma,
 \end{aligned}
-\end{dmath}
+\end{equation}
 which isn't a full proof of the claimed result (i.e. the most general orientation isn't considered), but at least validates the claim.
 } % answer
 

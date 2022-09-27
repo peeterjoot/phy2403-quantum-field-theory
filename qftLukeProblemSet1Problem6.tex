@@ -8,8 +8,7 @@
 {
 (You can probably find this worked out in lots of places\footnote{Including Hw1 from 2018 QFT I \cref{qft:problemSet1:1}, although that problem didn't include the mass term.}, but it's good practice with working with four-vectors, so I strongly encourage you to do it yourself!)
 Consider the Lagrangian for a real vector field \( A^\mu \):
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem6:20}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:20}
 \LL
 =
 - \inv{2}
@@ -20,27 +19,22 @@ Consider the Lagrangian for a real vector field \( A^\mu \):
 \partial_\beta A^\beta(x)
 +
 \frac{\mu^2}{2} A_\alpha(x) A^\alpha(x).
-\end{dmath}
-
+\end{equation}
 \makesubproblem{}{qft:LukeProblemSet1:6a}
 Show that this leads to the field equations
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem6:40}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:40}
 \lr{ g_{\alpha\beta} \lr{ \delSquaredBox + \mu^2 } - \partial_\alpha \partial_\beta } A^\beta(x) = 0,
-\end{dmath}
+\end{equation}
 %
 and that the field \( A^\alpha(x) \) satisfies the Lorentz condition
 
-\begin{dmath}\label{eqn:LukeProblemSet1Problem6:60}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:60}
 \partial_\alpha A^\alpha(x) = 0.
-\end{dmath}
+\end{equation}
 
 (NB: If you are not careful with your indices and Einstein summation convention you will get yourself hopelessly messed up here.)
-
 \makesubproblem{}{qft:LukeProblemSet1:6b}
-
 Consider the limiting case of a massless field, \( \mu \rightarrow 0 \), and identify the field \( A^\mu \) with the scalar and vector potentials of electrodynamics: \( A^\mu = (\phi, \BA) \), where
-
 \begin{equation}\label{eqn:LukeProblemSet1Problem6:80}
 \BE = - \spacegrad \phi - \PD{t}{\BA}
 \end{equation}
@@ -50,14 +44,11 @@ Consider the limiting case of a massless field, \( \mu \rightarrow 0 \), and ide
 
 Show that the field equations reproduce two of Maxwell's equations, and that the other two hold as identities given the definitions of \( \BE \) and \( \BB \) in terms of \( \phi \) and \( \BA \).
 } % makeproblem
-
 \makeanswer{qft:LukeProblemSet1:6}{
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:LukeProblemSet1:6a}
-
 First rewrite the Lagrangian slightly
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem6:120}
+\begin{equation}\label{eqn:LukeProblemSet1Problem6:120}
 \LL
 =
 - \inv{2}
@@ -68,11 +59,10 @@ First rewrite the Lagrangian slightly
 \partial^\tau A^\beta(x)
 +
 \frac{\mu^2}{2} A_\alpha(x) A^\alpha(x),
-\end{dmath}
+\end{equation}
 %
 to compute
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:140}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:140}
 \partial^\mu \PD{\partial^\mu A^\nu}{\LL}
 =
 \partial^\mu
@@ -88,10 +78,10 @@ g_{\mu\nu}
 =
 +
 \mu^2 A_\nu,
-\end{dmath}
+\end{equation}
 %
 or
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:160}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:160}
 0
 =
 -
@@ -99,25 +89,21 @@ or
 =
 \lr{ -
 g_{\nu \alpha} \lr{ \delSquaredBox + \mu^2} + \partial_\nu \partial_\alpha } A^\alpha.
-\end{dmath}
+\end{equation}
 
 After a sign switch and change of indexes, we have the desired result.  Operating on this with \( \partial^\nu \) gives
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:180}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:180}
 0 =
 \lr{ -
 \partial_\alpha \lr{ \delSquaredBox + \mu^2} + \delSquaredBox \partial_\alpha } A^\alpha
 =
 - \mu^2 \partial_\alpha A^\alpha.
-\end{dmath}
+\end{equation}
 
 Unless \( \mu = 0 \) we must have a zero four-divergence \( \partial_\alpha A^\alpha = 0 \).
-
 \makeSubAnswer{}{qft:LukeProblemSet1:6b}
-
 In the \( \mu \rightarrow 0 \) case with zero divergence, the field equation is just
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:200}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:200}
 0
 = \delSquaredBox A_\nu
 = \partial^\alpha \partial_\alpha A_\nu
@@ -130,11 +116,10 @@ In the \( \mu \rightarrow 0 \) case with zero divergence, the field equation is 
 }
 =
 \partial^\alpha F_{\alpha \nu}.
-\end{dmath}
+\end{equation}
 
 Now consider the various index combinations of the electromagnetic field \( F_{\mu \nu} \).  When one index is zero we have the electric field components
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:220}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:220}
 F_{0 k}
 =
 \partial_0 A_k - \partial_k A_0
@@ -142,10 +127,10 @@ F_{0 k}
 -\PD{t}{A^k} - \PD{x^k}{\phi}
 =
 \BE \cdot \Be_k.
-\end{dmath}
+\end{equation}
 
 The remaining are the magnetic field components, for example
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:240}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:240}
 F_{12}
 =
 \partial_1 A_2 - \partial_2 A_1
@@ -153,7 +138,7 @@ F_{12}
 -\partial_1 A^2 + \partial_2 A^1
 =
 -\BB \cdot \Be_3.
-\end{dmath}
+\end{equation}
 
 By cyclic permutation we have
 \begin{equation}\label{eqn:qftProblemSet1Problem6:260}
@@ -165,19 +150,18 @@ B_2 &= -F_{31}.
 \end{equation}
 
 The field relation \cref{eqn:qftProblemSet1Problem6:200} for \( \nu = 0 \) expands to
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:280}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:280}
 0
 =
 \partial^k F_{k 0}
 =
 - \spacegrad \cdot \BE,
-\end{dmath}
+\end{equation}
 %
 which is one of the (source-less) Maxwell equations.
 
 For the other indexes, the expansion is like
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:300}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:300}
 0
 =
 \partial^\alpha F_{\alpha 1}
@@ -193,12 +177,12 @@ For the other indexes, the expansion is like
 + \partial_t E_1
 =
 \lr{ \PD{t}{\BE} - \spacegrad \cross \BB} \cdot \Be_1.
-\end{dmath}
+\end{equation}
 
 Using cyclic permutation, we must have
-\begin{dmath}\label{eqn:qftProblemSet1Problem6:320}
+\begin{equation}\label{eqn:qftProblemSet1Problem6:320}
 0 = \PD{t}{\BE} - \spacegrad \cross \BB,
-\end{dmath}
+\end{equation}
 %
 another of the source free Maxwell equations.
 }

@@ -4,16 +4,16 @@
 %
 \makeoproblem{Scale invariance and conserved charge.}{qft:problemSet1:4}{2018 Hw1.IV}{
 Consider classical electrodynamics with the Lagrangian
-\begin{dmath}\label{eqn:ProblemSet1Problem4:20}
+\begin{equation}\label{eqn:ProblemSet1Problem4:20}
 S = \int d^4 x \lr{ -\inv{4} F_{\mu\nu} F^{\mu\nu} }.
-\end{dmath}
+\end{equation}
 Consider the following ``dilatation'' (or ``scale'') transformation:
-\begin{dmath}\label{eqn:ProblemSet1Problem4:40}
+\begin{equation}\label{eqn:ProblemSet1Problem4:40}
 \begin{aligned}
 x_\mu &\rightarrow x'_\mu = e^d x_\mu \\
 A_\mu(x) &\rightarrow A'_\mu(x') = e^{-d} A_\mu(x),
 \end{aligned}
-\end{dmath}
+\end{equation}
 where \( d \) is a constant, called the dilatation parameter.
 
 Dilatation invariance in QED (and QCD) is perhaps the simplest example of a symmetry, where the classical action is invariant, but the quantum theory is not (as you will learn later, in the spring class). Broken scale invariance arises because one has to introduce a short-distance cutoff (a UV ``regulator'') to define the quantum theory. (We already saw an indication of the need for a regulator when we considered the divergent zero point energy of the free quantum scalar field.)
@@ -33,9 +33,9 @@ Show, then, that conservation of \(  j^{\text{con f}}_\mu  \) implies that the e
 electrodynamics is traceless (the trace of the tensor is defined as usual to be \( g_{\mu\nu} T^{\mu\nu}\)).
 \makesubproblem{}{qft:problemSet1:4e}
 Finally, open your classical electrodynamics books and recall the interpretation of the \( T^{00}, T^{xx},T^{yy} \), etc., components of the energy momentum tensor as energy density and pressure. Show that the tracelessness of \( T^{\mu\nu} \) is equivalent to the familiar relation
-\begin{dmath}\label{eqn:ProblemSet1Problem4:680}
+\begin{equation}\label{eqn:ProblemSet1Problem4:680}
 p = \rho/3
-\end{dmath}
+\end{equation}
 between the energy density and pressure of isotropic radiation -- the equation of state of blackbody radiation.\footnote{In class, I   promised you some finite-temperature problem, but this homework got long. For now, this will remain the only connection. I'll try to keep my promise... may be in the final?}
 \index{scale invariance}
 \index{conserved charge}
@@ -46,11 +46,11 @@ between the energy density and pressure of isotropic radiation -- the equation o
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:4a}
 With \( {x'}^\mu = e^{d} x^\mu \), the volume element transforms as
-\begin{dmath}\label{eqn:ProblemSet1Problem4:60}
+\begin{equation}\label{eqn:ProblemSet1Problem4:60}
 d^4 x' \rightarrow e^{4d} d^4 x.
-\end{dmath}
+\end{equation}
 The components of the four-gradient transform as
-\begin{dmath}\label{eqn:ProblemSet1Problem4:80}
+\begin{equation}\label{eqn:ProblemSet1Problem4:80}
 \PD{x'_\mu}{}
 =
 \PD{x'_\mu}{x_\mu}
@@ -58,27 +58,27 @@ The components of the four-gradient transform as
 =
 e^{-d}
 \PD{x_\mu}{},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet1Problem4:100}
+\begin{equation}\label{eqn:ProblemSet1Problem4:100}
 F'_{\mu\nu} =
 \partial'_{\mu} A'_\nu
 -
 \partial'_{\nu} A'_\mu
 =
 e^{-2d} F_{\mu\nu}.
-\end{dmath}
+\end{equation}
 The action is therefore invariant
-\begin{dmath}\label{eqn:ProblemSet1Problem4:120}
+\begin{equation}\label{eqn:ProblemSet1Problem4:120}
 S'
 = -\inv{4} \int d^4 x' F'_{\mu\nu} {F'}^{\mu\nu}
 = -\inv{4} \int e^{4d} d^4 x e^{2d} F_{\mu\nu} e^{2d} F^{\mu\nu}
 = -\inv{4} \int d^4 x F_{\mu\nu} F^{\mu\nu}
 = S.
-\end{dmath}
+\end{equation}
 \makeSubAnswer{}{qft:problemSet1:4b}
 We need the variation of the potential
-\begin{dmath}\label{eqn:ProblemSet1Problem4:180}
+\begin{equation}\label{eqn:ProblemSet1Problem4:180}
 \delta A_{\nu}
 = A'_{\nu}(x) - A_{\nu}(x)
 = A'_{\nu}(e^{-d} x') - A_{\nu}(x)
@@ -90,9 +90,9 @@ We need the variation of the potential
 - d \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}}
 \approx
 -d(1+ x^\alpha \partial_\alpha )A_{\nu},
-\end{dmath}
+\end{equation}
 and the variation of the field
-\begin{dmath}\label{eqn:ProblemSet1Problem4:140}
+\begin{equation}\label{eqn:ProblemSet1Problem4:140}
 \delta F_{\mu\nu}
 = F'_{\mu\nu}(x) - F_{\mu\nu}(x)
 = F'_{\mu\nu}(e^{-d} x') - F_{\mu\nu}(x)
@@ -105,9 +105,9 @@ and the variation of the field
 \approx
 -d(2+ x^\alpha \partial_\alpha )
 F_{\mu\nu},
-\end{dmath}
+\end{equation}
 so the variation of the Lagrangian is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:160}
+\begin{equation}\label{eqn:ProblemSet1Problem4:160}
 \delta \LL
 =
 -\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
@@ -136,15 +136,15 @@ x^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
 -4 (d) \LL - (d) \lr{ \partial_\alpha (x^\alpha \LL) - \LL \partial_\alpha x^\alpha }
 =
 - (d) \partial_\alpha (x^\alpha \LL),
-\end{dmath}
+\end{equation}
 so the variational current (what is this called?) is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:200}
+\begin{equation}\label{eqn:ProblemSet1Problem4:200}
 J^\mu_d
 =
 - (d) x^\mu \LL.
-\end{dmath}
+\end{equation}
 Finally, we need
-\begin{dmath}\label{eqn:ProblemSet1Problem4:220}
+\begin{equation}\label{eqn:ProblemSet1Problem4:220}
 \PD{(\partial_\mu A_\nu)}{\LL}
 =
 -\inv{2}
@@ -159,9 +159,9 @@ F^{\alpha\beta}
 }
 =
 -F^{\mu\nu}.
-\end{dmath}
+\end{equation}
 Combining \cref{eqn:ProblemSet1Problem4:220}, \cref{eqn:ProblemSet1Problem4:200}, and \cref{eqn:ProblemSet1Problem4:180} we can calculate the conserved current, which is (for \( d = 1 \)) is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:240}
+\begin{equation}\label{eqn:ProblemSet1Problem4:240}
 j^\mu_{\text{dil}}
 =
 \PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_d
@@ -172,9 +172,9 @@ F^{\mu\nu}
 }
 +
 x^\mu \LL.
-\end{dmath}
+\end{equation}
 This can be put into a slightly nicer form
-\begin{dmath}\label{eqn:ProblemSet1Problem4:260}
+\begin{equation}\label{eqn:ProblemSet1Problem4:260}
 j^\mu_{\text{dil}}
 =
 F^{\mu\nu}
@@ -221,7 +221,7 @@ F_{\alpha\nu}
 }
 +
 x^\mu \LL,
-\end{dmath}
+\end{equation}
 or
 \boxedEquation{eqn:ProblemSet1Problem4:280}{
    j^\mu_{\text{dil}}
@@ -240,13 +240,13 @@ or
    }
 }
 It was hinted that the complete derivative of an antisymmetric tensor may be dropped from the current, that's because
-\begin{dmath}\label{eqn:ProblemSet1Problem4:560}
+\begin{equation}\label{eqn:ProblemSet1Problem4:560}
 \partial_\mu \lr{ j^\mu + \partial_\nu C^{\mu\nu} }
 =
 \partial_\mu j^\mu + \partial_\mu \partial_\nu C^{\mu\nu}
 =
 \partial_\mu j^\mu,
-\end{dmath}
+\end{equation}
 since
 the derivative operator \( \partial_\mu\partial_\nu \) is symmetric, and the sum of the contraction of symmetric and antisymmetric tensors is zero.  Since the
 complete derivative term  \(
@@ -266,25 +266,25 @@ A_\nu(x) \rightarrow A_\nu'(x') = A_\nu(x) + a^\alpha \partial_\alpha A_\nu.
 \end{equation}
 \end{subequations}
 The gradient \( \partial_\mu \) and volume element \( d^4 x\) are unchanged by a translation transformation.  The potential transforms as
-\begin{dmath}\label{eqn:ProblemSet1Problem4:360}
+\begin{equation}\label{eqn:ProblemSet1Problem4:360}
 \delta A_\nu
 = A_\nu'(x) - A_\nu(x)
 = A_\nu'(x' - a) - A_\nu(x)
 \approx A_\nu(x) - a^\alpha \partial_\alpha A_\nu - A_\nu(x)
 =
 - a^\alpha \partial_\alpha A_\nu.
-\end{dmath}
+\end{equation}
 The field transforms as
-\begin{dmath}\label{eqn:ProblemSet1Problem4:380}
+\begin{equation}\label{eqn:ProblemSet1Problem4:380}
 \delta F_{\mu\nu}
 = F_{\mu\nu}'(x) - F_{\mu\nu}(x)
 = F_{\mu\nu}'(x' - a) - F_{\mu\nu}(x)
 \approx F_{\mu\nu}(x) - a^\alpha \partial_\alpha F_{\mu\nu} - F_{\mu\nu}(x)
 =
 - a^\alpha \partial_\alpha F_{\mu\nu}.
-\end{dmath}
+\end{equation}
 Finally the Lagrangian density transforms as
-\begin{dmath}\label{eqn:ProblemSet1Problem4:400}
+\begin{equation}\label{eqn:ProblemSet1Problem4:400}
 \delta \LL
 =
 -\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
@@ -294,21 +294,21 @@ Finally the Lagrangian density transforms as
 \inv{4} a^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
 =
 - \partial_\alpha \lr{ a^\alpha \LL }.
-\end{dmath}
+\end{equation}
 That is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:420}
+\begin{equation}\label{eqn:ProblemSet1Problem4:420}
 J^\mu_a = - a^\mu \LL.
-\end{dmath}
+\end{equation}
 The conserved current associated with spacetime translation is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:440}
+\begin{equation}\label{eqn:ProblemSet1Problem4:440}
 j^\mu_a
 =
 \PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_a
 =
 - F^{\mu\nu} (-a^\alpha \partial_\alpha A_\nu) + a^\mu \LL.
-\end{dmath}
+\end{equation}
 As was the case in \cref{eqn:ProblemSet1Problem4:280} we are able to put group all the explicit potential dependence in a discardable package
-\begin{dmath}\label{eqn:ProblemSet1Problem4:460}
+\begin{equation}\label{eqn:ProblemSet1Problem4:460}
 =
 a^\alpha
 F^{\mu\nu}
@@ -334,7 +334,7 @@ a^\alpha
 \cancel{ \partial_\nu F^{\mu\nu} }
 A_\alpha
  + a^\mu \LL
-\end{dmath}
+\end{equation}
 or
 \boxedEquation{eqn:ProblemSet1Problem4:480}{
    j^\mu_a
@@ -361,7 +361,7 @@ A_\alpha \) is completely antisymmetric in \( \mu\nu \) so we may drop it from t
 (conformal) dilatation \( \tilde{j_{\text{dil}}} \) and translation conservation
 \( \tilde{j}_a \)
 currents
-\begin{dmath}\label{eqn:ProblemSet1Problem4:660}
+\begin{equation}\label{eqn:ProblemSet1Problem4:660}
 \begin{aligned}
    \tilde{j}^\mu_{\text{dil}}
    &=
@@ -382,7 +382,7 @@ currents
       A_\alpha
    },
 \end{aligned}
-\end{dmath}
+\end{equation}
 effectively dropping the complete derivative terms (also changing signs to match the literature \citep{jackson1975cew}).  That is
 \boxedEquation{eqn:ProblemSet1Problem4:500}{
 \begin{aligned}
@@ -396,16 +396,16 @@ effectively dropping the complete derivative terms (also changing signs to match
 \end{aligned}
 }
 Here we've factored out the common (conformal) energy momentum tensor \( {\Theta^\mu}_\nu \), which may also be written with upper indexes
-\begin{dmath}\label{eqn:ProblemSet1Problem4:520}
+\begin{equation}\label{eqn:ProblemSet1Problem4:520}
 \Theta^{\mu\nu} =
    F^{\mu\sigma}
    F_{\sigma\alpha}
    g^{\alpha\nu}
    -
    g^{\mu\nu} \LL,
-\end{dmath}
+\end{equation}
 which is symmetric with respect to index interchange
-\begin{dmath}\label{eqn:ProblemSet1Problem4:540}
+\begin{equation}\label{eqn:ProblemSet1Problem4:540}
 \Theta^{\nu\mu}
 =
    F^{\nu\sigma}
@@ -426,10 +426,10 @@ which is symmetric with respect to index interchange
    -
    g^{\mu\nu} \LL
 = \Theta^{\mu\nu}.
-\end{dmath}
+\end{equation}
 \makeSubAnswer{}{qft:problemSet1:4d}
 We require the divergence of a Noether current to be zero, so for the dilatation current
-\begin{dmath}\label{eqn:ProblemSet1Problem4:580}
+\begin{equation}\label{eqn:ProblemSet1Problem4:580}
 0 = \partial_\mu \tilde{j}^\mu_{\text{dil}}
 =
 \lr{ \partial_\mu x^\nu }
@@ -442,15 +442,15 @@ x^\nu
 +
 x^\nu
 \partial_\mu {\Theta^\mu}_\nu.
-\end{dmath}
+\end{equation}
 In particular for \( x = 0 \) we must have \(
 {\Theta^\mu}_\mu  = 0 \).  Incidentally, given \( {\Theta^\mu}_\mu  = 0 \), then
 for non-zero \( x \) we must also have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).  That can be demonstrated directly utilizing the zero divergence of the Noether current for a spacetime translation
-\begin{dmath}\label{eqn:ProblemSet1Problem4:600}
+\begin{equation}\label{eqn:ProblemSet1Problem4:600}
 0
 = \partial_\mu \tilde{j}^\mu_{a}
 = a^\nu \partial_\mu {\Theta^\mu}_\nu.
-\end{dmath}
+\end{equation}
 As this is zero for all \( a \) we must have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).
 
 \makeSubAnswer{}{qft:problemSet1:4e}
@@ -476,12 +476,12 @@ The trace written out explicitly is
 \Theta^{33},
 \end{equation}
 Since \( \Theta^{00} = \inv{2}( \BE^2 + \BB^2 ) = \rho \), and \( -\Theta^{kj} = T^{(M)}_{kj} = E_k E_j + B_k B_j - \inv{2} \delta_{kj}(\BE^2 + \BB^2) \), where \( T^{(M)}_{kj} \) is the electromagnetic stress tensor (borrowing notation from \citep{jackson1975cew} again), we have
-\begin{dmath}\label{eqn:ProblemSet1Problem4:700}
+\begin{equation}\label{eqn:ProblemSet1Problem4:700}
 \rho = -\sum_{k = 1}^3 T^{(M)}_{kk}.
-\end{dmath}
+\end{equation}
 In \citep{griffiths1999introduction} \( T^{(M)}_{ij} \) is described as ``the force (per unit area) in the ith direction action on an element of surface oriented in the jth direction -- diagonal elements represent pressures, and off-diagonal elements are shears''.
 Integration of the stress tensor over a cube, as sketched in \cref{fig:outwards_normal_cube:outwards_normal_cubeFig1}, serves to illustrate this nicely, as only the diagonal elements contribute to such an integral.  If the total cubic face area is \( A = 6 \Delta A \), the total force of on the surface is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:720}
+\begin{equation}\label{eqn:ProblemSet1Problem4:720}
 \BF
 =
 \int \lrT \cdot \Ba
@@ -497,12 +497,12 @@ Integration of the stress tensor over a cube, as sketched in \cref{fig:outwards_
 \Delta A \Be_2 \lr{ \evalbar{T^{(M)}_{k2}}{+} - \evalbar{T^{(M)}_{k2}}{-}}
 +
 \Delta A \Be_3 \lr{ \evalbar{T^{(M)}_{k3}}{+} - \evalbar{T^{(M)}_{k3}}{-}}
-\end{dmath}
+\end{equation}
 \imageFigure{../figures/phy2403-quantum-field-theory/outwards_normal_cubeFig1}{Cubic surface and outwards normals.}{fig:outwards_normal_cube:outwards_normal_cubeFig1}{0.2}
 Assuming isotropic fields, the total pressure of the fields on the surface is
-\begin{dmath}\label{eqn:ProblemSet1Problem4:740}
+\begin{equation}\label{eqn:ProblemSet1Problem4:740}
 p = \Abs{ \frac{2 \Delta A \sum_{k = 1}^3 T^{(M)}_{kk}}{6 \Delta A} }
 = \inv{3} \rho,
-\end{dmath}
+\end{equation}
 which recovers \cref{eqn:ProblemSet1Problem4:680}.
 }}

@@ -9,16 +9,16 @@ The electrostatic potential is an example of a scalar field \( \phi(\Bx) \) unch
 \Bx \rightarrow \Bx' = O \Bx,
 \end{equation}
 that is
-\begin{dmath}\label{eqn:qftLecture3:260}
+\begin{equation}\label{eqn:qftLecture3:260}
 \phi'(\Bx') = \phi(\Bx).
-\end{dmath}
+\end{equation}
 Here \( \phi'(\Bx') \) is the value of the (electrostatic) scalar potential in a primed frame.
 
 However, the electrostatic field is not invariant under Lorentz transformation.
 We postulate that there is some scalar field
-\begin{dmath}\label{eqn:qftLecture3:280}
+\begin{equation}\label{eqn:qftLecture3:280}
 \phi'(x') = \phi(x),
-\end{dmath}
+\end{equation}
 where \( x' = \Lambda x \) is an \(\SO{1,3}\) transformation.
 There are actually no stable particles (fields that persist at long distances) described by Lorentz scalar fields, although there are some unstable scalar fields such as the
 Higgs, Pions, and Kaons.
@@ -28,55 +28,59 @@ they are the
 easiest to start with.
 
 We need to first understand how derivatives \( \partial_\mu \phi(x) \) transform.  Using the chain rule
-\begin{dmath}\label{eqn:qftLecture3:300}
-\PD{x^\mu}{\phi(x)} =
-\PD{x^\mu}{\phi'(x')}
-=
+\begin{equation}\label{eqn:qftLecture3:300}
+\begin{aligned}
+\PD{x^\mu}{\phi(x)}
+&=
+\PD{x^\mu}{\phi'(x')} \\
+&=
 \PD{{x'}^\nu}{\phi'(x')}
-\PD{{x}^\mu}{{x'}^\nu}
-=
+\PD{{x}^\mu}{{x'}^\nu} \\
+&=
 \PD{{x'}^\nu}{\phi'(x')}
 \partial_\mu \lr{
 {\Lambda^\nu}_\rho x^\rho
-}
-=
+} \\
+&=
 \PD{{x'}^\nu}{\phi'(x')}
-{\Lambda^\nu}_\mu
-=
+{\Lambda^\nu}_\mu \\
+&=
 \PD{{x'}^\nu}{\phi(x)}
 {\Lambda^\nu}_\mu.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Multiplying by the inverse \( {\lr{\Lambda^{-1}}^\mu}_\kappa \) we get
-\begin{dmath}\label{eqn:qftLecture3:320}
+\begin{equation}\label{eqn:qftLecture3:320}
 \PD{{x'}^\kappa}{}
 =
 {\lr{\Lambda^{-1}}^\mu}_\kappa \PD{x^\mu}{}
-\end{dmath}
+\end{equation}
 
 This should be familiar to you, and is an analogue of the transformation of the
-\begin{dmath}\label{eqn:qftLecture3:340}
+\begin{equation}\label{eqn:qftLecture3:340}
 d\Br \cdot \spacegrad_\Br
 =
 d\Br' \cdot \spacegrad_{\Br'}.
-\end{dmath}
-
+\end{equation}
 \section{Actions.}
 \index{action}
 We will start with a classical action, and quantize to determine a QFT.
 In mechanics we have the particle position \( q(t) \), which is a classical field in 1+0 time and space dimensions.  Our action is
-\begin{dmath}\label{eqn:qftLecture3:360}
+\begin{equation}\label{eqn:qftLecture3:360}
+\begin{aligned}
 S
-= \int dt \LL(t)
-= \int dt \lr{
+&= \int dt \LL(t) \\
+&= \int dt \lr{
 \inv{2} \dot{q}^2 - V(q)
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 This action depends on the position of the particle that is local in time.
 You could imagine that we have a more complex action where the action depends on future or past times
-\begin{dmath}\label{eqn:qftLecture3:380}
+\begin{equation}\label{eqn:qftLecture3:380}
 S
 = \int dt' q(t') K( t' - t ),
-\end{dmath}
+\end{equation}
 but we don't seem to find such actions in classical mechanics.
 
 \section{Principles determining the form of the action.}
@@ -86,35 +90,37 @@ but we don't seem to find such actions in classical mechanics.
 \item locality (action depends on fields and the derivatives at given \((t, \Bx)\).
 \item Gauge principle (the action should be invariant under gauge transformation).  We won't discuss this in detail right now since we will start with studying scalar fields.
 Recall that for Maxwell's equations a gauge transformation has the form
-\begin{dmath}\label{eqn:qftLecture3:520}
+\begin{equation}\label{eqn:qftLecture3:520}
 \phi \rightarrow \phi + \dot{\chi}, \BA \rightarrow \BA - \spacegrad \chi.
-\end{dmath}
+\end{equation}
 \end{itemize}
 
 Suppose we have a real scalar field \( \phi(x) \) where \( x \in \bbR^{1,d-1} \).  We will be integrating over space and time \( \int dt d^{d-1} x \) which we will write as \( \int d^d x \).  Our action is
-\begin{dmath}\label{eqn:qftLecture3:400}
+\begin{equation}\label{eqn:qftLecture3:400}
 S = \int d^d x \lr{ \text{Some action density to be determined } }
-\end{dmath}
+\end{equation}
 The analogue of \( \dot{q}^2 \) is
-\begin{dmath}\label{eqn:qftLecture3:420}
+\begin{equation}\label{eqn:qftLecture3:420}
+\begin{aligned}
 \lr{ \PD{x^\mu}{\phi} }
 \lr{ \PD{x^\nu}{\phi} }
 g^{\mu\nu}
-=
-(\partial_\mu \phi) (\partial_\nu \phi) g^{\mu\nu}
-= \partial^\mu \phi \partial_\mu \phi.
-\end{dmath}
+&=
+(\partial_\mu \phi) (\partial_\nu \phi) g^{\mu\nu} \\
+&= \partial^\mu \phi \partial_\mu \phi.
+\end{aligned}
+\end{equation}
 This has both time and spatial components, that is
-\begin{dmath}\label{eqn:qftLecture3:440}
+\begin{equation}\label{eqn:qftLecture3:440}
 \partial^\mu \phi \partial_\mu \phi =
 \dotphi^2 - (\spacegrad \phi)^2,
-\end{dmath}
+\end{equation}
 so the desired simplest scalar action is
-\begin{dmath}\label{eqn:qftLecture3:460}
+\begin{equation}\label{eqn:qftLecture3:460}
 S = \int d^d x \lr{ \dotphi^2 - (\spacegrad \phi)^2 }.
-\end{dmath}
+\end{equation}
 The measure transforms using a Jacobian, which we have seen is the Lorentz transform matrix, and has unit determinant
 \begin{equation}\label{eqn:qftLecture3:480}
-d^d x' = d^d x \Abs{ det( \Lambda^{-1} ) } = d^d x.
+d^d x' = d^d x \Abs{ \det( \Lambda^{-1} ) } = d^d x.
 \end{equation}
 

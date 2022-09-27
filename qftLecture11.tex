@@ -36,37 +36,37 @@
 \section{Relativistic normalization.}
 
 We will continue looking at the generator of spacetime translation \( \hatU(\Lambda) \), which has the property
-\begin{dmath}\label{eqn:qftLecture11:40}
+\begin{equation}\label{eqn:qftLecture11:40}
 \hatU(\Lambda) \ket{0} = \ket{0},
-\end{dmath}
+\end{equation}
 %\underline{Lorentz invariance unbroken}
 That is
-\begin{dmath}\label{eqn:qftLecture11:760}
+\begin{equation}\label{eqn:qftLecture11:760}
 \hatU(\Lambda) = \BOne + \text{operators that annihilate the vacuum state}.
-\end{dmath}
+\end{equation}
 
 The action on a field was
-\begin{dmath}\label{eqn:qftLecture11:60}
+\begin{equation}\label{eqn:qftLecture11:60}
 \hatU(\Lambda)
 \phihat(x) \hatU^\dagger(\Lambda)
 = \phihat(\Lambda x),
-\end{dmath}
+\end{equation}
 and the action on the annihilation operator was
-\begin{dmath}\label{eqn:qftLecture11:300}
+\begin{equation}\label{eqn:qftLecture11:300}
 \hatU(\Lambda)
 \sqrt{ 2 \omega_\Bp } \hata_\Bp
 \hatU^\dagger(\Lambda)
 =
 \sqrt{ 2 \omega_{\Lambda \Bp} } \hata_{\Lambda \Bp}.
-\end{dmath}
+\end{equation}
 
 If \( \ket{\Bp_1} \) is the one particle state with momentum \( \Bp_1 \), then that momentum state can be generated from the ground state with the following normalized creation operation
-\begin{dmath}\label{eqn:qftLecture11:780}
+\begin{equation}\label{eqn:qftLecture11:780}
 \ket{\Bp_1} = \sqrt{ 2 \omega_{\Bp_1} } \hata_{\Bp_1}^\dagger \ket{0}.
-\end{dmath}
+\end{equation}
 
 We can compute the matrix element between two matrix states using the creation operator representation
-\begin{dmath}\label{eqn:qftLecture11:80}
+\begin{equation}\label{eqn:qftLecture11:80}
 \begin{aligned}
 \braket{\Bp_2}{\Bp_1}
 &=
@@ -94,7 +94,7 @@ We can compute the matrix element between two matrix states using the creation o
 2 \omega_{\Bp_1}
 (2 \pi)^3 \deltathree(\Bp_1 - \Bp_2).
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 \section{Spacelike surfaces.}
 \index{spacelike surface}
@@ -116,8 +116,7 @@ The condition of microcausality is
 if \( x \sim y \), that is \( (x - y)^2 < 0 \).  That is, \( x, y \) are spacelike separated.
 
 We wrote
-
-\begin{dmath}\label{eqn:qftLecture11:160}
+\begin{equation}\label{eqn:qftLecture11:160}
 \phihat(x)
 =
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
@@ -128,9 +127,9 @@ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp
 \evalbar{
 e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp
 ,
-\end{dmath}
+\end{equation}
 or \( \phihat(x) = \phihat_{-}(x) + \phihat_{+}(x) \), where
-\begin{dmath}\label{eqn:qftLecture11:180}
+\begin{equation}\label{eqn:qftLecture11:180}
 \begin{aligned}
 \phihat_{-}(x) &=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
@@ -141,10 +140,10 @@ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp \\
 \evalbar{
 e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Compute the commutator
-\begin{dmath}\label{eqn:qftLecture11:200}
+\begin{equation}\label{eqn:qftLecture11:200}
 D(x)
 = \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(0)}
 =
@@ -158,7 +157,7 @@ D(x)
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
 (2 \pi)^3 \deltathree(\Bp - \Bk),
-\end{dmath}
+\end{equation}
 \boxedEquation{eqn:qftLecture11:800}{
 D(x)
 =
@@ -167,7 +166,7 @@ D(x)
 }
 
 Now about the commutator at two spacetime points
-\begin{dmath}\label{eqn:qftLecture11:220}
+\begin{equation}\label{eqn:qftLecture11:220}
 \antisymmetric{\phihat(x)}{\phihat(y)}
 =
 \antisymmetric{\phihat_{-}(x) + \phihat_{+}(x)}{\phihat_{-}(y) + \phihat_{+}(y)}
@@ -177,15 +176,15 @@ Now about the commutator at two spacetime points
 \antisymmetric{\phihat_{+}(x)}{\phihat_{-}(y)}
 =
 -D(y - x) + D(x - y).
-\end{dmath}
+\end{equation}
 
 Find
-\begin{dmath}\label{eqn:qftLecture11:240}
+\begin{equation}\label{eqn:qftLecture11:240}
 \begin{aligned}
 \antisymmetric{\phihat(x)}{\phihat(y)} &= D(x - y) - D(y - x) \\
 \antisymmetric{\phihat(x)}{\phihat(0)} &= D(x) - D(- x).
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely.
 
@@ -193,13 +192,13 @@ Let's look at \( D(x) \), \cref{eqn:qftLecture11:800}, a bit more closely.
 \( D(x) \) is Lorentz invariant (has the same value for all \( x^\mu, {x'}^\mu \)
 
 We can see this by writing this out as
-\begin{dmath}\label{eqn:qftLecture11:280}
+\begin{equation}\label{eqn:qftLecture11:280}
 D(x)
 =
 \int \frac{d^3 p}{(2 \pi)^3 } dp^0
 \delta( p_0^2 - \Bp^2 - m^2) \Theta(p^0)
 e^{-i p \cdot x}.
-\end{dmath}
+\end{equation}
 
 The exponential is Lorentz invariant, and the delta function has been put into a Lorentz invariant form.
 

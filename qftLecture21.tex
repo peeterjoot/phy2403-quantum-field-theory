@@ -47,25 +47,25 @@
 \section{Review.}
 
 We were studying the Dirac Lagrangian
-\begin{dmath}\label{eqn:qftLecture21:20}
+\begin{equation}\label{eqn:qftLecture21:20}
 \LL_{\text{Dirac}} = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
-\end{dmath}
+\end{equation}
 from which we find
-\begin{dmath}\label{eqn:qftLecture21:40}
+\begin{equation}\label{eqn:qftLecture21:40}
 \lr{ i \gamma^\mu \partial_\mu -m } \Psi = 0,
-\end{dmath}
+\end{equation}
 the Dirac equation, and saw that solutions to this equation satisfies the Klein-Gordon equation.  We found solution
-\begin{dmath}\label{eqn:qftLecture21:60}
+\begin{equation}\label{eqn:qftLecture21:60}
 \Psi(x) = u(p) e^{-i p \cdot x},
-\end{dmath}
+\end{equation}
 which is automatically a solution to the Klein-Gordon equation.  There are actually two linearly independent solutions
-\begin{dmath}\label{eqn:qftLecture21:80}
+\begin{equation}\label{eqn:qftLecture21:80}
 u^s(p) =
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma } \zeta^s \\
 \sqrt{ p \cdot \osigma } \zeta^s \\
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 where \( \zeta^1 = (1,0)^\T, \zeta^2 = (0,1)^\T \).
 
 \section{Normalization.}
@@ -79,7 +79,7 @@ u^{r \dagger} u^{s}
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture21:120}
+\begin{equation}\label{eqn:qftLecture21:120}
 u^{s \dagger} u^r
 =
 \begin{bmatrix}
@@ -118,16 +118,16 @@ p_0 + \Bp \cdot \Bsigma
 =
 2 p_0
 \zeta^{s \dagger} \zeta^r.
-\end{dmath}
+\end{equation}
 %Putting back in the suffixes, we have
-%\begin{dmath}\label{eqn:qftLecture21:1000}
+%\begin{equation}\label{eqn:qftLecture21:1000}
 %u^{s \dagger} u^{r}
 %=
 %2 p_0
 %\zeta^{s\dagger} \zeta^r.
-%\end{dmath}
+%\end{equation}
 We can easily see that \( \zeta^{s\dagger} \zeta^r = \delta^{rs} \) by writing out those products
-\begin{dmath}\label{eqn:qftLecture21:1020}
+\begin{equation}\label{eqn:qftLecture21:1020}
 \begin{aligned}
 \zeta^{1\dagger} \zeta^1
 &=
@@ -174,15 +174,14 @@ We can easily see that \( \zeta^{s\dagger} \zeta^r = \delta^{rs} \) by writing o
 &=
 1.
 \end{aligned}
-\end{dmath}
+\end{equation}
 %which completes the proof.
 \end{proof}
-
-%\begin{dmath}\label{eqn:qftLecture21:140}
+%\begin{equation}\label{eqn:qftLecture21:140}
 %u^{s \dagger} u^{s'}
 %= 2 p_0 \zeta^{s \dagger} \zeta^{s'}
 %= 2 p_0 \delta^{s s'}
-%\end{dmath}
+%\end{equation}
 
 We also want to compute \( \ubar u \), but need a couple intermediate results.
 \makelemma{Products of \( p \cdot \sigma, p \cdot \osigma \).}{lemma:qftLecture21:2}{
@@ -195,7 +194,7 @@ We also want to compute \( \ubar u \), but need a couple intermediate results.
 } % lemma
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture21:180}
+\begin{equation}\label{eqn:qftLecture21:180}
 (p \cdot \sigma) (p \cdot \osigma)
 =
 \lr{ p^0 - \Bp \cdot \Bsigma}
@@ -209,9 +208,9 @@ We also want to compute \( \ubar u \), but need a couple intermediate results.
 -
 \Bp^2
 = m^2
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture21:200}
+\begin{equation}\label{eqn:qftLecture21:200}
 (p \cdot \osigma) (p \cdot \sigma)
 =
 \lr{ p^0 + \Bp \cdot \Bsigma}
@@ -225,7 +224,7 @@ and
 -
 \Bp^2
 = m^2.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 \maketheorem{\( \ubar u \).}{thm:qftLecture21:3}{
@@ -235,7 +234,7 @@ and
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture21:160}
+\begin{equation}\label{eqn:qftLecture21:160}
 \ubar^r u^s
 =
 u^{r\dagger} \gamma^0 u^s
@@ -266,16 +265,16 @@ u^{r\dagger} \gamma^0 u^s
 2 m \zeta^{r\dagger} \zeta^s
 =
 2 m \delta^{rs}.
-\end{dmath}
+\end{equation}
 %which completes the proof.
 \end{proof}
 
 \section{Other solution.}
 
 Now we seek the other plane wave solution
-\begin{dmath}\label{eqn:qftLecture21:260}
+\begin{equation}\label{eqn:qftLecture21:260}
 \Psi(x) = v(p) e^{i p \cdot x}.
-\end{dmath}
+\end{equation}
 \maketheorem{\(v\) solution to the Dirac equation.}{thm:qftLecture21:101}{
 \Cref{eqn:qftLecture21:260} is a solution to the Dirac equation, provided
 %\boxedEquation{eqn:qftLecture21:280}{
@@ -302,18 +301,18 @@ v^{r \dagger}(p) v^s(p) &= 2 p^0 \delta^{rs}.
 } % theorem
 \Cref{thm:qftLecture21:13} is proven in \cref{problem:qftLecture21:2}.
 %and
-%\begin{dmath}\label{eqn:qftLecture21:480}
+%\begin{equation}\label{eqn:qftLecture21:480}
 %\vbar^s
 %= v^{s\dagger} \gamma_0.
-%\end{dmath}
+%\end{equation}
 
 It will also be useful to restate the \( 2 \delta^{rs} p_0 \) normalization conditions as
-\begin{dmath}\label{eqn:qftLecture21:1200}
+\begin{equation}\label{eqn:qftLecture21:1200}
 \begin{aligned}
 u^{r\dagger}(\Bp) u^s(\Bp) &= 2 \omega_\Bp \delta^{sr} \\
 v^{r\dagger}(\Bp) v^s(\Bp) &= 2 \omega_\Bp \delta^{sr}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Various orthogonality conditions exist between the \( u \)'s and \( v\)'s
 \maketheorem{Dirac adjoint orthogonality conditions.}{thm:qftLecture21:1260}{
@@ -387,9 +386,9 @@ x_n y_1 & \cdots  &        & x_n y_n
 
 % I don't see how this would be:
 %It was claimed that such a tensor product can be likened to the completeness relation that we express in QM as
-%\begin{dmath}\label{eqn:qftLecture21:460}
+%\begin{equation}\label{eqn:qftLecture21:460}
 %\sum_n \ket{n} \bra{n} \equiv 1.
-%\end{dmath}
+%\end{equation}
 %
 \maketheorem{Direct product relations.}{thm:qftLecture21:17}{
 \index{direct product}
@@ -403,7 +402,7 @@ x_n y_1 & \cdots  &        & x_n y_n
 
 \begin{proof}
 For the \( v \)'s
-\begin{dmath}\label{eqn:qftLecture21:420}
+\begin{equation}\label{eqn:qftLecture21:420}
 \sum_{s = 1,2}
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
@@ -435,9 +434,9 @@ For the \( v \)'s
 -\sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & \sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }  \\
 \sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & -\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 but
-\begin{dmath}\label{eqn:qftLecture21:1120}
+\begin{equation}\label{eqn:qftLecture21:1120}
 \eta^1 \otimes \eta^{1T}
 =
 \begin{bmatrix}
@@ -453,9 +452,9 @@ but
 1 & 0 \\
 0 & 0
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture21:1140}
+\begin{equation}\label{eqn:qftLecture21:1140}
 \eta^2 \otimes \eta^{2T}
 =
 \begin{bmatrix}
@@ -471,9 +470,9 @@ and
 0 & 0 \\
 0 & 1
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so \( \sum_{s = 1,2} \eta^s \otimes \eta^{s\T} = 1 \), leaving
-\begin{dmath}\label{eqn:qftLecture21:1160}
+\begin{equation}\label{eqn:qftLecture21:1160}
 \sum_{s = 1}^2 v^s(p) \otimes \vbar^s(p)
 =
 \begin{bmatrix}
@@ -505,7 +504,7 @@ p \cdot \osigma & - m
 \end{bmatrix}
 =
 -m + p^\mu \gamma_\mu,
-\end{dmath}
+\end{equation}
 as stated.
 \end{proof}
 Proof for the \( u\)'s is left to \cref{problem:qftLecture21:3}.

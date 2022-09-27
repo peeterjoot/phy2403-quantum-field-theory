@@ -57,9 +57,9 @@ $$ \langle \hat{O}(x) \rangle =  \langle 0 \vert U^\dagger[g] \hat{O}(x) U[g] \v
 The causality condition, then, is that
 $$ {\delta \langle \hat{O}(x) \rangle \over \delta g[y]} = 0 ~ {\rm for } ~ x\sim y~.$$
 Now, recalling the form of the evolution operator, 
-\begin{dmath}\label{eqn:ProblemSet3Problem4:17}
+\begin{equation}\label{eqn:ProblemSet3Problem4:17}
 U[g] = T e^{  i \int dt d^3 x L_I(t, \Bx, g(\Bx,t))},
-\end{dmath}
+\end{equation}
 and the Baker-Campbell-Hausdorf formula, it should be clear how the vanishing of the commutators outside the light cone becomes  relevant for the above condition  to hold.
 For Bogoljubov, the vanishing commutators are a {\it consequence} of the causality condition given in terms of variational derivatives, as expressed above; he derives the $S$-matrix expansion from that requirement along with a few others (locality and Lorentz invariance, basically).
 \index{Baker-Campbell-Hausdorf formula}
@@ -97,20 +97,20 @@ For Bogoljubov, the vanishing commutators are a {\it consequence} of the causali
 \makeSubAnswer{}{qft:problemSet3:4a}
 In class we defined the time translation operator as \( U(\Ba) = e^{i \Ba \cdot \hat{\BP} } \), which satisfies the relations\footnote{There is some variation in at least some of the literature.  In particular
 \citep{desai2009quantum} defines the translation operator as \( D(\Ba) = e^{-i \Ba \cdot \hat{\BP}/\Hbar} \) defined by the property \( D(\Ba) \ket{\Bx} = \ket{\Bx + \Ba} \).}
-\begin{dmath}\label{eqn:ProblemSet3Problem4:20}
+\begin{equation}\label{eqn:ProblemSet3Problem4:20}
 \begin{aligned}
 U(\Ba) \phi(\Bx) U^\dagger(\Ba) &= \phi(\Bx - \Ba) \\
 U^\dagger(\Ba) \ket{\Bx} &= \ket{\Bx + \Ba}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 In particular \( \bra{\Bzero} U(\By) = \bra{\By} \) and \( U^\dagger(\By) \ket{\Bzero} = \ket{\By} \).  As \( T^{00} \) is composed entirely of products of \( \phi(\Bx) \) or its derivatives, clearly
-\begin{dmath}\label{eqn:ProblemSet3Problem4:40}
+\begin{equation}\label{eqn:ProblemSet3Problem4:40}
 U(\By) T^{00}(\Bx, t) U^\dagger(\By)
 =
 T^{00}(\Bx - \By, t),
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet3Problem4:60}
+\begin{equation}\label{eqn:ProblemSet3Problem4:60}
 \rho(0, \Bx - \By, t)
 =
 \bra{\Bzero, 0} T^{00}(\Bx - \By, t) \ket{\Bzero, 0}
@@ -120,11 +120,11 @@ so
 \bra{\By, 0} T^{00}(\Bx, t) \ket{\By, 0}
 =
 \rho(\By, \Bx, t).
-\end{dmath}
+\end{equation}
 
 \makeSubAnswer{}{qft:problemSet3:4b}
 Let's start by computing the energy-momentum tensor
-\begin{dmath}\label{eqn:ProblemSet3Problem4:80}
+\begin{equation}\label{eqn:ProblemSet3Problem4:80}
 T^{00}
 = \partial^0 \phi \partial^0 \phi - g^{00}\LL
 = \partial^0 \phi \partial^0 \phi - \inv{2} \lr{
@@ -164,17 +164,17 @@ T^{00}
       a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
 }.
-\end{dmath}
+\end{equation}
 For the derivatives, we have
-\begin{dmath}\label{eqn:ProblemSet3Problem4:100}
+\begin{equation}\label{eqn:ProblemSet3Problem4:100}
 \partial_\nu e^{\pm i p \cdot x}
 =
 \partial_\nu e^{\pm i p_\mu x^\mu}
 =
 \pm i p_\nu e^{\pm i p \cdot x},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet3Problem4:120}
+\begin{equation}\label{eqn:ProblemSet3Problem4:120}
 T^{00}
 =
 \inv{4}
@@ -220,24 +220,24 @@ T^{00}
       a_\Bp^\dagger a_\Bq e^{i (p - q) \cdot x}
    }
 }
-\end{dmath}
+\end{equation}
 We can justify dropping the \( a_\Bp a_\Bq \) and \( a_\Bp^\dagger a_\Bq^\dagger \) terms in this integral since we are computing \( \tilde{\rho}(\Bx, t) = \bra{\Bzero, 0} T^{00}(\Bx, t) \ket{\Bzero, 0} \), where
-\begin{dmath}\label{eqn:ProblemSet3Problem4:140}
+\begin{equation}\label{eqn:ProblemSet3Problem4:140}
 \begin{aligned}
 \bra{\Bzero, 0} &= \bra{0} \int \frac{d^3 r}{(2 \pi)^3 \sqrt{ 2 \omega_\Br }} a_\Br \\
 \ket{\Bzero, 0} &= \int \frac{d^3 s}{(2 \pi)^3 \sqrt{ 2 \omega_\Bs }} a_\Bs^\dagger \ket{0},
 \end{aligned}
-\end{dmath}
+\end{equation}
 so those terms only contribute zeros
-\begin{dmath}\label{eqn:ProblemSet3Problem4:300}
+\begin{equation}\label{eqn:ProblemSet3Problem4:300}
 \begin{aligned}
 0 &= \bra{0} a_\Br a_\Bp a_\Bq a_\Bs^\dagger \ket{0} \\
 0 &= \bra{0} a_\Br a_\Bp^\dagger a_\Bq^\dagger a_\Bs^\dagger \ket{0}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 These zeros are easily computed by commutation, but also by the Wick's corollary mentioned in class (expectations of odd numbers of creation or annihilation operators are zero).
 With those same sign \((p,q)\) exponential terms eliminated and a \( p, q \) swap in the \( a_\Bp a_\Bq^\dagger \) term, we are left with
-\begin{dmath}\label{eqn:ProblemSet3Problem4:320}
+\begin{equation}\label{eqn:ProblemSet3Problem4:320}
 T^{00} =
 \inv{4}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
@@ -250,9 +250,9 @@ T^{00} =
       a_\Bp^\dagger a_\Bq
    }
    e^{i (p - q) \cdot x}.
-\end{dmath}
+\end{equation}
 Normal ordered, we have
-\begin{dmath}\label{eqn:ProblemSet3Problem4:340}
+\begin{equation}\label{eqn:ProblemSet3Problem4:340}
 \normalorder{ T^{00} }
 =
 \inv{2}
@@ -262,9 +262,9 @@ Normal ordered, we have
    }
       a_\Bp^\dagger a_\Bq
    e^{i (p - q) \cdot x}.
-\end{dmath}
+\end{equation}
 We expect this to equal the Hamiltonian density, and can check that as a quick sanity check
-\begin{dmath}\label{eqn:ProblemSet3Problem4:360}
+\begin{equation}\label{eqn:ProblemSet3Problem4:360}
 \int d^3 x \normalorder{ T^{00} }
 =
 \inv{2}
@@ -296,10 +296,10 @@ We expect this to equal the Hamiltonian density, and can check that as a quick s
    a_\Bp^\dagger a_\Bp
 =
 H.
-\end{dmath}
+\end{equation}
 
 We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
-\begin{dmath}\label{eqn:ProblemSet3Problem4:180}
+\begin{equation}\label{eqn:ProblemSet3Problem4:180}
 \tilde{\rho}(x)
 =
 \inv{4}
@@ -309,7 +309,7 @@ We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
    }
    \bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
    e^{i (p - q) \cdot x}.
-\end{dmath}
+\end{equation}
 %%%\begin{equation}\label{eqn:ProblemSet3Problem4:200}
 %%%\bra{0} a_\Br a_\Bp a_\Bq a_\Bs^\dagger \ket{0}
 %%%=
@@ -324,7 +324,7 @@ We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
 %%%= 0,
 %%%\end{equation}
 Evaluating this matrix element with Wick's theorem, we have
-%%%\begin{dmath}\label{eqn:ProblemSet3Problem4:240}
+%%%\begin{equation}\label{eqn:ProblemSet3Problem4:240}
 %%%\bra{0} a_\Br a_\Bp a_\Bq^\dagger a_\Bs^\dagger \ket{0}
 %%%=
 %%%\contraction{}{a}{{}_\Br a_\Bp}{a}{}
@@ -336,9 +336,9 @@ Evaluating this matrix element with Wick's theorem, we have
 %%%(2\pi)^6 \delta(\Br - \Bq) \delta(\Bp - \Bs)
 %%%+
 %%%(2\pi)^6 \delta(\Br - \Bs) \delta(\Bp - \Bq),
-%%%\end{dmath}
+%%%\end{equation}
 %%%and
-\begin{dmath}\label{eqn:ProblemSet3Problem4:260}
+\begin{equation}\label{eqn:ProblemSet3Problem4:260}
 \bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
 =
 \contraction{}{a}{{}_\Br}{a}
@@ -346,9 +346,9 @@ Evaluating this matrix element with Wick's theorem, we have
 a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger
 =
 (2 \pi)^6 \delta(\Br - \Bp) \delta(\Bq - \Bs),
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet3Problem4:380}
+\begin{equation}\label{eqn:ProblemSet3Problem4:380}
 \tilde{\rho}(x)
 =
 \inv{4}
@@ -368,7 +368,7 @@ so
 m^2
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} e^{i p \cdot x}
 \int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} e^{i q \cdot (-x)},
-\end{dmath}
+\end{equation}
 which is just
 \boxedEquation{eqn:ProblemSet3Problem4:400}{
 \tilde{\rho}(x)
@@ -383,28 +383,28 @@ D(x) D(-x).
 
 \makeSubAnswer{}{qft:problemSet3:4c}
 In homework 2 we found that at a spacelike distance \( x = (0, r \rcap) \) the Wightman function had the form
-\begin{dmath}\label{eqn:ProblemSet3Problem4:420}
+\begin{equation}\label{eqn:ProblemSet3Problem4:420}
 D(r, 0) \sim e^{-m r},
-\end{dmath}
+\end{equation}
 where \( \rcap \) is the unit vector directed along the line from the origin to \( \Bx \).
 We wish to evaluate the gradients of \( D(\Bx, 0) \) and \( D(-\Bx, 0) \), and may do so by evaluating each with respect to oppositely oriented coordinate systems.
-\begin{dmath}\label{eqn:ProblemSet3Problem4:440}
+\begin{equation}\label{eqn:ProblemSet3Problem4:440}
 \spacegrad D(\Bx, 0)
 =
 \rcap \PD{r}{} e^{-m r}
 =
 -m \rcap e^{-m r},
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:ProblemSet3Problem4:460}
+\begin{equation}\label{eqn:ProblemSet3Problem4:460}
 \spacegrad D(-\Bx, 0)
 =
 (-\rcap) \PD{r}{} e^{-m r}
 =
 m \rcap e^{-m r},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet3Problem4:480}
+\begin{equation}\label{eqn:ProblemSet3Problem4:480}
 \tilde{\rho}(\Bx, 0)
 =
 \lr{ -m \rcap e^{-m r} } \cdot
@@ -412,7 +412,7 @@ so
 + m^2 e^{-2 mr}
 =
 0.
-\end{dmath}
+\end{equation}
 We have perfect cancellation at spacelike separations.
 
 I am comforted and not surprised that we don't find observable effects at spacelike separations where we don't expect to find them.

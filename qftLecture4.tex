@@ -41,9 +41,9 @@
 \end{itemize}
 
 These are the requirements for an action.  We postulated an action that had the form
-\begin{dmath}\label{eqn:qftLecture4:20}
+\begin{equation}\label{eqn:qftLecture4:20}
 \int d^d x \partial_\mu \phi \partial^\mu \phi,
-\end{dmath}
+\end{equation}
 called the ``Kinetic term'', which mimics \( \int dt \dot{q}^2 \) that we'd see in quantum or classical mechanics.  In principle there exists an infinite number of local Poincar\'e invariant terms that we can write.  Examples:
 
 \begin{itemize}
@@ -58,22 +58,20 @@ called the ``Kinetic term'', which mimics \( \int dt \dot{q}^2 \) that we'd see 
 It turns out that nature (i.e. three spatial dimensions and one time dimension) is described by a finite number of terms.  We will now utilize dimensional analysis to determine some of the allowed forms of the action for scalar field theories in \( d = 2, 3, 4, 5 \) dimensions.  Even though the real world is only \( d = 4 \), some of the \( d < 4 \) theories are relevant in condensed matter studies, and \( d = 5 \) is just for fun (but also applies to string theories.)
 
 With \( [x] \sim \inv{M} \) in natural units, we must define \([\phi]\) such that the kinetic term is dimensionless in d spacetime dimensions
-
-\begin{dmath}\label{eqn:qftLecture4:40}
+\begin{equation}\label{eqn:qftLecture4:40}
 \begin{aligned}
 [d^d x] &\sim \inv{M^d} \\
 [\partial_\mu] &\sim M
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 so it must be that
-\begin{dmath}\label{eqn:qftLecture4:60}
+\begin{equation}\label{eqn:qftLecture4:60}
 [\phi] = M^{(d-2)/2}
-\end{dmath}
+\end{equation}
 
 It will be easier to characterize the dimensionality of any given term by the power of the mass units, that is
-
-\begin{dmath}\label{eqn:qftLecture4:80}
+\begin{equation}\label{eqn:qftLecture4:80}
 \begin{aligned}
 [\text{mass}] &= 1 \\
 [d^d x] &= -d \\
@@ -81,28 +79,28 @@ It will be easier to characterize the dimensionality of any given term by the po
 [\phi] &= (d-2)/2 \\
 [S] &= 0.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Since the action is
-\begin{dmath}\label{eqn:qftLecture4:100}
+\begin{equation}\label{eqn:qftLecture4:100}
 S = \int d^d x \lr{ \LL(\phi, \partial_\mu \phi) },
-\end{dmath}
+\end{equation}
 and because action had dimensions of \( \Hbar \), so in natural units, it must be dimensionless, the Lagrangian density dimensions must be \( [d] \).  We will abuse language in QFT and call the Lagrangian density the Lagrangian.
 
 %\subsection{\(d = 2\).}
 \subsection{d = 2.}
 
 Because \( [\partial_\mu \phi \partial^\mu \phi ] = 2 \), the scalar field must be dimension zero, or in symbols
-\begin{dmath}\label{eqn:qftLecture4:120}
+\begin{equation}\label{eqn:qftLecture4:120}
 [\phi] = 0.
-\end{dmath}
+\end{equation}
 This means that introducing any function \( f(\phi) = 1 + a \phi + b\phi^2 + c \phi^3 + \cdots \) is also dimensionless, and
-\begin{dmath}\label{eqn:qftLecture4:140}
+\begin{equation}\label{eqn:qftLecture4:140}
 [f(\phi) \partial_\mu \phi \partial^\mu \phi ] = 2,
-\end{dmath}
+\end{equation}
 for any \( f(\phi) \).  Another implication of this is that the a potential term in the Lagrangian \( [V(\phi)] = 0 \) needs a coupling constant of dimension 2.  Letting \( \mu \) have mass dimensions, our Lagrangian must have the form
-\begin{dmath}\label{eqn:qftLecture4:160}
+\begin{equation}\label{eqn:qftLecture4:160}
 f(\phi) \partial_\mu \phi \partial^\mu \phi + \mu^2 V(\phi).
-\end{dmath}
+\end{equation}
 An infinite number of coupling constants of positive mass dimensions for \( V(\phi) \) are also allowed.  If we have higher order derivative terms, then we need to compensate for the negative mass dimensions.   Example (still for \( d = 2 \)).
 \begin{equation}\label{eqn:qftLecture4:180}
 \begin{aligned}
@@ -132,20 +130,20 @@ Long distance physics in any dimension is described by the marginal and relevant
 \subsection{d = 3.}
 
 Now we have
-\begin{dmath}\label{eqn:qftLecture4:200}
+\begin{equation}\label{eqn:qftLecture4:200}
 [\phi] = \inv{2}
-\end{dmath}
+\end{equation}
 so that
-\begin{dmath}\label{eqn:qftLecture4:220}
+\begin{equation}\label{eqn:qftLecture4:220}
 [\partial_\mu \phi \partial^\mu \phi] = 3.
-\end{dmath}
+\end{equation}
 
 A 3D Lagrangian could have local terms such as
-\begin{dmath}\label{eqn:qftLecture4:240}
+\begin{equation}\label{eqn:qftLecture4:240}
 \LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \mu^{3/2} \phi^3 + \mu' \phi^4
 + \lr{\mu''}{1/2} \phi^5
 + \lambda \phi^6.
-\end{dmath}
+\end{equation}
 where \( m, \mu, \mu'' \) all have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
 \( m, \mu, \mu'' \) are relevant, and \( \lambda \) marginal.  We stop at the sixth power, since any power after that will be irrelevant.
 
@@ -153,20 +151,20 @@ where \( m, \mu, \mu'' \) all have mass dimensions, and \( \lambda \) is dimensi
 \subsection{d = 4.}
 
 Now we have
-\begin{dmath}\label{eqn:qftLecture4:260}
+\begin{equation}\label{eqn:qftLecture4:260}
 [\phi] = 1
-\end{dmath}
+\end{equation}
 so that
-\begin{dmath}\label{eqn:qftLecture4:280}
+\begin{equation}\label{eqn:qftLecture4:280}
 [\partial_\mu \phi \partial^\mu \phi] = 4.
-\end{dmath}
+\end{equation}
 
 In this number of dimensions \( \phi^k \partial_\mu \phi \partial^\mu \) is an irrelevant coupling.
 
 A 4D Lagrangian could have local terms such as
-\begin{dmath}\label{eqn:qftLecture4:300}
+\begin{equation}\label{eqn:qftLecture4:300}
 \LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \mu \phi^3 + \lambda \phi^4.
-\end{dmath}
+\end{equation}
 where \( m, \mu \) have mass dimensions, and \( \lambda \) is dimensionless.  i.e.
 \( m, \mu \) are relevant, and \( \lambda \) is marginal.
 
@@ -174,18 +172,18 @@ where \( m, \mu \) have mass dimensions, and \( \lambda \) is dimensionless.  i.
 \subsection{d = 5.}
 
 Now we have
-\begin{dmath}\label{eqn:qftLecture4:320}
+\begin{equation}\label{eqn:qftLecture4:320}
 [\phi] = \frac{3}{2},
-\end{dmath}
+\end{equation}
 so that
-\begin{dmath}\label{eqn:qftLecture4:340}
+\begin{equation}\label{eqn:qftLecture4:340}
 [\partial_\mu \phi \partial^\mu \phi] = 5.
-\end{dmath}
+\end{equation}
 
 A 5D Lagrangian could have local terms such as
-\begin{dmath}\label{eqn:qftLecture4:360}
+\begin{equation}\label{eqn:qftLecture4:360}
 \LL = \partial_\mu \phi \partial^\mu \phi + m^2 \phi^2 + \sqrt{\mu} \phi^3 + \inv{\mu'} \phi^4.
-\end{dmath}
+\end{equation}
 where \( m, \mu, \mu' \) all have mass dimensions.  In 5D there are no marginal couplings.  Dimension 4 is the last dimension where marginal couplings exist.  In condensed matter physics 4D is called the ``upper critical dimension''.
 
 From the point of view of particle physics, all the terms in the Lagrangian must be the ones that are relevant at long distances.
@@ -196,12 +194,12 @@ From the point of view of particle physics, all the terms in the Lagrangian must
 \index{classical field theory}
 
 Now we want to study 4D scalar theories.  We have some action
-\begin{dmath}\label{eqn:qftLecture4:380}
+\begin{equation}\label{eqn:qftLecture4:380}
 S[\phi] = \int d^4 x \LL(\phi, \partial_\mu \phi).
-\end{dmath}
+\end{equation}
 
 Let's keep an example such as the following in mind
-\begin{dmath}\label{eqn:qftLecture4:400}
+\begin{equation}\label{eqn:qftLecture4:400}
 \LL = 
 \mathLabelBox[ labelstyle={yshift=1.2em}, linestyle={} ]
 {
@@ -219,15 +217,15 @@ m^2 \phi - \lambda \phi^4
 all relevant and marginal couplings
 }
 .
-\end{dmath}
+\end{equation}
 The even powers can be justified by assuming there is some symmetry that kills the odd powered terms.
 
 We will be integrating over a space time region such as that depicted in \cref{fig:spacetimeCylinder:spacetimeCylinderFig1},
 \imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.2}
 where a cylindrical spatial cross section is depicted that we allow to tend towards infinity.  We demand that the field is fixed on the infinite spatial boundaries.  The easiest way to demand that the field dies off on the spatial boundaries, that is
-\begin{dmath}\label{eqn:qftLecture4:420}
+\begin{equation}\label{eqn:qftLecture4:420}
 \lim_{\Norm{\Bx} \rightarrow \infty} \phi(\Bx) \rightarrow 0.
-\end{dmath}
+\end{equation}
 The functional \( \phi(\Bx, t) \) that obeys the boundary condition as stated extremizes \( S[\phi] \).
 
 Extremizing the action means that we seek \( \phi(\Bx, t) \)
@@ -236,7 +234,7 @@ Extremizing the action means that we seek \( \phi(\Bx, t) \)
 \end{equation}
 
 How do we compute the variation?
-\begin{dmath}\label{eqn:qftLecture4:460}
+\begin{equation}\label{eqn:qftLecture4:460}
 \delta S = \int d^d x \lr{ \LL(\phi + \delta \phi, \partial_\mu \phi + \partial_\mu \delta \phi) - \LL(\phi, \partial_\mu \phi) }
 = \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_\mu \phi)}{\LL} (\partial_\mu \delta \phi) }
 = \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi
@@ -249,10 +247,10 @@ How do we compute the variation?
 \lr{ \PD{\phi}{\LL}
 - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} }
 + \int d^3 \sigma_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi }
-\end{dmath}
+\end{equation}
 
 If we are explicit about the boundary term, we write it as
-\begin{dmath}\label{eqn:qftLecture4:480}
+\begin{equation}\label{eqn:qftLecture4:480}
 \begin{aligned}
 \int &dt d^3 \Bx \lr{
 \partial_t
@@ -263,34 +261,34 @@ If we are explicit about the boundary term, we write it as
 \int d^3 \Bx \evalrange{ \PD{(\partial_t \phi)}{\LL} \delta \phi }{t = -T}{t = T}
 - \int dt d^2 \BS \cdot \lr{ \PD{(\spacegrad \phi)}{\LL} \delta \phi }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 but \( \delta \phi = 0 \) at \( t = \pm T \) and also at the spatial boundaries of the integration region.
 
 This leaves
-\begin{dmath}\label{eqn:qftLecture4:500}
+\begin{equation}\label{eqn:qftLecture4:500}
 \delta S[\phi] = \int d^d x \delta \phi
 \lr{ \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} } = 0 \forall \delta \phi.
-\end{dmath}
+\end{equation}
 That is
-%\begin{dmath}\label{eqn:qftLecture4:520}
+%\begin{equation}\label{eqn:qftLecture4:520}
 \boxedEquation{eqn:qftLecture4:540}{
 \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} = 0.
 }
-%\end{dmath}
+%\end{equation}
 This is the Euler-Lagrange equations for a single scalar field.
 
 Returning to our sample scalar Lagrangian
-\begin{dmath}\label{eqn:qftLecture4:560}
+\begin{equation}\label{eqn:qftLecture4:560}
 \LL = \inv{2} \partial_\mu \phi \partial^\mu \phi - \inv{2} m^2 \phi^2 - \frac{\lambda}{4} \phi^4.
-\end{dmath}
+\end{equation}
 This example is related to the Ising model which has a \( \phi \rightarrow -\phi \) symmetry.
 \index{Ising model}
 Applying the Euler-Lagrange equations, we have
-\begin{dmath}\label{eqn:qftLecture4:580}
+\begin{equation}\label{eqn:qftLecture4:580}
 \PD{\phi}{\LL} = -m^2 \phi - \lambda \phi^3,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture4:600}
+\begin{equation}\label{eqn:qftLecture4:600}
 \PD{(\partial_\mu \phi)}{\LL}
 =
 \PD{(\partial_\mu \phi)}{} \lr{
@@ -309,42 +307,42 @@ and
 \inv{2} \partial_\nu \phi g^{\nu\mu}
 =
 \partial^\mu \phi
-\end{dmath}
+\end{equation}
 so we have
-\begin{dmath}\label{eqn:qftLecture4:620}
+\begin{equation}\label{eqn:qftLecture4:620}
 0
 =
 \PD{\phi}{\LL} -\partial_\mu
 \PD{(\partial_\mu \phi)}{\LL}
 =
 -m^2 \phi - \lambda \phi^3 - \partial_\mu \partial^\mu \phi.
-\end{dmath}
+\end{equation}
 
 For \( \lambda = 0 \), the free field theory limit, this is just
-\begin{dmath}\label{eqn:qftLecture4:640}
+\begin{equation}\label{eqn:qftLecture4:640}
 \partial_\mu \partial^\mu \phi + m^2 \phi = 0.
-\end{dmath}
+\end{equation}
 Written out from the observer frame, this is
-\begin{dmath}\label{eqn:qftLecture4:660}
+\begin{equation}\label{eqn:qftLecture4:660}
 \partial_{tt} \phi - \spacegrad^2 \phi + m^2 \phi = 0.
-\end{dmath}
+\end{equation}
 
 With a non-zero mass term
-\begin{dmath}\label{eqn:qftLecture4:680}
+\begin{equation}\label{eqn:qftLecture4:680}
 \lr{ \partial_{tt} - \spacegrad^2  + m^2 } \phi = 0,
-\end{dmath}
+\end{equation}
 is called the Klein-Gordan equation.
 
 If we also had \( m = 0 \) we'd have
-\begin{dmath}\label{eqn:qftLecture4:700}
+\begin{equation}\label{eqn:qftLecture4:700}
 \lr{ \partial_{tt} - \spacegrad^2 } \phi = 0,
-\end{dmath}
+\end{equation}
 which is the wave equation (for a massless free field).  This is also called the D'Alembert equation, which is familiar from electromagnetism where we have
-\begin{dmath}\label{eqn:qftLecture4:720}
+\begin{equation}\label{eqn:qftLecture4:720}
 \begin{aligned}
 \lr{ \partial_{tt} - \spacegrad^2 } \BE &= 0 \\
 \lr{ \partial_{tt} - \spacegrad^2 } \BB &= 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 in a source free region.
 

@@ -8,30 +8,30 @@
 
 \begin{itemize}
 \item Gaussian
-\begin{dmath}\label{eqn:usefulFormulas:20}
+\begin{equation}\label{eqn:usefulFormulas:20}
 \int_{-\infty}^\infty e^{a x^2} dx = \sqrt{\frac{-\pi}{a}}.
-\end{dmath}
+\end{equation}
 Here \( a \) may be real or imaginary, but must be less than 0 if real.
 \item Our Fourier transform sign and \( \pi \) placement convention (\( 2 \pi\)'s with momentum elements and negative exponential sign for the inverse transform)
-\begin{dmath}\label{eqn:usefulFormulas:40}
+\begin{equation}\label{eqn:usefulFormulas:40}
 \begin{aligned}
 f(x) &= \int \frac{d^n k}{(2 \pi)^n} f(k) e^{i k \cdot x} \\
 f(k) &= \int d^n x f(x) e^{-i k \cdot x}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 \item Delta function representation.
 
 Setting \( f(x) = \delta^n(x) \) implies \( f(k) = 1 \) and so
-\begin{dmath}\label{eqn:usefulFormulas:60}
+\begin{equation}\label{eqn:usefulFormulas:60}
 \delta(x) = \int \frac{d^n k}{(2 \pi)^n} e^{i k \cdot x}.
-\end{dmath}
+\end{equation}
 
 \item Correct sign for the commutator
-\begin{dmath}\label{eqn:usefulFormulas:80}
+\begin{equation}\label{eqn:usefulFormulas:80}
 \antisymmetric{x_r}{p_s} = i \delta_{rs}.
-\end{dmath}
+\end{equation}
 \item Hamilton's equations
-\begin{dmath}\label{eqn:usefulFormulas:100}
+\begin{equation}\label{eqn:usefulFormulas:100}
 \begin{aligned}
 -dH &= d(\LL - p \dot{q}) = \PD{q}{\LL} dq + \cancel{\PD{\dot{q}}{\LL} d\dot{q}} + \PD{t}{\LL} dt - dp \dot{q} - \cancel{p d\dot{q}} \\
 dH &=
@@ -41,7 +41,7 @@ dH &=
 +
 \PD{t}{H} dt,
 \end{aligned}
-\end{dmath}
+\end{equation}
 so
 \begin{equation}\label{eqn:usefulFormulas:120}
 \PD{q}{H} = -\dot{p},\qquad
@@ -49,14 +49,14 @@ so
 \PD{t}{H} = -\PD{t}{\LL}.
 \end{equation}
 \item Matrix element for the momentum and position operators
-\begin{dmath}\label{eqn:usefulFormulas:140}
+\begin{equation}\label{eqn:usefulFormulas:140}
 \begin{aligned}
 \bra{x} P \ket{x'} &= -i \delta(x- x') \frac{d}{dx} \\
 \bra{p} X \ket{p'} &= i \delta(p- p') \frac{d}{dp}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 \item Eigenstates
-\begin{dmath}\label{eqn:usefulFormulas:160}
+\begin{equation}\label{eqn:usefulFormulas:160}
 \begin{aligned}
 p \braket{x}{p}
 &= \bra{x} P \ket{p} \\
@@ -64,103 +64,103 @@ p \braket{x}{p}
 &= \int dx' (-i) \delta(x - x') \frac{d}{dx} \braket{x'}{p} \\
 &= -i \frac{d}{dx} \braket{x}{p},
 \end{aligned}
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:usefulFormulas:180}
+\begin{equation}\label{eqn:usefulFormulas:180}
 \braket{x}{p} \propto e^{i p x}.
-\end{dmath}
+\end{equation}
 Normalized over all space in \( d \) dimensions
-\begin{dmath}\label{eqn:usefulFormulas:200}
+\begin{equation}\label{eqn:usefulFormulas:200}
 \braket{x}{p} = \frac{e^{i p \cdot x}}{(2 \pi)^{d/2}}.
-\end{dmath}
+\end{equation}
 \item Time evolution in the Heisenberg picture
-\begin{dmath}\label{eqn:usefulFormulas:220}
+\begin{equation}\label{eqn:usefulFormulas:220}
 \ddt{O} = i \antisymmetric{H}{O}.
-\end{dmath}
+\end{equation}
 \item Commutators of powers of position and momentum operators
-\begin{dmath}\label{eqn:usefulFormulas:240}
+\begin{equation}\label{eqn:usefulFormulas:240}
 \begin{aligned}
 \antisymmetric{\hatq^n}{\hatp} &= n i \hatq^{n-1} \\
 \antisymmetric{\hatp^n}{\hatq} &= -n i \hatp^{n-1}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 More generally, for any function with a power series representation \( F(x) = \sum_{k = 0}^\infty a_k x^k \), we have
-\begin{dmath}\label{eqn:usefulFormulas:260}
+\begin{equation}\label{eqn:usefulFormulas:260}
 \begin{aligned}
 \antisymmetric{F(\hatq)}{\hatp} &= i \frac{dF}{d\hatq} \\
 \antisymmetric{F(\hatp)}{\hatq} &= -i \frac{dF}{d\hatp}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 \item Pauli matrices
 \begin{equation}\label{eqn:usefulFormulas:280}
 \sigma^1 = \PauliX, \quad
 \sigma^2 = \PauliY, \quad
 \sigma^3 = \PauliZ.
 \end{equation}
-\begin{dmath}\label{eqn:usefulFormulas:300}
+\begin{equation}\label{eqn:usefulFormulas:300}
 \antisymmetric{\sigma^a}{\sigma^b} = 2 i \epsilon^{a b c} \sigma^c.
-\end{dmath}
+\end{equation}
 \item Euler-Lagrange equations
-\begin{dmath}\label{eqn:usefulFormulas:320}
+\begin{equation}\label{eqn:usefulFormulas:320}
 \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} = 0.
-\end{dmath}
+\end{equation}
 \item Lorentz transform identities
-\begin{dmath}\label{eqn:usefulFormulas:340}
+\begin{equation}\label{eqn:usefulFormulas:340}
 g_{\nu\rho}
 =
 g_{\mu \kappa}
 {\Lambda^\mu}_\nu
 {\Lambda^\kappa}_\rho.
-\end{dmath}
+\end{equation}
 \item Noether's first theorem.  Given \( \delta \LL = \partial_\mu J^\mu \),
-\begin{dmath}\label{eqn:usefulFormulas:480}
+\begin{equation}\label{eqn:usefulFormulas:480}
 j^\mu =
 \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi  - J^\mu,
-\end{dmath}
+\end{equation}
 satisfies \( \partial_\mu j^\mu = 0 \).
 \item Energy momentum tensor
-\begin{dmath}\label{eqn:usefulFormulas:500}
+\begin{equation}\label{eqn:usefulFormulas:500}
 T^{\mu\nu} = \partial^\mu \phi \partial^\nu \phi - g^{\mu\nu} \LL.
-\end{dmath}
+\end{equation}
 \item Translation operator
-\begin{dmath}\label{eqn:usefulFormulas:520}
+\begin{equation}\label{eqn:usefulFormulas:520}
 \hatU(\Ba) = e^{i \Ba \cdot \hat{\BP}},
-\end{dmath}
-\begin{dmath}\label{eqn:usefulFormulas:540}
+\end{equation}
+\begin{equation}\label{eqn:usefulFormulas:540}
 \bra{\Bx} \hatU(\Ba) = \bra{\Bx + \Ba}
-\end{dmath}
+\end{equation}
 \item Baker-Campbell-Hausdorff theorem \cref{thm:qftLecture8:580}.
-\begin{dmath}\label{eqn:usefulFormulas:560}
+\begin{equation}\label{eqn:usefulFormulas:560}
 e^{B} A e^{-B} = \sum_{n = 0}^\infty \inv{n!} \antisymmetric{B \cdots}{\antisymmetric{B}{A}}.
-\end{dmath}
+\end{equation}
 \end{itemize}
 
 \section{Useful results from new material.}
 
 \begin{itemize}
 \item Hamiltonian for a massive scalar field
-\begin{dmath}\label{eqn:usefulFormulas:360}
+\begin{equation}\label{eqn:usefulFormulas:360}
 H
 = \int d^3 x \lr{ \inv{2} (\pi(\Bx, t))^2 + \inv{2} (\spacegrad \phi(\Bx, t))^2 + \frac{m}{2} (\phi(\Bx, t))^2 }
-\end{dmath}
-\begin{dmath}\label{eqn:usefulFormulas:380}
+\end{equation}
+\begin{equation}\label{eqn:usefulFormulas:380}
 \normalorder{H}
 = \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp a_\Bp^\dagger a_\Bp
-\end{dmath}
+\end{equation}
 \item Canonical commutator
-\begin{dmath}\label{eqn:usefulFormulas:400}
+\begin{equation}\label{eqn:usefulFormulas:400}
 \antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \deltathree(\Bx - \By).
-\end{dmath}
+\end{equation}
 \item Creation and annihilation operation
-\begin{dmath}\label{eqn:usefulFormulas:420}
+\begin{equation}\label{eqn:usefulFormulas:420}
 \antisymmetric
 {a_\Bq}
 {a^\dagger_\Bp}
 =
 (2 \pi)^3
 \deltathree(\Bp - \Bq).
-\end{dmath}
-\begin{dmath}\label{eqn:usefulFormulas:440}
+\end{equation}
+\begin{equation}\label{eqn:usefulFormulas:440}
 \phi(\Bx, t)
 =
 \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}} e^{i \Bp \cdot \Bx}
@@ -169,8 +169,8 @@ H
    +
    e^{i \omega_\Bp t} a_{-\Bp}^\dagger
 }
-\end{dmath}
-\begin{dmath}\label{eqn:usefulFormulas:460}
+\end{equation}
+\begin{equation}\label{eqn:usefulFormulas:460}
 \pi(\Bx, t)
 =
 \int \frac{d^3 q}{(2\pi)^3}
@@ -181,16 +181,16 @@ e^{i \Bq \cdot \Bx}
    +
    e^{i \omega_\Bq t} a_{-\Bq}^\dagger
 }.
-\end{dmath}
+\end{equation}
 \item Relativistic normalization and transformation of momentum state
-\begin{dmath}\label{eqn:usefulFormulas:580}
+\begin{equation}\label{eqn:usefulFormulas:580}
 \sqrt{2 \omega_{ \Bp}} \hata^\dagger_{ \Bp} \ket{0} = \ket{\Bp},
-\end{dmath}
-\begin{dmath}\label{eqn:usefulFormulas:600}
+\end{equation}
+\begin{equation}\label{eqn:usefulFormulas:600}
 \hatU(\Lambda) \ket{\Bp} = \ket{\Lambda \Bp}.
-\end{dmath}
+\end{equation}
 \item Plus and minus operators
-\begin{dmath}\label{eqn:usefulFormulas:620}
+\begin{equation}\label{eqn:usefulFormulas:620}
 \begin{aligned}
 \phihat_{-}(x) &=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
@@ -201,7 +201,7 @@ e^{-i p \cdot x} }{p^0 = \omega_\Bp} \hata_\Bp \\
 \evalbar{
 e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp.
 \end{aligned}
-\end{dmath}
+\end{equation}
 \item Wightman function
 \begin{equation}\label{eqn:usefulFormulas:640}
 D(x)
@@ -211,7 +211,7 @@ D(x)
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}.
 \end{equation}
 \item Contractions with momentum states
-\begin{dmath}\label{eqn:usefulFormulas:660}
+\begin{equation}\label{eqn:usefulFormulas:660}
 \begin{aligned}
 \contraction{}{\phi}{{}_I(x)}{a}
 \phi_I(x) a^\dagger_{\Bp}
@@ -220,14 +220,14 @@ D(x)
 a_\Bp \phi_I(x)
 &= e^{i p \cdot x}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 \item Dirac conjugates.
-\begin{dmath}\label{eqn:usefulFormulas:680}
+\begin{equation}\label{eqn:usefulFormulas:680}
 \begin{aligned}
 (\gamma^0)^\dagger &= \gamma^0 \\
 (\gamma^k)^\dagger &= - \gamma^k \\
 (\gamma^\mu)^\dagger &= \gamma^0 \gamma^\mu \gamma^0.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 \end{itemize}

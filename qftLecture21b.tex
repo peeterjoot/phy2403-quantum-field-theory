@@ -70,19 +70,19 @@ H
 
 \begin{proof}
 To prove \cref{thm:qftLecture21b:1}, we start with the spacetime expansion of the Dirac Lagrangian density
-\begin{dmath}\label{eqn:qftLecture21b:500}
+\begin{equation}\label{eqn:qftLecture21b:500}
 \LL_{\text{Dirac}}
 = \oPsi i \gamma^0 \partial_0 \Psi + i \oPsi \gamma^j \partial_j \Psi - m \oPsi \Psi
 = \Psi^\dagger \gamma^0 i \gamma^0 \partial_0 \Psi + i \Psi \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
 = \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi.
-\end{dmath}
+\end{equation}
 We see that the momentum conjugate to \( \Psi \) is
 \begin{equation}\label{eqn:qftLecture21b:520}
 \pi_\psi = \PD{\dot{\Psi}}{\LL} = i \Psi^\dagger.
 \end{equation}
 Computing the
 Hamiltonian density in the usual way, we have
-\begin{dmath}\label{eqn:qftLecture21b:540}
+\begin{equation}\label{eqn:qftLecture21b:540}
 \calH_{\text{Dirac}}
 = \pi_\Psi \dot{\Psi} - \LL
 = i \Psi^\dagger \dot{\Psi} - \lr{
@@ -90,7 +90,7 @@ Hamiltonian density in the usual way, we have
 }
 =
 - i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi + m \Psi^\dagger \gamma^0 \Psi.
-\end{dmath}
+\end{equation}
 Integrating over a 3-volume provides
 the Dirac Hamiltonian of
 \cref{thm:qftLecture21b:1}.
@@ -111,28 +111,28 @@ For \(\Psi_u = u(p) e^{-i p \cdot x}\), and \( \Psi_v = v(p) e^{i p \cdot x} \),
 \( \gamma^0 \lr{ -i \gamma^j \partial_j + m }\) with eigenvalues \( \pm \omega_\Bp \).
 \begin{proof}
 These eigenvalue equations follow from the Dirac equation for \( \Psi_u, \Psi_v \).  These are
-\begin{dmath}\label{eqn:qftLecture21b:1000}
+\begin{equation}\label{eqn:qftLecture21b:1000}
 \lr{ i \gamma^\mu \partial_\mu - m } u e^{-i p \cdot x}
 =
 \lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } u e^{-i p \cdot x}
 =
 \lr{ i \gamma^j \partial_j + i(-i) \gamma^0 p_0 - m } u e^{-i p \cdot x}
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture21b:1020}
+\begin{equation}\label{eqn:qftLecture21b:1020}
 \lr{ i \gamma^\mu \partial_\mu - m } v e^{i p \cdot x}
 =
 \lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } v e^{i p \cdot x}
 =
 \lr{ i \gamma^j \partial_j + i(i) \gamma^0 p_0 - m } v e^{i p \cdot x}.
-\end{dmath}
+\end{equation}
 Rearranging gives
-\begin{dmath}\label{eqn:qftLecture21b:1040}
+\begin{equation}\label{eqn:qftLecture21b:1040}
 \begin{aligned}
 \lr{ i \gamma^j \partial_j - m } u e^{-i p \cdot x} &= - \gamma^0 p_0 u e^{-i p \cdot x} \\
 \lr{ i \gamma^j \partial_j - m } v e^{ i p \cdot x} &= + \gamma^0 p_0 u e^{-i p \cdot x},
 \end{aligned}
-\end{dmath}
+\end{equation}
 and \cref{thm:qftLecture21b:2} follows immediately.
 \end{proof}
 
@@ -140,7 +140,7 @@ and \cref{thm:qftLecture21b:2} follows immediately.
 As with the Klein-Gordon equation, let's introduce a generic solution formed from linear combinations of our specific \( u^s(p) = u^s_\Bp, v^s(p) = v^s_\Bp \) solutions
 %.  Such a zero time solution might look like
 %Adding time back in the mix the most general wave function is
-\begin{dmath}\label{eqn:qftLecture21b:800}
+\begin{equation}\label{eqn:qftLecture21b:800}
 \Psi(\Bx, t)
 =
 \sum_{s = 1}^2
@@ -150,7 +150,7 @@ As with the Klein-Gordon equation, let's introduce a generic solution formed fro
 +
    e^{i p \cdot x} v^s_\Bp b_\Bp^s
 }.
-\end{dmath}
+\end{equation}
 \maketheorem{Ladder representation of Dirac Hamiltonian.}{thm:qftLecture21b:7}{
 Substitution of the superposition \cref{eqn:qftLecture21b:800} into
 the Dirac Hamiltonian of
@@ -177,7 +177,7 @@ prove \cref{thm:qftLecture21b:7}, making the somewhat lazy guess that
 all the time dependent terms will be wiped out.  This assumption allows us to use the zero time fields of our superposition solution
 \begin{subequations}
 \label{eqn:qftLecture21b:1060}
-%\begin{dmath}\label{eqn:qftLecture21b:580}
+%\begin{equation}\label{eqn:qftLecture21b:580}
 %\Psi(\Bx,0)
 %%=
 %%\sum_{s = 1}^2
@@ -197,9 +197,9 @@ all the time dependent terms will be wiped out.  This assumption allows us to us
 %   +
 %   v^s_{-\Bp} b^s_{-\Bp}
 %}.
-%\end{dmath}
+%\end{equation}
 %
-\begin{dmath}\label{eqn:qftLecture21b:820}
+\begin{equation}\label{eqn:qftLecture21b:820}
 \Psi(\Bx,0)
 =
 \sum_{s = 1}^2
@@ -209,8 +209,8 @@ all the time dependent terms will be wiped out.  This assumption allows us to us
    +
    v^s_{-\Bp} b^s_{-\Bp}
 }
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture21b:840}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture21b:840}
 \Psi^\dagger(\Bx,0)
 =
 \sum_{r = 1}^2
@@ -221,11 +221,11 @@ e^{-i \Bq \cdot \Bx}
    +
    v^{r \dagger}_{-\Bq} b^{r \dagger}_{-\Bq}
 }.
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 Making use of the eigenvalue equations \cref{thm:qftLecture21b:2} the Hamiltonian is reduced to
-\begin{dmath}\label{eqn:qftLecture21b:1080}
+\begin{equation}\label{eqn:qftLecture21b:1080}
 H_{\text{Dirac}}
 =
 \sum_{r,s = 1}^2
@@ -281,7 +281,7 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
    b^s_{-\Bp}
 }
 ,
-\end{dmath}
+\end{equation}
 where care was taken not to commute any \( a, b\)'s.  Recall that
 \begin{subequations}
 \label{eqn:qftLecture21b:1140}
@@ -293,7 +293,7 @@ u^{r\dagger}_\Bp v^s_{-\Bp} = v^{r\dagger}_{-\Bp} u^s_{\Bp} = 0.
 \end{equation}
 \end{subequations}
 \Cref{eqn:qftLecture21b:1160} kills off our cross terms, and \cref{eqn:qftLecture21b:1100} wipes out one of the summation indexes
-\begin{dmath}\label{eqn:qftLecture21b:1120}
+\begin{equation}\label{eqn:qftLecture21b:1120}
 H_{\text{Dirac}}
 =
 \inv{2} \sum_{r,s = 1}^2
@@ -332,7 +332,7 @@ H_{\text{Dirac}}
    b^{r \dagger}_{-\Bp}
    b^r_{-\Bp}
 }.
-\end{dmath}
+\end{equation}
 We see above how the mixed terms were killed off nicely by \cref{eqn:qftLecture21b:1160}.  That also justifies the use of the zero-time fields in this derivation, which can also be seen explicitly without use of the zero-time fields \cref{problem:qftLecture21b:1}.
 \end{proof}
 
@@ -345,38 +345,38 @@ We can save the day, making the ``Dirac sea'' argument, roughly speaking that we
 Such an argument does not work for bosons (photons, ...) since an arbitrary number of such particles can be stuffed into any given state.  It will turn out that our operators are fermions, which gets us out of this trouble.
 
 We can also get out of this hole algebraically.  For \( X = a, b \), let
-\begin{dmath}\label{eqn:qftLecture21b:900}
+\begin{equation}\label{eqn:qftLecture21b:900}
 \begin{aligned}
 X^{s \dagger}_\Bp &= \tilde{X}^s_\Bp \\
 X^s_\Bp &= \tilde{X}^{s \dagger}_\Bp.
 \end{aligned}
-\end{dmath}
+\end{equation}
 It turns out that some properties of our creation and annihilation operators are
-\begin{dmath}\label{eqn:qftLecture21b:920}
+\begin{equation}\label{eqn:qftLecture21b:920}
 \begin{aligned}
 (a^s_p)^2 &= 0 \\
 (a^{s \dagger}_p)^2 &= 0 \\
 (b^s_p)^2 &= 0 \\
 (b^{s \dagger}_p)^2 &= 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture21b:940}
+\begin{equation}\label{eqn:qftLecture21b:940}
 \begin{aligned}
 \symmetric{a^s_\Bp}{a^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq) \\
 \symmetric{b^s_\Bp}{b^{r \dagger}_\Bq} &= \delta^{sr} \deltathree(\Bp - \Bq),
 \end{aligned}
-\end{dmath}
+\end{equation}
 where all other anticommutators are zero
-\begin{dmath}\label{eqn:qftLecture21b:960}
+\begin{equation}\label{eqn:qftLecture21b:960}
 \symmetric{a^r}{b^s} =
 \symmetric{a^r}{b^{s\dagger}} =
 \symmetric{a^{r\dagger}}{b^s} =
 \symmetric{a^{r\dagger}}{b^{s\dagger}} = 0.
-\end{dmath}
+\end{equation}
 
 Such a substitution gives
-\begin{dmath}\label{eqn:qftLecture21b:980}
+\begin{equation}\label{eqn:qftLecture21b:980}
 H_{\text{Dirac}}
 =
 \sum_{s = 1}^2
@@ -404,7 +404,7 @@ H_{\text{Dirac}}
 }
 - 4 V_3 \frac{\omega_\Bp}{2}
 }.
-\end{dmath}
+\end{equation}
 
 We'll end up dropping the vacuum energy term.  We'll end up labeling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with anti-electrons.
 

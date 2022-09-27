@@ -18,9 +18,9 @@ for the case of a massive free real scalar field. Here, $g$ is a coupling consta
    which is really the exponential of the second order term and $D_F$ is the Feynman propagator.
 \makesubproblem{}{qft:problemSet3:1b}
 Consider the case where 
-\begin{dmath}\label{eqn:ProblemSet3Problem1:13}
+\begin{equation}\label{eqn:ProblemSet3Problem1:13}
 j(t,\Bx) = \theta(T - t) \theta(T+t) \left( \delta^{(3)}(\Bx) - \delta^{(3)}(\Bx - \BR)\right).
-\end{dmath}
+\end{equation}
 This source term represents two external opposite ``charges"\footnote{In other words, classical particles linearly coupled to $\phi$ (if $\phi$ was the electrostatic potential $A^0$, this would really be the electromagnetic charge.) For a discussion of whether an interaction like you will study can arise from a realistic QFT, see comment in 2. below.} a distance $R = |\BR|$ apart, created at $t=-T$ and existing for time $2 T$.  Show that, in the limit $T \gg R \gg 1/m$, eq.~(\ref{two}) {\it is proportional to}:
    \begin{equation}
    \label{three}
@@ -46,7 +46,7 @@ What do you think is the significance of the various limits $T \gg R \gg 1/m$? A
 \makeanswer{qft:problemSet3:1}{
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet3:1a}
-\begin{dmath}\label{eqn:ProblemSet3Problem1:20}
+\begin{equation}\label{eqn:ProblemSet3Problem1:20}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
 =
 \bra{0} T (1) \ket{0}
@@ -61,19 +61,19 @@ i g
 j(x) \phi(x) j(y) \phi(y)
 \ket{0}
 + \cdots
-\end{dmath}
+\end{equation}
 Using Wick's theorem, the first order term is zero (odd number of creation and annihilation operators), so to first order, we have
-\begin{dmath}\label{eqn:ProblemSet3Problem1:40}
+\begin{equation}\label{eqn:ProblemSet3Problem1:40}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
 =
 1 - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) + \cdots
 \approx
 \exp\lr{ - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) }
-\end{dmath}
+\end{equation}
 
 \makeSubAnswer{}{qft:problemSet3:1b}
 We wish to evaluate the integral in the exponential argument
-\begin{dmath}\label{eqn:ProblemSet3Problem1:60}
+\begin{equation}\label{eqn:ProblemSet3Problem1:60}
 \begin{aligned}
 \int &d^4 x d^4 y j(x) D_F(x - y) j(y)  \\
 &=
@@ -131,15 +131,15 @@ d^3 y
    D_F(- \BR, t - t')
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 The propagator, written in space and time coordinates is
-\begin{dmath}\label{eqn:ProblemSet3Problem1:80}
+\begin{equation}\label{eqn:ProblemSet3Problem1:80}
 D_F(\Bx, t)
 =
 i \int \frac{dp_0 d^3 p}{(2 \pi)^4} \frac{e^{-i p_0 t} e^{i \Bp \cdot \Bx} }{p_0^2 - \Bp^2 - m^2 + i \epsilon },
-\end{dmath}
+\end{equation}
 so we have
-\begin{dmath}\label{eqn:ProblemSet3Problem1:100}
+\begin{equation}\label{eqn:ProblemSet3Problem1:100}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
 =
 i
@@ -153,9 +153,9 @@ e^{-i \Bp \cdot \BR}
 -
 e^{i \Bp \cdot \BR}
 }
-\end{dmath}
+\end{equation}
 The time integrals can be done first
-\begin{dmath}\label{eqn:ProblemSet3Problem1:120}
+\begin{equation}\label{eqn:ProblemSet3Problem1:120}
 \int_{-T}^T dt
 e^{-i p_0 t}
 \int_{-T}^T dt'
@@ -164,9 +164,9 @@ e^{ i p_0 t}
 (2 \pi)^2
 \delta(-p_0)
 \delta(p_0).
-\end{dmath}
+\end{equation}
 Following the supplied hint we write
-\begin{dmath}\label{eqn:ProblemSet3Problem1:140}
+\begin{equation}\label{eqn:ProblemSet3Problem1:140}
 (2 \pi)^2
 \delta(p_0)
 \delta(-p_0)
@@ -181,9 +181,9 @@ Following the supplied hint we write
 =
 (2 \pi)(2 T)
 \delta(p_0),
-\end{dmath}
+\end{equation}
 which gives
-\begin{dmath}\label{eqn:ProblemSet3Problem1:160}
+\begin{equation}\label{eqn:ProblemSet3Problem1:160}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
 =
 2 T i
@@ -207,19 +207,19 @@ e^{-i \Bp \cdot \BR}
 -
 e^{i \Bp \cdot \BR}
 }.
-\end{dmath}
+\end{equation}
 We can now make the usual spherical coordinate change of variables
-\begin{dmath}\label{eqn:ProblemSet3Problem1:180}
+\begin{equation}\label{eqn:ProblemSet3Problem1:180}
 \begin{aligned}
 d^3 p &= \calp^2 d\calp \sin\theta d\theta d\phi \\
 \Bp &= \calp \lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta } \\
 \BR &= R\lr{ 0, 0, 1},
 \end{aligned}
-\end{dmath}
+\end{equation}
 so the integral factor of the coupling exponential
 \cref{two}
 is reduced to
-\begin{dmath}\label{eqn:ProblemSet3Problem1:200}
+\begin{equation}\label{eqn:ProblemSet3Problem1:200}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
 =
 -2 T i
@@ -271,18 +271,18 @@ is reduced to
 \lr{
    \sinc( \calp R ) - 1
 }.
-\end{dmath}
+\end{equation}
 With \( p_0 \) integrated out, we don't need the \( i \epsilon \) factor for pole avoidance, and find (using Mathematica) that
-\begin{dmath}\label{eqn:ProblemSet3Problem1:220}
+\begin{equation}\label{eqn:ProblemSet3Problem1:220}
 -\int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 }
 \lr{
    1 \mp \sinc( \calp R )
 }
 =
 \frac{\pi}{2} \lr{ m \pm \frac{e^{-m R}}{R} }.
-\end{dmath}
+\end{equation}
 The \( m \pi/2 \) term contributes only a phase adjustment, and can be ignored.  This leaves
-\begin{dmath}\label{eqn:ProblemSet3Problem1:240}
+\begin{equation}\label{eqn:ProblemSet3Problem1:240}
   e^{\;-{g^2\over 2} \int d^4 x d^4 y\;  j(x)  D_F(x-y) j(y) }
 =
 \exp\lr{
@@ -294,14 +294,14 @@ The \( m \pi/2 \) term contributes only a phase adjustment, and can be ignored. 
 \exp\lr{
    -2 T i V(R)
 },
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:ProblemSet3Problem1:260}
+\begin{equation}\label{eqn:ProblemSet3Problem1:260}
 V(R)
 =
 %-
 \frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
-\end{dmath}
+\end{equation}
 which is a positive (repulsive) variation of the Yukawa potential as defined in \citep{peskin1995introduction} (eq. 4.127).
 %Comparing to \citep{wiki:yukawaPotential}, this is off by a factor of \( 4 \pi \).  There are a few possible explainations for that
 %\begin{enumerate}
@@ -370,7 +370,7 @@ d^3 y
 \end{aligned}
 \end{equation}
 Applying this sign adjustment to the calculation of \cref{eqn:ProblemSet3Problem1:200} we find
-\begin{dmath}\label{eqn:ProblemSet3Problem1:300}
+\begin{equation}\label{eqn:ProblemSet3Problem1:300}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
 =
 -\frac{2 T i}{\pi^2}
@@ -378,13 +378,13 @@ Applying this sign adjustment to the calculation of \cref{eqn:ProblemSet3Problem
 \lr{
    \sinc( \calp R ) + 1
 }.
-\end{dmath}
+\end{equation}
 Using \cref{eqn:ProblemSet3Problem1:220} again, we find for equal charges an opposite sign potential
-\begin{dmath}\label{eqn:ProblemSet3Problem1:320}
+\begin{equation}\label{eqn:ProblemSet3Problem1:320}
 V(R)
 =
 -\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
-\end{dmath}
+\end{equation}
 As this is a negative potential, it appears to indicate that like charges attract in the scalar theory.
 
 \makeSubAnswer{}{qft:problemSet3:1c}
@@ -395,7 +395,7 @@ In the \( T \gg R \) limit the exponential dies off more slowly, as illustrated 
 
 For \( R \gg 1/m \), or \( m R \gg 1 \) we have \( e^{-m R} \sim 0 \).  In this limit we have no interaction, as the potential is effectively zero for all \( R \).
 %Given both \( T \gg 1/m \) we have
-%\begin{dmath}\label{eqn:ProblemSet3Problem1:340}
+%\begin{equation}\label{eqn:ProblemSet3Problem1:340}
 %-2 i T V(R)
 %=
 %+2 i T \frac{g^2}{4 \pi} e^{-m R}/R
@@ -403,15 +403,15 @@ For \( R \gg 1/m \), or \( m R \gg 1 \) we have \( e^{-m R} \sim 0 \).  In this 
 %i T \frac{g^2}{2 \pi} \lr{ \inv{R} - m }
 %\approx
 %- i T m \frac{g^2}{2 \pi},
-%\end{dmath}
+%\end{equation}
 %In this case, we also have no interaction to speak of, as the radial dependence is eliminated.
 
 We omitted a factor of $\pi m/2$, which adds a pure phase factor
-\begin{dmath}\label{eqn:ProblemSet3Problem1:360}
+\begin{equation}\label{eqn:ProblemSet3Problem1:360}
 e^{-2 i T \frac{g^2}{4 \pi} \frac{\pi m}{2} }
 =
 e^{- g^2 i T m / 4 }.
-\end{dmath}
+\end{equation}
 We can use the time ordered exponential to compute the probability that there is no scattering (as in \cref{qft:problemSet3:2}), but the amplitude squared operation required for that probability kills such a phase factor, so it does not seem physically meaningful.
 }
 }

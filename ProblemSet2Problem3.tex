@@ -15,7 +15,7 @@ We explore the \( \SU{2}_L \times \SU{2}_R\) symmetries in this model.
 Show that the classical potential in
 \cref{eqn:ProblemSet2Problem2:50}
 now becomes:
-\begin{dmath}\label{eqn:ProblemSet2Problem3:20}
+\begin{equation}\label{eqn:ProblemSet2Problem3:20}
 V = -\Abs{m^2}
 \trace{H^\dagger H}
 + \lambda
@@ -28,7 +28,7 @@ V = -\Abs{m^2}
    \frac{\Abs{m^2}}{2 \lambda}
 }^2
 + \text{const}.
-\end{dmath}
+\end{equation}
 \makesubproblem{}{qft:problemSet2:3b}
 Clearly, there are extrema of the potential when
 \(
@@ -72,9 +72,9 @@ the set parameterized by
 is also known as a three sphere (\(S^3\), embedded in a four-dimensional space parameterized by
 \(\psi^{1\cdots4}\) - not the spacetime!). To build the quantum theory, we will choose a point on this three sphere (a.k.a. the ``vacuum manifold'' - the set of field values that minimize the potential). We will now study the small fluctuations around the chosen point and the spectrum of the theory in this vacuum. There is an infinite number of parameterizations that can be used to do this, but I will suggest one that makes the symmetries the clearest.
  Thus, use the \(H\)-representation and take
-\begin{dmath}\label{eqn:ProblemSet2Problem3:40}
+\begin{equation}\label{eqn:ProblemSet2Problem3:40}
 H(x) = \frac{\Abs{m}}{2\sqrt{\lambda}} ( 1 + h(x) ) e^{i \phi^a(x) \sigma^a }
-\end{dmath}
+\end{equation}
 The logic here is as follows. When \( h(x)\) and \( \phi^a(x) \) vanish (i.e. there are no excitations), the
 parameterization
 \cref{eqn:ProblemSet2Problem3:40}
@@ -98,9 +98,9 @@ Show that the fields \( \phi^a(x) \) remain massless and that their Lagrangian (
 The latter point can be seen pretty simply by noting that \( H(x) \) from
 \cref{eqn:ProblemSet2Problem3:40}
 can be written as
-\begin{dmath}\label{eqn:ProblemSet2Problem3:60}
+\begin{equation}\label{eqn:ProblemSet2Problem3:60}
 H(x) = \frac{\Abs{m}}{2 \sqrt{ \lambda } }\Omega(x) ( 1 + h(x) ),
-\end{dmath}
+\end{equation}
 with \( \Omega^\dagger \Omega = 1 \) and \( \det(\Omega(x)) = 1 \).
 In this parameterization \( \Omega(x) \) fluctuations
   correspond to going around the vacuum manifold \( S^3 \), while the \( h(x) \) fluctuations are along the ``radial'' directions away from the minimum.
@@ -122,28 +122,28 @@ with
 \( U_L = U_R\). Such \( \SU{2}_L \times \SU{2}_R \) transformations with \( U_L = U_R \) are called ``diagonal'' or ``vector'' \( \SU{2}_V \) transformations.
 These remain unbroken in the vacuum. In the electroweak theory, the third component of \( \SU{2}_V \) is identified with electromagnetic \( U(1)\).
 Show that the current associated with \( \SU{2}_V \) transformations has the form:
-\begin{dmath}\label{eqn:ProblemSet2Problem3:80}
+\begin{equation}\label{eqn:ProblemSet2Problem3:80}
 j_\mu^{V,a} = \frac{i}{2} \trace{\lr{
 \partial_\mu H^\dagger \antisymmetric{\sigma^a}{H}
 +
 \partial_\mu H \antisymmetric{\sigma^a}{H^\dagger}
 }}
-\end{dmath}
+\end{equation}
 Show also that the other ``linear'' combination of \( \SU{2}_L \) and \( \SU{2}_R \),
 \cref{eqn:ProblemSet2Problem2:60}
 with \( U_R = U_L^\dagger \) corresponds to the current (not conserved!) usually called the ``axial current''
-\begin{dmath}\label{eqn:ProblemSet2Problem3:120}
+\begin{equation}\label{eqn:ProblemSet2Problem3:120}
 j_\mu^{A,a} = \frac{i}{2} \trace{
 \partial_\mu H^\dagger \symmetric{\sigma^a}{H} - \partial_\mu H \symmetric{\sigma^a}{H^\dagger},
 }
-\end{dmath}
+\end{equation}
 where \( \symmetric{A}{B} = AB + BA \) denotes the anticommutator.
 
 \makesubproblem{}{qft:problemSet2:3e}
 Show that to linear order in the fields \( h(x),\phi^a(x) \), the a-th axial current is simply
-\begin{dmath}\label{eqn:ProblemSet2Problem3:100}
+\begin{equation}\label{eqn:ProblemSet2Problem3:100}
 j^{A,a} \sim \expectation{H} \partial_\mu \phi^a,
-\end{dmath}
+\end{equation}
 and find the constant in front. Thus, when the quantum operator corresponding to
 \cref{eqn:ProblemSet2Problem3:100} % (12)
 acts on the vacuum, it creates a quantum of the Goldstone boson (times the momentum and the ``Goldstone boson decay constant'' which is really equal to  \( \expectation{H} \)).
@@ -168,7 +168,7 @@ Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when \( m^2 > 0\)
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet2:3a}
 To expand the potential note that
-\begin{dmath}\label{eqn:ProblemSet2Problem3:140}
+\begin{equation}\label{eqn:ProblemSet2Problem3:140}
 \trace{\lr{
 H^\dagger H
 }}
@@ -191,9 +191,9 @@ i \sigma^2 \Phi^\conj & \Phi
 }
 =
 \Abs{\phi_1}^2 + \Abs{\phi_2}^2,
-\end{dmath}
+\end{equation}
 so we have
-\begin{dmath}\label{eqn:ProblemSet2Problem3:160}
+\begin{equation}\label{eqn:ProblemSet2Problem3:160}
 V = -\Abs{m}^2
 \trace{\lr{
 H^\dagger H
@@ -223,9 +223,9 @@ H^\dagger H
       \Abs{\phi_1}^2 + \Abs{\phi_2}^2
    }
 }.
-\end{dmath}
+\end{equation}
 Completing the square gives
-\begin{dmath}\label{eqn:ProblemSet2Problem3:180}
+\begin{equation}\label{eqn:ProblemSet2Problem3:180}
 V
 =
 \lambda\lr{
@@ -238,7 +238,7 @@ V
 \lr{
    \frac{\Abs{m}^2 }{2\lambda}
 }^2,
-\end{dmath}
+\end{equation}
 which proves the result and shows that the constant is \( - \frac{\Abs{m}^4 }{4\lambda} \).
 \makeSubAnswer{}{qft:problemSet2:3b}
 From \cref{eqn:ProblemSet2Problem3:160} the first order expansion, ignoring constant terms, around \( \Abs{\phi_1}^2 + \Abs{\phi_2}^2 = 0 \) is
@@ -246,24 +246,24 @@ From \cref{eqn:ProblemSet2Problem3:160} the first order expansion, ignoring cons
 V = -\Abs{m^2} \lr{ \Abs{\phi_1}^2 + \Abs{\phi_2}^2 } = -\Abs{m^2} \Phi^\dagger \Phi.
 \end{equation}
 The Lagrangian density, to first order, may be written in the compact form
-\begin{dmath}\label{eqn:ProblemSet2Problem3:200}
+\begin{equation}\label{eqn:ProblemSet2Problem3:200}
 \LL = \partial_\mu \Phi^\dagger \partial^\mu \Phi + \Abs{m}^2 \Phi^\dagger \Phi.
-\end{dmath}
+\end{equation}
 The equations of motion are
-\begin{dmath}\label{eqn:ProblemSet2Problem3:220}
+\begin{equation}\label{eqn:ProblemSet2Problem3:220}
 \begin{aligned}
 \partial_\mu \partial^\mu \Phi &= \Abs{m}^2 \Phi \\
 \partial_\mu \partial^\mu \Phi^\dagger &= \Abs{m}^2 \Phi^\dagger
 \end{aligned},
-\end{dmath}
+\end{equation}
 or, \( \partial_\mu \partial^\mu \psi = \Abs{m}^2 \psi \) for any \( \psi \in \phi_1, \phi_2, \phi_1^\conj, \phi_2^\conj \).
 
 Suppose that one of these wave functions has a Fourier transform representation
-\begin{dmath}\label{eqn:ProblemSet2Problem3:240}
+\begin{equation}\label{eqn:ProblemSet2Problem3:240}
 \psi(x) = \int \frac{d^4 p}{(2\pi)^4} e^{i p \cdot x} \tilde{\psi}.
-\end{dmath}
+\end{equation}
 Such a solution must satisfy the equations of motion
-\begin{dmath}\label{eqn:ProblemSet2Problem3:260}
+\begin{equation}\label{eqn:ProblemSet2Problem3:260}
 0
 =
 \lr{
@@ -281,33 +281,33 @@ Such a solution must satisfy the equations of motion
    (i\omega)^2 - (-i \Bp)^2 -\Abs{m}^2
 }
 e^{i \omega t - i \Bp \cdot \Bx} \tilde{\psi},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem3:280}
+\begin{equation}\label{eqn:ProblemSet2Problem3:280}
 0 = -\omega^2 + \Bp^2 - \Abs{m}^2,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet2Problem3:300}
+\begin{equation}\label{eqn:ProblemSet2Problem3:300}
 \omega = \sqrt{\Bp^2 - \Abs{m}^2}.
-\end{dmath}
+\end{equation}
 Any \( \Norm{\Bp} < \Abs{m} \) results in an imaginary angular frequency.  For example, at \( \Bp = 0 \), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem3:320}
+\begin{equation}\label{eqn:ProblemSet2Problem3:320}
 \omega = \pm i \Abs{m}.
-\end{dmath}
+\end{equation}
 In particular
-\begin{dmath}\label{eqn:ProblemSet2Problem3:340}
+\begin{equation}\label{eqn:ProblemSet2Problem3:340}
 p_0 x^0
 =
 \omega t
 = \pm i \Abs{m} t
 = \pm \Abs{m} ( i t ).
-\end{dmath}
+\end{equation}
 We see that the angular momentum constraint on the system \cref{eqn:ProblemSet2Problem3:280} results in the imaginary time that is characteristic of tachonic solutions.
 
 \makeSubAnswer{}{qft:problemSet2:3c}
 It seems reasonable that we can assume that \( h(x) \) and \( \phi^a(x) \) in
 \cref{eqn:ProblemSet2Problem3:40} are all real valued scalar (non-matrix) functions.  That is \( h(x) \) has the role of radial extension or compression of the field magnitude, and the exponential is of the form \( e^{i \Bsigma \cdot \Bphi(x) } \), a matrix valued rotation operator, where \( \Bphi = (\phi^1, \phi^2, \phi^3)\).  Given that assumption, \( H^\dagger H \) can be computed with relative ease, and has only radial dependence
-\begin{dmath}\label{eqn:ProblemSet2Problem3:380}
+\begin{equation}\label{eqn:ProblemSet2Problem3:380}
 \trace{\lr{H^\dagger H}}
 =
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\lr{ e^{-i \Bsigma \cdot \Bphi} e^{i \Bsigma \cdot \Bphi} }}
@@ -315,9 +315,9 @@ It seems reasonable that we can assume that \( h(x) \) and \( \phi^a(x) \) in
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\BOne}
 =
 \frac{\Abs{m}^2}{2 \lambda} (1 + h)^2.
-\end{dmath}
+\end{equation}
 For the derivative quadratic form, it is expedient to use the form \cref{eqn:ProblemSet2Problem3:60}, which gives
-\begin{dmath}\label{eqn:ProblemSet2Problem3:400}
+\begin{equation}\label{eqn:ProblemSet2Problem3:400}
 \partial_\mu H^\dagger \partial^\mu H
 =
 \frac{\Abs{m}^2}{4 \lambda}
@@ -344,10 +344,10 @@ For the derivative quadratic form, it is expedient to use the form \cref{eqn:Pro
       }
    + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
 }
-\end{dmath}
+\end{equation}
 where we have made the usual assumptions that the independent fields \((h, \Omega)\) commute.
 Because \( \Omega^\dagger \Omega = 1 \), we have
-\begin{dmath}\label{eqn:ProblemSet2Problem3:480}
+\begin{equation}\label{eqn:ProblemSet2Problem3:480}
 \partial_\mu h
 \Omega^\dagger (\partial^\mu \Omega)
  +
@@ -370,12 +370,12 @@ Because \( \Omega^\dagger \Omega = 1 \), we have
 =
    \partial^\mu (1)
 = 0.
-\end{dmath}
+\end{equation}
 All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to all orders, not just quadratic).
 
 Taking traces (and using cyclic permutation of the matrices in the trace operations),
 the Lagrangian density is now determined to quadratic order
-\begin{dmath}\label{eqn:ProblemSet2Problem3:500}
+\begin{equation}\label{eqn:ProblemSet2Problem3:500}
 \LL =
 \frac{\Abs{m}^2}{2 \lambda}
    \partial_\mu h \partial^\mu h
@@ -389,9 +389,9 @@ the Lagrangian density is now determined to quadratic order
 - \lambda
 \lr{\frac{\Abs{m}^2}{2 \lambda}}^2
 \lr{ 1 + h }^4.
-\end{dmath}
+\end{equation}
 Observe that the Lagrangian density can be split into two independent parts, one for the radial field \( h \), and another for the rotation field \( \Omega \).  Rescaling to drop the common constant factor \( \Abs{m}^2/2\lambda \), the radial Lagrangian is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:560}
+\begin{equation}\label{eqn:ProblemSet2Problem3:560}
 \LL_h
 =
 \partial_\mu h \partial^\mu h
@@ -427,20 +427,20 @@ Observe that the Lagrangian density can be split into two independent parts, one
 \partial_\mu h \partial^\mu h
 - 2 \Abs{m}^2 h^2
 + O(h^3).
-\end{dmath}
+\end{equation}
 This shows that the mass of the \( h \) field is \( \sqrt{2} \Abs{m} \).
 
 The only remaining task is to express the Lagrangian density for \( \phi^a \) in terms of those field instead of \( \Omega \).  To evaluate those derivatives, we can utilize a first order Taylor expansion
 %
-\begin{dmath}\label{eqn:ProblemSet2Problem3:580}
+\begin{equation}\label{eqn:ProblemSet2Problem3:580}
 \partial_\mu \Omega
 =
 \partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
 =
 i \Bsigma \cdot \partial_\mu \Bphi,
-\end{dmath}
+\end{equation}
 so the rotation Lagrangian density is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:600}
+\begin{equation}\label{eqn:ProblemSet2Problem3:600}
 \LL_\Bphi =
 \inv{2} \trace{\lr{
 (-i \Bsigma \cdot \partial_\mu \Bphi)
@@ -450,7 +450,7 @@ so the rotation Lagrangian density is
 (\partial_\mu \Bphi) \cdot (\partial^\mu \Bphi)
 =
 (\partial_\mu \phi^a) (\partial^\mu \phi^a),
-\end{dmath}
+\end{equation}
 where we use the fact that \( \trace{\lr{(\Bsigma \cdot \Bx)(\Bsigma \cdot \By)}} = 2 \Bx \cdot \By \).
 
 The full Lagrangian density, to quadratic order, is
@@ -470,13 +470,13 @@ In the problem statement \( \expectation{H} \) is defined as a \( 2 \times 2 \) 
 
 \paragraph{Setup.}
 This problem is easiest if we can work directly with in matrix notation, but first need to know how to express the current.  Given matrix elements \( H_{ab}, H^\conj_{ab} \), that current is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:640}
+\begin{equation}\label{eqn:ProblemSet2Problem3:640}
 j^\mu
 =
 \PD{(\partial_\mu H_{ij})}{\LL} \delta H_{ij}
 +
 \PD{(\partial_\mu H^\conj_{ij})}{\LL} \delta H^\conj_{ij}.
-\end{dmath}
+\end{equation}
 The trace of a matrix product in terms of the respective matrix elements is
 \begin{equation}\label{eqn:ProblemSet2Problem3:660}
 \trace{\lr{ A B }}
@@ -496,7 +496,7 @@ so the Kinetic portion of the Lagrangian density expands as
 \partial_\mu H^\conj_{ij} \partial^\mu H_{ij}.
 \end{equation}
 We can now put the current \cref{eqn:ProblemSet2Problem3:640} into matrix form
-\begin{dmath}\label{eqn:ProblemSet2Problem3:700}
+\begin{equation}\label{eqn:ProblemSet2Problem3:700}
 j^\mu
 =
 \partial^\mu H^\conj_{ij} \delta H_{ij}
@@ -512,12 +512,12 @@ j^\mu
 +
 \delta H^\dagger \partial^\mu H
 }}.
-\end{dmath}
+\end{equation}
 
 \paragraph{Vector current.}
 
 With \( H \rightarrow U_L H U_L^\dagger \), the \( H \) variation is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:720}
+\begin{equation}\label{eqn:ProblemSet2Problem3:720}
 \delta H
 =
 H' - H
@@ -531,7 +531,7 @@ H' - H
 + O(\Bomega^2)
 =
 \frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H},
-\end{dmath}
+\end{equation}
 and its conjugate is
 \begin{equation}\label{eqn:ProblemSet2Problem3:740}
 \delta H^\dagger
@@ -542,7 +542,7 @@ and its conjugate is
 \end{equation}
 
 Putting the pieces together gives
-\begin{dmath}\label{eqn:ProblemSet2Problem3:860}
+\begin{equation}\label{eqn:ProblemSet2Problem3:860}
 j_\mu^{V, \Bomega}
 = \frac{i}{2}
 \trace{\lr{
@@ -560,14 +560,14 @@ j_\mu^{V, \Bomega}
 \partial_\mu H
 \antisymmetric{\sigma^a}{H^\dagger}
 }},
-\end{dmath}
+\end{equation}
 so setting \( j_\mu^{V, \Bomega} = \omega^a j_\mu^{V,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
 
 \paragraph{Axial current.}
 This is only cosmetically different from the Vector current.
 
 With \( H \rightarrow U_L H U_L \), the \( H \) variation is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:780}
+\begin{equation}\label{eqn:ProblemSet2Problem3:780}
 \delta H
 =
 H' - H
@@ -581,7 +581,7 @@ H' - H
 + O(\Bomega^2)
 =
 \frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H},
-\end{dmath}
+\end{equation}
 and its conjugate is
 \begin{equation}\label{eqn:ProblemSet2Problem3:800}
 \delta H^\dagger
@@ -590,7 +590,7 @@ and its conjugate is
 \end{equation}
 
 Putting the pieces together gives
-\begin{dmath}\label{eqn:ProblemSet2Problem3:880}
+\begin{equation}\label{eqn:ProblemSet2Problem3:880}
 j_\mu^{A, \Bomega}
 = \frac{i}{2}
 \trace{\lr{
@@ -608,14 +608,14 @@ j_\mu^{A, \Bomega}
 \partial_\mu H
 \symmetric{\sigma^a}{H^\dagger}
 }},
-\end{dmath}
+\end{equation}
 so setting \( j_\mu^{A, \Bomega} = \omega^a j_\mu^{A,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
 
 \makeSubAnswer{}{qft:problemSet2:3e}
 \paragraph{Axial current to first order.}
 
 To first order the \( H \) partial is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:820}
+\begin{equation}\label{eqn:ProblemSet2Problem3:820}
 \partial_\mu H
 =
 \expectation{H}
@@ -632,9 +632,9 @@ To first order the \( H \) partial is
    i \Bsigma \cdot \partial_\mu \Bphi
 }
 + O(2).
-\end{dmath}
+\end{equation}
 Because this has no zero order terms, we need only the zeroth order parts of the anticommutators
-\begin{dmath}\label{eqn:ProblemSet2Problem3:840}
+\begin{equation}\label{eqn:ProblemSet2Problem3:840}
 \symmetric{\sigma^a}{H}
 =
 \expectation{H}
@@ -644,9 +644,9 @@ Because this has no zero order terms, we need only the zeroth order parts of the
 + O(1)
 =
 2 \expectation{H} \sigma^a.
-\end{dmath}
+\end{equation}
 To first order
-\begin{dmath}\label{eqn:ProblemSet2Problem3:900}
+\begin{equation}\label{eqn:ProblemSet2Problem3:900}
 j^{A,a}_\mu
 =
 i \expectation{H}^2 \trace{\lr{
@@ -665,22 +665,22 @@ i \expectation{H}^2 \trace{\lr{
 }}
 =
 2 \expectation{H}^2 \trace{\lr{ \sigma^b \partial_\mu \phi^b \sigma^a }}.
-\end{dmath}
+\end{equation}
 Since \( \trace{\lr{ \sigma^a \sigma^b }} = 2 \delta_{ab} \), this reduces to
-\begin{dmath}\label{eqn:ProblemSet2Problem3:920}
+\begin{equation}\label{eqn:ProblemSet2Problem3:920}
 j^{A,a}_\mu
 =
 \expectation{H} \lr{ 4 \expectation{H} } \partial_\mu \phi^a,
-\end{dmath}
+\end{equation}
 so the ``constant in front'' is \( 4 \expectation{H} = 2 \Abs{m}/\sqrt{\lambda} \).
 
 \paragraph{Vector current to second order.}
 %%For this part of the problem, we are to show that, to leading order in the fields, the conserved vector current is quadratic in \( \phi^a \).  Let's assume that we can drop any \( O(3) \) terms in the current, and look at what terms are left over of lesser order.
 %%
 To make life less messy, let's write
-\begin{dmath}\label{eqn:ProblemSet2Problem3:940}
+\begin{equation}\label{eqn:ProblemSet2Problem3:940}
 H = \expectation{H} (1 + h) \Omega,
-\end{dmath}
+\end{equation}
 so that
 \begin{equation}\label{eqn:ProblemSet2Problem3:960}
 \antisymmetric{\sigma^a}{H}
@@ -691,7 +691,7 @@ so that
 \expectation{H} h \antisymmetric{\sigma^a}{\Omega}.
 \end{equation}
 We also have, also to all orders,
-\begin{dmath}\label{eqn:ProblemSet2Problem3:980}
+\begin{equation}\label{eqn:ProblemSet2Problem3:980}
 \partial_\mu H
 =
 \expectation{H} \lr{ \partial_\mu h \Omega + (1 + h)\partial_\mu \Omega }
@@ -699,7 +699,7 @@ We also have, also to all orders,
 %\expectation{H} \lr{
 %   \partial_\mu h \Omega + \partial_\mu \Omega + h \partial_\mu \Omega
 %}
-\end{dmath}
+\end{equation}
 The current is
 \begin{equation}\label{eqn:ProblemSet2Problem3:1000}
 \begin{aligned}
@@ -758,7 +758,7 @@ j^{V,a}_\mu
 \end{aligned}
 \end{equation}
 where
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1100}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1100}
 \begin{aligned}
 A &=
    \trace{\lr{
@@ -773,9 +773,9 @@ B &=
          \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
    }}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 The first trace \( A \) is easily shown to be zero
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1020}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1020}
 A
 =
 \trace{\lr{
@@ -796,11 +796,11 @@ A
    }  \sigma^a
 }}
 = 0,
-\end{dmath}
+\end{equation}
 where cyclic permutation within the trace was used to arrange the terms for easy cancellation \(1 - 1 + 1 - 1 = 0\).
 
 Expanding commutators, and using cyclic permutation in the trace, we have for \( B \)
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1040}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1040}
 B
 =
 \trace{\lr{
@@ -827,16 +827,16 @@ B
       - (\partial_\mu \Omega) \Omega^\dagger
    } \sigma^a
 }}
-\end{dmath}
+\end{equation}
 This can be simplified using
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1060}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1060}
 \begin{aligned}
 \Omega (\partial_\mu \Omega^\dagger) &= -(\partial_\mu \Omega) \Omega^\dagger \\
 \Omega^\dagger (\partial_\mu \Omega) &= -(\partial_\mu \Omega^\dagger) \Omega
 \end{aligned},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1080}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1080}
 B
 =
 2
@@ -846,9 +846,9 @@ B
       - (\partial_\mu \Omega) \Omega^\dagger
    } \sigma^a
 }}.
-\end{dmath}
+\end{equation}
 The derivative \( \partial_\mu \Omega \) has no \( O(0) \) terms, so let's expand the rotation matrix only to \( O(1) \), and then drop any \( O(2) \) terms from \( \partial_\mu \Omega \).  This gives
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1120}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1120}
 B
 =
 2
@@ -886,15 +886,15 @@ B
 \trace{\lr{ \sigma^1 \sigma^2 \sigma^3 }} \epsilon^{abc}
 = - 4 i
 \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
-\end{dmath}
+\end{equation}
 to quadratic order in \( \phi^a \).  The final steps above used the fact that the trace of three Pauli matrices is zero unless they are all different, and \( \trace{\lr{ \sigma^1 \sigma^2 \sigma^3 }} = 2 i \).
 
 The current, to lowest order in \( \phi^a \), and all orders in \( h \), is
-\begin{dmath}\label{eqn:ProblemSet2Problem3:1140}
+\begin{equation}\label{eqn:ProblemSet2Problem3:1140}
 j^{V,a}_\mu
 =
 2
 \expectation{H}^2 h(1 + h) \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
-\end{dmath}
+\end{equation}
 which is quadratic in \( \phi^a \) as claimed.
 }}

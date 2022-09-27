@@ -34,7 +34,7 @@ Prove \cref{eqn:qftLecture13:140}.
 
 \makeanswer{problem:qftLecture13:1280}{
 In class we derived the field for the non-homogeneous Klein-Gordon equation
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:20}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:20}
 \phi(x)
 = \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
 \evalbar{
@@ -53,7 +53,7 @@ p^0 = \omega_\Bp
    +
    e^{i \omega_\Bp t - i \Bp \cdot \Bx} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
 }.
-\end{dmath}
+\end{equation}
 This means that we have
 \begin{equation}\label{eqn:nonhomoKGhamiltonian:40}
 \begin{aligned}
@@ -74,34 +74,34 @@ This means that we have
 \end{aligned}
 \end{equation}
 and could plug these into the Hamiltonian
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:60}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:60}
 H = \int d^3 p \lr{ \inv{2} \pi^2 + \inv{2} \lr{ \spacegrad \phi}^2 + \frac{m^2}{2} \phi^2 },
-\end{dmath}
+\end{equation}
 to find \( H \) in terms of \( \tilde{j} \) and \( a_\Bp^\dagger, a_\Bp \).  The result was mentioned in class, and it was left as an exercise to verify.
 
 There's an easy way and a dumb way to do this exercise.  I did it the dumb way, and then after suffering through two long pages, where the equations were so long that I had to write on the paper sideways, I realized the way I should have done it.
 
 The easy way is to observe that we've already done exactly this for the case \( \tilde{j} = 0 \), which had the answer
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:80}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:80}
 H = \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger }.
-\end{dmath}
+\end{equation}
 To handle this more general case, all we have to do is apply a transformation
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:100}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:100}
 a_\Bp \rightarrow
 a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}},
-\end{dmath}
+\end{equation}
 to \cref{eqn:nonhomoKGhamiltonian:80}, which gives
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:120}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:120}
 H
 =
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger }
 =
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
 }.
-\end{dmath}
+\end{equation}
 
 Like the \( \tilde{j} = 0 \) case, we can use normal ordering.  This is easily seen by direct expansion:
-\begin{dmath}\label{eqn:nonhomoKGhamiltonian:140}
+\begin{equation}\label{eqn:nonhomoKGhamiltonian:140}
 \begin{aligned}
 \lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }
 &=
@@ -116,7 +116,7 @@ a_\Bp^\dagger a_\Bp
 - \frac{ a_\Bp i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}}
 + \frac{\Abs{\tilde{j}}^2}{2 \omega_\Bp}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Because \( \tilde{j} \) is just a complex valued function, it commutes with \( a_\Bp, a_\Bp^\dagger \), and these are equal up to the normal ordering, allowing us to write
 \begin{equation}\label{eqn:nonhomoKGhamiltonian:160}
 :H: =

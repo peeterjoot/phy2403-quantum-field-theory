@@ -8,11 +8,9 @@
 {
 
 In a theory of a single harmonic oscillator, define the coherent state \( \ket{ z } \) by
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem2:20}
-\ket{z} = N e^{z a^\dagger} \ket{0}
-\end{dmath}
-
+\begin{equation}\label{eqn:LukeProblemSet1Problem2:20}
+\ket{z} = N e^{z a^\dagger} \ket{0},
+\end{equation}
 where \( z \) is a complex number and \( N \) is a real positive constant, chosen such that \( \braket{ z}{z} = 1\).
 Coherent
 states of the SHO are interesting because they smoothly interpolate between the classical and quantum
@@ -34,13 +32,12 @@ The statement that \( \ket{ z } \) is an eigenstate of a with well-known eigenva
 Consider the time evolution of the system (work in the Heisenberg representation). Show that for
 real \( z \) (this just sets the initial conditions) the expectation values of the position and momentum
 of the coherent state satisfy
-
-\begin{dmath}\label{eqn:LukeProblemSet1Problem2:40}
+\begin{equation}\label{eqn:LukeProblemSet1Problem2:40}
 \bra{z} X \ket{z} = \sqrt{\frac{2}{\mu\omega}} z \cos\omega t
-\end{dmath}
-\begin{dmath}\label{eqn:LukeProblemSet1Problem2:60}
-\bra{z} P \ket{z} = -\sqrt{2 \mu\omega} z \sin\omega t
-\end{dmath}
+\end{equation}
+\begin{equation}\label{eqn:LukeProblemSet1Problem2:60}
+\bra{z} P \ket{z} = -\sqrt{2 \mu\omega} z \sin\omega t.
+\end{equation}
 
 By contrast, what are the expectation values of \( X \) and \( P \) for an oscillator in any state of definite excitation number \( n \)? Using a sketch, describe the behavior of the wavepacket as a function of
 time.
@@ -51,13 +48,10 @@ time.
 \makeSubAnswer{}{qft:LukeProblemSet1:2a}
 
 Expanding this definition of \( \ket{z} \) in power series
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:80}
-\ket{z} = N \sum_{k= 0}^\infty \inv{k!} \lr{ z a^\dagger }^k \ket{k}
-\end{dmath}
-
+\begin{equation}\label{eqn:qftProblemSet1Problem2:80}
+\ket{z} = N \sum_{k= 0}^\infty \inv{k!} \lr{ z a^\dagger }^k \ket{k},
+\end{equation}
 but
-
 \begin{equation}\label{eqn:qftProblemSet1Problem2:100}
 \begin{aligned}
 a^\dagger \ket{0} &= \sqrt{1} \ket{1} \\
@@ -77,22 +71,20 @@ This gives
 \end{equation}
 %
 from which the braket can be computed
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:160}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:160}
 1
 = \braket{z}{z}
 = N^2 \sum_{k,m = 0}^\infty \inv{\sqrt{k!}} (z^\conj)^k \bra{k} \inv{\sqrt{m!}} z^m \ket{m}
 = N^2 \sum_{k = 0}^\infty \inv{k!} (z^\conj z)^k
 = N^2 e^{\Abs{z}^2}.
-\end{dmath}
+\end{equation}
 
 This gives
 \boxedEquation{eqn:qftProblemSet1Problem2:180}{
 N = e^{-\Abs{z}^2/2}.
 }
-
 \makeSubAnswer{}{qft:LukeProblemSet1:2c}
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:260}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:260}
 a \ket{z}
 =
 a N
@@ -108,10 +100,9 @@ z N
 \sum_{k = 1}^\infty \inv{\sqrt{(k-1)!}} z^{k-1} \ket{k-1}
 =
 z \ket{z}
-\end{dmath}
+\end{equation}
 
 \makeSubAnswer{}{qft:LukeProblemSet1:2b}
-
 \begin{equation}\label{eqn:qftProblemSet1Problem2:200}
 \begin{aligned}
 \braket{z}{z'}
@@ -135,7 +126,7 @@ H
 \end{aligned}
 \end{equation}
 Having found that \( a \ket{z} = z \ket{z} \), we also have
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:280}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:280}
 \bra{z} a^\dagger
 =
 \lr{ a \ket{z} }^\dagger
@@ -143,9 +134,9 @@ Having found that \( a \ket{z} = z \ket{z} \), we also have
 \lr{ z \ket{z} }^\dagger
 =
 \bra{z} z^\conj,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:240}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:240}
 \bra{z} H \ket{z}
 =
 \omega
@@ -153,40 +144,38 @@ so
 =
 \omega
 \lr{ \Abs{z}^2 + \inv{2} }.
-\end{dmath}
-
+\end{equation}
 \makeSubAnswer{}{qft:LukeProblemSet1:2d}
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:300}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:300}
 \bra{q} a \ket{z}
 =
 \inv{\sqrt{2}} \bra{q} q + i p \ket{z}
 =
 \inv{\sqrt{2}} \lr{ q + \PD{q}{} } \braket{q}{z},
-\end{dmath}
+\end{equation}
 with \( \psi(q) = \braket{q}{z} \), this is
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:320}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:320}
 \lr{ z - \frac{q}{\sqrt{2}} } \psi = \inv{\sqrt{2}} \PD{q}{\psi},
-\end{dmath}
+\end{equation}
 which separates into
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:340}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:340}
 \lr{ \sqrt{2} z - q} dq = \frac{d\psi}{\psi}.
-\end{dmath}
+\end{equation}
 
 The solution is of the form
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:360}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:360}
 \psi
 \propto \exp\lr{ \sqrt{2} z q - q^2/2 }
 = \exp\lr{ -(q^2 - 2 \sqrt{2} z q )/2 }
 \propto \exp\lr{ -(q - \sqrt{2} z )^2/2 }.
-\end{dmath}
+\end{equation}
 
 SKETCH: This is a Gaussian, and when \( z \) is real is centered at \( \sqrt{2} z \).
 
 \makeSubAnswer{}{qft:LukeProblemSet1:2e}
 
 Noting that \( 2 q = \sqrt{2} \lr{ a + a^\dagger } \), and \( 2 i p = \sqrt{2}\lr{ a - a^\dagger } \)
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:380}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:380}
 \bra{z} X \ket{z}
 =
 \inv{\sqrt{\mu \omega}}
@@ -202,9 +191,8 @@ z e^{-i\omega t} + z^\conj e^{i \omega t}
 }
 =
 \sqrt{\frac{2}{\mu \omega}} z \cos(\omega t).
-\end{dmath}
-
-\begin{dmath}\label{eqn:qftProblemSet1Problem2:400}
+\end{equation}
+\begin{equation}\label{eqn:qftProblemSet1Problem2:400}
 \bra{z} P \ket{z}
 =
 \sqrt{\mu \omega}
@@ -219,7 +207,7 @@ i\frac{\sqrt{\mu \omega}}{2} z
 \lr{ e^{i\omega t} - e^{-i \omega t}}
 =
 -\sqrt{2 \mu \omega} z \sin(\omega t).
-\end{dmath}
+\end{equation}
 
 SKETCH: particle expectation values trace an ellipse in phase space.
 }

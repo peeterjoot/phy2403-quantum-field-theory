@@ -8,7 +8,7 @@
 
 \makeanswer{problem:qftLecture21b:1}{
 With time left in the mix the fields are
-\begin{dmath}\label{eqn:qftLecture21b:1180}
+\begin{equation}\label{eqn:qftLecture21b:1180}
 \begin{aligned}
 \Psi(x)
 &=
@@ -29,11 +29,12 @@ With time left in the mix the fields are
    e^{-i q \cdot x} v^{r\dagger}_\Bq b_\Bq^{r \dagger}
 },
 \end{aligned}
-\end{dmath}
+\end{equation}
 and the Hamiltonian is
-\begin{dmath}\label{eqn:qftLecture21b:1200}
+\begin{equation}\label{eqn:qftLecture21b:1200}
+\begin{aligned}
 H_{\text{Dirac}}
-=
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
 \lr{
@@ -46,8 +47,8 @@ H_{\text{Dirac}}
    e^{-i p \cdot x} u^s_\Bp a_\Bp^s
 -
    e^{i p \cdot x} v^s_\Bp b_\Bp^s
-}
-=
+} \\
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
 \lr{
@@ -64,8 +65,8 @@ H_{\text{Dirac}}
 -
    e^{i \omega_\Bp t - i \Bp \cdot \Bx }
    v^s_\Bp b_\Bp^s
-}
-=
+} \\
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 x d^3 p d^3 q}{(2 \pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
 \lr{
@@ -82,8 +83,8 @@ H_{\text{Dirac}}
 -
    e^{i \omega_\Bp t + i \Bp \cdot \Bx }
    v^s_{-\Bp} b_{-\Bp}^s
-}
-=
+} \\
+&= 
 \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2 \pi)^3 2 }
 \lr{
@@ -99,8 +100,8 @@ H_{\text{Dirac}}
 -
    e^{i \omega_\Bp t }
    v^s_{-\Bp} b_{-\Bp}^s
-}
-=
+} \\
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2 \pi)^3 2 }
 \lr{
@@ -114,7 +115,8 @@ H_{\text{Dirac}}
    b_{-\Bq}^{r \dagger}
    b_{-\Bp}^s
 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 where a \( \deltathree(\Bp-\Bq) \) was factored out and evaluated, and the remaining \( v^{r\dagger}_{-\Bp} u^s, u^{r \dagger} v^s_{-\Bp} \) terms were killed off.
 A final use of \cref{eqn:qftLecture21b:1100} completes the proof.
 } % answer

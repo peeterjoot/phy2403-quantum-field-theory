@@ -8,10 +8,10 @@ Zero point energy, and Casimir force.
 }{qft:problemSet1:5}{2018 Hw1.V}{
 In class, when discussing the quantization of the real scalar field, we found the sum of zero
 point energies of the harmonic oscillators (one per each \( \Bk \) ) into which we decomposed the field:
-\begin{dmath}\label{eqn:ProblemSet1Problem5:20}
+\begin{equation}\label{eqn:ProblemSet1Problem5:20}
 E_{\text{zero point}} =
 V_3 \int \frac{d^3 k}{(2\pi)^3} \frac{\Hbar \omega_\Bk}{2}.
-\end{dmath}
+\end{equation}
 
 Expression \cref{eqn:ProblemSet1Problem5:20} gives the
 zero point energy of the field in a spatial volume $V_3$. This energy is, of course, infinite and is usually discarded (as we  learned, by applying a ``normal ordering'' procedure) as unobservable.
@@ -46,12 +46,12 @@ replace the integral over $k_x$ in \cref{eqn:ProblemSet1Problem5:20} by a sum ov
 Show now, starting from
 \cref{eqn:ProblemSet1Problem5:20}
 , with integral replaced by sum, that the difference between the zero point energies per unit area, in the space between the plates in the presence of the plates and without the plates is:
-\begin{dmath}\label{eqn:ProblemSet1Problem5:40}
+\begin{equation}\label{eqn:ProblemSet1Problem5:40}
 \Delta E_{\text{vac}}(a) = \Hbar c \int_0^\infty \frac{dk}{2\pi} k \lr{ \frac{k}{4}
    + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
    - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
 }.
-\end{dmath}
+\end{equation}
 where, obviously, \( k \) is radial wave vector in \(y, z\)-directions.
 \makesubproblem{}{qft:problemSet1:5d}
 The expression
@@ -66,17 +66,17 @@ and $f(k) = 0$ for $k > 1/a_0$, somehow smoothly interpolating between these two
 The integrals in \cref{eqn:ProblemSet1Problem5:40} thus become absolutely convergent---all momenta larger than the inverse Bohr size are cut off.
 
 Show that \cref{eqn:ProblemSet1Problem5:40} (with the cutoff \( f(k) \) as described in the original problem spec) can be written as:
-\begin{dmath}\label{eqn:ProblemSet1Problem5:260}
+\begin{equation}\label{eqn:ProblemSet1Problem5:260}
 \Delta E_{\text{vac}}(a)
 =
 \frac{\Hbar c \pi^2}{8 a^3} \lr{
    \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n)
 },
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:ProblemSet1Problem5:280}
+\begin{equation}\label{eqn:ProblemSet1Problem5:280}
 F(n) = \int_0^\infty du \sqrt{ u + n^2 } f((\pi/a) \sqrt{u + n^2}).
-\end{dmath}
+\end{equation}
 \makesubproblem{}{qft:problemSet1:5e}
 To calculate \cref{eqn:ProblemSet1Problem5:260}, use the Euler-Maclaurin formula:\footnote{This  formula is used to approximate sums with integrals. See, e.g., Wikipedia article for a derivation by induction. Other, fun ways to proceed exist, my favorite is \citep{hawking1977zeta}.
 %$\zeta$-function regularization, see S. Hawking, Commun.Math.Phys. 55 (1977) 133.
@@ -126,13 +126,13 @@ In this example, this was seen by the independence of the final answer on the cu
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:5a}
 Our scalar massless field satisfies the Klein-Gordon equation \( \lr{ \partial_{00} - \spacegrad^2 } \phi = 0 \), which has a plane wave superposition solution
-\begin{dmath}\label{eqn:ProblemSet1Problem5:60}
+\begin{equation}\label{eqn:ProblemSet1Problem5:60}
 \phi(\Bx, t) =
 \alpha e^{i\omega t - i \Bk \cdot \Bx} +
 \beta e^{-i\omega t + i \Bk \cdot \Bx},
-\end{dmath}
+\end{equation}
 where \( \omega^2 = \Bk^2 c^2 \).  At the boundaries
-\begin{dmath}\label{eqn:ProblemSet1Problem5:80}
+\begin{equation}\label{eqn:ProblemSet1Problem5:80}
 \begin{aligned}
 \phi(0, 0)
 &=
@@ -145,24 +145,24 @@ where \( \omega^2 = \Bk^2 c^2 \).  At the boundaries
 \beta e^{i k_x a}
 = 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet1Problem5:100}
 e^{-i k_x a} = e^{i k_x a}.
 \end{equation}
 We must have \( e^{ 2 i k_x a } = 1 \), or
-\begin{dmath}\label{eqn:ProblemSet1Problem5:120}
+\begin{equation}\label{eqn:ProblemSet1Problem5:120}
 2 k_x a = 2 \pi n,
-\end{dmath}
+\end{equation}
 which provides the
-\begin{dmath}\label{eqn:ProblemSet1Problem5:140}
+\begin{equation}\label{eqn:ProblemSet1Problem5:140}
 k_x = \frac{\pi n}{a}
-\end{dmath}
+\end{equation}
 quantization constraint.
 
 \makeSubAnswer{}{qft:problemSet1:5b}
 Making the discrete substitution for \( k_x \), the vacuum energy per unit area is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:160}
+\begin{equation}\label{eqn:ProblemSet1Problem5:160}
 \frac{E}{A}
 = \inv{A}
 \frac{A a}{(2\pi)^3} \int d^3 k \frac{\Hbar c \Norm{\Bk}}{2}
@@ -172,28 +172,28 @@ Making the discrete substitution for \( k_x \), the vacuum energy per unit area 
 = \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk \sum_{n = -\infty}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 }
 = \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
 \lr{ k + 2 \sum_{n = 1}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 } },
-\end{dmath}
+\end{equation}
 so the energy per unit area (\(A\)) between the plates is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:180}
+\begin{equation}\label{eqn:ProblemSet1Problem5:180}
 \frac{E}{A}
 = \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
 \lr{ k + 2 \sum_{n = 1}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 } }.
-\end{dmath}
+\end{equation}
 As \( \int k^2 dk = k^3/3 \) is unbounded for large \( k \), this expression still diverges.
 \makeSubAnswer{}{qft:problemSet1:5c}
 The presence of the plates was accounted for by summing over \( k_x = \pi n/a \) for discrete \( n \).  The absence of the boundaries may be accounted for by performing the integral over all values of \( n \), as in
-\begin{dmath}\label{eqn:ProblemSet1Problem5:200}
+\begin{equation}\label{eqn:ProblemSet1Problem5:200}
 \frac{E}{A}
 = \frac{a}{(2\pi)^3} (2 \pi) \frac{\Hbar c}{2} \int_{k= 0}^\infty k dk \int dk_x \sqrt{ k^2 + k_x^2 }
 = \frac{a \Hbar c}{8 \pi^2} \int_{k= 0}^\infty k dk \int_{k_x = -\infty}^\infty dk_x \sqrt{ k^2 + k_x^2 }
 = \frac{a \Hbar c}{8 \pi^2} \frac{\pi}{a} \int_{k= 0}^\infty k dk \int_{n = -\infty}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }
 = \frac{\Hbar c}{4 \pi} \int_{k= 0}^\infty k dk \int_{n = 0}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }.
-\end{dmath}
+\end{equation}
 The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Problem5:200} yields
 \cref{eqn:ProblemSet1Problem5:40} as desired.
 \makeSubAnswer{}{qft:problemSet1:5d}
 Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:ProblemSet1Problem5:40}, and making a change of variables \( k = \pi x /a \), we have
-\begin{dmath}\label{eqn:ProblemSet1Problem5:220}
+\begin{equation}\label{eqn:ProblemSet1Problem5:220}
 \Delta E_{\text{vac}}(a)
 = \int_0^\infty \frac{dk}{2\pi} k \lr{
    \frac{k}{4} f(k)
@@ -211,9 +211,9 @@ Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:Probl
    - \int_0^\infty dn \sqrt{ x^2 + n^2 }
    f((\pi/a) \sqrt{x^2 + n^2})
 }.
-\end{dmath}
+\end{equation}
 Now let \( u = x^2 \)
-\begin{dmath}\label{eqn:ProblemSet1Problem5:240}
+\begin{equation}\label{eqn:ProblemSet1Problem5:240}
 \Delta E_{\text{vac}}(a)
 =
 \frac{\Hbar c \pi^2}{8 a^3}
@@ -228,66 +228,66 @@ Now let \( u = x^2 \)
 \frac{\Hbar c \pi^2}{8 a^3} \lr{
    \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n)
 },
-\end{dmath}
+\end{equation}
 which recovers \cref{eqn:ProblemSet1Problem5:260} as desired.
 
 \makeSubAnswer{}{qft:problemSet1:5e}
 To calculate the derivatives of \cref{eqn:ProblemSet1Problem5:280} we make a \( v = u + n^2 \) change of variables
-\begin{dmath}\label{eqn:ProblemSet1Problem5:300}
+\begin{equation}\label{eqn:ProblemSet1Problem5:300}
 F(n) = \int_{n^2}^\infty dv \sqrt{ v } f((\pi/a) \sqrt{v}),
-\end{dmath}
+\end{equation}
 and utilize
-\begin{dmath}\label{eqn:ProblemSet1Problem5:320}
+\begin{equation}\label{eqn:ProblemSet1Problem5:320}
 \frac{d}{du} \int_u^v f(t) dt = f(v) \frac{dv}{dt} - f(u) \frac{du}{dt},
-\end{dmath}
+\end{equation}
 so the first derivative is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:340}
+\begin{equation}\label{eqn:ProblemSet1Problem5:340}
 F'(n)
 = -n f((\pi/a) n) \frac{dn^2}{dn}
 = -2 n^2 f((\pi/a) n),
-\end{dmath}
+\end{equation}
 the second is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:360}
+\begin{equation}\label{eqn:ProblemSet1Problem5:360}
 F''(n)
 = -4 n f((\pi/a) n) - 2 n^2 (\pi/a) f'((\pi/a) n),
-\end{dmath}
+\end{equation}
 the third is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:380}
+\begin{equation}\label{eqn:ProblemSet1Problem5:380}
 F'''(n)
 =
 -4 f((\pi/a) n)
 -4 n (\pi/a) f'((\pi/a) n)
 - 4 n (\pi/a) f'((\pi/a) n),
 - 2 n^2 (\pi/a)^2 f''((\pi/a) n).
-\end{dmath}
+\end{equation}
 Any higher order derivatives are dependent on \( f^{(k)}(\pi n/a), k \ge 1 \), so are zero at \(n = 0\) by construction.  Summarizing the values at \( n = 0 \) we have
-\begin{dmath}\label{eqn:ProblemSet1Problem5:400}
+\begin{equation}\label{eqn:ProblemSet1Problem5:400}
 \begin{aligned}
 F'(0) &= 0 \\
 F''(0) &= 0 \\
 F'''(0) &= -4 \\
 F^{(k)}(0) &= 0, \qquad k > 3.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 \makeSubAnswer{}{qft:problemSet1:5f}
 The original problem statement included the following statement of the Euler-Maclaurin formula:
-\begin{dmath}\label{eqn:ProblemSet1Problem5:420}
+\begin{equation}\label{eqn:ProblemSet1Problem5:420}
    \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n) = -\inv{2!} B_2 F'(0) - \inv{4!} B_4 F'''(0) + \cdots,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet1Problem5:440}
+\begin{equation}\label{eqn:ProblemSet1Problem5:440}
    \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n) = \inv{4!} \inv{30} (-4) = -\inv{180}.
-\end{dmath}
+\end{equation}
 Inserting \cref{eqn:ProblemSet1Problem5:440} into
 \cref{eqn:ProblemSet1Problem5:240} gives
-\begin{dmath}\label{eqn:ProblemSet1Problem5:460}
+\begin{equation}\label{eqn:ProblemSet1Problem5:460}
 \Delta E_{\text{vac}}(a)
 =
 -\frac{\Hbar c \pi^2}{8 a^3} \inv{180}
 =
 -\frac{\Hbar c \pi^2}{1440 a^3},
-\end{dmath}
+\end{equation}
 which is the desired result.
 \makeSubAnswer{}{qft:problemSet1:5g}
 Numeric calculations were performed in a Mathematica worksheet (attached).
@@ -298,7 +298,7 @@ The Casimir force between \( 1 \,\si{(cm)^2} \) plates with a 1 micron separatio
 F = C V^2/a = 1 \,\si{N}.
 \end{equation}
 I'm not actually sure if that capacitance is a physically realizable in a capacitor with effective plate area of \( 1 \, \si{(cm)^2} \).  Regardless, this gives an idea of the smallness of the Casimir force, since
-\begin{dmath}\label{eqn:ProblemSet1Problem5:500}
+\begin{equation}\label{eqn:ProblemSet1Problem5:500}
 \frac
 {
 F_{\text{capacitor}}
@@ -307,27 +307,27 @@ F_{\text{capacitor}}
 F_{\text{Casimir}}
 }
 = O(10^7).
-\end{dmath}
+\end{equation}
 \makeSubAnswer{}{qft:problemSet1:5h}
 Given a field has a mass, the wave functions for the field obey
-\begin{dmath}\label{eqn:ProblemSet1Problem5:520}
+\begin{equation}\label{eqn:ProblemSet1Problem5:520}
 \lr{ \partial_{00} - \spacegrad^2 + \frac{m^2 c^2}{\Hbar^2} } \phi(\Bx, t) = 0,
-\end{dmath}
+\end{equation}
 which has plane wave solutions of the form
-\begin{dmath}\label{eqn:ProblemSet1Problem5:540}
+\begin{equation}\label{eqn:ProblemSet1Problem5:540}
 \phi(\Bx, t) = e^{i \omega t - i \Bk \cdot \Bx},
-\end{dmath}
+\end{equation}
 provided
-\begin{dmath}\label{eqn:ProblemSet1Problem5:560}
+\begin{equation}\label{eqn:ProblemSet1Problem5:560}
 \frac{\omega^2}{c^2} = \Bk^2 + \frac{m^2 c^2}{\Hbar^2}.
-\end{dmath}
+\end{equation}
 We may proceed as before, provided we set
-\begin{dmath}\label{eqn:ProblemSet1Problem5:580}
+\begin{equation}\label{eqn:ProblemSet1Problem5:580}
 F(n) = \int_{n^2 + (m c a/\pi \Hbar)^2} dv \sqrt{v} f( \frac{\pi}{a}\sqrt{v} ).
-\end{dmath}
+\end{equation}
 The first derivative of this modified \( F \) is
-\begin{dmath}\label{eqn:ProblemSet1Problem5:600}
+\begin{equation}\label{eqn:ProblemSet1Problem5:600}
 \frac{dF}{dn} = - 2 n \sqrt{ n^2 +  (m c a/\pi \Hbar)^2} f( \frac{\pi}{a}\sqrt{   n^2 +  (m c a/\pi \Hbar)^2} ).
-\end{dmath}
+\end{equation}
 Quick and rough hand calculation of the rest of the derivatives of \( F \) as defined above seems shows that the odd derivatives are all zero at \( n = 0 \) (they are odd functions of n, whereas the even powered derivatives are all even functions of n).  This was confirmed with Mathematica (worksheet attached), so it seems that, regardless of the value of \( m \) with respect to \( 1/a \) the Casimir effect is obliterated by a massive field.
 }}

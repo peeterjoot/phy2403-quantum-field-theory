@@ -10,7 +10,7 @@ Given the action
 In terms of the four-vector potential \(A\), the Lagrangian density of the electromagnetic field,
 interacting with a charged particle of mass m can be written as follows:
 \index{Lagrangian density!electromagnetic}
-\begin{dmath}\label{eqn:ProblemSet1Problem1:20}
+\begin{equation}\label{eqn:ProblemSet1Problem1:20}
 S =
 \int_{\text{all spacetime}}
 d^4 x
@@ -23,22 +23,22 @@ F^{\mu\nu}
 - m
 \int_{\text{worldline}}
 ds.
-\end{dmath}
+\end{equation}
 \index{field strength tensor}
 Here, \( F_{\mu\nu} \equiv \partial_\mu A_\nu - \partial_\nu A_\mu \) field strength tensor. The current \( j^\mu \) is the current corresponding to the particle which can be written as:
-\begin{dmath}\label{eqn:ProblemSet1Problem1:40}
+\begin{equation}\label{eqn:ProblemSet1Problem1:40}
 j^\mu(x) = e
 \int_{\text{worldline}}
 dX^\mu (\tau) \deltafour ( x - X(\tau) ),
-\end{dmath}
+\end{equation}
 where \( \deltafour(x) \) is a four-dimensional delta function.  All indices are raised and lowered by means of the
 metric tensor \( g_{\mu\nu} \) and its inverse \( g^{\mu\nu} \).
 
 The last term in \cref{eqn:ProblemSet1Problem1:20} is the relativistic kinetic energy of the particle and the integral is over the particle's worldline, $X^\mu(\tau)$. Note that $\tau$ is a parameter used to describe the particle's location along the worldline. One can  take this parameter be equal to $x^0$, so that  $X^\mu(\tau)$ means ($X^0 = x^0$, $X^i = X^i(x^0)$), where $\BX(x^0)$ is simply the trajectory of the particle (such a choice of parametrization can be useful, but is not required).
 Notice also that the term involving the current in \cref{eqn:ProblemSet1Problem1:20}, after substitution of \cref{eqn:ProblemSet1Problem1:40} simply becomes
-\begin{dmath}\label{eqn:ProblemSet1Problem1:860}
+\begin{equation}\label{eqn:ProblemSet1Problem1:860}
 - e \int\limits_{worldline} d X^\mu(\tau) A_\mu(X(\tau))~  ,
-\end{dmath}
+\end{equation}
 which is the usual   coupling of a charged particle to the electromagnetic field (choose the $\tau = x^0$ parameterization of the worldline to see this). Whether you use this form of the one of \cref{eqn:ProblemSet1Problem1:20} depends on the problem you're solving (this is a hint).
 
 The dynamical degrees of freedom in the action \cref{eqn:ProblemSet1Problem1:20} are the four-vector potential $A_\mu$ and the particle position $X^\mu(\tau)$.
@@ -49,9 +49,9 @@ to convince yourself that
 \( F_{01} = E_x, F_{02} = E_y, F_{03} = E_z\), and that \(F_{12} = - B_z, F_{31} = -B_y, F_{23} = - B_x \).
 \makesubproblem{}{qft:problemSet1:1b}
 Prove the identity
-\begin{dmath}\label{eqn:ProblemSet1Problem1:120}
+\begin{equation}\label{eqn:ProblemSet1Problem1:120}
 \epsilon^{\mu\nu\alpha\beta} \partial_\nu F_{\alpha \beta} = 0,
-\end{dmath}
+\end{equation}
 and use this to show that
 the source free Maxwell's equations can be recovered directly from the
 definition of \( F_{ij} \).
@@ -81,32 +81,32 @@ the relativistic Lorentz force equation.
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet1:1a}
 With \( k = \setlr{1, 2,3} \),
-\begin{dmath}\label{eqn:ProblemSet1Problem1:60}
+\begin{equation}\label{eqn:ProblemSet1Problem1:60}
 \sum_k F_{0k} \Be_k
 = \sum_k \lr{ \partial_0 A_k - \partial_k A_0 } \Be_k
 = - \sum_k \lr{ \PD{t}{A^k} - \PD{x^k}{\phi} } \Be_k
 = - \PD{t}{\BA} - \spacegrad \phi
 = \BE.
-\end{dmath}
+\end{equation}
 which is the conventional scalar, plus vector potential definition of the electric field in natural units.
 For the magnetic field, it's easier to work backwards
-\begin{dmath}\label{eqn:ProblemSet1Problem1:80}
+\begin{equation}\label{eqn:ProblemSet1Problem1:80}
 \BB
 = \spacegrad \cross \BA
 = \epsilon_{ijk} \partial_i A^j \Be_k,
-\end{dmath}
+\end{equation}
 or, for each cyclic permutation of \( i j k = \setlr{1,2,3}\)
-\begin{dmath}\label{eqn:ProblemSet1Problem1:100}
+\begin{equation}\label{eqn:ProblemSet1Problem1:100}
 B^i
 = \partial_j A^k - \partial_k A^j
 = -\partial_j A_k + \partial_k A_j
 = F_{kj}
 = -F_{jk},
-\end{dmath}
+\end{equation}
 %
 \makeSubAnswer{}{qft:problemSet1:1b}
 To prove \cref{eqn:ProblemSet1Problem1:120}, we use explicit expansion and an index exchange
-\begin{dmath}\label{eqn:ProblemSet1Problem1:140}
+\begin{equation}\label{eqn:ProblemSet1Problem1:140}
 =
 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
 =
@@ -114,51 +114,51 @@ To prove \cref{eqn:ProblemSet1Problem1:120}, we use explicit expansion and an in
 -\epsilon^{\mu\nu\beta\alpha} \partial_\nu \partial_\beta A_\alpha
 =
 2 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \partial_\alpha A_\beta,
-\end{dmath}
+\end{equation}
 but because the partials are symmetric in \( \nu \alpha \) (assuming sufficient continuity of the fields components), and because the sum is antisymmetric in the same indexes, the result is zero as claimed.
 
 Expanding \cref{eqn:ProblemSet1Problem1:120} explicitly for \( \nu = 0 \), we find Gauss's law for the magnetic field
-\begin{dmath}\label{eqn:ProblemSet1Problem1:160}
+\begin{equation}\label{eqn:ProblemSet1Problem1:160}
 0
 =
 \epsilon^{ijk} \partial_i F_{jk}
 =
 -\partial_i B^i
 = -\spacegrad \cdot \BB,
-\end{dmath}
+\end{equation}
 For \( \nu = 1 \) % 2 3 0
-\begin{dmath}\label{eqn:ProblemSet1Problem1:180}
+\begin{equation}\label{eqn:ProblemSet1Problem1:180}
 0 = \partial_2 F_{30} + \partial_3 F_{02} + \partial_0 F_{23}
 = -\partial_2 E^3 + \partial_3 E^2 - \PD{t}{B^1}
 = - (\spacegrad \cross \BE)_x - \PD{t}{B_x},
-\end{dmath}
+\end{equation}
 and for \( \nu = 2 \) % 3 0 1
-\begin{dmath}\label{eqn:ProblemSet1Problem1:300}
+\begin{equation}\label{eqn:ProblemSet1Problem1:300}
 0 = \partial_3 F_{01} + \partial_0 F_{13} + \partial_1 F_{30}
 = \partial_3 E^1
 + \PD{t}{B^2}
 - \partial_1 E^3
 = (\spacegrad \cross \BE)_y + \PD{t}{B_y},
-\end{dmath}
+\end{equation}
 and for \( \nu = 3 \) % 0 1 2
-\begin{dmath}\label{eqn:ProblemSet1Problem1:200}
+\begin{equation}\label{eqn:ProblemSet1Problem1:200}
 0 = \partial_0 F_{12} + \partial_1 F_{20} + \partial_2 F_{01}
 =
 - \PD{t}{B^3}
 - \partial_1 E^2
 + \partial_2 E^1
 = - (\spacegrad \cross \BE)_z - \PD{t}{B_z},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet1Problem1:220}
+\begin{equation}\label{eqn:ProblemSet1Problem1:220}
 0 = \spacegrad \cross \BE + \PD{t}{\BB},
-\end{dmath}
+\end{equation}
 which is Faraday's law.
 
 \makeSubAnswer{}{qft:problemSet1:1c}
 For the source dependent Maxwell's equations we vary the action.
 Recall that for a single field Lagrangian density \( \LL = \LL(\phi, \partial_\mu \phi) \) the variation of the action \( S = \int \LL \) can be found by Taylor expansion
-\begin{dmath}\label{eqn:ProblemSet1Problem1:240}
+\begin{equation}\label{eqn:ProblemSet1Problem1:240}
 \delta S
 = \int d^4 x \delta \LL
 = \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \delta (\partial_\nu \phi)
@@ -172,37 +172,37 @@ Recall that for a single field Lagrangian density \( \LL = \LL(\phi, \partial_\m
 \PD{\phi}{\LL}
 - \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} }
 }
-\end{dmath}
+\end{equation}
 Assuming that \( \delta \phi \) is stationary at the boundaries killed the second integral in the second last step.  Setting \( \delta S = 0 \) gives the Euler-Lagrange equations for a Lagrangian density that is dependent on a single field and its first derivatives
-\begin{dmath}\label{eqn:ProblemSet1Problem1:260}
+\begin{equation}\label{eqn:ProblemSet1Problem1:260}
 0 =
 \PD{\phi}{\LL}
 - \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} }.
-\end{dmath}
+\end{equation}
 For a multiple particle field we must Taylor expand around each field variable, so we have one equation for each field
-\begin{dmath}\label{eqn:ProblemSet1Problem1:280}
+\begin{equation}\label{eqn:ProblemSet1Problem1:280}
 0 =
 \PD{A_\mu}{\LL}
 - \partial_\nu \lr{ \PD{(\partial_\nu A_\mu)}{\LL} }.
-\end{dmath}
+\end{equation}
 We wish to apply \cref{eqn:ProblemSet1Problem1:280} to the field Lagrangian density
-\begin{dmath}\label{eqn:ProblemSet1Problem1:320}
+\begin{equation}\label{eqn:ProblemSet1Problem1:320}
 \LL =
 -\inv{4}
 F_{\mu\nu}
 F^{\mu\nu}
 - A_\mu j^\mu,
-\end{dmath}
+\end{equation}
 and vary with respect to the fields \( A_{\mu} \) (or \( A^{\mu} \)).
 
 The first order partials are trivial
-\begin{dmath}\label{eqn:ProblemSet1Problem1:340}
+\begin{equation}\label{eqn:ProblemSet1Problem1:340}
 \PD{A_\mu}{\LL}
 =
 - j^\mu,
-\end{dmath}
+\end{equation}
 but we have to do a bit more work for the rest
-\begin{dmath}\label{eqn:ProblemSet1Problem1:360}
+\begin{equation}\label{eqn:ProblemSet1Problem1:360}
 \PD{(\partial_\nu A_\mu)}{\LL}
 =
 -\inv{2}
@@ -220,11 +220,11 @@ F^{\nu\mu}
 F^{\mu\nu}
 =
 F^{\mu\nu}.
-\end{dmath}
+\end{equation}
 Putting the pieces together, we have
-\begin{dmath}\label{eqn:ProblemSet1Problem1:380}
+\begin{equation}\label{eqn:ProblemSet1Problem1:380}
 0 = -j^\mu - \partial_\nu F^{\mu\nu},
-\end{dmath}
+\end{equation}
 or
 %\begin{boxed}\label{eqn:ProblemSet1Problem1:400}
 \boxedEquation{eqn:ProblemSet1Problem1:420}{
@@ -233,11 +233,11 @@ or
 %\end{boxed}
 
 For \( \nu = 0 \) this is
-\begin{dmath}\label{eqn:ProblemSet1Problem1:440}
+\begin{equation}\label{eqn:ProblemSet1Problem1:440}
 \partial_\mu F^{\mu 0} = j^0,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet1Problem1:460}
+\begin{equation}\label{eqn:ProblemSet1Problem1:460}
 \rho
 =
 \partial_k F^{k 0}
@@ -247,11 +247,11 @@ or
 \partial_k F_{0 k}
 =
 \spacegrad \cdot \BE,
-\end{dmath}
+\end{equation}
 which is Gauss's law.
 
 % for the other indexes \( \nu \) we have
-\begin{dmath}\label{eqn:ProblemSet1Problem1:480}
+\begin{equation}\label{eqn:ProblemSet1Problem1:480}
 j^1
 =
 \partial_\mu F^{\mu 1}
@@ -266,8 +266,8 @@ j^1
 + \partial_2 B_z
 - \partial_3 B_y
 = \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_1
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem1:500}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem1:500}
 j^2
 =
 \partial_\mu F^{\mu 2}
@@ -282,8 +282,8 @@ j^2
 - \PD{t}{E_y}
 - \partial_1 B_z
 = \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_2
-\end{dmath}
-\begin{dmath}\label{eqn:ProblemSet1Problem1:520}
+\end{equation}
+\begin{equation}\label{eqn:ProblemSet1Problem1:520}
 j^3
 =
 \partial_\mu F^{\mu 3}
@@ -298,24 +298,24 @@ j^3
 + \partial_1 B_y
 - \partial_2 B_x
 = \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_3,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:ProblemSet1Problem1:540}
+\begin{equation}\label{eqn:ProblemSet1Problem1:540}
 \BJ = -\PD{t}{\BE} + \spacegrad \cross \BB,
-\end{dmath}
+\end{equation}
 which recovers the Ampere-Maxwell equation.
 
 \makeSubAnswer{}{qft:problemSet1:1d}
 The portion of the action that is dependent on the worldline is
 %in terms of a parameterization \( X(s) \) is
-\begin{dmath}\label{eqn:ProblemSet1Problem1:560}
+\begin{equation}\label{eqn:ProblemSet1Problem1:560}
 S =
 %\int_{\text{worldline}} ds \lr{ - m - e A_\mu \frac{dX^\mu}{ds} }
 \int_{\text{worldline}} \lr{ - m ds - e A_\mu dX^\mu }.
-\end{dmath}
+\end{equation}
 
 Let's consider the variation of each of these terms separately, starting with \( \delta ds \)
-\begin{dmath}\label{eqn:ProblemSet1Problem1:580}
+\begin{equation}\label{eqn:ProblemSet1Problem1:580}
 \delta \int ds
 =
 \delta \int \sqrt{ dX^\mu dX_\mu }
@@ -327,13 +327,13 @@ Let's consider the variation of each of these terms separately, starting with \(
 \int d \lr{ \frac{dX^\mu}{ds} \delta X_\mu } - d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu
 =
 \evalbar{ \frac{dX^\mu}{ds} \delta X_\mu }{\Delta s} - \int d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu.
-\end{dmath}
+\end{equation}
 The endpoints of the worldline are presumed to be stationary, which kills the boundary term, leaving just
-\begin{dmath}\label{eqn:ProblemSet1Problem1:600}
+\begin{equation}\label{eqn:ProblemSet1Problem1:600}
 \delta \int ds = - \int d U^\mu \delta X_\mu.
-\end{dmath}
+\end{equation}
 Now let's compute the variation of the potential term
-\begin{dmath}\label{eqn:ProblemSet1Problem1:620}
+\begin{equation}\label{eqn:ProblemSet1Problem1:620}
 \delta \int A_\mu dX^\mu
 =
 \int (\delta A_\mu) dX^\mu
@@ -359,10 +359,10 @@ ds
 \int F_{\nu\mu} U^\mu \delta X^\nu ds
 =
 \int F^{\nu\mu} U_\mu \delta X_\nu ds.
-\end{dmath}
+\end{equation}
 Here the boundary term has been dropped again after integration by parts, and an index switcheroo was done to factor out a common
 \( U^\mu \delta X^\nu ds \) term from the integrand, and we finish off with a set of raising and lowering operations on all the matched indexes.  Putting the pieces back together we have
-\begin{dmath}\label{eqn:ProblemSet1Problem1:640}
+\begin{equation}\label{eqn:ProblemSet1Problem1:640}
 \delta S
 =
   \int
@@ -383,29 +383,29 @@ F^{\mu\nu} U_\nu
 }
 \delta X_\mu ds
 .
-\end{dmath}
+\end{equation}
 Requiring \( \delta S = 0 \) for all worldline path variations \( \delta X_\mu \) means that the equations of motion are
-%\begin{dmath}\label{eqn:ProblemSet1Problem1:660}
+%\begin{equation}\label{eqn:ProblemSet1Problem1:660}
 \boxedEquation{eqn:ProblemSet1Problem1:660}{
 m \frac{dU^\mu}{ds}
 =
 e
 F^{\mu\nu} U_\nu,
 }
-%\end{dmath}
+%\end{equation}
 as expected.
 
 To unpack this and obtain the conventional Lorentz force equation we need to relate the proper time derivatives to the time of a stationary observer
-\begin{dmath}\label{eqn:ProblemSet1Problem1:680}
+\begin{equation}\label{eqn:ProblemSet1Problem1:680}
 \frac{d}{ds} =
 \frac{dt}{ds}
 \frac{d}{dt},
 % = (1, \Bv) \frac{dt}{ds},
-\end{dmath}
+\end{equation}
 The stationary observer's world line is \( X^\mu = (t, \Bx) \), and the spacetime interval on that worldline is
-\begin{dmath}\label{eqn:ProblemSet1Problem1:700}
+\begin{equation}\label{eqn:ProblemSet1Problem1:700}
 ds^2 = dt^2 - d\Bx^2,
-\end{dmath}
+\end{equation}
 or
 \begin{equation}\label{eqn:ProblemSet1Problem1:720}
 \lr{\frac{ds}{dt}}^2 = 1 - {\frac{dx}{dt}}^2 = 1 - \Bv^2.
@@ -419,36 +419,36 @@ or
 \frac{d}{dt}.
 \end{equation}
 In particular, the proper velocity is
-\begin{dmath}\label{eqn:ProblemSet1Problem1:760}
+\begin{equation}\label{eqn:ProblemSet1Problem1:760}
 U^\mu = \gamma \lr{ 1, \Bv }.
-\end{dmath}
+\end{equation}
 
 First inserting \( \mu = 0 \) into \cref{eqn:ProblemSet1Problem1:660} now gives
-\begin{dmath}\label{eqn:ProblemSet1Problem1:780}
+\begin{equation}\label{eqn:ProblemSet1Problem1:780}
 \frac{d}{ds} \frac{m}{\sqrt{1 - \Bv^2}}
 = e F^{0 k} U_k
 = (-1)^2 e F_{0 k} U^k
 = e \BE \cdot \Bv \gamma,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet1Problem1:800}
+\begin{equation}\label{eqn:ProblemSet1Problem1:800}
 \frac{d}{dt} \frac{m}{\sqrt{1 - \Bv^2}} = e \BE \cdot \Bv.
-\end{dmath}
+\end{equation}
 This is the timelike portion of the Lorentz force equation in non-covariant form and natural units (cf. \citep{landau1980classical} eq. (17.7).)
 
 For the \( \mu \ne 0 \) case, we find
-\begin{dmath}\label{eqn:ProblemSet1Problem1:820}
+\begin{equation}\label{eqn:ProblemSet1Problem1:820}
 \gamma \frac{d}{dt} \frac{m \Bv}{\sqrt{1 - \Bv^2}}
 = e F^{j \nu} U_\nu \Be_j
 = e F^{j 0} \Be_j
 - e \sum_{1 \le (j \ne k) \le 3} F^{j k} v^k \Be_j \gamma
 = e \BE + e \epsilon_{jki} B^i v^k \Be_j \gamma
 = e \BE + e \Bv \cross \BB \gamma,
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:ProblemSet1Problem1:840}
+\begin{equation}\label{eqn:ProblemSet1Problem1:840}
 \frac{d\Bp}{dt} = e \BE + e \Bv \cross \BB,
-\end{dmath}
+\end{equation}
 which is the Lorentz force equation in natural units in terms of \( \Bp = d(\gamma m \Bv)/dt \), the relativistically correct momentum from the viewpoint of a stationary observer.
 =
 }}

@@ -24,10 +24,9 @@
 % \citep{sakurai2014modern} pr X.Y
 \makeproblem{Energy-momentum tensor for a scalar field}{problem:noetherCurrentScalarField:1}{
 It is claimed in \citep{LukeQFT} (3.2.1) that the momentum components of the energy-momentum tensor was found to be
-
-\begin{dmath}\label{eqn:noetherCurrentScalarField:20}
+\begin{equation}\label{eqn:noetherCurrentScalarField:20}
 \Be_n \int d^3 x T^{0 n} = \int d^3 k \Bk a_{\Bk}^\dagger a_{\Bk}.
-\end{dmath}
+\end{equation}
 
 \makesubproblem{}{problem:noetherCurrentScalarField:1:a}
 Calculate this.
@@ -42,60 +41,57 @@ Calculate the other energy-momentum tensor components for the Hamiltonian compon
 
 \makeanswer{problem:noetherCurrentScalarField:1}{
 First, from the Noether current for the scalar field Lagrangian in question, what is the energy-momentum tensor explicitly?
-
-\begin{dmath}\label{eqn:noetherCurrentScalarField:40}
+\begin{equation}\label{eqn:noetherCurrentScalarField:40}
 T^{\mu \nu}
 = \pi^\mu \partial^\nu \phi - g^{\mu \nu} \LL
 = \pi^\mu \partial^\nu \phi - g^{\mu \nu} \inv{2} \lr{ \partial_\alpha \phi \partial^\alpha \phi - \mu^2 \phi^2 }
 = \pi^\mu \pi^\nu - g^{\mu \nu} \inv{2} \lr{ \pi_\alpha \pi^\alpha - \mu^2 \phi^2 }
 = \pi^\mu \pi^\nu - \inv{2} g^{\mu \nu} g_{\alpha\beta} \pi^\beta \pi^\alpha + \inv{2} g^{\mu \nu} \mu^2 \phi^2.
-\end{dmath}
+\end{equation}
 
 Consider some special cases for the indexes.  For \( \mu = \nu = 0 \), the result is the Hamiltonian density
-
-\begin{dmath}\label{eqn:noetherCurrentScalarField:200}
+\begin{equation}\label{eqn:noetherCurrentScalarField:200}
 T^{00}
 = \pi^0 \pi^0 - \inv{2} g^{0 0} \pi_\alpha \pi^\alpha + \inv{2} g^{0 0} \mu^2 \phi^2
 = \pi^0 \pi^0 - \inv{2} \pi_\alpha \pi^\alpha + \inv{2} \mu^2 \phi^2
 = \inv{2} \pi^0 \pi^0 - \inv{2} \pi_n \pi^n + \inv{2} \mu^2 \phi^2
 = \inv{2} \pi^2 + \inv{2} (\spacegrad \phi)^2 + \inv{2} \mu^2 \phi^2,
-\end{dmath}
+\end{equation}
 %
 where \( \pi^2 = (\partial_0 \phi)^2 \ne \partial^2 \phi \).  For any \( \mu \ne \nu \) the off diagonal metric elements are zero, leaving just
-\begin{dmath}\label{eqn:noetherCurrentScalarField:220}
+\begin{equation}\label{eqn:noetherCurrentScalarField:220}
 T^{\mu\nu} = \pi^\mu \pi^\nu.
-\end{dmath}
+\end{equation}
 
 Finally, when \( n \ne 0 \), the remaining diagonal terms are
-\begin{dmath}\label{eqn:noetherCurrentScalarField:240}
+\begin{equation}\label{eqn:noetherCurrentScalarField:240}
 T^{nn}
 = \pi^n \pi^n - \inv{2} g^{n n} \pi_\alpha \pi^\alpha + \inv{2} g^{n n} n^2 \phi^2
 = \pi^n \pi^n + \inv{2} \pi_\alpha \pi^\alpha - \inv{2} \mu^2 \phi^2
 = \inv{2} \pi^2 + \pi^n \pi^n - \inv{2} \pi^m \pi^m - \inv{2} \mu^2 \phi^2
 = \inv{2} \pi^2 + \inv{2} \pi^n \pi^n - \inv{2} \sum_{m\ne n,0} \pi^m \pi^m - \inv{2} \mu^2 \phi^2
 = \inv{2} \sum_{m = n,0} \pi^m \pi^m - \inv{2} \sum_{m\ne n,0} \pi^m \pi^m - \inv{2} \mu^2 \phi^2.
-\end{dmath}
+\end{equation}
 
 The canonical momenta are
-
-\begin{dmath}\label{eqn:noetherCurrentScalarField:60}
+\begin{equation}\label{eqn:noetherCurrentScalarField:60}
 \pi^\mu
 =
 \partial^\mu
 \int \frac{d^3 k}{(2\pi)^{3/2} \sqrt{ 2 \omega_k }} \lr{ a_{\Bk} e^{-i k \cdot x} + a_{\Bk}^\dagger e^{i k \cdot x} },
-\end{dmath}
+\end{equation}
 %
 but
-\begin{dmath}\label{eqn:noetherCurrentScalarField:80}
+\begin{equation}\label{eqn:noetherCurrentScalarField:80}
 \partial^\mu e^{i k \cdot x}
 =
 \partial^\mu \exp\lr{ i k^\alpha x_\alpha }
 =
 i k^\mu \exp\lr{ i k \cdot x },
-\end{dmath}
+\end{equation}
 %
 so
-\begin{dmath}\label{eqn:noetherCurrentScalarField:100}
+\begin{equation}\label{eqn:noetherCurrentScalarField:100}
 \pi^\mu
 =
 i
@@ -112,10 +108,10 @@ i
 }
 e^{ i \Bk \cdot \Bx}
 .
-\end{dmath}
+\end{equation}
 
 This gives
-\begin{dmath}\label{eqn:noetherCurrentScalarField:120}
+\begin{equation}\label{eqn:noetherCurrentScalarField:120}
 \int d^3 x \pi^\mu \pi^\nu
 =
 -
@@ -187,15 +183,12 @@ e^{ i (\Bp + \Bk) \cdot \Bx}
 %+ a_{\Bk}^\dagger a_j^\dagger e^{i (\omega_j + \omega_k) t } \deltathree (\Bj + \Bk)
 %}
 .
-\end{dmath}
+\end{equation}
 
 Further reduction of the leading \( k^\mu p^\nu \) term has a sign that depends on the values of the indices.
-
 \makeSubAnswer{}{problem:noetherCurrentScalarField:1:a}
-
 First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
-
-\begin{dmath}\label{eqn:noetherCurrentScalarField:140}
+\begin{equation}\label{eqn:noetherCurrentScalarField:140}
 \int d^3 x \pi^\mu \pi^0 =
 \int d^3 x \pi^0 \pi^\mu
 =
@@ -207,10 +200,10 @@ First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
 - a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 }.
-\end{dmath}
+\end{equation}
 
 For \( \mu \ne 0 \) this can be written as a vector operator
-\begin{dmath}\label{eqn:noetherCurrentScalarField:440}
+\begin{equation}\label{eqn:noetherCurrentScalarField:440}
 \begin{aligned}
 \Be_n \int d^3 x T^{0 n}
 &=
@@ -228,23 +221,23 @@ For \( \mu \ne 0 \) this can be written as a vector operator
 + a_{\Bk}^\dagger a_{\Bk}
 }
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 To get the desired result the time dependent terms have to be made to go away somehow.  Consider a spherical parameterization of the momentum space
-\begin{dmath}\label{eqn:noetherCurrentScalarField:460}
+\begin{equation}\label{eqn:noetherCurrentScalarField:460}
 \Bk = k \lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta },
-\end{dmath}
+\end{equation}
 %
 Note that the volume element is
-\begin{dmath}\label{eqn:noetherCurrentScalarField:480}
+\begin{equation}\label{eqn:noetherCurrentScalarField:480}
 d^3 k = k^2 \sin\theta dk \wedge d\theta \wedge d\phi,
-\end{dmath}
+\end{equation}
 where \( k \in [0, \infty]\), \(\theta \in [0, \pi]\), and \( \phi \in [0, 2\pi] \).  If we map \( \Bk \rightarrow -\Bk \), the volume element becomes
-\begin{dmath}\label{eqn:noetherCurrentScalarField:500}
+\begin{equation}\label{eqn:noetherCurrentScalarField:500}
 d^3 k = (-k)^2 \sin\theta d(-k) \wedge d\theta \wedge d\phi,
-\end{dmath}
+\end{equation}
 over the same angular intervals, but \( k \in [-\infty, 0]\).  Flipping the sign of the time dependent operator products gives
-\begin{dmath}\label{eqn:noetherCurrentScalarField:520}
+\begin{equation}\label{eqn:noetherCurrentScalarField:520}
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 \rightarrow
@@ -253,15 +246,15 @@ over the same angular intervals, but \( k \in [-\infty, 0]\).  Flipping the sign
 =
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t },
-\end{dmath}
+\end{equation}
 which shows that this is an even function in \( \Bk \).  The even characteristics of the volume element and time dependent terms and the odd character of the momentum vector \( \Bk \) can be used to show that these terms integrate out to zero.  Let's compute the integral by averaging the momentum operator using both parameterization sign options.  First write
-\begin{dmath}\label{eqn:noetherCurrentScalarField:540}
+\begin{equation}\label{eqn:noetherCurrentScalarField:540}
 f(\Bk) =
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t },
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:noetherCurrentScalarField:560}
+\begin{equation}\label{eqn:noetherCurrentScalarField:560}
 \int d^3 k \Bk f(\Bk)
 =
 \inv{2} \int d^3 k \Bk f(\Bk)
@@ -290,9 +283,9 @@ f(-\Bk)
 \int_{0}^\infty k^3 dk f(\Bk)
 }
 = 0,
-\end{dmath}
+\end{equation}
 so the momentum is reduced to
-\begin{dmath}\label{eqn:noetherCurrentScalarField:580}
+\begin{equation}\label{eqn:noetherCurrentScalarField:580}
 \Be_n \int d^3 x T^{0 n}
 =
 \inv{2}
@@ -314,7 +307,7 @@ so the momentum is reduced to
   a_{\Bk}^\dagger a_\Bk
 + \inv{2} \deltathree(0)
 }.
-\end{dmath}
+\end{equation}
 
 An argument like that of \citep{peskin1995introduction} can be used to dismiss the unphysical infinity associated with the ground state energy level, leaving just
 \boxedEquation{eqn:noetherCurrentScalarField:600}{
@@ -330,7 +323,7 @@ a_{\Bk}^\dagger
 
 For \( \mu = m \ne 0 \), and \( \nu = n \ne 0 \), we have
 %
-\begin{dmath}\label{eqn:noetherCurrentScalarField:620}
+\begin{equation}\label{eqn:noetherCurrentScalarField:620}
 \int d^3 x \pi^m \pi^n
 =
 \inv{2}
@@ -341,7 +334,7 @@ For \( \mu = m \ne 0 \), and \( \nu = n \ne 0 \), we have
 - a_{-\Bk}^\dagger a_{-\Bk}
 + a_{-\Bk}^\dagger a_{\Bk}^\dagger e^{2 i \omega_k t }
 }.
-\end{dmath}
+\end{equation}
 
 Can the time dependent terms be killed in this case?
 
@@ -351,7 +344,7 @@ TODO: some stuff is wrong here.
 
 For \( \nu \ne 0 \)
 %
-\begin{dmath}\label{eqn:noetherCurrentScalarField:160}
+\begin{equation}\label{eqn:noetherCurrentScalarField:160}
 \int d^3 x \pi^\mu \pi^\nu
 =
 -\inv{2}
@@ -371,13 +364,13 @@ For \( \nu \ne 0 \)
 + a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }.
-\end{dmath}
+\end{equation}
 
 Here's a summary of these products
 
 \begin{subequations}
 \label{eqn:noetherCurrentScalarField:260}
-\begin{dmath}\label{eqn:noetherCurrentScalarField:300}
+\begin{equation}\label{eqn:noetherCurrentScalarField:300}
 \int d^3 x \pi^0 \pi^0
 =
 -\inv{2}
@@ -388,8 +381,8 @@ Here's a summary of these products
 - a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 },
-\end{dmath}
-\begin{dmath}\label{eqn:noetherCurrentScalarField:280}
+\end{equation}
+\begin{equation}\label{eqn:noetherCurrentScalarField:280}
 \int d^3 x \pi^n \pi^0
 = \int d^3 x \pi^0 \pi^n
 =
@@ -401,8 +394,8 @@ Here's a summary of these products
 - a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 },
-\end{dmath}
-%\begin{dmath}\label{eqn:noetherCurrentScalarField:320}
+\end{equation}
+%\begin{equation}\label{eqn:noetherCurrentScalarField:320}
 %\int d^3 x \pi^n \pi^n
 %=
 % \inv{2}
@@ -413,8 +406,8 @@ Here's a summary of these products
 %+ a_{\Bk}^\dagger a_{\Bk}
 %+ a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 %},
-%\end{dmath}
-\begin{dmath}\label{eqn:noetherCurrentScalarField:340}
+%\end{equation}
+\begin{equation}\label{eqn:noetherCurrentScalarField:340}
 \int d^3 x \pi^m \pi^n
 =
 \inv{2}
@@ -425,12 +418,12 @@ Here's a summary of these products
 + a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }.
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 For the mass term it was previously found that
 %
-\begin{dmath}\label{eqn:noetherCurrentScalarField:180}
+\begin{equation}\label{eqn:noetherCurrentScalarField:180}
 \inv{2} \int d^3 x \mu^2 \phi^2
 =
 \frac{\mu^2}{4}
@@ -443,11 +436,11 @@ d^3 k
 +a_{\Bk} a_{\Bk}^\dagger
 +a_{\Bk}^\dagger a_{\Bk}
 }.
-\end{dmath}
+\end{equation}
 
 The Hamiltonian component has been previously calculated, and resolves to
 %
-\begin{dmath}\label{eqn:noetherCurrentScalarField:360}
+\begin{equation}\label{eqn:noetherCurrentScalarField:360}
 \int d^3 x T^{00}
 =
 \inv{2}
@@ -457,10 +450,10 @@ The Hamiltonian component has been previously calculated, and resolves to
   a_{\Bk} a_{\Bk}^\dagger
 + a_{\Bk}^\dagger a_{\Bk}
 }.
-\end{dmath}
+\end{equation}
 
 The other diagonal components, for \( r \ne s \ne t \) are
-\begin{dmath}\label{eqn:noetherCurrentScalarField:380}
+\begin{equation}\label{eqn:noetherCurrentScalarField:380}
 \int d^3 x T^{rr}
 =
 \int d^3 x
@@ -512,11 +505,11 @@ The other diagonal components, for \( r \ne s \ne t \) are
   a_{\Bk} a_{\Bk}^\dagger
 + a_{\Bk}^\dagger a_{\Bk}
 }.
-\end{dmath}
+\end{equation}
 
 This doesn't have the nice cancellation that killed the time dependent terms in the Hamiltonian.  Such cancellation also doesn't appear in the off diagonal energy-momentum tensor components, which are
 %
-\begin{dmath}\label{eqn:noetherCurrentScalarField:400}
+\begin{equation}\label{eqn:noetherCurrentScalarField:400}
 \int d^3 x T^{n 0}
 =
 \int d^3 x T^{n 0}
@@ -529,10 +522,10 @@ This doesn't have the nice cancellation that killed the time dependent terms in 
 - a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 },
-\end{dmath}
+\end{equation}
 %
 and for \( m \ne n \ne 0 \)
-\begin{dmath}\label{eqn:noetherCurrentScalarField:420}
+\begin{equation}\label{eqn:noetherCurrentScalarField:420}
 \int d^3 x T^{m n}
 =
 \inv{2}
@@ -543,7 +536,7 @@ and for \( m \ne n \ne 0 \)
 + a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }.
-\end{dmath}
+\end{equation}
 
 The \cref{eqn:noetherCurrentScalarField:400} result has time dependence that the stated result does not (but is linear in \( \Bk \) as desired)?  Did I miss something?
 } % answer

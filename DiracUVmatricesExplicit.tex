@@ -32,7 +32,7 @@
 \label{chap:DiracUVmatricesExplicit}
 
 We found that the solution of the \( u(p), v(p) \) matrices were
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:20}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:20}
 \begin{aligned}
 u(p) &=
 \begin{bmatrix}
@@ -45,14 +45,14 @@ v(p) &=
 -\sqrt{p \cdot \osigma} \eta \\
 \end{bmatrix},
 \end{aligned}
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:40}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:40}
 \begin{aligned}
 p \cdot \sigma &= p_0 \sigma_0 - \Bsigma \cdot \Bp \\
 p \cdot \osigma &= p_0 \sigma_0 + \Bsigma \cdot \Bp.
 \end{aligned}
-\end{dmath}
+\end{equation}
 It was pointed out that these square roots can be conceptualized as (in the right basis) as the diagonal matrices of the eigenvalue square roots.
 
 It was also pointed out that we don't tend to need the explicit form of these square roots.We saw that to be the case in all our calculations, where these always showed up in the end in quadratic combinations like \( \sqrt{ (p \cdot \sigma)^2 }, \sqrt{ (p \cdot \sigma)(p \cdot \osigma)}, \cdots \), which nicely reduced each time without requiring the matrix roots.
@@ -60,7 +60,7 @@ It was also pointed out that we don't tend to need the explicit form of these sq
 I encountered a case where it would have been nice to have the explicit representation.  In particular, I wanted to use Mathematica to symbolically expand \( \oPsi i \gamma^\mu \partial_\mu \Psi \) in terms of \( a^s_\Bp, b^r_\Bp, \cdots \) representation, to verify that the massless Dirac Lagrangian are in fact the energy and momentum operators (and to compare to the explicit form of the momentum operator found in eq. 3.105 \citep{peskin1995introduction}).  For that mechanical task, I needed explicit representations of all the \( u^s(p), v^r(p) \) matrices to plug in.
 
 It happens that \( 2 \times 2 \) matrices can be square-rooted symbolically \nbref{squarerootOfFourSigmaDotP.nb}.  In particular, the matrices \( p \cdot \sigma, p \cdot \osigma \)  have nice simple eigenvalues \( \pm \Norm{\Bp} + \omega_\Bp \).  The corresponding unnormalized eigenvectors for \( p \cdot \sigma \) are
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:60}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:60}
 \begin{aligned}
 e_1 &=
 \begin{bmatrix}
@@ -73,9 +73,9 @@ e_1 &=
 p^3 - \Norm{\Bp}
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 This means that we can diagonalize \( p \cdot \sigma \) as
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:80}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:80}
 p \cdot \sigma
 = U
 \begin{bmatrix}
@@ -83,9 +83,9 @@ p \cdot \sigma
 0 & \omega_\Bp- \Norm{\Bp}
 \end{bmatrix}
 U^\dagger,
-\end{dmath}
+\end{equation}
 where \( U \) is the matrix of the normalized eigenvectors
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:100}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:100}
 U =
 \begin{bmatrix}
 e_1' & e_2'
@@ -96,7 +96,7 @@ e_1' & e_2'
 -p^1 + i p^2 & -p^1 + i p^2 \\
 p^3 + \Norm{\Bp} & p^3 - \Norm{\Bp}
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 
 Letting Mathematica churn through the matrix products
 \cref{eqn:DiracUVmatricesExplicit:80} verifies the diagonalization, and for the roots, we find
@@ -115,7 +115,7 @@ Letting Mathematica churn through the matrix products
 \end{aligned}
 \end{equation}
 %Assuming on shell \( \omega^2 - \Bp^2 = m^2 \) values, this simplifies to
-%\begin{dmath}\label{eqn:DiracUVmatricesExplicit:121}
+%\begin{equation}\label{eqn:DiracUVmatricesExplicit:121}
 %\sqrt{ p \cdot \sigma }
 %=
 %\inv{
@@ -125,11 +125,11 @@ Letting Mathematica churn through the matrix products
 %\omega_\Bp- p^3 + m & - p^1 + i p^2 \\
 %- p^1 - i p^2 & \omega_\Bp+ p^3 + m
 %\end{bmatrix}.
-%\end{dmath}
+%\end{equation}
 The matrix \( \sqrt{ p \cdot \osigma } \) has the same form, but we just have to flip the signs on our \( \Bp \)'s.
 
 We are now ready to plug in \( \zeta^{1\T} = (1,0), \zeta^{2\T} = (0,1), \eta^{1\T} = (1,0), \eta^{2\T} = (0,1) \) to find the explicit form of our \( u\)'s and \( v\)'s
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:140}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:140}
 \begin{aligned}
 u^1(p) &=
 \inv{
@@ -172,7 +172,7 @@ v^2(p) &=
  -\omega_\Bp+ p^3 + \sqrt{ \omega_\Bp^2 - \Bp^2 } \\
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 This is now a convenient form to try the next symbolic manipulation task.  If nothing else this takes some of the mystery out of the original compact notation, since we see that the \( u,v \)'s are just \( 4 \) element column vectors, and we know their explicit form should we want them.
 
 Also note that in class we made a note that we should take the positive roots of the eigenvalue diagonal matrix.  It doesn't look like that is really required.  We need not even use the same sign for each root.  Squaring the resulting matrix root in the end will recover the original \( p \cdot \sigma \) matrix.
@@ -185,17 +185,17 @@ With the help of Mathematica,
 a compact
 representation of the root of \( p \cdot \sigma \).
 A bit of examination shows that we can do much better.  The leading scalar term can be simplified by squaring it
-%\begin{dmath}\label{eqn:squarerootpsigma:140}
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:280}
+%\begin{equation}\label{eqn:squarerootpsigma:140}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:280}
 \lr{ \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} } }^2
 =
 \omega_\Bp- \Norm{\Bp} + \omega_\Bp+ \Norm{\Bp} + 2 \sqrt{ \omega_\Bp^2 - \Bp^2 }
 =
 2 \omega_\Bp + 2 m,
-\end{dmath}
+\end{equation}
 where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been inserted.  Using that again in the matrix, we have
-%\begin{dmath}\label{eqn:squarerootpsigma:160}
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:300}
+%\begin{equation}\label{eqn:squarerootpsigma:160}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:300}
 \sqrt{ p \cdot \sigma }
 =
 \inv{\sqrt{ 2 \omega_\Bp + 2 m }}
@@ -224,10 +224,10 @@ where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been
 \lr{
    (\omega_\Bp + m) \sigma^0 - \Bsigma \cdot \Bp
 }.
-\end{dmath}
+\end{equation}
 
 We've now found a nice algebraic form for these matrix roots
-%\begin{dmath}\label{eqn:squarerootpsigma:180}
+%\begin{equation}\label{eqn:squarerootpsigma:180}
 %\boxedEquation{eqn:squarerootpsigma:180}{
 \boxedEquation{eqn:DiracUVmatricesExplicit:320}{
 \begin{aligned}
@@ -237,8 +237,8 @@ We've now found a nice algebraic form for these matrix roots
 }
 
 As a check, let's square one of these explicitly
-%\begin{dmath}\label{eqn:squarerootpsigma:200}
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:340}
+%\begin{equation}\label{eqn:squarerootpsigma:200}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:340}
 \lr{ \sqrt{p \cdot \sigma} }^2
 = \inv{2 \omega_\Bp + 2 m }
 \lr{ m^2 + (p \cdot \sigma)^2 + 2 m (p \cdot \sigma) }
@@ -252,7 +252,7 @@ As a check, let's square one of these explicitly
 \omega_\Bp - \Bsigma \cdot \Bp
 =
 p \cdot \sigma,
-\end{dmath}
+\end{equation}
 which validates the result.
 
 We can also put the spinor solutions \( u, v \) in a nice compact square-root-free format
@@ -273,17 +273,17 @@ v(p) &=
 \end{aligned}
 }
 \Cref{eqn:DiracUVmatricesExplicit:360} is probably a much nicer starting point for evaluating the various \( u, v, \ubar, \vbar \) product relationships.  In particular, again using Mathematica \nbref{uvspinors.nb}, this is a nice representation for showing that
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:260}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:260}
 \begin{aligned}
 \ubar^r(p) \gamma^k u^s(p) &= 2 \delta^{rs} p^k \\
 \vbar^r(p) \gamma^k v^s(p) &= 2 \delta^{rs} p^k,
 \end{aligned}
-\end{dmath}
+\end{equation}
 which is roughly the form of the relationship that I suspected existed, but had some trouble deriving manually.
 
 We now also know that we can return to \cref{eqn:DiracUVmatricesExplicit:140} and put the explicit (root-free) representation of the \( u, v \) spinors in a slightly tidier form
-%\begin{dmath}\label{eqn:squarerootpsigma:240}
-\begin{dmath}\label{eqn:DiracUVmatricesExplicit:380}
+%\begin{equation}\label{eqn:squarerootpsigma:240}
+\begin{equation}\label{eqn:DiracUVmatricesExplicit:380}
 \begin{aligned}
 u^1(p) &=
 \inv{\sqrt{ 2 m + 2 \omega_\Bp }}
@@ -318,7 +318,7 @@ v^2(p) &=
  -\omega_\Bp+ p^3 + m \\
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 %}
 %\EndArticle

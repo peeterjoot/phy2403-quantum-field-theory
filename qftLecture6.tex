@@ -33,19 +33,19 @@
 \section{Quantization of Field Theory.}
 
 We are engaging in the ``canonical'' or Hamiltonian method of quantization.  It is also possible to quantize using path integrals, but it is hard to prove that operators are unitary doing so.  In fact, the mechanism used to show unitarity from path integrals is often to find the Lagrangian and show that there is a Hilbert space (i.e. using canonical quantization).  Canonical quantization essentially demands that the fields obey a commutator relation of the following form
-\begin{dmath}\label{eqn:qftLecture6:20}
+\begin{equation}\label{eqn:qftLecture6:20}
 \antisymmetric{\pi(\Bx, t)}{\phi(\By, t)} = -i \deltathree(\Bx - \By).
-\end{dmath}
+\end{equation}
 We assumed that the quantized fields obey the Hamiltonian relations
-\begin{dmath}\label{eqn:qftLecture6:160}
+\begin{equation}\label{eqn:qftLecture6:160}
 \begin{aligned}
 \ddt{\phi} &= i \antisymmetric{H}{\phi} \\
 \ddt{\pi} &= i \antisymmetric{H}{\pi}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 We were working with the Hamiltonian density
-\begin{dmath}\label{eqn:qftLecture6:40}
+\begin{equation}\label{eqn:qftLecture6:40}
 \calH =
 \inv{2} (\pi(\Bx, t))^2
 +
@@ -54,9 +54,9 @@ We were working with the Hamiltonian density
 \frac{m^2}{2} \phi^2
 +
 \frac{\lambda}{4} \phi^4,
-\end{dmath}
+\end{equation}
 which included a mass term \( m \) and a potential term (\(\lambda\)).  We will expand all quantities in Taylor series in \( \lambda \) assuming they have a structure such as
-\begin{dmath}\label{eqn:qftLecture6:180}
+\begin{equation}\label{eqn:qftLecture6:180}
 \begin{aligned}
 f(\lambda) =
 c_0 \lambda^0
@@ -65,56 +65,55 @@ c_0 \lambda^0
 + c_3 \lambda^3
 + \cdots
 \end{aligned}
-\end{dmath}
+\end{equation}
 We will stop this \underline{perturbation theory} approach at \( O(\lambda^2) \), and will ignore functions such as \( e^{-1/\lambda} \).
 
 Within perturbation theory, to leaving order, set \( \lambda = 0 \), so that \( \phi \) obeys the Klein-Gordon equation (if \( m = 0 \) we have just a d'Alembertian (wave equation)).
 
 We can write our field as a Fourier transform
-\begin{dmath}\label{eqn:qftLecture6:60}
+\begin{equation}\label{eqn:qftLecture6:60}
 \phi(\Bx, t) = \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx} \tilde{\phi}(\Bp, t),
-\end{dmath}
+\end{equation}
 and due to a Hermitian assumption (i.e. real field) this implies
-\begin{dmath}\label{eqn:qftLecture6:80}
+\begin{equation}\label{eqn:qftLecture6:80}
 \tilde{\phi}^\conj(\Bp, t) = \tilde{\phi}(-\Bp, t).
-\end{dmath}
+\end{equation}
 
 We found that the Klein-Gordon equation implied that the momentum space representation obey Harmonic oscillator equations
-\begin{dmath}\label{eqn:qftLecture6:100}
+\begin{equation}\label{eqn:qftLecture6:100}
 \ddot{\tilde{\phi}}(\Bp, t) = - \omega_\Bp \tilde{\phi}(\Bp, t),
-\end{dmath}
+\end{equation}
 where \( \omega_\Bp = \sqrt{\Bp^2 + m^2} \).
 The solution of \cref{eqn:qftLecture6:100} may be represented as
-\begin{dmath}\label{eqn:qftLecture6:120}
+\begin{equation}\label{eqn:qftLecture6:120}
 \tilde{\phi}(\Bq, t) = \inv{\sqrt{2 \omega_\Bq}} \lr{
 e^{-i \omega_\Bq t} a_\Bq
 +
 e^{i \omega_\Bq t} b_\Bq^\dagger
 }.
-\end{dmath}
+\end{equation}
 This is a general solution, but imposing \( a_\Bq = b_{-\Bq} \) ensures \cref{eqn:qftLecture6:80} is satisfied.
 This leaves us with
-\begin{dmath}\label{eqn:qftLecture6:140}
+\begin{equation}\label{eqn:qftLecture6:140}
 \tilde{\phi}(\Bq, t) = \inv{\sqrt{2 \omega_\Bq}} \lr{
 e^{-i \omega_\Bq t} a_\Bq
 +
 e^{i \omega_\Bq t} a_{-\Bq}^\dagger
 }.
-\end{dmath}
+\end{equation}
 We want to show that iff
-\begin{dmath}\label{eqn:qftLecture6:200}
+\begin{equation}\label{eqn:qftLecture6:200}
 \antisymmetric{a_\Bq}{a^\dagger_\Bp} = \lr{ 2 \pi }^3 \deltathree(\Bp - \Bq),
-\end{dmath}
+\end{equation}
 then
-\begin{dmath}\label{eqn:qftLecture6:220}
+\begin{equation}\label{eqn:qftLecture6:220}
 \antisymmetric{\pi(\By, t)}{\phi(\Bx, t)} = -i \deltathree(\Bx - \By),
-\end{dmath}
+\end{equation}
 where everything else commutes (i.e. \(
 \antisymmetric{a_\Bp}{a_\Bq} =
 \antisymmetric{a_\Bp^\dagger}{a_\Bq^\dagger} = 0 \)).
 We will only show one direction, but you can go the other way too.
-
-\begin{dmath}\label{eqn:qftLecture6:240}
+\begin{equation}\label{eqn:qftLecture6:240}
 \phi(\Bx, t)
 =
 \int \frac{d^3 p}{(2\pi)^3 \sqrt{2 \omega_\Bp}} e^{i \Bp \cdot \Bx}
@@ -123,8 +122,8 @@ We will only show one direction, but you can go the other way too.
    +
    e^{i \omega_\Bp t} a_{-\Bp}^\dagger
 }
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture6:260}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture6:260}
 \pi(\Bx, t) = \dot{\phi}
 =
 i \int \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}} \omega_\Bq e^{i \Bq \cdot \Bx}
@@ -133,9 +132,9 @@ i \int \frac{d^3 q}{(2\pi)^3 \sqrt{2 \omega_\Bq}} \omega_\Bq e^{i \Bq \cdot \Bx}
    +
    e^{i \omega_\Bq t} a_{-\Bq}^\dagger
 }.
-\end{dmath}
+\end{equation}
 The commutator is
-\begin{dmath}\label{eqn:qftLecture6:280}
+\begin{equation}\label{eqn:qftLecture6:280}
 \begin{aligned}
 &\antisymmetric{\pi(\By, t)}{\phi(\Bx, t)} \\
 &\,=
@@ -186,13 +185,13 @@ e^{i \Bp \cdot (\By - \Bx)} \\
 &\,=
 -i \deltathree(\By - \Bx),
 \end{aligned}
-\end{dmath}
+\end{equation}
 which is what we wanted to prove.
 
 \section{Free Hamiltonian.}
 \index{Hamiltonian!free}
 We call the \( \lambda = 0 \) case the ``free'' Hamiltonian.  Plugging in the creation and annihilation operator representation we have
-\begin{dmath}\label{eqn:qftLecture6:300}
+\begin{equation}\label{eqn:qftLecture6:300}
 \begin{aligned}
 H
 &= \int d^3 x \lr{ \inv{2} \pi^2 + \inv{2} (\spacegrad \phi)^2 + \frac{m^2}{2} \phi^2 } \\
@@ -244,9 +243,9 @@ e^{i (\Bp + \Bq)\cdot \Bx}
    }
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 An immediate simplification is possible by identifying a delta function factor \( \int d^3 x e^{i(\Bp + \Bq) \cdot \Bx}/(2\pi)^3 = \deltathree(\Bp + \Bq) \), so
-\begin{dmath}\label{eqn:qftLecture6:1060}
+\begin{equation}\label{eqn:qftLecture6:1060}
 H
 =
 \inv{2}
@@ -301,9 +300,9 @@ H
 +
    a^\dagger_{-\Bp} a_{-\Bp} \omega^2_\Bp(1 + 1)
 }
-\end{dmath}
+\end{equation}
 When all is said and done we are left with
-\begin{dmath}\label{eqn:qftLecture6:320}
+\begin{equation}\label{eqn:qftLecture6:320}
 H =
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp}{2} \lr{
    a^\dagger_{-\Bp}
@@ -312,7 +311,7 @@ H =
    a_{\Bp}
    a^\dagger_{\Bp}
 }.
-\end{dmath}
+\end{equation}
 A final \( \Bp \rightarrow -\Bp \) transformation \footnote{\( \iiint_{-R}^R d^3 p \rightarrow (-1)^3 \iiint_R^{-R} d^3 p' = (-1)^6 \iiint_{-R}^R d^3 p' \).} in the first integral, puts the free Hamiltonian (\( \lambda = 0 \)) into a nice symmetric form
 \boxedEquation{eqn:qftLecture6:340}{
 H_0 =
@@ -328,16 +327,15 @@ H_0 =
 \paragraph{Vacuum energy density.}
 \index{vacuum energy density}
 From the commutator relationship \cref{eqn:qftLecture6:200} we can write
-\begin{dmath}\label{eqn:qftLecture6:360}
+\begin{equation}\label{eqn:qftLecture6:360}
 a_\Bp a^\dagger_\Bq
 =
 a^\dagger_\Bq
 a_\Bp
 + (2 \pi)^3 \deltathree(\Bp - \Bq),
-\end{dmath}
+\end{equation}
 so
-
-\begin{dmath}\label{eqn:qftLecture6:380}
+\begin{equation}\label{eqn:qftLecture6:380}
 H_0 =
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
 \lr{
@@ -346,12 +344,12 @@ H_0 =
 +
 \inv{2} (2 \pi)^3 \deltathree(0)
 }.
-\end{dmath}
+\end{equation}
 The delta function term can be interpreted using
-\begin{dmath}\label{eqn:qftLecture6:400}
+\begin{equation}\label{eqn:qftLecture6:400}
 (2 \pi)^3 \deltathree(\Bq)
 = \int d^3 x e^{i \Bq \cdot \Bx},
-\end{dmath}
+\end{equation}
 so when \( \Bq = 0 \)
 \begin{equation}\label{eqn:qftLecture6:420}
 (2 \pi)^3 \deltathree(0) = \int d^3 x = V.
@@ -370,36 +368,36 @@ H_0 =
 \section{QM SHO review.}
 
 In units with \( m = 1 \) the non-relativistic QM SHO has the Hamiltonian
-\begin{dmath}\label{eqn:qftLecture6:460}
+\begin{equation}\label{eqn:qftLecture6:460}
 H
 = \inv{2} p^2 + \frac{\omega^2}{2} q^2.
 %=
 %\inv{2} \lr{ (p + i \omega q)(p - i \omega q) - i \omega (q p - p q) }
 %=
 %\omega \lr{ \inv{\sqrt{2 \omega}} (p + i \omega q) \inv{\sqrt{2 \omega}}(p - i \omega q) + 1 }
-\end{dmath}
+\end{equation}
 %Observe that the we can almost factor the Hamiltonian into two conjugate operators since
 %(p + i \omega q)(p - i \omega q)
 %=
 % = \omega \lr{ a^\dagger a + \inv{2}}.
 If we define a position operator with a time-domain Fourier representation given by
-\begin{dmath}\label{eqn:qftLecture6:480}
+\begin{equation}\label{eqn:qftLecture6:480}
 q =  \inv{\sqrt{2\omega}} \lr{ a e^{-i \omega t} + a^\dagger e^{i \omega t} },
-\end{dmath}
+\end{equation}
 where the Fourier coefficients \( a, a^\dagger \) are operator valued, then the momentum operator is
 \begin{equation}\label{eqn:qftLecture6:500}
 p = \dot{q} =
 \frac{i\omega}{\sqrt{2\omega}} \lr{ -a e^{-i \omega t} + a^\dagger e^{i \omega t} },
 \end{equation}
 or inverting for \( a, a^\dagger \)
-\begin{dmath}\label{eqn:qftLecture6:1080}
+\begin{equation}\label{eqn:qftLecture6:1080}
 \begin{aligned}
 a &= \sqrt{\frac{\omega}{2}} \lr{ q - \inv{i \omega} p } e^{-i \omega t} \\
 a^\dagger &= \sqrt{\frac{\omega}{2}} \lr{ q + \inv{i \omega} p } e^{i \omega t}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 By inspection it is apparent that the product \( a^\dagger a \) will be related to the Hamiltonian (i.e. a difference of squares).  That product is
-\begin{dmath}\label{eqn:qftLecture6:1120}
+\begin{equation}\label{eqn:qftLecture6:1120}
 a^\dagger a
 =
 \frac{\omega}{2}
@@ -408,13 +406,13 @@ a^\dagger a
 =
 \frac{\omega}{2} \lr{ q^2 + \inv{\omega^2} p^2 - \inv{i \omega} \antisymmetric{q}{p} }
 = \inv{2 \omega} \lr{ p^2 + \omega^2 q^2 - \omega },
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:qftLecture6:1140}
+\begin{equation}\label{eqn:qftLecture6:1140}
 H = \omega \lr{ a^\dagger a + \inv{2} }.
-\end{dmath}
+\end{equation}
 We can glean some of the properties of \( a, a^\dagger \) by computing the commutator of \( p, q \), since that has a well known value
-\begin{dmath}\label{eqn:qftLecture6:520}
+\begin{equation}\label{eqn:qftLecture6:520}
 i = \antisymmetric{q}{p}
 =
 \frac{i\omega}{2 \omega} \antisymmetric
@@ -427,56 +425,56 @@ i = \antisymmetric{q}{p}
 =
 i
 \antisymmetric{a}{a^\dagger},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture6:1100}
+\begin{equation}\label{eqn:qftLecture6:1100}
 \antisymmetric{a}{a^\dagger} = 1.
-\end{dmath}
+\end{equation}
 The operator \( a^\dagger a \) is the workhorse of the Hamiltonian and worth studying independently.  In particular, assume that we have a set of states \( \ket{n} \) that are eigenstates of \( a^\dagger a \) with eigenvalues \( \lambda_n \), that is
-\begin{dmath}\label{eqn:qftLecture6:1160}
+\begin{equation}\label{eqn:qftLecture6:1160}
 a^\dagger a \ket{n} = \lambda_n \ket{n}.
-\end{dmath}
+\end{equation}
 The action of \( a^\dagger a \) on \( a^\dagger \ket{n} \) is easy to compute
-\begin{dmath}\label{eqn:qftLecture6:1180}
+\begin{equation}\label{eqn:qftLecture6:1180}
 a^\dagger a a^\dagger \ket{n}
 =
 a^\dagger \lr{ a^\dagger a + 1 } \ket{n}
 =
 \lr{ \lambda_n + 1 } a^\dagger \ket{n},
-\end{dmath}
+\end{equation}
 so \( \lambda_n + 1 \) is an eigenvalue of \( a^\dagger \ket{n} \).  The state \( a^\dagger \ket{n} \) has an energy eigenstate that is one unit of energy larger than \( \ket{n} \).  For this reason we called \( a^\dagger \) the raising (or creation) operator.
 Similarly,
-\begin{dmath}\label{eqn:qftLecture6:1200}
+\begin{equation}\label{eqn:qftLecture6:1200}
 a^\dagger a a \ket{n}
 =
 \lr{ a a^\dagger - 1 } a \ket{n}
 =
 (\lambda_n - 1) a \ket{n},
-\end{dmath}
+\end{equation}
 so \( \lambda_n - 1 \) is the energy eigenvalue of \( a \ket{n} \), having one less unit of energy than \( \ket{n} \).
 We call \( a \) the annihilation (or lowering) operator.
 If we argue that there is a lowest energy state, perhaps designated as \( \ket{0} \) then we must have
-\begin{dmath}\label{eqn:qftLecture6:560}
+\begin{equation}\label{eqn:qftLecture6:560}
 a\ket{0} = 0,
-\end{dmath}
+\end{equation}
 by the assumption that there are no energy eigenstates with less energy than \( \ket{0} \).
 We can think of higher order states being constructed from the ground state from using the raising operator \( a^\dagger \)
-\begin{dmath}\label{eqn:qftLecture6:580}
+\begin{equation}\label{eqn:qftLecture6:580}
 \ket{n} = \frac{(a^\dagger)^n}{\sqrt{n!}} \ket{0}.
-\end{dmath}
+\end{equation}
 %The Hamiltonian action
-%\begin{dmath}\label{eqn:qftLecture6:600}
+%\begin{equation}\label{eqn:qftLecture6:600}
 %\omega a^\dagger a \ket{n} = (n \omega) \ket{n} = E_n \ket{n}.
-%\end{dmath}
+%\end{equation}
 
 \section{Discussion.}
 
 We've diagonalized in the Fourier representation for the momentum space fields.  For every value of momentum \( \Bp \) we have a quantum SHO.
 
 For our field space we call our space the Fock vacuum and
-\begin{dmath}\label{eqn:qftLecture6:620}
+\begin{equation}\label{eqn:qftLecture6:620}
 a_\Bp\ket{0} = 0,
-\end{dmath}
+\end{equation}
 and call \( a_\Bp \) the ``annihilation operator'', and
 call \( a^\dagger_\Bp \) the ``creation operator''.
 We say that \( a^\dagger_\Bp \ket{0} \) is the creation of a state of a single particle of momentum \( \Bp \) by \( a^\dagger_\Bp \).
@@ -488,14 +486,14 @@ We are discarding the volume term, a procedure called ``normal ordering''.  We d
 a^\dagger a.
 \end{equation}
 We are essentially forgetting the vacuum energy as some sort of unobservable quantity, leaving us with the free Hamiltonian of
-\begin{dmath}\label{eqn:qftLecture6:660}
+\begin{equation}\label{eqn:qftLecture6:660}
 H_0 =
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp}
    a_{\Bp}.
-\end{dmath}
+\end{equation}
 Consider
-\begin{dmath}\label{eqn:qftLecture6:680}
+\begin{equation}\label{eqn:qftLecture6:680}
 H_0
 a^\dagger_\Bq \ket{0}
 =
@@ -519,41 +517,41 @@ a^\dagger_\Bq
 }
 =
 \omega_\Bq a^\dagger_\Bq \ket{0}.
-\end{dmath}
+\end{equation}
 
 \paragraph{Question:} Is it possible to modify the Lagrangian or Hamiltonian that we start with so that this vacuum ground state is eliminated?  Answer: Only by imposing super-symmetric constraints (that pairs this (bosonic) Hamiltonian to a fermionic system in a way that there is exact cancellation).
 
 We will see that the momentum operator has the form
-\begin{dmath}\label{eqn:qftLecture6:700}
+\begin{equation}\label{eqn:qftLecture6:700}
 \calP
 =
 \int \frac{d^3 p}{(2 \pi)^3} \Bp a^\dagger_\Bp a_\Bp.
-\end{dmath}
+\end{equation}
 We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) is a two particle space with energy \( \omega_\Bp + \omega_q\), and
-\begin{dmath}\label{eqn:qftLecture6:19}
+\begin{equation}\label{eqn:qftLecture6:19}
 %\(
 (a^\dagger_\Bp)^m (a^\dagger_\Bq)^n \ket{0} \equiv
 (a^\dagger_\Bp)^m \ket{0} \otimes (a^\dagger_\Bq)^n \ket{0},
 %\)
-\end{dmath}
+\end{equation}
 is a \( m + n \) particle space.
 
 There is a connection to statistical mechanics that is of interest
-\begin{dmath}\label{eqn:qftLecture6:720}
+\begin{equation}\label{eqn:qftLecture6:720}
 \expectation{E}
 = \inv{Z} \sum_n E_n e^{-E_n/\kB T}
 = \inv{Z} \sum_n \bra{n} e^{-\hat{H}/\kB T} \hat{H} \ket{n},
-\end{dmath}
+\end{equation}
 so for a SHO Hamiltonian system
-\begin{dmath}\label{eqn:qftLecture6:740}
+\begin{equation}\label{eqn:qftLecture6:740}
 \expectation{E}
 = \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \hat{H} \ket{n}
 = \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \omega a^\dagger a \ket{n}
 = \frac{\omega}{e^{\omega/\kB T} - 1 }
 = \expectation{ \omega a^\dagger a }_{\kB T},
-\end{dmath}
+\end{equation}
 which is the \( \kB T \) ensemble average energy for a SHO system.  Note that this sum was evaluated by noting that \( \bra{n} a^\dagger a \ket{n} = n \) which leaves sums of the form
-\begin{dmath}\label{eqn:qftLecture6:1220}
+\begin{equation}\label{eqn:qftLecture6:1220}
 \frac{\sum_{n = 0}^\infty n a^n }{\sum_{n = 0}^\infty a^n}
 =
 a \frac{\sum_{n = 1}^\infty n a^{n-1} }{\sum_{n = 0}^\infty a^n}
@@ -561,37 +559,36 @@ a \frac{\sum_{n = 1}^\infty n a^{n-1} }{\sum_{n = 0}^\infty a^n}
 a (1 - a) \frac{d}{da} \lr{ \inv{1 - a} }
 =
 \frac{a}{1 - a}.
-\end{dmath}
+\end{equation}
 
 If we consider a real scalar field of mass \( m \) we have \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), but for a Maxwell field \( \BE, \BB \) where \( m = 0 \), our dispersion relation is \( \omega_\Bp = \Norm{\Bp} \).
 
 We will see that for a free Maxwell field (no charges or currents) the Hamiltonian is
-\begin{dmath}\label{eqn:qftLecture6:760}
+\begin{equation}\label{eqn:qftLecture6:760}
 H_{\text{Maxwell}} =
 \sum_{i = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp {a^i}^\dagger_\Bp {a^i}_\Bp,
-\end{dmath}
+\end{equation}
 where \( i \) is a polarization index.
 
 We expect that we can evaluate an average such as \cref{eqn:qftLecture6:740} for our field, and operate using the analogy
-
-\begin{dmath}\label{eqn:qftLecture6:780}
+\begin{equation}\label{eqn:qftLecture6:780}
 \begin{aligned}
 a a^\dagger &= a^\dagger a + 1 \\
 a_\Bp a_\Bp^\dagger &= a_\Bp^\dagger a_\Bp + V_3.
 \end{aligned}
-\end{dmath}
+\end{equation}
 so if we rescale by \( \sqrt{V_3} \)
-\begin{dmath}\label{eqn:qftLecture6:800}
+\begin{equation}\label{eqn:qftLecture6:800}
 a_\Bp = \sqrt{V_3} \tilde{a}_\Bp,
-\end{dmath}
+\end{equation}
 then we have commutator relations like standard QM
-\begin{dmath}\label{eqn:qftLecture6:820}
+\begin{equation}\label{eqn:qftLecture6:820}
 \tilde{a} \tilde{a}^\dagger = \tilde{a}^\dagger \tilde{a} + 1.
-\end{dmath}
+\end{equation}
 
 So we can immediately evaluate the energy expectation for our quantized fields
-\begin{dmath}\label{eqn:qftLecture6:840}
+\begin{equation}\label{eqn:qftLecture6:840}
 \expectation{H_0}
 =
 \expectation{
@@ -602,11 +599,11 @@ So we can immediately evaluate the energy expectation for our quantized fields
 =
 V_3
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp}{e^{\omega_\Bp/\kB T} - 1}.
-\end{dmath}
+\end{equation}
 Using this with the Maxwell field, we have a factor of two from polarization
-\begin{dmath}\label{eqn:qftLecture6:860}
+\begin{equation}\label{eqn:qftLecture6:860}
 U^{\text{Maxwell}} = 2 V_3
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\Norm{\Bp}}{e^{\omega_\Bp/\kB T} - 1},
-\end{dmath}
+\end{equation}
 which is Planck's law describing the blackbody energy spectrum.
 

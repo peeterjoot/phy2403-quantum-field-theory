@@ -48,11 +48,11 @@ Last time we
 \begin{itemize}
 \item
 introduced the Clifford algebra Dirac matrix (gamma matrices) elements satisfying
-\begin{dmath}\label{eqn:qftLecture20:40}
+\begin{equation}\label{eqn:qftLecture20:40}
 \symmetric{\gamma^\mu}{\gamma^\nu} = 2 g^{\mu\nu},
-\end{dmath}
+\end{equation}
 where we use the Weyl representation
-\begin{dmath}\label{eqn:qftLecture20:60}
+\begin{equation}\label{eqn:qftLecture20:60}
 \begin{aligned}
 \gamma^0 &=
 \begin{bmatrix}
@@ -65,13 +65,13 @@ where we use the Weyl representation
 -\sigma^k & 0
 \end{bmatrix}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 In particular \( (\gamma^0)^2 = 1, (\gamma^0)^\dagger = \gamma^0 \).
 \item and left off after
 showing that the Dirac Lagrangian
-\begin{dmath}\label{eqn:qftLecture20:20}
+\begin{equation}\label{eqn:qftLecture20:20}
 \LL = \overbar{\Psi}\lr{ i \gamma^\mu \partial_\mu - m } \Psi,
-\end{dmath}
+\end{equation}
 where \( \overbar{\Psi} = \Psi^\dagger \gamma^0 \),
 is Lorentz invariant.  We argued that a single spinor can only describe a massless field, and that a two spinor construction can be used for a massive field.  We skipped from there to the Dirac Lagrangian above.
 \end{itemize}
@@ -91,7 +91,7 @@ If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
 
 \begin{proof}
 \Cref{thm:qftLecture20:760} follows by pre-multiplying by a sort of ``conjugate'' operator\footnote{Q: Is there a name for such a conjugation operation?} \( i \gamma^\mu + m \) to find
-\begin{dmath}\label{eqn:qftLecture20:100}
+\begin{equation}\label{eqn:qftLecture20:100}
 0 =
 \lr{ i \gamma^\mu \partial_\mu + m }
 \lr{ i \gamma^\mu \partial_\mu - m } \Psi
@@ -115,34 +115,34 @@ If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
 } \Psi
 =
 -\lr{ \partial_{00} - \spacegrad^2 + m^2 } \Psi,
-\end{dmath}
+\end{equation}
 which is a Klein-Gordon equation for \( \Psi \).
 \end{proof}
 
 \paragraph{Goal:}
 
 Expand \( \Psi(\Bx, t) \) in a basis of solutions of the Dirac equation.  Call the coefficients \( a, b, \cdots \).  This will be like
-\begin{dmath}\label{eqn:qftLecture20:120}
+\begin{equation}\label{eqn:qftLecture20:120}
 \phi \sim \int \frac{d^3 p}{(2 \pi)^3 2 \omega_\Bp} \lr{
 e^{i p \cdot x} a_\Bp^\dagger
 +
 e^{-i p \cdot x} a_\Bp
 }
-\end{dmath}
+\end{equation}
 
 As with the scalar field, let's look for plane wave solutions.  We'll first look for solutions of the form
-\begin{dmath}\label{eqn:qftLecture20:140}
+\begin{equation}\label{eqn:qftLecture20:140}
 \Psi(x) = u(p) e^{-i p \cdot x},
-\end{dmath}
+\end{equation}
 where \( p^2 = m^2 \), \( p^0 > 0\, \forall p \).  Plugging into
 \cref{eqn:qftLecture20:80}
 we find
-\begin{dmath}\label{eqn:qftLecture20:160}
+\begin{equation}\label{eqn:qftLecture20:160}
 \lr{ \gamma^\mu p_\mu - m } u(p) = 0.
-\end{dmath}
+\end{equation}
 
 Let's write this out explicitly for exposition, first noting that
-\begin{dmath}\label{eqn:qftLecture20:860}
+\begin{equation}\label{eqn:qftLecture20:860}
 \gamma^\mu p_\mu
 = \gamma^0 p_0 + \gamma^k p_k
 =
@@ -162,9 +162,9 @@ p_k
 0 & p^0 \sigma^0 - \Bsigma \cdot \Bp \\
 p^0 \sigma^0 + \Bsigma \cdot \Bp & 0
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so \cref{eqn:qftLecture20:160} becomes
-\begin{dmath}\label{eqn:qftLecture20:880}
+\begin{equation}\label{eqn:qftLecture20:880}
 0 =
 \begin{bmatrix}
 -m & p^0 \sigma^0 - \Bsigma \cdot \Bp \\
@@ -183,19 +183,19 @@ p \cdot \overbar{\sigma} & -m
 u_1(p) \\
 u_2(p) \\
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 where the following handy shorthand\footnote{Assuming I wrote this down correctly, this follows the usual convention \( x \cdot p = x^\mu p_\mu = x^0 p^0 - \Bx \cdot \Bp \).
 I had some doubt that I got the signs right in my notes from class, since a peek at
 \citep{peskin1995introduction} seemingly showed the opposite sign convention where \( \sigma \cdot x \) was first defined, namely eq. 3.41/3.43.  There they write \( \sigma \cdot \partial = \partial_0 + \Bsigma \cdot \spacegrad \), not \( \sigma \cdot \partial = \partial_0 - \Bsigma \cdot \spacegrad\).  What explains this is the fact that the four-gradient in coordinate form should really considered a lower index quantity (\(\partial_\mu\)), so in the scalar+vector tuple form, we should write \( \partial^\mu = (\partial^0, -\spacegrad) \), or \( \partial_\mu = (\partial_0, \spacegrad) \).  This means that \( \sigma \cdot \partial = \sigma^0 \partial^0 - \Bsigma \cdot (-\spacegrad) = \partial_0 + \Bsigma \cdot \spacegrad \).  Having a tuple notation that can be used to represent either lower or upper index quantities is very confusing, and probably justifies avoiding that notation for any lower index quantity whenever possible for clarity!} has been used to group the momentum related block matrices
-\begin{dmath}\label{eqn:qftLecture20:300}
+\begin{equation}\label{eqn:qftLecture20:300}
 \begin{aligned}
 p \cdot \sigma &= p^0 \sigma^0 - \Bp \cdot \Bsigma \\
 p \cdot \overbar{\sigma} &= p^0 \sigma^0 + \Bp \cdot \Bsigma.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Note that these \( p \cdot \sigma, p \cdot \overbar{\sigma} \)'s are both block matrices.  In particular
-\begin{dmath}\label{eqn:qftLecture20:320}
+\begin{equation}\label{eqn:qftLecture20:320}
 p \cdot \sigma
 = p_\mu \sigma^\mu
 =
@@ -203,18 +203,18 @@ p \cdot \sigma
 p_0 + p_3   & p_1 - i p_2 \\
 p_1 + i p_2 & p_0 - p_3
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 
 The question is what \( u's \) obey such an equation.
 
 We can gain some insight by first considering the rest frame, where \( \Bp = 0, p^0 = m \).  Going back to \cref{eqn:qftLecture20:160}, the rest frame Dirac equation becomes
-\begin{dmath}\label{eqn:qftLecture20:180}
+\begin{equation}\label{eqn:qftLecture20:180}
 0
 =
 \lr{ \gamma^0 p_0 - m } u
 =
 m \lr{ \gamma^0 - 1 } u.
-\end{dmath}
+\end{equation}
 Our block matrix equation is now reduced to a set of \( 2 \times 2 \) identity matrices
 \begin{equation}\label{eqn:qftLecture20:220}
 0 =
@@ -225,7 +225,7 @@ Our block matrix equation is now reduced to a set of \( 2 \times 2 \) identity m
 u(\Bp = 0).
 \end{equation}
 The solution space is given by
-\begin{dmath}\label{eqn:qftLecture20:240}
+\begin{equation}\label{eqn:qftLecture20:240}
 \begin{bmatrix}
 -1 & 1 \\
 1 & -1
@@ -235,15 +235,15 @@ The solution space is given by
 \zeta \\
 \end{bmatrix}
 =0,
-\end{dmath}
+\end{equation}
 where \( \zeta \) is itself a \( 2 \times 1 \) column matrix, say
-\begin{dmath}\label{eqn:qftLecture20:380}
+\begin{equation}\label{eqn:qftLecture20:380}
 \zeta =
 \begin{bmatrix}
 \zeta_1 \\
 \zeta_2
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 so our solutions are all proportional to column
 \begin{equation}\label{eqn:qftLecture20:260}
 u(\Bp = 0) \sim
@@ -259,20 +259,19 @@ in the rest frame where \( \Bp = 0 \).  A solution in a frame where \( \Bp \ne 0
 We won't work that out explicitly here, but instead show the answer and argue that it must be valid, but the interested student can find that boost calculated explicitly in \citep{peskin1995introduction}.  A nice treatment of such a boost can also be found in \citep{tobiasQFTL15Dirac} supplemented by \cref{problem:squarerootpsigma:1}.
 
 \paragraph{Claim:} in a boosted frame where \( \Bp \ne 0 \) solution is
-
-\begin{dmath}\label{eqn:qftLecture20:280}
+\begin{equation}\label{eqn:qftLecture20:280}
 u(p) =
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \zeta \\
 \sqrt{p \cdot \overbar{\sigma}} \zeta
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 What do we mean by these square roots?  Since \(
 p \cdot \sigma,
 p \cdot \overbar{\sigma} \) are both Hermitian \( 2 \times 2 \) matrices, we can define the square root as the matrix of the square roots of the eigenvalues.
 \paragraph{Check:}
 In the rest frame
-\begin{dmath}\label{eqn:qftLecture20:340}
+\begin{equation}\label{eqn:qftLecture20:340}
 \evalbar{
 \sqrt{ p \cdot \sigma }
 }{ \Bp = 0 }
@@ -290,9 +289,9 @@ In the rest frame
 \sqrt{m} & 0 \\
 0 & \sqrt{m}
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture20:940}
+\begin{equation}\label{eqn:qftLecture20:940}
 u(p)
 =
 \sqrt{m}
@@ -306,11 +305,11 @@ u(p)
 \zeta \\
 \zeta
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 as we already found.
 
 We claim that the structure of the boost is
-\begin{dmath}\label{eqn:qftLecture20:360}
+\begin{equation}\label{eqn:qftLecture20:360}
 u(\Bp) =
 \begin{bmatrix}
 \frac{\sqrt{p \cdot \sigma}}{m} & 0 \\
@@ -327,7 +326,7 @@ u(\Bp) =
 {
 \(u(\Bp = 0)\)
 }
-\end{dmath}
+\end{equation}
 We'd like to check that this is an element of \(SL{2}\).
 We'll also see in the end that we don't have to calculate these square roots, since we always end up with two spinors and when all is said we end up with products of these roots.
 
@@ -337,11 +336,11 @@ If matrix \( A \) is diagonalizable, then \( \det \sqrt{A} = \sqrt{ \det A } \).
 
 \begin{proof}
 Suppose that
-\begin{dmath}\label{eqn:qftLecture20:900}
+\begin{equation}\label{eqn:qftLecture20:900}
 A = U \diag( \lambda_1, \cdots \lambda_n ) U^\dagger,
-\end{dmath}
+\end{equation}
 then
-\begin{dmath}\label{eqn:qftLecture20:920}
+\begin{equation}\label{eqn:qftLecture20:920}
 \det \sqrt{A}
 =
 \det \lr{
@@ -355,7 +354,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 }
 =
 \sqrt{ \det A }.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 \makelemma{Determinant of \( p \cdot \sigma \).}{lemma:qftLecture20:7}{
@@ -365,7 +364,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 } % lemma
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture20:420}
+\begin{equation}\label{eqn:qftLecture20:420}
 \det \frac{\sqrt{p \cdot \sigma}}{\sqrt{m}}
 =
 \sqrt{
@@ -386,7 +385,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 \sqrt{ \frac{m^2}{m^2} }
 =
 1.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 \makelemma{\((p \cdot \sigma)(p \cdot \overbar{\sigma})\).}{lemma:qftLecture20:17}{
@@ -396,7 +395,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 } % lemma
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture20:480}
+\begin{equation}\label{eqn:qftLecture20:480}
 (p \cdot \sigma)(p \cdot \overbar{\sigma}) = \lr{ p^0 - \Bp \cdot \Bsigma }\lr{ p^0 + \Bp \cdot \Bsigma }
 =
 (p^0)^2 - \lr{ \Bp \cdot \Bsigma }^2
@@ -404,7 +403,7 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 (p^0)^2 - \Bp^2
 =
 m^2.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 \maketheorem{\( u(p) \) is a solution to the Dirac equation.}{thm:qftLecture20:13}{
@@ -412,7 +411,7 @@ m^2.
 } % theorem
 
 \begin{proof}
-\begin{dmath}\label{eqn:qftLecture20:460}
+\begin{equation}\label{eqn:qftLecture20:460}
 \lr{ \gamma^\mu p_\mu -m } u(p)
 =
 \begin{bmatrix}
@@ -443,29 +442,29 @@ p \cdot \overbar{\sigma} & -m
 \lr{ p \sqrt{ m^2 } - m } \zeta \\
 \end{bmatrix}
 = 0.
-\end{dmath}
+\end{equation}
 \end{proof}
 
 \paragraph{Summary:}
 For \( p^0 > 0, p^2  = m^2 \)
-\begin{dmath}\label{eqn:qftLecture20:500}
+\begin{equation}\label{eqn:qftLecture20:500}
 \Psi(x) = e^{-i p \cdot x } u(p)
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture20:520}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture20:520}
 u(p) =
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \zeta \\
 \sqrt{p \cdot \overbar{\sigma}} \zeta \\
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 
 \paragraph{Example:}
-\begin{dmath}\label{eqn:qftLecture20:540}
+\begin{equation}\label{eqn:qftLecture20:540}
 p = \lr{ E, 0, 0, p^3 }
-\end{dmath}
+\end{equation}
 
 We have
-\begin{dmath}\label{eqn:qftLecture20:960}
+\begin{equation}\label{eqn:qftLecture20:960}
 \sqrt{\sigma \cdot p}
 =
 \sqrt{
@@ -483,18 +482,18 @@ E - p^3 & 0 \\
 \sqrt{E - p^3} & 0 \\
 0       & \sqrt{E + p^3}
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 Similarly
-\begin{dmath}\label{eqn:qftLecture20:1000}
+\begin{equation}\label{eqn:qftLecture20:1000}
 \sqrt{\overbar{\sigma} \cdot p}
 =
 \begin{bmatrix}
 \sqrt{E + p^3} & 0 \\
 0       & \sqrt{E - p^3}
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:qftLecture20:980}
+\begin{equation}\label{eqn:qftLecture20:980}
 u(p) =
 \begin{bmatrix}
 \begin{bmatrix}
@@ -506,18 +505,18 @@ u(p) =
 0       & \sqrt{E - p^3}
 \end{bmatrix} \zeta
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 
 Suppose we let
-\begin{dmath}\label{eqn:qftLecture20:740}
+\begin{equation}\label{eqn:qftLecture20:740}
 \zeta =
 \begin{bmatrix}
 1 \\
 0
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 we are left with
-\begin{dmath}\label{eqn:qftLecture20:580}
+\begin{equation}\label{eqn:qftLecture20:580}
 u(p) =
 \begin{bmatrix}
 \sqrt{ E - p^3}
@@ -532,13 +531,13 @@ u(p) =
 0
 \end{bmatrix}
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 
 Alternatively for \( \zeta =
 \begin{bmatrix}
 0 \\ 1
 \end{bmatrix} \)
-\begin{dmath}\label{eqn:qftLecture20:600}
+\begin{equation}\label{eqn:qftLecture20:600}
 u(p) =
 \begin{bmatrix}
 \sqrt{ E + p^3}
@@ -553,10 +552,10 @@ u(p) =
 1
 \end{bmatrix}
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 
 If we pick \( p_3 = E  \)\footnote{we can boost a massive particle to be arbitrarily close to \( p_3 = E \).}, then we find two solutions
-\begin{dmath}\label{eqn:qftLecture20:620}
+\begin{equation}\label{eqn:qftLecture20:620}
 \evalbar{
 u(p)
 }{\zeta = (1,0)^\T, p_3 = E}
@@ -571,9 +570,9 @@ u(p)
 1 \\ 0
 \end{bmatrix}
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:qftLecture20:640}
+\begin{equation}\label{eqn:qftLecture20:640}
 \evalbar{
 u(p)
 }{\zeta = (0,1)^\T, p_3 = E}
@@ -588,13 +587,13 @@ u(p)
 0 \\ 1
 \end{bmatrix} \\
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 
 \section{Helicity.}
 \index{helicity}
 
 Let \( h \) (the helicity) be
-\begin{dmath}\label{eqn:qftLecture20:660}
+\begin{equation}\label{eqn:qftLecture20:660}
 h = \inv{2}
 \begin{bmatrix}
 \hat{\Bp} \cdot \Bsigma & 0 \\
@@ -602,24 +601,24 @@ h = \inv{2}
 \end{bmatrix}
 =
 \hat{\Bp} \cdot \BS,
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture20:680}
+\begin{equation}\label{eqn:qftLecture20:680}
 \BS =
 \begin{bmatrix}
 \frac{\Bsigma}{2} & 0 \\
 0 & \frac{\Bsigma}{2}
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 \( h \) has eigenvalues \( \pm 1/2 \).
 
 It turns out that \cref{eqn:qftLecture20:620}, and \cref{eqn:qftLecture20:640} are both eigenstates of the helicity operator.
-\begin{dmath}\label{eqn:qftLecture20:700}
+\begin{equation}\label{eqn:qftLecture20:700}
 h u^{(1)} = \inv{2} u^{(1)}
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture20:720}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture20:720}
 h u^{(2)} = -\inv{2} u^{(2)},
-\end{dmath}
+\end{equation}
 corresponding to momentum aligned with and opposing the spin directions as sketched in \cref{fig:l20:l20Fig1}.
 \imageFigure{../figures/phy2403-quantum-field-theory/l20Fig1}{Helicity orientation.}{fig:l20:l20Fig1}{0.2}
 

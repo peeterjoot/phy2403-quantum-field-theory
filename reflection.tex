@@ -40,64 +40,65 @@ Given a unit vector \( \ncap \in \bbR^3 \) and a vector \( \Bx \in \bbR^3 \) the
 
 \begin{proof}
 In standard vector notation, we can decompose a vector into its projective and rejective components
-\begin{dmath}\label{eqn:reflection:20}
+\begin{equation}\label{eqn:reflection:20}
 \Bx = (\Bx \cdot \ncap) \ncap + \lr{ \Bx - (\Bx \cdot \ncap) \ncap }.
-\end{dmath}
+\end{equation}
 A reflection about the plane normal to \( \ncap \) just flips the component in the direction of \( \ncap \), leaving the rest unchanged.  That is
-\begin{dmath}\label{eqn:reflection:40}
+\begin{equation}\label{eqn:reflection:40}
 -(\Bx \cdot \ncap) \ncap + \lr{ \Bx - (\Bx \cdot \ncap) \ncap }
 =
 \Bx - 2 (\Bx \cdot \ncap) \ncap.
-\end{dmath}
+\end{equation}
 We may write this in \( \Bsigma \) notation as
-\begin{dmath}\label{eqn:reflection:60}
+\begin{equation}\label{eqn:reflection:60}
 \Bsigma \cdot \Bx - 2 \Bx \cdot \ncap \Bsigma \cdot \ncap.
-\end{dmath}
+\end{equation}
 We also know that
-\begin{dmath}\label{eqn:reflection:80}
+\begin{equation}\label{eqn:reflection:80}
 \begin{aligned}
 \Bsigma \cdot \Ba \Bsigma \cdot \Bb &= a \cdot b + i \Bsigma \cdot (\Ba \cross \Bb) \\
 \Bsigma \cdot \Bb \Bsigma \cdot \Ba &= a \cdot b - i \Bsigma \cdot (\Ba \cross \Bb),
 \end{aligned}
-\end{dmath}
+\end{equation}
 or
-\begin{dmath}\label{eqn:reflection:100}
+\begin{equation}\label{eqn:reflection:100}
 a \cdot b = \inv{2} \symmetric{\Bsigma \cdot \Ba}{\Bsigma \cdot \Bb},
-\end{dmath}
+\end{equation}
 where \( \symmetric{\Ba}{\Bb} \) is the anticommutator of \( \Ba, \Bb \).
 Inserting \cref{eqn:reflection:100} into \cref{eqn:reflection:60} we find that the reflection is
-\begin{dmath}\label{eqn:reflection:120}
+\begin{equation}\label{eqn:reflection:120}
+\begin{aligned}
 \Bsigma \cdot \Bx -
 \symmetric{\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
 \Bsigma \cdot \ncap
-=
+&=
 \Bsigma \cdot \Bx -
 {\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
 \Bsigma \cdot \ncap
 -
 {\Bsigma \cdot \Bx}{\Bsigma \cdot \ncap}
-\Bsigma \cdot \ncap
-=
+\Bsigma \cdot \ncap \\
+&=
 \Bsigma \cdot \Bx -
 {\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
 \Bsigma \cdot \ncap
 -
-{\Bsigma \cdot \Bx}
-=
+{\Bsigma \cdot \Bx} \\
+&=
 -
 {\Bsigma \cdot \ncap}{\Bsigma \cdot \Bx}
 \Bsigma \cdot \ncap.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %which completes the proof.
 \end{proof}
 
 When we expand \( (\Bsigma \cdot \Bx)^\T \) and find
-\begin{dmath}\label{eqn:reflection:140}
+\begin{equation}\label{eqn:reflection:140}
 (\Bsigma \cdot \Bx)^\T
 =
 \sigma^1 x^1 - \sigma^2 x^2 + \sigma^3 x^3,
-\end{dmath}
+\end{equation}
 it is clear that this coordinate expansion is a reflection about the y-axis.  Knowing the reflection formula above provides a rationale for why we might want to write this in the compact form \( -\sigma^2 (\Bsigma \cdot \Bx) \sigma^2 \), which might not be obvious otherwise.
-
 %}
 %\EndArticle

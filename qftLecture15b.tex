@@ -45,13 +45,13 @@
 \section{Wick contractions.}
 
 Here's a double dose of short hand, first an abbreviation for the Feynman propagator
-\begin{dmath}\label{eqn:qftLecture15b:20}
+\begin{equation}\label{eqn:qftLecture15b:20}
 D_F(1-2) \equiv D_F(x_1, x_2),
-\end{dmath}
+\end{equation}
 and second
-\begin{dmath}\label{eqn:qftLecture15b:40}
+\begin{equation}\label{eqn:qftLecture15b:40}
 \contraction{}{\phi}{{}_i}{\phi} \phi_i \phi_j = D_F(i - j),
-\end{dmath}
+\end{equation}
 which is called a contraction.
 
 Contractions allow time ordered products to be written in a compact form
@@ -63,7 +63,7 @@ See \cref{qft:problemSet4:1} (Hw4) for full details.
 } % theorem
 
 Illustrating by example for the time ordering of \( n = 4 \) fields, we have
-\begin{dmath}\label{eqn:qftLecture15b:60}
+\begin{equation}\label{eqn:qftLecture15b:60}
 T( \phi_1 \phi_2 \phi_3 \phi_4)
 =
 \normalorder{ \phi_1 \phi_2 \phi_3 \phi_4 }
@@ -88,7 +88,7 @@ T( \phi_1 \phi_2 \phi_3 \phi_4)
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3.
-\end{dmath}
+\end{equation}
 
 \maketheorem{Corollary: Wick's, Vacuum expectation.}{thm:qftLecture15b:100}{
 For \( n \) even
@@ -107,7 +107,7 @@ For \( n \) odd, this vanishes.
 
 \section{Simplest Feynman diagrams.}
 For \( n = 4 \) we have
-\begin{dmath}\label{eqn:qftLecture15b:120}
+\begin{equation}\label{eqn:qftLecture15b:120}
 \bra{0} T(\phi_1 \phi_2 \phi_3 \phi_4) \ket{0}
 =
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2
@@ -118,7 +118,7 @@ For \( n = 4 \) we have
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3,
-\end{dmath}
+\end{equation}
 the set of Wick contractions can be written pictorially \cref{fig:qftLecture15b:qftLecture15bFig1}, and are called Feynman diagrams
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig1}{Simplest Feynman diagrams.}{fig:qftLecture15b:qftLecture15bFig1}{0.12}
 
@@ -126,11 +126,11 @@ These are the very simplest Feynman diagrams.
 
 \section{\texorpdfstring{\( \phi^4 \)}{Phi fourth} interaction.}
 Introducing another shorthand, we will use an expectation like notation to designate the matrix element for the vacuum state
-\begin{dmath}\label{eqn:qftLecture15b:140}
+\begin{equation}\label{eqn:qftLecture15b:140}
 \expectation{\text{blah}} = \bra{0}\text{blah} \ket{0}.
-\end{dmath}
+\end{equation}
 For the \( \phi^4 \) theory, this allows us to write the numerator of the perturbed ground state interaction as
-\begin{dmath}\label{eqn:qftLecture15b:340}
+\begin{equation}\label{eqn:qftLecture15b:340}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
 \sim
    \bra{0}
@@ -146,13 +146,13 @@ For the \( \phi^4 \) theory, this allows us to write the numerator of the pertur
       \phi_I(y)
       e^{-i \int d^4 z \phi^4(z)}
 }.
-\end{dmath}
+\end{equation}
 To first order, this is
-\begin{dmath}\label{eqn:qftLecture15b:360}
+\begin{equation}\label{eqn:qftLecture15b:360}
 \expectation{ T \phi_x \phi_y } - i \frac{\lambda}{4} \int d^4 z \expectation{
 T \phi_x \phi_y \phi_z \phi_z \phi_z \phi_z
 },
-\end{dmath}
+\end{equation}
 The first braket has the pictorial representation sketched in \cref{fig:qftLecture15b:qftLecture15bFigF2a}.
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFigF2a}{First integral diagram.}{fig:qftLecture15b:qftLecture15bFigF2a}{0.08}
 whereas the second has the diagrams sketched in
@@ -169,21 +169,21 @@ We can depict the entire second integral in diagrams as sketched in \cref{fig:qf
 Solving for the perturbed ground state can now be thought of as reduced to drawing pictures.  Each line from \( x \rightarrow x' \) represents a propagator \( D_F( x - x' ) \), and each vertex \( -i \lambda \int d^4 z \times \text{symmetry coefficients} \).\footnote{Symmetry coefficients weren't discussed until the next lecture.  This means making combinatorial arguments to count the number of equivalent diagrams.}
 
 We may also translate back from the diagrams to an algebraic representation.  For the first order \( \phi^4 \) interaction, that is
-\begin{dmath}\label{eqn:qftLecture15b:380}
+\begin{equation}\label{eqn:qftLecture15b:380}
 \expectation{ T \phi_x \phi_y }
 - \frac{i \lambda }{4} \int d^4 z D_F(x - y) D_F^2( z - z )
 + D_F(x - z) D_F( y - z).
-\end{dmath}
+\end{equation}
 
 Other diagrams can be similarly translated.  For example
 \cref{fig:qftLecture15b:qftLecture15bFig5}.
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig5}{Figure eight diagram.}{fig:qftLecture15b:qftLecture15bFig5}{0.1}
 represents
-\begin{dmath}\label{eqn:qftLecture15b:400}
+\begin{equation}\label{eqn:qftLecture15b:400}
 \int d^4 z D_F^2(z - z)
 =
 V_3 T \lr{ \int \frac{d^4 p}{(2\pi)^4} \inv{p^2 - m^2 + i \epsilon } }^2.
-\end{dmath}
+\end{equation}
 Clearly, additional interpretation will be required, since this diverges.  The resolution of this unfortunately has to be deferred to QFT II, where renormalization is covered.
 
 \section{Tree level diagrams.}
@@ -193,10 +193,10 @@ We would like to only discuss tree level diagrams, which exclude diagrams like
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig6}{Not a tree level diagram.}{fig:qftLecture15b:qftLecture15bFig6}{0.2}
 
 For the braket \footnote{I'd written: \( \expectation{ \int \phi_1 \phi_2 \phi_3 \phi_4 \lambda \int d^4 z \phi_z \phi_z \phi_z \phi_z } \).  Is this two fold integral what was intended, or my correction in \cref{eqn:qftLecture15b:420}?}
-\begin{dmath}\label{eqn:qftLecture15b:420}
+\begin{equation}\label{eqn:qftLecture15b:420}
 \expectation{ \int d^4 z \phi_1 \phi_2 \phi_3 \phi_4 \phi_z \phi_z \phi_z \phi_z
 }
-\end{dmath}
+\end{equation}
 we draw diagrams like those of \cref{fig:qftLecture15b:qftLecture15bFig7},
 the first of which is a tree level diagram.
 \imageFigure{../figures/phy2403-quantum-field-theory/qftLecture15bFig7}{First order interaction diagrams.}{fig:qftLecture15b:qftLecture15bFig7}{0.12}

@@ -46,31 +46,31 @@ Recall that we found
 U(t, t') = e^{i H_0(t - t_0)} e^{-i H(t - t')} e^{-i H_0(t' - t_0)},
 \end{equation}
 with solution
-\begin{dmath}\label{eqn:qftLecture15:200}
+\begin{equation}\label{eqn:qftLecture15:200}
 U(t, t')
 =
 T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}},
-\end{dmath}
-\begin{dmath}\label{eqn:qftLecture15:220}
+\end{equation}
+\begin{equation}\label{eqn:qftLecture15:220}
 U(t, t')^\dagger
 =
 T \exp{\lr{ i \int_{t'}^{t} H_{\text{I,int}}(t'') dt''}}
 =
 T \exp{\lr{ -i \int_{t}^{t'} H_{\text{I,int}}(t'') dt''}}
 = U(t', t),
-\end{dmath}
+\end{equation}
 and can use this to calculate the time evolution of a field 
 %\(
-\begin{dmath}\label{eqn:qftLecture15:40}
+\begin{equation}\label{eqn:qftLecture15:40}
 \phi(\Bx, t)
 =
 U^\dagger(t, t_0)
 \phi_I(\Bx, t)
 U(t, t_0)
-\end{dmath}
+\end{equation}
 %\)
 and found the ground state ket for \( H \) was
-\begin{dmath}\label{eqn:qftLecture15:60}
+\begin{equation}\label{eqn:qftLecture15:60}
 \ket{\Omega}
 =
 \evalbar{
@@ -79,7 +79,7 @@ and found the ground state ket for \( H \) was
 e^{-i E_0(T - t_0)} \braket{\Omega}{0}
 }
 }{T \rightarrow \infty(1 - i \epsilon)}.
-\end{dmath}
+\end{equation}
 \paragraph{Question:} What's the point of this, since it is self referential?
 \paragraph{Answer:} We will see, and also see that it goes away.  Alternatively, you can write it as
 \begin{equation*}
@@ -94,7 +94,7 @@ e^{-i E_0(T - t_0)}
 \end{equation*}
 
 We can also show that
-\begin{dmath}\label{eqn:qftLecture15:80}
+\begin{equation}\label{eqn:qftLecture15:80}
 \bra{\Omega}
 =
 \evalbar{
@@ -103,17 +103,16 @@ We can also show that
 e^{-i E_0(T - t_0)} \braket{0}{\Omega}
 }
 }{T \rightarrow \infty(1 - i \epsilon)}.
-\end{dmath}
+\end{equation}
 
 Our goal is still to calculate
-\begin{dmath}\label{eqn:qftLecture15:100}
+\begin{equation}\label{eqn:qftLecture15:100}
 \bra{\Omega} T(\phi(x) \phi(y))\ket{\Omega}.
-\end{dmath}
+\end{equation}
 Claim: the ``LSZ'' theorem (a neat way of writing this) relates this to S matrix elements.
 
 Assuming \( x^0 > y^0 \)
-
-\begin{dmath}\label{eqn:qftLecture15:120}
+\begin{equation}\label{eqn:qftLecture15:120}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
 =
 \frac{
@@ -132,9 +131,9 @@ U(t_0, -T)
 {
 e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 }.
-\end{dmath}
+\end{equation}
 Normalize \( \braket{\Omega}{\Omega} = 1 \), gives
-\begin{dmath}\label{eqn:qftLecture15:140}
+\begin{equation}\label{eqn:qftLecture15:140}
 1
 =
 \frac{\bra{0} U(T, t_0) U(t_0, -T) \ket{0}}
@@ -146,9 +145,9 @@ e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 {
 e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 },
-\end{dmath}
+\end{equation}
 so that
-\begin{dmath}\label{eqn:qftLecture15:240}
+\begin{equation}\label{eqn:qftLecture15:240}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
 =
 \frac{
@@ -167,9 +166,9 @@ U(t_0, -T)
 {
    \bra{0} U(T, -T) \ket{0}
 }.
-\end{dmath}
+\end{equation}
 For \( t_1 > t_2 > t_3 \)
-\begin{dmath}\label{eqn:qftLecture15:280}
+\begin{equation}\label{eqn:qftLecture15:280}
 U(t_1, t_2) U(t_2, t_3)
 =
 T e^{-i \int_{t_2}^{t_1} H_I}
@@ -183,15 +182,15 @@ e^{-i \int_{t_3}^{t_2} H_I}
 T(
 e^{-i \int_{t_3}^{t_1} H_I}
 ),
-\end{dmath}
+\end{equation}
 with an end result of
-\begin{dmath}\label{eqn:qftLecture15:320}
+\begin{equation}\label{eqn:qftLecture15:320}
 U(t_1, t_2) U(t_2, t_3) = U(t_1, t_3).
-\end{dmath}
+\end{equation}
 (DIY: work through the details -- this is a problem in \citep{peskin1995introduction})
 
 This gives
-\begin{dmath}\label{eqn:qftLecture15:300}
+\begin{equation}\label{eqn:qftLecture15:300}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
 =
 \frac{
@@ -206,12 +205,12 @@ U(y^0, -T)
 {
    \bra{0} U(T, -T) \ket{0}
 }.
-\end{dmath}
+\end{equation}
 
 If \( y^0 > x^0 \) we have the same result, but the \( y \)'s will come first.
 
 \paragraph{Claim:}
-\begin{dmath}\label{eqn:qftLecture15:340}
+\begin{equation}\label{eqn:qftLecture15:340}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
 =
 \frac{
@@ -228,7 +227,7 @@ If \( y^0 > x^0 \) we have the same result, but the \( y \)'s will come first.
       T ( e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'} )
    \ket{0}
 }.
-\end{dmath}
+\end{equation}
 
 More generally
 \boxedEquation{eqn:qftLecture15:360}{
@@ -255,7 +254,7 @@ More generally
 This is the holy grail of perturbation theory.
 
 In QFT II you will see this written in a path integral representation
-\begin{dmath}\label{eqn:qftLecture15:380}
+\begin{equation}\label{eqn:qftLecture15:380}
 \bra{\Omega}
 \phi_I(x_1) \cdots
 \phi_I(x_n)
@@ -268,11 +267,10 @@ In QFT II you will see this written in a path integral representation
 {
    \int [\calD \phi] e^{-i S[\phi]}
 }.
-\end{dmath}
+\end{equation}
 
 \section{Unpacking it.}
-
-\begin{dmath}\label{eqn:qftLecture15:400}
+\begin{equation}\label{eqn:qftLecture15:400}
 \int_{-T}^T H_{\text{I,int}}(t)
 =
 \int_{-T}^T
@@ -280,9 +278,9 @@ In QFT II you will see this written in a path integral representation
 =
 \int d^4 x
 \frac{\lambda}{4} \lr{ \phi_I }^4,
-\end{dmath}
+\end{equation}
 so we have
-\begin{dmath}\label{eqn:qftLecture15:420}
+\begin{equation}\label{eqn:qftLecture15:420}
 \frac{
    \bra{0}
    T\lr{
@@ -298,10 +296,10 @@ so we have
       e^{-i \frac{\lambda}{4} \int d^4 x \phi_I^4(x) }
    \ket{0}
 }.
-\end{dmath}
+\end{equation}
 
 The numerator expands as
-\begin{dmath}\label{eqn:qftLecture15:440}
+\begin{equation}\label{eqn:qftLecture15:440}
    \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) } \ket{0}
 -i \frac{\lambda}{4} \int d^4 x
    \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) \phi_I^4(x) }
@@ -313,7 +311,7 @@ The numerator expands as
       \phi_I^4(y)
 } \ket{0}
 + \cdots
-\end{dmath}
+\end{equation}
 so we see that the problem ends up being the calculation of time ordered products.
 
 \section{Calculating perturbation.}
@@ -322,11 +320,10 @@ Let's simplify notation, dropping interaction picture suffixes, writing \( \phi(
 Let's calculate \(
    \bra{0} T\lr{ \phi_1 \cdots \phi_n } \ket{0}
 \).  For \( n = 2 \) we have
-
-\begin{dmath}\label{eqn:qftLecture15:460}
+\begin{equation}\label{eqn:qftLecture15:460}
 \bra{0} T\lr{ \phi_1 \cdots \phi_n } \ket{0}
 = D_F(x_1 - x_2) \equiv D_F(1-2).
-\end{dmath}
+\end{equation}
 
 %\paragraph{TO BE CONTINUED.}
 %The rest of the lecture was very visual, and hard to type up.  I'll do so later.

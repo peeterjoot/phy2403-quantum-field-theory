@@ -52,18 +52,18 @@
 \section{Review.}
 
 From the Dirac Lagrangian density
-\begin{dmath}\label{eqn:qftLecture22:20}
+\begin{equation}\label{eqn:qftLecture22:20}
 \LL = \oPsi \lr{ i \gamma^\mu \partial_\mu -m } \Psi,
-\end{dmath}
+\end{equation}
 we found that the energy can be expressed using Hamiltonian
-\begin{dmath}\label{eqn:qftLecture22:40}
+\begin{equation}\label{eqn:qftLecture22:40}
 H = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
 \lr{
    a_\Bp^{s \dagger} a_\Bp^s
    -
    b_\Bp^{s \dagger} b_\Bp^s
 }.
-\end{dmath}
+\end{equation}
 This appears to be an energy with no bottom.  Dirac prescribes: assume Pauli exclusion for \( b \) and fill all the negative energy levels.  If we treat \( a, b \) as bosonic (commuting), then energy is unbounded from below.  This is a problem, because once you add interactions the system falls into the abyss, something that we can represent as sketched in \cref{fig:lecture22Abyss:lecture22AbyssFig1}.  Another representation of such unstable system that comes to mind is the inverted pendulum sketched in
 \cref{fig:lecture22:lecture22Fig2}.
 \imageFigure{../figures/phy2403-quantum-field-theory/lecture22AbyssFig1}{Unbounded potential well.}{fig:lecture22Abyss:lecture22AbyssFig1}{0.15}
@@ -81,16 +81,16 @@ Mathematically, we postulate that our operators
 All the \(a, b, a^\dagger, \cdots \)'s square to zero\footnote{Is it a coincidence that these look like lightlike four-vectors \( x^2 = x^\mu x^\mu = 0 \)?}
 \item
 Our creation and annihilation operators are presumed to have non-trivial \underline{anti}-commutation relations (unlike the scalar theory where we had the same sort of commutation relations)
-\begin{dmath}\label{eqn:qftLecture22:80}
+\begin{equation}\label{eqn:qftLecture22:80}
 \begin{aligned}
 \symmetric{a_\Bp^s}{a_\Bq^{r\dagger}} &= (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq) \\
 \symmetric{\tilde{b}_\Bp^s}{\tilde{b}_\Bq^{r\dagger}} &= (2 \pi)^3 \delta^{sr} \deltathree( \Bp - \Bq).
 \end{aligned}
-\end{dmath}
+\end{equation}
 \end{enumerate}
 
 The relations were used to cast the Hamiltonian in a more familiar form
-\begin{dmath}\label{eqn:qftLecture22:100}
+\begin{equation}\label{eqn:qftLecture22:100}
 H
 = \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
 \biglr{
@@ -117,7 +117,7 @@ zero point energy
 }
 - V_3
 \int \frac{d^3 p}{(2\pi)^3} 2 \omega_\Bp.
-\end{dmath}
+\end{equation}
 Fermions have negative zero-point energy \( -4 \times \) that of real massive scalar\footnote{%
 \index{supersymmetry}
 %\makedigression{
@@ -129,7 +129,7 @@ Supersymmetry transforms these into one another, and was thought to solve the co
 \index{single particle state}
 
 We now switch notations, drop the tildes, and ignore the zero point energy
-\begin{dmath}\label{eqn:qftLecture22:520}
+\begin{equation}\label{eqn:qftLecture22:520}
 H
 =
 \int \frac{d^3 p}{(2\pi)^3} \sum_{s = 1}^2 \omega_\Bp
@@ -139,25 +139,25 @@ H
    b_\Bp^{s \dagger}
    b_\Bp^s
 }
-\end{dmath}
+\end{equation}
 
 We define the Fock vacuum by
-\begin{dmath}\label{eqn:qftLecture22:120}
+\begin{equation}\label{eqn:qftLecture22:120}
 \begin{aligned}
 a_\Bp^s \ket{0} &= 0 \\
 b_\Bp^s \ket{0} &= 0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 and presume that we have relativistically normalized creation operators
-\begin{dmath}\label{eqn:qftLecture22:540}
+\begin{equation}\label{eqn:qftLecture22:540}
 \begin{aligned}
 a^s(p) \ket{0} &= \sqrt{ 2 \omega_\Bp} a_\Bp^{s\dagger} \ket{0} \\
 b^s(p) \ket{0} &= \sqrt{ 2 \omega_\Bp} b_\Bp^{s\dagger} \ket{0}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Let's see how the Hamiltonian acts on each of our possible a single particle states (with momentum \( \Bp \) and spin \( r \))
-\begin{dmath}\label{eqn:qftLecture22:140}
+\begin{equation}\label{eqn:qftLecture22:140}
 H \ket{\Bp, r}
 =
 H
@@ -214,7 +214,7 @@ a_\Bq^s
 }
 =
 \omega_\Bp \ket{\Bp, r}.
-\end{dmath}
+\end{equation}
 The Hamiltonian has the expected energy operator characteristics.  This is also clearly the case for our \( b \) operators too.
 
 \section{Spacetime translation symmetries.}
@@ -222,26 +222,26 @@ The Hamiltonian has the expected energy operator characteristics.  This is also 
 
 %There's a ``use Noether's theorem'' comment associated with this.
 For the scalar field, using Noether's theorem, we identified the conserved charge of a spatial translation as the momentum operator
-\begin{dmath}\label{eqn:momentumDirac:40}
+\begin{equation}\label{eqn:momentumDirac:40}
 P^i = \int d^3 x T^{0i} = - \int d^3 x \pi(x) \spacegrad \phi(x),
-\end{dmath}
+\end{equation}
 and if we plugged in the creation and annihilation operator representation of \( \pi, \phi \), out comes
-\begin{dmath}\label{eqn:momentumDirac:60}
+\begin{equation}\label{eqn:momentumDirac:60}
 \BP =
 \inv{2} \int \frac{d^3 q}{(2\pi)^3} \Bp \lr{ a_\Bp^\dagger a_\Bp + a_\Bp a_\Bp^\dagger},
-\end{dmath}
+\end{equation}
 (plus \( e^{\pm 2 i \omega_\Bp t} \) terms that we can argue away.)
 
 For the Dirac field, this works the same way if we systematically apply Noether's theorem.  In particular, for a spacetime translation
-\begin{dmath}\label{eqn:momentumDirac:80}
+\begin{equation}\label{eqn:momentumDirac:80}
 x^\mu \rightarrow x^\mu + a^\mu,
-\end{dmath}
+\end{equation}
 we find
-\begin{dmath}\label{eqn:momentumDirac:100}
+\begin{equation}\label{eqn:momentumDirac:100}
 \delta \Psi = -a^\mu \partial_\mu \Psi,
-\end{dmath}
+\end{equation}
 so for the Dirac Lagrangian, we have
-\begin{dmath}\label{eqn:momentumDirac:120}
+\begin{equation}\label{eqn:momentumDirac:120}
 \delta \LL
 = \delta \lr{ \oPsi \lr{ i \gamma^\mu \partial_\mu - m } \Psi }
 =
@@ -256,22 +256,22 @@ so for the Dirac Lagrangian, we have
 -a^\sigma \partial_\sigma \LL
 =
 \partial_\sigma (-a^\sigma \LL),
-\end{dmath}
+\end{equation}
 i.e. \( J^\mu = -a^\mu \LL \).
 To plugging this into the Noether current calculating machine, we have
-\begin{dmath}\label{eqn:momentumDirac:160}
+\begin{equation}\label{eqn:momentumDirac:160}
 \PD{(\partial_\mu \Psi)}{\LL}
 =
 \PD{(\partial_\mu \Psi)}{} \lr{ \oPsi i \gamma^\sigma \partial_\sigma \Psi - m \oPsi \Psi }
 =
 \oPsi i \gamma^\mu,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:momentumDirac:180}
+\begin{equation}\label{eqn:momentumDirac:180}
 \PD{(\partial_\mu \oPsi)}{\LL} = 0,
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:momentumDirac:140}
+\begin{equation}\label{eqn:momentumDirac:140}
 j^\mu
 =
 (\delta \oPsi) \PD{(\partial_\mu \oPsi)}{\LL}
@@ -293,25 +293,25 @@ j^\mu
    \oPsi i \gamma^\mu \partial^\nu \Psi
    + g^{\mu\nu} \LL
 }.
-\end{dmath}
+\end{equation}
 
 We can now define an energy-momentum tensor
-\begin{dmath}\label{eqn:momentumDirac:200}
+\begin{equation}\label{eqn:momentumDirac:200}
 T^{\mu\nu}
 =
    \oPsi i \gamma^\mu \partial^\nu \Psi
    + g^{\mu\nu} \LL.
-\end{dmath}
+\end{equation}
 A couple things are of notable in this tensor.  One is that it is not symmetric, and there's doesn't appear to be any hope
 of making it so.  For example, the space+time components are way different
-\begin{dmath}\label{eqn:momentumDirac:220}
+\begin{equation}\label{eqn:momentumDirac:220}
 \begin{aligned}
 T^{0k} &= \oPsi i \gamma^0 \partial^k \Psi \\
 T^{k0} &= \oPsi i \gamma^k \partial^0 \Psi,
 \end{aligned}
-\end{dmath}
+\end{equation}
 so if we want a momentum like creature, we have to use \( T^{0k} \), not \( T^{k0} \).  The charge associated with that current is
-\begin{dmath}\label{eqn:momentumDirac:240}
+\begin{equation}\label{eqn:momentumDirac:240}
 Q^k
 =
 \int d^3 x
@@ -319,16 +319,15 @@ Q^k
 =
 \int d^3 x
 \Psi^\dagger (-i \partial_k) \Psi,
-\end{dmath}
+\end{equation}
 or translating from component to vector form
-\begin{dmath}\label{eqn:momentumDirac:260}
+\begin{equation}\label{eqn:momentumDirac:260}
 \BP =
 \int d^3 x
 \Psi^\dagger (-i \spacegrad) \Psi,
-\end{dmath}
+\end{equation}
 which is the how the momentum operator is first stated in \citep{peskin1995introduction}.  Here the vector notation doesn't have any specific representation, but it is interesting to observe how this is directly related to the massless Dirac Lagrangian
-
-\begin{dmath}\label{eqn:momentumDirac:280}
+\begin{equation}\label{eqn:momentumDirac:280}
 \LL(m = 0)
 =
 \oPsi i \gamma^\mu \partial_\mu \Psi
@@ -338,16 +337,16 @@ which is the how the momentum operator is first stated in \citep{peskin1995intro
 \Psi^\dagger i (\partial_0 + \gamma_0 \gamma^k \partial_k) \Psi
 =
 \Psi^\dagger i (\partial_0 - \gamma_0 \gamma_k \partial_k ) \Psi,
-\end{dmath}
+\end{equation}
 but since \( \gamma_0 \gamma_k \) is a \( 4 \times 4 \) representation of the Pauli matrix \( \sigma_k \)\footnote{There is ambiguity as to what order of products \( \gamma_0 \gamma_k \), or \( \gamma_k \gamma_0 \) to pick to represent the Pauli basis (\citep{doran2003gap} uses \( \gamma_k \gamma_0 \)), but we also have sign ambiguity in assembling a Noether charge from the conserved current, so I don't think that matters.}
 Lagrangian itself breaks down into
-\begin{dmath}\label{eqn:momentumDirac:300}
+\begin{equation}\label{eqn:momentumDirac:300}
 \LL(m = 0)
 =
 \Psi^\dagger i \partial_0 \Psi
 +
 \Bsigma \cdot \lr{ \Psi^\dagger (-i\spacegrad) \Psi },
-\end{dmath}
+\end{equation}
 components, and lo and behold, out pops the momentum operator density!  Some part of this should be expected this since the Dirac equation in momentum space is just \( (\slashed{p} - m)e^{-i p \cdot x} = 0 \), so there is an intimate connection with the operator portion and momentum.
 
 \maketheorem{Ladder form of the momentum operator.}{thm:qftLecture22:560}{
@@ -366,34 +365,34 @@ The momentum operator can be written as
 
 \begin{proof}
 To derive this, we have to assign meaning to \( \BP = \int \Psi^\dagger (-i \spacegrad) \Psi \).  There is an implied basis for these vectors that presumably commutes with \( \Psi, \Psi^\dagger \).  Let's suppose that we have a standard orthonormal basis for \R{3} \( \setlr{\Be_1, \Be_2, \Be_3} \), so that our two vectors can be written.
-\begin{dmath}\label{eqn:qftLecture22:720}
+\begin{equation}\label{eqn:qftLecture22:720}
 \begin{aligned}
 \BP &= \sum_{k = 1}^3 \Be_k P^k \\
 \spacegrad &= \sum_{k = 1}^3 \Be_k \partial_k = -\sum_{k = 1}^3 \Be_k \partial^k.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Now we can express the momentum operator in coordinate form (sums implied), as
-\begin{dmath}\label{eqn:qftLecture22:740}
+\begin{equation}\label{eqn:qftLecture22:740}
 \Be_k P^k = \int d^3 x \Psi^\dagger (i \Be_k \partial^k) \Psi,
-\end{dmath}
+\end{equation}
 so if we can commute these assumed basis elements \( \Be_k \) with \( \Psi^\dagger\) we have
-\begin{dmath}\label{eqn:qftLecture22:760}
+\begin{equation}\label{eqn:qftLecture22:760}
 P^k = i\int d^3 x \Psi^\dagger \partial^k \Psi.
-\end{dmath}
+\end{equation}
 Note that this disagrees with \citep{LukeQFT}, but I believe it is correct (and it works).
 
 Inserting the field representations (\citep{peskin1995introduction} eq. 3.99, 3.100)
-\begin{dmath}\label{eqn:qftLecture22:580}
+\begin{equation}\label{eqn:qftLecture22:580}
 \begin{aligned}
 \Psi(x) &= \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}} \sum_{s = 1}^2
 \lr{ a_\Bp^s u^s(p) e^{-i p \cdot x} + b_\Bp^{s \dagger} v^s(p) e^{i p \cdot x} } \\
 \oPsi(x) &= \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq}} \sum_{r = 1}^2
 \lr{ b_\Bq^r \vbar^r(q) e^{-i q \cdot x} + a_\Bq^{r \dagger} \ubar^r(q) e^{i q \cdot x} },
 \end{aligned}
-\end{dmath}
+\end{equation}
 we can now compute
-\begin{dmath}\label{eqn:qftLecture22:600}
+\begin{equation}\label{eqn:qftLecture22:600}
 \begin{aligned}
 P^k
 &=
@@ -456,17 +455,17 @@ p^k
    u^s(\Bp)
 }.
 \end{aligned}
-\end{dmath}
+\end{equation}
 Using
-\begin{dmath}\label{eqn:qftLecture22:780}
+\begin{equation}\label{eqn:qftLecture22:780}
 \begin{aligned}
 v^{r \dagger}(-\Bp) u^s(\Bp) &= u^{r\dagger}(\Bp) v^s(-\Bp) = 0 \\
 u^{r\dagger}(\Bp) u^s(\Bp) &= v^{r\dagger}(\Bp) v^s(\Bp) = 2 \omega_\Bp \delta^{sr},
 \end{aligned}
-\end{dmath}
+\end{equation}
 (\cref{thm:qftLecture21:1261}, \cref{eqn:qftLecture21:1200})
 the frequency dependent cross terms are killed\footnote{For the Klein-Gordon scalar field we had to work much harder to argue those cross terms away in the momentum operator.}, and the rest simplify to give
-\begin{dmath}\label{eqn:qftLecture22:620}
+\begin{equation}\label{eqn:qftLecture22:620}
 P^k
 =
 \int \frac{d^3 p}{ (2 \pi)^3 }
@@ -484,7 +483,7 @@ p^k
    a_\Bp^{r \dagger}
    a_\Bp^r
 }.
-\end{dmath}
+\end{equation}
 This has a vacuum term that can be ignored, so a final multiplication with and sum over the basis vectors \( \Be_k \), completes the proof.
 \end{proof}
 
@@ -498,11 +497,11 @@ The eigenvalues of the momentum operator with respect to single particle momentu
 
 \begin{proof} (partial)
 Introduce a state associated with a fermion creation operator
-\begin{dmath}\label{eqn:qftLecture22:660}
+\begin{equation}\label{eqn:qftLecture22:660}
 \ket{\Bq, r} = \sqrt{ 2 \omega_\Bq } a_\Bq^{r\dagger} \ket{0}.
-\end{dmath}
+\end{equation}
 The action of the momentum operator on such as state is
-\begin{dmath}\label{eqn:qftLecture22:680}
+\begin{equation}\label{eqn:qftLecture22:680}
 \BP
 \ket{\Bq, r}
 =
@@ -538,7 +537,7 @@ The action of the momentum operator on such as state is
 =
 \Bq
 \ket{\Bq, r}.
-\end{dmath}
+\end{equation}
 \end{proof}
 Clearly the same argument holds for anti-fermion states.
 
@@ -547,16 +546,16 @@ Clearly the same argument holds for anti-fermion states.
 \index{angular momentum operator}
 
 Under Lorentz transformation, including rotations:
-\begin{dmath}\label{eqn:qftLecture22:200}
+\begin{equation}\label{eqn:qftLecture22:200}
 \begin{aligned}
 \Psi(x) &\rightarrow \Psi'(x') = \Lambda_{1/2} \Psi(x) \\
 \delta \Psi(x) &= \Psi'(x) - \Psi(x) \\
 \Lambda_{1/2} &= e^{-\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}} \approx 1 - \frac{i \omega_{\mu\nu}}{2} S^{\mu\nu} \\
 \Psi'(x) &= \Lambda_{1/2} \Psi(\Lambda^{-1} x).
 \end{aligned}
-\end{dmath}
+\end{equation}
 For a rotation around \( \zcap \) only \( \omega_{12} \) is non-zero.  We also have \( S^{12} = S^{21} \) and
-\begin{dmath}\label{eqn:qftLecture22:800}
+\begin{equation}\label{eqn:qftLecture22:800}
 S^{12}
 = \frac{i}{4} \antisymmetric{\gamma^1}{\gamma^2}
 = \frac{i}{2} \gamma^1 \gamma^2
@@ -584,7 +583,7 @@ S^{12}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 so
 \begin{equation}\label{eqn:qftLecture22:820}
 -\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
@@ -598,17 +597,17 @@ so
 \end{bmatrix}.
 \end{equation}
 If we let \( \omega_{12} = \alpha \), we have
-\begin{dmath}\label{eqn:qftLecture22:220}
+\begin{equation}\label{eqn:qftLecture22:220}
 \Lambda_{1/2} =
 1 - \frac{i \alpha}{2}
 \begin{bmatrix}
 \sigma^3 & 0 \\
 0 & \sigma^3
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 
 To compute the in the field we also need
-\begin{dmath}\label{eqn:qftLecture22:860}
+\begin{equation}\label{eqn:qftLecture22:860}
 \Psi(\Lambda^{-1} x)
 =
 \Psi(x^\mu - \ultensor{\omega}{\mu}{\nu} x^\nu)
@@ -640,9 +639,9 @@ x_\nu \partial_\sigma \Psi(x)
 }
 =
 \Psi(x) - \alpha (\Bx \cross \spacegrad)_z \Psi(x).
-\end{dmath}
+\end{equation}
 We can now compute the variation of the field
-\begin{dmath}\label{eqn:qftLecture22:840}
+\begin{equation}\label{eqn:qftLecture22:840}
 \delta \Psi
 =
 \Lambda_{1/2} \Psi(\Lambda^{-1} x) - \Psi(x)
@@ -666,9 +665,9 @@ We can now compute the variation of the field
 \end{bmatrix} \Psi
 - \alpha (\Bx \cross \spacegrad)_z \Psi(x)
 + O(\alpha^2).
-\end{dmath}
+\end{equation}
 %Generalizing to arbitary rotation orientation, to first order, the field variation is
-%\begin{dmath}\label{eqn:qftLecture22:880}
+%\begin{equation}\label{eqn:qftLecture22:880}
 %\delta \Psi
 %=
 %- \frac{i \alpha}{2}
@@ -677,9 +676,9 @@ We can now compute the variation of the field
 %0 & \Bsigma
 %\end{bmatrix} \Psi
 %- \alpha (\Bx \cross \spacegrad) \Psi(x).
-%\end{dmath}
+%\end{equation}
 Because the Dirac Lagrangian is Lorentz invariant, the Noether current has no \( J^\mu \) term, and is
-\begin{dmath}\label{eqn:qftLecture22:240}
+\begin{equation}\label{eqn:qftLecture22:240}
 j^\mu_\alpha
 =
 \PD{(\partial_\mu \Psi)}{\LL}
@@ -695,9 +694,9 @@ j^\mu_\alpha
    - \alpha (\Bx \cross \spacegrad)_z
 }
 \Psi.
-\end{dmath}
+\end{equation}
 In particular, the conserved charge (setting \( \alpha = 1 \)) is
-\begin{dmath}\label{eqn:qftLecture22:900}
+\begin{equation}\label{eqn:qftLecture22:900}
 J^0
 =
 \int d^3 x
@@ -711,9 +710,9 @@ J^0
    - i (\Bx \cross \spacegrad)_z
 }
 \Psi.
-\end{dmath}
+\end{equation}
 Generalizing to arbitrary rotation orientation, this can be written out as
-\begin{dmath}\label{eqn:qftLecture22:920}
+\begin{equation}\label{eqn:qftLecture22:920}
 \BJ = \int d^3 x \Psi^\dagger(x) \biglr{
 \mathLabelBox[ labelstyle={below of=m\themathLableNode, below of=m\themathLableNode} ]
 {
@@ -731,24 +730,24 @@ orbital angular momentum
 spin angular momentum
 }
 } \Psi,
-\end{dmath}
+\end{equation}
 where
-\begin{dmath}\label{eqn:qftLecture22:260}
+\begin{equation}\label{eqn:qftLecture22:260}
 \BOne \otimes \Bsigma =
 \begin{bmatrix}
 \Bsigma & 0 \\
 0 & \Bsigma
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 and where the orbital and spin angular momenta have been called out.  A nice video treatment of this topic can be found in \citep{tobiasQFTL16}.
 
 For the rest frame of a particle (zero momentum), \citep{peskin1995introduction} makes an argument that
-\begin{dmath}\label{eqn:qftLecture22:280}
+\begin{equation}\label{eqn:qftLecture22:280}
 \begin{aligned}
 J^3 a_\Bp^{s\dagger} \ket{0} &= \pm \inv{2} \evalbar{ a_\Bp^{s\dagger} \ket{0}}{\Bp = 0} \\
 J^3 b_\Bp^{s\dagger} \ket{0} &= \mp \inv{2} \evalbar{ b_\Bp^{s\dagger} \ket{0}}{\Bp = 0}.
 \end{aligned}
-\end{dmath}
+\end{equation}
 where the \( + \) is for \( s = 1 \) and the \( - \) is for \( s = 2 \).
 The eigenvectors of the angular momentum operator are the single particle states, with eigenvalues \( \pm 1/2 \), where the sign of the eigenvalues toggles for anti-fermions.
 
@@ -757,28 +756,28 @@ The eigenvectors of the angular momentum operator are the single particle states
 \index{symmetry!\(U(1)_V\)}
 \index{electronic charge}
 We also have a \( U(1) \) global symmetry which implies charge.  If we let
-\begin{dmath}\label{eqn:qftLecture22:320}
+\begin{equation}\label{eqn:qftLecture22:320}
 \begin{aligned}
 \Psi &\rightarrow e^{i \alpha} \Psi \\
 \oPsi &\rightarrow e^{-i \alpha} \oPsi,
 \end{aligned}
-\end{dmath}
+\end{equation}
 then
-\begin{dmath}\label{eqn:qftLecture22:340}
+\begin{equation}\label{eqn:qftLecture22:340}
 j^\mu
 = \PD{(\partial_\mu \Psi)}{\LL} \delta \Psi
 = \PD{(\partial_\mu \Psi)}{\LL} i \alpha \Psi
 = \oPsi i \gamma^\mu i \alpha \Psi
 = -\oPsi \gamma^\mu \alpha \Psi
 \equiv - \alpha J^\mu,
-\end{dmath}
+\end{equation}
 that is
-\begin{dmath}\label{eqn:qftLecture22:360}
+\begin{equation}\label{eqn:qftLecture22:360}
 J^\mu = \oPsi \gamma^\mu \Psi
-\end{dmath}
+\end{equation}
 
 Define the charge as
-\begin{dmath}\label{eqn:qftLecture22:380}
+\begin{equation}\label{eqn:qftLecture22:380}
 Q
 = \int d^3x J^0
 = \int d^3x \oPsi \gamma^0 \Psi
@@ -821,7 +820,7 @@ Q
    b_\Bp^{s \dagger}
    b_\Bp^s
 },
-\end{dmath}
+\end{equation}
 where the expansion of \( \Psi^\dagger \Psi \) was lifted from \cref{eqn:qftLecture22:600} (removing the \( p^k \)'s and flipping all signs positive),
 and where any charge associated with the Dirac sea has been dropped.
 
@@ -860,7 +859,7 @@ where
 See \nbref{uvspinors.nb} for a proof.
 
 Observe that \( \gamma_5^\dagger = \gamma_5 \)
-\begin{dmath}\label{eqn:qftLecture22:700}
+\begin{equation}\label{eqn:qftLecture22:700}
 \gamma_5^\dagger
 =
 -i
@@ -880,15 +879,15 @@ Observe that \( \gamma_5^\dagger = \gamma_5 \)
 \gamma_2
 \gamma_1
 = \gamma^5.
-\end{dmath}
+\end{equation}
 It can also be shown that
-\begin{dmath}\label{eqn:qftLecture22:460}
+\begin{equation}\label{eqn:qftLecture22:460}
 \symmetric{\gamma_5}{\gamma^\mu} = 0.
-\end{dmath}
+\end{equation}
 See \nbref{uvspinors.nb} for a proof.
 
 Under this transformation
-\begin{dmath}\label{eqn:qftLecture22:480}
+\begin{equation}\label{eqn:qftLecture22:480}
 \oPsi i \gamma^\mu \partial_\mu \Psi
 \rightarrow
 \lr{ \Psi^\dagger e^{-i \alpha \gamma_5 } \gamma^0} i \gamma^\mu \partial_\mu \lr{ e^{i \alpha \gamma_5 } \Psi }
@@ -896,18 +895,18 @@ Under this transformation
 \lr{ \Psi^\dagger \gamma^0 e^{ i \alpha \gamma_5 } } i e^{-i \alpha \gamma_5 } \gamma^\mu \partial_\mu \Psi
 =
 \Psi^\dagger \gamma^0 i \gamma^\mu \partial_\mu \Psi,
-\end{dmath}
+\end{equation}
 since the anticommutator property \cref{eqn:qftLecture22:460} implies \( e^{i \alpha \gamma_5 } \gamma^\mu = \gamma^\mu e^{-i\alpha \gamma_5} \).
 
 Also
-\begin{dmath}\label{eqn:qftLecture22:500}
+\begin{equation}\label{eqn:qftLecture22:500}
 m \oPsi \Psi
 \rightarrow
 m \lr{ \Psi^\dagger e^{-i \alpha \gamma_5 }} \gamma^0 \lr{ e^{i \alpha \gamma_5 } \Psi }
 =
 m \oPsi
 e^{2 i \alpha \gamma_5} \Psi,
-\end{dmath}
+\end{equation}
 We see that for \( m \ne 0 \) the axial \( U(1) \) transformation is only a symmetry when \( \alpha = \pi \).  This is called the \( Z_2 \) subgroup.
 
 \section{CPT symmetries.}

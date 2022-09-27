@@ -50,29 +50,29 @@
 \section{Review.}
 
 Given a field \( \phi(t_0, \Bx) \), satisfying the commutation relations
-\begin{dmath}\label{eqn:qftLecture14:20}
+\begin{equation}\label{eqn:qftLecture14:20}
 \antisymmetric{\pi(t_0, \Bx)}{\phi(t_0, \By)} = -i \deltathree(\Bx - \By),
-\end{dmath}
+\end{equation}
 we introduced an interaction picture field given by
-\begin{dmath}\label{eqn:qftLecture14:40}
+\begin{equation}\label{eqn:qftLecture14:40}
 \phi_I(t, x) = e^{i H_0(t- t_0)} \phi(t_0, \Bx) e^{-iH_0(t - t_0)},
-\end{dmath}
+\end{equation}
 related to the Heisenberg picture representation by
-\begin{dmath}\label{eqn:qftLecture14:60}
+\begin{equation}\label{eqn:qftLecture14:60}
 \phi_H(t, x)
 = e^{i H(t- t_0)} \phi(t_0, \Bx) e^{-iH(t - t_0)}
 = U^\dagger(t, t_0) \phi_I(t, \Bx) U(t, t_0),
-\end{dmath}
+\end{equation}
 where \( U(t, t_0) \) is the time evolution operator.
-\begin{dmath}\label{eqn:qftLecture14:80}
+\begin{equation}\label{eqn:qftLecture14:80}
 U(t, t_0) =
 e^{i H_0(t - t_0)}
 e^{-i H(t - t_0)}
-\end{dmath}
+\end{equation}
 We argued that
-\begin{dmath}\label{eqn:qftLecture14:100}
+\begin{equation}\label{eqn:qftLecture14:100}
 i \PD{t}{} U(t, t_0) = H_{\text{I,int}}(t) U(t, t_0),
-\end{dmath}
+\end{equation}
 and found the ``glorious expression''
 \boxedEquation{eqn:qftLecture14:120}{
 \begin{aligned}
@@ -84,59 +84,59 @@ U(t, t_0)
 }
 
 However, what we are really after is
-\begin{dmath}\label{eqn:qftLecture14:140}
+\begin{equation}\label{eqn:qftLecture14:140}
 \bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega}.
-\end{dmath}
+\end{equation}
 Such a product has many labels and names, and we'll describe it as ``vacuum expectation values of time-ordered products of arbitrary \#s of local Heisenberg operators''.
 
 \section{Perturbation.}
 \index{perturbation}
 Following \S 4.2, \citep{peskin1995introduction}.
 
-\begin{dmath}\label{eqn:qftLecture14:160}
+\begin{equation}\label{eqn:qftLecture14:160}
 \begin{aligned}
 H &= \text{exact Hamiltonian} = H_0 + H_{\text{int}}
 \\
 H_0 &= \text{free Hamiltonian.
 }
 \end{aligned}
-\end{dmath}
+\end{equation}
 We know all about \( H_0 \) and assume that it has a lowest (ground state) \( \ket{0} \), the ``vacuum'' state of \( H_0 \).
 
 \( H \) has eigenstates, in particular \( H \) is assumed to have a unique ground state \( \ket{\Omega} \) satisfying
-\begin{dmath}\label{eqn:qftLecture14:180}
+\begin{equation}\label{eqn:qftLecture14:180}
 H \ket{\Omega}  = \ket{\Omega} E_0,
-\end{dmath}
+\end{equation}
 and has states \( \ket{n} \), representing excited (non-vacuum states with energies > \( E_0 \)).
 These states are assumed to be a complete basis
-\begin{dmath}\label{eqn:qftLecture14:200}
+\begin{equation}\label{eqn:qftLecture14:200}
 \BOne = \ket{\Omega}\bra{\Omega} + \sum_n \ket{n}\bra{n} + \int dn \ket{n}\bra{n}.
-\end{dmath}
+\end{equation}
 The latter terms may be written with a superimposed sum-integral notation as
-\begin{dmath}\label{eqn:qftLecture14:440}
+\begin{equation}\label{eqn:qftLecture14:440}
 \sum_n + \int dn
 =
 \SumInt_n,
-\end{dmath}
+\end{equation}
 so the identity operator takes the more compact form
-\begin{dmath}\label{eqn:qftLecture14:460}
+\begin{equation}\label{eqn:qftLecture14:460}
 \BOne = \ket{\Omega}\bra{\Omega} + \SumInt_n \ket{n}\bra{n}.
-\end{dmath}
+\end{equation}
 
 For some time \( T \) we have
-\begin{dmath}\label{eqn:qftLecture14:220}
+\begin{equation}\label{eqn:qftLecture14:220}
 e^{-i H T} \ket{0}
 = e^{-i H T}
 \lr{
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n \ket{n}\braket{n}{0}
 }.
-\end{dmath}
+\end{equation}
 
 We now wish to argue that the \( \SumInt_n \) term can be ignored.
 \paragraph{Argument 1:}
 
 This is something of a fast one, but one can consider a formal transformation \( T \rightarrow T(1 - i \epsilon) \), where \( \epsilon \rightarrow 0^+ \), and consider very large \( T \).  This gives
-\begin{dmath}\label{eqn:qftLecture14:240}
+\begin{equation}\label{eqn:qftLecture14:240}
 \lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+}
 e^{-i H T(1 - i \epsilon)} \ket{0}
 =
@@ -155,35 +155,35 @@ e^{-i E_0 T - E_0 \epsilon T}
 \lr{
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n e^{-i (E_n -E_0) T - \epsilon T (E_n - E_0)} \ket{n}\braket{n}{0}
 }.
-\end{dmath}
+\end{equation}
 The limits are evaluated by first taking \( T \) to infinity, then only after that take \( \epsilon \rightarrow 0^+ \).  Doing this, the sum is dominated by the ground state contribution, since each excited state also has a \( e^{-\epsilon T(E_n - E_0)} \) suppression factor (in addition to the leading suppression factor).
 
 \paragraph{Argument 2:}
 With the hand waving required for the argument above, it's worth pointing other (less formal) ways to arrive at the same result.  We can write
-\begin{dmath}\label{eqn:qftLecture14:260}
+\begin{equation}\label{eqn:qftLecture14:260}
 \SumInt \ket{n}\bra{n} \rightarrow
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k}\bra{\Bp, k},
-\end{dmath}
+\end{equation}
 where \( k \) is some unknown quantity that we are summing over.
 If we have
-\begin{dmath}\label{eqn:qftLecture14:280}
+\begin{equation}\label{eqn:qftLecture14:280}
 H \ket{\Bp, k} = E_{\Bp, k} \ket{\Bp, k},
-\end{dmath}
+\end{equation}
 then
-\begin{dmath}\label{eqn:qftLecture14:300}
+\begin{equation}\label{eqn:qftLecture14:300}
 e^{-i H T} \SumInt \ket{n}\bra{n}
 =
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} \ket{\Bp, k} e^{-i E_{\Bp, k}} \bra{\Bp, k}.
-\end{dmath}
+\end{equation}
 If we take matrix elements
-\begin{dmath}\label{eqn:qftLecture14:320}
+\begin{equation}\label{eqn:qftLecture14:320}
 \bra{A}
 e^{-i H T} \SumInt \ket{n}\bra{n} \ket{B}
 =
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} \braket{A}{\Bp, k} e^{-i E_{\Bp, k}} \braket{\Bp, k}{B}
 =
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} e^{-i E_{\Bp, k}} f(\Bp).
-\end{dmath}
+\end{equation}
 If we assume that \( f(\Bp) \) is a well behaved smooth function, we have ``infinite'' frequency oscillation within the envelope provided by the amplitude of that function, as depicted in \cref{fig:RiemannLebesque:RiemannLebesqueFig1}.
 The Riemann-Lebesgue lemma \citep{wiki:RiemannLebesgue} describes such integrals, the result of which is that such an integral goes to zero.  This is a different sort of hand waving argument, but either way, we can argue that only the ground state contributes to the sum
 \cref{eqn:qftLecture14:220}
@@ -194,12 +194,11 @@ The Riemann-Lebesgue lemma \citep{wiki:RiemannLebesgue} describes such integrals
 \index{ground state}
 
 With the excited states ignored, we are left with
-\begin{dmath}\label{eqn:qftLecture14:340}
+\begin{equation}\label{eqn:qftLecture14:340}
 e^{-i H T} \ket{0} = e^{-i E_0 T} \ket{\Omega}\braket{\Omega}{0},
-\end{dmath}
+\end{equation}
 in the \( T \rightarrow \infty(1 - i \epsilon) \) limit.  We can now write the ground state as
-
-\begin{dmath}\label{eqn:qftLecture14:360}
+\begin{equation}\label{eqn:qftLecture14:360}
 \ket{\Omega}
 =
 \evalbar{
@@ -213,9 +212,9 @@ in the \( T \rightarrow \infty(1 - i \epsilon) \) limit.  We can now write the g
    e^{-i E_0 T} \braket{\Omega}{0}
    }
 }{ T \rightarrow \infty(1 - i \epsilon) }.
-\end{dmath}
+\end{equation}
 Shifting the very large \( T \rightarrow T + t_0 \) shouldn't change things, so
-\begin{dmath}\label{eqn:qftLecture14:480}
+\begin{equation}\label{eqn:qftLecture14:480}
 \ket{\Omega}
 =
 \evalbar{
@@ -223,9 +222,9 @@ Shifting the very large \( T \rightarrow T + t_0 \) shouldn't change things, so
    e^{-i E_0 (T + t_0) } \braket{\Omega}{0}
    }
 }{ T \rightarrow \infty(1 - i \epsilon) }.
-\end{dmath}
+\end{equation}
 %so we may insert an \( e^{-i H_0(-T -t_0)} \) factor without effect
-%\begin{dmath}\label{eqn:qftLecture14:500}
+%\begin{equation}\label{eqn:qftLecture14:500}
 %\ket{\Omega}
 %%=
 %%\evalbar{
@@ -233,15 +232,15 @@ Shifting the very large \( T \rightarrow T + t_0 \) shouldn't change things, so
 %%e^{-i E_0(t_0 - (-T))} \braket{\Omega}{0}
 %%}
 %%}{ T \rightarrow \infty(1 - i \epsilon) }.
-%%\end{dmath}
+%%\end{equation}
 
 A bit of manipulation shows that the operator in the numerator has the structure of a time evolution operator.
 %%With
-%%\begin{dmath}\label{eqn:qftLecture14:380}
+%%\begin{equation}\label{eqn:qftLecture14:380}
 %%U(t, t_0)
 %%= e^{i H_0(t - t_0)} e^{-i H(t - t_0)}
 %%= T \exp{\lr{ -i \int_{t_0}^t H_{\text{I,int}}(t') dt'}}
-%%\end{dmath}
+%%\end{equation}
 %%
 \paragraph{Claim: (DIY):}
 \Cref{eqn:qftLecture14:80}, \cref{eqn:qftLecture14:120} may be generalized to
@@ -251,12 +250,12 @@ T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}}.
 \end{equation}
 Observe that we recover \cref{eqn:qftLecture14:120} when \( t' = t_0 \).
 Using \cref{eqn:qftLecture14:400} we find
-\begin{dmath}\label{eqn:qftLecture14:520}
+\begin{equation}\label{eqn:qftLecture14:520}
 U(t_0, -T) \ket{0}
 = e^{i H_0(t_0 - t_0)} e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
 = e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
 = e^{-i H(t_0 + T)} \ket{0},
-\end{dmath}
+\end{equation}
 where we use the fact that \(
 %\begin{equation}\label{eqn:qftLecture14:540}
 e^{i H_0 \tau} \ket{0} = \lr{ 1 + i H_0 \tau + \cdots } \ket{0} = 1 \ket{0},
