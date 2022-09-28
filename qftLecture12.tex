@@ -62,14 +62,16 @@ As usual, we assume that it is possible to find a solution \( \phi \) by convolu
 \end{equation}
 \paragraph{Check:}
 \begin{equation}\label{eqn:qftLecture12:100}
+\begin{aligned}
 \lr{ \partial_\mu \partial^\mu + m^2} \phi(x)
-=
+&=
 i
 \lr{ \partial_\mu \partial^\mu + m^2}
 \int d^4 y G(x - y) j(y)
-=
+\\&=
 i \int d^4 y (-i) \deltafour(x - y) j(y)
-= j(x).
+\\&= j(x).
+\end{aligned}
 \end{equation}
 
 Also, as usual, we take out our Fourier transforms, the power tool of physics, and determine the structure of the Green's function by inverting the transform equation
@@ -101,14 +103,16 @@ The Green's function in the momentum domain is
 
 The inverse transform provides the spatial domain representation of the Green's function
 \begin{equation}\label{eqn:qftLecture12:200}
+\begin{aligned}
 G(x)
-=
+&=
 \int \frac{d^4 p}{(2 \pi)^4} e^{-i p \cdot x }
 \frac{i}{(p^0)^2 - \Bp^2 - m^2}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \int \frac{d p_0}{2 \pi} e^{-i p_0 x^0 }
 \frac{i}{(p_0 - \omega_\Bp)(p_0 + \omega_\Bp)}.
+\end{aligned}
 \end{equation}
 
 In the \( p_0 \) plane, we have two poles at \( p_0 = \pm \omega_\Bp \).
@@ -133,44 +137,48 @@ where \( -i (i \Imag(p_0) x_0) < 0 \).
 
 Here we pick up just the pole at \( p_0 = \omega_\Bp \), and take a negatively oriented path
 \begin{equation}\label{eqn:qftLecture12:220}
+\begin{aligned}
 G_\txtF
-=
+&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \int \frac{d p_0}{2 \pi} e^{-i p_0 x^0 }
 \frac{i}{(p_0 - \omega_\Bp)(p_0 + \omega_\Bp)}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 (-2 \pi i)
 \evalbar{\lr{ \frac{e^{-i p_0 x^0 }}{2 \pi}
 \frac{i}{p_0 + \omega_\Bp} }}{p_0 = \omega_p}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{-2 \pi i}{2 \pi} \frac{i e^{-i p_0 x^0 } }{2 \omega_\Bp}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{ e^{-i \omega_\Bp x^0 } }{2 \omega_\Bp}.
+\end{aligned}
 \end{equation}
 
 \paragraph{Case II.  \( x^0 < 0 \)}
 
 For \( x^0 < 0 \) we use an upper half plane contour with the same deformation around the poles.  This time
 \begin{equation}\label{eqn:qftLecture12:240}
+\begin{aligned}
 G_\txtF
-=
+&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \int \frac{d p_0}{2 \pi} e^{-i p_0 x^0 }
 \frac{i}{(p_0 - \omega_\Bp)(p_0 + \omega_\Bp)}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 (+ 2 \pi i)
 \evalbar{\lr{\frac{e^{-i p_0 x^0 }}{2 \pi}
 \frac{i}{p_0 - \omega_\Bp}}}{p_0 = -\omega_\Bp}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{+2 \pi i}{2 \pi} \frac{i e^{-i p_0 x^0 } }{-2 \omega_\Bp}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3} e^{i \Bp \cdot \Bx}
 \frac{ e^{i \omega_\Bp x^0 } }{2 \omega_\Bp}.
+\end{aligned}
 \end{equation}
 We've obtained
 a piecewise representation of the Green's function, where the only difference is the sign of the \( i \omega_\Bp x^0 \) exponential.
@@ -198,12 +206,14 @@ D(x)
 
 For the second integral, we make a change of variables \( \Bp \rightarrow -\Bp \) leaving
 \begin{equation}\label{eqn:qftLecture12:300}
+\begin{aligned}
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{i \Bp \cdot \Bx + i \omega_\Bp x^0}
-\rightarrow
+&\rightarrow
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{-i \Bp \cdot \Bx + i \omega_\Bp x^0}
-=
+\\&=
 \int \frac{d^3 p}{(2\pi)^3 2 \omega_\Bp} e^{-i p \cdot x}
-= D(-x),
+\\&= D(-x),
+\end{aligned}
 \end{equation}
 so
 %\begin{equation}\label{eqn:qftLecture12:320}
@@ -234,8 +244,9 @@ This can be shown by expansion.
 Since \( a_\Bq \ket{0} = 0 = \bra{0} a_\Bp^\dagger \), \cref{eqn:qftLecture12:380}
 reduces to
 \begin{equation}\label{eqn:qftLecture12:540}
+\begin{aligned}
 \bra{0} \phi(x) \phi(0) \ket{0}
-=
+&=
 \bra{0}
 \int
 \frac{d^3 p}{(2 \pi)^3}
@@ -244,7 +255,7 @@ reduces to
 \inv{\sqrt{2 \omega_\Bq}}
 \evalbar{\lr{ a_\Bp a_\Bq^\dagger e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 \ket{0}
-=
+\\&=
 \bra{0}
 \int
 \frac{d^3 p}{(2 \pi)^3}
@@ -264,7 +275,7 @@ reduces to
 }
 e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
 \ket{0}
-=
+\\&=
 \bra{0}
 \int
 \frac{d^3 p}{(2 \pi)^3}
@@ -276,9 +287,10 @@ e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
    (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 e^{-i p \cdot x} }}{p_0 = \omega_\Bp}
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} \evalbar{ \frac{e^{-i p \cdot x}}{2 \omega_\Bp} }
 {p_0 = \omega_\Bp}.
+\end{aligned}
 \end{equation}
 
 \section{Retarded Green's function.}
@@ -291,11 +303,12 @@ where \( D(x) \) is given by \cref{eqn:qftLecture12:280}.
 Proof: The upper half plane contour (\(x_0 < 0\)) is zero since it encloses no poles.  For the
 lower half plane contour we have
 \begin{equation}\label{eqn:qftLecture12:420}
+\begin{aligned}
 \evalbar{D_R(x)}{x_0 > 0}
-=
+&=
 i \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx} \int \frac{dp_0}{2 \pi} e^{-i p_0 x^0 }
 \frac{i}{(p_0 - \omega_\Bp)(p_0 + \omega_\Bp)}
-=
+\\&=
 i \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx} \frac{(-2 \pi i)}{2 \pi}
 \lr{
 e^{-i \omega_\Bp x^0 }
@@ -304,7 +317,7 @@ e^{-i \omega_\Bp x^0 }
 e^{i \omega_\Bp x^0 }
 \frac{i}{-2 \omega_\Bp}
 }
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} e^{i \Bp \cdot \Bx}
 \frac{1}{2 \omega_\Bp}
 \lr{
@@ -312,16 +325,19 @@ e^{-i \omega_\Bp x^0 }
 -
 e^{i \omega_\Bp x^0 }
 }
-=
+\\&=
 D(x) - D(-x).
+\end{aligned}
 \end{equation}
 
 What does the field look like in terms of the propagator?
 Assuming that \( \phi_0 \) satisfies the homogeneous equation, we have
 \begin{equation}\label{eqn:qftLecture12:440}
+\begin{aligned}
 \phi(x)
-= \phi_0(x) + i \int d^4 y D_R(x - y) j(y)
-= \phi_0(x) + i \int d^3 y d y_0 \Theta(x_0 - y_0) \lr{ D(x - y) - D(y - x) } j(y).
+&= \phi_0(x) + i \int d^4 y D_R(x - y) j(y)
+\\&= \phi_0(x) + i \int d^3 y d y_0 \Theta(x_0 - y_0) \lr{ D(x - y) - D(y - x) } j(y).
+\end{aligned}
 \end{equation}
 
 Imagine that we have a windowed source function \( j(y^0, \By) \), as sketched in \cref{fig:windowedImpulse:windowedImpulseFig5}.

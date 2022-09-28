@@ -40,10 +40,11 @@ P^k = \int d^3 x \pihat \partial^k \phihat = \int \frac{d^3 p}{(2\pi)^3} p^k a_\
 \end{equation}
 If I compute this, I get a normal ordered variation of this operator, but also get some time dependent terms.  Here's the computation (dropping hats)
 \begin{equation}\label{eqn:momentum:40}
+\begin{aligned}
 P^k
-= \int d^3 x \pihat \partial^k \phi
-= \int d^3 x \partial_0 \phi \partial^k \phi
-= \int d^3 x \frac{d^3 p d^3 q}{(2 \pi)^6} \inv{\sqrt{2 \omega_p 2 \omega_q} }
+&= \int d^3 x \pihat \partial^k \phi
+\\&= \int d^3 x \partial_0 \phi \partial^k \phi
+\\&= \int d^3 x \frac{d^3 p d^3 q}{(2 \pi)^6} \inv{\sqrt{2 \omega_p 2 \omega_q} }
 \partial_0
 \lr{
    a_\Bp e^{-i p \cdot x}
@@ -56,28 +57,34 @@ P^k
    +
    a_\Bq^\dagger e^{i q \cdot x}
 }.
+\end{aligned}
 \end{equation}
 The exponential derivatives are
 \begin{equation}\label{eqn:momentum:60}
+\begin{aligned}
 \partial_0 e^{\pm i p \cdot x}
-=
+&=
 \partial_0 e^{\pm i p_\mu x^\mu}
-=
+\\&=
 \pm i p_0
 \partial_0 e^{\pm i p \cdot x},
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:momentum:80}
+\begin{aligned}
 \partial^k e^{\pm i p \cdot x}
-=
+&=
 \partial^k e^{\pm i p^\mu x_\mu}
-=
+\\&=
 \pm i p^k e^{\pm i p \cdot x},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:momentum:100}
+\begin{aligned}
 P^k
-=
+&=
 -\int d^3 x \frac{d^3 p d^3 q}{(2 \pi)^6} \inv{\sqrt{2 \omega_p 2 \omega_q} }
 p_0 q^k
 \lr{
@@ -90,7 +97,7 @@ p_0 q^k
    +
    a_\Bq^\dagger e^{i q \cdot x}
 }
-=
+\\&=
 -\inv{2} \int d^3 x \frac{d^3 p d^3 q}{(2 \pi)^6} \sqrt{\frac{\omega_p}{\omega_q}} q^k
 \lr{
      a_\Bp a_\Bq e^{-i (p + q) \cdot x}
@@ -98,7 +105,7 @@ p_0 q^k
    - a_\Bp a_\Bq^\dagger e^{i (q - p) \cdot x}
    - a_\Bp^\dagger a_\Bq e^{i (p - q) \cdot x}
 }
-=
+\\&=
 \inv{2} \int \frac{d^3 p d^3 q}{(2 \pi)^3} \sqrt{\frac{\omega_p}{\omega_q}} q^k
 \lr{
    - a_\Bp a_\Bq e^{- i(\omega_\Bp + \omega_\Bq) t} \deltathree(\Bp + \Bq)
@@ -106,7 +113,7 @@ p_0 q^k
    + a_\Bp a_\Bq^\dagger e^{i(\omega_\Bq - \omega_\Bp) t} \deltathree(\Bp - \Bq)
    + a_\Bp^\dagger a_\Bq e^{i(\omega_\Bp - \omega_\Bq) t} \deltathree(\Bq - \Bp)
 }
-=
+\\&=
 \inv{2} \int \frac{d^3 p }{(2 \pi)^3} p^k
 \lr{
      a_\Bp^\dagger a_\Bp
@@ -114,6 +121,7 @@ p_0 q^k
    - a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
    - a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
 }.
+\end{aligned}
 \end{equation}
 
 What is the rationale for ignoring those time dependent terms?  Does normal ordering also implicitly drop any non-paired creation/annihilation operators?  If so, why?
@@ -132,24 +140,27 @@ T^{\mu\nu} = \partial^\mu \phi \partial^\nu \phi - g^{\mu\nu} \LL,
 \end{equation}
 and can be used to define the momenta
 \begin{equation}\label{eqn:momentum:140}
+\begin{aligned}
 \int d^3 x T^{0k}
-= \int d^3 x \partial^0 \phi \partial^k \phi
-= \int d^3 x \pi \partial^k \phi.
+&= \int d^3 x \partial^0 \phi \partial^k \phi
+\\&= \int d^3 x \pi \partial^k \phi.
+\end{aligned}
 \end{equation}
 Charge \( Q^i = \int d^3 x j^0 \) was conserved with respect to a limiting surface argument, and we can make a similar ``beer can integral'' argument for \( P^i \), integrating over a large time interval \( t \in [-T, T] \) as sketched in \cref{fig:spacetimeCylinder:spacetimeCylinderFig1}.  That is
 \begin{equation}\label{eqn:momentum:160}
+\begin{aligned}
 0
-=
+&=
 \partial_\mu \int d^4 x T^{0\mu}
-=
+\\&=
 \partial_0 \int d^4 x T^{00}
 +
 \partial_k \int d^4 x T^{0k}
-=
+\\&=
 \partial_0 \int_{-T}^T dt \int d^3 x T^{00}
 +
 \partial_k \int_{-T}^T dt \int d^3 x T^{0k}
-=
+\\&=
 \partial_0 \int_{-T}^T dt \int d^3 x T^{00}
 +
 \partial_k \int_{-T}^T dt
@@ -160,7 +171,7 @@ Charge \( Q^i = \int d^3 x j^0 \) was conserved with respect to a limiting surfa
    - a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
    - a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
 }
-=
+\\&=
 \int d^3 x \evalrange{T^{00}}{-T}{T}
 +
 T \partial_k
@@ -176,11 +187,13 @@ T \partial_k
      a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
    + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
 }.
+\end{aligned}
 \end{equation}
 %\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
 
 The first integral can be said to vanish if the field energy goes to zero at the time boundaries, and the last integral reduces to
 \begin{equation}\label{eqn:momentum:180}
+\begin{aligned}
 -\inv{2}
 \partial_k \int_{-T}^T dt
 \int \frac{d^3 p }{(2 \pi)^3} p^k
@@ -188,19 +201,20 @@ The first integral can be said to vanish if the field energy goes to zero at the
      a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
    + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
 }
-=
+&=
 -\int \frac{d^3 p }{2 (2 \pi)^3} p^k
 \lr{
      a_\Bp a_{-\Bp} \frac{\sin( -2 \omega_\Bp T )}{-2 \omega_\Bp}
    + a_\Bp^\dagger a_{-\Bp}^\dagger \frac{\sin( 2 \omega_\Bp T )}{2 \omega_\Bp}
 }
-=
+\\&=
 -\int \frac{d^3 p }{2 (2 \pi)^3} p^k
 \lr{
      a_\Bp a_{-\Bp} + a_\Bp^\dagger a_{-\Bp}^\dagger
 }
 \frac{\sin( 2 \omega_\Bp T )}{2 \omega_\Bp}
 .
+\end{aligned}
 \end{equation}
 The \( \sin \) term can be interpreted as a \( \sinc \) like function of \( \omega_\Bp \) which vanishes for large \( \Bp \).  It's not entirely \( \sinc \) like for a massive field as \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), which never hits zero, as shown in \cref{fig:sortOfSincFunction:sortOfSincFunctionFig1}.
 %\imageFigure{../figures/phy2403-quantum-field-theory/sortOfSincFunctionFig1}{\texorpdfstring{\(\sin(2 \omega_\Bp T)/\omega_\Bp\)}{(sin 2 omega T)/omega}}{fig:sortOfSincFunction:sortOfSincFunctionFig1}{0.3}

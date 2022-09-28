@@ -51,13 +51,15 @@ d^4 x' \rightarrow e^{4d} d^4 x.
 \end{equation}
 The components of the four-gradient transform as
 \begin{equation}\label{eqn:ProblemSet1Problem4:80}
+\begin{aligned}
 \PD{x'_\mu}{}
-=
+&=
 \PD{x'_\mu}{x_\mu}
 \PD{x_\mu}{}
-=
+\\&=
 e^{-d}
 \PD{x_\mu}{},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet1Problem4:100}
@@ -70,113 +72,124 @@ e^{-2d} F_{\mu\nu}.
 \end{equation}
 The action is therefore invariant
 \begin{equation}\label{eqn:ProblemSet1Problem4:120}
+\begin{aligned}
 S'
-= -\inv{4} \int d^4 x' F'_{\mu\nu} {F'}^{\mu\nu}
-= -\inv{4} \int e^{4d} d^4 x e^{2d} F_{\mu\nu} e^{2d} F^{\mu\nu}
-= -\inv{4} \int d^4 x F_{\mu\nu} F^{\mu\nu}
-= S.
+&= -\inv{4} \int d^4 x' F'_{\mu\nu} {F'}^{\mu\nu}
+\\&= -\inv{4} \int e^{4d} d^4 x e^{2d} F_{\mu\nu} e^{2d} F^{\mu\nu}
+\\&= -\inv{4} \int d^4 x F_{\mu\nu} F^{\mu\nu}
+\\&= S.
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:problemSet1:4b}
 We need the variation of the potential
 \begin{equation}\label{eqn:ProblemSet1Problem4:180}
+\begin{aligned}
 \delta A_{\nu}
-= A'_{\nu}(x) - A_{\nu}(x)
-= A'_{\nu}(e^{-d} x') - A_{\nu}(x)
-\approx A'_{\nu}((1 -d) x') - A_{\nu}(x)
-= e^{-d} A_{\nu}((1 -d) x') - A_{\nu}(x)
-\approx (1-d) \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}} - A_{\nu}
-=
+&= A'_{\nu}(x) - A_{\nu}(x)
+\\&= A'_{\nu}(e^{-d} x') - A_{\nu}(x)
+\\&\approx A'_{\nu}((1 -d) x') - A_{\nu}(x)
+\\&= e^{-d} A_{\nu}((1 -d) x') - A_{\nu}(x)
+\\&\approx (1-d) \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}} - A_{\nu}
+\\&=
 - d x^\alpha \partial_\alpha A_{\nu}
 - d \lr{ A_{\nu} - d x^\alpha \partial_\alpha A_{\nu}}
-\approx
+\\&\approx
 -d(1+ x^\alpha \partial_\alpha )A_{\nu},
+\end{aligned}
 \end{equation}
 and the variation of the field
 \begin{equation}\label{eqn:ProblemSet1Problem4:140}
+\begin{aligned}
 \delta F_{\mu\nu}
-= F'_{\mu\nu}(x) - F_{\mu\nu}(x)
-= F'_{\mu\nu}(e^{-d} x') - F_{\mu\nu}(x)
-\approx F'_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
-= e^{-2d} F_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
-\approx (1-2d) \lr{ F_{\mu\nu} - d x^\alpha \partial_\alpha F_{\mu\nu}} - F_{\mu\nu}
-=
+&= F'_{\mu\nu}(x) - F_{\mu\nu}(x)
+\\&= F'_{\mu\nu}(e^{-d} x') - F_{\mu\nu}(x)
+\\&\approx F'_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
+\\&= e^{-2d} F_{\mu\nu}((1 -d) x') - F_{\mu\nu}(x)
+\\&\approx (1-2d) \lr{ F_{\mu\nu} - d x^\alpha \partial_\alpha F_{\mu\nu}} - F_{\mu\nu}
+\\&=
 - d x^\alpha \partial_\alpha F_{\mu\nu}
 -2 d \lr{ F_{\mu\nu} - d x^\alpha \partial_\alpha F_{\mu\nu}}
-\approx
+\\&\approx
 -d(2+ x^\alpha \partial_\alpha )
 F_{\mu\nu},
+\end{aligned}
 \end{equation}
 so the variation of the Lagrangian is
 \begin{equation}\label{eqn:ProblemSet1Problem4:160}
+\begin{aligned}
 \delta \LL
-=
+&=
 -\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
-=
+\\&=
 -\inv{2}
 (-d)
 F^{\mu\nu}
 (2+ x^\alpha \partial_\alpha )F_{\mu\nu}
-=
+\\&=
 (d)
 F^{\mu\nu}
 F_{\mu\nu}
 +
 \frac{d}{2}
 F^{\mu\nu} x^\alpha \partial_\alpha F_{\mu\nu}
-=
+\\&=
 (d)
 F^{\mu\nu}
 F_{\mu\nu}
 +
 \frac{d}{4}
 x^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
-=
+\\&=
 -4 (d) \LL - (d) x^\alpha \partial_\alpha \LL
-=
+\\&=
 -4 (d) \LL - (d) \lr{ \partial_\alpha (x^\alpha \LL) - \LL \partial_\alpha x^\alpha }
-=
+\\&=
 - (d) \partial_\alpha (x^\alpha \LL),
+\end{aligned}
 \end{equation}
 so the variational current (what is this called?) is
 \begin{equation}\label{eqn:ProblemSet1Problem4:200}
-J^\mu_d
-=
-- (d) x^\mu \LL.
+J^\mu_d = - (d) x^\mu \LL.
 \end{equation}
 Finally, we need
 \begin{equation}\label{eqn:ProblemSet1Problem4:220}
+\begin{aligned}
 \PD{(\partial_\mu A_\nu)}{\LL}
-=
+&=
 -\inv{2}
 F^{\alpha\beta}
 \PD{(\partial_\mu A_\nu)}{}\lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
-=
+\\&=
 -\inv{2}
 \lr{
    F^{\mu\nu}
    -
    F^{\nu\mu}
 }
-=
+\\&=
 -F^{\mu\nu}.
+\end{aligned}
 \end{equation}
 Combining \cref{eqn:ProblemSet1Problem4:220}, \cref{eqn:ProblemSet1Problem4:200}, and \cref{eqn:ProblemSet1Problem4:180} we can calculate the conserved current, which is (for \( d = 1 \)) is
 \begin{equation}\label{eqn:ProblemSet1Problem4:240}
+\begin{aligned}
 j^\mu_{\text{dil}}
-=
+&=
 \PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_d
-=
+\\&=
 F^{\mu\nu}
 \lr{
    A_\nu + x^\alpha \partial_\alpha A_{\nu}
 }
 +
 x^\mu \LL.
+\end{aligned}
 \end{equation}
 This can be put into a slightly nicer form
 \begin{equation}\label{eqn:ProblemSet1Problem4:260}
+\begin{aligned}
 j^\mu_{\text{dil}}
-=
+&=
 F^{\mu\nu}
    A_\nu
 +
@@ -187,7 +200,7 @@ F^{\mu\nu} x^\alpha
 \partial_\nu A_{\alpha}
 +
 x^\mu \LL
-=
+\\&=
 \cancel{
 F^{\mu\nu}
    A_\nu
@@ -211,7 +224,7 @@ F^{\mu\nu}
 }
 +
 x^\mu \LL
-=
+\\&=
 F^{\mu\nu} x^\alpha
 F_{\alpha\nu}
 +
@@ -221,6 +234,7 @@ F_{\alpha\nu}
 }
 +
 x^\mu \LL,
+\end{aligned}
 \end{equation}
 or
 \boxedEquation{eqn:ProblemSet1Problem4:280}{
@@ -241,11 +255,13 @@ or
 }
 It was hinted that the complete derivative of an antisymmetric tensor may be dropped from the current, that's because
 \begin{equation}\label{eqn:ProblemSet1Problem4:560}
+\begin{aligned}
 \partial_\mu \lr{ j^\mu + \partial_\nu C^{\mu\nu} }
-=
+&=
 \partial_\mu j^\mu + \partial_\mu \partial_\nu C^{\mu\nu}
-=
+\\&=
 \partial_\mu j^\mu,
+\end{aligned}
 \end{equation}
 since
 the derivative operator \( \partial_\mu\partial_\nu \) is symmetric, and the sum of the contraction of symmetric and antisymmetric tensors is zero.  Since the
@@ -267,33 +283,39 @@ A_\nu(x) \rightarrow A_\nu'(x') = A_\nu(x) + a^\alpha \partial_\alpha A_\nu.
 \end{subequations}
 The gradient \( \partial_\mu \) and volume element \( d^4 x\) are unchanged by a translation transformation.  The potential transforms as
 \begin{equation}\label{eqn:ProblemSet1Problem4:360}
+\begin{aligned}
 \delta A_\nu
-= A_\nu'(x) - A_\nu(x)
-= A_\nu'(x' - a) - A_\nu(x)
-\approx A_\nu(x) - a^\alpha \partial_\alpha A_\nu - A_\nu(x)
-=
+&= A_\nu'(x) - A_\nu(x)
+\\&= A_\nu'(x' - a) - A_\nu(x)
+\\&\approx A_\nu(x) - a^\alpha \partial_\alpha A_\nu - A_\nu(x)
+\\&=
 - a^\alpha \partial_\alpha A_\nu.
+\end{aligned}
 \end{equation}
 The field transforms as
 \begin{equation}\label{eqn:ProblemSet1Problem4:380}
+\begin{aligned}
 \delta F_{\mu\nu}
-= F_{\mu\nu}'(x) - F_{\mu\nu}(x)
-= F_{\mu\nu}'(x' - a) - F_{\mu\nu}(x)
-\approx F_{\mu\nu}(x) - a^\alpha \partial_\alpha F_{\mu\nu} - F_{\mu\nu}(x)
-=
+&= F_{\mu\nu}'(x) - F_{\mu\nu}(x)
+\\&= F_{\mu\nu}'(x' - a) - F_{\mu\nu}(x)
+\\&\approx F_{\mu\nu}(x) - a^\alpha \partial_\alpha F_{\mu\nu} - F_{\mu\nu}(x)
+\\&=
 - a^\alpha \partial_\alpha F_{\mu\nu}.
+\end{aligned}
 \end{equation}
 Finally the Lagrangian density transforms as
 \begin{equation}\label{eqn:ProblemSet1Problem4:400}
+\begin{aligned}
 \delta \LL
-=
+&=
 -\inv{2} (\delta F_{\mu\nu}) F^{\mu\nu}
-=
+\\&=
 \inv{2} a^\alpha \lr{ \partial_\alpha F_{\mu\nu} } F^{\mu\nu}
-=
+\\&=
 \inv{4} a^\alpha \partial_\alpha \lr{ F_{\mu\nu} F^{\mu\nu} }
-=
+\\&=
 - \partial_\alpha \lr{ a^\alpha \LL }.
+\end{aligned}
 \end{equation}
 That is
 \begin{equation}\label{eqn:ProblemSet1Problem4:420}
@@ -301,15 +323,18 @@ J^\mu_a = - a^\mu \LL.
 \end{equation}
 The conserved current associated with spacetime translation is
 \begin{equation}\label{eqn:ProblemSet1Problem4:440}
+\begin{aligned}
 j^\mu_a
-=
+&=
 \PD{(\partial_\mu A_\nu)}{\LL} \delta A_\nu - J^\mu_a
-=
+\\&=
 - F^{\mu\nu} (-a^\alpha \partial_\alpha A_\nu) + a^\mu \LL.
+\end{aligned}
 \end{equation}
 As was the case in \cref{eqn:ProblemSet1Problem4:280} we are able to put group all the explicit potential dependence in a discardable package
 \begin{equation}\label{eqn:ProblemSet1Problem4:460}
-=
+\begin{aligned}
+   &=
 a^\alpha
 F^{\mu\nu}
 F_{\alpha\nu}
@@ -317,8 +342,8 @@ F_{\alpha\nu}
 a^\alpha
 F^{\mu\nu}
 \partial_\nu A_\alpha
- + a^\mu \LL
-=
+ + a^\mu \LL 
+ \\&=
 a^\alpha
 F^{\mu\nu}
 F_{\alpha\nu}
@@ -334,6 +359,7 @@ a^\alpha
 \cancel{ \partial_\nu F^{\mu\nu} }
 A_\alpha
  + a^\mu \LL
+\end{aligned}
 \end{equation}
 or
 \boxedEquation{eqn:ProblemSet1Problem4:480}{
@@ -406,59 +432,68 @@ Here we've factored out the common (conformal) energy momentum tensor \( {\Theta
 \end{equation}
 which is symmetric with respect to index interchange
 \begin{equation}\label{eqn:ProblemSet1Problem4:540}
+\begin{aligned}
 \Theta^{\nu\mu}
-=
+&=
    F^{\nu\sigma}
    F_{\sigma\alpha}
    g^{\alpha\mu}
    -
    g^{\nu\mu} \LL
-=
+   \\&=
    g^{\beta\nu}
    F_{\beta\sigma}
    F^{\sigma\mu}
    -
    g^{\mu\nu} \LL
-=
+   \\&=
    F^{\mu\sigma}
    F_{\sigma\beta}
    g^{\beta\nu}
    -
    g^{\mu\nu} \LL
-= \Theta^{\mu\nu}.
+   \\&= \Theta^{\mu\nu}.
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:problemSet1:4d}
 We require the divergence of a Noether current to be zero, so for the dilatation current
 \begin{equation}\label{eqn:ProblemSet1Problem4:580}
-0 = \partial_\mu \tilde{j}^\mu_{\text{dil}}
-=
+\begin{aligned}
+0 
+&= \partial_\mu \tilde{j}^\mu_{\text{dil}}
+\\&=
 \lr{ \partial_\mu x^\nu }
 {\Theta^\mu}_\nu
 +
 x^\nu
 \partial_\mu {\Theta^\mu}_\nu
-=
+\\&=
 {\Theta^\mu}_\mu
 +
 x^\nu
 \partial_\mu {\Theta^\mu}_\nu.
+\end{aligned}
 \end{equation}
 In particular for \( x = 0 \) we must have \(
 {\Theta^\mu}_\mu  = 0 \).  Incidentally, given \( {\Theta^\mu}_\mu  = 0 \), then
 for non-zero \( x \) we must also have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).  That can be demonstrated directly utilizing the zero divergence of the Noether current for a spacetime translation
 \begin{equation}\label{eqn:ProblemSet1Problem4:600}
+\begin{aligned}
 0
-= \partial_\mu \tilde{j}^\mu_{a}
-= a^\nu \partial_\mu {\Theta^\mu}_\nu.
+&= \partial_\mu \tilde{j}^\mu_{a}
+\\&= a^\nu \partial_\mu {\Theta^\mu}_\nu.
+\end{aligned}
 \end{equation}
 As this is zero for all \( a \) we must have \( \partial_\mu {\Theta^\mu}_\nu = 0 \).
 
 \makeSubAnswer{}{qft:problemSet1:4e}
 The trace written out explicitly is
 \begin{equation}\label{eqn:ProblemSet1Problem4:620}
-0 =
+\begin{aligned}
+0 
+&=
 {\Theta^\mu}_\mu
-=
+\\&=
 {\Theta^0}_0
 +
 {\Theta^1}_1
@@ -466,7 +501,7 @@ The trace written out explicitly is
 {\Theta^2}_2
 +
 {\Theta^3}_3
-=
+\\&=
 \Theta^{00}
 -
 \Theta^{11}
@@ -474,6 +509,7 @@ The trace written out explicitly is
 \Theta^{22}
 -
 \Theta^{33},
+\end{aligned}
 \end{equation}
 Since \( \Theta^{00} = \inv{2}( \BE^2 + \BB^2 ) = \rho \), and \( -\Theta^{kj} = T^{(M)}_{kj} = E_k E_j + B_k B_j - \inv{2} \delta_{kj}(\BE^2 + \BB^2) \), where \( T^{(M)}_{kj} \) is the electromagnetic stress tensor (borrowing notation from \citep{jackson1975cew} again), we have
 \begin{equation}\label{eqn:ProblemSet1Problem4:700}
@@ -482,27 +518,32 @@ Since \( \Theta^{00} = \inv{2}( \BE^2 + \BB^2 ) = \rho \), and \( -\Theta^{kj} =
 In \citep{griffiths1999introduction} \( T^{(M)}_{ij} \) is described as ``the force (per unit area) in the ith direction action on an element of surface oriented in the jth direction -- diagonal elements represent pressures, and off-diagonal elements are shears''.
 Integration of the stress tensor over a cube, as sketched in \cref{fig:outwards_normal_cube:outwards_normal_cubeFig1}, serves to illustrate this nicely, as only the diagonal elements contribute to such an integral.  If the total cubic face area is \( A = 6 \Delta A \), the total force of on the surface is
 \begin{equation}\label{eqn:ProblemSet1Problem4:720}
+\begin{aligned}
 \BF
-=
+&=
 \int \lrT \cdot \Ba
-=
+\\&=
 \Be_1 \int \delta_{1k} \lr{ \evalbar{T^{(M)}_{k1}}{+} - \evalbar{T^{(M)}_{k1}}{-}}
 +
 \Be_2 \int \delta_{2k} \lr{ \evalbar{T^{(M)}_{k2}}{+} - \evalbar{T^{(M)}_{k2}}{-}}
 +
 \Be_3 \int \delta_{3k} \lr{ \evalbar{T^{(M)}_{k3}}{+} - \evalbar{T^{(M)}_{k3}}{-}}
-=
+\\&=
 \Delta A \Be_1 \lr{ \evalbar{T^{(M)}_{k1}}{+} - \evalbar{T^{(M)}_{k1}}{-}}
 +
 \Delta A \Be_2 \lr{ \evalbar{T^{(M)}_{k2}}{+} - \evalbar{T^{(M)}_{k2}}{-}}
 +
 \Delta A \Be_3 \lr{ \evalbar{T^{(M)}_{k3}}{+} - \evalbar{T^{(M)}_{k3}}{-}}
+\end{aligned}
 \end{equation}
 \imageFigure{../figures/phy2403-quantum-field-theory/outwards_normal_cubeFig1}{Cubic surface and outwards normals.}{fig:outwards_normal_cube:outwards_normal_cubeFig1}{0.2}
 Assuming isotropic fields, the total pressure of the fields on the surface is
 \begin{equation}\label{eqn:ProblemSet1Problem4:740}
-p = \Abs{ \frac{2 \Delta A \sum_{k = 1}^3 T^{(M)}_{kk}}{6 \Delta A} }
-= \inv{3} \rho,
+\begin{aligned}
+p 
+&= \Abs{ \frac{2 \Delta A \sum_{k = 1}^3 T^{(M)}_{kk}}{6 \Delta A} }
+\\&= \inv{3} \rho,
+\end{aligned}
 \end{equation}
 which recovers \cref{eqn:ProblemSet1Problem4:680}.
 }}
