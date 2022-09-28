@@ -52,8 +52,9 @@ H^\dagger &= \inv{\sqrt{2}}
 \end{equation*}
 so
 \begin{equation}\label{eqn:facebook:20}
+\begin{aligned}
 j^{\mu, a}_L
-=
+&=
 \frac{i}{2}
    \trace{\lr{
 - H^\dagger \sigma^a
@@ -62,7 +63,7 @@ j^{\mu, a}_L
    \partial^\mu H^\dagger
 \sigma^a H
    }}
-=
+   \\&=
 \frac{i}{4}
    \trace{\lr{
 -
@@ -84,10 +85,11 @@ i \sigma^2 \partial^\mu \Phi^\conj & \partial^\mu \Phi
 i \sigma^2 \Phi^\conj & \Phi
 \end{bmatrix}
   }}
-=
+  \\&=
 \cdots
-=
+\\&=
 \frac{i}{2} \lr{ \partial^\mu \Phi^\dagger \sigma^a \Phi - \Phi^\dagger \sigma^a \partial^\mu \Phi}
+\end{aligned}
 \end{equation}
 
 Actually, it looks like I have one cross term after the expansion to second order
@@ -174,38 +176,44 @@ Further confounding me was the fact that my old QM book used a different sign co
 \end{equation}
 \section{GA q.}
 \begin{equation}\label{eqn:QandA:560}
+\begin{aligned}
 (\Ba\cross \Bb)\cdot(\Ba\cross \Bb)
-=[-I(\Ba\wedge \Bb)]\cdot[-I(\Ba\wedge \Bb)]
-=[I(\Ba\wedge \Bb)]\cdot[I(\Ba\wedge \Bb)],
+&= [-I(\Ba\wedge \Bb)]\cdot[-I(\Ba\wedge \Bb)] \\
+&= [I(\Ba\wedge \Bb)]\cdot[I(\Ba\wedge \Bb)],
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:QandA:580}
+\begin{aligned}
 (Ia)\cdot \Bb=I(\Ba\wedge \Bb)
-=I[(\Ba\wedge \Bb)\wedge(I(\Ba\wedge \Bb))]
-\Ba\wedge(Ib)=I(\Ba\cdot \Bb)
-=I^2(\Ba\wedge \Bb)\cdot(\Ba\wedge \Bb)
-=I^2(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
-=-(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
+&= I[(\Ba\wedge \Bb)\wedge(I(\Ba\wedge \Bb))]
+\Ba\wedge(Ib)=I(\Ba\cdot \Bb) \\
+&= I^2(\Ba\wedge \Bb)\cdot(\Ba\wedge \Bb) \\
+&= I^2(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2) \\
+&= -(\Ba^2 \Bb^2-(\Ba\cdot \Bb)^2)
+\end{aligned}
 \end{equation}
 
 I find it hard to follow what you have done.  This is how I'd show it.
 \begin{equation*}
+\begin{aligned}
 \lr{ \Ba \cross \Bb } \cdot \lr{ \Ba \cross \Bb }
-=
+&=
 \gpgradezero{
 \lr{ \Ba \cross \Bb } \lr{ \Ba \cross \Bb }
 }
-=
+\\&=
 \gpgradezero{ -I(\Ba \wedge \Bb) (-I) (\Ba \wedge \Bb) }
-=
+\\&=
 -\gpgradezero{
 (\Ba \wedge \Bb) (\Ba \wedge \Bb)
 }
-=
+\\&=
 - \Ba \cdot \lr{ \Bb \cdot \lr{ \Ba \wedge \Bb } }
-=
+\\&=
 - \Ba \cdot \lr{ (\Bb \cdot \Ba) \Bb - \Bb^2 \Ba }
-=
+\\&=
 \Ba^2 \Bb^2 - (\Bb \cdot \Ba)^2.
+\end{aligned}
 \end{equation*}
 
 \section{l20}

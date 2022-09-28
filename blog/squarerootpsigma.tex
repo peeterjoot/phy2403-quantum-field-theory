@@ -45,22 +45,25 @@ With the help of Mathematica, a fairly compact form was found for the root of \(
 \end{equation}
 A bit of examination shows that we can do much better.  The leading scalar term can be simplified by squaring it
 \begin{equation}\label{eqn:squarerootpsigma:140}
+\begin{aligned}
 \lr{ \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} } }^2
-=
+&=
 \sqrt{ \omega_\Bp- \Norm{\Bp} } + \sqrt{ \omega_\Bp+ \Norm{\Bp} } + 2 \sqrt{ \omega_\Bp^2 - \Bp^2 }
-=
+\\&=
 2 \omega_\Bp + 2 m,
+\end{aligned}
 \end{equation}
 where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been inserted.  Using that again in the matrix, we have
 \begin{equation}\label{eqn:squarerootpsigma:160}
+\begin{aligned}
 \sqrt{ p \cdot \sigma }
-=
+&=
 \inv{\sqrt{ 2 \omega_\Bp + 2 m }}
 \begin{bmatrix}
 \omega_\Bp- p^3 + m & - p^1 + i p^2 \\
 - p^1 - i p^2 & \omega_\Bp+ p^3 + m
 \end{bmatrix}
-=
+\\&=
 \inv{\sqrt{ 2 \omega_\Bp + 2 m }}
 \lr{
    (\omega_\Bp + m) \sigma^0
@@ -68,7 +71,7 @@ where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been
    -p^2 \PauliY
    -p^3 \PauliZ
 }
-=
+\\&=
 \inv{\sqrt{ 2 \omega_\Bp + 2 m }}
 \lr{
    (\omega_\Bp + m) \sigma^0
@@ -76,11 +79,12 @@ where the on-shell value of the energy \( \omega_\Bp^2 = m^2 + \Bp^2 \) has been
    -p^2 \sigma^2
    -p^3 \sigma^3
 }
-=
+\\&=
 \inv{\sqrt{ 2 \omega_\Bp + 2 m }}
 \lr{
    (\omega_\Bp + m) \sigma^0 - \Bsigma \cdot \Bp
 }.
+\end{aligned}
 \end{equation}
 
 We've now found a nice algebraic form for these matrix roots
@@ -95,19 +99,21 @@ We've now found a nice algebraic form for these matrix roots
 
 As a check, let's square one of these explicitly
 \begin{equation}\label{eqn:squarerootpsigma:200}
+\begin{aligned}
 \lr{ \sqrt{p \cdot \sigma} }^2
-= \inv{2 \omega_\Bp + 2 m }
+&= \inv{2 \omega_\Bp + 2 m }
 \lr{ m^2 + (p \cdot \sigma)^2 + 2 m (p \cdot \sigma) }
-= \inv{2 \omega_\Bp + 2 m }
+\\&= \inv{2 \omega_\Bp + 2 m }
 \lr{ m^2 + (\omega_\Bp^2 - 2 \omega_\Bp \Bsigma \cdot \Bp + \Bp^2) + 2 m (p \cdot \sigma) }
-= \inv{2 \omega_\Bp + 2 m }
+\\&= \inv{2 \omega_\Bp + 2 m }
 \lr{ 2 \omega_\Bp^2 - 2 \omega_\Bp \Bsigma \cdot \Bp + 2 m (\omega_\Bp - \Bsigma \cdot \Bp) }
-= \inv{2 \omega_\Bp + 2 m }
+\\&= \inv{2 \omega_\Bp + 2 m }
 \lr{ 2 \omega_\Bp \lr{ \omega_\Bp + m }  - (2 \omega_\Bp + 2 m) \Bsigma \cdot \Bp }
-=
+\\&=
 \omega_\Bp - \Bsigma \cdot \Bp
-=
+\\&=
 p \cdot \sigma,
+\end{aligned}
 \end{equation}
 which validates the result.
 

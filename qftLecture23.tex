@@ -283,11 +283,13 @@ where we've killed off a factor that is zero (off the light cone?)
 
 We are left with just an action on the Feynman propagator
 \begin{equation}\label{eqn:qftLecture23:360}
+\begin{aligned}
 \expectation{ T( \Psi_\alpha(x) \Psi_\beta(x) }_0
-=
+&=
 \lr{ \gamma^\mu_{\alpha\beta} \partial_\mu^{(x)} + m } D_F(x - y)
-=
+\\&=
 \int \frac{d^4 p}{(2 \pi)^4 } \frac{ i ( \gamma^\mu_{\alpha\beta} p_\mu + m ) }{p^2 - m^2 + i \epsilon} e^{-i p \cdot (x - y)}
+\end{aligned}
 \end{equation}
 
 Now that we have a propagator, let's try
@@ -380,9 +382,7 @@ ignoring \( i \epsilon \).
 
 \Cref{eqn:qftLecture23:540} reduces to
 \begin{equation}\label{eqn:qftLecture23:560}
-i M
-=
-i \frac{e^2}{q^2}
+i M = i \frac{e^2}{q^2}
 \vbar^{s'}(p') \gamma^\rho u^s(p)
 \ubar^r(k) \gamma_\rho v^{r'}(k'),
 \end{equation}
@@ -437,8 +437,9 @@ Such an average is related to the density matrix
 }.
 That is, We want to sum over all the initial and final state polarizations \( \inv{4} \sum_{ss'} \sum_{rr'} \Abs{M}^2 \)
 \begin{equation}\label{eqn:qftLecture23:610}
+\begin{aligned}
 \inv{4} \sum_{ss', rr'} \Abs{M}^2
-=
+&=
 \sum_{s s' r r'}
 \frac{e^4}{4 q^4}
 \vbar^{r'}(k')
@@ -453,7 +454,7 @@ v^{s'}(p')
 \vbar^{s'}(p')
 \gamma^\mu
 u^s(p)
-=
+\\&=
 \frac{e^4}{4 q^4}
 \sum_{r'}
 \vbar^{r'}(k')
@@ -468,38 +469,40 @@ v^{r'}(k')
 \lr{ \slashed{p'} - m_e }
 \gamma^\mu
 u^s(p),
+\end{aligned}
 \end{equation}
 where we first used the freedom to move the \( \ubar \gamma v, \vbar \gamma u \) terms, which are scalars, and then used
 \cref{thm:qftLecture21:17} to eliminate the sum over \( s', r \) indexes.
 
 Temporarily expressing the remaining factors in coordinates exposes a trace structure.  For example
 \begin{equation}\label{eqn:qftLecture23:660}
+\begin{aligned}
 \sum_{r'}
 \vbar^{r'}(k')
 \gamma_\rho
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
 v^{r'}(k')
-=
+&=
 \sum_{r'}
 (\vbar^{r'}(k'))_a
 (\gamma_\rho)_{ab}
 \lr{ \slashed{k} + m_\mu }_{bc}
 (\gamma_\mu)_{cd}
 (v^{r'}(k'))_d
-=
+\\&=
 \sum_{r'}
 (v^{r'}(k'))_d
 (\vbar^{r'}(k'))_a
 (\gamma_\rho)_{ab}
 \lr{ \slashed{k} + m_\mu }_{bc}
 (\gamma_\mu)_{cd}
-=
+\\&=
 \lr{ \slashed{k'} - m_\mu }_{da}
 (\gamma_\rho)_{ab}
 \lr{ \slashed{k} + m_\mu }_{bc}
 (\gamma_\mu)_{cd}
-=
+\\&=
 \trace{
 \lr{
 \lr{ \slashed{k'} - m_\mu }
@@ -507,6 +510,7 @@ v^{r'}(k')
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
 }},
+\end{aligned}
 \end{equation}
 since the cyclic sum of matrix coordinates can be expressed as a trace, namely \( \trace{A B C} = A_{ab} B_{bc} C_{ca} \).  We are left with
 \begin{equation}\label{eqn:qftLecture23:680}
@@ -549,14 +553,15 @@ The proof is left to \cref{problem:qftLecture23:2}.
 Utilizing the above, and setting \( m_e = 0 \) (compared to \(m_\mu\))
 the \( p, p' \) dependent trace reduces to
 \begin{equation}\label{eqn:qftLecture23:780}
+\begin{aligned}
 \trace{\lr{
 (\slashed{p} + m_e) \gamma^\nu (\slashed{p'} - m_e) \gamma^\mu
 }}
-=
+&=
 \trace{\lr{
 \slashed{p} \gamma^\nu \slashed{p'} \gamma^\mu
 }}
-=
+\\&=
 p_\alpha {p'}_\beta
 \trace{\lr{
 \gamma^\alpha
@@ -564,7 +569,7 @@ p_\alpha {p'}_\beta
 \gamma^\beta
 \gamma^\mu
 }}
-=
+\\&=
 4 p_\alpha {p'}_\beta
 \lr{
 g^{\alpha\nu}
@@ -576,7 +581,7 @@ g^{\nu\mu}
 g^{\alpha\mu}
 g^{\nu\beta}
 }
-=
+\\&=
 4 \lr{
 -
 p \cdot p'
@@ -586,16 +591,18 @@ p^\nu {p'}^\mu
 +
 p^\mu {p'}^\nu
 },
+\end{aligned}
 \end{equation}
 and the \( k, k' \) dependent trace reduces to
 \begin{equation}\label{eqn:qftLecture23:800}
+\begin{aligned}
 \trace{ \lr{
 \lr{ \slashed{k'} - m_\mu }
 \gamma_\nu
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
 }}
-=
+&=
 \trace{ \lr{
 \slashed{k'}
 \gamma_\nu
@@ -624,7 +631,7 @@ m_\mu
 \slashed{k}
 \gamma_\mu
 }}}
-=
+\\&=
 4\lr{
    {k'}_\alpha
    {k}_\beta
@@ -638,7 +645,7 @@ m_\mu
    -
    m_\mu^2 g_{\nu\mu}
 }
-=
+\\&=
 4\lr{
    {k'}_\nu
    {k}_\mu
@@ -653,6 +660,7 @@ m_\mu
    }
    g_{\nu\mu}
 }.
+\end{aligned}
 \end{equation}
 
 We can now multiply out the traces and simplify (\cref{problem:psq:1}) to get
@@ -678,44 +686,43 @@ We also have
 \begin{subequations}
 \label{eqn:qftLecture23:960}
 \begin{equation}\label{eqn:qftLecture23:860}
+\begin{aligned}
 p \cdot p'
-= \lr{ E, E \zcap} \cdot \lr{ E, -E \zcap }
-=
-E^2 - E^2 (\zcap \cdot (-\zcap))
-=
-2 E^2.
+&= \lr{ E, E \zcap} \cdot \lr{ E, -E \zcap }
+\\&= E^2 - E^2 (\zcap \cdot (-\zcap))
+\\&= 2 E^2.
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture23:880}
+\begin{aligned}
 p \cdot k
-= (E, E \zcap) \cdot (E, \Bk)
-=
-E^2 - E \Norm{\Bk} \cos\theta,
+&= (E, E \zcap) \cdot (E, \Bk) \\
+&= E^2 - E \Norm{\Bk} \cos\theta,
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture23:900}
+\begin{aligned}
 p \cdot k'
-= (E, E \zcap) \cdot (E, -\Bk)
-=
-E^2 - (E \zcap) \cdot( -\Bk)
-=
-E^2 + E \Norm{\Bk} \cos\theta
+&= (E, E \zcap) \cdot (E, -\Bk) \\
+&= E^2 - (E \zcap) \cdot( -\Bk) \\
+&= E^2 + E \Norm{\Bk} \cos\theta
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture23:920}
+\begin{aligned}
 p' \cdot k'
-=
-(E, -E \zcap) \cdot (E, -\Bk)
-=
-E^2 - (-E \zcap) \cdot( -\Bk)
-=
-E^2 - E \Norm{\Bk} \cos\theta
+&= (E, -E \zcap) \cdot (E, -\Bk) \\
+&= E^2 - (-E \zcap) \cdot( -\Bk) \\
+&= E^2 - E \Norm{\Bk} \cos\theta
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture23:940}
+\begin{aligned}
 p' \cdot k
-=
-(E, -E \zcap) \cdot (E, \Bk)
-=
-E^2 -(-E \zcap) \cdot \Bk
-=
-E^2 + E \Norm{\Bk} \cos\theta,
+&= (E, -E \zcap) \cdot (E, \Bk) \\
+&= E^2 -(-E \zcap) \cdot \Bk \\
+&= E^2 + E \Norm{\Bk} \cos\theta,
+\end{aligned}
 \end{equation}
 \end{subequations}
 but
@@ -728,8 +735,9 @@ or
 \end{equation}
 We can now put the pieces back together and almost have the non-polarized cross section
 \begin{equation}\label{eqn:qftLecture23:1020}
+\begin{aligned}
 \inv{4} \sum_{\text{spins}} \Abs{M}^2
-=
+&=
 \frac{ 8 e^4}{ (4 E^2)^2 }
 \lr{
    \lr{
@@ -743,7 +751,7 @@ We can now put the pieces back together and almost have the non-polarized cross 
    m_\mu^2
    2 E^2
 }
-=
+\\&=
 \frac{e^4}{2}
 \lr{
    \lr{
@@ -756,13 +764,14 @@ We can now put the pieces back together and almost have the non-polarized cross 
    +
    2 \frac{m_\mu^2}{E^2}
 }
-=
+\\&=
 \frac{e^4}{2}
 \lr{
    2 + 2 \lr{ 1 - \frac{m_\mu^2}{E^2} } \cos^2\theta
    +
    2 \frac{m_\mu^2}{E^2}
 },
+\end{aligned}
 \end{equation}
 or
 \boxedEquation{eqn:qftLecture23:1040}{
@@ -775,14 +784,14 @@ e^4 \lr{
 }
 The total (average polarization) differential cross section (\citep{peskin1995introduction} eq. 4.84), is
 \begin{equation}\label{eqn:qftLecture23:1060}
-{\frac{d\sigma}{d\Omega}}_{\text{CM}}
-=
+{\frac{d\sigma}{d\Omega}}_{\text{CM}} =
 \inv{ 2 E_A 2 E_B \Abs{v_A - v_B} } \frac{\Abs{\Bk}}{(2 \pi)^2 4 E_{\text{CM}} } \inv{4} \sum_{\text{spins}} \Abs{M}^2.
 \end{equation}
 Plug in \( E_A = E_B = 2 E_{\text{CM}} \), \( v_A - v_B \sim 2 c = 2 \), \( e^2 = 4 \pi \alpha \), and \cref{eqn:qftLecture23:1040} for
 \begin{equation}\label{eqn:qftLecture23:1080}
+\begin{aligned}
 {\frac{d\sigma}{d\Omega}}_{\text{CM}}
-=
+&=
 \inv{ E_{\text{CM}}^2 (2) } \inv{(4 \pi)^2 E_{\text{CM}}} \frac{E_{\text{CM}}}{2}
 \sqrt{ 1 -  \frac{m_\mu^2}{E^2} }
 (4 \pi \alpha)^2
@@ -790,39 +799,42 @@ Plug in \( E_A = E_B = 2 E_{\text{CM}} \), \( v_A - v_B \sim 2 c = 2 \), \( e^2 
    1 + \frac{m_\mu^2}{E^2}
    + \lr{ 1 - \frac{m_\mu^2}{E^2} } \cos^2\theta
 }
-=
+\\&=
 \frac{\alpha^2}{4 E_{\text{CM}}^2 }
 \sqrt{ 1 -  \frac{m_\mu^2}{E^2} }
 \lr{
    1 + \frac{m_\mu^2}{E^2}
    + \lr{ 1 - \frac{m_\mu^2}{E^2} } \cos^2\theta
 }.
+\end{aligned}
 \end{equation}
 Integrating to find the total cross section we have
 \begin{equation}\label{eqn:qftLecture23:1100}
+\begin{aligned}
 \sigma_{\text{total}}
-= \int d \Omega \frac{d\sigma}{d\Omega}
-= 2 \pi \int_{-1}^1 d \cos\theta
+&= \int d \Omega \frac{d\sigma}{d\Omega}
+\\&= 2 \pi \int_{-1}^1 d \cos\theta
 \frac{\alpha^2}{4 E_{\text{CM}}^2 }
 \sqrt{ 1 -  \frac{m_\mu^2}{E^2} }
 \lr{
    1 + \frac{m_\mu^2}{E^2}
    + \lr{ 1 - \frac{m_\mu^2}{E^2} } \cos^2\theta
 }
-=
+\\&=
 \frac{2 \pi \alpha^2}{4 E_{\text{CM}}^2 }
 \sqrt{ 1 -  \frac{m_\mu^2}{E^2} }
 \lr{
    2\lr{ 1 + \frac{m_\mu^2}{E^2} }
 + \lr{ 1 - \frac{m_\mu^2}{E^2} } \int_{-1}^1 u^2 du
 }
-=
+\\&=
 \frac{4 \pi \alpha^2}{4 E_{\text{CM}}^2 }
 \sqrt{ 1 -  \frac{m_\mu^2}{E^2} }
 \lr{
    1 + \frac{m_\mu^2}{E^2}
 +\inv{3} \lr{ 1 - \frac{m_\mu^2}{E^2} }
 },
+\end{aligned}
 \end{equation}
 or
 \boxedEquation{eqn:qftLecture23:1120}{
@@ -867,13 +879,16 @@ If one hypothesizes a proportionality relationship between the hadron (i.e. muon
 \end{equation}
 the ratio between the two
 \begin{equation}\label{eqn:qftLecture23:1200}
-R =
+\begin{aligned}
+R 
+&=
 \frac{
 \sigma_{\text{total}}(  e^{-} e^{+} \rightarrow \text{quarks} ) }
 {
 \sigma_{\text{total}}(  e^{-} e^{+} \rightarrow \text{hadrons} )
 }
-= 3 \sum_q (Q_q)^4,
+\\&= 3 \sum_q (Q_q)^4,
+\end{aligned}
 \end{equation}
 can be measured, and such measurement was deemed to be one of the validations of the QCD theory.  The \( 3 \sum_q (Q_q)^4 \) expression includes a 3 that is related to quark ``color'', and a sum over only the quark charges \( q \) that are light enough to be produced.  \citep{peskin1995introduction} fig. 5.3 includes an experimental depiction of such a measurement, which has a step function form roughly like
 \cref{fig:l23:l23Fig10}, where the steps occur at the energy levels that are sufficient to produce new quarks.

@@ -74,48 +74,54 @@ i \bra{0} T\lr{ \int d^4 a j(a) \phi_I(a) } \ket{0}
 \end{equation}
 Using Wick's theorem to evaluate the integrals, all the odd powers of \( j \) are zero.  We may evaluate the first non-zero integral by contracting the two fields
 \begin{equation}\label{eqn:ProblemSet3Problem2:120}
+\begin{aligned}
 \bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
-=
+&=
 \contraction{\int d^4 a d^4 b j(a) }{\phi}{{}_I(a) j(b) }{\phi}
 \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b)
-=
+\\&=
 \int d^4 a d^4 b j(a) D_F(a - b) j(b)
-=
+\\&=
 i \int d^4 a d^4 b \frac{d^4 p}{(2 \pi)^4} j(a) j(b) \frac{ e^{-i p \cdot (a - b) } }{p^2 - m^2 + i \epsilon}
-=
+\\&=
 i \int \frac{ d^4 p }{(2 \pi)^4} \inv{ p^2 - m^2 + i \epsilon}
 \int d^4 a j(a) e^{-i p \cdot a}
 \int d^4 b j(b) e^{i p \cdot b}
-=
+\\&=
 i \int \frac{ d^4 p }{(2 \pi)^4} \inv{ p^2 - m^2 + i \epsilon }
 \tilde{j}(p)
 \tilde{j}(-p).
+\end{aligned}
 \end{equation}
 Assuming that \( j(x) \) is real, this is
 \begin{equation}\label{eqn:ProblemSet3Problem2:140}
+\begin{aligned}
 \bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
-=
+&=
 i \int \frac{ d^4 p }{(2 \pi)^4} \frac{
 \Abs{\tilde{j}(p)}^2
 }{p^2 - m^2 + i \epsilon}
-=
+\\&=
 \frac{i}{2 \pi} \int dp_0 \int \frac{d^3 p}{(2 \pi)^3} \frac{
 \Abs{\tilde{j}(p)}^2
  }{p_0^2 - \Bp^2 - m^2 + i \epsilon}
-=
+ \\&=
 \frac{i}{2 \pi} \int dp_0 \int \frac{d^3 p}{(2 \pi)^3} \frac{
 \Abs{\tilde{j}(p)}^2
  }{p_0^2 - \omega_\Bp^2 + i \epsilon}.
+\end{aligned}
 \end{equation}
 Integrating \( p_0 \) over the lower half plane contour of \cref{fig:ps3p2:ps3p2Fig1}, which encloses the pole at \( p_0 \approx \omega_\Bp - i \epsilon \) we have
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3p2LowerHalfFeynmandContourFig2}{Feynman propagator contour in lower half plane.}{fig:ps3p2:ps3p2Fig1}{0.15}
 \begin{equation}\label{eqn:ProblemSet3Problem2:160}
+\begin{aligned}
 \bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
-=
+&=
 \frac{-2 \pi i^2}{2 \pi} \int \frac{d^3 p}{(2 \pi)^3} \evalbar{ \frac{ \Abs{\tilde{j}(p)}^2 }{2 \omega_\Bp}
 }{p_0 = \omega_\Bp}
-=
+\\&=
 \lambda,
+\end{aligned}
 \end{equation}
 where it has been assumed that \( \tilde{j}(p_0, \Bp) \rightarrow 0 \) along the infinite circular arc of the integration contour.
 To second order in \( j \) our matrix element is
@@ -126,13 +132,15 @@ To second order in \( j \) our matrix element is
 \end{equation}
 We can now use this as an initial approximation for the probability
 \begin{equation}\label{eqn:ProblemSet3Problem2:200}
-P(0) =
+\begin{aligned}
+P(0) 
+&=
 \lr{ 1 - \frac{\lambda}{2} + O(\lambda^2) }^2
-=
+\\&=
 1 - \lambda + O(\lambda^2),
+\end{aligned}
 \end{equation}
 as desired.
-
 \makeSubAnswer{}{qft:problemSet3:2c}
 The diagram for the integral just computed is a single line segment as sketched in \cref{fig:ps3OneEdgeDiagram:ps3OneEdgeDiagramFig3}.
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3OneEdgeDiagramFig3}{\( j^2 \) diagram.}{fig:ps3OneEdgeDiagram:ps3OneEdgeDiagramFig3}{0.08}
@@ -141,11 +149,13 @@ The diagram for the \( j^4 \) integrals are sketched in
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3jfourthDiagramFig4}{\( j^4 \) diagrams.}{fig:ps3jfourthDiagram:ps3jfourthDiagramFig4}{0.15}
 After that the diagrams get messier to enumerate.  We can see the pattern by considering a non-trivial example such as the \( j^6 \) integral.  For that each diagram has three edges, where all possible combinations \( ab, ac, ad, ae, af, bc, bd, be, bf, cd, ce, cf, de, df, ef \) are found for the ``first'' edge in each diagram.  This is a total of \( \binom{6}{2} = 15 \) edges.  For each such diagram, there are \( \binom{4}{2} \) choices for the next edge in the diagram (example: \( ab, cd, ef \) would be one diagram). The coefficient of this integral is therefore
 \begin{equation}\label{eqn:ProblemSet3Problem2:220}
+\begin{aligned}
 \frac{i^6}{3!} \inv{6!} \binom{6}{2} \binom{4}{2}
-=
+&=
 \frac{(-1)^3}{3!} \inv{\cancel{6!}} \frac{\cancel{6!}}{\cancel{4!}2!} \frac{\cancel{4!}}{2!2!}
-=
+\\&=
 \frac{(-1)^3}{3! 2^3}.
+\end{aligned}
 \end{equation}
 Here the \( 3! \) downstairs is to compensate for the fact that there are \( 3 \times 2 \) possible orderings of each distinct pair of endpoints.  Example:
 \begin{equation}\label{eqn:ProblemSet3Problem2:280}
@@ -162,15 +172,18 @@ The pattern of perfect cancellation is clear.  The \( j^{2n} \) order integral i
 \end{equation}
 so we find that
 \begin{equation}\label{eqn:ProblemSet3Problem2:260}
-P(0) =
+\begin{aligned}
+P(0) 
+&=
 \lr{
 \sum_{n = 0}^\infty
 \frac{(-\lambda/2)^n}{n!}
 }^2
-=
+\\&=
 \lr{ e^{-\lambda/2} }^2
-=
+\\&=
 e^{-\lambda},
+\end{aligned}
 \end{equation}
 as desired.
 
@@ -205,26 +218,30 @@ T a_\Bk \int d^4 x j(x) \phi(x)
 which has the diagram \cref{fig:ps3Problem3d:ps3Problem3dFig1}, which is
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3Problem3dFig1}{\( n = 1 \) diagram.}{fig:ps3Problem3d:ps3Problem3dFig1}{0.08}
 \begin{equation}\label{eqn:ProblemSet3Problem2:340}
+\begin{aligned}
 \bra{0}
 T a_\Bk \int d^4 x j(x) \phi(x)
 \ket{0}
-=
+&=
 \contraction{\int d^4 x j(x) }{a}{{}_\Bk }{\phi}
 \int d^4 x j(x) a_\Bk \phi(x)
-=
+\\&=
 \int d^4 x j(x) e^{i k \cdot x}
-=
+\\&=
 j^\conj(k).
+\end{aligned}
 \end{equation}
 The next diagram is sketched in \cref{fig:ps3Problem3d:ps3Problem3dFig2}, which, temporarily ignoring symmetry factors, gives
 \begin{equation}\label{eqn:ProblemSet3Problem2:360}
+\begin{aligned}
 \bra{0}
 T a_\Bk \int d^4 a d^4 b d^4 c j(a) \phi(a) j(b) \phi(b) j(c) \phi(c)
 \ket{0}
-=
+&=
 \int d^4 a d^4 b d^4 c j(a) e^{i k \cdot a} D_F(b - c) j(b) j(c)
-=
+\\&=
 j^\conj(k) \lambda
+\end{aligned}
 \end{equation}
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3Problem3dFig2}{\( n = 3 \) diagrams.}{fig:ps3Problem3d:ps3Problem3dFig2}{0.15}
 To compute the symmetry factors consider the \( n = 5 \) diagram sketched in
@@ -249,45 +266,51 @@ and in general for \( n = 2 r + 1 \)
 \end{equation}
 This gives
 \begin{equation}\label{eqn:ProblemSet3Problem2:440}
+\begin{aligned}
 \inv{(2 r + 1)!}
 \bra{0}
 T a_\Bk \lr{ \int d^4 s j(x) \phi(x) }^{2 r + 1}
 \ket{0}
-=
+&=
 \inv{r!} \frac{2 r + 1 }{(2 r + 1)!} \times \frac{(2r)!}{2^r} j^\conj(k) \lambda^r
-=
+\\&=
 \inv{r!} j^\conj(k) \lr{\frac{\lambda}{2}}^r.
+\end{aligned}
 \end{equation}
 Plugging this into \cref{eqn:ProblemSet3Problem2:300} we find
 \begin{equation}\label{eqn:ProblemSet3Problem2:460}
+\begin{aligned}
 P_\Bk
-=
+&=
 \Abs{j(k)}^2
 \sum_{r,s = 1}^\infty \frac{ i^{2 r + 1} (-i)^{2 s + 1} }{ r!s! }
 \lr{\frac{\lambda}{2}}^{r + s}
-=
+\\&=
 \Abs{j(k)}^2
 \sum_{r,s = 1}^\infty \frac{ i^{2 (r + s + 1)} (-1)^{2 s + 1} }{ r!s! }
 \lr{\frac{\lambda}{2}}^{r + s}
-=
+\\&=
 \Abs{j(k)}^2
 \sum_{r,s = 1}^\infty \frac{ (-1)^{r + s} }{ r!s! }
 \lr{\frac{\lambda}{2}}^{r + s}
-=
+\\&=
 \Abs{j(k)}^2
 \lr{ e^{-\lambda/2} }^2
-=
+\\&=
 \Abs{j(k)}^2 e^{-\lambda}.
+\end{aligned}
 \end{equation}
 
 \makeSubAnswer{}{qft:problemSet3:2e}
 Summing \cref{eqn:ProblemSet3Problem2:460} over all momentum states, we find the probability to create one particle is
 \begin{equation}\label{eqn:ProblemSet3Problem2:480}
+\begin{aligned}
 P(1)
-= \int \frac{d^3 k}{(2 \pi)^3} \inv{2 \omega_\Bk}
+&= \int \frac{d^3 k}{(2 \pi)^3} \inv{2 \omega_\Bk}
 \Abs{j(k)}^2 e^{-\lambda}
-=
+\\&=
 \lambda e^{-\lambda}.
+\end{aligned}
 \end{equation}
 
 For \( P(2) \) we want
@@ -343,43 +366,51 @@ We are left to generalize this to \( n > 2 \).  Considering the first couple dia
 \cref{fig:ps3p2e:ps3p2eFig3},
 exposes the pattern, namely
 \begin{equation}\label{eqn:ProblemSet3Problem2:640}
+\begin{aligned}
 \bra{0} a_\Bk a_\Bp a_\Bq T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
-=
+&=
 3! \frac{i^3}{3!} j^\conj(k) j^\conj(p) j^\conj(q)
 +
 3! \binom{5}{3} \frac{i^5}{5!} j^\conj(k) j^\conj(p) j^\conj(q) \lambda
 +
 \cdots
-=
+\\&=
 i^3 j^\conj(k) j^\conj(p) j^\conj(q) e^{-\lambda/2}.
+\end{aligned}
 \end{equation}
 \imageFigure{../figures/phy2403-quantum-field-theory/ps3p2eFig3}{\( n = 3, 5 \) diagrams for three particle creation.}{fig:ps3p2e:ps3p2eFig3}{0.2}
 The total probability is therefore
 \begin{equation}\label{eqn:ProblemSet3Problem2:660}
+\begin{aligned}
 P(3)
-=
+&=
 \inv{3!} \int \frac{d^3 k d^3 p d^3 q}{(2 \pi)^9} \inv{8 \omega_\Bk \omega_\Bp \omega_\Bq}
 \Abs{ i^3 j^\conj(k) j^\conj(p) j^\conj(q) e^{-\lambda/2} }^2
-=
+\\&=
 \inv{3!} \lambda^3 e^{-\lambda}.
+\end{aligned}
 \end{equation}
 For \( m \) particles the matrix element expands as
 \begin{equation}\label{eqn:ProblemSet3Problem2:680}
+\begin{aligned}
 \bra{0} a_{\Bk_1} \cdots a_{\Bk_m} T e^{i \int d^4 x j(x) \phi(x)} \ket{0}
-=
+&=
 m! \times \frac{i^m}{m!} j^\conj(k_1) \cdots j^\conj(k_m)
 +
 m! \times \frac{i^{m+2}}{(m+2)!} \binom{m+2}{m} j^\conj(k_1) \cdots j^\conj(k_m) \lambda
 +
 m! \times \frac{i^{m+4}}{(m+4)!} \binom{m+4}{m} \binom{m+2}{m} j^\conj(k_1) \cdots j^\conj(k_m) \lambda^2
 + \cdots
-=
+\\&=
 i^m
 j^\conj(k_1) \cdots j^\conj(k_m) e^{-\lambda/2},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem2:700}
-P(m) = \inv{m!}
+\begin{aligned}
+P(m) 
+&= \inv{m!}
 \int
 \frac{d^3 k_1}{(2\pi)^3 2 \omega_{\Bk_1} }
 \cdots
@@ -388,10 +419,10 @@ P(m) = \inv{m!}
 i^m
 j^\conj(k_1) \cdots j^\conj(k_m) e^{-\lambda/2}
 }^2
-=
+\\&=
 \inv{m!} \lambda^m e^{-\lambda}.
+\end{aligned}
 \end{equation}
-
 \makeSubAnswer{}{qft:problemSet3:2f}
 The sum of the probabilities is easy to compute
 \begin{equation}\label{eqn:ProblemSet3Problem2:20}
@@ -442,16 +473,18 @@ e^{-\lambda} \lambda^2 e^{\lambda} \\
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem2:80}
+\begin{aligned}
 \expectation{(N - \expectation{N})^2}
-=
+&=
 \expectation{N^2 - 2 N \expectation{N} + \expectation{N}^2}
-=
+\\&=
 \expectation{N^2} - 2 \expectation{N}^2 + \expectation{N}^2
-=
+\\&=
 \expectation{N^2} - \expectation{N}^2
-=
+\\&=
 \lambda + \lambda^2 - \lambda^2
-= \lambda.
+\\&= \lambda.
+\end{aligned}
 \end{equation}
 }
 }

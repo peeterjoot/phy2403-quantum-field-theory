@@ -99,14 +99,16 @@ k_B^2 &= \frac{s}{4} - \Bk^2 = m^2.
 \end{equation}
 The flux factor is
 \begin{equation}\label{eqn:qftLecture18:120}
+\begin{aligned}
 4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
-=
+&=
 4 \sqrt{ \lr{ \frac{s}{4} + \Bk^2 }^2 - (m^2)^2 }
-=
+\\&=
 4 \sqrt{
 \lr{ \frac{s}{4} + \Bk^2 - m^2 }
 \lr{ \frac{s}{4} + \Bk^2 + m^2 }
 }.
+\end{aligned}
 \end{equation}
 Using \cref{eqn:qftLecture18:60}, gives
 %but
@@ -115,13 +117,15 @@ Using \cref{eqn:qftLecture18:60}, gives
 %\end{equation}
 %
 \begin{equation}\label{eqn:qftLecture18:160}
+\begin{aligned}
 4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
 %=
 %4 \sqrt{ (2 \Bk^2)(2 \Bk^2 + 2 m^2)}
-=
+&=
 4 \sqrt{ (2 \Bk^2)\frac{s}{2}}
-=
+\\&=
 4 \Norm{\Bk} \sqrt{s}.
+\end{aligned}
 \end{equation}
 
 \section{\texorpdfstring{\(d(LIPS)_2\)}{d(LIPS)2}.}
@@ -130,17 +134,19 @@ Using \cref{eqn:qftLecture18:60}, gives
 %We have two particles
   In the CM frame the delta function simplifies and we have
 \begin{equation}\label{eqn:qftLecture18:200}
+\begin{aligned}
 d(LIPS)_2
-=
+&=
 \frac{ d^3 p_1}{(2 \pi)^3}
 \frac{ d^3 p_2}{(2 \pi)^3} \inv{2 \omega_1 2 \omega_2 }
 2 \pi (2 \pi)^3 \deltathree( \Bp_1 + \Bp_2 ) \delta( 2 \omega_1 - \sqrt{s} )
-=
+\\&=
 \frac{ d^3 p_1}{(2 \pi)^3} \inv{4 \omega_1^2 }
 2 \pi \delta( 2 \omega_1 - \sqrt{s} )
-=
+\\&=
 \frac{ d^3 p_1}{(2 \pi)^3} \inv{ 4 \omega_1^2}
 2 \pi \delta( 2 \sqrt{\Bp_1^2 + m^2 } - \sqrt{s} )
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture18:220}
 p_1 = \lr{ \frac{\sqrt{s}}{2}, \Bp_1 }
@@ -166,45 +172,53 @@ x^\conj = \calp - \sqrt{s/4 - m^2},
 \calp^2 = \frac{s}{4} - m^2.
 \end{equation}
 \begin{equation}\label{eqn:qftLecture18:420}
+\begin{aligned}
 f'(x^\conj)
-=
+&=
 \frac{d}{d\calp} 2 \sqrt{\calp^2 + m^2}
-=
+\\&=
 2 \inv{2} 2 \frac{\calp}{\omega_1}
-=
+\\&=
 \frac{2 \calp}{\omega_1}.
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture18:300}
+\begin{aligned}
 d(LIPS)_2
-=
+&=
 \frac{ d^3 p_1}{(2 \pi)^3} \inv{ 4 \omega_1^2}
 2 \pi \delta( \calp - \sqrt{s/4 - m^2} )
-=
+\\&=
 \frac{d^2 \Omega \calp^2 d\calp}{(2 \pi)^2 4 \omega_1^2 } \frac{\delta(\calp - \sqrt{s/4 - m^2})}{2 \calp/\omega_1}
-=
+\\&=
 \frac{d^2 \Omega \calp d\calp}{(2 \pi)^2 8 \omega_1 } \delta(\calp - \sqrt{s/4 - m^2}),
+\end{aligned}
 \end{equation}
 but \( \int dx x \delta(x - x^\conj) = x^\conj \), so
 \begin{equation}\label{eqn:qftLecture18:460}
+\begin{aligned}
 d(LIPS)_2
-=
+&=
 \frac{d^2 \Omega \calp}{(2 \pi)^2 8 \omega_1 }
-=
+\\&=
 \frac{d^2 \Omega \calp}{16 \pi^2 \sqrt{s} },
+\end{aligned}
 \end{equation}
 since \( \omega_1 = \sqrt{s}/2 \).
 
 Plugging \cref{eqn:qftLecture18:160} and \cref{eqn:qftLecture18:460} into \cref{eqn:qftLecture18:440} we have
 \begin{equation}\label{eqn:qftLecture18:480}
+\begin{aligned}
 \frac{d \sigma}{d^2 \Omega} = \frac{d(LIPS)_2}{d^2 \Omega} \Abs{M_{fi}}^2
 \inv{
    4 \sqrt{ (k_A k_B)^2 - m_A^2 m_B^2 }
 }
-=
+\\&=
 \frac{\calp}{16 \pi^2 \sqrt{s} }
 \Abs{-i\lambda}^2 \inv{ 4 \Norm{\Bk} \sqrt{s} }
-=
+\\&=
 \frac{\lambda^2}{64 \pi^2 s}.
+\end{aligned}
 \end{equation}
 
 Since
@@ -213,11 +227,13 @@ Since
 \end{equation}
 the total cross section is
 \begin{equation}\label{eqn:qftLecture18:360}
+\begin{aligned}
 \sigma_{\text{total}}
-=
+&=
 \frac{\lambda^2}{s \pi^2} \frac{ 4 \pi}{2 64/16}
-=
+\\&=
 \frac{\lambda^2}{32 s}.
+\end{aligned}
 \end{equation}
 There was a counting adjustment made here that I didn't catch.
 

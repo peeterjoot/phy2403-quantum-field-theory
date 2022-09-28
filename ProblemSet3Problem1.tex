@@ -70,7 +70,6 @@ Using Wick's theorem, the first order term is zero (odd number of creation and a
 \approx
 \exp\lr{ - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) }
 \end{equation}
-
 \makeSubAnswer{}{qft:problemSet3:1b}
 We wish to evaluate the integral in the exponential argument
 \begin{equation}\label{eqn:ProblemSet3Problem1:60}
@@ -167,25 +166,28 @@ e^{ i p_0 t}
 \end{equation}
 Following the supplied hint we write
 \begin{equation}\label{eqn:ProblemSet3Problem1:140}
+\begin{aligned}
 (2 \pi)^2
 \delta(p_0)
 \delta(-p_0)
-=
+&=
 (2 \pi)^2
 \delta(p_0)
 \delta(0)
-=
+\\&=
 2 \pi
 \delta(p_0)
 \int_{-T}^T dt'
-=
+\\&=
 (2 \pi)(2 T)
 \delta(p_0),
+\end{aligned}
 \end{equation}
 which gives
 \begin{equation}\label{eqn:ProblemSet3Problem1:160}
+\begin{aligned}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
-=
+&=
 2 T i
 \int
 \frac{dp_0 d^3 p}{(2 \pi)^3} \frac{ \delta(p_0) }{p_0^2 - \Bp^2 - m^2 + i \epsilon }
@@ -196,7 +198,7 @@ e^{-i \Bp \cdot \BR}
 -
 e^{i \Bp \cdot \BR}
 }
-=
+\\&=
 -2 T i
 \int
 \frac{d^3 p}{(2 \pi)^2} \frac{ 1 }{ \Bp^2 + m^2 - i \epsilon }
@@ -207,6 +209,7 @@ e^{-i \Bp \cdot \BR}
 -
 e^{i \Bp \cdot \BR}
 }.
+\end{aligned}
 \end{equation}
 We can now make the usual spherical coordinate change of variables
 \begin{equation}\label{eqn:ProblemSet3Problem1:180}
@@ -220,8 +223,9 @@ so the integral factor of the coupling exponential
 \cref{two}
 is reduced to
 \begin{equation}\label{eqn:ProblemSet3Problem1:200}
+\begin{aligned}
 \int d^4 x d^4 y j(x) D_F(x - y) j(y)
-=
+&=
 -2 T i
 \int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \int_0^\pi d\theta \sin\theta \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
 \lr{
@@ -231,7 +235,7 @@ is reduced to
    -
    e^{i \calp R \cos\theta}
 }
-=
+\\&=
 2 T i
 \int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \int_1^{-1} du \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
 \lr{
@@ -241,7 +245,7 @@ is reduced to
    -
    e^{i \calp R u}
 }
-=
+\\&=
 2 T i
 \int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }
 \lr{
@@ -265,12 +269,13 @@ is reduced to
       i \calp R
    }
 }
-=
+\\&=
 \frac{2 T i}{\pi^2}
 \int_0^\infty d \calp \frac{ \calp^2 }{ \calp^2 + m^2 - i \epsilon }
 \lr{
    \sinc( \calp R ) - 1
 }.
+\end{aligned}
 \end{equation}
 With \( p_0 \) integrated out, we don't need the \( i \epsilon \) factor for pole avoidance, and find (using Mathematica) that
 \begin{equation}\label{eqn:ProblemSet3Problem1:220}
@@ -283,17 +288,19 @@ With \( p_0 \) integrated out, we don't need the \( i \epsilon \) factor for pol
 \end{equation}
 The \( m \pi/2 \) term contributes only a phase adjustment, and can be ignored.  This leaves
 \begin{equation}\label{eqn:ProblemSet3Problem1:240}
+\begin{aligned}
   e^{\;-{g^2\over 2} \int d^4 x d^4 y\;  j(x)  D_F(x-y) j(y) }
-=
+  &=
 \exp\lr{
 \frac{-g^2}{2}
 \frac{2 T i}{\pi^2}
 \frac{1}{2} \pi \frac{e^{-m R}}{R}
 }
-=
+\\&=
 \exp\lr{
    -2 T i V(R)
 },
+\end{aligned}
 \end{equation}
 where
 \begin{equation}\label{eqn:ProblemSet3Problem1:260}
@@ -381,9 +388,7 @@ Applying this sign adjustment to the calculation of \cref{eqn:ProblemSet3Problem
 \end{equation}
 Using \cref{eqn:ProblemSet3Problem1:220} again, we find for equal charges an opposite sign potential
 \begin{equation}\label{eqn:ProblemSet3Problem1:320}
-V(R)
-=
--\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
+V(R) = -\frac{g^2}{4 \pi} \frac{e^{-m R}}{R}.
 \end{equation}
 As this is a negative potential, it appears to indicate that like charges attract in the scalar theory.
 
