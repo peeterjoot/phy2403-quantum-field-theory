@@ -59,9 +59,11 @@ we introduced an interaction picture field given by
 \end{equation}
 related to the Heisenberg picture representation by
 \begin{equation}\label{eqn:qftLecture14:60}
+\begin{aligned}
 \phi_H(t, x)
-= e^{i H(t- t_0)} \phi(t_0, \Bx) e^{-iH(t - t_0)}
-= U^\dagger(t, t_0) \phi_I(t, \Bx) U(t, t_0),
+&= e^{i H(t- t_0)} \phi(t_0, \Bx) e^{-iH(t - t_0)} \\
+&= U^\dagger(t, t_0) \phi_I(t, \Bx) U(t, t_0),
+\end{aligned}
 \end{equation}
 where \( U(t, t_0) \) is the time evolution operator.
 \begin{equation}\label{eqn:qftLecture14:80}
@@ -137,24 +139,26 @@ We now wish to argue that the \( \SumInt_n \) term can be ignored.
 
 This is something of a fast one, but one can consider a formal transformation \( T \rightarrow T(1 - i \epsilon) \), where \( \epsilon \rightarrow 0^+ \), and consider very large \( T \).  This gives
 \begin{equation}\label{eqn:qftLecture14:240}
+\begin{aligned}
 \lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+}
 e^{-i H T(1 - i \epsilon)} \ket{0}
-=
+&=
 \lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+}
 e^{-i H T(1 - i \epsilon)}
 \lr{
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n \ket{n}\braket{n}{0}
 }
-=
+\\&=
 \lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+}
 e^{-i E_0 T - E_0 \epsilon T}
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n e^{-i E_n T - \epsilon E_n T} \ket{n}\braket{n}{0}
-=
+   \\&=
 \lim_{T \rightarrow \infty, \epsilon \rightarrow 0^+}
 e^{-i E_0 T - E_0 \epsilon T}
 \lr{
    \ket{\Omega}\braket{\Omega}{0} + \SumInt_n e^{-i (E_n -E_0) T - \epsilon T (E_n - E_0)} \ket{n}\braket{n}{0}
 }.
+\end{aligned}
 \end{equation}
 The limits are evaluated by first taking \( T \) to infinity, then only after that take \( \epsilon \rightarrow 0^+ \).  Doing this, the sum is dominated by the ground state contribution, since each excited state also has a \( e^{-\epsilon T(E_n - E_0)} \) suppression factor (in addition to the leading suppression factor).
 
@@ -177,12 +181,14 @@ e^{-i H T} \SumInt \ket{n}\bra{n}
 \end{equation}
 If we take matrix elements
 \begin{equation}\label{eqn:qftLecture14:320}
+\begin{aligned}
 \bra{A}
 e^{-i H T} \SumInt \ket{n}\bra{n} \ket{B}
-=
+&=
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} \braket{A}{\Bp, k} e^{-i E_{\Bp, k}} \braket{\Bp, k}{B}
-=
+\\&=
 \sum_k \int \frac{d^3 p}{(2 \pi)^3} e^{-i E_{\Bp, k}} f(\Bp).
+\end{aligned}
 \end{equation}
 If we assume that \( f(\Bp) \) is a well behaved smooth function, we have ``infinite'' frequency oscillation within the envelope provided by the amplitude of that function, as depicted in \cref{fig:RiemannLebesque:RiemannLebesqueFig1}.
 The Riemann-Lebesgue lemma \citep{wiki:RiemannLebesgue} describes such integrals, the result of which is that such an integral goes to zero.  This is a different sort of hand waving argument, but either way, we can argue that only the ground state contributes to the sum
@@ -199,19 +205,21 @@ e^{-i H T} \ket{0} = e^{-i E_0 T} \ket{\Omega}\braket{\Omega}{0},
 \end{equation}
 in the \( T \rightarrow \infty(1 - i \epsilon) \) limit.  We can now write the ground state as
 \begin{equation}\label{eqn:qftLecture14:360}
+\begin{aligned}
 \ket{\Omega}
-=
+&=
 \evalbar{
 \frac{ e^{i E_0 T - i H T } \ket{0} }{
 \braket{\Omega}{0}
 }
 }{ T \rightarrow \infty(1 - i \epsilon) }
-=
+\\&=
 \evalbar{
    \frac{ e^{- i H T } \ket{0} }{
    e^{-i E_0 T} \braket{\Omega}{0}
    }
 }{ T \rightarrow \infty(1 - i \epsilon) }.
+\end{aligned}
 \end{equation}
 Shifting the very large \( T \rightarrow T + t_0 \) shouldn't change things, so
 \begin{equation}\label{eqn:qftLecture14:480}
@@ -251,10 +259,12 @@ T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}}.
 Observe that we recover \cref{eqn:qftLecture14:120} when \( t' = t_0 \).
 Using \cref{eqn:qftLecture14:400} we find
 \begin{equation}\label{eqn:qftLecture14:520}
+\begin{aligned}
 U(t_0, -T) \ket{0}
-= e^{i H_0(t_0 - t_0)} e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
-= e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
-= e^{-i H(t_0 + T)} \ket{0},
+  &= e^{i H_0(t_0 - t_0)} e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
+\\&= e^{-i H(t_0 + T)} e^{-i H_0(-T - t_0)} \ket{0}
+\\&= e^{-i H(t_0 + T)} \ket{0},
+\end{aligned}
 \end{equation}
 where we use the fact that \(
 %\begin{equation}\label{eqn:qftLecture14:540}

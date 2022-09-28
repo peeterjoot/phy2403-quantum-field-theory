@@ -65,18 +65,21 @@ where
 
 Assuming that \( h(x) \) and \( \phi^a(x) \) commute, \( H^\dagger H \) can be computed with relative ease, and has only radial dependence
 \begin{equation}\label{eqn:ProblemSet4Problem2:380}
+\begin{aligned}
 \trace{\lr{H^\dagger H}}
-=
+&=
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\lr{ e^{-i \Bsigma \cdot \Bphi} e^{i \Bsigma \cdot \Bphi} }}
-=
+\\&=
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\BOne}
-=
+\\&=
 \frac{\Abs{m}^2}{2 \lambda} (1 + h)^2.
+\end{aligned}
 \end{equation}
 For the derivative quadratic form, we find
 \begin{equation}\label{eqn:ProblemSet4Problem2:400}
+\begin{aligned}
 \partial_\mu H^\dagger \partial^\mu H
-=
+&=
 \frac{\Abs{m}^2}{4 \lambda}
 \lr{
    \partial_\mu h \Omega^\dagger
@@ -87,7 +90,7 @@ For the derivative quadratic form, we find
    + (1 + h)
 \partial^\mu \Omega
 }
-=
+\\&=
 \frac{\Abs{m}^2}{4 \lambda}
 \lr{
    \partial_\mu h \Omega^\dagger \partial^\mu h \Omega
@@ -101,31 +104,34 @@ For the derivative quadratic form, we find
       }
    + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
 }.
+\end{aligned}
 \end{equation}
 Because \( \Omega^\dagger \Omega = 1 \), we have
 \begin{equation}\label{eqn:ProblemSet4Problem2:480}
+\begin{aligned}
 \partial_\mu h
 \Omega^\dagger (\partial^\mu \Omega)
  +
 \partial^\mu h
 (\partial_\mu \Omega^\dagger) \Omega
-=
+&=
 \partial_\mu h
 \lr{
    \Omega^\dagger (\partial^\mu \Omega)
     +
    (\partial^\mu \Omega^\dagger) \Omega
 }
-=
+\\&=
 \partial_\mu h
 \lr{
    \partial^\mu (\Omega^\dagger \Omega) - (\partial^\mu \Omega^\dagger) \Omega
     +
    (\partial^\mu \Omega^\dagger) \Omega
 }
-=
+\\&=
    \partial^\mu (1)
-= 0.
+   \\&= 0.
+\end{aligned}
 \end{equation}
 All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to all orders, not just quadratic).
 
@@ -152,41 +158,46 @@ the Lagrangian density is now determined
 %
 Now let's expand the \( \Omega \) derivatives.  To first order, we have
 \begin{equation}\label{eqn:ProblemSet4Problem2:580}
+\begin{aligned}
 \partial_\mu \Omega
-=
+&=
 \partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
-=
+\\&=
 i \Bsigma \cdot \partial_\mu \Bphi,
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet4Problem2:760}
+\begin{aligned}
    \trace{\lr{
       \partial_\mu \Omega^\dagger \partial^\mu \Omega
    }}
-=
+   &=
 \trace{\lr{
    (-i \Bsigma \cdot \partial_\mu \Bphi^\dagger)
    (i \Bsigma \cdot \partial^\mu \Bphi)
 }}
-=
+\\&=
 \trace{\lr{
    (\Bsigma \cdot \partial_\mu \Bphi)
    (\Bsigma \cdot \partial^\mu \Bphi)
 }},
+\end{aligned}
 \end{equation}
 where the real nature of each of the \( \phi^a \)'s has been used to eliminate the \( \dagger\)'s.
 The structure of this trace is that of
 \begin{equation}\label{eqn:ProblemSet4Problem2:780}
+\begin{aligned}
 \trace{\lr{
    (\Bsigma \cdot \Bx)
    (\Bsigma \cdot \By)
 }}
-=
+&=
 x^a y^b
 \trace{\lr{
    \sigma^a \sigma^b
 }}
-=
+\\&=
 x^a y^b
 \left\{
 \begin{array}{l l}
@@ -194,24 +205,27 @@ x^a y^b
 0 & \quad \mbox{\( a \ne b \)} \\
 \end{array}
 \right.
-=
+\\&=
 2 \Bx \cdot \By,
+\end{aligned}
 \end{equation}
 %
 The Lagrangian density, including just the kinetic term, and the first order \( h \) interaction is
 \begin{equation}\label{eqn:ProblemSet4Problem2:501}
+\begin{aligned}
 \LL
-=
+&=
 \frac{\Abs{m}^2}{2 \lambda}
    \partial_\mu h \partial^\mu h
 +
 \frac{\Abs{m}^2}{4 \lambda} (2 h) 2 \partial_\mu \phi^a \partial^\mu \phi^a
 + \cdots
-=
+\\&=
 \frac{\Abs{m}^2}{2 \lambda}
    \partial_\mu h \partial^\mu h
 +
 \frac{\Abs{m}^2}{\lambda} h \partial_\mu \phi^a \partial^\mu \phi^a.
+\end{aligned}
 \end{equation}
 Imposing a transformation of the fields
 \begin{equation}\label{eqn:ProblemSet4Problem2:1180}
@@ -259,32 +273,34 @@ The constant in question (called \( 1/v \) in problem 3) has been found to be
 \inv{v} =
 \frac{\sqrt{\lambda}}{\Abs{m}}.
 }
-
 \makeSubAnswer{}{qft:problemSet4:2b}
-
 The scattering calculation machine that was presented in class, assumes that the final states scattering process can be related to a scattering matrix with the following structure
 \begin{equation}\label{eqn:ProblemSet4Problem2:820}
+\begin{aligned}
 \prescript{}{\text{out}}{\braket{\Bp_1, \Bp_2}{\Bk}}_{\text{in}}
-=
+&=
 \bra{ \Bp_1, \Bp_2 } \hat{S} \ket{ \Bk}
-=
+\\&=
 \bra{ \Bp_1, \Bp_2 } T\lr{ e^{-i\int dt H_{\text{int}}(t)} } \ket{ \Bk}
+\end{aligned}
 \end{equation}
 where \( \Bk \) is the momentum of the initial Higgs particle, \( \Bp_i \) are the momenta of the Z-boson disintegration products, and we evaluate the amplitude by summing ``connected amputated diagrams''.
 
 With the plus-minus decomposition of the field \( h(z) = h^{+}(z) + h^{-}(z) \), contracting the field with the initial momentum state gives
 \begin{equation}\label{eqn:ProblemSet4Problem2:840}
+\begin{aligned}
 h(z) \ket{\Bk}
-=
+&=
 h^{+}(z) \ket{\Bk}
-=
+\\&=
 \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i q \cdot z} a_\Bq \ket{\Bk}
-=
+\\&=
 \int \frac{d^3 q}{(2 \pi)^3 \sqrt{2 \omega_\Bq} } e^{-i q \cdot z} a_\Bq \sqrt{ 2 \omega_\Bk } a_\Bk^\dagger \ket{0}
-=
+\\&=
 \int d^3 q e^{-i q \cdot z} \deltathree( \Bq - \Bk ) \ket{0}
-=
+\\&=
 e^{-i k \cdot z}.
+\end{aligned}
 \end{equation}
 Similarly,
 \begin{equation}\label{eqn:ProblemSet4Problem2:860}
@@ -295,11 +311,13 @@ e^{i p \cdot z}.
 
 Apparently\footnote{According to a ``trust-me, it's a long story'' kind of statement related to a classmate from Professor Poppitz.}, the interaction Hamiltonian density that we want to use for this problem is \( H_{\text{int}} = -\LL_{\text{int}} \).  Given that, the exponential argument expands to
 \begin{equation}\label{eqn:ProblemSet4Problem2:880}
+\begin{aligned}
 -i \int dt H_{\text{int}}(t)
-=
+&=
 i \inv{v} \int dt \int d^3 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
-=
+\\&=
 i \inv{v} \int d^4 x h(x) \partial_\mu \phi^a(x) \partial^\mu \phi^a(x).
+\end{aligned}
 \end{equation}
 so the
 first order expansion of the scattering amplitude is
@@ -324,19 +342,21 @@ i \inv{v} \int d^4 x
 \end{equation}
 however, since \( \Bp_i \) are the momenta for \( \phi^3 \) particles, only the \( a = 3 \) terms above contribute, leaving
 \begin{equation}\label{eqn:ProblemSet4Problem2:940}
+\begin{aligned}
 i \inv{v} \int d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert}{\Bk}
 \langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
-=
+&=
 i \inv{v} \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
-=
+\\&=
 i \inv{v} \int d^4 x \bra{0} (i (p_1)_\mu)(i (p_2)^\mu) e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
-=
+\\&=
 -i \inv{v} \int d^4 x \bra{0} p_1 \cdot p_2 e^{i (p_1 + p_2 - k) \cdot x} \ket{0}
-=
+\\&=
 -i \inv{v} (p_1 \cdot p_2) (2 \pi)^4 \deltafour(p_1 + p_2 - k).
+\end{aligned}
 \end{equation}
 This equals \( i M_{fi} (2 \pi)^4 \deltafour(p_1 + p_2 - k) \), so
 \begin{equation}\label{eqn:ProblemSet4Problem2:960}
@@ -349,15 +369,17 @@ We can now start plugging this into our decay rate formula
 \end{equation}
 where\footnote{\citep{LukeQFT} uses \( D \) for the \( d(LIPS)_2 \) symbol we used in class.}
 \begin{equation}\label{eqn:ProblemSet4Problem2:1000}
+\begin{aligned}
 d(LIPS)_2
-=
+&=
 (2 \pi)^4 \deltafour(p_1 + p_2 - k)
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
-=
+\\&=
 (2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_1 + \omega_2 - \omega_\Bk)
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet4Problem2:1020}
 \Gamma
@@ -405,8 +427,9 @@ however, the \( \phi^3 \) particles are bosons (no mass!), so this is just
 \end{equation}
 so \cref{eqn:ProblemSet4Problem2:1020} becomes
 \begin{equation}\label{eqn:ProblemSet4Problem2:1140}
+\begin{aligned}
 \Gamma
-=
+&=
 \inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
@@ -414,40 +437,43 @@ so \cref{eqn:ProblemSet4Problem2:1020} becomes
 \inv{ 2 m_h}
 (2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - m_h)
 4 \Norm{\Bp_1}^4
-=
+\\&=
 \inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 \omega_{\Bp_1}^2 }
 \inv{ 2 m_h}
 (2 \pi) \delta( 2 \omega_{\Bp_1} - m_h)
 \Norm{\Bp_1}^4
-=
+\\&=
 \inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^2 }
 \inv{ 2 m_h}
 \delta( 2 \omega_{\Bp_1} - m_h)
 \Norm{\Bp_1}^2.
+\end{aligned}
 \end{equation}
 Evaluating in spherical coordinates with \( \Norm{\Bp_1} = \calp \), we are left with
 \begin{equation}\label{eqn:ProblemSet4Problem2:1160}
+\begin{aligned}
 \Gamma
-=
+&=
 \inv{v^2}
 \frac{4 \pi}{8 m_h \pi^2}
 \int_0^\infty
 d\calp
 \calp^4
 \delta( 2 \calp - m_h)
-=
+\\&=
 \inv{v^2}
 \frac{1}{2 m_h \pi}
 \int_0^\infty
 d\calp
 \calp^4
 \frac{\delta( \calp - m_h/2)}{2}
-=
+\\&=
 \inv{v^2} \frac{m_h^3}{64 \pi},
+\end{aligned}
 \end{equation}
 where no adjustment of the integration range \( \int_0^\infty p^4 \rightarrow \inv{2} \int_{-\infty}^\infty p^4 \) transformation was made before evaluating the delta function.  That was done on purpose since the
 zero of our delta function sits at \( m_h/2 > 0 \), a point already in the \( [0, \infty] \) range of the delta function integral above.  The final result, putting in our constant factor \( \chi \) from \cref{eqn:ProblemSet4Problem2:1220} is
@@ -457,12 +483,9 @@ zero of our delta function sits at \( m_h/2 > 0 \), a point already in the \( [0
 \frac{\lambda}{\Abs{m}^2}
 \frac{m_h^3}{64 \pi}.
 }
-
 \paragraph{Commentary on possible errors.}
 I'm not entirely convinced that this answer is not off by some \( 2^n \) factor, even assuming no plain old algebraic errors.  The easiest place I can imagine messing this up, is by double counting our indistinguishable bosons.  I think that I've implicitly accounted for that indistinguishably by not separately labeling \( \phi^3_A, \phi^3_B \) end points in the first diagram of \cref{fig:hw4p2}, therefore counting that diagram only once.
-
 \makeSubAnswer{}{qft:problemSet4:2c}
-
 The results of plugging the numbers can be found in \cref{fig:hw4p2Mathematica:hw4p2MathematicaFig1}.
 \mathImageFigure{../figures/phy2403-quantum-field-theory/hw4p2MathematicaFig1}{Plugging in the numbers.}{fig:hw4p2Mathematica:hw4p2MathematicaFig1}{0.5}{hw4p2numbers.nb}
 , we have

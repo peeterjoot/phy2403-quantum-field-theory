@@ -72,11 +72,12 @@ This gives
 %
 from which the braket can be computed
 \begin{equation}\label{eqn:qftProblemSet1Problem2:160}
-1
-= \braket{z}{z}
-= N^2 \sum_{k,m = 0}^\infty \inv{\sqrt{k!}} (z^\conj)^k \bra{k} \inv{\sqrt{m!}} z^m \ket{m}
-= N^2 \sum_{k = 0}^\infty \inv{k!} (z^\conj z)^k
-= N^2 e^{\Abs{z}^2}.
+\begin{aligned}
+1 &= \braket{z}{z}
+\\&= N^2 \sum_{k,m = 0}^\infty \inv{\sqrt{k!}} (z^\conj)^k \bra{k} \inv{\sqrt{m!}} z^m \ket{m}
+\\&= N^2 \sum_{k = 0}^\infty \inv{k!} (z^\conj z)^k
+\\&= N^2 e^{\Abs{z}^2}.
+\end{aligned}
 \end{equation}
 
 This gives
@@ -85,21 +86,23 @@ N = e^{-\Abs{z}^2/2}.
 }
 \makeSubAnswer{}{qft:LukeProblemSet1:2c}
 \begin{equation}\label{eqn:qftProblemSet1Problem2:260}
+\begin{aligned}
 a \ket{z}
-=
+&=
 a N
 \sum_{k = 0}^\infty \inv{\sqrt{k!}} z^k \ket{k}
-=
+\\&=
 N
 \sum_{k = 1}^\infty \inv{\sqrt{k!}} z^k a \ket{k}
-=
+\\&=
 N
 \sum_{k = 1}^\infty \inv{\sqrt{k!}} z^k \sqrt{k} \ket{k-1}
-=
+\\&=
 z N
 \sum_{k = 1}^\infty \inv{\sqrt{(k-1)!}} z^{k-1} \ket{k-1}
-=
+\\&=
 z \ket{z}
+\end{aligned}
 \end{equation}
 
 \makeSubAnswer{}{qft:LukeProblemSet1:2b}
@@ -127,31 +130,37 @@ H
 \end{equation}
 Having found that \( a \ket{z} = z \ket{z} \), we also have
 \begin{equation}\label{eqn:qftProblemSet1Problem2:280}
+\begin{aligned}
 \bra{z} a^\dagger
-=
+&=
 \lr{ a \ket{z} }^\dagger
-=
+\\&=
 \lr{ z \ket{z} }^\dagger
-=
+\\&=
 \bra{z} z^\conj,
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:qftProblemSet1Problem2:240}
+\begin{aligned}
 \bra{z} H \ket{z}
-=
+&=
 \omega
 \bra{z} a^\dagger a + \inv{2} \ket{z}
-=
+\\&=
 \omega
 \lr{ \Abs{z}^2 + \inv{2} }.
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:LukeProblemSet1:2d}
 \begin{equation}\label{eqn:qftProblemSet1Problem2:300}
+\begin{aligned}
 \bra{q} a \ket{z}
-=
+&=
 \inv{\sqrt{2}} \bra{q} q + i p \ket{z}
-=
+\\&=
 \inv{\sqrt{2}} \lr{ q + \PD{q}{} } \braket{q}{z},
+\end{aligned}
 \end{equation}
 with \( \psi(q) = \braket{q}{z} \), this is
 \begin{equation}\label{eqn:qftProblemSet1Problem2:320}
@@ -164,49 +173,54 @@ which separates into
 
 The solution is of the form
 \begin{equation}\label{eqn:qftProblemSet1Problem2:360}
+\begin{aligned}
 \psi
-\propto \exp\lr{ \sqrt{2} z q - q^2/2 }
-= \exp\lr{ -(q^2 - 2 \sqrt{2} z q )/2 }
-\propto \exp\lr{ -(q - \sqrt{2} z )^2/2 }.
+&\propto \exp\lr{ \sqrt{2} z q - q^2/2 } \\
+&= \exp\lr{ -(q^2 - 2 \sqrt{2} z q )/2 } \\
+&\propto \exp\lr{ -(q - \sqrt{2} z )^2/2 }.
+\end{aligned}
 \end{equation}
 
 SKETCH: This is a Gaussian, and when \( z \) is real is centered at \( \sqrt{2} z \).
 
 \makeSubAnswer{}{qft:LukeProblemSet1:2e}
-
 Noting that \( 2 q = \sqrt{2} \lr{ a + a^\dagger } \), and \( 2 i p = \sqrt{2}\lr{ a - a^\dagger } \)
 \begin{equation}\label{eqn:qftProblemSet1Problem2:380}
+\begin{aligned}
 \bra{z} X \ket{z}
-=
+&=
 \inv{\sqrt{\mu \omega}}
 \bra{z} q \ket{z}
-=
+\\&=
 \inv{\sqrt{2 \mu \omega}}
 \bra{z}
 a e^{-i\omega t} + a^\dagger e^{i \omega t}
 \ket{z}
-=
+\\&=
 \inv{\sqrt{2 \mu \omega}} \lr{
 z e^{-i\omega t} + z^\conj e^{i \omega t}
 }
-=
+\\&=
 \sqrt{\frac{2}{\mu \omega}} z \cos(\omega t).
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftProblemSet1Problem2:400}
+\begin{aligned}
 \bra{z} P \ket{z}
-=
+&=
 \sqrt{\mu \omega}
 \bra{z} p \ket{z}
-=
+\\&=
 i\frac{\sqrt{\mu \omega}}{2}
 \bra{z}
 a^\dagger e^{i\omega t} - a e^{-i \omega t}
 \ket{z}
-=
+\\&=
 i\frac{\sqrt{\mu \omega}}{2} z
 \lr{ e^{i\omega t} - e^{-i \omega t}}
-=
+\\&=
 -\sqrt{2 \mu \omega} z \sin(\omega t).
+\end{aligned}
 \end{equation}
 
 SKETCH: particle expectation values trace an ellipse in phase space.

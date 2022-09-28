@@ -52,12 +52,14 @@ U(t, t')
 T \exp{\lr{ -i \int_{t'}^t H_{\text{I,int}}(t'') dt''}},
 \end{equation}
 \begin{equation}\label{eqn:qftLecture15:220}
+\begin{aligned}
 U(t, t')^\dagger
-=
+&=
 T \exp{\lr{ i \int_{t'}^{t} H_{\text{I,int}}(t'') dt''}}
-=
+\\&=
 T \exp{\lr{ -i \int_{t}^{t'} H_{\text{I,int}}(t'') dt''}}
-= U(t', t),
+\\&= U(t', t),
+\end{aligned}
 \end{equation}
 and can use this to calculate the time evolution of a field 
 %\(
@@ -134,17 +136,19 @@ e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 \end{equation}
 Normalize \( \braket{\Omega}{\Omega} = 1 \), gives
 \begin{equation}\label{eqn:qftLecture15:140}
+\begin{aligned}
 1
-=
+&=
 \frac{\bra{0} U(T, t_0) U(t_0, -T) \ket{0}}
 {
 e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 }
-=
+\\&=
 \frac{\bra{0} U(T, -T) \ket{0}}
 {
 e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 },
+\end{aligned}
 \end{equation}
 so that
 \begin{equation}\label{eqn:qftLecture15:240}
@@ -169,19 +173,21 @@ U(t_0, -T)
 \end{equation}
 For \( t_1 > t_2 > t_3 \)
 \begin{equation}\label{eqn:qftLecture15:280}
+\begin{aligned}
 U(t_1, t_2) U(t_2, t_3)
-=
+&=
 T e^{-i \int_{t_2}^{t_1} H_I}
 T e^{-i \int_{t_3}^{t_2} H_I}
-=
+\\&=
 T \lr{
 e^{-i \int_{t_2}^{t_1} H_I}
 e^{-i \int_{t_3}^{t_2} H_I}
 }
-=
+\\&=
 T(
 e^{-i \int_{t_3}^{t_1} H_I}
 ),
+\end{aligned}
 \end{equation}
 with an end result of
 \begin{equation}\label{eqn:qftLecture15:320}
@@ -271,13 +277,15 @@ In QFT II you will see this written in a path integral representation
 
 \section{Unpacking it.}
 \begin{equation}\label{eqn:qftLecture15:400}
+\begin{aligned}
 \int_{-T}^T H_{\text{I,int}}(t)
-=
+&=
 \int_{-T}^T
 \int d^3 \Bx \frac{\lambda}{4} \lr{ \phi_I(\Bx, t) }^4
-=
+\\&=
 \int d^4 x
 \frac{\lambda}{4} \lr{ \phi_I }^4,
+\end{aligned}
 \end{equation}
 so we have
 \begin{equation}\label{eqn:qftLecture15:420}
