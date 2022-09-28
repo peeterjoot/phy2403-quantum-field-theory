@@ -96,7 +96,7 @@ Before diagonalizing the Hamiltonian, let's verify that applying computing Hamil
 \label{eqn:ProblemSet1Problem2:700}
 \begin{equation}\label{eqn:ProblemSet1Problem2:720}
 \begin{aligned}
-\PD{t}{\phi}(\Bx, t)
+&\PD{t}{\phi}(\Bx, t) \\
 &= i \antisymmetric{H}{\phi(\Bx)}
 \\&=
 i \int d^3 y \lr{
@@ -116,7 +116,7 @@ i \int d^3 y \pi^\dagger(\By) (-i) \deltathree(\By - \Bx)
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:740}
 \begin{aligned}
-\PD{t}{\phi^\dagger}(\Bx, t)
+&\PD{t}{\phi^\dagger}(\Bx, t) \\
 &= i \antisymmetric{H}{\phi^\dagger(\Bx)}
 \\&=
 i \int d^3 y \lr{
@@ -136,7 +136,7 @@ i \int d^3 y \pi(\By) (-i) \deltathree(\By - \Bx)
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:760}
 \begin{aligned}
-\PD{t}{\pi}(\Bx, t)
+&\PD{t}{\pi}(\Bx, t) \\
 &=
 i \antisymmetric{H}{\pi(\Bx)}
 \\&=
@@ -173,7 +173,7 @@ i \int d^3 y \lr{
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:780}
 \begin{aligned}
-\PD{t}{\pi^\dagger}(\Bx, t)
+&\PD{t}{\pi^\dagger}(\Bx, t) \\
 &=
 i \antisymmetric{H}{\pi^\dagger(\Bx)}
 \\&=
@@ -674,10 +674,11 @@ The Lagrangian is left unchanged by this transformation, so we can determine the
   - m^2 \phi^\dagger \lr{\delta \phi}
 }
 \\&= \int d^4 x
-\lr{
+\Biglr{
    \partial_\mu \lr{ \lr{ \delta \phi^\dagger} \partial^\mu \phi }
 -
-   \lr{\delta \phi^\dagger} \lr{\partial_\mu \partial^\mu \phi}
+   \lr{\delta \phi^\dagger} \lr{\partial_\mu \partial^\mu \phi} \\
+&\quad
  + \partial_\mu \lr{ \partial^\mu \phi^\dagger \delta \phi }
  - \lr{ \partial_\mu \partial^\mu \phi^\dagger } \delta \phi
    - m^2 \lr{ \delta \phi^\dagger} \phi - m^2 \phi^\dagger \lr{ \delta \phi}
@@ -695,8 +696,8 @@ The Lagrangian is left unchanged by this transformation, so we can determine the
 \lr{
    \lr{\partial_\mu \partial^\mu \phi}
 + m^2 \phi
-}
--
+} \\
+&\quad-
 \int d^4 x
 \lr{
  \partial_\mu \partial^\mu \phi^\dagger
@@ -750,32 +751,49 @@ Q
 \frac{i}{2}
 \int d^3 x
 \lr{ \phi^\dagger \pi^\dagger - \pi \phi }
+%%\\&=
+%%\frac{i}{4}
+%%\int d^3 x
+%%\frac{d^3 p}{(2\pi)^3}
+%%\frac{d^3 q}{(2\pi)^3}
+%%e^{i (\Bq -\Bp) \cdot \Bx}
+%%\frac{i\omega_\Bq}{\sqrt{\omega_\Bp\omega_\Bq}}
+%%\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
+%%\lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+%%- \\
+%%&\quad
+%%\frac{i}{4}
+%%\int d^3 x
+%%\frac{d^3 p}{(2\pi)^3}
+%%\frac{d^3 q}{(2\pi)^3}
+%%e^{i (\Bp -\Bq)\cdot \Bx}
+%%\frac{i \omega_\Bp}{\sqrt{\omega_\Bp\omega_\Bq}}
+%%\lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
+%%\lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
 \\&=
 \frac{i}{4}
 \int d^3 x
 \frac{d^3 p}{(2\pi)^3}
 \frac{d^3 q}{(2\pi)^3}
 e^{i (\Bq -\Bp) \cdot \Bx}
-\frac{i\omega_\Bq}{\sqrt{\omega_\Bp\omega_\Bq}}
+\frac{i\omega_\Bq}{\sqrt{\omega_\Bp\omega_\Bq}} \, \times \\
+&\quad
+\Biglr{
 \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
-\lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+\lr{ -e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq } \\
+&\quad\quad
 -
-\frac{i}{4}
-\int d^3 x
-\frac{d^3 p}{(2\pi)^3}
-\frac{d^3 q}{(2\pi)^3}
-e^{i (\Bp -\Bq)\cdot \Bx}
-\frac{i \omega_\Bp}{\sqrt{\omega_\Bp\omega_\Bq}}
 \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
 \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
+}
 \\&=
 \frac{1}{4}
 \int
 \frac{d^3 p}{(2\pi)^3}
-\lr{
+\Biglr{
    \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
-   \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
-   -
+   \lr{ e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp } \\
+&\quad-
    \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
    \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
 }
@@ -783,8 +801,9 @@ e^{i (\Bp -\Bq)\cdot \Bx}
 \frac{1}{4}
 \int
 \frac{d^3 p}{(2\pi)^3}
-\lr{
+\Biglr{
    a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger + a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
+\\&\quad
    + e^{2 i \omega_\Bp t} \lr{ b_\Bp^\dagger a_\Bp^\dagger  -a_\Bp^\dagger b_\Bp^\dagger }
    + e^{-2 i \omega_\Bp t} \lr{ -b_\Bp a_\Bp + b_\Bp a_\Bp }
 }

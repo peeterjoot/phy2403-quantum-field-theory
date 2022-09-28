@@ -238,29 +238,33 @@ However, we haven't used the non-relativistic (low energy) constraint.  That con
 \end{equation}
 the mass of each of the particles.  Incorporating that into our N-particle Hamiltonian, we have
 \begin{equation}\label{eqn:ProblemSet2Problem4:140}
-\text{\(:H:\)} =
-\sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i}
-+
+\begin{aligned}
+\text{\(:H:\)} &=
+\sum_{i = 1}^N \omega_{\Bp_i} a_{\Bp_i}^\dagger a_{\Bp_i} \\
+&\quad+
 \frac{
 \lambda
 }{4 m^2 }
 \sum_{j,m,n = 1}^N
-\lr{
+\Biglr{
    \binom{4}{0}
       a_{\Bp_j} a_{\Bp_m} a_{\Bp_n} a_{-\Bp -\Bk - \Bq} e^{- 4 i m t}
    +
    \binom{4}{1}
-      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-3 i m t}
+      a_{\Bp_j}^\dagger a_{\Bp_m} a_{\Bp_n} a_{{\Bp_j} - {\Bp_m} - {\Bp_n}} e^{-3 i m t} 
+\\ &\quad
    +
    \binom{4}{2}
       a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n} a_{{\Bp_j} + {\Bp_m} - {\Bp_n}}
    +
    \binom{4}{3}
       a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{{\Bp_j} + {\Bp_m} + {\Bp_n}} e^{ 3 i m t }
+\\ &\quad
    +
    \binom{4}{4}
       a_{\Bp_j}^\dagger a_{\Bp_m}^\dagger a_{\Bp_n}^\dagger a_{-{\Bp_j} -{\Bp_m} -{\Bp_n}}^\dagger e^{4 i m t}
 }.
+\end{aligned}
 \end{equation}
 Presuming there's a good argument to kill off the time dependent terms, the N-sector Hamiltonian is reduced to just
 \begin{equation}\label{eqn:ProblemSet2Problem4:160}

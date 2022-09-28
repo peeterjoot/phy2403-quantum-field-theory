@@ -47,10 +47,13 @@ Show now, starting from
 \cref{eqn:ProblemSet1Problem5:20}
 , with integral replaced by sum, that the difference between the zero point energies per unit area, in the space between the plates in the presence of the plates and without the plates is:
 \begin{equation}\label{eqn:ProblemSet1Problem5:40}
-\Delta E_{\text{vac}}(a) = \Hbar c \int_0^\infty \frac{dk}{2\pi} k \lr{ \frac{k}{4}
+\begin{aligned}
+\Delta &E_{\text{vac}}(a) = \Hbar c \int_0^\infty \frac{dk}{2\pi} k  \, \times \\
+&\quad\Biglr{ \frac{k}{4}
    + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
    - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
 }.
+\end{aligned}
 \end{equation}
 where, obviously, \( k \) is radial wave vector in \(y, z\)-directions.
 \makesubproblem{}{qft:problemSet1:5d}
@@ -199,20 +202,27 @@ The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Pr
 Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:ProblemSet1Problem5:40}, and making a change of variables \( k = \pi x /a \), we have
 \begin{equation}\label{eqn:ProblemSet1Problem5:220}
 \begin{aligned}
-\Delta E_{\text{vac}}(a)
-&= \int_0^\infty \frac{dk}{2\pi} k \lr{
+\Delta &E_{\text{vac}}(a)
+= \int_0^\infty \frac{dk}{2\pi} k 
+\\ &\quad
+\Biglr{
    \frac{k}{4} f(k)
    + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
-   f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
+   f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } ) \\
+&\quad\quad
    - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
    f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
 }
 \\&=
 \frac{\Hbar c \pi^2}{4 a^3}
-\int_0^\infty dx x \lr{
+\int_0^\infty dx x \\
+&\quad 
+\Biglr{
    \frac{x}{2} f((\pi/a) x)
    + \sum_{n = 1}^\infty \sqrt{ x^2 + n^2 }
    f((\pi/a) \sqrt{x^2 + n^2})
+\\
+&\quad\quad
    - \int_0^\infty dn \sqrt{ x^2 + n^2 }
    f((\pi/a) \sqrt{x^2 + n^2})
 }.
@@ -221,13 +231,17 @@ Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:Probl
 Now let \( u = x^2 \)
 \begin{equation}\label{eqn:ProblemSet1Problem5:240}
 \begin{aligned}
-\Delta E_{\text{vac}}(a)
-&=
+\Delta &E_{\text{vac}}(a)
+=
 \frac{\Hbar c \pi^2}{8 a^3}
-\int_0^\infty du \lr{
+\int_0^\infty du  \\
+&\quad
+\Biglr{
    \frac{\sqrt{u}}{2} f((\pi/a) \sqrt{u})
    + \sum_{n = 1}^\infty \sqrt{ u + n^2 }
    f((\pi/a) \sqrt{u + n^2})
+\\
+&\quad\quad
    - \int_0^\infty dn \sqrt{ u + n^2 }
    f((\pi/a) \sqrt{u + n^2})
 }
@@ -238,7 +252,6 @@ Now let \( u = x^2 \)
 \end{aligned}
 \end{equation}
 which recovers \cref{eqn:ProblemSet1Problem5:260} as desired.
-
 \makeSubAnswer{}{qft:problemSet1:5e}
 To calculate the derivatives of \cref{eqn:ProblemSet1Problem5:280} we make a \( v = u + n^2 \) change of variables
 \begin{equation}\label{eqn:ProblemSet1Problem5:300}
@@ -263,12 +276,15 @@ F''(n)
 \end{equation}
 the third is
 \begin{equation}\label{eqn:ProblemSet1Problem5:380}
+\begin{aligned}
 F'''(n)
-=
+&=
 -4 f((\pi/a) n)
--4 n (\pi/a) f'((\pi/a) n)
+-4 n (\pi/a) f'((\pi/a) n) \\
+&\quad
 - 4 n (\pi/a) f'((\pi/a) n),
 - 2 n^2 (\pi/a)^2 f''((\pi/a) n).
+\end{aligned}
 \end{equation}
 Any higher order derivatives are dependent on \( f^{(k)}(\pi n/a), k \ge 1 \), so are zero at \(n = 0\) by construction.  Summarizing the values at \( n = 0 \) we have
 \begin{equation}\label{eqn:ProblemSet1Problem5:400}

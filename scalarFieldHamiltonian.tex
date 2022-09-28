@@ -101,11 +101,12 @@ e^{ i \Bk \cdot \Bx}
 Introducing a second set of momentum variables \( \Bj \), the momentum portion of the Hamiltonian is
 \begin{equation}\label{eqn:scalarFieldHamiltonian:100}
 \begin{aligned}
-\inv{2} \int d^3 x \pi^2
+\inv{2}& \int d^3 x \pi^2 \\
 &=
 -\inv{2}
 \inv{(2 \pi)^{3}}
-\int d^3 x
+\int d^3 x \,\times \\
+&\quad
 \int
 d^3 j
 d^3 k
@@ -131,7 +132,8 @@ d^3 k
 \frac{
 \omega_j
 \omega_k
-}{2}
+}{2} \, \times \\
+&\quad
 \lr{
 -a_\Bj e^{-i \omega_j t }
 +a_{-\Bj}^\dagger e^{i \omega_j t }
@@ -203,7 +205,7 @@ d^3 k
 For the gradient portion of the Hamiltonian we have
 \begin{equation}\label{eqn:scalarFieldHamiltonian:120}
 \begin{aligned}
-\inv{2} \int d^3 x \lr{ \spacegrad \phi }^2
+\inv{2} &\int d^3 x \lr{ \spacegrad \phi }^2 \\
 &=
 -\inv{2}
 \inv{(2 \pi)^{3}}
@@ -216,7 +218,8 @@ d^3 k
 \lr{
  a_\Bj e^{-i \omega_j t }
 +a_{-\Bj}^\dagger e^{i \omega_j t }
-}
+} \,\times \\
+&\quad
  \lr{
  a_\Bk e^{-i \omega_k t }
 +a_{-\Bk}^\dagger e^{i \omega_k t }
@@ -229,7 +232,8 @@ e^{ i \Bk \cdot \Bx} \\
 d^3 j
 d^3 k
 \inv{ \sqrt{ 4 \omega_j \omega_k } }
-\Bj \cdot \Bk
+\Bj \cdot \Bk \,\times \\
+&\quad
 \lr{
  a_\Bj e^{-i \omega_j t }
 +a_{-\Bj}^\dagger e^{i \omega_j t }
@@ -270,7 +274,7 @@ d^3 k
 Finally, for the mass term, we have
 \begin{equation}\label{eqn:scalarFieldHamiltonian:140}
 \begin{aligned}
-\inv{2} \int d^3 x \mu^2 \phi^2
+\inv{2} &\int d^3 x \mu^2 \phi^2 \\
 &=
 \frac{\mu^2}{2}
 \inv{(2 \pi)^{3}}
@@ -278,8 +282,8 @@ Finally, for the mass term, we have
 \int
 d^3 j
 d^3 k
-\inv{ \sqrt{ 4 \omega_j \omega_k } }
-\biglr{
+\inv{ \sqrt{ 4 \omega_j \omega_k } } \,\times \\
+&\quad\biglr{
  a_\Bj e^{-i \omega_j t }
 +a_{-\Bj}^\dagger e^{i \omega_j t }
 }
@@ -294,7 +298,8 @@ e^{ i \Bk \cdot \Bx} \\
 \int
 d^3 j
 d^3 k
-\inv{ \sqrt{ 4 \omega_j \omega_k } }
+\inv{ \sqrt{ 4 \omega_j \omega_k } } \,\times \\
+&\quad
 \biglr{
  a_\Bj e^{-i \omega_j t }
 +a_{-\Bj}^\dagger e^{i \omega_j t }
@@ -365,7 +370,7 @@ H
 \inv{4}
 \int d^3 k
 \inv{\omega_k}
-\biglr{ \\
+\Biglr{ \\
 &\qquad -\omega_k^2
 \lr{
   a_{-\Bk}^\dagger a_\Bk^\dagger e^{2 i \omega_k t }
@@ -394,7 +399,7 @@ H
 \inv{4}
 \int d^3 k
 \inv{\omega_k}
-\biglr{
+\Biglr{
 a_{-\Bk}^\dagger a_\Bk^\dagger e^{2 i \omega_k t }
 \lr{
 -\omega_k^2
