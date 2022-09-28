@@ -88,17 +88,19 @@ This is awkward because now our expressions for \( \bra{\Omega} \) and \( \ket{\
 
 To resolve this, we really have to start back with the identity expansion we used in lecture 14, and write
 \begin{equation}\label{eqn:braOmega:140}
+\begin{aligned}
 \bra{0} e^{-i H T}
-=
+&=
 \lr{
 \braket{0}{\Omega}\bra{\Omega}
  + \SumInt_n \braket{0}{n} \bra{n}
 }
 e^{-i H T}
-=
+\\&=
 \braket{0}{\Omega}\bra{\Omega}
 e^{-i E_0 T}
  + \SumInt_n \braket{0}{n} \bra{n} e^{-i E_n T}.
+\end{aligned}
 \end{equation}
 We argued (as does the text) that approaching to as \( T( 1 - i \epsilon) \) kills off the energetic states since
 \begin{equation}\label{eqn:braOmega:160}
@@ -108,38 +110,38 @@ We argued (as does the text) that approaching to as \( T( 1 - i \epsilon) \) kil
 \end{equation}
 and the exponential damping factor is smaller for each \( E_n > E_0 \), so it can be neglected in the large \( T \) limit, leaving
 \begin{equation}\label{eqn:braOmega:180}
-\bra{0} e^{-i H T}
-=
-\lim_{T \rightarrow \infty(1 - i \epsilon)}
+\bra{0} e^{-i H T} = \lim_{T \rightarrow \infty(1 - i \epsilon)}
 \braket{0}{\Omega}\bra{\Omega}.
 \end{equation}
 As we did for \( \ket{\Omega} \) we can shift the large time \( T \) by a small constant (this time \( -t_0 \) instead of \( t_0 \)), to give
 \begin{equation}\label{eqn:braOmega:200}
+\begin{aligned}
 \bra{\Omega}
-=
+&=
 \lim_{T \rightarrow \infty(1 - i \epsilon)}
 \frac{ \bra{0} e^{-i H T} }
 {
 \braket{0}{\Omega} e^{-i E_0 T}
 }
-\approx
+\\&\approx
 \lim_{T \rightarrow \infty(1 - i \epsilon)}
 \frac{ \bra{0} e^{-i H (T - t_0)} }
 {
 \braket{0}{\Omega} e^{-i E_0 (T - t_0)}
 }
-=
+\\&=
 \lim_{T \rightarrow \infty(1 - i \epsilon)}
 \frac{ \bra{0} e^{i H_0( T - t_0)} e^{-i H (T - t_0)} }
 {
 \braket{0}{\Omega} e^{-i E_0 (T - t_0)}
 }
-=
+\\&=
 \lim_{T \rightarrow \infty(1 - i \epsilon)}
 \frac{ \bra{0} U(T, t_0) }
 {
 \braket{0}{\Omega} e^{-i E_0 (T - t_0)}
 },
+\end{aligned}
 \end{equation}
 where the projective property \( \bra{0} e^{i H_0 \alpha} = \bra{0} \) has been used to insert a no-op (i.e. \( \bra{0} H_0 = 0 \)).  This recovers the result stated in class (also:
 \citep{peskin1995introduction}

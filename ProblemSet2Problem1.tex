@@ -52,37 +52,40 @@ d^3 p &= p^2 dp \sin\theta d\theta d\phi \\
 \end{equation}
 which gives
 \begin{equation}\label{eqn:ProblemSet2Problem1:100}
+\begin{aligned}
 D(x)
-=
+&=
 \inv{(2\pi)^2} \int_{p = 0}^\infty dp\, p^2 \int_{\theta = 0}^\pi -d(\cos\theta) \inv{2 p} e^{-i p t + i p r \cos\theta}
-=
+\\&=
 -\inv{8 \pi^2} \int_{p = 0}^\infty dp\, p
 e^{-i p t}
 \evalrange{\frac{e^{i p r u}}{i p r}}{u = \cos\theta = 1}{-1}
-=
+\\&=
 \frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
 e^{-i p t}
 \lr{
    e^{- i p r}
    -e^{i p r}
 }
-=
+\\&=
 \frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
 \lr{
    e^{- i p (r+t)}
    -e^{i p (r-t)}
 }
+\end{aligned}
 \end{equation}
 As hinted, this half delta function should be interpreted offset slightly
 \begin{equation}\label{eqn:ProblemSet2Problem1:120}
+\begin{aligned}
 D(x)
-=
+&=
 \frac{i}{8 \pi^2 r} \int_{p = 0}^\infty dp \,
 \lr{
    e^{- i p (r+t) + p \epsilon}
    -e^{i p (r-t) - p \epsilon}
 }
-=
+\\&=
 \frac{i}{8 \pi^2 r}
 \evalrange{
    \lr{
@@ -91,37 +94,40 @@ D(x)
    }
 }
 {0}{\infty}
-=
+\\&=
 \frac{i}{8 \pi^2 r}
    \lr{
         \frac{1}{ i(r+t) + \epsilon }
       + \frac{1}{ i(r-t) - \epsilon }
    }
-=
+   \\&=
 \frac{1}{8 \pi^2 r}
    \lr{
         \frac{1}{ r + t - \epsilon }
       + \frac{1}{ r - t + \epsilon }
    }
+\end{aligned}
 \end{equation}
 Employing the hint
 \cref{eqn:ProblemSet2Problem1:60}\footnote{A nice explanation of this second hint can be found in \citep{wiki:Sokhotski} under ``Proof of the real version''.},
 \cref{eqn:ProblemSet2Problem1:120}
 can be cast into delta function form
 \begin{equation}\label{eqn:ProblemSet2Problem1:140}
+\begin{aligned}
 D(x)
-=
+&=
 \frac{1}{8 \pi^2 r}
    \lr{
         \calP \frac{1}{ r+t } + i \pi \delta( r + t )
       +
         \calP \frac{1}{ r-t } - i \pi \delta( r - t )
    }
-=
+   \\&=
 \frac{1}{8 \pi^2 r}
    \lr{
         \calP \frac{2 r }{ r^2 - t^2 } + i \pi \lr{ \delta( r + t ) - \delta( r - t ) }
    },
+\end{aligned}
 \end{equation}
 which, after cosmetic rearrangement, is \cref{eqn:ProblemSet2Problem1:40}.
 
@@ -132,25 +138,27 @@ Let's evaluate \( D(x) \) function at spacelike point \( x = (0, r\zcap) \), and
 \end{equation}
 This gives
 \begin{equation}\label{eqn:ProblemSet2Problem1:160}
+\begin{aligned}
 D(0, r \zcap)
-=
+&=
 \inv{(2\pi)^3}
 \int_0^\infty dp \int_0^{2\pi} d\phi \int_0^\pi d\theta p^2 \sin\theta \frac{e^{i p r \cos\theta}}{2 \sqrt{p^2 + m^2}}
-=
+\\&=
 \inv{2 (2\pi)^2}
 \int_0^\infty dp \frac{p^2}{\sqrt{p^2 + m^2}} \int_{-1}^{1} du e^{i p r u}
-=
+\\&=
 \inv{2 (2\pi)^2}
 \int_0^\infty dp \frac{p^2}{\sqrt{p^2 + m^2}} \frac{e^{i p r} - e^{-i p r}}{i p r}
-=
+\\&=
 \frac{-i}{2 (2\pi)^2 r}
 \int_0^\infty dp \frac{p}{\sqrt{p^2 + m^2}} e^{i p r}
 -
 \frac{-i}{2 (2\pi)^2 r}
 \int_0^{-\infty} (-dp') \frac{(-p')}{\sqrt{(-p')^2 + m^2}} e^{i p' r}
-=
+\\&=
 \frac{-i}{2 (2\pi)^2 r}
 \int_{-\infty}^\infty dp \frac{p}{\sqrt{p^2 + m^2}} e^{i p r},
+\end{aligned}
 \end{equation}
 where a \( u = \cos\theta \) substitution was made, followed by \( p = -p' \) in the second integral.
 
@@ -162,55 +170,63 @@ This integral can be evaluated with the half dogbone contour sketched in \cref{f
 
 That doesn't look like a particularly helpful transformation at first, but because we are integrating around the branch cut running from \( [i m, i\infty] \), the square root differs by an \( 2 \pi i \) argument on each side of the cut.  Along contour \( B \) that square root is
 \begin{equation}\label{eqn:ProblemSet2Problem1:200}
+\begin{aligned}
 (p^2 + m^2)^{1/2}
-=
+&=
 \lr{ e^{i \pi} \lr{ -p^2 - m^2} }^{1/2}
-=
+\\&=
 e^{i \pi/2} \sqrt{ -p^2 - m^2 }
-=
+\\&=
 i \sqrt{ -p^2 - m^2 }
+\end{aligned}
 \end{equation}
 and along contour \( D \)
 \begin{equation}\label{eqn:ProblemSet2Problem1:220}
+\begin{aligned}
 (p^2 + m^2)^{1/2}
-=
+&=
 \lr{ e^{3 i \pi} \lr{ -p^2 - m^2} }^{1/2}
-=
+\\&=
 e^{3 i \pi/2} \sqrt{ -p^2 - m^2 }
-=
+\\&=
 -i \sqrt{ -p^2 - m^2 }.
+\end{aligned}
 \end{equation}
 Specifically
 \begin{equation}\label{eqn:ProblemSet2Problem1:240}
+\begin{aligned}
 \int_A
-= -\int_B - \int_C
-=
+&= -\int_B - \int_C
+\\&=
 \frac{i}{2 (2\pi)^2 r}
 \int_{i \infty}^{i m} dp \frac{p}{i \sqrt{-p^2 - m^2}} e^{i p r}
 +
 \frac{i}{2 (2\pi)^2 r}
 \int_{i m}^{i \infty} dp \frac{p}{-i \sqrt{-p^2 - m^2}} e^{i p r}
-=
+\\&=
 -\frac{1}{(2\pi)^2 r}
 \int_{i m}^{i \infty} dp \frac{p}{\sqrt{-p^2 - m^2}} e^{i p r}.
+\end{aligned}
 \end{equation}
 Changing the integration variable to \( q \in [m, \infty] \) (i.e. \( p = i q \)), we have
 \begin{equation}\label{eqn:ProblemSet2Problem1:260}
+\begin{aligned}
 D(0, r \zcap)
-=
+&=
 \frac{1}{(2\pi)^2 r}
 \int_{m}^{\infty} dq \frac{q}{\sqrt{q^2 - m^2}} e^{-q r}
-=
+\\&=
 \frac{1}{(2\pi)^2 r^2}
 \int_{m}^{\infty} r dq \frac{r q}{r \sqrt{q^2 - m^2}} e^{-q r}
-=
+\\&=
 \frac{1}{(2\pi)^2 r^2}
 \int_{r m}^{\infty} dx \frac{x}{\sqrt{x^2 - (r m)^2}} e^{-x}
-=
+\\&=
 \frac{1}{(2\pi)^2 r} K_1(r m)
 \sim
 r^{-3/2}
 e^{-r m }.
+\end{aligned}
 \end{equation}
 where the integral was evaluated with Mathematica, and the asymptotic approximation is from \citep{abramowitz1964handbook} \S 9.7.2 (\( K_\nu(z) \sim \sqrt{\pi/2z} e^{-z} \).)  For \( r \gg 1/m \), this goes to zero quickly.
 }}

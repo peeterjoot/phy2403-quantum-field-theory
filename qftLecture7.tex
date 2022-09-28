@@ -136,24 +136,26 @@ symmetry since we have added a total derivative to the Lagrangian which leaves t
 
 In general, the change of action under arbitrary variation of \( \delta \phi\) of the fields is
 \begin{equation}\label{eqn:qftLecture7:200}
+\begin{aligned}
 \delta S
-=
+&=
 \int d^d x \delta \LL(\phi, \partial_\mu \phi)
-=
+\\&=
 \int d^d x \lr{
 \PD{\phi}{\LL} \delta \phi
 +
 \PD{(\partial_\mu \phi)}{\LL} \delta \partial_\mu \phi
 }
-=
+\\&=
 \int d^d x \lr{
 \partial_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} } \delta \phi
 +
 \PD{(\partial_\mu \phi)}{\LL} \partial_\mu \delta \phi
 }
-=
+\\&=
 \int d^d x
 \partial_\mu \lr{ \frac{\delta \LL}{\delta(\partial_\mu \phi)} \delta \phi }.
+\end{aligned}
 \end{equation}
 However from \cref{eqn:qftLecture7:180}
 \begin{equation}\label{eqn:qftLecture7:220}
@@ -177,13 +179,16 @@ j^\mu =
 Integrating the divergence of the current over a space time volume, perhaps that of \cref{fig:spacetimeCylinder:spacetimeCylinderFig1}, is also zero.  That is
 %\imageFigure{../figures/phy2403-quantum-field-theory/spacetimeCylinderFig1}{Cylindrical spacetime boundary.}{fig:spacetimeCylinder:spacetimeCylinderFig1}{0.3}
 \begin{equation}\label{eqn:qftLecture7:300}
-0 =
+\begin{aligned}
+0 
+&=
 \int d^4 x \, \partial_\mu j^\mu
-=
+\\&=
 \int d^3 \Bx dt \, \partial_\mu j^\mu
-=
+\\&=
 \int d^3 \Bx dt \, \partial_t j^0 -
 \cancel{\int d^3 \Bx dt \spacegrad \cdot \Bj},
+\end{aligned}
 \end{equation}
 where the spatial divergence is zero assuming there's no current leaving the volume on the infinite boundary (no \(\Bj\) at spatial infinity.)
 
@@ -216,9 +221,11 @@ If \(\phi'(x + a) = \phi(x) \), then
 \end{equation}
 so
 \begin{equation}\label{eqn:qftLecture7:380}
+\begin{aligned}
 \phi'(x)
-= \phi(x) - a^\mu \partial_\mu \phi'(x)
-= \phi(x) + \delta_a \phi(x),
+&= \phi(x) - a^\mu \partial_\mu \phi'(x)
+\\&= \phi(x) + \delta_a \phi(x),
+\end{aligned}
 \end{equation}
 or
 \begin{equation}\label{eqn:qftLecture7:580}
@@ -234,29 +241,36 @@ Let's calculate this with our scalar theory Lagrangian
 \end{equation}
 The Lagrangian variation\footnote{Using: \( \partial_\alpha((1/2)\partial_\mu \phi \partial^\mu \phi) = 2(1/2) \partial_\mu \phi( \partial_\alpha \partial^\mu \phi)\).} is
 \begin{equation}\label{eqn:qftLecture7:440}
+\begin{aligned}
 \evalbar{\delta \LL}{\phi \rightarrow \phi + \delta \phi, \delta\phi = - a^\mu \partial_\mu \phi}
-=
+&=
 (\partial_\mu \phi) \delta (\partial^\mu \phi) - m^2 \phi \delta \phi - \PD{\phi}{V} \delta \phi
-=
+\\&=
 (\partial_\mu \phi)(-a^\nu \partial_\nu \partial^\mu \phi) + m^2 \phi a^\nu \partial_\nu \phi + \PD{\phi}{V} a^\nu \partial_\nu \phi
-=
+\\&=
 - a^\nu \partial_\nu \lr{ \inv{2} \partial_\mu \phi \partial^\mu \phi - \frac{m^2}{2} \phi^2 - V(\phi) }
-=
+\\&=
 - a^\nu \partial_\nu \LL,
+\end{aligned}
 \end{equation}
 so the current is
 \begin{equation}\label{eqn:qftLecture7:600}
+\begin{aligned}
 j^\mu
-=
+&=
 (\partial^\mu \phi) (-a^\nu \partial_\nu \phi) + a^\mu \LL
-=
+\\&=
 -a^\nu \lr{ \partial^\mu \phi \partial_\nu \phi - \delta^\mu_\nu \LL }.
+\end{aligned}
 \end{equation}
 We really have a current for each \( \nu \) direction and can make that explicit writing
 \begin{equation}\label{eqn:qftLecture7:460}
-\delta_\nu \LL = -\partial_\nu \LL
-= - \partial_\mu \lr{ {\delta^\mu}_\nu \LL }
-= \partial_\mu {j^\mu}_\nu
+\begin{aligned}
+\delta_\nu \LL 
+  &= -\partial_\nu \LL
+\\&= - \partial_\mu \lr{ {\delta^\mu}_\nu \LL }
+\\&= \partial_\mu {j^\mu}_\nu
+\end{aligned}
 \end{equation}
 we write
 \begin{equation}\label{eqn:qftLecture7:480}
@@ -277,7 +291,9 @@ We call the conserved quantities elements of the energy-momentum tensor, and wri
 
 Incidentally, we picked a non-standard sign convention for the tensor, as an explicit expansion of \( T^{00} \), the energy density component, shows
 \begin{equation}\label{eqn:qftLecture7:540}
-{T^0}_0 =
+\begin{aligned}
+{T^0}_0 
+&=
 -\PD{t}{\phi}
 \PD{t}{\phi}
 +\inv{2}
@@ -285,10 +301,11 @@ Incidentally, we picked a non-standard sign convention for the tensor, as an exp
 \PD{t}{\phi}
 - \inv{2} (\spacegrad \phi) \cdot (\spacegrad \phi)
 - \frac{m^2}{2} \phi^2 - V(\phi)
-=
+\\&=
 -\inv{2} \PD{t}{\phi} \PD{t}{\phi}
 - \inv{2} (\spacegrad \phi) \cdot (\spacegrad \phi)
 - \frac{m^2}{2} \phi^2 - V(\phi).
+\end{aligned}
 \end{equation}
 Had we translated by \( -a^\mu \) we'd have a positive definite tensor instead.
 

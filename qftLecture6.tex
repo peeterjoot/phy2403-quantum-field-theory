@@ -246,8 +246,9 @@ e^{i (\Bp + \Bq)\cdot \Bx}
 \end{equation}
 An immediate simplification is possible by identifying a delta function factor \( \int d^3 x e^{i(\Bp + \Bq) \cdot \Bx}/(2\pi)^3 = \deltathree(\Bp + \Bq) \), so
 \begin{equation}\label{eqn:qftLecture6:1060}
+\begin{aligned}
 H
-=
+&=
 \inv{2}
 \int
 \frac{d^3 p}{(2\pi)^3}
@@ -279,7 +280,7 @@ H
       +
       e^{i \omega_\Bp t} a_{\Bp}^\dagger
    }
-=
+   \\&=
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
 \lr{
    a_\Bp a_{-\Bp}
@@ -300,6 +301,7 @@ H
 +
    a^\dagger_{-\Bp} a_{-\Bp} \omega^2_\Bp(1 + 1)
 }
+\end{aligned}
 \end{equation}
 When all is said and done we are left with
 \begin{equation}\label{eqn:qftLecture6:320}
@@ -347,8 +349,7 @@ H_0 =
 \end{equation}
 The delta function term can be interpreted using
 \begin{equation}\label{eqn:qftLecture6:400}
-(2 \pi)^3 \deltathree(\Bq)
-= \int d^3 x e^{i \Bq \cdot \Bx},
+(2 \pi)^3 \deltathree(\Bq) = \int d^3 x e^{i \Bq \cdot \Bx},
 \end{equation}
 so when \( \Bq = 0 \)
 \begin{equation}\label{eqn:qftLecture6:420}
@@ -398,14 +399,16 @@ a^\dagger &= \sqrt{\frac{\omega}{2}} \lr{ q + \inv{i \omega} p } e^{i \omega t}.
 \end{equation}
 By inspection it is apparent that the product \( a^\dagger a \) will be related to the Hamiltonian (i.e. a difference of squares).  That product is
 \begin{equation}\label{eqn:qftLecture6:1120}
+\begin{aligned}
 a^\dagger a
-=
+&=
 \frac{\omega}{2}
 \lr{ q + \inv{i \omega} p }
 \lr{ q - \inv{i \omega} p }
-=
+\\&=
 \frac{\omega}{2} \lr{ q^2 + \inv{\omega^2} p^2 - \inv{i \omega} \antisymmetric{q}{p} }
-= \inv{2 \omega} \lr{ p^2 + \omega^2 q^2 - \omega },
+\\&= \inv{2 \omega} \lr{ p^2 + \omega^2 q^2 - \omega },
+\end{aligned}
 \end{equation}
 or
 \begin{equation}\label{eqn:qftLecture6:1140}
@@ -413,18 +416,21 @@ H = \omega \lr{ a^\dagger a + \inv{2} }.
 \end{equation}
 We can glean some of the properties of \( a, a^\dagger \) by computing the commutator of \( p, q \), since that has a well known value
 \begin{equation}\label{eqn:qftLecture6:520}
-i = \antisymmetric{q}{p}
-=
+\begin{aligned}
+i 
+&= \antisymmetric{q}{p}
+\\&=
 \frac{i\omega}{2 \omega} \antisymmetric
 { a e^{-i \omega t} + a^\dagger e^{i \omega t} }
 { -a e^{-i \omega t} + a^\dagger e^{i \omega t} }
-=
+\\&=
 \frac{i}{2} \lr{
 \antisymmetric{a}{a^\dagger} -
 \antisymmetric{a^\dagger}{a} }
-=
+\\&=
 i
 \antisymmetric{a}{a^\dagger},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:qftLecture6:1100}
@@ -436,20 +442,24 @@ a^\dagger a \ket{n} = \lambda_n \ket{n}.
 \end{equation}
 The action of \( a^\dagger a \) on \( a^\dagger \ket{n} \) is easy to compute
 \begin{equation}\label{eqn:qftLecture6:1180}
+\begin{aligned}
 a^\dagger a a^\dagger \ket{n}
-=
+&=
 a^\dagger \lr{ a^\dagger a + 1 } \ket{n}
-=
+\\&=
 \lr{ \lambda_n + 1 } a^\dagger \ket{n},
+\end{aligned}
 \end{equation}
 so \( \lambda_n + 1 \) is an eigenvalue of \( a^\dagger \ket{n} \).  The state \( a^\dagger \ket{n} \) has an energy eigenstate that is one unit of energy larger than \( \ket{n} \).  For this reason we called \( a^\dagger \) the raising (or creation) operator.
 Similarly,
 \begin{equation}\label{eqn:qftLecture6:1200}
+\begin{aligned}
 a^\dagger a a \ket{n}
-=
+&=
 \lr{ a a^\dagger - 1 } a \ket{n}
-=
+\\&=
 (\lambda_n - 1) a \ket{n},
+\end{aligned}
 \end{equation}
 so \( \lambda_n - 1 \) is the energy eigenvalue of \( a \ket{n} \), having one less unit of energy than \( \ket{n} \).
 We call \( a \) the annihilation (or lowering) operator.
@@ -494,38 +504,38 @@ H_0 =
 \end{equation}
 Consider
 \begin{equation}\label{eqn:qftLecture6:680}
+\begin{aligned}
 H_0
 a^\dagger_\Bq \ket{0}
-=
+&=
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp}
    a_{\Bp}
 a^\dagger_\Bq
 \ket{0}
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp}
 \lr{
    a^\dagger_\Bq a_\Bp + (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 \ket{0}
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp
    a^\dagger_{\Bp} \lr{
    a^\dagger_\Bq \cancel{a_\Bp \ket{0}}
 + (2 \pi)^3 \deltathree(\Bp - \Bq) \ket{0}
 }
-=
+\\&=
 \omega_\Bq a^\dagger_\Bq \ket{0}.
+\end{aligned}
 \end{equation}
 
 \paragraph{Question:} Is it possible to modify the Lagrangian or Hamiltonian that we start with so that this vacuum ground state is eliminated?  Answer: Only by imposing super-symmetric constraints (that pairs this (bosonic) Hamiltonian to a fermionic system in a way that there is exact cancellation).
 
 We will see that the momentum operator has the form
 \begin{equation}\label{eqn:qftLecture6:700}
-\calP
-=
-\int \frac{d^3 p}{(2 \pi)^3} \Bp a^\dagger_\Bp a_\Bp.
+\calP = \int \frac{d^3 p}{(2 \pi)^3} \Bp a^\dagger_\Bp a_\Bp.
 \end{equation}
 We say that \( a^\dagger_\Bp a^\dagger_\Bq \ket{0} \) is a two particle space with energy \( \omega_\Bp + \omega_q\), and
 \begin{equation}\label{eqn:qftLecture6:19}
@@ -538,27 +548,33 @@ is a \( m + n \) particle space.
 
 There is a connection to statistical mechanics that is of interest
 \begin{equation}\label{eqn:qftLecture6:720}
+\begin{aligned}
 \expectation{E}
-= \inv{Z} \sum_n E_n e^{-E_n/\kB T}
-= \inv{Z} \sum_n \bra{n} e^{-\hat{H}/\kB T} \hat{H} \ket{n},
+  &= \inv{Z} \sum_n E_n e^{-E_n/\kB T}
+\\&= \inv{Z} \sum_n \bra{n} e^{-\hat{H}/\kB T} \hat{H} \ket{n},
+\end{aligned}
 \end{equation}
 so for a SHO Hamiltonian system
 \begin{equation}\label{eqn:qftLecture6:740}
+\begin{aligned}
 \expectation{E}
-= \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \hat{H} \ket{n}
-= \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \omega a^\dagger a \ket{n}
-= \frac{\omega}{e^{\omega/\kB T} - 1 }
-= \expectation{ \omega a^\dagger a }_{\kB T},
+  &= \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \hat{H} \ket{n}
+\\&= \inv{Z} \sum_n e^{-E_n/\kB T} \bra{n} \omega a^\dagger a \ket{n}
+\\&= \frac{\omega}{e^{\omega/\kB T} - 1 }
+\\&= \expectation{ \omega a^\dagger a }_{\kB T},
+\end{aligned}
 \end{equation}
 which is the \( \kB T \) ensemble average energy for a SHO system.  Note that this sum was evaluated by noting that \( \bra{n} a^\dagger a \ket{n} = n \) which leaves sums of the form
 \begin{equation}\label{eqn:qftLecture6:1220}
+\begin{aligned}
 \frac{\sum_{n = 0}^\infty n a^n }{\sum_{n = 0}^\infty a^n}
-=
+&=
 a \frac{\sum_{n = 1}^\infty n a^{n-1} }{\sum_{n = 0}^\infty a^n}
-=
+\\&=
 a (1 - a) \frac{d}{da} \lr{ \inv{1 - a} }
-=
+\\&=
 \frac{a}{1 - a}.
+\end{aligned}
 \end{equation}
 
 If we consider a real scalar field of mass \( m \) we have \( \omega_\Bp = \sqrt{ \Bp^2 + m^2 } \), but for a Maxwell field \( \BE, \BB \) where \( m = 0 \), our dispersion relation is \( \omega_\Bp = \Norm{\Bp} \).
@@ -589,16 +605,18 @@ then we have commutator relations like standard QM
 
 So we can immediately evaluate the energy expectation for our quantized fields
 \begin{equation}\label{eqn:qftLecture6:840}
+\begin{aligned}
 \expectation{H_0}
-=
+&=
 \expectation{
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp a_\Bp^\dagger a_\Bp
 }
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp V_3 \expectation{ \tilde{a}^\dagger_\Bp a_\Bp }
-=
+\\&=
 V_3
 \int \frac{d^3 p}{(2 \pi)^3} \frac{\omega_\Bp}{e^{\omega_\Bp/\kB T} - 1}.
+\end{aligned}
 \end{equation}
 Using this with the Maxwell field, we have a factor of two from polarization
 \begin{equation}\label{eqn:qftLecture6:860}
