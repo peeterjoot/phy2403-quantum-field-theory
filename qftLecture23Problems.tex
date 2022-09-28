@@ -10,13 +10,15 @@
 \makeanswer{problem:qftLecture23:1}{
 We will prove only the first, which is representative
 \begin{equation}\label{eqn:qftLecture23:580}
+\begin{aligned}
 (\vbar \gamma^\mu u)^\dagger
-=
+&=
 u^\dagger (\gamma^\mu)^\dagger (v^\dagger \gamma^0)^\dagger
-=
+\\&=
 u^\dagger \gamma^0 \gamma^\mu \gamma^0 \gamma^0 v
-=
+\\&=
 \ubar \gamma^\mu v.
+\end{aligned}
 \end{equation}
 } % answer
 
@@ -25,26 +27,29 @@ u^\dagger \gamma^0 \gamma^\mu \gamma^0 \gamma^0 v
 \makeanswer{problem:qftLecture23:2}{
 For the two matrix trace, consider
 \begin{equation}\label{eqn:qftLecture23:700}
+\begin{aligned}
 \trace{\lr{
    \gamma_\mu \gamma_\nu
    +
    \gamma_\nu \gamma_\mu
 }}
-=
+&=
 2 g_{\mu\nu}
 \trace{\lr{ 1 }}
-=
+\\&=
 8 g_{\mu\nu}
 ,
+\end{aligned}
 \end{equation}
 but
 \begin{equation}\label{eqn:qftLecture23:720}
+\begin{aligned}
 \trace{\lr{
    \gamma_\mu \gamma_\nu
    +
    \gamma_\nu \gamma_\mu
 }}
-=
+&=
 \trace{\lr{
    \gamma_\mu \gamma_\nu
 }}
@@ -52,10 +57,11 @@ but
 \trace{\lr{
    \gamma_\nu \gamma_\mu
 }}
-=
+\\&=
 2 \trace{\lr{
    \gamma_\mu \gamma_\nu
 }},
+\end{aligned}
 \end{equation}
 so \( \trace{\lr{ \gamma_\mu \gamma_\nu }} = 4 g_{\mu\nu} \) as claimed.
 For the traces of the three matrix products, there are three possible products of interest (for \(r \ne s\))

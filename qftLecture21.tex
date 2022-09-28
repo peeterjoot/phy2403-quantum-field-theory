@@ -80,8 +80,9 @@ u^{r \dagger} u^{s}
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture21:120}
+\begin{aligned}
 u^{s \dagger} u^r
-=
+&=
 \begin{bmatrix}
 \zeta^{s \dagger} \sqrt{ p \cdot \sigma }
 &
@@ -90,8 +91,8 @@ u^{s \dagger} u^r
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma } \zeta \\
 \sqrt{ p \cdot \osigma } \zeta \\
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \zeta^{s \dagger} \lr{
 \sqrt{ p \cdot \sigma }
 \sqrt{ p \cdot \sigma }
@@ -99,25 +100,26 @@ u^{s \dagger} u^r
 \sqrt{ p \cdot \osigma }
 \sqrt{ p \cdot \osigma }
 }
-\zeta^r
-=
+\zeta^r \\
+&=
 \zeta^{s \dagger} \lr{
  p \cdot \sigma
 +
  p \cdot \osigma
 }
-\zeta^r
-=
+\zeta^r \\
+&=
 \zeta^{s \dagger}
 \lr{
 p_0 - \Bp \cdot \Bsigma
 +
 p_0 + \Bp \cdot \Bsigma
 }
-\zeta^r
-=
+\zeta^r \\
+&=
 2 p_0
 \zeta^{s \dagger} \zeta^r.
+\end{aligned}
 \end{equation}
 %Putting back in the suffixes, we have
 %\begin{equation}\label{eqn:qftLecture21:1000}
@@ -186,44 +188,50 @@ We can easily see that \( \zeta^{s\dagger} \zeta^r = \delta^{rs} \) by writing o
 We also want to compute \( \ubar u \), but need a couple intermediate results.
 \makelemma{Products of \( p \cdot \sigma, p \cdot \osigma \).}{lemma:qftLecture21:2}{
 \begin{equation*}
+\begin{aligned}
 (p \cdot \sigma) (p \cdot \osigma)
-=
+\\&=
 (p \cdot \osigma) (p \cdot \sigma)
-= m^2.
+\\&= m^2.
+\end{aligned}
 \end{equation*}
 } % lemma
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture21:180}
+\begin{aligned}
 (p \cdot \sigma) (p \cdot \osigma)
-=
+&=
 \lr{ p^0 - \Bp \cdot \Bsigma}
 \lr{ p^0 + \Bp \cdot \Bsigma}
-=
+\\&=
 (p^0)^2
 -
 (\Bp \cdot \Bsigma)^2
-=
+\\&=
 (p^0)^2
 -
 \Bp^2
-= m^2
+\\&= m^2
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21:200}
+\begin{aligned}
 (p \cdot \osigma) (p \cdot \sigma)
-=
+&=
 \lr{ p^0 + \Bp \cdot \Bsigma}
 \lr{ p^0 - \Bp \cdot \Bsigma}
-=
+\\&=
 (p^0)^2
 -
 (\Bp \cdot \Bsigma)^2
-=
+\\&=
 (p^0)^2
 -
 \Bp^2
-= m^2.
+\\&= m^2.
+\end{aligned}
 \end{equation}
 \end{proof}
 
@@ -235,10 +243,11 @@ and
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture21:160}
+\begin{aligned}
 \ubar^r u^s
-=
+&=
 u^{r\dagger} \gamma^0 u^s
-=
+\\&=
 \begin{bmatrix}
 \zeta^{r \dagger} \sqrt{ p \cdot \sigma }
 &
@@ -252,7 +261,7 @@ u^{r\dagger} \gamma^0 u^s
 \sqrt{p \cdot \sigma} \zeta^s \\
 \sqrt{p \cdot \osigma} \zeta^s
 \end{bmatrix}
-=
+\\&=
 \zeta^{r\dagger} \lr{
 \sqrt{ p \cdot \sigma }
 \sqrt{ p \cdot \osigma }
@@ -261,10 +270,11 @@ u^{r\dagger} \gamma^0 u^s
 \sqrt{ p \cdot \sigma }
 }
 \zeta^s
-=
+\\&=
 2 m \zeta^{r\dagger} \zeta^s
-=
+\\&=
 2 m \delta^{rs}.
+\end{aligned}
 \end{equation}
 %which completes the proof.
 \end{proof}
@@ -279,6 +289,8 @@ Now we seek the other plane wave solution
 \Cref{eqn:qftLecture21:260} is a solution to the Dirac equation, provided
 %\boxedEquation{eqn:qftLecture21:280}{
 \begin{equation*}
+\begin{aligned}
+\end{aligned}
 v^s(p)
 =
 \begin{bmatrix}
@@ -361,7 +373,9 @@ the tensor product is the matrix of all elements \( x_i y_j \)
 %\end{equation}
 %and the second is a tensor (or direct) product
 \begin{equation*}
-x \otimes y^\T =
+\begin{aligned}
+x \otimes y^\T 
+&=
 \begin{bmatrix}
 x_1 \\
 \vdots \\
@@ -370,8 +384,8 @@ x_n \\
 \otimes
 \begin{bmatrix}
 y_1 \cdots y_n
-\end{bmatrix}
-=
+\end{bmatrix} 
+\\&=
 \begin{bmatrix}
 x_1 y_1 & x_1 y_2 & \cdots & x_1 y_n \\
 x_2 y_1 & x_2 y_2 & \cdots & x_2 y_n \\
@@ -381,6 +395,7 @@ x_n y_1 & \cdots  &        & x_n y_n
 \end{bmatrix}.
 %=
 %\Norm{ x_i y_j }
+\end{aligned}
 \end{equation*}
 } % definition
 
@@ -403,6 +418,7 @@ x_n y_1 & \cdots  &        & x_n y_n
 \begin{proof}
 For the \( v \)'s
 \begin{equation}\label{eqn:qftLecture21:420}
+\begin{aligned}
 \sum_{s = 1,2}
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
@@ -417,7 +433,7 @@ For the \( v \)'s
 0 & 1 \\
 1 & 0
 \end{bmatrix}
-=
+&=
 \sum_{s = 1,2}
 \begin{bmatrix}
 \sqrt{p \cdot \sigma} \eta^s \\
@@ -427,18 +443,20 @@ For the \( v \)'s
 \begin{bmatrix}
 -(\eta^s)^\T \sqrt{ p \cdot \sigma } &
 (\eta^s)^\T \sqrt{ p \cdot \sigma }
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \sum_{s = 1,2}
 \begin{bmatrix}
 -\sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & \sqrt{p \cdot \sigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }  \\
 \sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma } & -\sqrt{p \cdot \osigma} \eta^s \otimes (\eta^s)^\T \sqrt{ p \cdot \sigma }
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 but
 \begin{equation}\label{eqn:qftLecture21:1120}
+\begin{aligned}
 \eta^1 \otimes \eta^{1T}
-=
+&=
 \begin{bmatrix}
 1 \\
 0
@@ -447,16 +465,18 @@ but
 1 &
 0
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 1 & 0 \\
 0 & 0
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21:1140}
+\begin{aligned}
 \eta^2 \otimes \eta^{2T}
-=
+&=
 \begin{bmatrix}
 0 \\
 1
@@ -465,31 +485,33 @@ and
 0 &
 1
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 0 & 0 \\
 0 & 1
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 so \( \sum_{s = 1,2} \eta^s \otimes \eta^{s\T} = 1 \), leaving
 \begin{equation}\label{eqn:qftLecture21:1160}
+\begin{aligned}
 \sum_{s = 1}^2 v^s(p) \otimes \vbar^s(p)
-=
+&=
 \begin{bmatrix}
 -\sqrt{ p \cdot \sigma } \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \sqrt{ p \cdot \sigma } \\
 \sqrt{ p \cdot \osigma } \sqrt{ p \cdot \osigma } & -\sqrt{ p \cdot \osigma } \sqrt{ p \cdot \osigma }
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 -\sqrt{ p \cdot \sigma p \cdot \osigma } & \sqrt{ p \cdot \sigma p \cdot \sigma } \\
 \sqrt{ p \cdot \osigma p \cdot \osigma } & -\sqrt{ p \cdot \osigma p \cdot \osigma }
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 -m & p \cdot \sigma \\
 p \cdot \osigma & - m
 \end{bmatrix}
-=
+\\&=
 -m \BOne
 + p^0
 \begin{bmatrix}
@@ -502,8 +524,9 @@ p \cdot \osigma & - m
 0 & -\Bsigma \\
 \Bsigma & 0
 \end{bmatrix}
-=
+\\&=
 -m + p^\mu \gamma_\mu,
+\end{aligned}
 \end{equation}
 as stated.
 \end{proof}

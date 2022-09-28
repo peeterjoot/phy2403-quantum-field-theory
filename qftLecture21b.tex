@@ -71,10 +71,12 @@ H
 \begin{proof}
 To prove \cref{thm:qftLecture21b:1}, we start with the spacetime expansion of the Dirac Lagrangian density
 \begin{equation}\label{eqn:qftLecture21b:500}
+\begin{aligned}
 \LL_{\text{Dirac}}
-= \oPsi i \gamma^0 \partial_0 \Psi + i \oPsi \gamma^j \partial_j \Psi - m \oPsi \Psi
-= \Psi^\dagger \gamma^0 i \gamma^0 \partial_0 \Psi + i \Psi \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
-= \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi.
+&= \oPsi i \gamma^0 \partial_0 \Psi + i \oPsi \gamma^j \partial_j \Psi - m \oPsi \Psi \\
+&= \Psi^\dagger \gamma^0 i \gamma^0 \partial_0 \Psi + i \Psi \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi \\
+&= \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi.
+\end{aligned}
 \end{equation}
 We see that the momentum conjugate to \( \Psi \) is
 \begin{equation}\label{eqn:qftLecture21b:520}
@@ -83,13 +85,15 @@ We see that the momentum conjugate to \( \Psi \) is
 Computing the
 Hamiltonian density in the usual way, we have
 \begin{equation}\label{eqn:qftLecture21b:540}
+\begin{aligned}
 \calH_{\text{Dirac}}
-= \pi_\Psi \dot{\Psi} - \LL
-= i \Psi^\dagger \dot{\Psi} - \lr{
+&= \pi_\Psi \dot{\Psi} - \LL \\
+&= i \Psi^\dagger \dot{\Psi} - \lr{
 \Psi^\dagger i \dot{\Psi} + i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi - m \Psi^\dagger \gamma^0 \Psi
-}
-=
+} \\
+&=
 - i \Psi^\dagger \gamma^0 \gamma^j \partial_j \Psi + m \Psi^\dagger \gamma^0 \Psi.
+\end{aligned}
 \end{equation}
 Integrating over a 3-volume provides
 the Dirac Hamiltonian of
@@ -112,19 +116,23 @@ For \(\Psi_u = u(p) e^{-i p \cdot x}\), and \( \Psi_v = v(p) e^{i p \cdot x} \),
 \begin{proof}
 These eigenvalue equations follow from the Dirac equation for \( \Psi_u, \Psi_v \).  These are
 \begin{equation}\label{eqn:qftLecture21b:1000}
+\begin{aligned}
 \lr{ i \gamma^\mu \partial_\mu - m } u e^{-i p \cdot x}
-=
-\lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } u e^{-i p \cdot x}
-=
+&=
+\lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } u e^{-i p \cdot x} \\
+&=
 \lr{ i \gamma^j \partial_j + i(-i) \gamma^0 p_0 - m } u e^{-i p \cdot x}
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21b:1020}
+\begin{aligned}
 \lr{ i \gamma^\mu \partial_\mu - m } v e^{i p \cdot x}
-=
-\lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } v e^{i p \cdot x}
-=
+&=
+\lr{ i \gamma^j \partial_j + i \gamma^0 \partial_0 - m } v e^{i p \cdot x} \\
+&=
 \lr{ i \gamma^j \partial_j + i(i) \gamma^0 p_0 - m } v e^{i p \cdot x}.
+\end{aligned}
 \end{equation}
 Rearranging gives
 \begin{equation}\label{eqn:qftLecture21b:1040}
@@ -226,8 +234,9 @@ e^{-i \Bq \cdot \Bx}
 
 Making use of the eigenvalue equations \cref{thm:qftLecture21b:2} the Hamiltonian is reduced to
 \begin{equation}\label{eqn:qftLecture21b:1080}
+\begin{aligned}
 H_{\text{Dirac}}
-=
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 x d^3 p d^3 q}{(2\pi)^6 2 \sqrt{ \omega_\Bp \omega_\Bq } }
 e^{i (\Bp - \Bq ) \cdot \Bx }
@@ -241,8 +250,8 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
    u^s_\Bp a^s_\Bp
    -
    v^s_{-\Bp} b^s_{-\Bp}
-}
-=
+} \\
+&=
 \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2\pi)^3 2 \cancel{\omega_\Bp} }
 \lr{
@@ -255,8 +264,8 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
    u^s_\Bp a^s_\Bp
    -
    v^s_{-\Bp} b^s_{-\Bp}
-}
-=
+} \\
+&=
 \inv{2} \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2\pi)^3 }
 \lr{
@@ -281,6 +290,7 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
    b^s_{-\Bp}
 }
 ,
+\end{aligned}
 \end{equation}
 where care was taken not to commute any \( a, b\)'s.  Recall that
 \begin{subequations}
@@ -294,8 +304,9 @@ u^{r\dagger}_\Bp v^s_{-\Bp} = v^{r\dagger}_{-\Bp} u^s_{\Bp} = 0.
 \end{subequations}
 \Cref{eqn:qftLecture21b:1160} kills off our cross terms, and \cref{eqn:qftLecture21b:1100} wipes out one of the summation indexes
 \begin{equation}\label{eqn:qftLecture21b:1120}
+\begin{aligned}
 H_{\text{Dirac}}
-=
+&=
 \inv{2} \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2\pi)^3 }
 \lr{
@@ -320,8 +331,8 @@ H_{\text{Dirac}}
    v^s_{-\Bp}
    b^{r \dagger}_{-\Bp}
    b^s_{-\Bp}
-}
-=
+} \\
+&=
 \sum_{r = 1}^2
 \int \frac{d^3 p }{(2\pi)^3 }
 \omega_\Bp
@@ -332,6 +343,7 @@ H_{\text{Dirac}}
    b^{r \dagger}_{-\Bp}
    b^r_{-\Bp}
 }.
+\end{aligned}
 \end{equation}
 We see above how the mixed terms were killed off nicely by \cref{eqn:qftLecture21b:1160}.  That also justifies the use of the zero-time fields in this derivation, which can also be seen explicitly without use of the zero-time fields \cref{problem:qftLecture21b:1}.
 \end{proof}
@@ -377,23 +389,24 @@ where all other anticommutators are zero
 
 Such a substitution gives
 \begin{equation}\label{eqn:qftLecture21b:980}
+\begin{aligned}
 H_{\text{Dirac}}
-=
+&=
 \sum_{s = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3 }
 \omega_\Bp
 \lr{
 \tilde{a}_\Bp^s a_\Bp^s - \tilde{b}_\Bp^s b_\Bp^s
-}
-=
+} \\
+&=
 \sum_{s = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3 }
 \omega_\Bp
 \lr{
 \tilde{a}_\Bp^{s} a_\Bp^s
 + b_\Bp^s \tilde{b}^{s}_\Bp + \delta^{ss} \deltathree( \Bp - \Bp )
-}
-=
+} \\
+&=
 \sum_{s = 1}^2
 \int \frac{d^3 p}{(2 \pi)^3 }
 \lr{
@@ -404,6 +417,7 @@ H_{\text{Dirac}}
 }
 - 4 V_3 \frac{\omega_\Bp}{2}
 }.
+\end{aligned}
 \end{equation}
 
 We'll end up dropping the vacuum energy term.  We'll end up labeling the \( a \)'s as the operators associated with electrons, and the \( b \)'s with anti-electrons.

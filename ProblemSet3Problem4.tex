@@ -111,31 +111,34 @@ T^{00}(\Bx - \By, t),
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem4:60}
+\begin{aligned}
 \rho(0, \Bx - \By, t)
-=
+&=
 \bra{\Bzero, 0} T^{00}(\Bx - \By, t) \ket{\Bzero, 0}
-=
+\\&=
 \bra{\Bzero, 0} U(\By) T^{00}(\Bx, t) U^\dagger(\By) \ket{\Bzero, 0}
-=
+\\&=
 \bra{\By, 0} T^{00}(\Bx, t) \ket{\By, 0}
-=
+\\&=
 \rho(\By, \Bx, t).
+\end{aligned}
 \end{equation}
 
 \makeSubAnswer{}{qft:problemSet3:4b}
 Let's start by computing the energy-momentum tensor
 \begin{equation}\label{eqn:ProblemSet3Problem4:80}
+\begin{aligned}
 T^{00}
-= \partial^0 \phi \partial^0 \phi - g^{00}\LL
-= \partial^0 \phi \partial^0 \phi - \inv{2} \lr{
+&= \partial^0 \phi \partial^0 \phi - g^{00}\LL
+\\&= \partial^0 \phi \partial^0 \phi - \inv{2} \lr{
 \partial_0 \phi \partial^0 \phi - (\spacegrad \phi)^2 - m^2 \phi^2
 }
-=
+\\&=
 \inv{2}
 \lr{
    \partial_0 \phi \partial_0 \phi + (\spacegrad \phi)^2 + m^2 \phi^2
 }
-=
+\\&=
 \inv{2}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 2 \sqrt{\omega_\Bp \omega_\Bq}}
 \lr{
@@ -164,19 +167,23 @@ T^{00}
       a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
 }.
+\end{aligned}
 \end{equation}
 For the derivatives, we have
 \begin{equation}\label{eqn:ProblemSet3Problem4:100}
+\begin{aligned}
 \partial_\nu e^{\pm i p \cdot x}
-=
+&=
 \partial_\nu e^{\pm i p_\mu x^\mu}
-=
+\\&=
 \pm i p_\nu e^{\pm i p \cdot x},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem4:120}
+\begin{aligned}
 T^{00}
-=
+&=
 \inv{4}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
 \lr{
@@ -197,8 +204,8 @@ T^{00}
    \lr{
       a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
-}
-=
+} \\
+&=
 \inv{4}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
 \lr{
@@ -220,6 +227,7 @@ T^{00}
       a_\Bp^\dagger a_\Bq e^{i (p - q) \cdot x}
    }
 }
+\end{aligned}
 \end{equation}
 We can justify dropping the \( a_\Bp a_\Bq \) and \( a_\Bp^\dagger a_\Bq^\dagger \) terms in this integral since we are computing \( \tilde{\rho}(\Bx, t) = \bra{\Bzero, 0} T^{00}(\Bx, t) \ket{\Bzero, 0} \), where
 \begin{equation}\label{eqn:ProblemSet3Problem4:140}
@@ -253,8 +261,7 @@ T^{00} =
 \end{equation}
 Normal ordered, we have
 \begin{equation}\label{eqn:ProblemSet3Problem4:340}
-\normalorder{ T^{00} }
-=
+\normalorder{ T^{00} } =
 \inv{2}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
    \lr{
@@ -265,8 +272,9 @@ Normal ordered, we have
 \end{equation}
 We expect this to equal the Hamiltonian density, and can check that as a quick sanity check
 \begin{equation}\label{eqn:ProblemSet3Problem4:360}
+\begin{aligned}
 \int d^3 x \normalorder{ T^{00} }
-=
+&=
 \inv{2}
 \int \frac{d^3 x\, d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
    \lr{
@@ -274,7 +282,7 @@ We expect this to equal the Hamiltonian density, and can check that as a quick s
    }
       a_\Bp^\dagger a_\Bq
    e^{i (\omega_\Bp - \omega_\Bq) t} e^{-i (\Bp - \Bq) \cdot \Bx}
-=
+   \\&=
 \inv{2}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^3 \sqrt{\omega_\Bp \omega_\Bq}}
    \lr{
@@ -282,20 +290,21 @@ We expect this to equal the Hamiltonian density, and can check that as a quick s
    }
       a_\Bp^\dagger a_\Bq
    e^{i (\omega_\Bp - \omega_\Bq) t} \delta(\Bq - \Bp)
-=
+   \\&=
 \inv{2}
 \int \frac{d^3 p}{(2 \pi)^3 \omega_\Bp }
    \lr{
       \omega_\Bp^2 + \Bp^2 + m^2
    }
    a_\Bp^\dagger a_\Bp
-=
+   \\&=
 \inv{2}
 \int \frac{d^3 p}{(2 \pi)^3 \omega_\Bp }
    2 \omega_\Bp^2
    a_\Bp^\dagger a_\Bp
-=
+   \\&=
 H.
+\end{aligned}
 \end{equation}
 
 We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
@@ -339,25 +348,28 @@ Evaluating this matrix element with Wick's theorem, we have
 %%%\end{equation}
 %%%and
 \begin{equation}\label{eqn:ProblemSet3Problem4:260}
+\begin{aligned}
 \bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
-=
+&=
 \contraction{}{a}{{}_\Br}{a}
 \contraction{ a_\Br a_\Bp^\dagger}{a}{{}_\Bq}{a}
 a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger
-=
+\\&=
 (2 \pi)^6 \delta(\Br - \Bp) \delta(\Bq - \Bs),
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem4:380}
+\begin{aligned}
 \tilde{\rho}(x)
-=
+&=
 \inv{4}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^{6} \omega_\Bp \omega_\Bq}
    \lr{
       \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
    }
    e^{i (p - q) \cdot x}
-=
+   \\&=
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} \omega_\Bp e^{i p \cdot x}
 \int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} \omega_\Bq e^{i q \cdot (-x)}
 +
@@ -368,6 +380,7 @@ so
 m^2
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} e^{i p \cdot x}
 \int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} e^{i q \cdot (-x)},
+\end{aligned}
 \end{equation}
 which is just
 \boxedEquation{eqn:ProblemSet3Problem4:400}{
@@ -389,29 +402,35 @@ D(r, 0) \sim e^{-m r},
 where \( \rcap \) is the unit vector directed along the line from the origin to \( \Bx \).
 We wish to evaluate the gradients of \( D(\Bx, 0) \) and \( D(-\Bx, 0) \), and may do so by evaluating each with respect to oppositely oriented coordinate systems.
 \begin{equation}\label{eqn:ProblemSet3Problem4:440}
+\begin{aligned}
 \spacegrad D(\Bx, 0)
-=
+&=
 \rcap \PD{r}{} e^{-m r}
-=
+\\&=
 -m \rcap e^{-m r},
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:ProblemSet3Problem4:460}
+\begin{aligned}
 \spacegrad D(-\Bx, 0)
-=
+&=
 (-\rcap) \PD{r}{} e^{-m r}
-=
+\\&=
 m \rcap e^{-m r},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet3Problem4:480}
+\begin{aligned}
 \tilde{\rho}(\Bx, 0)
-=
+&=
 \lr{ -m \rcap e^{-m r} } \cdot
 \lr{ m \rcap e^{-m r} }
 + m^2 e^{-2 mr}
-=
+\\&=
 0.
+\end{aligned}
 \end{equation}
 We have perfect cancellation at spacelike separations.
 

@@ -12,12 +12,13 @@ Prove \cref{thm:qftLecture21:101}.
 \makeanswer{problem:qftLecture21:1}{
 Let \( D = \lr{ i \gamma^\mu \partial_\mu - m } \) represent the Dirac operator.  Applying to \( e^{i p \cdot x} \) we have
 \begin{equation}\label{eqn:qftLecture21:1040}
+\begin{aligned}
 D e^{i p \cdot x}
-=
+&=
 \lr{ i \gamma^\mu \partial_\mu - m } e^{i p_\mu x^\mu}
-=
+\\&=
 -\lr{ \gamma^\mu p_\mu + m } e^{i p \cdot x}
-=
+\\&=
 -\lr{
    m \ITwo
    + p_0
@@ -26,26 +27,28 @@ D e^{i p \cdot x}
    \DiracGammaK{k}
 }
 e^{i p \cdot x}
-=
+\\&=
 -
 \begin{bmatrix}
 m & p_0 \sigma^0 + p_k \sigma^k \\
 p_0 \sigma^0 - p_k \sigma^k & m
 \end{bmatrix}
 e^{i p \cdot x}
-=
+\\&=
 -
 \begin{bmatrix}
 m & p \cdot \sigma \\
 p \cdot \osigma & m
 \end{bmatrix}
 e^{i p \cdot x}.
+\end{aligned}
 \end{equation}
 We are now set to apply the Dirac operator to the claimed solution from \cref{thm:qftLecture21:101}.
 %\cref{eqn:qftLecture21:280}
 \begin{equation}\label{eqn:qftLecture21:1060}
+\begin{aligned}
 D v(p)
-=
+&=
 \begin{bmatrix}
 m & p \cdot \sigma \\
 p \cdot \osigma & m
@@ -55,27 +58,28 @@ p \cdot \osigma & m
 -\sqrt{p \cdot \osigma} \eta^s \\
 \end{bmatrix},
 e^{i p \cdot x}
-=
+\\&=
 -
 \begin{bmatrix}
 \lr{ m \sqrt{ p \cdot \sigma} - p \cdot \sigma \sqrt{ p \cdot \osigma } } \eta \\
 \lr{ p \cdot \osigma \sqrt{ p \cdot \sigma } -m \sqrt{ p \cdot \osigma } } \eta \\
 \end{bmatrix}
 e^{i p \cdot x}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ p \cdot \sigma  p \cdot \osigma } } \eta \\
 \sqrt{ p \cdot \osigma} \lr{ \sqrt{ p \cdot \osigma p \cdot \sigma } -m } \eta \\
 \end{bmatrix}
 e^{i p \cdot x}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma} \lr{ m - \sqrt{ m^2 } } \eta \\
 \sqrt{ p \cdot \osigma} \lr{ \sqrt{ m^2 } -m } \eta \\
 \end{bmatrix}
 e^{i p \cdot x}
-=
+\\&=
 0.
+\end{aligned}
 \end{equation}
 } % answer
 
@@ -86,9 +90,10 @@ Prove \cref{thm:qftLecture21:13}.
 \makeanswer{problem:qftLecture21:2}{
 Expanding the matrices gives
 \begin{equation}\label{eqn:qftLecture21:1080}
+\begin{aligned}
 \vbar^r v^s
-= v^{r\dagger} \gamma^0 v^s
-=
+&= v^{r\dagger} \gamma^0 v^s
+\\&=
 \begin{bmatrix}
 \eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
 \end{bmatrix}
@@ -97,7 +102,7 @@ Expanding the matrices gives
 \sqrt{ p \cdot \sigma } \eta^s \\
 -\sqrt{ p \cdot \osigma } \eta^s
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 \eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
 \end{bmatrix}
@@ -105,16 +110,18 @@ Expanding the matrices gives
 -\sqrt{ p \cdot \osigma } \eta^s \\
 \sqrt{ p \cdot \sigma } \eta^s \\
 \end{bmatrix}
-=
+\\&=
 -\eta^{r \T} \sqrt{ p \cdot \sigma} \sqrt{ p \cdot \osigma } \eta^s
 - \eta^{r \T} \sqrt{ p \cdot \osigma} \sqrt{ p \cdot \sigma } \eta^s
-= \delta^{rs} 2 \sqrt{ m^2 }
-= 2 m \delta^{rs},
+\\&= \delta^{rs} 2 \sqrt{ m^2 }
+\\&= 2 m \delta^{rs},
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21:1100}
+\begin{aligned}
 v^{r\dagger} v^s
-=
+&=
 \begin{bmatrix}
 \eta^{r \T} \sqrt{ p \cdot \sigma} & - \eta^{r \T} \sqrt{ p \cdot \osigma}
 \end{bmatrix}
@@ -122,11 +129,12 @@ v^{r\dagger} v^s
 \sqrt{ p \cdot \sigma } \eta^s \\
 -\sqrt{ p \cdot \osigma } \eta^s
 \end{bmatrix}
-=
+\\&=
 \eta^{r \T} (p \cdot \sigma) \eta^s
 + \eta^{r \T} (p \cdot \osigma) \eta^s
-= \delta^{rs} \lr{ p_0 - \Bp \cdot \Bsigma + p_0 + \Bp \cdot \Bsigma }
-= 2 p_0 \delta^{rs}.
+\\&= \delta^{rs} \lr{ p_0 - \Bp \cdot \Bsigma + p_0 + \Bp \cdot \Bsigma }
+\\&= 2 p_0 \delta^{rs}.
+\end{aligned}
 \end{equation}
 } % answer
 
@@ -137,8 +145,9 @@ Prove \cref{thm:qftLecture21:1260}.
 \makeanswer{problem:qftLecture21:4}{
 We need only expand the matrix products
 \begin{equation}\label{eqn:qftLecture21:1220}
+\begin{aligned}
 \ubar^r v^s
-=
+&=
 \begin{bmatrix}
 \zeta^{r\T} \sqrt{ p \cdot \osigma } & \zeta^{r\T} \sqrt{ p \cdot \sigma }
 \end{bmatrix}
@@ -146,15 +155,17 @@ We need only expand the matrix products
 \sqrt{ p \cdot \sigma } \eta^s  \\
 -\sqrt{ p \cdot \osigma } \eta^s
 \end{bmatrix}
-=
+\\&=
 m \zeta^{r\T} \eta^s
 - m \zeta^{r\T} \eta^s
-=0,
+\\&= 0,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21:1240}
+\begin{aligned}
 \vbar^r u^s
-=
+&=
 \begin{bmatrix}
 -\eta^{r\T} \sqrt{ p \cdot \osigma } & \eta^{r\T} \sqrt{ p \cdot \sigma }
 \end{bmatrix}
@@ -162,10 +173,11 @@ and
 \sqrt{ p \cdot \sigma } \zeta^s  \\
 \sqrt{ p \cdot \osigma } \zeta^s
 \end{bmatrix}
-=
+\\&=
 - m \eta^{r\T} \zeta^s
 + m \eta^{r\T} \zeta^s
-=0,
+\\&= 0,
+\end{aligned}
 \end{equation}
 } % answer
 
@@ -175,9 +187,10 @@ Prove \cref{thm:qftLecture21:1261}.
 
 \makeanswer{problem:qftLecture21:5}{
 \begin{equation}\label{eqn:qftLecture21:1260}
+\begin{aligned}
 u^{r\dagger}(\Bp)
 v^{s}(-\Bp)
-=
+&=
 \evalbar{
 \begin{bmatrix}
 \zeta^{r\T} \sqrt{ p \cdot \sigma } &\zeta^{r\T} \sqrt{ p \cdot \osigma }
@@ -187,7 +200,7 @@ v^{s}(-\Bp)
 -\sqrt{ q \cdot \osigma } \eta^s
 \end{bmatrix}
 }{p = (0, \Bp), q = (0, -\Bp)}
-=
+\\&=
 \begin{bmatrix}
 \zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } &\zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma }
 \end{bmatrix}
@@ -195,7 +208,7 @@ v^{s}(-\Bp)
 \sqrt{ \Bp \cdot \Bsigma } \eta^s \\
 -\sqrt{ -\Bp \cdot \Bsigma } \eta^s
 \end{bmatrix}
-=
+\\&=
 \zeta^{r\T} \sqrt{ -\Bp \cdot \Bsigma } \sqrt{ \Bp \cdot \Bsigma } \eta^s
 -
 \zeta^{r\T} \sqrt{ \Bp \cdot \Bsigma } \sqrt{ -\Bp \cdot \Bsigma } \eta^s
@@ -203,14 +216,16 @@ v^{s}(-\Bp)
 %\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
 %-
 %\delta^{rs} \sqrt{ -(\Bp \cdot \Bsigma)^2 }
-=
+\\&=
 0,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture21:1280}
+\begin{aligned}
 v^{s\dagger}(-\Bp)
 u^{r}(\Bp)
-=
+&=
 \evalbar{
 \begin{bmatrix}
 \eta^{s\dagger}
@@ -224,7 +239,7 @@ u^{r}(\Bp)
 \sqrt{ p \cdot \osigma }\zeta^r
 \end{bmatrix}
 }{p = (0, \Bp), q = (0, -\Bp)}
-=
+\\&=
 \begin{bmatrix}
 \eta^{s\T} \sqrt{ \Bp \cdot \Bsigma } & -\eta^{s} \sqrt{ -\Bp \cdot \Bsigma }
 \end{bmatrix}
@@ -232,23 +247,23 @@ u^{r}(\Bp)
 \sqrt{ -\Bp \cdot \Bsigma } \zeta^r \\
 \sqrt{ \Bp \cdot \Bsigma } \zeta^r
 \end{bmatrix}
-=
+\\&=
 \eta^{s\T} \sqrt{ (-\Bp \cdot \Bsigma)(\Bp \cdot \Bsigma) } \zeta^r
 -
 \eta^{s\T} \sqrt{ (\Bp \cdot \Bsigma)(-\Bp \cdot \Bsigma) } \zeta^r
-=
+\\&=
 0.
+\end{aligned}
 \end{equation}
 } % answer
-
 \makeproblem{Direct product relation for the \(u\)'s.}{problem:qftLecture21:3}{
 Prove the \( u \) direct product relations of \cref{thm:qftLecture21:17}.
 } % problem
-
 \makeanswer{problem:qftLecture21:3}{
 \begin{equation}\label{eqn:qftLecture21:1180}
+\begin{aligned}
 \sum u^s \otimes \ubar^s
-=
+&=
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma } \zeta^s \\
 \sqrt{ p \cdot \osigma } \zeta^s
@@ -258,20 +273,20 @@ Prove the \( u \) direct product relations of \cref{thm:qftLecture21:17}.
 \zeta^{s\T} \sqrt{ p \cdot \osigma } &
 \zeta^{s\T} \sqrt{ p \cdot \sigma }
 \end{bmatrix}
-=
+\\&=
 \sum
 \begin{bmatrix}
 \sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \sigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
 \sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \osigma } & \sqrt{ p \cdot \osigma } \zeta^s \otimes \zeta^{s\T} \sqrt{ p \cdot \sigma } \\
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 m & p \cdot \sigma \\
 p \cdot \osigma & m
 \end{bmatrix}
-=
+\\&=
 m + p \cdot \gamma.
+\end{aligned}
 \end{equation}
 } % answer
-
 %}

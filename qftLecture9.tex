@@ -104,18 +104,18 @@ V(\Abs{\phi}) = m^2 \phi^\conj \phi + \frac{\lambda}{4} \lr{ \phi^\conj \phi }^2
 When \( m^2 > 0 \) we have a Wigner mode, but when \( m^2 < 0 \) we have an issue: \( \phi = 0 \) is not a minimum of potential.
 When \( m^2 < 0 \) we write
 \begin{equation}\label{eqn:qftLecture9:140}
+\begin{aligned}
 V(\phi)
-= - m^2 \phi^\conj \phi + \frac{\lambda}{4} \lr{ \phi^\conj \phi}^2
-= \frac{\lambda}{4} \lr{
-\lr{ \phi^\conj \phi}^2 - \frac{4}{\lambda} m^2 }
-= \frac{\lambda}{4} \lr{
+&= - m^2 \phi^\conj \phi + \frac{\lambda}{4} \lr{ \phi^\conj \phi}^2 \\
+&= \frac{\lambda}{4} \lr{
+\lr{ \phi^\conj \phi}^2 - \frac{4}{\lambda} m^2 } \\
+&= \frac{\lambda}{4} \lr{
 \phi^\conj \phi - \frac{2}{\lambda} m^2 }^2 - \frac{4 m^4}{\lambda^2},
+\end{aligned}
 \end{equation}
 or simply
 \begin{equation}\label{eqn:qftLecture9:780}
-V(\phi)
-=
-\frac{\lambda}{4} \lr{ \phi^\conj \phi - v^2 }^2 + \text{const}.
+V(\phi) = \frac{\lambda}{4} \lr{ \phi^\conj \phi - v^2 }^2 + \text{const}.
 \end{equation}
 The potential (called the Mexican hat potential) is illustrated in \cref{fig:mexicanHatPotential:mexicanHatPotentialFig1} for non-zero \( v \), and in
 \cref{fig:mexicanHatPotential:mexicanHatPotentialFig2} for \( v = 0 \).
@@ -141,21 +141,24 @@ We expand as
 \end{equation}
 so
 \begin{equation}\label{eqn:qftLecture9:180}
+\begin{aligned}
 \frac{\lambda}{4}
-\lr{\phi^\conj \phi - v^2}^2 =
+\lr{\phi^\conj \phi - v^2}^2 
+&=
 \lr{
 v^2 \lr{ 1 + \frac{\rho(x)}{v} }^2
 - v^2
-}^2
-=
+}^2 \\
+&=
 \frac{\lambda}{4}
-v^4 \lr{ \lr{ 1 + \frac{\rho(x)}{v} }^2 - 1 }
-=
+v^4 \lr{ \lr{ 1 + \frac{\rho(x)}{v} }^2 - 1 } \\
+&=
 \frac{\lambda}{4}
 v^4
 \lr{
    \frac{2 \rho}{v} + \frac{\rho^2}{v^2}
 }^2,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture9:200}
@@ -167,17 +170,19 @@ v \lr{ 1 + \frac{\rho(x)}{v} } \frac{i}{v} \partial_\mu \alpha
 \end{equation}
 The Lagrangian takes the form
 \begin{equation}\label{eqn:qftLecture9:220}
+\begin{aligned}
 \LL
-= \Abs{\partial \phi^\conj}^2 - \frac{\lambda}{4} \lr{ \Abs{\phi^\conj}^2 - v^2 }^2
-=
+&= \Abs{\partial \phi^\conj}^2 - \frac{\lambda}{4} \lr{ \Abs{\phi^\conj}^2 - v^2 }^2 \\
+&=
 \partial_\mu \rho \partial^\mu \rho + \partial_\mu \alpha \partial^\mu \alpha \lr{ 1 + \frac{\rho}{v} }
 -
-\frac{\lambda v^4}{4} \frac{ 4\rho^2}{v^2} + O(\rho^3)
-=
+\frac{\lambda v^4}{4} \frac{ 4\rho^2}{v^2} + O(\rho^3) \\
+&=
 \partial_\mu \rho \partial^\mu \rho
 - \lambda v^2\rho^2
 +
 \partial_\mu \alpha \partial^\mu \alpha \lr{ 1 + \frac{\rho}{v} }.
+\end{aligned}
 \end{equation}
 We have two fields, \( \rho \) : a massive scalar field, the ``Higgs'', and a massless field \( \alpha \) (the Goldstone boson).
 
@@ -303,20 +308,22 @@ g_{\mu\nu} = \ulLambda{\alpha}{\mu} g_{\alpha \beta} \ulLambda{\beta}{\nu},
 \end{equation}
 into which we insert the infinitesimal transformation representation
 \begin{equation}\label{eqn:qftLecture9:820}
-0 =
+\begin{aligned}
+0 
+&=
 - g_{\mu\nu} +
 \lr{ {\delta^\alpha}_\mu + {\omega^\alpha}_\mu }
 g_{\alpha \beta}
-\lr{ {\delta^\beta}_\nu + {\omega^\beta}_\nu }
-=
+\lr{ {\delta^\beta}_\nu + {\omega^\beta}_\nu } \\
+&=
 - g_{\mu\nu} +
 \lr{
    g_{\mu \beta}
    +
    \omega_{\beta\mu}
 }
-\lr{ {\delta^\beta}_\nu + {\omega^\beta}_\nu }
-=
+\lr{ {\delta^\beta}_\nu + {\omega^\beta}_\nu } \\
+&=
 - g_{\mu\nu} +
    g_{\mu \nu}
    +
@@ -326,6 +333,7 @@ g_{\alpha \beta}
 +
    \omega_{\beta\mu}
 {\omega^\beta}_\nu.
+\end{aligned}
 \end{equation}
 The quadratic term can be ignored, leaving just
 \begin{equation}\label{eqn:qftLecture9:840}
@@ -361,48 +369,48 @@ so
 
 Since \( \LL \) is a scalar
 \begin{equation}\label{eqn:qftLecture9:500}
+\begin{aligned}
 \delta \LL
-=
--\omega^{\mu\nu} x_\nu \partial_\mu \LL
-=
+&=
+-\omega^{\mu\nu} x_\nu \partial_\mu \LL \\
+&=
 -
 \partial_\mu \lr{
    \omega^{\mu\nu} x_\nu \LL
 }
 +
-(\partial_\mu x_\nu) \omega^{\mu\nu} \LL
-=
+(\partial_\mu x_\nu) \omega^{\mu\nu} \LL \\
+&=
 \partial_\mu \lr{
 -
    \omega^{\mu\nu} x_\nu \LL
 },
+\end{aligned}
 \end{equation}
 since \( \partial_\nu x_\mu = g_{\nu\mu} \) is symmetric, and \( \omega \) is antisymmetric.
 Our current is
 \begin{equation}\label{eqn:qftLecture9:520}
-J^\nu_\omega
-=
--
-   \omega^{\mu\nu} x_\mu \LL
-.
+J^\nu_\omega = - \omega^{\mu\nu} x_\mu \LL .
 \end{equation}
 
 Our Noether current is
 \begin{equation}\label{eqn:qftLecture9:540}
+\begin{aligned}
 j^\nu_{\omega^{\mu\rho}}
-= \PD{\phi_{,\nu}}{\LL} \delta \phi - J^\mu_\omega
-=
-\partial^\nu \phi\lr{ - \omega^{\mu\rho} x_\rho \partial_\mu \phi } + \omega^{\nu \rho} x_\rho \LL
-=
+&= \PD{\phi_{,\nu}}{\LL} \delta \phi - J^\mu_\omega \\
+&=
+\partial^\nu \phi\lr{ - \omega^{\mu\rho} x_\rho \partial_\mu \phi } + \omega^{\nu \rho} x_\rho \LL \\
+&=
 \omega^{\mu\rho}
 \lr{
    \partial^\nu \phi\lr{ - x_\rho \partial_\mu \phi } + {\delta^{\nu}}_\mu x_\rho \LL
-}
-=
+} \\
+&=
 \omega^{\mu\rho} x_\rho
 \lr{
    -\partial^\nu \phi \partial_\mu \phi + {\delta^{\nu}}_\mu \LL
 }.
+\end{aligned}
 \end{equation}
 We identify
 \begin{equation}\label{eqn:qftLecture9:560}
@@ -412,14 +420,16 @@ We identify
 \end{equation}
 so the current is
 \begin{equation}\label{eqn:qftLecture9:580}
+\begin{aligned}
 j^\nu_{\omega_{\mu\rho}}
-=
+&=
 -\omega^{\mu\rho} x_\rho
-{T^\nu}_\mu
-=
+{T^\nu}_\mu \\
+&=
 -\omega_{\mu\rho} x^\rho
 T^{\nu\mu}
 .
+\end{aligned}
 \end{equation}
 Define
 \begin{equation}\label{eqn:qftLecture9:600}
@@ -429,33 +439,37 @@ which retains the antisymmetry in \( \mu \rho \) yet still drops the parameter \
 To check that this makes sense, we can contract
 \( j^{\nu\mu\rho} \) with \( \omega_{\rho\mu} \)
 \begin{equation}\label{eqn:qftLecture9:880}
+\begin{aligned}
 j^{\nu\mu\rho} \omega_{\rho\mu}
-= -\inv{2} \lr{ x^\rho T^{\nu\mu} - x^{\mu} T^{\nu\rho} }
-\omega_{\mu\rho}
-=
+&= -\inv{2} \lr{ x^\rho T^{\nu\mu} - x^{\mu} T^{\nu\rho} }
+\omega_{\mu\rho} \\
+&=
 -\inv{2} x^\rho T^{\nu\mu}
 \omega_{\mu\rho}
 - \inv{2} x^{\mu} T^{\nu\rho}
-\omega_{\rho\mu}
-=
+\omega_{\rho\mu} \\
+&=
 -\inv{2} x^\rho T^{\nu\mu}
 \omega_{\mu\rho}
 - \inv{2} x^{\rho} T^{\nu\mu}
-\omega_{\mu\rho}
-=
+\omega_{\mu\rho} \\
+&=
 - x^{\rho} T^{\nu\mu}
 \omega_{\mu\rho},
+\end{aligned}
 \end{equation}
 which matches \cref{eqn:qftLecture9:580} as desired.
 
 \paragraph{Example.  Rotations \( \mu\rho = ij \)}
 \index{rotations}
 \begin{equation}\label{eqn:qftLecture9:620}
+\begin{aligned}
 J^{0 i j} \epsilon_{ijk}
-=
-\inv{2} \lr{ x^i T^{0j} - x^{j} T^{0i} } \epsilon_{ijk}
-=
+&=
+\inv{2} \lr{ x^i T^{0j} - x^{j} T^{0i} } \epsilon_{ijk} \\
+&=
 x^i T^{0j} \epsilon_{ijk}.
+\end{aligned}
 \end{equation}
 Observe that this has the structure of \( (\Bx \cross \Bp)_k \), where \( \Bp \) is the momentum density of the field.
 Let
@@ -464,28 +478,33 @@ L_k \equiv Q_k = \int d^3 x J^{0ij} \epsilon_{ijk}.
 \end{equation}
 We can now quantize and build a generator
 \begin{equation}\label{eqn:qftLecture9:660}
+\begin{aligned}
 \hatU(\Balpha)
-= e^{i \Balpha \cdot \hat{\BL}}
-= \exp\lr{i \alpha_k
+&= e^{i \Balpha \cdot \hat{\BL}} \\
+&= \exp\lr{i \alpha_k
 \int d^3 x x^i \hat{T}^{0j} \epsilon_{ijk}
 }
+\end{aligned}
 \end{equation}
 From \cref{eqn:qftLecture9:560} we can quantize with \( T^{0j} = \partial^0 \phi \partial^j \phi \rightarrow \pihat \lr{\spacegrad \phihat}_j\), or
 \begin{equation}\label{eqn:qftLecture9:900}
+\begin{aligned}
 \hatU(\Balpha)
-=
+&=
 \exp\lr{i \alpha_k
 \int d^3 x x^i \pihat (\spacegrad \phihat)_j \epsilon_{ijk}
-}
-=
+} \\
+&=
 \exp\lr{i \Balpha \cdot
 \int d^3 x \pihat \spacegrad \phihat \cross \Bx
 }
+\end{aligned}
 \end{equation}
 (up to a sign in the exponent which doesn't matter)
 \begin{equation}\label{eqn:qftLecture9:680}
-\phihat(\By) \rightarrow \hatU(\alpha) \phihat(\By) \hatU^\dagger(\alpha)
-\approx
+\begin{aligned}
+\phihat(\By) &\rightarrow \hatU(\alpha) \phihat(\By) \hatU^\dagger(\alpha) \\
+&\approx
 \phihat(\By) +
 i \Balpha \cdot
 \antisymmetric{
@@ -493,30 +512,34 @@ i \Balpha \cdot
 }
 {
    \phihat(\By)
-}
-=
+} \\
+&=
 \phihat(\By) +
 i \Balpha \cdot
    \int d^3 x
 (-i) \deltathree(\Bx - \By)
-\spacegrad \phihat(\Bx) \cross \Bx
-=
+\spacegrad \phihat(\Bx) \cross \Bx \\
+&=
 \phihat(\By) +
 \Balpha \cdot \lr{ \spacegrad \phihat(\By ) \cross \By}.
+\end{aligned}
 \end{equation}
 Explicitly, in coordinates, this is
 \begin{equation}\label{eqn:qftLecture9:700}
-\phihat(\By) \rightarrow
+\begin{aligned}
+\phihat(\By) 
+&\rightarrow
 \phihat(\By) +
 \alpha^i
 \lr{
    \partial^j \phihat(\By) y^k \epsilon_{jki}
-}
-=
+} \\
+&=
 \phihat(\By) -
-\epsilon_{ikj} \alpha^i y^k \partial^j \phihat
-=
+\epsilon_{ikj} \alpha^i y^k \partial^j \phihat \\
+&=
 \phihat( y^j - \epsilon^{ikj} \alpha^i y^k ).
+\end{aligned}
 \end{equation}
 This is a rotation.  To illustrate, pick \( \Balpha = (0, 0, \alpha) \), so \( y^j \rightarrow y^j - \epsilon^{ikj} \alpha y^k \delta_{i3} = y^j - \epsilon^{3kj} \alpha y^k \), or
 \begin{equation}\label{eqn:qftLecture9:920}

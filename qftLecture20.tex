@@ -92,12 +92,14 @@ If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
 \begin{proof}
 \Cref{thm:qftLecture20:760} follows by pre-multiplying by a sort of ``conjugate'' operator\footnote{Q: Is there a name for such a conjugation operation?} \( i \gamma^\mu + m \) to find
 \begin{equation}\label{eqn:qftLecture20:100}
-0 =
+\begin{aligned}
+0 
+&=
 \lr{ i \gamma^\mu \partial_\mu + m }
 \lr{ i \gamma^\mu \partial_\mu - m } \Psi
-=
+\\&=
 \lr{ - \gamma^\mu \gamma_\nu \partial_{\mu} \partial_\nu -m^2 } \Psi
-=
+\\&=
 \lr{
    - \inv{2} \lr{
       \gamma^\mu \gamma_\nu +
@@ -105,16 +107,17 @@ If \( \Psi \) obeys \cref{eqn:qftLecture20:80}, the Dirac equation, then
    }
    \partial_{\mu} \partial_\nu -m^2
 } \Psi
-=
+\\&=
 \lr{
    - g^{\mu\nu} \partial_{\mu} \partial_\nu -m^2
 } \Psi
-=
+\\&=
 -\lr{
    \partial_{\mu} \partial^\mu + m^2
 } \Psi
-=
+\\&=
 -\lr{ \partial_{00} - \spacegrad^2 + m^2 } \Psi,
+\end{aligned}
 \end{equation}
 which is a Klein-Gordon equation for \( \Psi \).
 \end{proof}
@@ -143,9 +146,10 @@ we find
 
 Let's write this out explicitly for exposition, first noting that
 \begin{equation}\label{eqn:qftLecture20:860}
+\begin{aligned}
 \gamma^\mu p_\mu
-= \gamma^0 p_0 + \gamma^k p_k
-=
+&= \gamma^0 p_0 + \gamma^k p_k
+\\&=
 p_0
 \begin{bmatrix}
 0 & \sigma^0 \\
@@ -157,15 +161,18 @@ p_k
 0 & \sigma^k \\
 -\sigma^k & 0
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 0 & p^0 \sigma^0 - \Bsigma \cdot \Bp \\
 p^0 \sigma^0 + \Bsigma \cdot \Bp & 0
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 so \cref{eqn:qftLecture20:160} becomes
 \begin{equation}\label{eqn:qftLecture20:880}
-0 =
+\begin{aligned}
+0 
+&=
 \begin{bmatrix}
 -m & p^0 \sigma^0 - \Bsigma \cdot \Bp \\
 p^0 \sigma^0 + \Bsigma \cdot \Bp & -m
@@ -174,7 +181,7 @@ p^0 \sigma^0 + \Bsigma \cdot \Bp & -m
 u_1(p) \\
 u_2(p) \\
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 -m & p \cdot \sigma \\
 p \cdot \overbar{\sigma} & -m
@@ -183,6 +190,7 @@ p \cdot \overbar{\sigma} & -m
 u_1(p) \\
 u_2(p) \\
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 where the following handy shorthand\footnote{Assuming I wrote this down correctly, this follows the usual convention \( x \cdot p = x^\mu p_\mu = x^0 p^0 - \Bx \cdot \Bp \).
 I had some doubt that I got the signs right in my notes from class, since a peek at
@@ -196,24 +204,28 @@ p \cdot \overbar{\sigma} &= p^0 \sigma^0 + \Bp \cdot \Bsigma.
 
 Note that these \( p \cdot \sigma, p \cdot \overbar{\sigma} \)'s are both block matrices.  In particular
 \begin{equation}\label{eqn:qftLecture20:320}
+\begin{aligned}
 p \cdot \sigma
-= p_\mu \sigma^\mu
-=
+&= p_\mu \sigma^\mu
+\\&=
 \begin{bmatrix}
 p_0 + p_3   & p_1 - i p_2 \\
 p_1 + i p_2 & p_0 - p_3
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 
 The question is what \( u's \) obey such an equation.
 
 We can gain some insight by first considering the rest frame, where \( \Bp = 0, p^0 = m \).  Going back to \cref{eqn:qftLecture20:160}, the rest frame Dirac equation becomes
 \begin{equation}\label{eqn:qftLecture20:180}
+\begin{aligned}
 0
-=
+&=
 \lr{ \gamma^0 p_0 - m } u
-=
+\\&=
 m \lr{ \gamma^0 - 1 } u.
+\end{aligned}
 \end{equation}
 Our block matrix equation is now reduced to a set of \( 2 \times 2 \) identity matrices
 \begin{equation}\label{eqn:qftLecture20:220}
@@ -272,39 +284,43 @@ p \cdot \overbar{\sigma} \) are both Hermitian \( 2 \times 2 \) matrices, we can
 \paragraph{Check:}
 In the rest frame
 \begin{equation}\label{eqn:qftLecture20:340}
+\begin{aligned}
 \evalbar{
 \sqrt{ p \cdot \sigma }
 }{ \Bp = 0 }
-=
+&=
 \evalbar{
 \sqrt{ p \cdot \overbar{\sigma} }
 }{ \Bp = 0 }
-=
+\\&=
 \begin{bmatrix}
 \sqrt{p_0} & 0 \\
 0 & \sqrt{p_0}
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{m} & 0 \\
 0 & \sqrt{m}
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:qftLecture20:940}
+\begin{aligned}
 u(p)
-=
+&=
 \sqrt{m}
 \begin{bmatrix}
 \sigma^0 \zeta \\
 \sigma^0 \zeta
 \end{bmatrix}
-=
+\\&=
 \sqrt{m}
 \begin{bmatrix}
 \zeta \\
 \zeta
 \end{bmatrix},
+\end{aligned}
 \end{equation}
 as we already found.
 
@@ -341,19 +357,21 @@ A = U \diag( \lambda_1, \cdots \lambda_n ) U^\dagger,
 \end{equation}
 then
 \begin{equation}\label{eqn:qftLecture20:920}
+\begin{aligned}
 \det \sqrt{A}
-=
+&=
 \det \lr{
 U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 }
-=
+\\&=
 \prod_j \sqrt{\lambda_j}
-=
+\\&=
 \sqrt{
 \prod_j \lambda_j
 }
-=
+\\&=
 \sqrt{ \det A }.
+\end{aligned}
 \end{equation}
 \end{proof}
 
@@ -365,12 +383,13 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture20:420}
+\begin{aligned}
 \det \frac{\sqrt{p \cdot \sigma}}{\sqrt{m}}
-=
+&=
 \sqrt{
 \det \frac{(p \cdot \sigma)}{m}
 },
-=
+\\&=
 \sqrt{
    \det
    \inv{m}
@@ -379,12 +398,13 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
    -p_1 -i p_2 & p^0 + p^3
    \end{bmatrix}
 }
-=
+\\&=
 \sqrt{ \inv{m^2} \lr{ (p^0)^2 - \Bp^2 } }
-=
+\\&=
 \sqrt{ \frac{m^2}{m^2} }
-=
+\\&=
 1.
+\end{aligned}
 \end{equation}
 \end{proof}
 
@@ -396,13 +416,15 @@ U \diag( \sqrt{\lambda_1}, \cdots, \sqrt{\lambda_n} ) U^\dagger
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture20:480}
+\begin{aligned}
 (p \cdot \sigma)(p \cdot \overbar{\sigma}) = \lr{ p^0 - \Bp \cdot \Bsigma }\lr{ p^0 + \Bp \cdot \Bsigma }
-=
+&=
 (p^0)^2 - \lr{ \Bp \cdot \Bsigma }^2
-=
+\\&=
 (p^0)^2 - \Bp^2
-=
+\\&=
 m^2.
+\end{aligned}
 \end{equation}
 \end{proof}
 
@@ -412,8 +434,9 @@ m^2.
 
 \begin{proof}
 \begin{equation}\label{eqn:qftLecture20:460}
+\begin{aligned}
 \lr{ \gamma^\mu p_\mu -m } u(p)
-=
+&=
 \begin{bmatrix}
 -m & p \cdot \sigma \\
 p \cdot \overbar{\sigma} & -m
@@ -422,26 +445,27 @@ p \cdot \overbar{\sigma} & -m
 \sqrt{ p \cdot \sigma } \zeta \\
 \sqrt{ p \cdot \overbar{\sigma} \zeta }
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 \lr{ -m \sqrt{p \cdot \sigma} + p \cdot \sigma \sqrt{p \cdot \overbar{\sigma}} } \zeta \\
 \lr{ p \cdot \overbar{\sigma} \sqrt{ p \cdot \sigma } - m \sqrt{p \cdot \overbar{\sigma}} } \zeta \\
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{p \cdot \sigma}
 \lr{ -m + \sqrt{p \cdot \sigma} \sqrt{p \cdot \overbar{\sigma}} } \zeta \\
 \sqrt{ p \cdot \overbar{\sigma}}
 \lr{ p \sqrt{\cdot \overbar{\sigma}} \sqrt{ p \cdot \sigma } - m } \zeta \\
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{p \cdot \sigma}
 \lr{ -m + \sqrt{m^2} } \zeta \\
 \sqrt{ p \cdot \overbar{\sigma}}
 \lr{ p \sqrt{ m^2 } - m } \zeta \\
 \end{bmatrix}
-= 0.
+\\&= 0.
+\end{aligned}
 \end{equation}
 \end{proof}
 
@@ -465,23 +489,25 @@ p = \lr{ E, 0, 0, p^3 }
 
 We have
 \begin{equation}\label{eqn:qftLecture20:960}
+\begin{aligned}
 \sqrt{\sigma \cdot p}
-=
+&=
 \sqrt{
    E - p^3 \sigma^3
 }
-=
+\\&=
 \sqrt{\lr{
 \begin{bmatrix}
 E - p^3 & 0 \\
 0       & E + p^3
 \end{bmatrix}
 }}
-=
+\\&=
 \begin{bmatrix}
 \sqrt{E - p^3} & 0 \\
 0       & \sqrt{E + p^3}
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 Similarly
 \begin{equation}\label{eqn:qftLecture20:1000}
@@ -588,19 +614,20 @@ u(p)
 \end{bmatrix} \\
 \end{bmatrix}
 \end{equation}
-
 \section{Helicity.}
 \index{helicity}
-
 Let \( h \) (the helicity) be
 \begin{equation}\label{eqn:qftLecture20:660}
-h = \inv{2}
+\begin{aligned}
+h 
+&= \inv{2}
 \begin{bmatrix}
 \hat{\Bp} \cdot \Bsigma & 0 \\
 0 & \hat{\Bp} \cdot \Bsigma
 \end{bmatrix}
-=
+\\&=
 \hat{\Bp} \cdot \BS,
+\end{aligned}
 \end{equation}
 where
 \begin{equation}\label{eqn:qftLecture20:680}
