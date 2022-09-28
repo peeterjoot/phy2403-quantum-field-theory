@@ -140,20 +140,23 @@ so \cref{lemma} is valid for any anhillation operator \( B \).
 
 For creation operators \( B \), we can cast the commutation relations into Wick form
 \begin{equation}\label{eqn:ProblemSet4Problem1:60}
+\begin{aligned}
 a_m a_k^\dagger
-=
+&=
 a_k^\dagger a_m + (2\pi)^3 \deltathree(k - m)
-=
+\\&=
 a_k^\dagger a_m +
 \contraction{}{a}{{}_m}{a}
 a_m a_k^\dagger,
+\end{aligned}
 \end{equation}
 and use this iteratively to percolate \( B = a_{n+1}^\dagger \) through \( \normalorder{A_1 A_2 \ldots A_n} \).  That is
 \begin{equation}\label{eqn:ProblemSet4Problem1:80}
+\begin{aligned}
 \normalorder{A_1 A_2 \ldots A_n} B
-=
+&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}^\dagger
-=
+\\&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
@@ -165,7 +168,7 @@ a_{k_{n-1}}
    \contraction{}{a}{{}_{k_n} }{a}
    a_{k_n} a_{k_{n+1}}^\dagger
 }
-=
+\\&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
@@ -177,7 +180,7 @@ a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger
-=
+\\&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
@@ -195,7 +198,7 @@ a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger
-=
+\\&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
@@ -216,6 +219,7 @@ a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
+\end{aligned}
 \end{equation}
 We can continue like this until \( a^\dagger_{k_{n+1}} \) has percolated all the way through the anhillation operators
 \begin{equation}\label{eqn:ProblemSet4Problem1:120}
@@ -302,37 +306,42 @@ Let's start in a more pedestrian fashion than diving straight into the induction
 \item \( n = 2 \).
 We'd like to expand \( A B \), say, in terms of contractions.  Because \( A = \normalorder{A} \), that is
 \begin{equation}\label{eqn:ProblemSet4Problem1:220}
+\begin{aligned}
 A B
-= \normalorder{A} B
-=
+&= \normalorder{A} B
+\\&=
 \normalorder{ A B } +
 \contraction{}{A}{}{B}
 A B
 ,
+\end{aligned}
 \end{equation}
 by \cref{lemma}.  This proves \cref{w1} for the \( n = 2 \) case.
 \item \( n = 3 \).  Let's now expand \( A B C \)
 \begin{equation}\label{eqn:ProblemSet4Problem1:240}
+\begin{aligned}
 A B C
-=
+&=
 (A B) C
-=
+\\&=
 \lr{
    \normalorder{ A B } +
    \contraction{}{A}{}{B}
    A B
 } C.
+\end{aligned}
 \end{equation}
 We are now able to apply \cref{lemma} to \( \normalorder{ AB } C \), to find
 \begin{equation}\label{eqn:ProblemSet4Problem1:260}
+\begin{aligned}
 A B C
-=
+&=
 \lr{
    \normalorder{ A B } +
    \contraction{}{A}{}{B}
    A B
 } C
-=
+\\&=
 \normalorder{ A B C }
 +
 \normalorder{ A \contraction{}{ B }{}{C } B C }
@@ -341,7 +350,7 @@ A B C
 +
 (\contraction{}{A}{}{B}
    A B ) C
-=
+   \\&=
 \normalorder{ A B C }
 +
 \normalorder{ A \contraction{}{ B }{}{C } B C }
@@ -349,6 +358,7 @@ A B C
 \normalorder{ \contraction{}{ A }{B}{C } A B C }
 +
 \normalorder{ \contraction{}{A}{}{B} A B C },
+\end{aligned}
 \end{equation}
 where we also made use of \( \normalorder{ \contraction{}{A}{}{B} A B } C = \normalorder{ \contraction{}{A}{}{B} A B C } \).
 This proves \cref{w1} for the \( n = 3 \) case.
@@ -468,9 +478,10 @@ a_{\Bp} a_{\Bq} &= \bra{0} a_{\Bp} a_{\Bq} \ket{0} = 0,
 \end{equation}
 The only non-zero case is
 \begin{equation}\label{eqn:ProblemSet4Problem1:340}
+\begin{aligned}
 \contraction{}{a}{{}_{\Bp}}{a}
 a_{\Bp} a_{\Bq}^\dagger
-=
+&=
 \bra{0} a_{\Bp} a_{\Bq}^\dagger \ket{0}
 \bra{0}
 \lr{
@@ -480,8 +491,9 @@ a_{\Bp}
 (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 \ket{0}
-=
+\\&=
 (2 \pi)^3 \deltathree(\Bp - \Bq),
+\end{aligned}
 \end{equation}
 which also matches \cref{c2} as desired, showing that \cref{c5} provides a nice compact representation of the contraction operator for any pair of creation and anhillation operators.
 
@@ -506,8 +518,9 @@ A_j
 \end{equation}
 For such a combination let's show that \cref{w1} still applies.
 \begin{equation}\label{eqn:ProblemSet4Problem1:380}
+\begin{aligned}
 A_i A_j
-=
+&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
 \lr{
    e^{i p \cdot x}
@@ -523,7 +536,7 @@ A_i A_j
    e^{-i q \cdot y}
    a_\Bq
 }
-=
+\\&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
 \lr{
    e^{i p \cdot x}
@@ -546,7 +559,7 @@ A_i A_j
    a_\Bp
    a_\Bq
 }
-=
+\\&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
 \lr{
    e^{i p \cdot x}
@@ -572,19 +585,21 @@ A_i A_j
    a_\Bp
    a_\Bq
 }
-=
+\\&=
 \normalorder{A_i A_j}
 +
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
    e^{-i p \cdot x}
    e^{i q \cdot y}
    (2 \pi)^3 \deltathree(\Bp - \Bq).
+\end{aligned}
 \end{equation}
 However,
 \begin{equation}\label{eqn:ProblemSet4Problem1:400}
+\begin{aligned}
 \contraction{}{A}{{}_i }{A}
 A_i A_j
-=
+&=
 \bra{0}
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
 \lr{
@@ -602,7 +617,7 @@ A_i A_j
    a_\Bq
 }
 \ket{0}
-=
+\\&=
 \bra{0}
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
    e^{-i p \cdot x}
@@ -610,7 +625,7 @@ A_i A_j
    a_\Bp
    a_\Bq^\dagger
 \ket{0}
-=
+\\&=
 \bra{0}
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
    e^{-i p \cdot x}
@@ -621,11 +636,12 @@ A_i A_j
 + (2 \pi)^3 \deltathree(\Bp - \Bq)
 }
 \ket{0}
-=
+\\&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
    e^{-i p \cdot x}
    e^{i q \cdot y}
  (2 \pi)^3 \deltathree(\Bp - \Bq).
+\end{aligned}
 \end{equation}
 It happens that we have a symbolic designation for this combination, namely \(
 \contraction{}{A}{{}_i }{A}
@@ -655,10 +671,11 @@ Let's consider a couple concrete cases again, starting with
 \cref{eqn:ProblemSet4Problem1:360}.
 For the \( x^0 > y^0 \) case we have
 \begin{equation}\label{eqn:ProblemSet4Problem1:520}
+\begin{aligned}
 T( A B )
-=
+&=
 A B
-=
+\\&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
 \lr{
    e^{i p \cdot x}
@@ -674,7 +691,7 @@ A B
    e^{-i q \cdot y}
    a_\Bq
 }
-=
+\\&=
 \normalorder{AB}
 +
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
@@ -686,20 +703,22 @@ A B
    a_\Bp
    e^{-i q \cdot y}
    a_\Bq^\dagger
-=
+   \\&=
 \int \frac{d^3 p }{(2 \pi)^3 2 \omega_\Bp }
    e^{-i p \cdot (x-y)}
-=
+   \\&=
 \normalorder{AB}
 +
 D(x - y),
+\end{aligned}
 \end{equation}
 on the other hand, if \( x^0 < y^0 \), using the same procedure, we must have
 \begin{equation}\label{eqn:ProblemSet4Problem1:540}
+\begin{aligned}
 T( A B )
-=
+&=
 B A
-=
+\\&=
 \normalorder{BA}
 +
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
@@ -711,10 +730,11 @@ B A
    a_\Bp
    e^{-i q \cdot y}
    a_\Bq^\dagger
-=
+   \\&=
 \normalorder{AB}
 +
 D(y - x),
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet4Problem1:480}
@@ -722,108 +742,119 @@ T(AB) = \normalorder{AB} + D_F(x - y).
 \end{equation}
 Since \( D_F(x - y) = \bra{0} T( \phi(x) \phi(y)) \ket{0} = \contraction{}{A}{}{B} AB \), we have
 \begin{equation}\label{eqn:ProblemSet4Problem1:500}
+\begin{aligned}
 T(AB)
-= \normalorder{AB} + \contraction{}{A}{}{B} AB
-= \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB },
+&= \normalorder{AB} + \contraction{}{A}{}{B} AB
+\\&= \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB },
+\end{aligned}
 \end{equation}
-   which proves \cref{w2} for the \( n = 2 \) case.
+which proves \cref{w2} for the \( n = 2 \) case.
 
-   Now consider the \( n = 3 \) case, where \( A,B \) are defined as above, and \( C = \phi(z) \) is a third field.
-   \begin{enumerate}[I.]
-   \item For \( x^0 > y^0 > z^0 \), we have
-   \begin{equation}\label{eqn:ProblemSet4Problem1:560}
-   T(A B C)
-   =
-   A B C
-   =
-   T(A B) C
-   =
-   \lr{
-   \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
-   }
-   C
-   =
-   \normalorder{\contraction{A}{B}{}{C} ABC }
-   +
-   \normalorder{\contraction{}{A}{B}{C} ABC }
-   +
-   \normalorder{\contraction{}{A}{}{B} AB } C,
-   \end{equation}
-   \item For \( y^0 > x^0 > z^0 \), we have
-   \begin{equation}\label{eqn:ProblemSet4Problem1:580}
-   T( A B C )
-   =
-   B A C
-   =
-   T( B A ) C
-   =
-   T( A B ) C
-   \end{equation}
-   which equals \cref{eqn:ProblemSet4Problem1:560}.
-   \item For \( z^0 > x^0 > y^0 \), we have
-   \begin{equation}\label{eqn:ProblemSet4Problem1:600}
-   T( A B C )
-   =
-   C A B
-   =
-   C T( A B )
-   =
-   C
-   \lr{
-   \normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
-   }
-   =
-   \normalorder{\contraction{}{C}{}{A} CAB }
-   +
-   \normalorder{\contraction{}{C}{A}{B} CAB }
-   +
-   C \normalorder{\contraction{}{A}{}{B} AB },
-   \end{equation}
-   which also equals \cref{eqn:ProblemSet4Problem1:560}.
-   \item For \( z^0 > y^0 > x^0 \), we have
-   \begin{equation}\label{eqn:ProblemSet4Problem1:620}
-   T( A B C )
-   = C B A
-   = C T( B A )
-   = C T( A B ),
-   \end{equation}
-   which equals \cref{eqn:ProblemSet4Problem1:600}.
-   \item For \( x^0 > z^0 > y^0 \), we have
-   \begin{equation}\label{eqn:ProblemSet4Problem1:640}
+Now consider the \( n = 3 \) case, where \( A,B \) are defined as above, and \( C = \phi(z) \) is a third field.
+\begin{enumerate}[I.]
+\item For \( x^0 > y^0 > z^0 \), we have
+\begin{equation}\label{eqn:ProblemSet4Problem1:560}
+\begin{aligned}
+T(A B C)
+&=
+A B C
+\\&=
+T(A B) C
+\\&=
+\lr{
+\normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
+}
+C
+\\&=
+\normalorder{\contraction{A}{B}{}{C} ABC }
++
+\normalorder{\contraction{}{A}{B}{C} ABC }
++
+\normalorder{\contraction{}{A}{}{B} AB } C,
+\end{aligned}
+\end{equation}
+\item For \( y^0 > x^0 > z^0 \), we have
+\begin{equation}\label{eqn:ProblemSet4Problem1:580}
+\begin{aligned}
 T( A B C )
-=
+&=
+B A C
+\\&=
+T( B A ) C
+\\&=
+T( A B ) C
+\end{aligned}
+\end{equation}
+which equals \cref{eqn:ProblemSet4Problem1:560}.
+\item For \( z^0 > x^0 > y^0 \), we have
+\begin{equation}\label{eqn:ProblemSet4Problem1:600}
+\begin{aligned}
+T( A B C )
+&=
+C A B
+\\&=
+C T( A B )
+\\&=
+C
+\lr{
+\normalorder{AB} + \normalorder{\contraction{}{A}{}{B} AB }
+}
+\\&=
+\normalorder{\contraction{}{C}{}{A} CAB }
++
+\normalorder{\contraction{}{C}{A}{B} CAB }
++
+C \normalorder{\contraction{}{A}{}{B} AB },
+\end{aligned}
+\end{equation}
+which also equals \cref{eqn:ProblemSet4Problem1:560}.
+\item For \( z^0 > y^0 > x^0 \), we have
+\begin{equation}\label{eqn:ProblemSet4Problem1:620}
+T( A B C )
+= C B A
+= C T( B A )
+= C T( A B ),
+\end{equation}
+which equals \cref{eqn:ProblemSet4Problem1:600}.
+\item For \( x^0 > z^0 > y^0 \), we have
+\begin{equation}\label{eqn:ProblemSet4Problem1:640}
+\begin{aligned}
+T( A B C )
+&=
 A C B
-=
+\\&=
 T(A C) B
-=
+\\&=
 \lr{
 \normalorder{AC} + \normalorder{\contraction{}{A}{}{C} AC }
 }
 B
-=
+\\&=
 \normalorder{\contraction{}{A}{C}{B} ACB }
 +
 \normalorder{\contraction{A}{C}{}{B} ACB }
 +
 \normalorder{\contraction{}{A}{}{C} AC } B,
+\end{aligned}
 \end{equation}
 which equals \cref{eqn:ProblemSet4Problem1:560}.
 \item For \( y^0 > z^0 > x^0 \), we have
 \begin{equation}\label{eqn:ProblemSet4Problem1:660}
+\begin{aligned}
 T( A B C )
-=
+&=
 B C A
-=
+\\&=
 B T( C A )
-=
+\\&=
 B T( A C ),
+\end{aligned}
 \end{equation}
 which equals \cref{eqn:ProblemSet4Problem1:640}.
 \end{enumerate}
 All cases considered, we have now proven \cref{w2} for the \( n = 3 \) case.
 
 Regardless of the time ordering of the fields, we end up with all possible combinations of contractions between all pairs of fields.  It is clear how this would generalize to higher numbers of fields.  This demonstration leaves me sufficiently convinced of the proof of the theorem, as desired.
-
 %\makeSubAnswer{}{qft:problemSet4:1e}
 %TODO.
 }

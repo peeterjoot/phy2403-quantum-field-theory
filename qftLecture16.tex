@@ -168,12 +168,14 @@ i M( \Bk_A + \Bk_B \rightarrow \Bp_1 \cdots \Bp_n ).
 This amounts to a definition of \( M \).
 Recall that we found
 \begin{equation}\label{eqn:qftLecture16:220}
+\begin{aligned}
 U(T, -T)
-= T \lr{ e^{-i \int_{-T}^T H_I(t') dt'} }
-=
+&= T \lr{ e^{-i \int_{-T}^T H_I(t') dt'} }
+\\&=
 e^{i H_0(T - t_0)}
 e^{-i 2 H T}
 e^{-i H_0(-T - t_0)}.
+\end{aligned}
 \end{equation}
 We want to replace the \( e^{-i 2 H T} \) in the matrix element above with \( U \).
 
@@ -246,35 +248,39 @@ T
 
 When we look at
 \begin{equation}\label{eqn:qftLecture16:360}
+\begin{aligned}
 \contraction{}{\phi}{{}_I(x_1)}{a}
 \phi_I(x_1) a^\dagger_{\Bk}
 \sqrt{ 2 \omega_\Bk}
-=
+&=
 \int \frac{d^3 p}{(2 \pi)^3} \frac{e^{-i p \cdot x}}{\sqrt{2 \omega_\Bp}}
 \contraction{}{a}{{}_\Bp}{a}
 a_\Bp a^\dagger_\Bk
 \sqrt{ 2 \omega_\Bk}
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3} \frac{e^{-i p \cdot x}}{\sqrt{2 \omega_\Bp}}
 \deltathree(\Bp - \Bk)
 \sqrt{ 2 \omega_\Bk}
-= e^{-i k \cdot x}.
+\\&= e^{-i k \cdot x}.
+\end{aligned}
 \end{equation}
 Similarly
 \begin{equation}\label{eqn:qftLecture16:440}
+\begin{aligned}
 \contraction{}{a}{{}_\Bp}{\phi}
 a_\Bp \phi_I(x_1)
 \sqrt{ 2 \omega_\Bp}
-=
+&=
 \int \frac{d^3 k}{(2 \pi)^3} \frac{e^{i k \cdot x}}{\sqrt{2 \omega_\Bk}}
 \contraction{}{a}{{}_\Bp}{a}
 a_\Bp a^\dagger_\Bk
 \sqrt{ 2 \omega_\Bk}
-=
+\\&=
 \int \frac{d^3 k}{(2 \pi)^3} \frac{e^{i k \cdot x}}{\sqrt{2 \omega_\Bk}}
 \deltathree(\Bp - \Bk)
 \sqrt{ 2 \omega_\Bk}
-= e^{+i p \cdot x}.
+\\&= e^{+i p \cdot x}.
+\end{aligned}
 \end{equation}
 
 Summarizing

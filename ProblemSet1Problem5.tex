@@ -163,15 +163,17 @@ quantization constraint.
 \makeSubAnswer{}{qft:problemSet1:5b}
 Making the discrete substitution for \( k_x \), the vacuum energy per unit area is
 \begin{equation}\label{eqn:ProblemSet1Problem5:160}
+\begin{aligned}
 \frac{E}{A}
-= \inv{A}
+&= \inv{A}
 \frac{A a}{(2\pi)^3} \int d^3 k \frac{\Hbar c \Norm{\Bk}}{2}
-=
+\\&=
 \frac{a}{(2\pi)^3} \frac{\Hbar c}{2} \int dk_y dk_z \lr{ \int dk_x} \sqrt{ k_x^2 + k_y^2 + k_z^2 }
-= \frac{a \Hbar c}{16 \pi^3} \int dk_y dk_z \lr{ \frac{\pi}{a} \sum_{n = -\infty}^\infty } \sqrt{ k_x^2 + k_y^2 + k_z^2 }
-= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk \sum_{n = -\infty}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 }
-= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
+\\&= \frac{a \Hbar c}{16 \pi^3} \int dk_y dk_z \lr{ \frac{\pi}{a} \sum_{n = -\infty}^\infty } \sqrt{ k_x^2 + k_y^2 + k_z^2 }
+\\&= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk \sum_{n = -\infty}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 }
+\\&= \frac{\Hbar c}{8 \pi} \int_{k = 0}^\infty k dk
 \lr{ k + 2 \sum_{n = 1}^\infty \sqrt{ \lr{ \frac{n \pi}{a}}^2 + k^2 } },
+\end{aligned}
 \end{equation}
 so the energy per unit area (\(A\)) between the plates is
 \begin{equation}\label{eqn:ProblemSet1Problem5:180}
@@ -183,26 +185,29 @@ As \( \int k^2 dk = k^3/3 \) is unbounded for large \( k \), this expression sti
 \makeSubAnswer{}{qft:problemSet1:5c}
 The presence of the plates was accounted for by summing over \( k_x = \pi n/a \) for discrete \( n \).  The absence of the boundaries may be accounted for by performing the integral over all values of \( n \), as in
 \begin{equation}\label{eqn:ProblemSet1Problem5:200}
+\begin{aligned}
 \frac{E}{A}
-= \frac{a}{(2\pi)^3} (2 \pi) \frac{\Hbar c}{2} \int_{k= 0}^\infty k dk \int dk_x \sqrt{ k^2 + k_x^2 }
-= \frac{a \Hbar c}{8 \pi^2} \int_{k= 0}^\infty k dk \int_{k_x = -\infty}^\infty dk_x \sqrt{ k^2 + k_x^2 }
-= \frac{a \Hbar c}{8 \pi^2} \frac{\pi}{a} \int_{k= 0}^\infty k dk \int_{n = -\infty}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }
-= \frac{\Hbar c}{4 \pi} \int_{k= 0}^\infty k dk \int_{n = 0}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }.
+&= \frac{a}{(2\pi)^3} (2 \pi) \frac{\Hbar c}{2} \int_{k= 0}^\infty k dk \int dk_x \sqrt{ k^2 + k_x^2 }
+\\&= \frac{a \Hbar c}{8 \pi^2} \int_{k= 0}^\infty k dk \int_{k_x = -\infty}^\infty dk_x \sqrt{ k^2 + k_x^2 }
+\\&= \frac{a \Hbar c}{8 \pi^2} \frac{\pi}{a} \int_{k= 0}^\infty k dk \int_{n = -\infty}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }
+\\&= \frac{\Hbar c}{4 \pi} \int_{k= 0}^\infty k dk \int_{n = 0}^\infty dn \sqrt{ k^2 + \lr{\frac{ n \pi }{a}}^2 }.
+\end{aligned}
 \end{equation}
 The difference of \cref{eqn:ProblemSet1Problem5:180} and \cref{eqn:ProblemSet1Problem5:200} yields
 \cref{eqn:ProblemSet1Problem5:40} as desired.
 \makeSubAnswer{}{qft:problemSet1:5d}
 Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:ProblemSet1Problem5:40}, and making a change of variables \( k = \pi x /a \), we have
 \begin{equation}\label{eqn:ProblemSet1Problem5:220}
+\begin{aligned}
 \Delta E_{\text{vac}}(a)
-= \int_0^\infty \frac{dk}{2\pi} k \lr{
+&= \int_0^\infty \frac{dk}{2\pi} k \lr{
    \frac{k}{4} f(k)
    + \inv{2} \sum_{n = 1}^\infty \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
    f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
    - \inv{2} \int_0^\infty dn \sqrt{ k^2 + \frac{n^2 \pi^2}{a^2} }
    f(\sqrt{k^2 + \frac{n^2 \pi^2}{a^2} } )
 }
-=
+\\&=
 \frac{\Hbar c \pi^2}{4 a^3}
 \int_0^\infty dx x \lr{
    \frac{x}{2} f((\pi/a) x)
@@ -211,11 +216,13 @@ Introducing the cutoff function \( f(k) \) into the integrand of \cref{eqn:Probl
    - \int_0^\infty dn \sqrt{ x^2 + n^2 }
    f((\pi/a) \sqrt{x^2 + n^2})
 }.
+\end{aligned}
 \end{equation}
 Now let \( u = x^2 \)
 \begin{equation}\label{eqn:ProblemSet1Problem5:240}
+\begin{aligned}
 \Delta E_{\text{vac}}(a)
-=
+&=
 \frac{\Hbar c \pi^2}{8 a^3}
 \int_0^\infty du \lr{
    \frac{\sqrt{u}}{2} f((\pi/a) \sqrt{u})
@@ -224,10 +231,11 @@ Now let \( u = x^2 \)
    - \int_0^\infty dn \sqrt{ u + n^2 }
    f((\pi/a) \sqrt{u + n^2})
 }
-=
+\\&=
 \frac{\Hbar c \pi^2}{8 a^3} \lr{
    \inv{2} F(0) + \sum_{n = 1}^\infty F(n) - \int_0^\infty dn F(n)
 },
+\end{aligned}
 \end{equation}
 which recovers \cref{eqn:ProblemSet1Problem5:260} as desired.
 
@@ -242,9 +250,11 @@ and utilize
 \end{equation}
 so the first derivative is
 \begin{equation}\label{eqn:ProblemSet1Problem5:340}
+\begin{aligned}
 F'(n)
-= -n f((\pi/a) n) \frac{dn^2}{dn}
-= -2 n^2 f((\pi/a) n),
+&= -n f((\pi/a) n) \frac{dn^2}{dn}
+\\&= -2 n^2 f((\pi/a) n),
+\end{aligned}
 \end{equation}
 the second is
 \begin{equation}\label{eqn:ProblemSet1Problem5:360}
@@ -282,11 +292,13 @@ so
 Inserting \cref{eqn:ProblemSet1Problem5:440} into
 \cref{eqn:ProblemSet1Problem5:240} gives
 \begin{equation}\label{eqn:ProblemSet1Problem5:460}
+\begin{aligned}
 \Delta E_{\text{vac}}(a)
-=
+&=
 -\frac{\Hbar c \pi^2}{8 a^3} \inv{180}
-=
+\\&=
 -\frac{\Hbar c \pi^2}{1440 a^3},
+\end{aligned}
 \end{equation}
 which is the desired result.
 \makeSubAnswer{}{qft:problemSet1:5g}

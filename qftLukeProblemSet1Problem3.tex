@@ -73,8 +73,9 @@ du
 \end{equation}
 so
 \begin{equation}\label{eqn:qftProblemSet1Problem3:120}
+\begin{aligned}
 L
-=
+&=
 \int_0^a dx
 \frac{2}{a}
 \sum_{m,n = 1}^\infty
@@ -85,7 +86,7 @@ L
 \lr{ \frac{n \pi}{a} }
 \lr{ \frac{m \pi}{a} } q_n q_m
 }
-=
+\\&=
 \sum_{m,n = 1}^\infty \delta_{nm}
 \lr{ \frac{\sigma}{2} \dot{q}_n \dot{q}_m
 - \frac{T}{2}
@@ -93,12 +94,13 @@ L
 \lr{ \frac{m \pi}{a} }
 q_n q_m
 }
-=
+\\&=
 \sum_{n = 1}^\infty
 \lr{ \frac{\sigma}{2} \lr{\dot{q}_n}^2
 - \frac{T}{2}
 \lr{ \frac{n \pi}{a} }^2 q_n^2
 }.
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:LukeProblemSet1:3b}
 We have an Euler-Lagrange equation for each \( q_n \).  The conjugate momenta are
