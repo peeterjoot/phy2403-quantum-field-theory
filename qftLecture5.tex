@@ -126,83 +126,96 @@ HP time evolution operators \( O \) satisfied
 \end{equation}
 In particular
 \begin{equation}\label{eqn:qftLecture5:300}
+\begin{aligned}
 \ddt{\hat{p}}
-= i \antisymmetric{\hat{H}}{\hatp}
-= i \frac{\omega^2}{2} \antisymmetric{\hatq^2}{\hatp}
-= i \frac{\omega^2}{2} (2 i \hatq)
-= -i \omega^2 \hatq,
+&= i \antisymmetric{\hat{H}}{\hatp}
+\\&= i \frac{\omega^2}{2} \antisymmetric{\hatq^2}{\hatp}
+\\&= i \frac{\omega^2}{2} (2 i \hatq)
+\\&= -i \omega^2 \hatq,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture5:320}
+\begin{aligned}
 \ddt{\hat{q}}
-= i \antisymmetric{\hat{H}}{\hatq}
-= i \inv{2} \antisymmetric{\hatp^2}{\hatq}
-= \frac{i}{2}(-2 i \hatp )
-= \hatp.
+&= i \antisymmetric{\hat{H}}{\hatq}
+\\&= i \inv{2} \antisymmetric{\hatp^2}{\hatq}
+\\&= \frac{i}{2}(-2 i \hatp )
+\\&= \hatp.
+\end{aligned}
 \end{equation}
 Applying the time evolution operator twice, we find
 \begin{equation}\label{eqn:qftLecture5:340}
+\begin{aligned}
 \frac{d^2}{dt^2}{\hat{q}}
-= \ddt{\hat{p}}
-= - \omega^2 \hatq.
+&= \ddt{\hat{p}}
+\\&= - \omega^2 \hatq.
+\end{aligned}
 \end{equation}
 We see that the Heisenberg operators obey the classical equations of motion.
 
 Now we want to try this with the quantized QFT fields we've promoted to operators
 \begin{equation}\label{eqn:qftLecture5:360}
+\begin{aligned}
 \ddt{\hat{\pi}}(\Bx, t)
-= i \antisymmetric{\hatH}{\hat{\pi}(\Bx, t)}
-=
+&= i \antisymmetric{\hatH}{\hat{\pi}(\Bx, t)}
+\\&=
 i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\pihat(\Bx) }
 +
 i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\pihat(\Bx) }
 +
 i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\pihat(\Bx) }.
+\end{aligned}
 \end{equation}
 
 Starting with the non-gradient commutators, and
 utilizing the HP field analogues of the relations \( \antisymmetric{\hatq^n}{\hatp} = n i \hatq^{n-1} \), we find
 \begin{equation}\label{eqn:qftLecture5:780}
+\begin{aligned}
 \int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^2 }{\pihat(\Bx) }
-=
+&=
 \int d^3 y 2 i \phihat(\By) \deltathree(\Bx - \By)
-= 2 i \phihat(\Bx).
+\\&= 2 i \phihat(\Bx).
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture5:740}
+\begin{aligned}
 \int d^3 y \antisymmetric{ \lr{ \phihat(\By) }^4 }{\pihat(\Bx) }
-=
+&=
 \int d^3 y 4 i \phihat(\By)^3 \deltathree(\Bx - \By)
-= 4 i \phihat(\Bx)^3.
+\\&= 4 i \phihat(\Bx)^3.
+\end{aligned}
 \end{equation}
 For the gradient commutators, we have more work.  Prof Poppitz blitzed through that, just calling it integration by parts.  I had trouble seeing what he was doing, so here's a more explicit dumb expansion required to calculate the commutator
 \begin{equation}\label{eqn:qftLecture5:720}
+\begin{aligned}
 \int d^3 y (\spacegrad \phihat(\By))^2 \pihat(\Bx)
-=
+&=
 \int d^3 y
 \lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \pihat(\Bx)
-=
+\\&=
 \int d^3 y
 \spacegrad \phihat(\By) \cdot
 \lr{ \spacegrad (\phihat(\By) \pihat(\Bx)) }
-=
+\\&=
 \int d^3 y
 \spacegrad \phihat(\By) \cdot
 \lr{ \spacegrad (\pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By)) }
-=
+\\&=
 \int d^3 y
 \Biglr{
    \spacegrad \lr{ \phihat(\By) \pihat(\Bx) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
 }
-=
+\\&=
 \int d^3 y
 \Biglr{
    \spacegrad \lr{ \pihat(\Bx) \phihat(\By) + i \deltathree(\Bx - \By) } \cdot \spacegrad \phihat(\By)
    + i
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
 }
-=
+\\&=
 \int d^3 y
    \pihat(\Bx)
 \lr{
@@ -211,7 +224,7 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
 + 2 i
 \int d^3 y
    \spacegrad \phihat(\By) \cdot \spacegrad \deltathree(\Bx - \By)
-=
+   \\&=
 \int d^3 y
    \pihat(\Bx) \spacegrad^2 \phihat(\By)
 +
@@ -222,7 +235,7 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
 2 i
 \int d^3 y
    \deltathree(\Bx - \By) \spacegrad^2 \phihat(\By)
-=
+   \\&=
 \int d^3 y
    \pihat(\Bx) \spacegrad^2 \phihat(\By)
 +
@@ -232,21 +245,24 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
    \ncap \cdot \spacegrad \phihat(\By)
 -
 2 i \spacegrad^2 \phihat(\Bx).
+\end{aligned}
 \end{equation}
 Here we take advantage of the fact that the derivative operators \( \spacegrad = \spacegrad_\By \) commute with \( \pihat(\Bx) \), and use the identity
 \( \spacegrad \cdot (a \spacegrad b) = (\spacegrad a) \cdot (\spacegrad b) + a \spacegrad^2 b \), so the commutator is
 \begin{equation}\label{eqn:qftLecture5:800}
+\begin{aligned}
 \int d^3 y \antisymmetric{(\spacegrad \phihat(\By))^2}{\pihat(\Bx)}
-=
+&=
 2 i
 \int_\partial d^2 y
    \deltathree(\Bx - \By)
    \ncap \cdot \spacegrad \phihat(\By)
 -
 2 i \spacegrad^2 \phihat(\Bx)
-=
+\\&=
 -
 2 i \spacegrad^2 \phihat(\Bx),
+\end{aligned}
 \end{equation}
 where the boundary integral is presumed to be zero (without enough justification.)
 All the pieces can now be put back together
@@ -262,11 +278,13 @@ m^2 \phihat(\Bx, t)
 
 Now, for the \( \phihat \) time evolution, which is much easier
 \begin{equation}\label{eqn:qftLecture5:380}
+\begin{aligned}
 \ddt{\hat{\phi}}(\Bx, t)
-= i \antisymmetric{\hatH}{\hat{\phi}(\Bx, t)}
-= i \inv{2} \int d^3 y \antisymmetric{\pihat^2(\By)}{\hat{\phi}(\Bx)}
-= i \inv{2} \int d^3 y (-2 i) \pihat(\By, t) \deltathree(\Bx - \By)
-= \pihat(\Bx, t)
+&= i \antisymmetric{\hatH}{\hat{\phi}(\Bx, t)}
+\\&= i \inv{2} \int d^3 y \antisymmetric{\pihat^2(\By)}{\hat{\phi}(\Bx)}
+\\&= i \inv{2} \int d^3 y (-2 i) \pihat(\By, t) \deltathree(\Bx - \By)
+\\&= \pihat(\Bx, t)
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture5:400}
 \frac{d^2}{dt^2}{\hat{\phi}}(\Bx, t)
@@ -335,10 +353,12 @@ As we have SHO's and know how to deal with these in QM, we use the same strategy
 
 Observe that
 \begin{equation}\label{eqn:qftLecture5:840}
+\begin{aligned}
 \tilde{\phi}^\dagger(-\Bp, t)
-= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t } a^\dagger_{-\Bp} + e^{-i \omega_\Bp t} a_{\Bp} }
-=
+&= \inv{\sqrt{2 \omega_\Bp}} \lr{ e^{i \omega_\Bp t } a^\dagger_{-\Bp} + e^{-i \omega_\Bp t} a_{\Bp} }
+\\&=
 \tilde{\phi}(\Bp, t),
+\end{aligned}
 \end{equation}
 or
 \begin{equation}\label{eqn:qftLecture5:620}

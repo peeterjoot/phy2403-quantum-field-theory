@@ -235,18 +235,21 @@ Extremizing the action means that we seek \( \phi(\Bx, t) \)
 
 How do we compute the variation?
 \begin{equation}\label{eqn:qftLecture4:460}
-\delta S = \int d^d x \lr{ \LL(\phi + \delta \phi, \partial_\mu \phi + \partial_\mu \delta \phi) - \LL(\phi, \partial_\mu \phi) }
-= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_\mu \phi)}{\LL} (\partial_\mu \delta \phi) }
-= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi
+\begin{aligned}
+\delta S 
+&= \int d^d x \lr{ \LL(\phi + \delta \phi, \partial_\mu \phi + \partial_\mu \delta \phi) - \LL(\phi, \partial_\mu \phi) }
+\\&= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi + \PD{(\partial_\mu \phi)}{\LL} (\partial_\mu \delta \phi) }
+\\&= \int d^d x \lr{ \PD{\phi}{\LL} \delta \phi
 + \partial_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi}
 - \lr{ \partial_\mu \PD{(\partial_\mu \phi)}{\LL} } \delta \phi
 }
-=
+\\&=
 \int d^d x
 \delta \phi
 \lr{ \PD{\phi}{\LL}
 - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} }
 + \int d^3 \sigma_\mu \lr{ \PD{(\partial_\mu \phi)}{\LL} \delta \phi }
+\end{aligned}
 \end{equation}
 
 If we are explicit about the boundary term, we write it as
@@ -289,11 +292,12 @@ Applying the Euler-Lagrange equations, we have
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture4:600}
+\begin{aligned}
 \PD{(\partial_\mu \phi)}{\LL}
-=
+&=
 \PD{(\partial_\mu \phi)}{} \lr{
 \inv{2} \partial_\nu \phi \partial^\nu \phi }
-=
+\\&=
 \inv{2} \partial^\nu \phi
 \PD{(\partial_\mu \phi)}{}
 \partial_\nu \phi
@@ -301,21 +305,24 @@ and
 \inv{2} \partial_\nu \phi
 \PD{(\partial_\mu \phi)}{}
 \partial_\alpha \phi g^{\nu\alpha}
-=
+\\&=
 \inv{2} \partial^\mu \phi
 +
 \inv{2} \partial_\nu \phi g^{\nu\mu}
-=
+\\&=
 \partial^\mu \phi
+\end{aligned}
 \end{equation}
 so we have
 \begin{equation}\label{eqn:qftLecture4:620}
+\begin{aligned}
 0
-=
+&=
 \PD{\phi}{\LL} -\partial_\mu
 \PD{(\partial_\mu \phi)}{\LL}
-=
+\\&=
 -m^2 \phi - \lambda \phi^3 - \partial_\mu \partial^\mu \phi.
+\end{aligned}
 \end{equation}
 
 For \( \lambda = 0 \), the free field theory limit, this is just

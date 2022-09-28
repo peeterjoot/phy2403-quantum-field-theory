@@ -16,11 +16,13 @@ Show that the classical potential in
 \cref{eqn:ProblemSet2Problem2:50}
 now becomes:
 \begin{equation}\label{eqn:ProblemSet2Problem3:20}
-V = -\Abs{m^2}
+\begin{aligned}
+V 
+&= -\Abs{m^2}
 \trace{H^\dagger H}
 + \lambda
 \lr{ \trace{H^\dagger H} }^2
-= \lambda \lr{
+\\&= \lambda \lr{
    \Abs{\phi_1}^2
    +
    \Abs{\phi_2}^2
@@ -28,6 +30,7 @@ V = -\Abs{m^2}
    \frac{\Abs{m^2}}{2 \lambda}
 }^2
 + \text{const}.
+\end{aligned}
 \end{equation}
 \makesubproblem{}{qft:problemSet2:3b}
 Clearly, there are extrema of the potential when
@@ -169,10 +172,11 @@ Here, we studied the Nambu-Goldstone mode. In the Wigner mode, when \( m^2 > 0\)
 \makeSubAnswer{}{qft:problemSet2:3a}
 To expand the potential note that
 \begin{equation}\label{eqn:ProblemSet2Problem3:140}
+\begin{aligned}
 \trace{\lr{
 H^\dagger H
 }}
-=
+&=
 \inv{2}
 \trace{\lr{
 \begin{bmatrix}
@@ -183,18 +187,21 @@ H^\dagger H
 i \sigma^2 \Phi^\conj & \Phi
 \end{bmatrix}
 }}
-=
+\\&=
 \inv{2}\lr{ \Phi^\T \Phi^\dagger + \Phi^\dagger \Phi }
-=
+\\&=
 \inv{2}\lr{
    \phi_1 \phi_1^\conj + \phi_2 \phi_2^\conj + \phi_1^\conj \phi_1 + \phi_2^\conj \phi^2
 }
-=
+\\&=
 \Abs{\phi_1}^2 + \Abs{\phi_2}^2,
+\end{aligned}
 \end{equation}
 so we have
 \begin{equation}\label{eqn:ProblemSet2Problem3:160}
-V = -\Abs{m}^2
+\begin{aligned}
+V 
+&= -\Abs{m}^2
 \trace{\lr{
 H^\dagger H
 }}
@@ -202,7 +209,7 @@ H^\dagger H
 \trace{\lr{
 H^\dagger H
 }}}^2
-=
+\\&=
 -
 \Abs{m}^2
 \lr{
@@ -212,7 +219,7 @@ H^\dagger H
 \lr{
    \Abs{\phi_1}^2 + \Abs{\phi_2}^2
 }^2
-=
+\\&=
 \lambda\lr{
    \lr{
       \Abs{\phi_1}^2 + \Abs{\phi_2}^2
@@ -223,6 +230,7 @@ H^\dagger H
       \Abs{\phi_1}^2 + \Abs{\phi_2}^2
    }
 }.
+\end{aligned}
 \end{equation}
 Completing the square gives
 \begin{equation}\label{eqn:ProblemSet2Problem3:180}
@@ -264,23 +272,25 @@ Suppose that one of these wave functions has a Fourier transform representation
 \end{equation}
 Such a solution must satisfy the equations of motion
 \begin{equation}\label{eqn:ProblemSet2Problem3:260}
+\begin{aligned}
 0
-=
+&=
 \lr{
    \partial_{tt} - \spacegrad^2 - \Abs{m^2}
 }
 \psi
-=
+\\&=
 \lr{
    \partial_{tt} - \spacegrad^2 - \Abs{m^2}
 }
 \int \frac{d^4 p}{(2\pi)^4} e^{i \omega t - i \Bp \cdot \Bx} \tilde{\psi}.
-=
+\\&=
 \int \frac{d^4 p}{(2\pi)^4}
 \lr{
    (i\omega)^2 - (-i \Bp)^2 -\Abs{m}^2
 }
 e^{i \omega t - i \Bp \cdot \Bx} \tilde{\psi},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet2Problem3:280}
@@ -296,11 +306,12 @@ Any \( \Norm{\Bp} < \Abs{m} \) results in an imaginary angular frequency.  For e
 \end{equation}
 In particular
 \begin{equation}\label{eqn:ProblemSet2Problem3:340}
+\begin{aligned}
 p_0 x^0
-=
-\omega t
-= \pm i \Abs{m} t
-= \pm \Abs{m} ( i t ).
+&= \omega t
+\\&= \pm i \Abs{m} t
+\\&= \pm \Abs{m} ( i t ).
+\end{aligned}
 \end{equation}
 We see that the angular momentum constraint on the system \cref{eqn:ProblemSet2Problem3:280} results in the imaginary time that is characteristic of tachonic solutions.
 
@@ -308,18 +319,21 @@ We see that the angular momentum constraint on the system \cref{eqn:ProblemSet2P
 It seems reasonable that we can assume that \( h(x) \) and \( \phi^a(x) \) in
 \cref{eqn:ProblemSet2Problem3:40} are all real valued scalar (non-matrix) functions.  That is \( h(x) \) has the role of radial extension or compression of the field magnitude, and the exponential is of the form \( e^{i \Bsigma \cdot \Bphi(x) } \), a matrix valued rotation operator, where \( \Bphi = (\phi^1, \phi^2, \phi^3)\).  Given that assumption, \( H^\dagger H \) can be computed with relative ease, and has only radial dependence
 \begin{equation}\label{eqn:ProblemSet2Problem3:380}
+\begin{aligned}
 \trace{\lr{H^\dagger H}}
-=
+&=
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\lr{ e^{-i \Bsigma \cdot \Bphi} e^{i \Bsigma \cdot \Bphi} }}
-=
+\\&=
 \frac{\Abs{m}^2}{4 \lambda} (1 + h(x))^2 \trace{\BOne}
-=
+\\&=
 \frac{\Abs{m}^2}{2 \lambda} (1 + h)^2.
+\end{aligned}
 \end{equation}
 For the derivative quadratic form, it is expedient to use the form \cref{eqn:ProblemSet2Problem3:60}, which gives
 \begin{equation}\label{eqn:ProblemSet2Problem3:400}
+\begin{aligned}
 \partial_\mu H^\dagger \partial^\mu H
-=
+&=
 \frac{\Abs{m}^2}{4 \lambda}
 \lr{
    \partial_\mu h \Omega^\dagger
@@ -330,7 +344,7 @@ For the derivative quadratic form, it is expedient to use the form \cref{eqn:Pro
    + (1 + h)
 \partial^\mu \Omega
 }
-=
+\\&=
 \frac{\Abs{m}^2}{4 \lambda}
 \lr{
    \partial_\mu h \Omega^\dagger \partial^\mu h \Omega
@@ -344,32 +358,35 @@ For the derivative quadratic form, it is expedient to use the form \cref{eqn:Pro
       }
    + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
 }
+\end{aligned}
 \end{equation}
 where we have made the usual assumptions that the independent fields \((h, \Omega)\) commute.
 Because \( \Omega^\dagger \Omega = 1 \), we have
 \begin{equation}\label{eqn:ProblemSet2Problem3:480}
+\begin{aligned}
 \partial_\mu h
 \Omega^\dagger (\partial^\mu \Omega)
  +
 \partial^\mu h
 (\partial_\mu \Omega^\dagger) \Omega
-=
+&=
 \partial_\mu h
 \lr{
    \Omega^\dagger (\partial^\mu \Omega)
     +
    (\partial^\mu \Omega^\dagger) \Omega
 }
-=
+\\&=
 \partial_\mu h
 \lr{
    \partial^\mu (\Omega^\dagger \Omega) - (\partial^\mu \Omega^\dagger) \Omega
     +
    (\partial^\mu \Omega^\dagger) \Omega
 }
-=
+\\&=
    \partial^\mu (1)
-= 0.
+   \\&= 0.
+\end{aligned}
 \end{equation}
 All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to all orders, not just quadratic).
 
@@ -392,64 +409,69 @@ the Lagrangian density is now determined to quadratic order
 \end{equation}
 Observe that the Lagrangian density can be split into two independent parts, one for the radial field \( h \), and another for the rotation field \( \Omega \).  Rescaling to drop the common constant factor \( \Abs{m}^2/2\lambda \), the radial Lagrangian is
 \begin{equation}\label{eqn:ProblemSet2Problem3:560}
+\begin{aligned}
 \LL_h
-=
+&=
 \partial_\mu h \partial^\mu h
 + \Abs{m}^2
 \lr{ 1 + h }^2
 -
 \frac{\Abs{m}^2}{2}
 \lr{ 1 + h }^4
-=
+\\&=
 \partial_\mu h \partial^\mu h
 -\frac{\Abs{m}^2}{2}
 \lr{
    \lr{ 1 + h }^4
    -2 \lr{ 1 + h }^2
 }
-=
+\\&=
 \partial_\mu h \partial^\mu h
 -\frac{\Abs{m}^2}{2}
 \lr{
    \lr{ 1 + h }^2 - 1
 }^2
 + \cancel{\text{const.}}
-=
+\\&=
 \partial_\mu h \partial^\mu h
 -\frac{\Abs{m}^2}{2}
 \lr{ 2 h + h^2
 }^2
-=
+\\&=
 \partial_\mu h \partial^\mu h
 - \frac{\Abs{m}^2}{2} h^2
 \lr{ 2 + h }^2
-=
+\\&=
 \partial_\mu h \partial^\mu h
 - 2 \Abs{m}^2 h^2
 + O(h^3).
+\end{aligned}
 \end{equation}
 This shows that the mass of the \( h \) field is \( \sqrt{2} \Abs{m} \).
 
 The only remaining task is to express the Lagrangian density for \( \phi^a \) in terms of those field instead of \( \Omega \).  To evaluate those derivatives, we can utilize a first order Taylor expansion
 %
 \begin{equation}\label{eqn:ProblemSet2Problem3:580}
+\begin{aligned}
 \partial_\mu \Omega
-=
-\partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
-=
-i \Bsigma \cdot \partial_\mu \Bphi,
+&= \partial_\mu \lr{ \BOne + i \Bsigma \cdot \Bphi }
+\\&= i \Bsigma \cdot \partial_\mu \Bphi,
+\end{aligned}
 \end{equation}
 so the rotation Lagrangian density is
 \begin{equation}\label{eqn:ProblemSet2Problem3:600}
-\LL_\Bphi =
+\begin{aligned}
+\LL_\Bphi 
+&=
 \inv{2} \trace{\lr{
 (-i \Bsigma \cdot \partial_\mu \Bphi)
 (i \Bsigma \cdot \partial^\mu \Bphi)
 }}
-=
+\\&=
 (\partial_\mu \Bphi) \cdot (\partial^\mu \Bphi)
-=
+\\&=
 (\partial_\mu \phi^a) (\partial^\mu \phi^a),
+\end{aligned}
 \end{equation}
 where we use the fact that \( \trace{\lr{(\Bsigma \cdot \Bx)(\Bsigma \cdot \By)}} = 2 \Bx \cdot \By \).
 
@@ -463,7 +485,6 @@ The full Lagrangian density, to quadratic order, is
 +
 \partial_\mu \phi^a \partial^\mu \phi^a.
 }
-
 \makeSubAnswer{}{qft:problemSet2:3d}
 \paragraph{Problem statement inconsistency.}
 In the problem statement \( \expectation{H} \) is defined as a \( 2 \times 2 \) unit matrix scaled by \( \Abs{m}/2 \sqrt{\lambda} \), but later when used in the statement of the axial current, it appears as a number (since the current is a number, and not a matrix).  In this solution I've used \( \expectation{H} \) as just the numeric factor, and dropped the identity matrix factor.
@@ -479,72 +500,81 @@ j^\mu
 \end{equation}
 The trace of a matrix product in terms of the respective matrix elements is
 \begin{equation}\label{eqn:ProblemSet2Problem3:660}
+\begin{aligned}
 \trace{\lr{ A B }}
-=
+&=
 A_{ik} B_{kj} \delta_{ij}
-=
+\\&=
 A_{ij} B_{ji},
+\end{aligned}
 \end{equation}
 so the Kinetic portion of the Lagrangian density expands as
 \begin{equation}\label{eqn:ProblemSet2Problem3:680}
+\begin{aligned}
 \trace{\lr{
 \partial_\mu H^\dagger \partial^\mu H
 }}
-=
+&=
 \partial_\mu (H^\dagger)_{ji} \partial^\mu H_{ij}
-=
+\\&=
 \partial_\mu H^\conj_{ij} \partial^\mu H_{ij}.
+\end{aligned}
 \end{equation}
 We can now put the current \cref{eqn:ProblemSet2Problem3:640} into matrix form
 \begin{equation}\label{eqn:ProblemSet2Problem3:700}
+\begin{aligned}
 j^\mu
-=
+&=
 \partial^\mu H^\conj_{ij} \delta H_{ij}
 +
 \delta H^\conj_{ij} \partial^\mu H_{ij}
-=
+\\&=
 \partial^\mu (H^\dagger)_{ji} \delta H_{ij}
 +
 \delta (H^\dagger)_{ji} \partial^\mu H_{ij}
-=
+\\&=
 \trace{\lr{
 \partial^\mu H^\dagger \delta H
 +
 \delta H^\dagger \partial^\mu H
 }}.
+\end{aligned}
 \end{equation}
 
 \paragraph{Vector current.}
 
 With \( H \rightarrow U_L H U_L^\dagger \), the \( H \) variation is
 \begin{equation}\label{eqn:ProblemSet2Problem3:720}
+\begin{aligned}
 \delta H
-=
+&=
 H' - H
-\approx
+\\&\approx
 \lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega } H
 \lr{ 1 - \frac{i}{2} \Bsigma \cdot \Bomega }
 - H
-=
+\\&=
 \frac{i}{2} (\Bsigma \cdot \Bomega) H
  - \frac{i}{2} H (\Bsigma \cdot \Bomega)
 + O(\Bomega^2)
-=
+\\&=
 \frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H},
+\end{aligned}
 \end{equation}
 and its conjugate is
 \begin{equation}\label{eqn:ProblemSet2Problem3:740}
+\begin{aligned}
 \delta H^\dagger
-=
--\frac{i}{2} \antisymmetric{H^\dagger}{\Bsigma \cdot \Bomega}
-=
-\frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
+  &= -\frac{i}{2} \antisymmetric{H^\dagger}{\Bsigma \cdot \Bomega}
+\\&= \frac{i}{2} \antisymmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
+\end{aligned}
 \end{equation}
 
 Putting the pieces together gives
 \begin{equation}\label{eqn:ProblemSet2Problem3:860}
+\begin{aligned}
 j_\mu^{V, \Bomega}
-= \frac{i}{2}
+&= \frac{i}{2}
 \trace{\lr{
 \partial_\mu H^\dagger
 \antisymmetric{\Bsigma \cdot \Bomega}{H}
@@ -552,7 +582,7 @@ j_\mu^{V, \Bomega}
 \antisymmetric{\Bsigma \cdot \Bomega}{H^\dagger}
 \partial_\mu H
 }}
-= \frac{i \omega^a}{2}
+\\&= \frac{i \omega^a}{2}
 \trace{\lr{
 \partial_\mu H^\dagger
 \antisymmetric{\sigma^a}{H}
@@ -560,6 +590,7 @@ j_\mu^{V, \Bomega}
 \partial_\mu H
 \antisymmetric{\sigma^a}{H^\dagger}
 }},
+\end{aligned}
 \end{equation}
 so setting \( j_\mu^{V, \Bomega} = \omega^a j_\mu^{V,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
 
@@ -568,31 +599,32 @@ This is only cosmetically different from the Vector current.
 
 With \( H \rightarrow U_L H U_L \), the \( H \) variation is
 \begin{equation}\label{eqn:ProblemSet2Problem3:780}
+\begin{aligned}
 \delta H
-=
+&=
 H' - H
-\approx
+\\&\approx
 \lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega } H
 \lr{ 1 + \frac{i}{2} \Bsigma \cdot \Bomega }
 - H
-=
+\\&=
 \frac{i}{2} (\Bsigma \cdot \Bomega) H
  + \frac{i}{2} H (\Bsigma \cdot \Bomega)
 + O(\Bomega^2)
-=
+\\&=
 \frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H},
+\end{aligned}
 \end{equation}
 and its conjugate is
 \begin{equation}\label{eqn:ProblemSet2Problem3:800}
-\delta H^\dagger
-=
--\frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
+\delta H^\dagger = -\frac{i}{2} \symmetric{\Bsigma \cdot \Bomega}{H^\dagger}.
 \end{equation}
 
 Putting the pieces together gives
 \begin{equation}\label{eqn:ProblemSet2Problem3:880}
+\begin{aligned}
 j_\mu^{A, \Bomega}
-= \frac{i}{2}
+&= \frac{i}{2}
 \trace{\lr{
 \partial_\mu H^\dagger
 \symmetric{\Bsigma \cdot \Bomega}{H}
@@ -600,7 +632,7 @@ j_\mu^{A, \Bomega}
 \symmetric{\Bsigma \cdot \Bomega}{H^\dagger}
 \partial_\mu H
 }}
-= \frac{i \omega^a}{2}
+\\&= \frac{i \omega^a}{2}
 \trace{\lr{
 \partial_\mu H^\dagger
 \symmetric{\sigma^a}{H}
@@ -608,6 +640,7 @@ j_\mu^{A, \Bomega}
 \partial_\mu H
 \symmetric{\sigma^a}{H^\dagger}
 }},
+\end{aligned}
 \end{equation}
 so setting \( j_\mu^{A, \Bomega} = \omega^a j_\mu^{A,a} \) to factor out the \( \omega^a \)'s, provides the desired result.
 
@@ -616,15 +649,16 @@ so setting \( j_\mu^{A, \Bomega} = \omega^a j_\mu^{A,a} \) to factor out the \( 
 
 To first order the \( H \) partial is
 \begin{equation}\label{eqn:ProblemSet2Problem3:820}
+\begin{aligned}
 \partial_\mu H
-=
+&=
 \expectation{H}
 \lr{
    \partial_\mu h \lr{ 1 + i \Bsigma \cdot \Bphi }
 +
    (1 + h) i \Bsigma \cdot \partial_\mu \Bphi
-}
-=
+} \\
+&=
 \expectation{H}
 \lr{
    \partial_\mu h
@@ -632,23 +666,27 @@ To first order the \( H \) partial is
    i \Bsigma \cdot \partial_\mu \Bphi
 }
 + O(2).
+\end{aligned}
 \end{equation}
 Because this has no zero order terms, we need only the zeroth order parts of the anticommutators
 \begin{equation}\label{eqn:ProblemSet2Problem3:840}
+\begin{aligned}
 \symmetric{\sigma^a}{H}
-=
+&=
 \expectation{H}
 (1 + h) \symmetric{\sigma^a}{1 + i \Bsigma \cdot \Bphi}
-=
+\\&=
 \expectation{H} \symmetric{\sigma^a}{1}
 + O(1)
-=
+\\&=
 2 \expectation{H} \sigma^a.
+\end{aligned}
 \end{equation}
 To first order
 \begin{equation}\label{eqn:ProblemSet2Problem3:900}
+\begin{aligned}
 j^{A,a}_\mu
-=
+&=
 i \expectation{H}^2 \trace{\lr{
    \lr{
       \partial_\mu h
@@ -663,14 +701,13 @@ i \expectation{H}^2 \trace{\lr{
       i \Bsigma \cdot \partial_\mu \Bphi
    } \sigma^a
 }}
-=
+\\&=
 2 \expectation{H}^2 \trace{\lr{ \sigma^b \partial_\mu \phi^b \sigma^a }}.
+\end{aligned}
 \end{equation}
 Since \( \trace{\lr{ \sigma^a \sigma^b }} = 2 \delta_{ab} \), this reduces to
 \begin{equation}\label{eqn:ProblemSet2Problem3:920}
-j^{A,a}_\mu
-=
-\expectation{H} \lr{ 4 \expectation{H} } \partial_\mu \phi^a,
+j^{A,a}_\mu = \expectation{H} \lr{ 4 \expectation{H} } \partial_\mu \phi^a,
 \end{equation}
 so the ``constant in front'' is \( 4 \expectation{H} = 2 \Abs{m}/\sqrt{\lambda} \).
 
@@ -683,12 +720,14 @@ H = \expectation{H} (1 + h) \Omega,
 \end{equation}
 so that
 \begin{equation}\label{eqn:ProblemSet2Problem3:960}
+\begin{aligned}
 \antisymmetric{\sigma^a}{H}
-=
+&=
 \expectation{H}
 \antisymmetric{\sigma^a}{(1 + h)\Omega}
-=
+\\&=
 \expectation{H} h \antisymmetric{\sigma^a}{\Omega}.
+\end{aligned}
 \end{equation}
 We also have, also to all orders,
 \begin{equation}\label{eqn:ProblemSet2Problem3:980}
@@ -776,8 +815,9 @@ B &=
 \end{equation}
 The first trace \( A \) is easily shown to be zero
 \begin{equation}\label{eqn:ProblemSet2Problem3:1020}
+\begin{aligned}
 A
-=
+&=
 \trace{\lr{
       \Omega^\dagger \sigma^a \Omega
       -\Omega^\dagger \Omega \sigma^a
@@ -786,7 +826,7 @@ A
       -
       \Omega \Omega^\dagger \sigma^a
 }}
-=
+\\&=
 \trace{\lr{
    \lr{
         \Omega \Omega^\dagger
@@ -795,20 +835,22 @@ A
       - \Omega \Omega^\dagger
    }  \sigma^a
 }}
-= 0,
+\\&= 0,
+\end{aligned}
 \end{equation}
 where cyclic permutation within the trace was used to arrange the terms for easy cancellation \(1 - 1 + 1 - 1 = 0\).
 
 Expanding commutators, and using cyclic permutation in the trace, we have for \( B \)
 \begin{equation}\label{eqn:ProblemSet2Problem3:1040}
+\begin{aligned}
 B
-=
+&=
 \trace{\lr{
       \partial_\mu \Omega^\dagger \antisymmetric{\sigma^a}{\Omega}
    +
       \partial_\mu \Omega \antisymmetric{\sigma^a}{\Omega^\dagger}
 }}
-=
+\\&=
 \trace{\lr{
      (\partial_\mu \Omega^\dagger) \sigma^a \Omega
    -
@@ -818,7 +860,7 @@ B
    -
      (\partial_\mu \Omega) \Omega^\dagger \sigma^a
 }}
-=
+\\&=
 \trace{\lr{
    \lr{
         \Omega (\partial_\mu \Omega^\dagger )
@@ -827,6 +869,7 @@ B
       - (\partial_\mu \Omega) \Omega^\dagger
    } \sigma^a
 }}
+\end{aligned}
 \end{equation}
 This can be simplified using
 \begin{equation}\label{eqn:ProblemSet2Problem3:1060}
@@ -849,8 +892,9 @@ B
 \end{equation}
 The derivative \( \partial_\mu \Omega \) has no \( O(0) \) terms, so let's expand the rotation matrix only to \( O(1) \), and then drop any \( O(2) \) terms from \( \partial_\mu \Omega \).  This gives
 \begin{equation}\label{eqn:ProblemSet2Problem3:1120}
+\begin{aligned}
 B
-=
+&=
 2
 \trace{\lr{
    \lr{
@@ -859,7 +903,7 @@ B
    } \sigma^a
 }}
 + O(3)
-=
+\\&=
 - 2 i
 \trace{\lr{
    \lr{
@@ -867,7 +911,7 @@ B
       - (\partial_\mu \Omega) (\Bsigma \cdot \Bphi)
    } \sigma^a
 }}
-=
+\\&=
 - 2 i^2
 \trace{\lr{
    \lr{
@@ -877,24 +921,22 @@ B
    } \sigma^a
 }}
 + O(3)
-=
+\\&=
 2 \phi^c (\partial_\mu \phi^b) \trace{\lr{ \sigma^c \sigma^b \sigma^a }}
 -2 (\partial_\mu \phi^b) \phi^c \trace{\lr{ \sigma^b \sigma^c \sigma^a }}
-=
+\\&=
 -2
 \lr{ \phi^c (\partial_\mu \phi^b) + (\partial_\mu \phi^b) \phi^c }
 \trace{\lr{ \sigma^1 \sigma^2 \sigma^3 }} \epsilon^{abc}
-= - 4 i
+\\&= - 4 i
 \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
+\end{aligned}
 \end{equation}
 to quadratic order in \( \phi^a \).  The final steps above used the fact that the trace of three Pauli matrices is zero unless they are all different, and \( \trace{\lr{ \sigma^1 \sigma^2 \sigma^3 }} = 2 i \).
 
 The current, to lowest order in \( \phi^a \), and all orders in \( h \), is
 \begin{equation}\label{eqn:ProblemSet2Problem3:1140}
-j^{V,a}_\mu
-=
-2
-\expectation{H}^2 h(1 + h) \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
+j^{V,a}_\mu = 2 \expectation{H}^2 h(1 + h) \symmetric{ \phi^c}{\partial_\mu \phi^b} \epsilon^{abc},
 \end{equation}
 which is quadratic in \( \phi^a \) as claimed.
 }}
