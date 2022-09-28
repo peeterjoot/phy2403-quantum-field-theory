@@ -268,7 +268,13 @@ H
       e^{i \omega_\Bp t} a_{\Bp}^\dagger
    }
 }
-+
+\\&\quad+
+\inv{2}
+\int
+\frac{d^3 p}{(2\pi)^3}
+\frac{1
+}{2 \omega_\Bp}
+\lr{
    (\Bp^2 + m^2)
    \lr{
       e^{-i \omega_\Bp t} a_\Bp
@@ -280,6 +286,7 @@ H
       +
       e^{i \omega_\Bp t} a_{\Bp}^\dagger
    }
+}
    \\&=
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
 \lr{
@@ -289,14 +296,20 @@ H
       +
       \cancel{\omega_\Bp^2 e^{-2 i \omega_\Bp t}}
    }
-+
+}
+\\&\quad+
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
+\lr{
    a_{-\Bp}^\dagger a_{\Bp}^\dagger
    \lr{
       -\cancel{\omega_\Bp^2 e^{2 i \omega_\Bp t}}
       +
       \cancel{\omega_\Bp^2 e^{2 i \omega_\Bp t}}
    }
-+
+}
+\\&\quad+
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \inv{2 \omega_\Bp}
+\lr{
    a_\Bp a^\dagger_{\Bp} \omega^2_\Bp(1 + 1)
 +
    a^\dagger_{-\Bp} a_{-\Bp} \omega^2_\Bp(1 + 1)

@@ -163,7 +163,7 @@ Now we want to try this with the quantized QFT fields we've promoted to operator
 i \int d^3 y \inv{2} \antisymmetric{ \lr{\spacegrad \phihat(\By) }^2 }{\pihat(\Bx) }
 +
 i \int d^3 y \frac{m^2}{2} \antisymmetric{ \phihat(\By)^2 }{\pihat(\Bx) }
-+
+\\&\quad+
 i \frac{\lambda}{4} \int d^3 \antisymmetric{ \phihat(\By)^4 }{\pihat(\Bx) }.
 \end{aligned}
 \end{equation}
@@ -189,7 +189,7 @@ utilizing the HP field analogues of the relations \( \antisymmetric{\hatq^n}{\ha
 For the gradient commutators, we have more work.  Prof Poppitz blitzed through that, just calling it integration by parts.  I had trouble seeing what he was doing, so here's a more explicit dumb expansion required to calculate the commutator
 \begin{equation}\label{eqn:qftLecture5:720}
 \begin{aligned}
-\int d^3 y (\spacegrad \phihat(\By))^2 \pihat(\Bx)
+\int &d^3 y (\spacegrad \phihat(\By))^2 \pihat(\Bx) \\
 &=
 \int d^3 y
 \lr{ \spacegrad \phihat(\By) \cdot \spacegrad \phihat(\By) } \pihat(\Bx)
@@ -231,11 +231,11 @@ For the gradient commutators, we have more work.  Prof Poppitz blitzed through t
 2 i
 \int d^3 y
    \spacegrad \cdot \lr{ \deltathree(\Bx - \By) \spacegrad \phihat(\By) }
--
+\\&\quad-
 2 i
 \int d^3 y
    \deltathree(\Bx - \By) \spacegrad^2 \phihat(\By)
-   \\&=
+\\&=
 \int d^3 y
    \pihat(\Bx) \spacegrad^2 \phihat(\By)
 +

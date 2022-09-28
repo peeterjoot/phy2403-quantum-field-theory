@@ -104,18 +104,20 @@ Unless \( \mu = 0 \) we must have a zero four-divergence \( \partial_\alpha A^\a
 \makeSubAnswer{}{qft:LukeProblemSet1:6b}
 In the \( \mu \rightarrow 0 \) case with zero divergence, the field equation is just
 \begin{equation}\label{eqn:qftProblemSet1Problem6:200}
+\begin{aligned}
 0
-= \delSquaredBox A_\nu
-= \partial^\alpha \partial_\alpha A_\nu
-= \partial^\alpha \partial_\alpha A_\nu
+&= \delSquaredBox A_\nu
+\\&= \partial^\alpha \partial_\alpha A_\nu
+\\&= \partial^\alpha \partial_\alpha A_\nu
 - \partial_\nu \partial^\alpha A_\alpha
-= \partial^\alpha
+\\&= \partial^\alpha
 \lr{
 \partial_\alpha A_\nu
 - \partial_\nu A_\alpha
 }
-=
+\\&=
 \partial^\alpha F_{\alpha \nu}.
+\end{aligned}
 \end{equation}
 
 Now consider the various index combinations of the electromagnetic field \( F_{\mu \nu} \).  When one index is zero we have the electric field components
@@ -162,21 +164,23 @@ which is one of the (source-less) Maxwell equations.
 
 For the other indexes, the expansion is like
 \begin{equation}\label{eqn:qftProblemSet1Problem6:300}
+\begin{aligned}
 0
-=
+&=
 \partial^\alpha F_{\alpha 1}
-=
+\\&=
 \partial^2 F_{2 1}
 +
 \partial^3 F_{3 1}
 +
 \partial^0 F_{0 1}
-=
+\\&=
 -\partial_2 (B_3)
 -\partial_3 (-B_2)
 + \partial_t E_1
-=
+\\&=
 \lr{ \PD{t}{\BE} - \spacegrad \cross \BB} \cdot \Be_1.
+\end{aligned}
 \end{equation}
 
 Using cyclic permutation, we must have
