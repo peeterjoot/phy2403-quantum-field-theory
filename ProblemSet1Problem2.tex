@@ -66,24 +66,28 @@ so the conjugate momentum densities are
 
 The Hamiltonian (including a ``\(p \dot{q}\)'' term for each of \( \phi, \phi^\dagger \)) is
 \begin{equation}\label{eqn:ProblemSet1Problem2:100}
+\begin{aligned}
 H
-= \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\dagger \partial_0 \phi^\dagger - \LL }
-=
+&= \int d^3 x \lr{ \pi \partial_0 \phi + \pi^\dagger \partial_0 \phi^\dagger - \LL }
+\\&=
 \int d^3 x \lr{ \pi \pi^\dagger + \pi^\dagger \pi - \pi \pi^\dagger +
 (\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) + m^2 \phi^\dagger \phi
  }
-=
+ \\&=
 \int d^3 x \lr{ \pi^\dagger \pi +
 (\spacegrad \phi^\dagger) \cdot (\spacegrad \phi) + m^2 \phi^\dagger \phi
  }
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:problemSet1:2b}
 To canonically quantize the fields, we promote the fields to operators, demand that we have commutators for conjugate pairs of operators
 \begin{equation}\label{eqn:ProblemSet1Problem2:120}
+\begin{aligned}
 \antisymmetric{\phi(\Bx)}{\pi(\By)}
-=
+&=
 \antisymmetric{\phi^\dagger(\Bx)}{\pi^\dagger(\By)}
-= i \deltathree(\Bx - \By),
+\\&= i \deltathree(\Bx - \By),
+\end{aligned}
 \end{equation}
 and require all the other operator pairs \( \phi \phi^\dagger, \pi \pi^\dagger, \phi^\dagger\pi, \phi\pi^\dagger \) commute.
 
@@ -91,9 +95,10 @@ Before diagonalizing the Hamiltonian, let's verify that applying computing Hamil
 \begin{subequations}
 \label{eqn:ProblemSet1Problem2:700}
 \begin{equation}\label{eqn:ProblemSet1Problem2:720}
+\begin{aligned}
 \PD{t}{\phi}(\Bx, t)
-= i \antisymmetric{H}{\phi(\Bx)}
-=
+&= i \antisymmetric{H}{\phi(\Bx)}
+\\&=
 i \int d^3 y \lr{
    \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi(\Bx)}
    +
@@ -101,17 +106,19 @@ i \int d^3 y \lr{
    +
    \cancel{\antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\phi(\Bx)}}
 }
-=
+\\&=
 i \int d^3 y \pi^\dagger(\By) \antisymmetric{\pi(\By)}{\phi(\Bx)}
-=
+\\&=
 i \int d^3 y \pi^\dagger(\By) (-i) \deltathree(\By - \Bx)
-=
+\\&=
 \pi^\dagger(\Bx)
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:740}
+\begin{aligned}
 \PD{t}{\phi^\dagger}(\Bx, t)
-= i \antisymmetric{H}{\phi^\dagger(\Bx)}
-=
+&= i \antisymmetric{H}{\phi^\dagger(\Bx)}
+\\&=
 i \int d^3 y \lr{
    \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi^\dagger(\Bx)}
    +
@@ -119,18 +126,20 @@ i \int d^3 y \lr{
    +
    m^2 \cancel{\antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\phi^\dagger(\Bx)}}
 }
-=
+\\&=
 i \int d^3 y \pi(\By) \antisymmetric{\pi^\dagger(\By)}{\phi^\dagger(\Bx)}
-=
+\\&=
 i \int d^3 y \pi(\By) (-i) \deltathree(\By - \Bx)
-=
+\\&=
 \pi(\Bx)
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:760}
+\begin{aligned}
 \PD{t}{\pi}(\Bx, t)
-=
+&=
 i \antisymmetric{H}{\pi(\Bx)}
-=
+\\&=
 i \int d^3 y \lr{
    \cancel{\antisymmetric{\pi^\dagger(\By) \pi(\By)}{\pi(\Bx)}}
    +
@@ -138,34 +147,36 @@ i \int d^3 y \lr{
    +
    m^2 \antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\pi(\Bx)}
 }
-=
+\\&=
 i \int d^3 y \lr{
    \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \antisymmetric{ \phi(\By) }{\pi(\Bx)}
    +
    m^2 \phi^\dagger(\By) \antisymmetric{ \phi(\By)  }{\pi(\Bx)}
 }
-=
+\\&=
 i \int d^3 y \lr{
    \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By (i \deltathree(\By - \Bx))
    +
    m^2 \phi^\dagger(\By) i \deltathree(\By - \Bx)
 }
-=
+\\&=
 - \int d^3 y \lr{
    \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By \phi^\dagger(\By) }
    -
    \deltathree(\By - \Bx) \spacegrad_\By^2 \phi^\dagger(\By)
 }
 - m^2 \phi^\dagger(\Bx)
-=
+\\&=
    \spacegrad^2 \phi^\dagger(\Bx)
 - m^2 \phi^\dagger(\Bx).
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem2:780}
+\begin{aligned}
 \PD{t}{\pi^\dagger}(\Bx, t)
-=
+&=
 i \antisymmetric{H}{\pi^\dagger(\Bx)}
-=
+\\&=
 i \int d^3 y \lr{
    \cancel{\antisymmetric{\pi^\dagger(\By) \pi(\By)}{\pi^\dagger(\Bx)}}
    +
@@ -173,28 +184,29 @@ i \int d^3 y \lr{
    +
    m^2 \antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\pi^\dagger(\Bx)}
 }
-=
+\\&=
 i \int d^3 y \lr{
    \spacegrad_\By \phi(\By) \cdot \spacegrad_\By \antisymmetric{ \phi^\dagger(\By) }{\pi^\dagger(\Bx)}
    +
    m^2 \phi(\By) \antisymmetric{ \phi^\dagger(\By)  }{\pi^\dagger(\Bx)}
 }
-=
+\\&=
 i \int d^3 y \lr{
    \spacegrad_\By \phi(\By) \cdot \spacegrad_\By (i \deltathree(\By - \Bx))
    +
    m^2 \phi(\By) i \deltathree(\By - \Bx)
 }
-=
+\\&=
 - \int d^3 y \lr{
    \spacegrad_\By \cdot \lr{ \deltathree(\By - \Bx) \spacegrad_\By \phi(\By) }
    -
    \deltathree(\By - \Bx) \spacegrad_\By^2 \phi(\By)
 }
 - m^2 \phi(\Bx)
-=
+\\&=
    \spacegrad^2 \phi(\Bx)
 - m^2 \phi(\Bx).
+\end{aligned}
 \end{equation}
 \end{subequations}
 This recovers the Klein-Gordon equations
@@ -651,16 +663,17 @@ or
 
 The Lagrangian is left unchanged by this transformation, so we can determine the current directly by varying the action, but do so leaving the order of the \(\phi^\dagger\) and \( \phi\) terms in the Lagrangian unchanged
 \begin{equation}\label{eqn:ProblemSet1Problem2:1340}
+\begin{aligned}
 \delta S
-= \int d^4 x \delta \lr{ \partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi }
-= \int d^4 x
+&= \int d^4 x \delta \lr{ \partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi }
+\\&= \int d^4 x
 \lr{
    \delta\lr{ \partial_\mu \phi^\dagger } \partial^\mu \phi
   + \partial^\mu \phi^\dagger \delta \lr{ \partial_\mu \phi }
    - m^2 \lr{\delta \phi^\dagger} \phi
   - m^2 \phi^\dagger \lr{\delta \phi}
 }
-= \int d^4 x
+\\&= \int d^4 x
 \lr{
    \partial_\mu \lr{ \lr{ \delta \phi^\dagger} \partial^\mu \phi }
 -
@@ -669,7 +682,7 @@ The Lagrangian is left unchanged by this transformation, so we can determine the
  - \lr{ \partial_\mu \partial^\mu \phi^\dagger } \delta \phi
    - m^2 \lr{ \delta \phi^\dagger} \phi - m^2 \phi^\dagger \lr{ \delta \phi}
 }
-=
+\\&=
 \int d^4 x
 \partial_\mu
 \lr{
@@ -690,46 +703,54 @@ The Lagrangian is left unchanged by this transformation, so we can determine the
 + m^2 \phi^\dagger
 }
 \delta \phi
-=
+\\&=
 \int d^4 x
 \partial_\mu
 \lr{
    \delta \phi^\dagger \partial^\mu \phi
  + \partial^\mu \phi^\dagger \delta \phi
 },
+\end{aligned}
 \end{equation}
 where the Euler-Lagrange equations for each of the fields has been imposed to kill off the last two integrals.  We are left with a current
 \begin{equation}\label{eqn:ProblemSet1Problem2:1360}
-j^\mu =
+\begin{aligned}
+j^\mu 
+&=
    \delta \phi^\dagger \partial^\mu \phi
  + \partial^\mu \phi^\dagger \delta \phi
-=
+ \\&=
 \frac{i\theta}{2} \lr{
    \phi^\dagger \lr{ \partial^\mu \phi }
  - \lr{ \partial^\mu \phi^\dagger} \phi
 }.
+\end{aligned}
 \end{equation}
 In particular
 \begin{equation}\label{eqn:ProblemSet1Problem2:1380}
+\begin{aligned}
 \evalbar{j^0}{\theta = 1}
-=
+&=
 \frac{i}{2} \lr{
    \phi^\dagger \lr{ \partial^0 \phi }
  - \lr{ \partial^0 \phi^\dagger} \phi
 }
-=
+\\&=
 \frac{i}{2} \lr{
    \phi^\dagger \pi^\dagger - \pi \phi
 }.
+\end{aligned}
 \end{equation}
 This recovers \cref{eqn:ProblemSet1Problem2:580}, and we are now set to compute the charge by plugging in
 \cref{eqn:ProblemSet1Problem2:580}
 \begin{equation}\label{eqn:ProblemSet1Problem2:600}
-Q =
+\begin{aligned}
+Q 
+&=
 \frac{i}{2}
 \int d^3 x
 \lr{ \phi^\dagger \pi^\dagger - \pi \phi }
-=
+\\&=
 \frac{i}{4}
 \int d^3 x
 \frac{d^3 p}{(2\pi)^3}
@@ -747,7 +768,7 @@ e^{i (\Bp -\Bq)\cdot \Bx}
 \frac{i \omega_\Bp}{\sqrt{\omega_\Bp\omega_\Bq}}
 \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger - e^{-i \omega_\Bp t} b_\Bp }
 \lr{ e^{-i \omega_\Bq t} a_\Bq + e^{i \omega_\Bq t} b^\dagger_\Bq }
-=
+\\&=
 \frac{1}{4}
 \int
 \frac{d^3 p}{(2\pi)^3}
@@ -758,7 +779,7 @@ e^{i (\Bp -\Bq)\cdot \Bx}
    \lr{ e^{i \omega_\Bp t} a_\Bp^\dagger + e^{-i \omega_\Bp t} b_\Bp }
    \lr{ -e^{-i \omega_\Bp t} a_\Bp + e^{i \omega_\Bp t} b^\dagger_\Bp }
 }
-=
+\\&=
 \frac{1}{4}
 \int
 \frac{d^3 p}{(2\pi)^3}
@@ -767,13 +788,14 @@ e^{i (\Bp -\Bq)\cdot \Bx}
    + e^{2 i \omega_\Bp t} \lr{ b_\Bp^\dagger a_\Bp^\dagger  -a_\Bp^\dagger b_\Bp^\dagger }
    + e^{-2 i \omega_\Bp t} \lr{ -b_\Bp a_\Bp + b_\Bp a_\Bp }
 }
-=
+\\&=
 \frac{1}{2}
 \int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
    a_\Bp^\dagger a_\Bp - b_\Bp b_\Bp^\dagger
 },
+\end{aligned}
 \end{equation}
 or, in normal order
 \boxedEquation{eqn:ProblemSet1Problem2:1280}{
@@ -795,19 +817,21 @@ To understand the action of the charge operator (a set of number operators) we m
 \end{equation}
 we find
 \begin{equation}\label{eqn:ProblemSet1Problem2:660}
-Q \ket{\Bk}_a =
+\begin{aligned}
+Q \ket{\Bk}_a 
+&=
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
 a_\Bp^\dagger a_\Bp - b_\Bp^\dagger b_\Bp
 }
 a^\dagger_\Bk \ket{0}
-=
+\\&=
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 a_\Bp^\dagger a_\Bp
 a^\dagger_\Bk \ket{0}
-=
+\\&=
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 a_\Bp^\dagger
@@ -817,28 +841,31 @@ a_\Bp
 + (2\pi)^3 \deltathree(\Bk - \Bp)
 }
 \ket{0}
-=
+\\&=
 \inv{2}
 a_\Bk^\dagger \ket{0}
-=
+\\&=
 \inv{2}
 \ket{\Bk}_a,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:ProblemSet1Problem2:680}
-Q \ket{\Bk}_b =
+\begin{aligned}
+Q \ket{\Bk}_b 
+&=
 \frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 \lr{
 a_\Bp^\dagger a_\Bp - b_\Bp^\dagger b_\Bp
 }
 b^\dagger_\Bk \ket{0}
-=
+\\&=
 -\frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 b_\Bp^\dagger b_\Bp
 b^\dagger_\Bk \ket{0}
-=
+\\&=
 -\frac{1}{2} \int
 \frac{d^3 p}{(2\pi)^3}
 b_\Bp^\dagger
@@ -848,12 +875,13 @@ b_\Bp
 + (2\pi)^3 \deltathree(\Bk - \Bp)
 }
 \ket{0}
-=
+\\&=
 -\inv{2}
 b_\Bk^\dagger \ket{0}
-=
+\\&=
 -\inv{2}
 \ket{\Bk}_b.
+\end{aligned}
 \end{equation}
 So, we could say that the particles associated with creation operator \( a_\Bp^\dagger \) have a (1/2) charge and
 particles associated with creation operator \( b_\Bp^\dagger \) have a (-1/2) charge.

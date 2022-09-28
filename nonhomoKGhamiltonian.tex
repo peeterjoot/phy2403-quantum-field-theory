@@ -35,8 +35,9 @@ Prove \cref{eqn:qftLecture13:140}.
 \makeanswer{problem:qftLecture13:1280}{
 In class we derived the field for the non-homogeneous Klein-Gordon equation
 \begin{equation}\label{eqn:nonhomoKGhamiltonian:20}
+\begin{aligned}
 \phi(x)
-= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
+&= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
 \evalbar{
 \lr{
    e^{-i p \cdot x} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
@@ -47,12 +48,13 @@ In class we derived the field for the non-homogeneous Klein-Gordon equation
 {
 p^0 = \omega_\Bp
 }
-= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
+\\&= \int \frac{d^3 p}{(2\pi)^3} \inv{\sqrt{2 \omega_\Bp}}
 \lr{
    e^{-i \omega_\Bp t + i \Bp \cdot \Bx} \lr{ a_\Bp + \frac{ i \tilde{j}(p) }{\sqrt{2 \omega_\Bp}} }
    +
    e^{i \omega_\Bp t - i \Bp \cdot \Bx} \lr{ a_\Bp^\dagger - \frac{ i \tilde{j}^\conj(p) }{\sqrt{2 \omega_\Bp}} }
 }.
+\end{aligned}
 \end{equation}
 This means that we have
 \begin{equation}\label{eqn:nonhomoKGhamiltonian:40}
@@ -92,12 +94,14 @@ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}},
 \end{equation}
 to \cref{eqn:nonhomoKGhamiltonian:80}, which gives
 \begin{equation}\label{eqn:nonhomoKGhamiltonian:120}
+\begin{aligned}
 H
-=
+&=
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger }
-=
+\\&=
 \inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
 }.
+\end{aligned}
 \end{equation}
 
 Like the \( \tilde{j} = 0 \) case, we can use normal ordering.  This is easily seen by direct expansion:
