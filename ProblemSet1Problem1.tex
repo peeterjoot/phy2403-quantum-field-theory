@@ -82,72 +82,91 @@ the relativistic Lorentz force equation.
 \makeSubAnswer{}{qft:problemSet1:1a}
 With \( k = \setlr{1, 2,3} \),
 \begin{equation}\label{eqn:ProblemSet1Problem1:60}
+\begin{aligned}
 \sum_k F_{0k} \Be_k
-= \sum_k \lr{ \partial_0 A_k - \partial_k A_0 } \Be_k
-= - \sum_k \lr{ \PD{t}{A^k} - \PD{x^k}{\phi} } \Be_k
-= - \PD{t}{\BA} - \spacegrad \phi
-= \BE.
+&= \sum_k \lr{ \partial_0 A_k - \partial_k A_0 } \Be_k
+\\&= - \sum_k \lr{ \PD{t}{A^k} - \PD{x^k}{\phi} } \Be_k
+\\&= - \PD{t}{\BA} - \spacegrad \phi
+\\&= \BE.
+\end{aligned}
 \end{equation}
 which is the conventional scalar, plus vector potential definition of the electric field in natural units.
 For the magnetic field, it's easier to work backwards
 \begin{equation}\label{eqn:ProblemSet1Problem1:80}
+\begin{aligned}
 \BB
-= \spacegrad \cross \BA
-= \epsilon_{ijk} \partial_i A^j \Be_k,
+&= \spacegrad \cross \BA
+\\&= \epsilon_{ijk} \partial_i A^j \Be_k,
+\end{aligned}
 \end{equation}
 or, for each cyclic permutation of \( i j k = \setlr{1,2,3}\)
 \begin{equation}\label{eqn:ProblemSet1Problem1:100}
+\begin{aligned}
 B^i
-= \partial_j A^k - \partial_k A^j
-= -\partial_j A_k + \partial_k A_j
-= F_{kj}
-= -F_{jk},
+&= \partial_j A^k - \partial_k A^j
+\\&= -\partial_j A_k + \partial_k A_j
+\\&= F_{kj}
+\\&= -F_{jk},
+\end{aligned}
 \end{equation}
 %
 \makeSubAnswer{}{qft:problemSet1:1b}
 To prove \cref{eqn:ProblemSet1Problem1:120}, we use explicit expansion and an index exchange
 \begin{equation}\label{eqn:ProblemSet1Problem1:140}
-=
+\begin{aligned}
+&=
 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \lr{ \partial_\alpha A_\beta - \partial_\beta A_\alpha}
-=
+\\&=
 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \partial_\alpha A_\beta
 -\epsilon^{\mu\nu\beta\alpha} \partial_\nu \partial_\beta A_\alpha
-=
+\\&=
 2 \epsilon^{\mu\nu\alpha\beta} \partial_\nu \partial_\alpha A_\beta,
+\end{aligned}
 \end{equation}
 but because the partials are symmetric in \( \nu \alpha \) (assuming sufficient continuity of the fields components), and because the sum is antisymmetric in the same indexes, the result is zero as claimed.
 
 Expanding \cref{eqn:ProblemSet1Problem1:120} explicitly for \( \nu = 0 \), we find Gauss's law for the magnetic field
 \begin{equation}\label{eqn:ProblemSet1Problem1:160}
+\begin{aligned}
 0
-=
+&=
 \epsilon^{ijk} \partial_i F_{jk}
-=
+\\&=
 -\partial_i B^i
-= -\spacegrad \cdot \BB,
+\\&= -\spacegrad \cdot \BB,
+\end{aligned}
 \end{equation}
 For \( \nu = 1 \) % 2 3 0
 \begin{equation}\label{eqn:ProblemSet1Problem1:180}
-0 = \partial_2 F_{30} + \partial_3 F_{02} + \partial_0 F_{23}
-= -\partial_2 E^3 + \partial_3 E^2 - \PD{t}{B^1}
-= - (\spacegrad \cross \BE)_x - \PD{t}{B_x},
+\begin{aligned}
+0 
+&= \partial_2 F_{30} + \partial_3 F_{02} + \partial_0 F_{23}
+\\&= -\partial_2 E^3 + \partial_3 E^2 - \PD{t}{B^1}
+\\&= - (\spacegrad \cross \BE)_x - \PD{t}{B_x},
+\end{aligned}
 \end{equation}
 and for \( \nu = 2 \) % 3 0 1
 \begin{equation}\label{eqn:ProblemSet1Problem1:300}
-0 = \partial_3 F_{01} + \partial_0 F_{13} + \partial_1 F_{30}
-= \partial_3 E^1
+\begin{aligned}
+0 
+&= \partial_3 F_{01} + \partial_0 F_{13} + \partial_1 F_{30}
+\\&= \partial_3 E^1
 + \PD{t}{B^2}
 - \partial_1 E^3
-= (\spacegrad \cross \BE)_y + \PD{t}{B_y},
+\\&= (\spacegrad \cross \BE)_y + \PD{t}{B_y},
+\end{aligned}
 \end{equation}
 and for \( \nu = 3 \) % 0 1 2
 \begin{equation}\label{eqn:ProblemSet1Problem1:200}
-0 = \partial_0 F_{12} + \partial_1 F_{20} + \partial_2 F_{01}
-=
+\begin{aligned}
+0 
+&= \partial_0 F_{12} + \partial_1 F_{20} + \partial_2 F_{01}
+\\&=
 - \PD{t}{B^3}
 - \partial_1 E^2
 + \partial_2 E^1
-= - (\spacegrad \cross \BE)_z - \PD{t}{B_z},
+\\&= - (\spacegrad \cross \BE)_z - \PD{t}{B_z},
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet1Problem1:220}
@@ -159,19 +178,21 @@ which is Faraday's law.
 For the source dependent Maxwell's equations we vary the action.
 Recall that for a single field Lagrangian density \( \LL = \LL(\phi, \partial_\mu \phi) \) the variation of the action \( S = \int \LL \) can be found by Taylor expansion
 \begin{equation}\label{eqn:ProblemSet1Problem1:240}
+\begin{aligned}
 \delta S
-= \int d^4 x \delta \LL
-= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \delta (\partial_\nu \phi)
-= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \partial_\nu \delta \phi
-=
+&= \int d^4 x \delta \LL
+\\&= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \delta (\partial_\nu \phi)
+\\&= \int d^4 x \PD{\phi}{\LL} \delta \phi + \int d^4 x \PD{(\partial_\nu \phi)}{\LL} \partial_\nu \delta \phi
+\\&=
   \int d^4 x \PD{\phi}{\LL} \delta \phi
 + \int d^4 x \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} \delta \phi }
 - \int d^4 x \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} } \delta \phi
-=
+\\&=
   \int d^4 x \delta \phi \lr{
 \PD{\phi}{\LL}
 - \partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} }
 }
+\end{aligned}
 \end{equation}
 Assuming that \( \delta \phi \) is stationary at the boundaries killed the second integral in the second last step.  Setting \( \delta S = 0 \) gives the Euler-Lagrange equations for a Lagrangian density that is dependent on a single field and its first derivatives
 \begin{equation}\label{eqn:ProblemSet1Problem1:260}
@@ -197,29 +218,29 @@ and vary with respect to the fields \( A_{\mu} \) (or \( A^{\mu} \)).
 
 The first order partials are trivial
 \begin{equation}\label{eqn:ProblemSet1Problem1:340}
-\PD{A_\mu}{\LL}
-=
-- j^\mu,
+\PD{A_\mu}{\LL} = - j^\mu,
 \end{equation}
 but we have to do a bit more work for the rest
 \begin{equation}\label{eqn:ProblemSet1Problem1:360}
+\begin{aligned}
 \PD{(\partial_\nu A_\mu)}{\LL}
-=
+&=
 -\inv{2}
 F^{\alpha\beta} \PD{(\partial_\nu A_\mu)}{} F_{\alpha\beta}
-=
+\\&=
 -\inv{2}
 F^{\alpha\beta} \PD{(\partial_\nu A_\mu)}{} \lr{
 \partial_\alpha A_\beta -
 \partial_\beta A_\alpha}
-=
+\\&=
 -\inv{2}
 F^{\nu\mu}
 +
 \inv{2}
 F^{\mu\nu}
-=
+\\&=
 F^{\mu\nu}.
+\end{aligned}
 \end{equation}
 Putting the pieces together, we have
 \begin{equation}\label{eqn:ProblemSet1Problem1:380}
@@ -238,66 +259,74 @@ For \( \nu = 0 \) this is
 \end{equation}
 or
 \begin{equation}\label{eqn:ProblemSet1Problem1:460}
+\begin{aligned}
 \rho
-=
+&=
 \partial_k F^{k 0}
-=
+\\&=
 -\partial_k F_{k 0}
-=
+\\&=
 \partial_k F_{0 k}
-=
+\\&=
 \spacegrad \cdot \BE,
+\end{aligned}
 \end{equation}
 which is Gauss's law.
 
 % for the other indexes \( \nu \) we have
 \begin{equation}\label{eqn:ProblemSet1Problem1:480}
+\begin{aligned}
 j^1
-=
+&=
 \partial_\mu F^{\mu 1}
-=
+\\&=
 \partial_0 F^{0 1}
 +
 \partial_2 F^{2 1}
 +
 \partial_3 F^{3 1}
-=
+\\&=
 - \PD{t}{E_x}
 + \partial_2 B_z
 - \partial_3 B_y
-= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_1
+\\&= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_1
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem1:500}
+\begin{aligned}
 j^2
-=
+&=
 \partial_\mu F^{\mu 2}
-=
+\\&=
 \partial_3 F^{3 2}
 +
 \partial_0 F^{0 2}
 +
 \partial_1 F^{1 2}
-=
+\\&=
   \partial_3 B_x
 - \PD{t}{E_y}
 - \partial_1 B_z
-= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_2
+\\&= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_2
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet1Problem1:520}
+\begin{aligned}
 j^3
-=
+&=
 \partial_\mu F^{\mu 3}
-=
+\\&=
 \partial_0 F^{0 3}
 +
 \partial_1 F^{1 3}
 +
 \partial_2 F^{2 3}
-=
+\\&=
 - \PD{t}{E_z}
 + \partial_1 B_y
 - \partial_2 B_x
-= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_3,
+\\&= \lr{ -\BE + \spacegrad \cross \BB } \cdot \Be_3,
+\end{aligned}
 \end{equation}
 so
 \begin{equation}\label{eqn:ProblemSet1Problem1:540}
@@ -316,17 +345,19 @@ S =
 
 Let's consider the variation of each of these terms separately, starting with \( \delta ds \)
 \begin{equation}\label{eqn:ProblemSet1Problem1:580}
+\begin{aligned}
 \delta \int ds
-=
+&=
 \delta \int \sqrt{ dX^\mu dX_\mu }
-=
+\\&=
 \int \inv{2 ds} 2 dX^\mu \delta dX_\mu
-=
+\\&=
 \int \frac{dX^\mu}{ds} d \delta X_\mu
-=
+\\&=
 \int d \lr{ \frac{dX^\mu}{ds} \delta X_\mu } - d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu
-=
+\\&=
 \evalbar{ \frac{dX^\mu}{ds} \delta X_\mu }{\Delta s} - \int d \lr{ \frac{dX^\mu}{ds} } \delta X_\mu.
+\end{aligned}
 \end{equation}
 The endpoints of the worldline are presumed to be stationary, which kills the boundary term, leaving just
 \begin{equation}\label{eqn:ProblemSet1Problem1:600}
@@ -334,37 +365,40 @@ The endpoints of the worldline are presumed to be stationary, which kills the bo
 \end{equation}
 Now let's compute the variation of the potential term
 \begin{equation}\label{eqn:ProblemSet1Problem1:620}
+\begin{aligned}
 \delta \int A_\mu dX^\mu
-=
+&=
 \int (\delta A_\mu) dX^\mu
 +
 \int A_\mu \delta dX^\mu
-=
+\\&=
 \int \partial_\nu A_\mu \delta X^\nu dX^\mu
 -
 \int d A_\mu \delta X^\mu
-=
+\\&=
 \int \partial_\nu A_\mu \delta X^\nu U^\mu ds
 -
 \int \partial_\nu A_\mu dX^\nu \delta X^\mu
-=
+\\&=
 \int \lr{ \partial_\nu A_\mu U^\mu \delta X^\nu
 -
 \partial_\nu A_\mu U^\nu \delta X^\mu
 }
 ds
-=
+\\&=
 \int \lr{ \partial_\nu A_\mu - \partial_\mu A_\nu } U^\mu \delta X^\nu ds
-=
+\\&=
 \int F_{\nu\mu} U^\mu \delta X^\nu ds
-=
+\\&=
 \int F^{\nu\mu} U_\mu \delta X_\nu ds.
+\end{aligned}
 \end{equation}
 Here the boundary term has been dropped again after integration by parts, and an index switcheroo was done to factor out a common
 \( U^\mu \delta X^\nu ds \) term from the integrand, and we finish off with a set of raising and lowering operations on all the matched indexes.  Putting the pieces back together we have
 \begin{equation}\label{eqn:ProblemSet1Problem1:640}
+\begin{aligned}
 \delta S
-=
+&=
   \int
 \lr{
 -m \dot{U}^\nu
@@ -373,7 +407,7 @@ e
 F^{\nu\mu} U_\mu
 }
 \delta X_\nu ds
-=
+\\&=
   \int
 \lr{
 m \dot{U}^\mu
@@ -383,14 +417,12 @@ F^{\mu\nu} U_\nu
 }
 \delta X_\mu ds
 .
+\end{aligned}
 \end{equation}
 Requiring \( \delta S = 0 \) for all worldline path variations \( \delta X_\mu \) means that the equations of motion are
 %\begin{equation}\label{eqn:ProblemSet1Problem1:660}
 \boxedEquation{eqn:ProblemSet1Problem1:660}{
-m \frac{dU^\mu}{ds}
-=
-e
-F^{\mu\nu} U_\nu,
+m \frac{dU^\mu}{ds} = e F^{\mu\nu} U_\nu,
 }
 %\end{equation}
 as expected.
@@ -425,10 +457,12 @@ U^\mu = \gamma \lr{ 1, \Bv }.
 
 First inserting \( \mu = 0 \) into \cref{eqn:ProblemSet1Problem1:660} now gives
 \begin{equation}\label{eqn:ProblemSet1Problem1:780}
+\begin{aligned}
 \frac{d}{ds} \frac{m}{\sqrt{1 - \Bv^2}}
-= e F^{0 k} U_k
-= (-1)^2 e F_{0 k} U^k
-= e \BE \cdot \Bv \gamma,
+&= e F^{0 k} U_k
+\\&= (-1)^2 e F_{0 k} U^k
+\\&= e \BE \cdot \Bv \gamma,
+\end{aligned}
 \end{equation}
 or
 \begin{equation}\label{eqn:ProblemSet1Problem1:800}
@@ -438,17 +472,18 @@ This is the timelike portion of the Lorentz force equation in non-covariant form
 
 For the \( \mu \ne 0 \) case, we find
 \begin{equation}\label{eqn:ProblemSet1Problem1:820}
+\begin{aligned}
 \gamma \frac{d}{dt} \frac{m \Bv}{\sqrt{1 - \Bv^2}}
-= e F^{j \nu} U_\nu \Be_j
-= e F^{j 0} \Be_j
+&= e F^{j \nu} U_\nu \Be_j
+\\&= e F^{j 0} \Be_j
 - e \sum_{1 \le (j \ne k) \le 3} F^{j k} v^k \Be_j \gamma
-= e \BE + e \epsilon_{jki} B^i v^k \Be_j \gamma
-= e \BE + e \Bv \cross \BB \gamma,
+\\&= e \BE + e \epsilon_{jki} B^i v^k \Be_j \gamma
+\\&= e \BE + e \Bv \cross \BB \gamma,
+\end{aligned}
 \end{equation}
 or
 \begin{equation}\label{eqn:ProblemSet1Problem1:840}
 \frac{d\Bp}{dt} = e \BE + e \Bv \cross \BB,
 \end{equation}
 which is the Lorentz force equation in natural units in terms of \( \Bp = d(\gamma m \Bv)/dt \), the relativistically correct momentum from the viewpoint of a stationary observer.
-=
 }}

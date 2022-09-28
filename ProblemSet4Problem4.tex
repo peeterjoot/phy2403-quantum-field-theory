@@ -24,57 +24,64 @@ Consider the fermion bilinear $\bar\psi \gamma^\mu \gamma^\nu \psi ={1\over 2} \
 \makeSubAnswer{}{qft:problemSet4:4a}
 For infinitesimal transformations we can show this using the BCH theorem.  First let
 \begin{equation}\label{eqn:ProblemSet4Problem4:20}
+\begin{aligned}
 B
-= -\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
-= -\frac{i}{2} \omega_{\mu\nu} \frac{i}{4} \antisymmetric{\gamma^\mu}{\gamma^\nu}
-= \frac{1}{8} \omega_{\mu\nu} \lr{ \gamma^\mu \gamma^\nu - \gamma^\nu \gamma^\mu}.
-= \frac{1}{4} \omega_{\mu\nu} \gamma^\mu \gamma^\nu,
+&= -\frac{i}{2} \omega_{\mu\nu} S^{\mu\nu}
+\\&= -\frac{i}{2} \omega_{\mu\nu} \frac{i}{4} \antisymmetric{\gamma^\mu}{\gamma^\nu}
+\\&= \frac{1}{8} \omega_{\mu\nu} \lr{ \gamma^\mu \gamma^\nu - \gamma^\nu \gamma^\mu}.
+\\&= \frac{1}{4} \omega_{\mu\nu} \gamma^\mu \gamma^\nu,
+\end{aligned}
 \end{equation}
 where we've made use
 \( \omega_{\mu\nu} = - \omega_{\nu\mu} \) to eliminate any \( \mu = \nu \) terms in the sum,
 and \( \gamma^\mu \gamma^\nu = -\gamma^\nu \gamma^\mu \) for \( \mu \ne \nu \).
 With this substitution, we have
 \begin{equation}\label{eqn:ProblemSet4Problem4:40}
+\begin{aligned}
 \Lambda^{-1}_{1/2}
 \gamma^\mu
 \Lambda_{1/2}
-=
+&=
 e^{-B}
 \gamma^\mu
 e^{B}
-=
+\\&=
 \gamma^\mu
 +
 \antisymmetric{-B}{\gamma^\mu}
 +
 O(\omega^2),
+\end{aligned}
 \end{equation}
 and can now compute the commutator
 \begin{equation}\label{eqn:ProblemSet4Problem4:60}
+\begin{aligned}
 \antisymmetric{-B}{\gamma^\mu}
-=
+&=
 -\frac{1}{4} \omega_{\alpha\beta}
 \antisymmetric{
 \gamma^\alpha \gamma^\beta
 }{\gamma^\mu}
-=
+\\&=
 -\frac{1}{4} \omega^{\alpha\beta}
 \antisymmetric{
 \gamma_\alpha \gamma_\beta
 }{\gamma^\mu}
-=
+\\&=
 \frac{1}{4} \omega^{\alpha\beta}
 \lr{
    \gamma^\mu \gamma_\alpha \gamma_\beta
    -
    \gamma_\alpha \gamma_\beta \gamma^\mu
 }.
+\end{aligned}
 \end{equation}
 When \( \mu \ne \alpha, \beta \), \( \gamma^\mu \) commutes with both \( \gamma_\alpha,  \gamma_\beta \),
 so the matrices cancel, leaving just the \( \mu = \alpha, \mu = \beta \) contributions to the sum
 \begin{equation}\label{eqn:ProblemSet4Problem4:80}
+\begin{aligned}
 \antisymmetric{-B}{\gamma^\mu}
-=
+&=
 \frac{1}{4} \omega^{\alpha\beta}
 \lr{
    \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
@@ -82,13 +89,13 @@ so the matrices cancel, leaving just the \( \mu = \alpha, \mu = \beta \) contrib
    - \gamma_\alpha \ultensor{\delta}{\mu}{\beta}
    + \gamma_\beta \ultensor{\delta}{\mu}{\alpha}
 }
-=
+\\&=
 \frac{1}{2} \omega^{\alpha\beta}
 \lr{
    \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
    -\ultensor{\delta}{\mu}{\beta} \gamma_\alpha
 }
-=
+\\&=
 \frac{1}{2}
 \lr{
    \omega^{\alpha\beta}
@@ -97,32 +104,35 @@ so the matrices cancel, leaving just the \( \mu = \alpha, \mu = \beta \) contrib
    \omega^{\beta\alpha}
    \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
 }
-=
+\\&=
    \omega^{\alpha\beta}
    \ultensor{\delta}{\mu}{\alpha} \gamma_\beta
-=
+\\&=
    \omega^{\mu\beta}
 \gamma_\beta.
+\end{aligned}
 \end{equation}
 The transformation to first order is therefore
 \begin{equation}\label{eqn:ProblemSet4Problem4:100}
+\begin{aligned}
 \Lambda^{-1}_{1/2}
 \gamma^\mu
 \Lambda_{1/2}
-=
+&=
 \gamma^\mu
 +
    \omega^{\mu\beta}
 \gamma_\beta
-=
+\\&=
 \lr{
    \ultensor{\delta}{\mu}{\beta}
 +
    \ultensor{\omega}{\mu}{\beta}
 }
 \gamma^\beta
-=
+\\&=
 \ultensor{\Lambda}{\mu}{\beta} \gamma^\beta.
+\end{aligned}
 \end{equation}
 
 To extend the argument to finite angles we use the usual argument.  For example, for a finite rotation \( e^{i \theta} \), we may decompose such a rotation into \( n \) small pieces, \( e^{i\theta/n} \) and compound those rotations by applying the small ones in sequence \( \lr{ e^{i \theta/n} }^n \).  Given the block matrix structure of \( \Lambda_{1/2} \)
@@ -135,17 +145,17 @@ e^{-\inv{2} \omega_{0k} \sigma^k - \frac{i}{4} \omega_{jk} e^{jkl}  \sigma^l } &
 \end{bmatrix},
 \end{equation}
 (as found in class), where we have \( 2 \times 2 \) exponentials on the diagonals, the same argument applies.
-
 \makeSubAnswer{}{qft:problemSet4:4b}
 As \( \Lambda_{1/2} \) is a diagonal matrix, we can compute \( \gamma^0 A^\dagger \gamma^0 \) in the block matrix representation
 \begin{equation}\label{eqn:ProblemSet4Problem4:140}
+\begin{aligned}
 \gamma^0
 \begin{bmatrix}
 a & 0 \\
 0 & b
 \end{bmatrix}
 \gamma^0
-=
+&=
 \begin{bmatrix}
 0 & 1 \\
 1 & 0
@@ -158,7 +168,7 @@ a^\dagger & 0 \\
 0 & 1 \\
 1 & 0
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 0 & 1 \\
 1 & 0
@@ -167,11 +177,12 @@ a^\dagger & 0 \\
 0         & a^\dagger \\
 b^\dagger & 0
 \end{bmatrix}
-=
+\\&=
 \begin{bmatrix}
 b^\dagger & 0 \\
 0         & a^\dagger
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 
 Using this (and \( (\sigma^k)^\dagger = \sigma^k \)), we have
@@ -213,8 +224,9 @@ A^{\mu\nu}.
 
 The transformation of the anticommutator term is just
 \begin{equation}\label{eqn:ProblemSet4Problem4:240}
+\begin{aligned}
 \inv{2} \overbar{\Psi} \symmetric{\gamma^\mu}{\gamma^\nu} \Psi
-=
+&=
 \overbar{\Psi} g^{\mu\nu} \Psi
 \rightarrow
 \lr{ \overbar{\Psi}
@@ -229,12 +241,13 @@ g^{\alpha\beta}
 \Lambda_{1/2}
 \Psi
 }
-=
+\\&=
 \overbar{\Psi}
 g^{\mu\nu}
 \Psi
-=
+\\&=
 \inv{2} \overbar{\Psi} \symmetric{\gamma^\mu}{\gamma^\nu} \Psi,
+\end{aligned}
 \end{equation}
 showing that the anticommutator transforms as a Lorentz scalar.
 %where we've used the identity \( \ulLambda{\mu}{\alpha} \ulLambda{\nu}{\beta} g^{\alpha\beta} = g^{\mu\nu} \).

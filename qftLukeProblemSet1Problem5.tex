@@ -89,11 +89,12 @@ where \( \wedge^\mu(x), \mu = 0,\cdots,3\), are arbitrary functions of the field
 %%XX
 Consider first just two fields, say \( \phi \) and \( \psi\), and consider
 \begin{equation}\label{eqn:qftProblemSet1Problem5:100}
+\begin{aligned}
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi}{} \partial_\mu \wedge^\mu
 }
-=
+&=
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi}{}
@@ -103,28 +104,31 @@ Consider first just two fields, say \( \phi \) and \( \psi\), and consider
 \PD{\psi}{ \wedge^\mu } \PD{x^\mu}{ \psi}
 }
 }
-=
+\\&=
 \partial_\beta \PD{\phi}{ \wedge^\beta }
-=
+\\&=
 \PD{\phi}{ \partial_\beta \wedge^\beta }.
+\end{aligned}
 \end{equation}
 
 We see that the divergence \( \partial_\mu \wedge^\mu \) also satisfies the field Euler-Lagrange equations for the field \( \phi \).  This will clearly be the case for multiple fields.  Making that explicit, we can generalize the above slightly
 \begin{equation}\label{eqn:qftProblemSet1Problem5:120}
+\begin{aligned}
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi_a}{} \partial_\mu \wedge^\mu
 }
-=
+&=
 \partial_\beta
 \lr{
 \PD{\partial_\beta \phi_a}{}
 \PD{\phi_b}{ \wedge^\mu } \PD{x^\mu}{ \phi_b }
 }
-=
+\\&=
 \partial_\beta \PD{\phi_b}{ \wedge^\mu } \delta_{b a} {\delta^\beta}_\mu
-=
+\\&=
 \PD{\phi_a}{ \partial_\beta \wedge^\beta }.
+\end{aligned}
 \end{equation}
 
 %\makeSubAnswer{}{qft:LukeProblemSet1:5a}
