@@ -53,20 +53,22 @@ J^{\nu \mu\rho} = \inv{2} \lr{ x^\rho T^{\nu\mu} - x^\mu T^{\nu\rho} },
 \end{equation}
 and can easily show that this current has the desired zero four-divergence property
 \begin{equation}\label{eqn:qftLecture10:100}
+\begin{aligned}
 \partial_\nu J^{\nu \mu\rho}
-= \inv{2} \lr{
+&= \inv{2} \lr{
 (\partial_\nu x^\rho) T^{\nu\mu}
 +
 x^\rho \cancel{\partial_\nu T^{\nu\mu} }
 - (\partial_\nu x^\mu) T^{\nu\rho}
 - x^\mu \cancel{\partial_\nu T^{\nu\rho} }
 }
-= \inv{2} \lr{
+\\&= \inv{2} \lr{
 T^{\rho\mu}
 +
 - T^{\mu\rho}
 }
-= 0,
+\\&= 0,
+\end{aligned}
 \end{equation}
 since the energy-momentum tensor is symmetric.
 
@@ -75,29 +77,33 @@ Defining charge in the usual fashion \( Q = \int d^3 x j^0 \), so we can define 
 Q^{0k} = \int d^3 x J^{0 0 k} = \inv{2} \int d^3 x \lr{ x^k T^{00} - x^0 T^{0k} }
 \end{equation}
 \begin{equation}\label{eqn:qftLecture10:540}
+\begin{aligned}
 \dot{Q}^{0k}
-= \int d^3 x \dot{J}^{0 0k}
-= \inv{2} \int d^3 x \lr{ x^k \dot{T}^{00} - x^0 \dot{T}^{0k} }.
+&= \int d^3 x \dot{J}^{0 0k}
+\\&= \inv{2} \int d^3 x \lr{ x^k \dot{T}^{00} - x^0 \dot{T}^{0k} }.
+\end{aligned}
 \end{equation}
 
 However, since \( 0 = \partial_\mu T^{\mu \nu} = \dot{T}^{0 \nu} + \partial_j T^{j \nu} \),
 or \( \dot{T}^{0 \nu} = -\partial_j T^{j \nu} \),
 \begin{equation}\label{eqn:qftLecture10:560}
+\begin{aligned}
 \dot{Q}^{0k}
-= \inv{2} \int d^3 x \lr{ x^k (-\partial_j T^{j0}) - T^{0k} - x^0 (-\partial_j T^{jk}) }
-= \inv{2} \int d^3 x \lr{
+&= \inv{2} \int d^3 x \lr{ x^k (-\partial_j T^{j0}) - T^{0k} - x^0 (-\partial_j T^{jk}) }
+\\&= \inv{2} \int d^3 x \lr{
    \partial_j (-x^k T^{j0}) + (\partial_j x^k) T^{j0}
    - T^{0k} + x^0 \partial_j T^{jk}
 }
-= \inv{2} \int d^3 x \lr{
+\\&= \inv{2} \int d^3 x \lr{
    \partial_j (-x^k T^{j0}) + \cancel{T^{k0}}
    - \cancel{T^{0k}} + x^0 \partial_j T^{jk}
 }
-= \inv{2} \int d^3 x
+\\&= \inv{2} \int d^3 x
    \partial_j \lr{
 -x^k T^{j0}
 + x^0 T^{jk}
 },
+\end{aligned}
 \end{equation}
 which leaves just surface terms, so \( \dot{Q}^{0k} = 0 \).
 
@@ -109,9 +115,11 @@ T^{\nu\mu} = \partial^\nu \phi \partial^\mu \phi - g^{\nu\mu} \LL.
 \end{equation}
 In particular
 \begin{equation}\label{eqn:qftLecture10:600}
+\begin{aligned}
 T^{00}
-= \partial^0 \phi \partial^0 \phi - \inv{2} \lr{ \partial_0 \phi \partial^0 \phi + \partial_k \phi \partial^k \phi }
-= \inv{2} \partial^0 \phi \partial^0 \phi - \inv{2} (\spacegrad \phi)^2,
+&= \partial^0 \phi \partial^0 \phi - \inv{2} \lr{ \partial_0 \phi \partial^0 \phi + \partial_k \phi \partial^k \phi }
+\\&= \inv{2} \partial^0 \phi \partial^0 \phi - \inv{2} (\spacegrad \phi)^2,
+\end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eqn:qftLecture10:620}
@@ -144,20 +152,23 @@ to give
 
 The other required commutator is
 \begin{equation}\label{eqn:qftLecture10:160}
+\begin{aligned}
 \antisymmetric{\hatT^{0i}(\Bx)}{\phihat(\By)}
-=
+&=
 \antisymmetric{\pihat(\Bx)\partial^i \phihat(\Bx)}{\phihat(\By)}
-=
+\\&=
 \partial^i \phihat(\Bx)
 \antisymmetric{\pihat(\Bx)
 }{\phihat(\By)}
-= -i \deltathree(\Bx - \By) \partial^i \phihat(\Bx).
+\\&= -i \deltathree(\Bx - \By) \partial^i \phihat(\Bx).
+\end{aligned}
 \end{equation}
 
 The charge commutator with the field can now be computed
 \begin{equation}\label{eqn:qftLecture10:180}
+\begin{aligned}
 i \epsilon \antisymmetric{\hatQ^{0k}}{\phihat(\By)}
-=
+&=
 i
 \frac{\epsilon}{2} \int d^3 x
 \lr{
@@ -167,10 +178,11 @@ x^k
 x^0
 \antisymmetric{\hatT^{0k}}{\phihat(\By)}
 }
-=
+\\&=
 \frac{\epsilon}{2} \lr{ y^k \pihat(\By) - y^0 \partial^k \phihat(\By) }
-=
+\\&=
 \frac{\epsilon}{2} \lr{ y^k \dot{\phihat}(\By) - y^0 \partial^k \phihat(\By) },
+\end{aligned}
 \end{equation}
 so to first order in \( \epsilon \)
 \begin{equation}\label{eqn:qftLecture10:200}
@@ -184,18 +196,20 @@ e^{-i \epsilon \hatQ^{0k} }
 
 For example, with \( k = 1 \)
 \begin{equation}\label{eqn:qftLecture10:700}
+\begin{aligned}
 e^{i \epsilon \hatQ^{0k} } \phihat(\By)
 e^{-i \epsilon \hatQ^{0k} }
-=
+&=
 \phihat(\By)
 + \frac{\epsilon}{2} \lr{
    y^1 \dot{\phihat}(\By)
    +
    y^0 \PD{y^1}{\phihat}(\By)
 }
-=
+\\&=
 \phihat(y^0 + \frac{\epsilon}{2} y^1,
 y^1 + \frac{\epsilon}{2} y^2, y^3).
+\end{aligned}
 \end{equation}
 
 This is a boost.  If we compare explicitly to an infinitesimal Lorentz transformation of the coordinates
@@ -249,14 +263,15 @@ where
 \index{momentum states!transformation}
 In the momentum space representation
 \begin{equation}\label{eqn:qftLecture10:340}
+\begin{aligned}
 \phihat(x)
-=
+&=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \lr{
    e^{i (\omega_\Bp t - \Bp \cdot \Bx)} \hata_\Bp
 +
    e^{-i (\omega_\Bp t - \Bp \cdot \Bx)} \hata^\dagger_\Bp
 }
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
    e^{i p^\mu x^\mu } \hata_\Bp
@@ -264,12 +279,14 @@ In the momentum space representation
    e^{-i p^\mu x^\mu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}.
+\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:qftLecture10:720}
+\begin{aligned}
 \hatU(\Lambda) \phihat(x) \hatU^\dagger(\Lambda)
-=
+&=
 \phihat(\Lambda x)
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}  \evalbar{
 \lr{
    e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu }
@@ -278,15 +295,17 @@ In the momentum space representation
    e^{-i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu } \hata^\dagger_\Bp
 }
 }{p_0 = \omega_\Bp}.
+\end{aligned}
 \end{equation}
 This can be put into an explicitly Lorentz invariant form
 \begin{equation}\label{eqn:qftLecture10:740}
+\begin{aligned}
 \phihat(\Lambda x)
-=
+&=
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta(p_0^2 - \Bp^2 - m^2) \Theta(p^0) \sqrt{2 \omega_\Bp}
    e^{i p^\mu \ultensor{\Lambda}{\mu}{\nu} x^\nu }
 \hata_\Bp + \text{h.c.}
-=
+\\&=
 \int \frac{dp^0 d^3 p}{(2\pi)^3}
 \lr{
 \frac{\delta(p_0 - \omega_\Bp)}{2 \omega_\Bp}
@@ -294,6 +313,7 @@ This can be put into an explicitly Lorentz invariant form
 \frac{\delta(p_0 + \omega_\Bp)}{2 \omega_\Bp}
 }
 \Theta(p^0) \sqrt{2 \omega_\Bp}  \hata_\Bp + \text{h.c.},
+\end{aligned}
 \end{equation}
 which recovers \cref{eqn:qftLecture10:720} by making use of the delta function identity
 \( \delta(f(x)) = \sum_{f(x_\conj) = 0} \frac{\delta(x - x_\conj)}{f'(x_\conj)} \), since the
@@ -319,24 +339,28 @@ p^\lambda = \ultensor{\Lambda}{\lambda}{\rho} {p'}^{\rho},
 \end{equation}
 so that
 \begin{equation}\label{eqn:qftLecture10:420}
+\begin{aligned}
 p_\mu
 \ultensor{\Lambda}{\mu}{\nu} x^\nu
-=
+&=
 \ultensor{\Lambda}{\lambda}{\rho} {p'}^\rho g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} x^{\sigma}
-=
+\\&=
 {p'}^\rho
 \lr{ \ultensor{\Lambda}{\lambda}{\rho}
 g_{\lambda\nu} \ultensor{\Lambda}{\nu}{\sigma} } x^{\sigma}
-=
+\\&=
 {p'}^\rho g_{\rho\sigma} x^\sigma,
+\end{aligned}
 \end{equation}
 which gives
 \begin{equation}\label{eqn:qftLecture10:440}
+\begin{aligned}
 \phihat(\Lambda x)
-=
+&=
 \int \frac{d{p'}^0 d^3 p'}{(2\pi)^3} \delta({p'}_0^2 - {\Bp'}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp'}} e^{i p' \cdot x}  \hata_{\Lambda \Bp'} + \text{h.c.}
-=
+\\&=
 \int \frac{dp^0 d^3 p}{(2\pi)^3} \delta({p}_0^2 - {\Bp}^2 - m^2) \Theta(p^0) \sqrt{2 \omega_{\Lambda \Bp}} e^{i p \cdot x}  \hata_{\Lambda \Bp} + \text{h.c.}
+\end{aligned}
 \end{equation}
 Since
 \begin{equation}\label{eqn:qftLecture10:460}
@@ -362,13 +386,15 @@ If the desired normalization for a momentum state is assumed to be
 then by
 noting that \( \hatU(\Lambda) \ket{0}  = \ket{0} \) (i.e. the ground state is Lorentz invariant), we have
 \begin{equation}\label{eqn:qftLecture10:520}
+\begin{aligned}
 \sqrt{2 \omega_{\Lambda \Bp}} \hata^\dagger_{\Lambda \Bp} \ket{0}
-=
+&=
 \hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \hatU^\dagger(\Lambda) \hatU(\Lambda) \ket{0}
-=
+\\&=
 \hatU(\Lambda) \sqrt{ 2\omega_\Bp} \hata^\dagger_\Bp \ket{0}
-=
+\\&=
 \hatU(\Lambda) \ket{\Bp}.
+\end{aligned}
 \end{equation}
 The normalization \cref{eqn:qftLecture10:500} means that the Lorentz transformation of a momentum state, takes a particularly simple form
 \begin{equation}\label{eqn:qftLecture10:760}

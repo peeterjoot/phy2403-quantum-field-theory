@@ -144,19 +144,21 @@ e^{i p \cdot x} }{p^0 = \omega_\Bp} \hata^\dagger_\Bp.
 
 Compute the commutator
 \begin{equation}\label{eqn:qftLecture11:200}
+\begin{aligned}
 D(x)
-= \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(0)}
-=
+&= \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(0)}
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
 \evalbar{ e^{i k \cdot 0} }{k^0 = \omega_\Bk}
 \antisymmetric{\hata_\Bp }{\hata_\Bk^\dagger }
-=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^3 \sqrt{2 \omega_\Bp}}
 \evalbar{ e^{-i p \cdot x} }{p^0 = \omega_\Bp}
 \int \frac{d^3 k}{(2 \pi)^3 \sqrt{2 \omega_\Bk}}
 (2 \pi)^3 \deltathree(\Bp - \Bk),
+\end{aligned}
 \end{equation}
 \boxedEquation{eqn:qftLecture11:800}{
 D(x)
@@ -167,15 +169,17 @@ D(x)
 
 Now about the commutator at two spacetime points
 \begin{equation}\label{eqn:qftLecture11:220}
+\begin{aligned}
 \antisymmetric{\phihat(x)}{\phihat(y)}
-=
+&=
 \antisymmetric{\phihat_{-}(x) + \phihat_{+}(x)}{\phihat_{-}(y) + \phihat_{+}(y)}
-=
+\\&=
 \antisymmetric{\phihat_{-}(x)}{\phihat_{+}(y)}
 +
 \antisymmetric{\phihat_{+}(x)}{\phihat_{-}(y)}
-=
+\\&=
 -D(y - x) + D(x - y).
+\end{aligned}
 \end{equation}
 
 Find

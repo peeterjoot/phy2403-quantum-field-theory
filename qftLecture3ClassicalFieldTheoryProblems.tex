@@ -19,30 +19,35 @@ A^\mu \rightarrow A^\mu + \partial^\mu \chi
 \end{equation}
 is the desired four-vector form of the gauge transformation \cref{eqn:qftLecture3:520}, that is
 \begin{equation}\label{eqn:qftLecture3:540}
-j^\nu = \partial_\mu {F'}^{\mu\nu}
-= \partial_\mu F^{\mu\nu}.
+\begin{aligned}
+j^\nu 
+&= \partial_\mu {F'}^{\mu\nu}
+\\&= \partial_\mu F^{\mu\nu}.
+\end{aligned}
 \end{equation}
 Also relate this four-vector gauge transformation to the spacetime split.
 } % problem
 
 \makeanswer{problem:qftLecture3:540}{
 \begin{equation}\label{eqn:qftLecture3:560}
+\begin{aligned}
 \partial_\mu {F'}^{\mu\nu}
-=
+&=
 \partial_\mu \lr{ \partial^\mu {A'}^\nu - \partial_\nu {A'}^\mu }
-=
+\\&=
 \partial_\mu \lr{
   \partial^\mu \lr{ A^\nu + \partial^\nu \chi }
 - \partial_\nu \lr{ A^\mu + \partial^\mu \chi }
 }
-=
+\\&=
 \partial_\mu {F}^{\mu\nu}
 +
 \partial_\mu \partial^\mu \partial^\nu \chi
 -
 \partial_\mu \partial^\nu \partial^\mu \chi
-=
+\\&=
 \partial_\mu {F}^{\mu\nu},
+\end{aligned}
 \end{equation}
 by equality of mixed partials.
 Expanding \cref{eqn:qftLecture3:580} explicitly we find
