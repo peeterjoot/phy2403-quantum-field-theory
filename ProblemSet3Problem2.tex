@@ -60,22 +60,26 @@ The absolute square of this amplitude is \cref{p1}, the probability that no part
 \makeSubAnswer{}{qft:problemSet3:2b}
 Expanding matrix element in powers of \( j \) we have
 \begin{equation}\label{eqn:ProblemSet3Problem2:100}
-\bra{0} T\lr{ \exp\lr{ i \int d^4 x j(x) \phi_I(x) }} \ket{0}
-=
+\begin{aligned}
+\bra{0} &T\lr{ \exp\lr{ i \int d^4 x j(x) \phi_I(x) }} \ket{0} \\
+&=
 \bra{0} 1 \ket{0}
 +
 i \bra{0} T\lr{ \int d^4 a j(a) \phi_I(a) } \ket{0}
+\\&\quad
 +
 \frac{i^2}{2!} \bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
+\\&\quad
 +
 \frac{i^3}{3!} \bra{0} T\lr{ \int d^4 a d^4 b d^4 c j(a) \phi_I(a) j(b) \phi_I(b) j(c) \phi_I(c) } \ket{0}
 +
 \cdots
+\end{aligned}
 \end{equation}
 Using Wick's theorem to evaluate the integrals, all the odd powers of \( j \) are zero.  We may evaluate the first non-zero integral by contracting the two fields
 \begin{equation}\label{eqn:ProblemSet3Problem2:120}
 \begin{aligned}
-\bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
+\bra{0} &T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0} \\
 &=
 \contraction{\int d^4 a d^4 b j(a) }{\phi}{{}_I(a) j(b) }{\phi}
 \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b)
@@ -96,7 +100,7 @@ i \int \frac{ d^4 p }{(2 \pi)^4} \inv{ p^2 - m^2 + i \epsilon }
 Assuming that \( j(x) \) is real, this is
 \begin{equation}\label{eqn:ProblemSet3Problem2:140}
 \begin{aligned}
-\bra{0} T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0}
+\bra{0} &T\lr{ \int d^4 a d^4 b j(a) \phi_I(a) j(b) \phi_I(b) } \ket{0} \\
 &=
 i \int \frac{ d^4 p }{(2 \pi)^4} \frac{
 \Abs{\tilde{j}(p)}^2

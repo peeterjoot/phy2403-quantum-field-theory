@@ -153,7 +153,7 @@ a_m a_k^\dagger,
 and use this iteratively to percolate \( B = a_{n+1}^\dagger \) through \( \normalorder{A_1 A_2 \ldots A_n} \).  That is
 \begin{equation}\label{eqn:ProblemSet4Problem1:80}
 \begin{aligned}
-\normalorder{A_1 A_2 \ldots A_n} B
+&\normalorder{A_1 A_2 \ldots A_n} B \\
 &=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger a_{k_{r+1}} \ldots a_{k_n} a_{k_{n+1}}^\dagger
 \\&=
@@ -206,6 +206,7 @@ a_{k_{n-2}}
 a_{k_{n+1}}^\dagger
 a_{k_{n-1}}
 a_{k_n}
+\\&\quad
 +
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
@@ -214,6 +215,7 @@ a_{k_{n-2}}
 \contraction{}{a}{{}_{k_{n+1}} }{a}
 a_{k_{n-1}} a_{k_{n+1}}^\dagger
 a_{k_n}
+\\&\quad
 +
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
@@ -223,8 +225,9 @@ a_{k_n} a_{k_{n+1}}^\dagger.
 \end{equation}
 We can continue like this until \( a^\dagger_{k_{n+1}} \) has percolated all the way through the anhillation operators
 \begin{equation}\label{eqn:ProblemSet4Problem1:120}
-\normalorder{A_1 A_2 \ldots A_n} B
-=
+\begin{aligned}
+&\normalorder{A_1 A_2 \ldots A_n} B  \\
+&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 \contraction{}{a}{{}_{k_{r+1}}}{a}
 a_{k_{r+1}}
@@ -233,8 +236,8 @@ a_{k_{n+1}}^\dagger
 a_{k_{n-1}}
 a_{k_n}
 +
-\cdots
-+
+\cdots \\
+&\quad+
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
@@ -248,11 +251,13 @@ a_{k_{r+1}}
 \ldots
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
+\end{aligned}
 \end{equation}
 By the Wick operator definition, this may be rewritten with the \( a^\dagger_{k_{n+1}} \) at the end, that is
 \begin{equation}\label{eqn:ProblemSet4Problem1:140}
-\normalorder{A_1 A_2 \ldots A_n} B
-=
+\begin{aligned}
+&\normalorder{A_1 A_2 \ldots A_n} B \\
+&=
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 \contraction{}{a}{{}_{k_{r+1}}
 \ldots
@@ -266,6 +271,7 @@ a_{k_n}
 a_{k_{n+1}}^\dagger
 +
 \cdots
+\\&\quad
 +
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
@@ -277,12 +283,14 @@ a_{k_n}
 a_{k_{n-1}}
 a_{k_n}
 a_{k_{n+1}}^\dagger
+\\&\quad
 +
 a_{k_1}^\dagger \ldots a_{k_r}^\dagger
 a_{k_{r+1}}
 \ldots
 \contraction{}{a}{{}_{k_n} }{a}
 a_{k_n} a_{k_{n+1}}^\dagger.
+\end{aligned}
 \end{equation}
 Since \( \contraction{}{a}{{}^\dagger_{k_{i}}}{a} a^\dagger_{k_{i}} a_{k_{n+1}}^\dagger = 0 \) we may add in contractions with all the creation operators.  Doing that completes the proof of \cref{lemma}.
 
@@ -537,7 +545,8 @@ A_i A_j
    a_\Bq
 }
 \\&=
-\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
+\int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}} 
+\,\times \\&\quad
 \lr{
    e^{i p \cdot x}
    e^{i q \cdot y}
@@ -561,7 +570,8 @@ A_i A_j
 }
 \\&=
 \int \frac{d^3 p d^3 q}{(2 \pi)^6 \sqrt{ 2 \omega_\Bp 2 \omega_\Bq}}
-\lr{
+\,\times \\&\quad
+\Biglr{
    e^{i p \cdot x}
    e^{i q \cdot y}
    a_\Bp^\dagger
@@ -574,6 +584,7 @@ A_i A_j
    a_\Bp
 + (2 \pi)^3 \deltathree( \Bp - \Bq)
 }
+\\&\quad\quad
 +
    e^{i p \cdot x}
    e^{-i q \cdot y}

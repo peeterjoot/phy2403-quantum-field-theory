@@ -121,11 +121,12 @@ e^{ i \Bk \cdot \Bx}
 This gives
 \begin{equation}\label{eqn:noetherCurrentScalarField:120}
 \begin{aligned}
-\int d^3 x \pi^\mu \pi^\nu
+\int &d^3 x \pi^\mu \pi^\nu \\
 &=
 -
 \inv{2}
-\int d^3 x \frac{d^3 k d^3 p}{(2\pi)^{3} } \frac{ k^\mu p^\nu}{\sqrt{ \omega_k \omega_p }}
+\int d^3 x \frac{d^3 k d^3 p}{(2\pi)^{3} } \frac{ k^\mu p^\nu}{\sqrt{ \omega_k \omega_p }} 
+\,\times \\&\quad\quad
 \lr{
 - a_{\Bk} e^{-i \omega_k t }
 + a_{-\Bk}^\dagger e^{i \omega_k t }
@@ -139,6 +140,7 @@ e^{ i (\Bp + \Bk) \cdot \Bx}
 -
 \inv{2}
 \int d^3 k d^3 p \frac{ k^\mu p^\nu}{\sqrt{ \omega_k \omega_p }}
+\,\times \\&\quad\quad
 \lr{
 - a_{\Bk} e^{-i \omega_k t }
 + a_{-\Bk}^\dagger e^{i \omega_k t }
@@ -152,6 +154,7 @@ e^{ i (\Bp + \Bk) \cdot \Bx}
 -
 \inv{2}
 \int d^3 k d^3 p \frac{ k^\mu p^\nu}{\omega_k}
+\,\times \\&\quad\quad
 \lr{
   a_{\Bk} a_{-\Bk} e^{-2 i \omega_k t }
 - a_{\Bk} a_{\Bk}^\dagger
@@ -199,9 +202,11 @@ Further reduction of the leading \( k^\mu p^\nu \) term has a sign that depends 
 \makeSubAnswer{}{problem:noetherCurrentScalarField:1:a}
 First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
 \begin{equation}\label{eqn:noetherCurrentScalarField:140}
-\int d^3 x \pi^\mu \pi^0 =
+\begin{aligned}
+\int d^3 x \pi^\mu \pi^0 
+&=
 \int d^3 x \pi^0 \pi^\mu
-=
+\\&=
 -\inv{2}
 \int d^3 k k^\mu
 \lr{
@@ -210,6 +215,7 @@ First consider the momentum case where one of \( \mu \), or \( \nu \) is zero
 - a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{2 i \omega_k t }
 }.
+\end{aligned}
 \end{equation}
 
 For \( \mu \ne 0 \) this can be written as a vector operator
@@ -268,7 +274,7 @@ f(\Bk) =
 so
 \begin{equation}\label{eqn:noetherCurrentScalarField:560}
 \begin{aligned}
-\int d^3 k \Bk f(\Bk)
+\int &d^3 k \Bk f(\Bk) \\
 &=
 \inv{2} \int d^3 k \Bk f(\Bk)
 +
@@ -277,7 +283,7 @@ so
 \inv{2} \int_0^\infty k^2 dk \int_0^\pi \sin\theta d\theta \int_0^{2\pi}
 k \kcap(\theta, \phi) %\lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta }
 f(\Bk)
-+
+\\&\quad+
 \inv{2} \int_{-\infty}^0 k^2 d(-k) \int_0^\pi \sin\theta d\theta \int_0^{2\pi}
 (-k) \kcap(\theta, \phi) %\lr{ \sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta }
 f(-\Bk)
@@ -475,7 +481,7 @@ The Hamiltonian component has been previously calculated, and resolves to
 The other diagonal components, for \( r \ne s \ne t \) are
 \begin{equation}\label{eqn:noetherCurrentScalarField:380}
 \begin{aligned}
-\int d^3 x T^{rr}
+\int &d^3 x T^{rr} \\
 &=
 \int d^3 x
 \lr{
@@ -484,12 +490,14 @@ The other diagonal components, for \( r \ne s \ne t \) are
 \\&=
 \inv{4}
 \int d^3 k \frac{(k^r)^2 - (k^s)^2 - (k^t)^2 - \mu^2}{\omega_k}
+\,\times \\&\quad\quad
 \lr{
   a_{\Bk} a_{-\Bk} e^{- 2 i \omega_k t }
 + a_{\Bk} a_{\Bk}^\dagger
 + a_{\Bk}^\dagger a_{\Bk}
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }
+\\&\quad
 -\inv{4}
 \int d^3 k \omega_k
 \lr{
@@ -501,13 +509,16 @@ The other diagonal components, for \( r \ne s \ne t \) are
 \\&=
 \inv{4}
 \int d^3 k \frac{(k^r)^2 - (k^s)^2 - (k^t)^2 - \mu^2 - \omega_k^2}{\omega_k}
+\,\times \\&\quad\quad
 \lr{
   a_{\Bk} a_{-\Bk} e^{- 2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }
+\\&\quad
 +
 \inv{4}
 \int d^3 k \frac{(k^r)^2 - (k^s)^2 - (k^t)^2 - \mu^2 + \omega_k^2}{\omega_k}
+\,\times \\&\quad\quad
 \lr{
   a_{\Bk} a_{\Bk}^\dagger
 + a_{\Bk}^\dagger a_{\Bk}
@@ -519,6 +530,7 @@ The other diagonal components, for \( r \ne s \ne t \) are
   a_{\Bk} a_{-\Bk} e^{- 2 i \omega_k t }
 + a_{\Bk}^\dagger a_{-\Bk}^\dagger e^{ 2 i \omega_k t }
 }
+\\&\quad
 +
 \inv{2}
 \int d^3 k \frac{  (k^r)^2}{\omega_k}

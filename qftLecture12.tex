@@ -234,18 +234,20 @@ D(x) = \bra{0} \phi(x) \phi(0) \ket{0}.
 \end{equation}
 This can be shown by expansion.
 \begin{equation}\label{eqn:qftLecture12:380}
-\bra{0} \phi(x) \phi(0) \ket{0}
-=
+\begin{aligned}
+&\bra{0} \phi(x) \phi(0) \ket{0} \\
+&=
 \bra{0}
 \int \frac{d^3 p}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bp}} \evalbar{\lr{ a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x} }}{p_0 = \omega_\Bp}
 \int \frac{d^3 q}{(2 \pi)^3} \inv{\sqrt{2 \omega_\Bq}} \lr{ a_\Bq^\dagger + a_\Bq }
 \ket{0}.
+\end{aligned}
 \end{equation}
 Since \( a_\Bq \ket{0} = 0 = \bra{0} a_\Bp^\dagger \), \cref{eqn:qftLecture12:380}
 reduces to
 \begin{equation}\label{eqn:qftLecture12:540}
 \begin{aligned}
-\bra{0} \phi(x) \phi(0) \ket{0}
+&\bra{0} \phi(x) \phi(0) \ket{0} \\
 &=
 \bra{0}
 \int

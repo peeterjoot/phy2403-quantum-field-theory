@@ -64,30 +64,35 @@ See \cref{qft:problemSet4:1} (Hw4) for full details.
 
 Illustrating by example for the time ordering of \( n = 4 \) fields, we have
 \begin{equation}\label{eqn:qftLecture15b:60}
+\begin{aligned}
 T( \phi_1 \phi_2 \phi_3 \phi_4)
-=
+&=
 \normalorder{ \phi_1 \phi_2 \phi_3 \phi_4 }
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2 \normalorder{ \phi_3 \phi_4 }
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_3 \normalorder{ \phi_2 \phi_4 }
+\\&\quad
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4 \normalorder{ \phi_2 \phi_3 }
 +
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3 \normalorder{ \phi_1 \phi_4 }
 +
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_4 \normalorder{ \phi_1 \phi_3 }
+\\&\quad
 +
 \contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4 \normalorder{ \phi_1 \phi_2 }
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_2
 \contraction{}{\phi}{{}_3}{\phi} \phi_3 \phi_4
+\\&\quad
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_3
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_4
 +
 \contraction{}{\phi}{{}_1}{\phi} \phi_1 \phi_4
 \contraction{}{\phi}{{}_2}{\phi} \phi_2 \phi_3.
+\end{aligned}
 \end{equation}
 
 \maketheorem{Corollary: Wick's, Vacuum expectation.}{thm:qftLecture15b:100}{
@@ -131,8 +136,9 @@ Introducing another shorthand, we will use an expectation like notation to desig
 \end{equation}
 For the \( \phi^4 \) theory, this allows us to write the numerator of the perturbed ground state interaction as
 \begin{equation}\label{eqn:qftLecture15b:340}
+\begin{aligned}
 \bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
-\sim
+&\sim
    \bra{0}
    T\lr{
       \phi_I(x)
@@ -140,12 +146,13 @@ For the \( \phi^4 \) theory, this allows us to write the numerator of the pertur
       e^{-i \int_{-T}^T H_{\text{I,int}}(t') dt'}
    }
 \ket{0}
-=
+\\&=
 \expectation{
       \phi_I(x)
       \phi_I(y)
       e^{-i \int d^4 z \phi^4(z)}
 }.
+\end{aligned}
 \end{equation}
 To first order, this is
 \begin{equation}\label{eqn:qftLecture15b:360}

@@ -332,7 +332,7 @@ To simplify the commutator expansion, assume that
 \( m,n \) indexed functions are functions of \( \By \), for
 \begin{equation}\label{eqn:ProblemSet2Problem2:320}
 \begin{aligned}
-\antisymmetric{Q^a}{Q^b}
+&\antisymmetric{Q^a}{Q^b} \\
 &=
 -\frac{1}{4} \int d^3 x d^3 y
 \sigma^a_{rs}
@@ -398,6 +398,7 @@ To simplify the commutator expansion, assume that
 \frac{1}{4} \int d^3 x d^3 y
 \sigma^a_{rs}
 \sigma^b_{mn}
+\,\times \\&\quad
 \lr{
    \lr{
       \phi^\dagger_m
@@ -429,7 +430,8 @@ To simplify the commutator expansion, assume that
 \\&=
 \frac{1}{4} \int d^3 x d^3 y
 \sigma^a_{rs}
-\sigma^b_{mn}
+\sigma^b_{mn} 
+\,\times \\&\quad
 \lr{
      \phi^\dagger_m \pi^\dagger_r \antisymmetric{ \phi_s}{ \pi_n}
    + \antisymmetric{ \pi^\dagger_r }{ \phi^\dagger_m} \phi_s \pi_n
@@ -441,7 +443,7 @@ To simplify the commutator expansion, assume that
 Each of these commutators has a \( \deltathree(\Bx - \By) \) term, leaving
 \begin{equation}\label{eqn:ProblemSet2Problem2:340}
 \begin{aligned}
-\antisymmetric{Q^a}{Q^b}
+&\antisymmetric{Q^a}{Q^b} \\
 &=
 \frac{i}{4} \int d^3 x
 \sigma^a_{rs}
@@ -470,6 +472,7 @@ Each of these commutators has a \( \deltathree(\Bx - \By) \) term, leaving
 }
 \\&=
 \frac{i}{4} \int d^3 x
+\,\times \\&\quad
 \lr{
    (\phi^\dagger_m \sigma^b_{ms})
    (\pi^\dagger_r \sigma^a_{rs})
@@ -554,7 +557,7 @@ Since \( \Phi^\dagger \Phi \) is a real scalar in the original representation, t
 so \( b, c = 1 \).  For the derivative term, we have
 \begin{equation}\label{eqn:ProblemSet2Problem2:400}
 \begin{aligned}
-\partial_\mu \Phi^\dagger \partial^\mu \Phi
+&\partial_\mu \Phi^\dagger \partial^\mu \Phi \\
 &=
 \partial_\mu \phi_1^\dagger \partial^\mu \phi_1
 +
@@ -577,6 +580,7 @@ so \( b, c = 1 \).  For the derivative term, we have
 +
 \partial_\mu \psi^4
 \partial^\mu \psi^4
+\\&\quad
 +
 i (\partial_\mu \psi^1 \partial^\mu \psi^2 - \partial_\mu \psi^2 \partial^\mu \psi^1)
 +
@@ -908,9 +912,9 @@ H^\dagger &= \inv{\sqrt{2}}
 which gives
 \begin{equation}\label{eqn:ProblemSet2Problem2:900}
 \begin{aligned}
-\trace{\lr{
+&\trace{\lr{
 \delta H^\dagger \partial^\mu H + \partial^\mu H^\dagger \delta H
-}}
+}} \\
 &=
 \inv{2} \trace{\lr{
 \begin{bmatrix}

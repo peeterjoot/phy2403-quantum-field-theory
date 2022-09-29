@@ -47,12 +47,15 @@ What do you think is the significance of the various limits $T \gg R \gg 1/m$? A
 \withproblemsetsParagraph{
 \makeSubAnswer{}{qft:problemSet3:1a}
 \begin{equation}\label{eqn:ProblemSet3Problem1:20}
+\begin{aligned}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
-=
+&=
 \bra{0} T (1) \ket{0}
+\\&\quad
 +
 i g
 \bra{0} T \int d^4 x j(x) \phi(x) \ket{0}
+\\&\quad
 +
 - \frac{g^2}{2}
 \int d^4 x d^4 y
@@ -61,14 +64,17 @@ i g
 j(x) \phi(x) j(y) \phi(y)
 \ket{0}
 + \cdots
+\end{aligned}
 \end{equation}
 Using Wick's theorem, the first order term is zero (odd number of creation and annihilation operators), so to first order, we have
 \begin{equation}\label{eqn:ProblemSet3Problem1:40}
+\begin{aligned}
 \bra{0} T e^{i \int d^4 x  g  j(x)  \phi(x)} \ket{0}
-=
+&=
 1 - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) + \cdots
-\approx
+\\&\approx
 \exp\lr{ - \frac{g^2}{2} \int d^4 x d^4 y j(x) D_F(x - y) j(y) }
+\end{aligned}
 \end{equation}
 \makeSubAnswer{}{qft:problemSet3:1b}
 We wish to evaluate the integral in the exponential argument
@@ -139,8 +145,9 @@ i \int \frac{dp_0 d^3 p}{(2 \pi)^4} \frac{e^{-i p_0 t} e^{i \Bp \cdot \Bx} }{p_0
 \end{equation}
 so we have
 \begin{equation}\label{eqn:ProblemSet3Problem1:100}
-\int d^4 x d^4 y j(x) D_F(x - y) j(y)
-=
+\begin{aligned}
+\int& d^4 x d^4 y j(x) D_F(x - y) j(y) \\
+&=
 i
 \int_{-T}^T dt
 \int_{-T}^T dt'
@@ -152,6 +159,7 @@ e^{-i \Bp \cdot \BR}
 -
 e^{i \Bp \cdot \BR}
 }
+\end{aligned}
 \end{equation}
 The time integrals can be done first
 \begin{equation}\label{eqn:ProblemSet3Problem1:120}
@@ -186,7 +194,7 @@ Following the supplied hint we write
 which gives
 \begin{equation}\label{eqn:ProblemSet3Problem1:160}
 \begin{aligned}
-\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+\int &d^4 x d^4 y j(x) D_F(x - y) j(y) \\
 &=
 2 T i
 \int
@@ -224,7 +232,7 @@ so the integral factor of the coupling exponential
 is reduced to
 \begin{equation}\label{eqn:ProblemSet3Problem1:200}
 \begin{aligned}
-\int d^4 x d^4 y j(x) D_F(x - y) j(y)
+\int &d^4 x d^4 y j(x) D_F(x - y) j(y) \\
 &=
 -2 T i
 \int_0^\infty d \calp \frac{\calp^2}{(2 \pi)^2} \int_0^\pi d\theta \sin\theta \frac{ 1 }{ \calp^2 + m^2 - i \epsilon }

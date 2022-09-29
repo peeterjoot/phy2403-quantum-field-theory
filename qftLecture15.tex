@@ -115,8 +115,9 @@ Claim: the ``LSZ'' theorem (a neat way of writing this) relates this to S matrix
 
 Assuming \( x^0 > y^0 \)
 \begin{equation}\label{eqn:qftLecture15:120}
-\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
-=
+\begin{aligned}
+&\bra{\Omega} \phi(x) \phi(y) \ket{\Omega} \\
+&=
 \frac{
 \bra{0}
 U(T, t_0)
@@ -133,6 +134,7 @@ U(t_0, -T)
 {
 e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 }.
+\end{aligned}
 \end{equation}
 Normalize \( \braket{\Omega}{\Omega} = 1 \), gives
 \begin{equation}\label{eqn:qftLecture15:140}
@@ -152,8 +154,9 @@ e^{-i 2 E_0 T} \Abs{\braket{0}{\Omega}}^2
 \end{equation}
 so that
 \begin{equation}\label{eqn:qftLecture15:240}
-\bra{\Omega} \phi(x) \phi(y) \ket{\Omega}
-=
+\begin{aligned}
+&\bra{\Omega} \phi(x) \phi(y) \ket{\Omega} \\
+&=
 \frac{
 \bra{0}
 U(T, t_0)
@@ -170,6 +173,7 @@ U(t_0, -T)
 {
    \bra{0} U(T, -T) \ket{0}
 }.
+\end{aligned}
 \end{equation}
 For \( t_1 > t_2 > t_3 \)
 \begin{equation}\label{eqn:qftLecture15:280}
@@ -308,10 +312,11 @@ so we have
 
 The numerator expands as
 \begin{equation}\label{eqn:qftLecture15:440}
-   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) } \ket{0}
+\begin{aligned}
+&  \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) } \ket{0}
 -i \frac{\lambda}{4} \int d^4 x
-   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) \phi_I^4(x) }
-+
+   \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n) \phi_I^4(x) } \\
+&\quad+
 \inv{2}
 \lr{-i \frac{\lambda}{4}}^2 \int d^4 x d^4 y
    \bra{0} T\lr{ \phi_I(x_1) \cdots \phi_I(x_n)
@@ -319,6 +324,7 @@ The numerator expands as
       \phi_I^4(y)
 } \ket{0}
 + \cdots
+\end{aligned}
 \end{equation}
 so we see that the problem ends up being the calculation of time ordered products.
 
