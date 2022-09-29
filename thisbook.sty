@@ -1,4 +1,17 @@
 %-----------------------------------------
+% https://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes
+
+% footnote 11 in: 10.18 spacetime translation symmetries. pg 337
+% now causes kdp gutter issues, probably because it's two-digit on the right page.
+% Try letters instead to compress multi-digit numbers into single digit range 
+%\renewcommand{\thefootnote}{\alph{footnote}}
+% NO -- looks wierd.
+
+%%Another option:
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+
+%-----------------------------------------
 \newcommand{\SO}[1]{S\!O(#1)}
 \newcommand{\SL}[1]{S\!L(#1,\bbC)}
 \newcommand{\SU}[1]{S\!U(#1)}

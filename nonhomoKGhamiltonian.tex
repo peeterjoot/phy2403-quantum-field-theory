@@ -97,9 +97,24 @@ to \cref{eqn:nonhomoKGhamiltonian:80}, which gives
 \begin{aligned}
 H
 &=
-\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger }
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp 
+\Biglr{
+   \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger
+   \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } 
+\\&\quad
+   +
+   \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }
+   \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }^\dagger 
+}
 \\&=
-\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp \lr{\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} } \lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } +\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
+\inv{2} \int \frac{d^3 p}{(2 \pi)^3} \omega_\Bp 
+\Biglr{
+\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
+\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} } 
+\\&\quad
++
+\lr{ a_\Bp + \frac{i \tilde{j}(p)}{\sqrt{2 \omega_\Bp}} }
+\lr{ a_\Bp^\dagger - \frac{i \tilde{j}^\conj(p)}{\sqrt{2 \omega_\Bp}} }
 }.
 \end{aligned}
 \end{equation}

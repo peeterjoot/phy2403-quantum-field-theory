@@ -26,7 +26,7 @@ The question we will ask is: to what extent is this particle at $\Bx=0$ localize
 said ``QM=QFT in $d=1$".
 The best we can do is to consider the state $\vert \By,0 \rangle$ and ask where its properties identifiable in QFT---energy or momentum---are localized.
 
- Thus,  consider the expectation value of $\hat{T}_{00}(\Bx,t)$ (assumed normal-ordered) in this state:
+ Thus, consider the expectation value of $\hat{T}_{00}(\Bx,t)$, assumed to be normal-ordered, in this state:
 $$
 \rho(\By, \Bx, t) \equiv \langle \By,0 \vert T_{00}(\Bx,t)\vert \By,0 \rangle~.
 $$
@@ -315,15 +315,18 @@ H.
 
 We are now ready to complete the computation of \( \tilde{\rho}(x) \), which is
 \begin{equation}\label{eqn:ProblemSet3Problem4:180}
+\begin{aligned}
 \tilde{\rho}(x)
-=
+&=
 \inv{4}
 \int \frac{d^3 r\, d^3 p\, d^3 q\, d^3 s}{(2 \pi)^{12} \sqrt{\omega_\Br \omega_\Bp \omega_\Bq \omega_\Bs}}
    \lr{
       \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
    }
+\\&\quad
    \bra{0} a_\Br a_\Bp^\dagger a_\Bq a_\Bs^\dagger \ket{0}
    e^{i (p - q) \cdot x}.
+\end{aligned}
 \end{equation}
 %%%\begin{equation}\label{eqn:ProblemSet3Problem4:200}
 %%%\bra{0} a_\Br a_\Bp a_\Bq a_\Bs^\dagger \ket{0}

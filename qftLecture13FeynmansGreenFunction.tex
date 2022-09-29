@@ -498,18 +498,17 @@ H_I(t_n)
 
 Summing we find
 \begin{equation}\label{eqn:qftLecture13:1140}
-U(t, t_0) = T \exp\lr{-i
+\begin{aligned}
+U(t, t_0) 
+&= T \exp\lr{-i
 \int_{t_0}^t dt_1 H_I(t')
 }
-=
+\\&=
 \sum_{n = 0}^\infty
 \frac{(-i)^n}{n!} \int_{t_0}^t dt_1 \cdots dt_n T( H_I(t_1) \cdots H_I(t_n) ).
+\end{aligned}
 \end{equation}
-
 This is called Dyson's formula.
-
 \section{Next time.}
-
 Our goal is to compute: \( \bra{\Omega} T(\phi(x_1) \cdots \phi(x_n)) \ket{\Omega} \).
-
 %}

@@ -211,18 +211,22 @@ connected and amputated diagrams, a subset of all the possible graphs.  Why this
 \paragraph{What is ``connected and amputated''?}
 Explaining by example.  \( n = 2, \lambda \phi^4/4! \).
 \begin{equation}\label{eqn:qftLecture16:320}
+\begin{aligned}
 \bra{0}
+&
 a_{\Bp_1}
 a_{\Bp_2}
-\lr{
+\Biglr{
 \cancel{1}
 - \frac{i \lambda}{4!} \int d^4 x \phi_I^4(x)
+\\&
 + \inv{2} \lr{ \frac{i \lambda}{4!}}^2 \int d^4 x d^4 y \phi_I^4(x) \phi_I^4(y)
 + \cdots
 }
 a_{\Bk_A}^\dagger
 a_{\Bk_B}^\dagger
 \ket{0}
+\end{aligned}
 \end{equation}
 Here time ordering operations are implied, but not written explicitly.
 Also, the ``amputated'' indicates that we are going to be dropping the \( 1 \) portion of the exponential expansion (as we've also dropped that in \cref{eqn:qftLecture16:300}).

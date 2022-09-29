@@ -99,9 +99,11 @@ Before diagonalizing the Hamiltonian, let's verify that applying computing Hamil
 &\PD{t}{\phi}(\Bx, t) \\
 &= i \antisymmetric{H}{\phi(\Bx)}
 \\&=
-i \int d^3 y \lr{
+i \int d^3 y 
+\Biglr{
    \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi(\Bx)}
    +
+\\&\quad
    \cancel{\antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\phi(\Bx)}}
    +
    \cancel{\antisymmetric{ \phi^\dagger(\By) \phi(\By)  }{\phi(\Bx)}}
@@ -119,8 +121,10 @@ i \int d^3 y \pi^\dagger(\By) (-i) \deltathree(\By - \Bx)
 &\PD{t}{\phi^\dagger}(\Bx, t) \\
 &= i \antisymmetric{H}{\phi^\dagger(\Bx)}
 \\&=
-i \int d^3 y \lr{
+i \int d^3 y 
+\Biglr{
    \antisymmetric{\pi^\dagger(\By) \pi(\By)}{\phi^\dagger(\Bx)}
+\\&\quad
    +
    \cancel{\antisymmetric{ \spacegrad_\By \phi^\dagger(\By) \cdot \spacegrad_\By \phi(\By) }{\phi^\dagger(\Bx)}}
    +
