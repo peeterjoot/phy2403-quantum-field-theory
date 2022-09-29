@@ -155,17 +155,21 @@ interaction Lagrangian
 
 We introduce spinor fields \( \Psi_e \) and muon fields \( \Psi_\mu \), so that the total Lagrangian is now
 \begin{equation}\label{eqn:qftLecture23:80}
+\begin{aligned}
 \LL_{\text{QED}}
-=
+&=
 - \inv{4} F_{\mu\nu} F^{\mu\nu}
+\\&\quad
 +
 \oPsi_e \lr{ i \gamma^\mu \partial_\mu - m } \Psi_e
 -
 e \oPsi_e \gamma_\mu \Psi_e A^\mu
+\\&\quad
 +
 \oPsi_\mu \lr{ i \gamma^\mu \partial_\mu - m } \Psi_\mu
 -
 e \oPsi_\mu \gamma_\mu \Psi_\mu A^\mu
+\end{aligned}
 \end{equation}
 
 \begin{itemize}
@@ -348,13 +352,14 @@ Such a process is ``ultra-relativistic'', in that the electron and positron pair
 
 The matrix element is
 \begin{equation}\label{eqn:qftLecture23:540}
-\contraction{\langle}{\mu^{+}}{\mu^{-} \rvert \oPsi \gamma^\sigma}{\Psi}
+\begin{aligned}
+&\contraction{\langle}{\mu^{+}}{\mu^{-} \rvert \oPsi \gamma^\sigma}{\Psi}
 \bcontraction{\langle \mu^{+}}{\mu^{-}}{\rvert}{\oPsi}
 \contraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi }{A^\sigma}{}{A^\rho}
 \contraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho}{\oPsi}{\gamma^\rho \Psi \lvert}{e^{+}}
 \bcontraction{\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho \oPsi \gamma^\rho}{\Psi}{\lvert e^{+}}{e^{-}}
-\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho \oPsi \gamma^\rho \Psi \lvert e^{+} e^{-} \rangle
-=
+\langle \mu^{+} \mu^{-} \rvert \oPsi \gamma^\sigma \Psi A^\sigma A^\rho \oPsi \gamma^\rho \Psi \lvert e^{+} e^{-} \rangle \\
+&=
 \mathLabelBox{
 \vbar^{s'}(p')
 }
@@ -377,6 +382,7 @@ incoming electron
 ignoring \( i \epsilon \).
 }
 \ubar^r(k) (-i e \gamma^\sigma ) v^{r'}(k')
+\end{aligned}
 \end{equation}
 \paragraph{Question:} Why are we writing the factors of the matrix element from left to right, corresponding to the right to left reading of the matrix element?
 
@@ -596,12 +602,12 @@ p^\mu {p'}^\nu
 and the \( k, k' \) dependent trace reduces to
 \begin{equation}\label{eqn:qftLecture23:800}
 \begin{aligned}
-\trace{ \lr{
+&\trace{ \lr{
 \lr{ \slashed{k'} - m_\mu }
 \gamma_\nu
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
-}}
+}} \\
 &=
 \trace{ \lr{
 \slashed{k'}

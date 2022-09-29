@@ -141,7 +141,7 @@ T^{00}
 \\&=
 \inv{2}
 \int \frac{d^3 p\, d^3 q}{(2 \pi)^6 2 \sqrt{\omega_\Bp \omega_\Bq}}
-\lr{
+\Biglr{
    \partial_0
    \lr{
       a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
@@ -150,6 +150,7 @@ T^{00}
    \lr{
       a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
+\\&\quad\quad
 +
    \partial_k
    \lr{
@@ -159,6 +160,7 @@ T^{00}
    \lr{
       a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
+\\&\quad\quad
 + m^2
    \lr{
       a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
@@ -185,8 +187,9 @@ so
 T^{00}
 &=
 \inv{4}
-\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
-\lr{
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}} \\
+&\quad
+\Biglr{
 -
    \lr{
       \omega_\Bp \omega_\Bq + \Bp \cdot \Bq
@@ -197,6 +200,7 @@ T^{00}
    \lr{
       -a_\Bq e^{-i q \cdot x} + a_\Bq^\dagger e^{i q \cdot x}
    }
+\\&\quad\quad
 + m^2
    \lr{
       a_\Bp e^{-i p \cdot x} + a_\Bp^\dagger e^{i p \cdot x}
@@ -207,8 +211,9 @@ T^{00}
 } \\
 &=
 \inv{4}
-\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}}
-\lr{
+\int \frac{d^3 p\, d^3 q}{(2 \pi)^6 \sqrt{\omega_\Bp \omega_\Bq}} \\
+&\quad
+\Biglr{
    \lr{
       -\omega_\Bp \omega_\Bq - \Bp \cdot \Bq + m^2
    }
@@ -217,6 +222,7 @@ T^{00}
    +
       a_\Bp^\dagger a_\Bq^\dagger e^{i (p + q) \cdot x}
    }
+\\&\quad\quad
 +
    \lr{
       \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
@@ -369,13 +375,15 @@ so
       \omega_\Bp \omega_\Bq + \Bp \cdot \Bq + m^2
    }
    e^{i (p - q) \cdot x}
-   \\&=
+\\&=
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} \omega_\Bp e^{i p \cdot x}
 \int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} \omega_\Bq e^{i q \cdot (-x)}
+\\&\quad
 +
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} \Bp e^{i p \cdot x}
 \cdot
 \int \frac{d^3 q}{(2 \pi)^{3} 2 \omega_\Bq} \Bq e^{i q \cdot (-x)}
+\\&\quad
 +
 m^2
 \int \frac{d^3 p}{(2 \pi)^{3} 2 \omega_\Bp} e^{i p \cdot x}

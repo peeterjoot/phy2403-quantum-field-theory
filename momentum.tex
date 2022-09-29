@@ -99,6 +99,7 @@ p_0 q^k
 }
 \\&=
 -\inv{2} \int d^3 x \frac{d^3 p d^3 q}{(2 \pi)^6} \sqrt{\frac{\omega_p}{\omega_q}} q^k
+\\&\quad
 \lr{
      a_\Bp a_\Bq e^{-i (p + q) \cdot x}
    + a_\Bp^\dagger a_\Bq^\dagger e^{i (p + q) \cdot x}
@@ -107,9 +108,11 @@ p_0 q^k
 }
 \\&=
 \inv{2} \int \frac{d^3 p d^3 q}{(2 \pi)^3} \sqrt{\frac{\omega_p}{\omega_q}} q^k
-\lr{
+\\&\quad
+\Biglr{
    - a_\Bp a_\Bq e^{- i(\omega_\Bp + \omega_\Bq) t} \deltathree(\Bp + \Bq)
    - a_\Bp^\dagger a_\Bq^\dagger e^{i(\omega_\Bp + \omega_\Bq) t} \deltathree(-\Bp - \Bq)
+\\&\quad
    + a_\Bp a_\Bq^\dagger e^{i(\omega_\Bq - \omega_\Bp) t} \deltathree(\Bp - \Bq)
    + a_\Bp^\dagger a_\Bq e^{i(\omega_\Bp - \omega_\Bq) t} \deltathree(\Bq - \Bp)
 }
@@ -123,7 +126,6 @@ p_0 q^k
 }.
 \end{aligned}
 \end{equation}
-
 What is the rationale for ignoring those time dependent terms?  Does normal ordering also implicitly drop any non-paired creation/annihilation operators?  If so, why?
 
 \section{Conservation of the field momentum.}
@@ -162,6 +164,7 @@ Charge \( Q^i = \int d^3 x j^0 \) was conserved with respect to a limiting surfa
 \partial_k \int_{-T}^T dt \int d^3 x T^{0k}
 \\&=
 \partial_0 \int_{-T}^T dt \int d^3 x T^{00}
+\\&\quad
 +
 \partial_k \int_{-T}^T dt
 \inv{2} \int \frac{d^3 p }{(2 \pi)^3} p^k
@@ -180,6 +183,7 @@ T \partial_k
      a_\Bp^\dagger a_\Bp
    + a_\Bp a_\Bp^\dagger
 }
+\\&\quad
 -\inv{2}
 \partial_k \int_{-T}^T dt
 \int \frac{d^3 p }{(2 \pi)^3} p^k
@@ -194,13 +198,13 @@ T \partial_k
 The first integral can be said to vanish if the field energy goes to zero at the time boundaries, and the last integral reduces to
 \begin{equation}\label{eqn:momentum:180}
 \begin{aligned}
--\inv{2}
+-&\inv{2}
 \partial_k \int_{-T}^T dt
 \int \frac{d^3 p }{(2 \pi)^3} p^k
 \lr{
      a_\Bp a_{-\Bp} e^{- 2 i \omega_\Bp t}
    + a_\Bp^\dagger a_{-\Bp}^\dagger e^{2 i \omega_\Bp t}
-}
+} \\
 &=
 -\int \frac{d^3 p }{2 (2 \pi)^3} p^k
 \lr{

@@ -92,7 +92,7 @@ For the derivative quadratic form, we find
 }
 \\&=
 \frac{\Abs{m}^2}{4 \lambda}
-\lr{
+\Biglr{
    \partial_\mu h \Omega^\dagger \partial^\mu h \Omega
    + (1 + h)
       \lr{
@@ -102,6 +102,7 @@ For the derivative quadratic form, we find
          \partial^\mu h
          (\partial_\mu \Omega^\dagger) \Omega
       }
+\\&\quad
    + (1 + h)^2 \partial_\mu \Omega^\dagger \partial^\mu \Omega
 }.
 \end{aligned}
@@ -138,7 +139,9 @@ All the cross terms with both \( h \) and \( \Omega \) derivatives are zero (to 
 Taking traces (and using cyclic permutation of the matrices in the trace operations),
 the Lagrangian density is now determined
 \begin{equation}\label{eqn:ProblemSet4Problem2:500}
-\LL =
+\begin{aligned}
+\LL 
+&=
 \frac{\Abs{m}^2}{2 \lambda}
    \partial_\mu h \partial^\mu h
 +
@@ -147,6 +150,7 @@ the Lagrangian density is now determined
    \trace{\lr{
       \partial_\mu \Omega^\dagger \partial^\mu \Omega
    }}
+\\&\quad
 + \Abs{m}^2
 \frac{\Abs{m}^2}{2 \lambda} \lr{ 1 + h }^2
 - \lambda
@@ -154,6 +158,7 @@ the Lagrangian density is now determined
 \lr{ 1 + h }^4.
 %=
 %\frac{\Abs{m}^2}{\lambda} \LL',
+\end{aligned}
 \end{equation}
 %
 Now let's expand the \( \Omega \) derivatives.  To first order, we have
@@ -343,11 +348,11 @@ i \inv{v} \int d^4 x
 however, since \( \Bp_i \) are the momenta for \( \phi^3 \) particles, only the \( a = 3 \) terms above contribute, leaving
 \begin{equation}\label{eqn:ProblemSet4Problem2:940}
 \begin{aligned}
-i \inv{v} \int d^4 x
+i \inv{v} \int &d^4 x
 \contraction{\langle }{\Bp}{{}_1, \Bp_2 \rvert h(x) \partial_\mu }{\phi}
 \contraction[2ex]{\langle \Bp_1, }{\Bp}{{}_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu }{\phi}
 \bcontraction{\langle \Bp_1, \Bp_2 \rvert }{h}{(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert}{\Bk}
-\langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle
+\langle \Bp_1, \Bp_2 \rvert h(x) \partial_\mu \phi^3(x) \partial^\mu \phi^3(x) \lvert \Bk \rangle \\
 &=
 i \inv{v} \int d^4 x \bra{0} \partial_\mu e^{i p_1 \cdot x} \partial^\mu e^{i p_2 \cdot x} e^{-i k \cdot x} \ket{0}
 \\&=
@@ -382,15 +387,20 @@ d(LIPS)_2
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:ProblemSet4Problem2:1020}
+\begin{aligned}
 \Gamma
-=
+&=
 \inv{v^2}
 \int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
 \inv{ 2\omega_\Bk}
-(2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_\Bk)
+(2 \pi)^4  \\
+&\quad
+\deltathree(\Bp_1 + \Bp_2 - \Bk) 
+\delta(\omega_{\Bp_1} + \omega_{\Bp_2} - \omega_\Bk)
 (-p_1 \cdot p_2)^2.
+\end{aligned}
 \end{equation}
 This is simplest to evaluate in the center of mass frame, as sketched in \cref{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}, where \( \Bk = 0 \), and \( \omega_\Bk = m_h \), the Higgs mass.  This leaves
 \imageFigure{../figures/phy2403-quantum-field-theory/hw4p2CenterOfMassFrameFig3}{Center of mass frame.}{fig:hw4p2CenterOfMassFrame:hw4p2CenterOfMassFrameFig3}{0.2}
@@ -434,7 +444,8 @@ so \cref{eqn:ProblemSet4Problem2:1020} becomes
 \int
 \frac{d^3 p_1}{(2 \pi)^3 2 \omega_{\Bp_1} }
 \frac{d^3 p_2}{(2 \pi)^3 2 \omega_{\Bp_2} }
-\inv{ 2 m_h}
+\inv{ 2 m_h} \\
+&\quad
 (2 \pi)^4 \deltathree(\Bp_1 + \Bp_2 - \Bk) \delta(\omega_{\Bp_1} + \omega_{\Bp_2} - m_h)
 4 \Norm{\Bp_1}^4
 \\&=

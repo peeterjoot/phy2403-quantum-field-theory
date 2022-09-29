@@ -112,7 +112,10 @@ For \(\Psi_u = u(p) e^{-i p \cdot x}\), and \( \Psi_v = v(p) e^{i p \cdot x} \),
 \end{equation*}
 } % theorem
 \Cref{thm:qftLecture21b:2} shows that \( \Psi_u, \Psi_v \) are eigenvectors of the operator
-\( \gamma^0 \lr{ -i \gamma^j \partial_j + m }\) with eigenvalues \( \pm \omega_\Bp \).
+\begin{equation}\label{eqn:qftLecture21b:n}
+\gamma^0 \lr{ -i \gamma^j \partial_j + m },
+\end{equation}
+with eigenvalues \( \pm \omega_\Bp \).
 \begin{proof}
 These eigenvalue equations follow from the Dirac equation for \( \Psi_u, \Psi_v \).  These are
 \begin{equation}\label{eqn:qftLecture21b:1000}
@@ -268,7 +271,7 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
 &=
 \inv{2} \sum_{r,s = 1}^2
 \int \frac{d^3 p }{(2\pi)^3 }
-\lr{
+\Biglr{
    u^{r \dagger}_\Bp
    u^s_\Bp
    a^{r \dagger}_\Bp
@@ -278,6 +281,7 @@ e^{i (\Bp - \Bq ) \cdot \Bx }
    v^s_{-\Bp}
    a^{r \dagger}_\Bp
    b^s_{-\Bp}
+\\&\quad
 +
    v^{r \dagger}_{-\Bp}
    u^s_\Bp
