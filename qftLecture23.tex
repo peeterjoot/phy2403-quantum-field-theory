@@ -485,12 +485,12 @@ where we first used the freedom to move the \( \ubar \gamma v, \vbar \gamma u \)
 Temporarily expressing the remaining factors in coordinates exposes a trace structure.  For example
 \begin{equation}\label{eqn:qftLecture23:660}
 \begin{aligned}
-\sum_{r'}
+&\sum_{r'}
 \vbar^{r'}(k')
 \gamma_\rho
 \lr{ \slashed{k} + m_\mu }
 \gamma_\mu
-v^{r'}(k')
+v^{r'}(k') \\
 &=
 \sum_{r'}
 (\vbar^{r'}(k'))_a
@@ -522,8 +522,9 @@ v^{r'}(k')
 \end{equation}
 since the cyclic sum of matrix coordinates can be expressed as a trace, namely \( \trace{A B C} = A_{ab} B_{bc} C_{ca} \).  We are left with
 \begin{equation}\label{eqn:qftLecture23:680}
-\inv{4} \sum_{ss', rr'} \Abs{M}^2
-=
+\begin{aligned}
+\inv{4} &\sum_{ss', rr'} \Abs{M}^2
+\\&=
 \frac{e^4}{4 q^4}
 \trace{ \lr{
 \lr{ \slashed{k'} - m_\mu }
@@ -538,6 +539,7 @@ since the cyclic sum of matrix coordinates can be expressed as a trace, namely \
 \lr{ \slashed{p'} - m_e }
 \gamma^\mu
 }}.
+\end{aligned}
 \end{equation}
 Each trace is now a product of two, three, or four gamma matrices, which can be reduced using the identities:
 \makelemma{Dirac matrix product traces.}{lemma:qftLecture23:700}{
