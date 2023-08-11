@@ -106,7 +106,6 @@ We may use this to represent an arbitrary rotation
 U (\Bsigma \cdot \Bx) U^\dagger
 = {R^{i}}_j x^j \sigma^i
 \end{equation}
-
 We say that \( U \in \SU{2} \) and \( R \in \SU{3} \), and \( \SU{2} \) is called the ``universal cover of \(\SO{3}\)''.
 
 Pauli figured out that, in non-relativistic QM, that this type of transformation also applies to (spin) wave functions (spinors)
@@ -206,7 +205,6 @@ or algebraically
 \begin{equation}\label{eqn:qftLecture19:100}
 U = e^{i \psi \sigma_3/2 } e^{i \theta \sigma_1/2} e^{i \phi \sigma_3/2}.
 \end{equation}
-
 \section{Weyl spinors.}
 \index{Weyl spinor}
 We will see that there is generalization of Pauli spinors, called Weyl spinors, but we will have to introduce 4 component objects.
@@ -1070,20 +1068,17 @@ where our vectors transform in the usual \( x \rightarrow x' = \Lambda x \) fash
 \ultensor{\omega}{\mu}{\nu}
 + O(\omega^2).
 \end{equation}
-
 \makedefinition{Overbar operator (name?).}{dfn:qftLecture19:1534}{
 \begin{equation*}
 \overbar{\Psi} = \Psi^\dagger \gamma^0.
 \end{equation*}
 } % definition
-
 \makedefinition{Dirac Lagrangian.}{dfn:qftLecture19:31}{
 \index{Dirac Lagrangian}
 \begin{equation*}
 \LL_{\text{Dirac}} = \overbar{\Psi}(x)\lr{ i \gamma^\mu \partial_\mu - m } \Psi(x).
 \end{equation*}
 } % definition
-
 Armed with \cref{thm:qftLecture19:51} we can now show the following.
 \maketheorem{The Dirac action is a real Lorentz scalar.}{thm:qftLecture19:42}{
 The action
@@ -1233,11 +1228,9 @@ The Lagrangian transforms as
 \overbar{\Psi} \lr{ i \gamma^\mu \partial_\mu - m } \Psi
 \end{aligned}
 \end{equation}
-
 We find that \( \overbar{\Psi} \Psi = \Psi^\dagger \gamma^0 \Psi \) is a Lorentz scalar, whereas
 \( \overbar{\Psi} \gamma^\mu \Psi \) is a 4 vector.
 \end{proof}
-
 %Can create couplings like \( \overbar{\Psi}_1 \Psi_2 \overbar{\Psi}_3 \Psi_4 \)
 %or \( \overbar{\Psi} \gamma_\mu \partial^\mu \Psi \).
 %%\cref{fig:l19:l19Fig2}.

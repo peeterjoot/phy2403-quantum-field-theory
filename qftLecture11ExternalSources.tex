@@ -8,9 +8,7 @@
 \begin{equation}\label{eqn:qftLecture11:320}
 L = \inv{2} \qdot^2 - \frac{\omega^2}{t} q^2 - j(t) q.
 \end{equation}
-
 The term \( j(t) \) shifts the origin in a time dependent fashion (graphical illustration in class wiggling a hockey stick, as a sample of a harmonic oscillator).
-
 %F5,6
 \begin{equation}\label{eqn:qftLecture11:340}
 H = \frac{p^2}{2} + \frac{\omega^2}{t} q^2 + j(t) q
@@ -28,21 +26,18 @@ or
 \begin{equation}\label{eqn:qftLecture11:400}
 (\partial_{tt} + \omega^2 ) q_H(t) = - j(t)
 \end{equation}
-
 %%q_H(t > t_{\text{after}} = q_H( t, t < t_before) +
 %%\int_{t_before}^{t_after} G_R(t - t') j(t') dt'
 \begin{equation}\label{eqn:qftLecture11:420}
 q_H(t) = q_H^0( t ) +
 \int G_R(t - t') j(t') dt'.
 \end{equation}
-
 This solves the equation provided \( G_R(t - t') \) has the property that
 \boxedEquation{eqn:qftLecture11:440}{
 (\partial_{tt} + \omega^2)
 G_R(t - t')
 = - \delta(t - t').
 }
-
 That is
 \begin{equation}\label{eqn:qftLecture11:460}
 (\partial_{tt} + \omega^2)
@@ -53,7 +48,6 @@ q_H^0( t )
 (\partial_{tt} + \omega^2)
 \int G_R(t - t') j(t') dt'.
 \end{equation}
-
 This function \( G_R \) is called the retarded Green's function.  We want to find this function, and as usual, we do this by taking the Fourier transform of \cref{eqn:qftLecture11:440}
 \begin{equation}\label{eqn:qftLecture11:480}
 \begin{aligned}
@@ -140,7 +134,6 @@ G_R(t > 0)
 -\frac{\sin(\omega t)}{\omega}.
 \end{aligned}
 \end{equation}
-
 Now we write the Green's function for all time as
 \boxedEquation{eqn:qftLecture11:660}{
 G_R(t) =

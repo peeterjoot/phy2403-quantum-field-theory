@@ -7,7 +7,7 @@ my @phy2403 =
    TITLE => qq(Scalar field creation operator commutator),
    DATE => 'January 02, 2016',
    REF => 'scalarFieldCreationOpCommutator',
-   URL => 'http://peeterjoot.com/archives/math2016/scalarFieldCreationOpCommutator.pdf',
+   URL => 'https://peeterjoot.com/archives/math2016/scalarFieldCreationOpCommutator.pdf',
    WHAT => qq()
 }
 ,{
@@ -15,7 +15,7 @@ my @phy2403 =
    TITLE => qq(Hamiltonian for a scalar field),
    DATE => 'January 03, 2016',
    REF => 'scalarFieldHamiltonian',
-   URL => 'http://peeterjoot.com/archives/math2016/scalarFieldHamiltonian.pdf',
+   URL => 'https://peeterjoot.com/archives/math2016/scalarFieldHamiltonian.pdf',
    WHAT => qq()
 }
 ,{
@@ -23,7 +23,7 @@ my @phy2403 =
    TITLE => qq(Getting up to speed),
    DATE => 'January 03, 2016',
    REF => 'qftProblemSet1',
-   URL => 'http://peeterjoot.com/archives/math2016/qftProblemSet1.pdf',
+   URL => 'https://peeterjoot.com/archives/math2016/qftProblemSet1.pdf',
    WHAT => qq()
 }
 ,{
@@ -31,7 +31,7 @@ my @phy2403 =
    TITLE => qq(Energy-momentum tensor for a scalar field),
    DATE => 'January 05, 2016',
    REF => 'noetherCurrentScalarField',
-   URL => 'http://peeterjoot.com/archives/math2016/noetherCurrentScalarField.pdf',
+   URL => 'https://peeterjoot.com/archives/math2016/noetherCurrentScalarField.pdf',
    WHAT => qq()
 }
 ) ; # @phy2403
