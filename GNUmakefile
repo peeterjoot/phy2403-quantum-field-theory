@@ -10,8 +10,7 @@ MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/
 BOOKTEMPLATE := ../latex/classicthesis_mine/ClassicThesis2.tex
 
 # comment this out for online pdf version (uncomment for KDP)
-PRINT_VERSION := 1
-
+#PRINT_VERSION := 1
 ifndef PRINT_VERSION
 PARAMS += --no-print
 endif
