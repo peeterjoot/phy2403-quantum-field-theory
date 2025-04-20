@@ -186,9 +186,6 @@ copy : $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf
 $(HOME)/Dropbox/$(THISDIR)/$(THISBOOK).pdf : $(THISBOOK).pdf
 	cp $^ $@
 
-scrpage2.sty : ../latex/scrpage2.sty
-	cp $^ $@
-
 backmatter.tex: ../latex/classicthesis_mine/backmatter2.tex
 	rm -f $@
 	ln -s ../latex/classicthesis_mine/backmatter2.tex backmatter.tex
